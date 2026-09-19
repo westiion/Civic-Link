@@ -1,0 +1,11 @@
+# Week 1 submission files
+/*
+!/.gitignore
+!/docs/
+/docs/*
+!/docs/problem_definition.md
+!/docs/scope.md
+!/docs/qa_taxonomy.md
+!/benchmark/
+/benchmark/*
+!/benchmark/questions_v0.1.jsonl
