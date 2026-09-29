@@ -1,0 +1,12 @@
+{
+  "valid": true,
+  "total": 100,
+  "answerable": 64,
+  "clarify": 20,
+  "abstain": 16,
+  "source_quotes_offsets_and_chunk_ids": "verified",
+  "no_gold_in_retrieval_input": true,
+  "human_review": "pending",
+  "minimum_hops": "not_independently_verified",
+  "corpus_hash": "e55238fddf3882dd3dab97cce5faa8c6b136f2dd89934cc3ff2f445abda59863"
+}

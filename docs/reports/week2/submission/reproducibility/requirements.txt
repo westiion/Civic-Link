@@ -1,0 +1,2 @@
+# Python >= 3.10. Standard library only; no mandatory pip packages.
+# NumPy is optional for Dense acceleration and is not required for offline reproduction.

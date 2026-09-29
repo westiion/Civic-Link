@@ -1,0 +1,36 @@
+{
+  "corpus": {
+    "valid": true,
+    "services": 40,
+    "documents": 91,
+    "chunks": 6768,
+    "raw_hashes_and_offsets_verified": true,
+    "database_integrity": "ok",
+    "foreign_keys": "ok",
+    "corpus_hash": "e55238fddf3882dd3dab97cce5faa8c6b136f2dd89934cc3ff2f445abda59863"
+  },
+  "retrieval_saved_metrics_match": [
+    "bm25_conversational",
+    "dense_conversational",
+    "hybrid_conversational",
+    "bm25_canonical",
+    "dense_canonical",
+    "hybrid_canonical",
+    "bm25_clarified",
+    "dense_clarified",
+    "hybrid_clarified"
+  ],
+  "generation_saved_metrics_match": [
+    "bm25",
+    "dense",
+    "hybrid"
+  ],
+  "bm25_fresh_predictions_match": [
+    "conversational",
+    "canonical",
+    "clarified"
+  ],
+  "network_calls": 0,
+  "limits": "Dense/Hybrid rankings and LLM outputs are stored artifacts, not fresh model inference.",
+  "status": "passed"
+}
