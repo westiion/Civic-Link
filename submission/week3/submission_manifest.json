@@ -133,7 +133,7 @@
     "summary": "results/current204/summary.json"
   },
   "files": {
-    "README.md": "9d8a4b072c5b30d7c08ed1de61ef37a7ecd9728be6ccc446ee7ee9d4c217a623",
+    "README.md": "d3158f9fccaf1e068eb1597425b63a3a357323cbfe935c58d53ff524ecc3f228",
     "data/corpus-sqlite.zip.001": "a3e41a91585a1193a35783e1f2ea6b4baa68621077f4f9c5508946148a5f5f4b",
     "data/corpus-sqlite.zip.002": "d9d32ecacb2acb63ac0de65048c308668476a68f9e645b90bd4e3f266616cb5a",
     "data/corpus-sqlite.zip.003": "d4c9a534216196a7ab7a9317514f3dfdd8245af77ef9d113aceb4bc5499e1854",
@@ -146,8 +146,8 @@
     "dataset.json": "f11d4ff310cbf05d011409cff990fa27ba44c7a85c0ef36254bfa3501c5d4d2c",
     "docs/01_graph_schema.md": "0a39222181a13ad8133a3c16f0c618f8771b0337881ce0b2de94caf62dd4b8ae",
     "docs/02_graph_construct.md": "630b5d3dd41677eb31fe6a89c323bb2c1718083253594fc7ee5fcde4219869ec",
-    "docs/03_graph_retrieval.md": "7093e6713dc0c50644d18968be47d3a7d98971947d1e81e591c34081f17e665b",
-    "docs/04_fail_case_analysis.md": "e6e00df1ee0558d3ba78515fb891190c7fd1eac7c3fc36c6680379727ac3b58b",
+    "docs/03_graph_retrieval.md": "592e0d3a13161f54556afbeddd5dac277c1328efd15a26ef1eec835afb73745f",
+    "docs/04_fail_case_analysis.md": "dd2387b554fecd9298e6fd2de6112f6b0274146995296884ad7bba9fde381728",
     "figures/01_service_requirements.svg": "78af27ecacb6228765818a7dba459347a6fe13a05cba3c9ed4537ea3f6070758",
     "figures/02_legal_grounding.svg": "6ff5facb8fd5ec1f32bc3b4315cb369c584b3bb034b1ade9fbf31bf9e37f2208",
     "figures/03_article_reference.svg": "7581841b0b1d18cf23036c731448b30402aeda31991b48fd9ce0fa9a97688afa",
