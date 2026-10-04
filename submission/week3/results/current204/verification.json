@@ -1,0 +1,28 @@
+{
+  "all_frozen_inputs_unchanged": true,
+  "bm25_independent_metric_recalculation": 177,
+  "bm25_offline_exact_replay": 204,
+  "code_comments_docstrings": 0,
+  "dense_independent_metric_recalculation": 177,
+  "dense_offline_exact_replay": 204,
+  "document_cache_read_only": true,
+  "document_embeddings_generated": 0,
+  "gold_source_spans_verified": 247,
+  "graph_h0_independent_metric_recalculation": 177,
+  "graph_h1_h2_gold_changes": [
+    "SJ-N-020",
+    "SJ-N-050"
+  ],
+  "graph_h1_independent_metric_recalculation": 177,
+  "graph_h2_h3_gold_changes": [],
+  "graph_h2_independent_metric_recalculation": 177,
+  "graph_h3_independent_metric_recalculation": 177,
+  "hybrid_independent_metric_recalculation": 177,
+  "hybrid_offline_exact_replay": 204,
+  "network_calls": 0,
+  "new_query_vectors": 161,
+  "public_rows": 204,
+  "query_cache_reuses": 408,
+  "seed_query_vectors": 43,
+  "status": "passed"
+}

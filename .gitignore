@@ -1,12 +1,15 @@
-# Week 1 submission files
 /*
-!/README.md
 !/.gitignore
-!/docs/
-/docs/*
-!/docs/problem_definition.md
-!/docs/scope.md
-!/docs/qa_taxonomy.md
-!/benchmark/
-/benchmark/*
-!/benchmark/questions_v0.1.jsonl
+!/submission/
+/submission/*
+!/submission/week3/
+!/submission/week3/**
+/submission/week3/.venv/
+/submission/week3/**/__pycache__/
+/submission/week3/**/*.pyc
+/submission/week3/data/processed/civic.sqlite*
+/submission/week3/data/graphability-audit/
+/submission/week3/data/raw/
+/submission/week3/**/.restore-*
+/submission/week3/**/.DS_Store
+/submission/week3/**/.DS-Store

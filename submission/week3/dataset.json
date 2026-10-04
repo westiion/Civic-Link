@@ -1,0 +1,40 @@
+{
+  "actions": {
+    "abstain": 10,
+    "answer": 177,
+    "clarify": 17
+  },
+  "chunks": 6768,
+  "current_dataset_evaluated": true,
+  "current_evaluation": {
+    "diagnostic_only": {
+      "abstain": 10,
+      "clarify": 17
+    },
+    "methods": 7,
+    "questions": 204,
+    "report": "docs/04_fail_case_analysis.md",
+    "retrieval_denominator": 177,
+    "summary": "results/current204/summary.json"
+  },
+  "current_law_verified": false,
+  "dataset_id": "week3-sujeong-development-v2-f26de58d3c68",
+  "documents": 91,
+  "human_verified": false,
+  "independent_gold": false,
+  "intent_groups": 179,
+  "provisional_intent_groups": true,
+  "question_and_gold_share_source": true,
+  "questions": 204,
+  "questions_sha256": "7fa858bef73296c5d7f2977907b24d9afc676a113ad38378027b7a6176d2ac65",
+  "services": 40,
+  "source_cutoff": "2026-09-24",
+  "synthetic_questions": true,
+  "tones": {
+    "angry": 30,
+    "colloquial": 62,
+    "hurried": 29,
+    "polite": 45,
+    "skeptical": 38
+  }
+}

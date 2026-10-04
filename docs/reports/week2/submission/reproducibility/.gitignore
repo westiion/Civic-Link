@@ -1,9 +1,0 @@
-.venv/
-runs/
-data/
-__pycache__/
-*.pyc
-.DS_Store
-.env
-.env.*
-!.env.example

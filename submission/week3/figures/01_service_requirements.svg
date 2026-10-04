@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="642" viewBox="0 0 1160 642">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#334155"/></marker></defs>
+<style>text{font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;fill:#0f172a}</style>
+<rect width="1160" height="642" fill="white"/>
+<text x="40" y="43" font-size="26" font-weight="700">Service → Document / Agency</text>
+<text x="40" y="78" font-size="14">실제 구축 관계. REQUIRES의 조건·대안은 원문과 함께 읽는다.</text>
+<text x="40" y="105" font-size="12" fill="#475569">DOMAIN LAYER · Directed NetworkX MultiDiGraph</text>
+<path d="M350 175 L417 175" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="347" y="120" font-size="12" font-weight="700">REQUIRES</text>
+<path d="M202 220 V275 H942 V228" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="515" y="265" font-size="12" font-weight="700">HANDLED_BY</text>
+<rect x="55" y="130" width="295" height="90" rx="12" fill="#dbeafe" stroke="#94a3b8"/>
+<text x="70" y="155" font-weight="700">Service</text>
+<text x="70" y="179" font-size="14">주민등록표 등본</text>
+<rect x="425" y="130" width="295" height="90" rx="12" fill="#fef3c7" stroke="#94a3b8"/>
+<text x="440" y="155" font-weight="700">Document</text>
+<text x="440" y="179" font-size="14">위임장</text>
+<rect x="795" y="130" width="295" height="90" rx="12" fill="#d1fae5" stroke="#94a3b8"/>
+<text x="810" y="155" font-weight="700">Agency</text>
+<text x="810" y="179" font-size="14">시군구 및 읍면동 출장소</text>
+<path d="M575 280 V312" stroke="#94a3b8" stroke-dasharray="5 5"/>
+<text x="40" y="330" font-size="13">EVIDENCE LAYER → SQLite document_id / chunk_id / exact source span</text>
+<rect x="40" y="345" width="1080" height="110" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="60" y="372" font-weight="700">REQUIRES · EDGE-32e472844df15eef1c47</text>
+<text x="60" y="396" font-size="12">G004 · DOC-39d8d4ed529804eda5dc-C0004</text>
+<text x="60" y="423" font-size="15">2. 대리인이 신청하는 경우 / 위임장(주민등록법 시행규칙 별지 제9호서식) 제출</text>
+<path d="M55 335 V345" stroke="#94a3b8" stroke-dasharray="4 4"/>
+<rect x="40" y="471" width="1080" height="110" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="60" y="498" font-weight="700">HANDLED_BY · EDGE-244fd794bc1d54458269</text>
+<text x="60" y="522" font-size="12">G004 · DOC-39d8d4ed529804eda5dc-C0003</text>
+<text x="60" y="549" font-size="15">접수 시군구 및 읍면동 출장소</text>
+<path d="M55 461 V471" stroke="#94a3b8" stroke-dasharray="4 4"/>
+<text x="40" y="622" font-size="12">Frozen source snapshot · Machine extracted · Human review pending · Arrows do not imply eligibility</text>
+</svg>

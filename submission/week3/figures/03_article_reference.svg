@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="642" viewBox="0 0 1160 642">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#334155"/></marker></defs>
+<style>text{font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;fill:#0f172a}</style>
+<rect width="1160" height="642" fill="white"/>
+<text x="40" y="43" font-size="26" font-weight="700">Service → Article → Article</text>
+<text x="40" y="78" font-size="14">실제 구축된 조항 간 참조. domain hop = 2.</text>
+<text x="40" y="105" font-size="12" fill="#475569">DOMAIN LAYER · Directed NetworkX MultiDiGraph</text>
+<path d="M350 175 L417 175" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="347" y="120" font-size="12" font-weight="700">GROUNDED_BY</text>
+<path d="M720 175 L787 175" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="717" y="120" font-size="12" font-weight="700">REFERENCES</text>
+<rect x="55" y="130" width="295" height="90" rx="12" fill="#dbeafe" stroke="#94a3b8"/>
+<text x="70" y="155" font-weight="700">Service</text>
+<text x="70" y="179" font-size="14">토지대장 등본</text>
+<rect x="425" y="130" width="295" height="90" rx="12" fill="#ede9fe" stroke="#94a3b8"/>
+<text x="440" y="155" font-weight="700">Article</text>
+<text x="440" y="179" font-size="14">제74조(지적공부 및 부동산종합공부의</text>
+<text x="440" y="201" font-size="14">열람ㆍ발급 등)</text>
+<rect x="795" y="130" width="295" height="90" rx="12" fill="#ede9fe" stroke="#94a3b8"/>
+<text x="810" y="155" font-weight="700">Article</text>
+<text x="810" y="179" font-size="14">제11조(건축물대장 등본ㆍ초본의 발급 및</text>
+<text x="810" y="201" font-size="14">열람)</text>
+<path d="M575 280 V312" stroke="#94a3b8" stroke-dasharray="5 5"/>
+<text x="40" y="330" font-size="13">EVIDENCE LAYER → SQLite document_id / chunk_id / exact source span</text>
+<rect x="40" y="345" width="1080" height="110" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="60" y="372" font-weight="700">GROUNDED_BY · EDGE-ad0c4064c05b6f2f1c56</text>
+<text x="60" y="396" font-size="12">G006 · DOC-3c9a4dc9b54c2aa875ae-C0004</text>
+<text x="60" y="423" font-size="15">공간정보의 구축 및 관리 등에 관한 법률 시행규칙 (제74조</text>
+<path d="M71 335 V345" stroke="#94a3b8" stroke-dasharray="4 4"/>
+<rect x="40" y="471" width="1080" height="110" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="60" y="498" font-weight="700">REFERENCES · EDGE-962363931a75c1b5b65d</text>
+<text x="60" y="522" font-size="12">L공간정보의 구축 및 관리 등에 관한 법률 시행규칙 · DOC-7dd66acbfce8a405c80a-C0083</text>
+<text x="60" y="549" font-size="15">「건축물대장의 기재 및 관리 등에 관한 규칙」 제11조</text>
+<path d="M71 461 V471" stroke="#94a3b8" stroke-dasharray="4 4"/>
+<text x="40" y="622" font-size="12">Frozen source snapshot · Machine extracted · Human review pending · Arrows do not imply eligibility</text>
+</svg>

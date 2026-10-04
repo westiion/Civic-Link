@@ -1,0 +1,117 @@
+{
+  "abstain": 10,
+  "adapter_sha256": "11f7d1ce2b464ed89febc89b3bb243716f204c99dc7f58a56420dbfc944d8690",
+  "answerability_classifier": null,
+  "answerable_denominator": 177,
+  "clarify": 17,
+  "completed_at": "2026-10-02T12:11:25.886005+00:00",
+  "corpus_fingerprint": "c8b3b854cae6eb47408c84b71380c7d02d910387e87362bd016d216e684438be",
+  "corpus_hash": "e55238fddf3882dd3dab97cce5faa8c6b136f2dd89934cc3ff2f445abda59863",
+  "database_identity": "physical snapshots differ; corpus services/documents/document_services/chunks share the exact logical fingerprint",
+  "dataset_id": "week3-sujeong-development-v2-f26de58d3c68",
+  "document_cache_validation": {
+    "backend": "numpy_float64_exact",
+    "chunks": 6768,
+    "dimension": 4096,
+    "input_hashes_and_vectors_validated": true,
+    "new_document_embeddings": 0
+  },
+  "evaluation_adapter_sha256": "cbc30a2f6252461fe121f3dcc483b3b98ce15a1a587939a6d0001570ac3789c5",
+  "frozen_inputs_unchanged": true,
+  "generation": null,
+  "graph_settings": {
+    "max_hops": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "max_nodes": 12000,
+    "seed_k": 3,
+    "seed_threshold": 0.18,
+    "top_k": 10
+  },
+  "judge": null,
+  "latency_comparison": "not_reported; query cache reused across methods",
+  "local_evaluation_view_defaults": {
+    "abstention_basis": [],
+    "challenge_tags": [],
+    "document_hops": null,
+    "unanswerable_reason": null
+  },
+  "packaged_database_sha256": "324b4c9f735339b942007ae14835f538680efd74cd2525319a562369bcf00f56",
+  "producer_receipts": {
+    "aggregate_manifest_sha256": "43c5f1622c677fa80fe961be18c55cefa9b3b233afb9ace5bdb9c058332eaf23",
+    "graph_run_manifest_sha256": "7bdcba34d2fb73f307b0d1d7c3f2653de42228344acc257ada75ae50d5c4925e",
+    "summary_sha256": "6a52d0988a290e13b054296567dea92e288e0f231dbbd05d30667b2860227e96",
+    "verification_sha256": "42d4d1502aec82b228ee6e93b4de8f1d0b6289e22a3171e2ddd3b86645b97ae8"
+  },
+  "public_projection": {
+    "method_count": 7,
+    "prediction_rows": 1428,
+    "predictions_sha256": "6d6ab39fdede8571fba706e8721fa133dd0bf975a517ded2749eb40e39b236bb",
+    "preserved_fields": [
+      "question",
+      "gold_answer",
+      "gold_rubric",
+      "action_rubric",
+      "evidence_requirements"
+    ],
+    "queries_sha256": "86b9d3c55e12d42d595d237b9a3bbeb90435a3295a3aa02cbff7deee0be199ec",
+    "questions_sha256": "7fa858bef73296c5d7f2977907b24d9afc676a113ad38378027b7a6176d2ac65"
+  },
+  "query_count": 204,
+  "query_embedding_cache_count": 204,
+  "query_embedding_cache_packaged": false,
+  "query_embedding_cache_sha256": "1761812b96d301719b1392b67ed0a317f5b8ca94c8eb3498054440a003d3be75",
+  "query_embedding_requests_this_execution": 161,
+  "query_embedding_reuses": 247,
+  "raw_prediction_sha256": {
+    "bm25": "8b033a2a9ac21b55596944625cac42ccd25e72a6d3d06c14fbbc600edb62700e",
+    "dense": "bbb10d5b6ed4044908e133a82009ab37c94e1c75a587db6be76f8c8e3345af89",
+    "graph_h0": "e18ea0a77b45ad7d3601c21cdf4eb8ad8f27385a2605600d26e5837e8e1f1bac",
+    "graph_h1": "5793dfa759691319761221382ba990eaba822afcc59bc8886ec891b8c6016837",
+    "graph_h2": "8449802e95df61b81ce3f033c1c5a7739493e73147a703d96517c1a91e113aee",
+    "graph_h3": "63db36f17997d164ed56d2de2f4ee04b68e098b17d9f120c99ad75f0798acff4",
+    "hybrid": "565898eb101e52c7e9920a44fd310de0867bcda2794252707198e730e0449ff7"
+  },
+  "settings": {
+    "bm25_b": 0.75,
+    "bm25_k1": 1.2,
+    "candidate_k": 100,
+    "dense_input_format": "qwen3-vl",
+    "dense_model": "Qwen3-VL-Embedding-8B",
+    "dimension": 4096,
+    "document_prefix": "",
+    "graph_hops": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "graph_max_nodes": 12000,
+    "graph_seed_k": 3,
+    "graph_seed_threshold": 0.18,
+    "input_truncation": false,
+    "query_prefix": "",
+    "rrf_constant": 60,
+    "rrf_equal_weights": true,
+    "tokenizer": "words+Hangul bigrams",
+    "top_k": 10
+  },
+  "source_sha256": {
+    "benchmark/catalog/citizen_queries.jsonl": "86b9d3c55e12d42d595d237b9a3bbeb90435a3295a3aa02cbff7deee0be199ec",
+    "benchmark/catalog/citizen_questions.jsonl": "986f63c8661f935b3840ed4ea5058efdc6650536f5926aee3bd56048c86d4a02",
+    "data/processed/civic.sqlite": "b7220616cf9660fcc6d74e4dc968c777a73991e1b5685ef5583feed465d82b9e",
+    "data/processed/graph.evidence.json": "51f8213fe029afe082afdcd28fb89e55ca7423f9ff6abf23907958634c2d7fcf",
+    "data/processed/graph.json": "cdb90ef04ed06eb9d1888c1564cd3d0f2da193b8efe3cb0236728810336457dd",
+    "data/services.jsonl": "906342745767d5e4efecccf1514922fa1a12910fd425ea424d259284bdebaac4",
+    "scripts/civic_data.py": "a0bf23ba907f4e9de8dd2695eeee5c2b73848eb2b06573924b34c1082775f539",
+    "scripts/graph_construct.py": "6d1286acab52389b7d859950bea0313a5062f6529c889f18747312a2c48b5ba2",
+    "scripts/graph_retrieval.py": "4599aa7906a8f3cef63811f605d99fc4141e6b1ccb248953625e1d36d5877b09",
+    "scripts/retrieval.py": "ea4ebee9535a63a0adffc568e8eee826aad84d423d899eddd245ea63b57dc16a",
+    "scripts/tokenization.py": "0964313c9e4f42d0fc4d266409591afa60bb640ab8a39498db8a9a13a9a18eb3"
+  },
+  "started_at": "2026-10-02T12:10:53.261742+00:00",
+  "status": "completed"
+}

@@ -1,0 +1,914 @@
+{
+  "documents": [
+    {
+      "alias": "L기초연금법 시행규칙",
+      "content_hash": "f02aa0a9e08884ecf6ec2f0b62829c806e2569a68887179ce689ae66de6037cf",
+      "document_id": "DOC-0367f7311cd5083e23c5",
+      "raw_hash": "aa6aeedc7ca1b46f742c4d39ae93fa124f029052e59f31641aada6cd62f6c6ca",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/기초연금법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=287361&efYd=20260730&chrClsCd=010202",
+      "title": "기초연금법 시행규칙"
+    },
+    {
+      "alias": "L부동산 가격공시에 관한 법률",
+      "content_hash": "ab5d56d97c212de8b583e48c2c8b652387ebb13250f7b26e443136b08efe25e9",
+      "document_id": "DOC-04639a675f05bbeb9337",
+      "raw_hash": "60ce7c59563bcef3eb6f292732d30a5700aaf87d9d70ac6f8ef955ee9a1f61cb",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/부동산 가격공시에 관한 법률.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=219361&efYd=20201210&chrClsCd=010202",
+      "title": "부동산 가격공시에 관한 법률"
+    },
+    {
+      "alias": "L어디서나 민원처리제 운영지침",
+      "content_hash": "932868951e0cd1f76d1f705a2d402ffa067c63f66c7298025a8e3854da26a476",
+      "document_id": "DOC-0bc8b49ddec6cb5e3095",
+      "raw_hash": "ffe449f8cb52c9546145aeb621ddc39063c7276de48933e6e4144a75e51a4b78",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/어디서나 민원처리제 운영지침.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000249132&admRulId=29521&joTpYn=Y&languageType=KO&chrClsCd=010202",
+      "title": "어디서나 민원처리제 운영지침"
+    },
+    {
+      "alias": "L주민등록법",
+      "content_hash": "0065f5f65afdc16e317b42a2c67d9571ae8c22e306ca6ed9fc8b7b7744fca2c1",
+      "document_id": "DOC-0bce286b4d09b5ab71f3",
+      "raw_hash": "196b588cfee99db0273b904574f621e819744dae5b46835ccfd28c307f651636",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/주민등록법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=268555&efYd=20250722&chrClsCd=010202",
+      "title": "주민등록법"
+    },
+    {
+      "alias": "L국세징수법",
+      "content_hash": "690fe9ed4ca855ba1c1945519073e26e57600f686ecf25d0e43d4000823194fa",
+      "document_id": "DOC-0e23b2c7491675b140e2",
+      "raw_hash": "afbede68857249f176a5ae557fc7188801fc4d77a1777a3b2b0e1c0ded2f3bb8",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/국세징수법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=286427&efYd=20260602&chrClsCd=010202",
+      "title": "국세징수법"
+    },
+    {
+      "alias": "L지방세징수법 시행규칙",
+      "content_hash": "1e43e77c376641f0b1147643fb4d4a30d7a4a0b111c28ab3dc08d8c3de1b4685",
+      "document_id": "DOC-15e9fca796dfe97d3e5d",
+      "raw_hash": "fac0aa8704db0c52b148615e6c5af3358877ae3cf977184a01bb2f50a9059cc8",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/지방세징수법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283319&efYd=20260701&chrClsCd=010202",
+      "title": "지방세징수법 시행규칙"
+    },
+    {
+      "alias": "L국립학교의 각종 증명 발급 등에 관한 규칙",
+      "content_hash": "0d63653ae82b0ab6b0bfd681c50b1c07e257fffea8314df6cb701f10f69fc08b",
+      "document_id": "DOC-1849adadfa8cb7a5fc40",
+      "raw_hash": "9e96934c076c4b3222053695f04fc7ffc37751ed97f732514e95c7f1fb95ba41",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/국립학교의 각종 증명 발급 등에 관한 규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=249913&efYd=20230412&chrClsCd=010202",
+      "title": "국립학교의 각종 증명 발급 등에 관한 규칙"
+    },
+    {
+      "alias": "L부동산등기규칙",
+      "content_hash": "880c0361d8956581ea13cb9906cb3457e4dd57cbb0b0b76a7f05604b28da825c",
+      "document_id": "DOC-18f6f40305b24d39f78f",
+      "raw_hash": "5585dfcc4ec5987220692541007cba9f4147e6ea7988b5141e9faa6ac80beb1a",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/부동산등기규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=266847&efYd=20250801&chrClsCd=010202",
+      "title": "부동산등기규칙"
+    },
+    {
+      "alias": "L국세청민원사무처리규정",
+      "content_hash": "3237c07ddf390bc2fea361e4ce9a4ffbbdc86c9c9ddeb21ba380a96c4cd8c87c",
+      "document_id": "DOC-1bac55fd50fbfb130cff",
+      "raw_hash": "ee42cf6bbf1a8e90b5b04371c456579718d52f5b17f141a93e98825f12f936be",
+      "raw_path": "data/raw/2026-09-26/nts.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000263130&joTpYn=N&languageType=KO&chrClsCd=010202",
+      "title": "국세청민원사무처리규정"
+    },
+    {
+      "alias": "L긴급복지지원법 시행령",
+      "content_hash": "ce2e522e1ad3e054d1f0a5064fe4602a9b975b39021f1878097827a3a0bd866c",
+      "document_id": "DOC-218d0a6bc8da3a9e1311",
+      "raw_hash": "a4825c663cf02d6da287e977c423ac5dac91bd247df80b330e2994608d8e3e79",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/긴급복지지원법 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=242023&efYd=20220503&chrClsCd=010202",
+      "title": "긴급복지지원법 시행령"
+    },
+    {
+      "alias": "L건축물대장의 기재 및 관리 등에 관한 규칙",
+      "content_hash": "a3fe0a6190149b44bf95385efc7fc3fc47594108d02b397c8ff7e7db1ae18c65",
+      "document_id": "DOC-22c2ce3fe80fa6fd72aa",
+      "raw_hash": "56378c806770daf193f0ddeafa07694df72d87b91387d77713572a94bb159978",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/건축물대장의 기재 및 관리 등에 관한 규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=273103&efYd=20250731&chrClsCd=010202",
+      "title": "건축물대장의 기재 및 관리 등에 관한 규칙"
+    },
+    {
+      "alias": "L장애인복지법 시행규칙",
+      "content_hash": "ceaed606f9925e2f37df3c79598f8f2ab5b148ceb6814309652cc2dae15883a9",
+      "document_id": "DOC-2355c2a072b252f23489",
+      "raw_hash": "49715882e98c151c555564681dca5a58259faa7bf01dd5b1638d2ee2858dc60b",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/장애인복지법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=282417&efYd=20260701&chrClsCd=010202",
+      "title": "장애인복지법 시행규칙"
+    },
+    {
+      "alias": "L지방세기본법 시행령",
+      "content_hash": "4cd371475a7e1abcb2e0e4f16671e501d9a4573efd2e9ce76d8adc139dcf3767",
+      "document_id": "DOC-26c8eb8c3408473cc8ed",
+      "raw_hash": "10f8b287294259f3ec107f0f65a00b5462404de37dde1095b31ecb95154ceb8b",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/지방세기본법 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=286471&efYd=20260701&chrClsCd=010202",
+      "title": "지방세기본법 시행령"
+    },
+    {
+      "alias": "C01",
+      "content_hash": "754153b9beb6b65ee53c59cb3948a88f6cb3c97ac044674eba27e0cedc80dee0",
+      "document_id": "DOC-281de2ad41a7f804021d",
+      "raw_hash": "39189433ce3573a71ca2097ee5ecfe6c48ef7527dcc048857666ea80583b7d4e",
+      "raw_path": "data/raw/2026-09-26/seongnam.html",
+      "source_type": "municipal_table",
+      "source_url": "https://www.seongnam.go.kr/cn020403",
+      "title": "성남시 무인민원발급 — 발급 민원과 본인확인"
+    },
+    {
+      "alias": "L인터넷에 의한 등기기록의 열람 등에 관한 업무처리지침",
+      "content_hash": "1d382224a9ddd09dacc724347ae0b48e5f4519a41c343339e7d1e360625131c0",
+      "document_id": "DOC-2a0de4d692fa78ee94b0",
+      "raw_hash": "11aceed5b2f656a01c50aa22530a18d058b0203b98ecd159a0628af5542038f1",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/인터넷에 의한 등기기록의 열람 등에 관한 업무처리지침.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2200000106133&admRulId=2111479&joTpYn=N&languageType=KO&chrClsCd=010202",
+      "title": "인터넷에 의한 등기기록의 열람 등에 관한 업무처리지침"
+    },
+    {
+      "alias": "G031",
+      "content_hash": "9a40115aca774bea2b0aae666cf908592a66cfd8a7fc92e363796a644adf6994",
+      "document_id": "DOC-2a23b15ef71cfab89662",
+      "raw_hash": "1822e3d66b5f5787fd770f975e8ff04f47edc031221f1fcddd5decd87eaf3639",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-031.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000329&HighCtgCD=",
+      "title": "부가가치세면세사업자수입금액증명 발급"
+    },
+    {
+      "alias": "G016",
+      "content_hash": "e8d5f4338fb43afbdd81c9dad90656d2c95913eb4db0a394ff7dd0c87f1568d5",
+      "document_id": "DOC-2a49056deef8f554ba00",
+      "raw_hash": "d9997ab1816af1172c70bd6550b8291ba25befdb4d4eb2264a951eb8c20debfb",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-016.html",
+      "source_type": "service_guide",
+      "source_url": "https://m.gov.kr/mw/AA020InfoCappView.do?CappBizCD=14600000280&Mcode=10020",
+      "title": "국민기초생활수급자 증명서 발급"
+    },
+    {
+      "alias": "G021",
+      "content_hash": "a1f01c462013e5e17698ac1f2eca873ae7a189fcf1a1f6e57505182256d85b04",
+      "document_id": "DOC-2a946aa97bd76df4af4e",
+      "raw_hash": "923f3fdcd4ebf3c2d997d1345b5b7daca1032aa16d8ddfd308470b17abb23f58",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-021.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000084",
+      "title": "지방세 세목별 과세증명서 발급"
+    },
+    {
+      "alias": "L주민등록법 시행령",
+      "content_hash": "e2f7ea86b55c0c304e2c35ae7fa8ab88e87394b7c1a5879aabc5b55a7db054aa",
+      "document_id": "DOC-2b7a1c10f4c40a304680",
+      "raw_hash": "d7e31d258d56174028849c3432ae4143cab3a8eb7772030dd3c8039c1fe05592",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/주민등록법 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=285733&efYd=20260428&chrClsCd=010202",
+      "title": "주민등록법 시행령"
+    },
+    {
+      "alias": "G017",
+      "content_hash": "ccc28603b34f6c92c1db796702a56def5a38fe0651c3218f1a3926a0f67c33bf",
+      "document_id": "DOC-30335fdd17932d9272fb",
+      "raw_hash": "338a6f4c90c864a4fa839e4e7c62c038d0ba2499c2d610e6c25a298c8dfa38c7",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-017.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=14600000273&HighCtgCD=A05001",
+      "title": "장애인증명서 발급"
+    },
+    {
+      "alias": "G027",
+      "content_hash": "d49b0ddc79f8a8219c72b1a4449ca5e0e0f8f7c80e637a6c9ff1c7dcb6c7c478",
+      "document_id": "DOC-30c13aa7ed0641989fb2",
+      "raw_hash": "2fb1f1541ace5bb11a360c173d6dfbf37a15bb185b643313b29bf59ecab95e27",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-027.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000018",
+      "title": "국세 납부내역증명 발급"
+    },
+    {
+      "alias": "L지적업무처리규정",
+      "content_hash": "4ede4939789dc36bcbf709a228426bcc5da77224c9917d249c5d5bcfd0a1110c",
+      "document_id": "DOC-352b2f0bca72db887752",
+      "raw_hash": "6d663ad7d8641d98db7405b3497788af84368ec5a9244a9463e5a6693ac3cbcb",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/지적업무처리규정.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000263422&admRulId=2043750&joTpYn=Y&languageType=KO&chrClsCd=010202",
+      "title": "지적업무처리규정"
+    },
+    {
+      "alias": "G004",
+      "content_hash": "cb35506afb4c860fbd868a54a30f9c704c2ec5025dfbf6543b8f872e0af8b846",
+      "document_id": "DOC-39d8d4ed529804eda5dc",
+      "raw_hash": "4f697517de838b52b6c10d2b0683a51d31f37590b6c4179e4cf66bce949348ba",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-004.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000015&HighCtgCD=A01010001&Mcode=1020&tp_seq=01",
+      "title": "주민등록표 등본(초본) 발급"
+    },
+    {
+      "alias": "G036",
+      "content_hash": "292893fd961f081f34c02e1c7d6cdf2b6ccc7dae428a7b5fc3d6efde6f664448",
+      "document_id": "DOC-39fcd61c7c866d5bf770",
+      "raw_hash": "8482684df8adb067c187b1b3fbda26e38b104d3cf87c0569a22abc50f924128f",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-036.html",
+      "source_type": "service_guide",
+      "source_url": "https://m.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13000000016",
+      "title": "병적증명서 발급"
+    },
+    {
+      "alias": "L지방세징수법",
+      "content_hash": "8ef3a1c41ade65f694c73e9935efd5a2b6b3bb0ffeebcc1d08c78370a31a34a0",
+      "document_id": "DOC-3aff11611b27b7ac7bf1",
+      "raw_hash": "ca2a4eabbc81a507dfd747340f92f5b9751d9d5d5fdf8a57abb104176556e9e5",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/지방세징수법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283259&efYd=20260205&chrClsCd=010202",
+      "title": "지방세징수법"
+    },
+    {
+      "alias": "G006",
+      "content_hash": "30fc50931128166ca766634b25ea31202c10b83df121bdf64a9c28fb7b31eb3a",
+      "document_id": "DOC-3c9a4dc9b54c2aa875ae",
+      "raw_hash": "98101b2c7e6f0730d135f2ad540f73f58480bf7935e7a974e92db78adad78c91",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-006.html",
+      "source_type": "service_guide",
+      "source_url": "https://m.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000026&HighCtgCD=A02001001&Mcode=10207&tp_seq=01",
+      "title": "토지(임야)대장 등본 발급(열람)"
+    },
+    {
+      "alias": "G044",
+      "content_hash": "a4d5009975713dc5e72c9598fd470d5a4ac20590af20d769b5cefe94db3b58be",
+      "document_id": "DOC-3d836bae6e4c1e777653",
+      "raw_hash": "e5d78f23fe24955a9aa97f724b6728abff28594b126141a98ee5c09050be0a94",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-044.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000021",
+      "title": "소득금액증명 발급"
+    },
+    {
+      "alias": "L건축법 시행령",
+      "content_hash": "9d6a7330d5003b61afd190ee4615bf4416553cae317cd509ed32b883d1419444",
+      "document_id": "DOC-3eb2efc83aac8fa45822",
+      "raw_hash": "1af859283a429cb138c3a328a89bfb87601081685944a858ff158a0c22a2156f",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/건축법 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=288849&efYd=20260918&chrClsCd=010202",
+      "title": "건축법 시행령"
+    },
+    {
+      "alias": "L국민기초생활 보장법 시행규칙",
+      "content_hash": "54f3ea10207e2524dd08ce75e39dd294266ac022b151a2e8f791204af96c3003",
+      "document_id": "DOC-3f9c0b8ace31b269c5eb",
+      "raw_hash": "48dc6ce1f5fc5ff135fab9fc49cb3eeb136f4f4ec846a30fdbadeafed2f9ae28",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/국민기초생활 보장법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=269175&efYd=20250321&chrClsCd=010202",
+      "title": "국민기초생활 보장법 시행규칙"
+    },
+    {
+      "alias": "L한부모가족지원법",
+      "content_hash": "df9db68022d81ec9fbc64eba6a09d0ae87c791a88780bd8ee94c449078d82308",
+      "document_id": "DOC-42fa3f71b2f4e7db0cae",
+      "raw_hash": "047b57c63ef7b75c597175c598f78d51a4ea28464a1b9839c7f4430888a41584",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/한부모가족지원법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=266687&efYd=20251204&chrClsCd=010202",
+      "title": "한부모가족지원법"
+    },
+    {
+      "alias": "L민원 처리에 관한 법률",
+      "content_hash": "2933c841a849f33b192a813c8b3c54e6fe5b54bffcc27f5953180eeaf660bd7c",
+      "document_id": "DOC-47bbf4a18be5224eb47f",
+      "raw_hash": "088019cbcd07f4baa1c3881da0f7472cc81ec20a81d571611b3a82b3c005ab89",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/민원 처리에 관한 법률.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=239293&efYd=20220712&chrClsCd=010202",
+      "title": "민원 처리에 관한 법률"
+    },
+    {
+      "alias": "L주거급여법 시행규칙",
+      "content_hash": "3b4952b212929e856b053df021b5c4591099204c681edc4c56902a714ff12f4b",
+      "document_id": "DOC-47d7106e715511059973",
+      "raw_hash": "333986834f51529684d6d8e960d7ba8ac3b1e8a1e0f57386628a981aac3bb2d1",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/주거급여법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=178495&efYd=20151229&chrClsCd=010202",
+      "title": "주거급여법 시행규칙"
+    },
+    {
+      "alias": "L민법",
+      "content_hash": "945efc9b3262ce3e58833b34b9ba1589200d8ec783f4ed66bd5d8b9e00b55aa5",
+      "document_id": "DOC-4b5b1b8c3bb4076587ae",
+      "raw_hash": "105ffa52f22366db948a3b5b75c485483ad11be8de700601c9b584236be8328d",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/민법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=284415&efYd=20260317&chrClsCd=010202",
+      "title": "민법"
+    },
+    {
+      "alias": "L한부모가족지원법 시행규칙",
+      "content_hash": "623f1c37d74eea1e65f57d0d7bfa6f8c4d480e22c56d1670251fb0b51fd7cf6c",
+      "document_id": "DOC-4e2d18cc919e8ddfaf1f",
+      "raw_hash": "27b4a2a0b6f34fbf5508be643ba9adf32c2d4b90fd8a43585e9ea393fcf9f8af",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/한부모가족지원법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=278861&efYd=20251001&chrClsCd=010202",
+      "title": "한부모가족지원법 시행규칙"
+    },
+    {
+      "alias": "L2026년 한부모가족 지원대상자의 범위",
+      "content_hash": "9f42de48aa4be7de617af1adc6422653a6fa1e2947f3248977cf6323cc86b1c6",
+      "document_id": "DOC-4ef7d17acb09c0861017",
+      "raw_hash": "e9c7eccc8ae7a373f00c810fb453f59ab3b07065930c91c28adbdaddc84abf70",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/2026년 한부모가족 지원대상자의 범위.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000270856&admRulId=2045426&joTpYn=N&languageType=KO&chrClsCd=010202",
+      "title": "2026년 한부모가족 지원대상자의 범위"
+    },
+    {
+      "alias": "L민원 처리에 관한 법률 시행령",
+      "content_hash": "2858ba7bfe7150509592e42cb915951e120d22845665be188bfbcf3eb2872490",
+      "document_id": "DOC-5203497c9029e9024eb1",
+      "raw_hash": "0919d0c1b8e0b21fdaca064bf444c26fdc70d8fc7d74c0186ef9792cc375b425",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/민원 처리에 관한 법률 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=285815&efYd=20260506&chrClsCd=010202",
+      "title": "민원 처리에 관한 법률 시행령"
+    },
+    {
+      "alias": "G047",
+      "content_hash": "832a599649c0f9cd0c32194a66bd589e15598e9f1f6ebfebecd2a20bd720100e",
+      "document_id": "DOC-548d1af6db790c226d40",
+      "raw_hash": "5025a08f5f6deb0d39da8f9617e64191a8940ec466452a9aa5ecedab2e02fc35",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-047.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=15000000334",
+      "title": "자동차 등록원부등본(초본) 발급(열람)"
+    },
+    {
+      "alias": "L병역법 시행규칙",
+      "content_hash": "499ff98c7e8c1b162c8da2967fb60d510d98fbaf3e1619d72a4b7a76ba23ce7f",
+      "document_id": "DOC-56afd5a704c32e6e372f",
+      "raw_hash": "2e86b4b5cebd8dcd038f4ec2703b0a07360ec97c4ca067e6b528d7fe2f4d0813",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/병역법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=272775&efYd=20260101&chrClsCd=010202",
+      "title": "병역법 시행규칙"
+    },
+    {
+      "alias": "L성남시 제증명 등 수수료 징수 조례",
+      "content_hash": "96e9b34073ceb5e66c0689af46113cc056eb3837458f4bd9b6202545fe2c1ae3",
+      "document_id": "DOC-59f6a165ab818e6e89d7",
+      "raw_hash": "6aa3ab317da7aa3fee696ce1ddf122d7291c7cfea4d8a2e48816fe79a517cedf",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/성남시 제증명 등 수수료 징수 조례.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2126623&ordinId=2146203&chrClsCd=010202&gubun=ELIS",
+      "title": "성남시 제증명 등 수수료 징수 조례"
+    },
+    {
+      "alias": "G035",
+      "content_hash": "ab4736a3c4c34a8fbe4106aab85641fe50d7aaa22d76c5286922d218ded70fbd",
+      "document_id": "DOC-5c740ae86068722ab26f",
+      "raw_hash": "13cbbcb30bc47e4e01b32c5f066379f979e8205afd04772e67886ccfde641d8e",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-035.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13404000021&HighCtgCD=A04001&Mcode=10020&srhQuery=2022&tp_seq=02",
+      "title": "검정고시 합격증명"
+    },
+    {
+      "alias": "G026",
+      "content_hash": "13f949da6adba722821ee88a0de8a124a43209aa0ea3bdc64312526680d1d945",
+      "document_id": "DOC-5d0e1bfb8332bbf12a07",
+      "raw_hash": "1100b8b20a4564ec3315e4b461355a943a1ad5ffc47aba182ee4852f9658418b",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-026.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000011",
+      "title": "납세증명서 발급"
+    },
+    {
+      "alias": "L긴급복지지원법",
+      "content_hash": "9cfc179312363e6e244b7f924dd9f76d267e7b24b8e219287a808c6833291504",
+      "document_id": "DOC-6a0b34f7fc81d71c704d",
+      "raw_hash": "f73791f5a92475b09017d2dc30666bd90f91824c4dbc7d746d69608d3f904a31",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/긴급복지지원법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=270789&efYd=20251023&chrClsCd=010202",
+      "title": "긴급복지지원법"
+    },
+    {
+      "alias": "L기초연금법",
+      "content_hash": "40b1c5d476af7cc4bf1603faca5bb1b72c401af1b27d7c57b246f0ebfa6869b8",
+      "document_id": "DOC-7220f05039bffecff5ab",
+      "raw_hash": "08e840982a974ed4250e7eb6fd4206287f5b9fe2f564dc1983f638504e641ec3",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/기초연금법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=276657&efYd=20251001&chrClsCd=010202",
+      "title": "기초연금법"
+    },
+    {
+      "alias": "L가족관계의 등록 등에 관한 규칙",
+      "content_hash": "5dbe83f1bce48469db5955f3cf8ac2c65926fc732db441a58e81327410a106e0",
+      "document_id": "DOC-74fb8e3f4207ccfdb0ce",
+      "raw_hash": "e85f9f867b762733714af49e339f82be00cf34961e46ef14973d6b99e8a94c91",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/가족관계의 등록 등에 관한 규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=272659&efYd=20250719&chrClsCd=010202",
+      "title": "가족관계의 등록 등에 관한 규칙"
+    },
+    {
+      "alias": "L국민기초생활 보장법 시행령",
+      "content_hash": "9b07b9ebe72c0ab6f90518a536a1247b9cc2bb309b326b9d852378852600d061",
+      "document_id": "DOC-771ac250fd34e3dd4b86",
+      "raw_hash": "f71d2bcffe17861dd4650a5c0d0dc6d8245bcb99050218e924ebeb7db7746c64",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/국민기초생활 보장법 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=281585&efYd=20260102&chrClsCd=010202",
+      "title": "국민기초생활 보장법 시행령"
+    },
+    {
+      "alias": "L농지법 시행규칙",
+      "content_hash": "bc0dd2f054844d6fc98680f01f2847897a48692a281e38a3f7b3ba09bd75cc84",
+      "document_id": "DOC-77537f21d30b22e85119",
+      "raw_hash": "a55026dfca756a619308d8a43b597c8f95e87367d7f864606d36d05c8e292134",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/농지법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=289987&efYd=20260922&chrClsCd=010202",
+      "title": "농지법 시행규칙"
+    },
+    {
+      "alias": "G024",
+      "content_hash": "194ae73f80637f6bf1cd540ea19178cf4e187e86814a84d253a1efbc78945242",
+      "document_id": "DOC-777d3a3655239e31dc63",
+      "raw_hash": "ff6fa45b5319834fb77bb9956e7c13063b8b694afb2c7dea096d07e6fb10cc2c",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-024.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000017",
+      "title": "휴업사실증명 발급"
+    },
+    {
+      "alias": "L병적증명서 발급 규정",
+      "content_hash": "5310a72e02a4c5f647b463689ac4b15cd433bed8c0239685299a0aff0117c9f5",
+      "document_id": "DOC-7b131b062187951fed06",
+      "raw_hash": "49910dd69ddc395915aa1bbf1bf07353038358f8ebd555cd9730f73023cbb763",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/병적증명서 발급 규정.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000269680&admRulId=36857&joTpYn=Y&languageType=KO&chrClsCd=010202",
+      "title": "병적증명서 발급 규정"
+    },
+    {
+      "alias": "L공간정보의 구축 및 관리 등에 관한 법률 시행규칙",
+      "content_hash": "a4ef5bdb5c6f194954f76fd05dd42dfc889f514b66db33d952a8a574136bcfef",
+      "document_id": "DOC-7dd66acbfce8a405c80a",
+      "raw_hash": "a785ebeca407060fe9df68fb5fa6d7b5a5e54fcd521c5595a11e2e4264a0b08e",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/공간정보의 구축 및 관리 등에 관한 법률 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=282377&efYd=20260102&chrClsCd=010202",
+      "title": "공간정보의 구축 및 관리 등에 관한 법률 시행규칙"
+    },
+    {
+      "alias": "L전자정부법",
+      "content_hash": "b6dca324105497d4a609147ffff414c4446cd25c1783fe990fa5fface243a9f5",
+      "document_id": "DOC-816242f2445459308151",
+      "raw_hash": "609300de3ff60e8e88dd2b94e4802fbc1df99102529e979a8a16a163e9e4212d",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/전자정부법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283701&efYd=20260828&chrClsCd=010202",
+      "title": "전자정부법"
+    },
+    {
+      "alias": "G015",
+      "content_hash": "2d18483f538512e75f1d47381e7b5390bceb925354c9538291104082aefc0760",
+      "document_id": "DOC-82895ba5797cd44b7aa6",
+      "raw_hash": "56de99a0ff98bd58af3f630912e32d87ea885982c13aa8dc5e280a447f972a5d",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-015.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12700000044",
+      "title": "제적부의 등본(초본) 발급"
+    },
+    {
+      "alias": "L부동산 가격공시에 관한 법률 시행규칙",
+      "content_hash": "35e3724d90b9d5c7af2cdb13a9d07610435c244563e7ff2029a9d4e561ab0cd4",
+      "document_id": "DOC-88b0924bedf69040118c",
+      "raw_hash": "ffabee268019405c6abe0949092b2b8ad1576496c68e7804af96e0d505190181",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/부동산 가격공시에 관한 법률 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=241621&efYd=20220330&chrClsCd=010202",
+      "title": "부동산 가격공시에 관한 법률 시행규칙"
+    },
+    {
+      "alias": "G034",
+      "content_hash": "1332204e3a5dab88c0d76d0332bb32b2d631b5d1a1b28890631fdb59cbe974eb",
+      "document_id": "DOC-8fd38e261e1a36f252c1",
+      "raw_hash": "3af5833aea6998831991b5b16d3d522ed6ac67eecab0b2e9f783ae31ad8ae247",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-034.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13410000019",
+      "title": "유치원 및 초중등학교 학교(유치원)생활기록부 증명"
+    },
+    {
+      "alias": "L자동차관리법",
+      "content_hash": "1e1b13bf4246c2a2fcb09183b1220158398f56bfa1a5a5c846070484f52348f4",
+      "document_id": "DOC-944dbd1ef329386ef4d2",
+      "raw_hash": "405b46cb9d99d7ec3e4bd660a970a98a59b4e71fa9fdf26d8094a755a2fef526",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/자동차관리법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=286989&efYd=20260616&chrClsCd=010202",
+      "title": "자동차관리법"
+    },
+    {
+      "alias": "L주민등록법 시행규칙",
+      "content_hash": "6349e286689509934c64bcd5f9249ea63130af926012aa75131633035fb8551d",
+      "document_id": "DOC-94d2d947b2ae45bdf8f9",
+      "raw_hash": "a46cf7ed5109ce00676d573cd06fa7dcd6314aec1e3bf00a8f6c611064894627",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/주민등록법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=285757&efYd=20260428&chrClsCd=010202",
+      "title": "주민등록법 시행규칙"
+    },
+    {
+      "alias": "L국민기초생활 보장법",
+      "content_hash": "58af84af6bff965e098958a11ebd13d7db216be024536172fd4e4542df36cda2",
+      "document_id": "DOC-9a267ca0017b1b6b6230",
+      "raw_hash": "9b7ef810fbfeba0c4fc93b99fefb66d0a0e15a641ecdaca77a2ff429e729675a",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/국민기초생활 보장법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=276653&efYd=20251001&chrClsCd=010202",
+      "title": "국민기초생활 보장법"
+    },
+    {
+      "alias": "L주거급여법",
+      "content_hash": "42b396bb59658c51e9510aa4c39659974e78495f1f96220f001f62f28ea0f6b8",
+      "document_id": "DOC-9b83eab3c2398a4079e3",
+      "raw_hash": "9a635d37749c1296dfbbc4e6f4e5213dd0c4b81eba8506344044fa1c5021ebac",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/주거급여법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=250087&efYd=20231019&chrClsCd=010202",
+      "title": "주거급여법"
+    },
+    {
+      "alias": "G010",
+      "content_hash": "fce74b01c94df9b61a0f75d27c185dac5c418600f8800339985bfde0618f04a7",
+      "document_id": "DOC-9d40cfbe681f6a61d0f5",
+      "raw_hash": "7c307bdd14ea8ac690fe55d83b53789b87b4d82aa17e2d837694fb9dd48e3218",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-010.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=15000000012",
+      "title": "개별공시지가 확인"
+    },
+    {
+      "alias": "L토지이용규제 기본법 시행령",
+      "content_hash": "30db47c4a439ae081a042d21cf77f02767673dd9cea085f4deeba7d2a72d49cc",
+      "document_id": "DOC-9e85b56672d02884958b",
+      "raw_hash": "835b21ee487bd27c35a5e4b5057ae892877179d144bbdefb60212f0ba49b8ad4",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/토지이용규제 기본법 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=281297&efYd=20260102&chrClsCd=010202",
+      "title": "토지이용규제 기본법 시행령"
+    },
+    {
+      "alias": "L부동산등기법",
+      "content_hash": "e82fc267e9a9947571328c5b598d7434e4dd313655b94468b770c12db38bdf1d",
+      "document_id": "DOC-a11b600332a323f57dac",
+      "raw_hash": "62f1de3a5d1dd3483aba70ed1d9ec90f7df2fe4fdbeb58034981e99c9cf2b853",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/부동산등기법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=265377&efYd=20250131&chrClsCd=010202",
+      "title": "부동산등기법"
+    },
+    {
+      "alias": "L부동산등기사항증명서 발급처리지침",
+      "content_hash": "5dd1ac22a6cc81afcc9ab8a2f83ddf92148851b33e2eb20b70cb0e43cef5511d",
+      "document_id": "DOC-a715748fecf818f55bb2",
+      "raw_hash": "547687f0fb4ba7b06136bcc3e9e64de2e44226b19e22403c686e662ebfded079",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/부동산등기사항증명서 발급처리지침.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2200000106175&admRulId=2111627&joTpYn=N&languageType=KO&chrClsCd=010202",
+      "title": "부동산등기사항증명서 발급처리지침"
+    },
+    {
+      "alias": "L지방세기본법",
+      "content_hash": "6208164767753da9d69b42f60cc3d2eb3d04bf9e96d7fb79720d1e96d3acd583",
+      "document_id": "DOC-a7d44f2d899ad9c51df0",
+      "raw_hash": "795bc8251ff3b6dbaffee646c489c29f39afdccf697c6f3717490b161681d601",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/지방세기본법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283257&efYd=20260205&chrClsCd=010202",
+      "title": "지방세기본법"
+    },
+    {
+      "alias": "L공간정보의 구축 및 관리 등에 관한 법률",
+      "content_hash": "c7c372462e95bc2646cac8dcf3e8bfd13740ae19d66e82f8d8e09b5da6e8dba0",
+      "document_id": "DOC-ac5cf746a35c897c782a",
+      "raw_hash": "2d9e13d75bd3b558eec1c380ee00929f9f304e77b3b42265abcbb1dfb627cdbf",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/공간정보의 구축 및 관리 등에 관한 법률.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=284007&efYd=20260701&chrClsCd=010202",
+      "title": "공간정보의 구축 및 관리 등에 관한 법률"
+    },
+    {
+      "alias": "L학교생활기록 작성 및 관리지침",
+      "content_hash": "ad16b9910eca64b3b91ef21e23d860d86789fe0362b270f8e058ee16000e9d52",
+      "document_id": "DOC-af813830e2ed898e9bc4",
+      "raw_hash": "9de18cff1856ce056f463851405760e3c7dbc4d1b4be0b0accb8de86c827cc96",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/학교생활기록 작성 및 관리지침.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000274694&admRulId=37596&joTpYn=Y&languageType=KO&chrClsCd=010202",
+      "title": "학교생활기록 작성 및 관리지침"
+    },
+    {
+      "alias": "G022",
+      "content_hash": "c596463e6400d574d521ef7e97e9c08c8a0457836dcacbd30a185c56e0616863",
+      "document_id": "DOC-b03c8e7d1701192d2c31",
+      "raw_hash": "f9026813a4d533f73408b774c39a99dd559c10f46accbc027d12c4ca59af6f0f",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-022.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000056",
+      "title": "지방세 납세증명서 발급"
+    },
+    {
+      "alias": "L등기사항증명서 등 수수료규칙",
+      "content_hash": "fe5cdd40ad4071e51eb0f2b63ba3ff29095a285b0e959459dc0636c16030e991",
+      "document_id": "DOC-b14699311da9992af62d",
+      "raw_hash": "26d01aca46df23e46edd79dd18695b021ae9ffdc8b81e1970d4d9a1a41bc484c",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/등기사항증명서 등 수수료규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=272961&efYd=20250801&chrClsCd=010202",
+      "title": "등기사항증명서 등 수수료규칙"
+    },
+    {
+      "alias": "L지방세징수법 시행령",
+      "content_hash": "27947214850c414fd9d3d49c068132d921c5fdd4ef260adc1d8f597b6134eb2f",
+      "document_id": "DOC-b4bfc7fa2dfef1e9cbb7",
+      "raw_hash": "4c1ad7f07168e912a3e2cb70dbbf888e1ebab3492d2e34e10c6d08194a7f95ac",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/지방세징수법 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283265&efYd=20260205&chrClsCd=010202",
+      "title": "지방세징수법 시행령"
+    },
+    {
+      "alias": "L건축법",
+      "content_hash": "8b896a40a11eca87008e1def61ba6724c2222cae0e56c6590aed6c3e8435de95",
+      "document_id": "DOC-b4eef702855d4c43e25f",
+      "raw_hash": "fa38df3049c5b9506468836a69f4735b5511c1516053efdf5b704e9bdfaf6e69",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/건축법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=273437&efYd=20260227&chrClsCd=010202",
+      "title": "건축법"
+    },
+    {
+      "alias": "G037",
+      "content_hash": "8dcfb0554e6f0b82b074e6b74680e7624e57db193db56752ac5b1a33cae9c163",
+      "document_id": "DOC-b5161f1f3a0895f30ba6",
+      "raw_hash": "fb3b210f4c3cca6bd53b383580b53b2322d0f1a45a84ca18c590b4430596d426",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-037.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13800000014",
+      "title": "농지대장 등본발급"
+    },
+    {
+      "alias": "G032",
+      "content_hash": "1a155c92e70276a4c893dcddf49628698bcfc062e286d58e8bd2e5c1b8a387f4",
+      "document_id": "DOC-b64fd7f88810deae9614",
+      "raw_hash": "5c596927a660b2824d539a39e2fc49995882bbcbdc76e420c903e13168970716",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-032.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13410000020&HighCtgCD=A04001%3BA04007&tp_seq=01",
+      "title": "유치원 및 초중등학교 졸업(예정)증명"
+    },
+    {
+      "alias": "G045",
+      "content_hash": "6d3a848b6b24ae8651035672ead474b237d29ebea96f75143c9c101870e567f0",
+      "document_id": "DOC-be756aa1db8d8d996322",
+      "raw_hash": "fc6ecf415879792891acc583d80b8f9d680d042e7f539d6ade15dfab4d09d9ce",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-045.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=15000000098",
+      "title": "건축물대장 등본(초본) 발급(열람)"
+    },
+    {
+      "alias": "L지방세기본법 시행규칙",
+      "content_hash": "199acb4295666f9cf2da93f1db5bb5e7a2f8a4a16ad5216645f89a8242af7813",
+      "document_id": "DOC-c0617e515b9fe8adbdfc",
+      "raw_hash": "eea0114c723608af7a4330e12f600a072b2d7c034ffeda182ca228be0a5d96dc",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/지방세기본법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=286871&efYd=20260701&chrClsCd=010202",
+      "title": "지방세기본법 시행규칙"
+    },
+    {
+      "alias": "L토지이용규제 기본법",
+      "content_hash": "18f556f18a978ce80bceb09dd78e5beb5cbd75ed711decfbc2b0a746b4ee36e0",
+      "document_id": "DOC-c2aa8fd59454b5176581",
+      "raw_hash": "610dc783751197e2a456827677b2952ba38e5bbd5fc7060daa299f62d33416d1",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/토지이용규제 기본법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283679&efYd=20260227&chrClsCd=010202",
+      "title": "토지이용규제 기본법"
+    },
+    {
+      "alias": "L토지이용규제 기본법 시행규칙",
+      "content_hash": "b3c9f9a4506fe452af019b9aa0886ec99155bdcafaae18cb4a670b88b8bf6dfa",
+      "document_id": "DOC-c5f7df84fe3566fe8cbb",
+      "raw_hash": "b1c2de1e88fce2fd88502a1b3dcdd0e86f8e4fa7ab81f3fa01c7a960cf0e9e6d",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/토지이용규제 기본법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=241603&efYd=20220330&chrClsCd=010202",
+      "title": "토지이용규제 기본법 시행규칙"
+    },
+    {
+      "alias": "G043",
+      "content_hash": "3d14497d4a703516e9f88ddda329dc2f4831f90e49c77220d8e6e02342c1553f",
+      "document_id": "DOC-c7893c1844e1be3be60a",
+      "raw_hash": "a57c026f7c45715eb7513c6e21419c9f0b652807a3c1dc6b34d12fc82afdc6da",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-043.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=15000000013",
+      "title": "토지이용계획확인신청"
+    },
+    {
+      "alias": "L농지법 시행령",
+      "content_hash": "5287392817e9dc4dca5e2718d106b7cd0c2c75236d59685ffc32762fef5c10d2",
+      "document_id": "DOC-c81c879733f4b5770f12",
+      "raw_hash": "625566ea22db535b36e5c7d29ea695436e7667499e350784d4b6ced43255d0c6",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/농지법 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=288811&efYd=20260918&chrClsCd=010202",
+      "title": "농지법 시행령"
+    },
+    {
+      "alias": "L부동산 가격공시에 관한 법률 시행령",
+      "content_hash": "4444e5222be621e48a1326d01846205eaa59807429c50e129724e942b141003c",
+      "document_id": "DOC-c87009578ecd84b26cc0",
+      "raw_hash": "0d629f7e12005b53222fdd389776b26bcc7e15ff44c666108cf1826cf27ebf9f",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/부동산 가격공시에 관한 법률 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=281273&efYd=20260102&chrClsCd=010202",
+      "title": "부동산 가격공시에 관한 법률 시행령"
+    },
+    {
+      "alias": "L가족관계의 등록 등에 관한 법률",
+      "content_hash": "3716cc9c1c3c344c55cd8a6ce2ec9afa7de5069659936133f80377e9d4f2cdcb",
+      "document_id": "DOC-c95ed190ec5caede9cf4",
+      "raw_hash": "e05e75ed87905f1c2d5e9298d3aa6fecb1cf6c718ac73c4d7cdfc25f6b481d7d",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/가족관계의 등록 등에 관한 법률.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+      "title": "가족관계의 등록 등에 관한 법률"
+    },
+    {
+      "alias": "L국세징수법 시행규칙",
+      "content_hash": "93173ea4fa79f81a923d0751fd89d6d570890599af0c9b88520c17d7d9084f72",
+      "document_id": "DOC-cc0ad9184d88739f5eb5",
+      "raw_hash": "24c2ca45683f398191e4c4fa75e95e598f8a9f455d7f0de876601d3914866127",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/국세징수법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=284983&efYd=20260320&chrClsCd=010202",
+      "title": "국세징수법 시행규칙"
+    },
+    {
+      "alias": "L초ㆍ중등교육법 시행규칙",
+      "content_hash": "c46dd72be7310b1d87af9a790a01f8cb853e33b4d2f02cd2bd3f6b54fc546965",
+      "document_id": "DOC-d15a14f555bc020d4009",
+      "raw_hash": "de3975093e981754c706604914202d588b68794dba51f64a972926a11bd5a681",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/초ㆍ중등교육법 시행규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=284493&efYd=20260311&chrClsCd=010202",
+      "title": "초ㆍ중등교육법 시행규칙"
+    },
+    {
+      "alias": "L국세징수법 시행령",
+      "content_hash": "bf3b8fa4b65a7c78908f362961c557d4e92c00bfd3c65b3f5b1196fa19f2e0d6",
+      "document_id": "DOC-d35458f6c6235f826aff",
+      "raw_hash": "6766ee685118f36c8d95abac674307e60f8cab5465bdd2c237f736fb6691d472",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/국세징수법 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283487&efYd=20260227&chrClsCd=010202",
+      "title": "국세징수법 시행령"
+    },
+    {
+      "alias": "G033",
+      "content_hash": "a2dc0c038ab16dbcb850ef6c6229759a9f4cd6e5d09a1ff393d5d39852edc2ec",
+      "document_id": "DOC-d43c279e80df507520a9",
+      "raw_hash": "125f98caa569960a3b40a65ac7284009e49dce1f5cc83b6962b9f5e9f27c0f85",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-033.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13410000016&tp_seq=02",
+      "title": "중등학교 성적증명"
+    },
+    {
+      "alias": "L부가가치세법",
+      "content_hash": "70f750c29fd6b40950e7d33fd488d695f50f6273c950e5f01725e3e9a9c06032",
+      "document_id": "DOC-e04bfd7e12c2013e2dcd",
+      "raw_hash": "2c85d60882cca6260bad11b411fe8610a97fb628a2bafbdbb0bc1734887c5336",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/부가가치세법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=276117&efYd=20260102&chrClsCd=010202",
+      "title": "부가가치세법"
+    },
+    {
+      "alias": "L소득세법",
+      "content_hash": "6fcbe119777632033db4f7e7529b502e2d82273bd2dc97dd9850d83f7aa15900",
+      "document_id": "DOC-e61b1f594618d79b7640",
+      "raw_hash": "7dfed5a065c849709490a7233b37a4352abc096b977df0f18c4005bcd6c11400",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/소득세법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=280405&efYd=20260701&chrClsCd=010202",
+      "title": "소득세법"
+    },
+    {
+      "alias": "G025",
+      "content_hash": "3daa4221d6f1c409b6510dfc4be3321f9b4d7e21050389f8dcb7b175c8473d22",
+      "document_id": "DOC-e86265e53821e68b3f2b",
+      "raw_hash": "66e043764ea2155fbc076fc5faa056094597011a3fb51b342a5115364355ce4f",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-025.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000019",
+      "title": "폐업사실증명 발급"
+    },
+    {
+      "alias": "L자동차등록규칙",
+      "content_hash": "92f27b2e2a7a1cf326b75ad9451e0b347bc4410fbfc93a4f8cbbbcd8b9410192",
+      "document_id": "DOC-f4607f6b0c91ba7baabe",
+      "raw_hash": "08299211a91e0d45e28928543b04704e141da58e2c3b54d2d1a31d5db502fb8c",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/자동차등록규칙.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=286693&efYd=20260603&chrClsCd=010202",
+      "title": "자동차등록규칙"
+    },
+    {
+      "alias": "L기초연금법 시행령",
+      "content_hash": "0568f4efbbbb093f29d279695f05c734e1c33be65d5c3713b8f3c93e76484cf3",
+      "document_id": "DOC-f8f8c1de46fbe5059f00",
+      "raw_hash": "01e4f9225cfc2b34f265eab992fb2ebfb7788a3876f648dfaa095f090e6c4f35",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/기초연금법 시행령.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=286645&efYd=20260730&chrClsCd=010202",
+      "title": "기초연금법 시행령"
+    },
+    {
+      "alias": "G030",
+      "content_hash": "0d36fd242fc1bdc5bb9326a152882cd12a36a8346ec4e85b218e6ddab86b0965",
+      "document_id": "DOC-f953d1314ec8e985e85e",
+      "raw_hash": "acb0c5c78335409f586abb0a6b07f25d9a86628a8337b1995880cff7d0fbf978",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-030.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000331",
+      "title": "부가가치세과세표준증명 발급"
+    },
+    {
+      "alias": "G018",
+      "content_hash": "b925b446dda2524745ee0661c369235f3e3dcfe6cb33aec5bb697f91919f9f34",
+      "document_id": "DOC-f9dcd12fbc59d6391d4d",
+      "raw_hash": "73446debe8794c22fa4ad7bba5f1f9d4a09b4df87ebb82c864785d35f4c80b3e",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-018.html",
+      "source_type": "service_guide",
+      "source_url": "https://m.gov.kr/mw/AA020InfoCappView.do?CappBizCD=10601000001",
+      "title": "한부모가족 증명서 발급"
+    },
+    {
+      "alias": "L농지법",
+      "content_hash": "1834ddf6a8726838e9f3e5c20e623efdc8db5e027c5db4756c76783fa5581f62",
+      "document_id": "DOC-fa21bbedb574a1cd3b7a",
+      "raw_hash": "0211d2cf83f20c9b3eb7b0a11ea1856233515d2e1816ce6d9da4c679dbd3f4fe",
+      "raw_path": "data/graphability-audit/2026-09-24/laws/농지법.html",
+      "source_type": "law",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=284301&efYd=20260918&chrClsCd=010202",
+      "title": "농지법"
+    },
+    {
+      "alias": "G023",
+      "content_hash": "fc27dfc023eb1e2f561af97e1892e9797b76ab0f901048c128dbc284909ef766",
+      "document_id": "DOC-fc954c629018cc3f99ec",
+      "raw_hash": "8ad3308b66dc72daf956fe706fafdb18aef4c928115a3676ba8b8eb99b3ee3d0",
+      "raw_path": "data/graphability-audit/2026-09-24/sources/source-023.html",
+      "source_type": "service_guide",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000016",
+      "title": "사업자등록증명 발급"
+    }
+  ]
+}

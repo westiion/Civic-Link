@@ -1,0 +1,40 @@
+{"service_id": "SJ-SVC-001", "name": "주민등록표 등본", "category": "주민등록", "entry_source_id": "D01", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G004"}
+{"service_id": "SJ-SVC-002", "name": "주민등록표 초본", "category": "주민등록", "entry_source_id": "D01", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G004"}
+{"service_id": "SJ-SVC-003", "name": "토지대장 등본", "category": "토지·건축·부동산", "entry_source_id": "D02", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G006"}
+{"service_id": "SJ-SVC-004", "name": "임야대장 등본", "category": "토지·건축·부동산", "entry_source_id": "D02", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G006"}
+{"service_id": "SJ-SVC-005", "name": "토지이용계획확인서", "category": "토지·건축·부동산", "entry_source_id": "D03", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G043"}
+{"service_id": "SJ-SVC-006", "name": "건축물대장 등·초본", "category": "토지·건축·부동산", "entry_source_id": "D04", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G045"}
+{"service_id": "SJ-SVC-007", "name": "개별공시지가확인서", "category": "토지·건축·부동산", "entry_source_id": "D05", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G010"}
+{"service_id": "SJ-SVC-008", "name": "부동산 등기사항증명서", "category": "토지·건축·부동산", "entry_source_id": "D06", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "L부동산등기법"}
+{"service_id": "SJ-SVC-009", "name": "자동차등록원부 갑부", "category": "자동차", "entry_source_id": "D07", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G047"}
+{"service_id": "SJ-SVC-010", "name": "자동차등록원부 을부", "category": "자동차", "entry_source_id": "D07", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G047"}
+{"service_id": "SJ-SVC-011", "name": "가족관계증명서", "category": "가족관계·제적", "entry_source_id": "D08", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "L가족관계의 등록 등에 관한 법률"}
+{"service_id": "SJ-SVC-012", "name": "기본증명서", "category": "가족관계·제적", "entry_source_id": "D08", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "L가족관계의 등록 등에 관한 법률"}
+{"service_id": "SJ-SVC-013", "name": "혼인관계증명서", "category": "가족관계·제적", "entry_source_id": "D08", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "L가족관계의 등록 등에 관한 법률"}
+{"service_id": "SJ-SVC-014", "name": "입양관계증명서", "category": "가족관계·제적", "entry_source_id": "D08", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "L가족관계의 등록 등에 관한 법률"}
+{"service_id": "SJ-SVC-015", "name": "제적등본", "category": "가족관계·제적", "entry_source_id": "D09", "max_document_hops": 3, "audit_classification": "multi-hop", "entry_alias": "G015"}
+{"service_id": "SJ-SVC-016", "name": "제적초본", "category": "가족관계·제적", "entry_source_id": "D09", "max_document_hops": 3, "audit_classification": "multi-hop", "entry_alias": "G015"}
+{"service_id": "SJ-SVC-017", "name": "국민기초생활수급자증명서", "category": "복지", "entry_source_id": "D10", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G016"}
+{"service_id": "SJ-SVC-018", "name": "장애인증명서", "category": "복지", "entry_source_id": "D11", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G017"}
+{"service_id": "SJ-SVC-019", "name": "한부모가족증명서", "category": "복지", "entry_source_id": "D12", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G018"}
+{"service_id": "SJ-SVC-020", "name": "지방세 세목별 과세증명서", "category": "지방세", "entry_source_id": "D13", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G021"}
+{"service_id": "SJ-SVC-021", "name": "지방세 납세증명서", "category": "지방세", "entry_source_id": "D14", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G022"}
+{"service_id": "SJ-SVC-022", "name": "사업자등록증명", "category": "국세·개인사업", "entry_source_id": "D15", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G023"}
+{"service_id": "SJ-SVC-023", "name": "휴업사실증명", "category": "국세·개인사업", "entry_source_id": "D16", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G024"}
+{"service_id": "SJ-SVC-024", "name": "폐업사실증명", "category": "국세·개인사업", "entry_source_id": "D17", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G025"}
+{"service_id": "SJ-SVC-025", "name": "국세 납세증명서", "category": "국세·개인사업", "entry_source_id": "D18", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G026"}
+{"service_id": "SJ-SVC-026", "name": "국세 납부내역증명", "category": "국세·개인사업", "entry_source_id": "D19", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G027"}
+{"service_id": "SJ-SVC-027", "name": "소득금액증명", "category": "국세·개인사업", "entry_source_id": "D20", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G044"}
+{"service_id": "SJ-SVC-028", "name": "부가가치세 과세표준증명", "category": "국세·개인사업", "entry_source_id": "D21", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G030"}
+{"service_id": "SJ-SVC-029", "name": "부가가치세 면세사업자 수입금액증명", "category": "국세·개인사업", "entry_source_id": "D22", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "G031"}
+{"service_id": "SJ-SVC-030", "name": "초·중·고 졸업증명", "category": "교육", "entry_source_id": "D23", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G032"}
+{"service_id": "SJ-SVC-031", "name": "초·중·고 졸업예정증명", "category": "교육", "entry_source_id": "D23", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G032"}
+{"service_id": "SJ-SVC-032", "name": "중·고 성적증명", "category": "교육", "entry_source_id": "D24", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G033"}
+{"service_id": "SJ-SVC-033", "name": "초·중·고 학교생활기록부", "category": "교육", "entry_source_id": "D25", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G034"}
+{"service_id": "SJ-SVC-034", "name": "검정고시 합격증명", "category": "교육", "entry_source_id": "D26", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G035"}
+{"service_id": "SJ-SVC-035", "name": "병적증명서", "category": "병역", "entry_source_id": "D27", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G036"}
+{"service_id": "SJ-SVC-036", "name": "농지대장 등본", "category": "농지", "entry_source_id": "D28", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "G037"}
+{"service_id": "SJ-SVC-037", "name": "생계급여 신청", "category": "복지", "entry_source_id": "D29", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "L국민기초생활 보장법"}
+{"service_id": "SJ-SVC-038", "name": "주거급여 신청", "category": "복지", "entry_source_id": "D30", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "L주거급여법"}
+{"service_id": "SJ-SVC-039", "name": "긴급복지 생계지원 요청", "category": "복지", "entry_source_id": "D31", "max_document_hops": 1, "audit_classification": "single-hop", "entry_alias": "L긴급복지지원법"}
+{"service_id": "SJ-SVC-040", "name": "기초연금 신청", "category": "복지", "entry_source_id": "D32", "max_document_hops": 2, "audit_classification": "multi-hop", "entry_alias": "L기초연금법"}
