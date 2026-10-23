@@ -12,6 +12,12 @@ def sha(path):
     with Path(path).open('rb') as f:
         return hashlib.file_digest(f,'sha256').hexdigest()
 
+def portable_sha(path):
+    path=Path(path)
+    if path.suffix.lower() in {'.md','.html','.svg','.json','.jsonl','.py','.txt'}:
+        return hashlib.sha256(path.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
+    return sha(path)
+
 def restore(root):
     root=Path(root).resolve();asset=json.loads(local_path(root,'submission_manifest.json').read_text())['corpus_asset']
     if 'parts' not in asset:return _restore(root,local_path(root,asset['path']))
@@ -89,7 +95,7 @@ def local_links(root):
 def preflight(root,manifest):
     for name,h in manifest['files'].items():
         p=local_path(root,name)
-        require(p.is_file() and sha(p)==h,'file hash mismatch: '+name)
+        require(p.is_file() and portable_sha(p)==h,'file hash mismatch: '+name)
     return manifest
 
 def verify_paths(g,ev,rows,max_hops,chunks):
@@ -323,7 +329,7 @@ def verify_documents(root,manifest):
         verify_hit_details(block,hit)
         zero_hop+=hit['graph_hops']==0;samples+=1
     require(samples==5 and zero_hop==2,'document retrieval sample coverage differs')
-    figures=list((root/'figures').glob('*.svg'));require(len(figures)==3,'three required subgraph figures missing')
+    figures=list((root/'week3/figures').glob('*.svg'));require(len(figures)==3,'three required subgraph figures missing')
     for p in figures:ET.parse(p)
     complete=verify_full_graph_tables(root,stored)
     return dict(core_documents=4,case_rows=204,method_metric_rows=7,query_type_rows=8,hop_metric_rows=4,retrieval_examples=samples,zero_hop_examples=zero_hop,figures=3,**complete)

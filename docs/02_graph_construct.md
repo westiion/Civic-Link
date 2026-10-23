@@ -99,7 +99,7 @@
 
 ## 실행
 
-Python 3.12와 NetworkX 3.4.2 환경에서 submission/week3를 현재 디렉터리로 사용한다.
+Python 3.12와 NetworkX 3.4.2 환경에서 저장소 루트를 현재 디렉터리로 사용한다.
 
 ```sh
 python3.12 -m venv .venv
