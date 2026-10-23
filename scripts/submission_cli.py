@@ -14,7 +14,7 @@ def decode_raw(data):
 
 def inspect(root,command,identifier=None):
     root=Path(root).resolve();m=preflight(root,json.loads(local_path(root,'submission_manifest.json').read_text()))
-    qs=read_jsonl(root/'questions.jsonl');services=read_jsonl(root/'data/services.jsonl')
+    qs=read_jsonl(root/'data/questions.jsonl');services=read_jsonl(root/'data/services.jsonl')
     if command=='questions':return qs
     if command=='services':return services
     if command=='inventory':return dict(counts=m['counts'],files=m['files'])

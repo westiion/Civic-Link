@@ -4232,7 +4232,7 @@ Graph 0: 미발견 · Graph 1: 전체 발견 · Graph 2: 전체 발견 · Graph 
 </details>
 
 
-전체 204문항의 질문·Gold는 [질문 목록](../questions.md), 7개 방법의 판정·누락 근거·문자 구간 회수율은 [JSONL](../results/current204/per_question.jsonl)과 [CSV](../results/current204/per_question.csv), 상위 10개 검색 결과의 발췌문·근거 인용·점수·경로는 [검색 결과](../results/current204/predictions.jsonl)에 있다. 짧게 표시한 질문·원문은 읽기용 축약이다. 재현 설정은 [실행 기록](../results/current204/run_manifest.json)과 [Graph 실행 기록](../results/current204/graph/run_manifest.json)을 따른다.
+전체 204문항의 질문·Gold는 [질문 목록](questions.md), 7개 방법의 판정·누락 근거·문자 구간 회수율은 [JSONL](../results/current204/per_question.jsonl)과 [CSV](../results/current204/per_question.csv), 상위 10개 검색 결과의 발췌문·근거 인용·점수·경로는 [검색 결과](../results/current204/predictions.jsonl)에 있다. 짧게 표시한 질문·원문은 읽기용 축약이다. 재현 설정은 [실행 기록](../results/current204/run_manifest.json)과 [Graph 실행 기록](../results/current204/graph/run_manifest.json)을 따른다.
 
 <a id="failure-storage"></a>
 

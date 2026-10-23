@@ -131,12 +131,12 @@ def verify_experiment(root,questions,chunks,graph,evidence):
     target=local_path(root,'results/current204');summary=json.loads((target/'summary.json').read_text())
     run=json.loads((target/'run_manifest.json').read_text());qs={q['question_id']:q for q in questions}
     require(summary['questions']==204 and summary['answerable_denominator']==177 and summary['diagnostic_only']==dict(clarify=17,abstain=10),'experiment denominator differs')
-    require(run['public_projection']['questions_sha256']==sha(root/'questions.jsonl') and run['public_projection']['queries_sha256']==sha(root/'queries.jsonl'),'public input fingerprint differs')
+    require(run['public_projection']['questions_sha256']==portable_sha(root/'data/questions.jsonl') and run['public_projection']['queries_sha256']==portable_sha(root/'data/queries.jsonl'),'public input fingerprint differs')
     require(run['packaged_database_sha256']==sha(root/'data/processed/civic.sqlite'),'packaged experiment corpus differs')
     require(run['corpus_fingerprint']==graph.graph['corpus_fingerprint'] and run['corpus_hash']==graph.graph['corpus_hash'],'experiment logical corpus fingerprint differs')
     for name in ('graph.json','graph.evidence.json'):
-        require(run['source_sha256']['data/processed/'+name]==sha(root/'data/processed'/name),'experiment Graph fingerprint differs')
-    require(run['public_projection']['predictions_sha256']==sha(target/'predictions.jsonl'),'prediction projection fingerprint differs')
+        require(run['source_sha256']['data/processed/'+name]==portable_sha(root/'data/processed'/name),'experiment Graph fingerprint differs')
+    require(run['public_projection']['predictions_sha256']==portable_sha(target/'predictions.jsonl'),'prediction projection fingerprint differs')
     require(summary['generation'] is None and summary['judge'] is None and run['answerability_classifier'] is None,'unexpected generated action evaluation')
     rows=read_jsonl(target/'predictions.jsonl');methods=list(summary['methods']);predictions={m:{} for m in methods};details=read_jsonl(target/'per_question.jsonl')
     require(set(methods)=={'bm25','dense','hybrid','graph_h0','graph_h1','graph_h2','graph_h3'},'method set differs')
@@ -279,12 +279,12 @@ def verify_full_graph_tables(root,stored):
 def verify_documents(root,manifest):
     import html
     import xml.etree.ElementTree as ET
-    expected={'01_graph_schema.md','02_graph_construct.md','03_graph_retrieval.md','04_fail_case_analysis.md'}
+    expected={'01_graph_schema.md','02_graph_construct.md','03_graph_retrieval.md','04_fail_case_analysis.md','questions.md'}
     require({str(p.relative_to(root/'docs')) for p in (root/'docs').rglob('*.md')}==expected,'assignment document set differs')
     retired={'docs/graph_schema.md','results/current204/REPORT.md','results/current204/QUESTION_ANALYSIS.md','results/current204/SUCCESS_DETAILS.md','results/current204/graph/GRAPH_DIAGNOSIS.md'}
     require(not retired.intersection(manifest['files']) and not any((root/n).exists() for n in retired),'retired document returned')
     require(manifest['experiment']['report']=='docs/04_fail_case_analysis.md','experiment report link differs')
-    require(json.loads((root/'dataset.json').read_text())['current_evaluation']['report']=='docs/04_fail_case_analysis.md','dataset report link differs')
+    require(json.loads((root/'data/dataset.json').read_text())['current_evaluation']['report']=='docs/04_fail_case_analysis.md','dataset report link differs')
     text=(root/'docs/04_fail_case_analysis.md').read_text()
     rows=read_jsonl(root/'results/current204/per_question.jsonl')
     ids=[qid.upper() for qid in re.findall(r'<a id="case-(sj-[a-z]-\d+)"></a>',text)]
@@ -337,9 +337,9 @@ def verify_documents(root,manifest):
 def verify(root=ROOT):
     root=Path(root).resolve();m=preflight(root,json.loads(local_path(root,'submission_manifest.json').read_text()))
     documentation=verify_documents(root,m)
-    links=local_links(root);db=restore(root);qs=read_jsonl(root/'questions.jsonl');ids={q['question_id'] for q in qs}
+    links=local_links(root);db=restore(root);qs=read_jsonl(root/'data/questions.jsonl');ids={q['question_id'] for q in qs}
     require(len(qs)==len(ids)==204,'question count or unique IDs differs')
-    require(read_jsonl(root/'queries.jsonl')==[dict(query_id=q['question_id'],question=q['question']) for q in qs],'query projection differs')
+    require(read_jsonl(root/'data/queries.jsonl')==[dict(query_id=q['question_id'],question=q['question']) for q in qs],'query projection differs')
     with connect(root/'data/questions.sqlite',True) as c:
         require(c.execute('PRAGMA integrity_check').fetchone()[0]=='ok','question database integrity')
         require(not c.execute('PRAGMA foreign_key_check').fetchall(),'question foreign keys')
@@ -366,7 +366,7 @@ def verify(root=ROOT):
         for r in c.execute('SELECT d.raw_path,d.raw_hash,r.payload FROM documents d JOIN raw_sources r USING(raw_hash)'):
             require(digest(r['payload'])==r['raw_hash']==sha(local_path(root,r['raw_path'])),'raw source differs')
     g,ev=load_graph(root/'data/processed/graph.json',db);graph=validate_graph(g,ev)
-    require(sha(root/'data/services.jsonl')==g.graph['registry_sha256'],'Graph registry fingerprint differs')
+    require(portable_sha(root/'data/services.jsonl')==g.graph['registry_sha256'],'Graph registry fingerprint differs')
     for name in m['files']:
         if not name.endswith('.py'):continue
         s=local_path(root,name).read_text();t=ast.parse(s)

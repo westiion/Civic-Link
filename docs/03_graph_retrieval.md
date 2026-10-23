@@ -357,23 +357,23 @@ Rank는 각 질문·검색 설정 안의 순위다. max_hops는 탐색 상한이
 
 ### 1. 제출서류와 처리기관
 
-![Service → Document / Agency](../figures/01_service_requirements.svg)
+![Service → Document / Agency](../week3/figures/01_service_requirements.svg)
 
 주민등록표 등본 서비스의 대리 신청 위임장과 원문에 적힌 접수기관 범주를 보여준다. REQUIRES의 조건·대안과 원문 전체를 함께 읽는다.
 
 ### 2. 민원 안내에서 조항과 소속 법령으로
 
-![Service → Article → Law](../figures/02_legal_grounding.svg)
+![Service → Article → Law](../week3/figures/02_legal_grounding.svg)
 
 주민등록표 등본 안내의 명시적 인용을 따라 주민등록법 시행규칙 제13조와 소속 법령에 연결한다.
 
 ### 3. 조항 사이의 명시적 참조
 
-![Service → Article → Article](../figures/03_article_reference.svg)
+![Service → Article → Article](../week3/figures/03_article_reference.svg)
 
 토지대장 서비스에서 공간정보 관련 시행규칙 제74조를 거쳐 건축물대장 규칙 제11조로 이어지는 실제 참조다. 현재 SJ-N-003의 관련 청크는 앞의 3위 예시이며, 대표 그림을 검색 성능 자체의 증거로 해석하지 않는다.
 
-[그림만 확대해서 보기](../figures/index.html) · [실패·부분·성공과 hop ablation](04_fail_case_analysis.md)
+[그림만 확대해서 보기](../week3/figures/index.html) · [실패·부분·성공과 hop ablation](04_fail_case_analysis.md)
 
 <a id="all-graph-results"></a>
 

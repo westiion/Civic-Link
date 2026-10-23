@@ -2,7 +2,7 @@
 
 [01 Graph Schema](../docs/01_graph_schema.md) · [02 Graph Construct](../docs/02_graph_construct.md) · [03 Graph Retrieval](../docs/03_graph_retrieval.md) · [04 Fail Case 분석](../docs/04_fail_case_analysis.md)
 
-[질문 204개](../questions.md) · [질문 데이터](../questions.jsonl) · [서비스 40개](../data/services.jsonl) · [관계 그림](figures/index.html)
+[질문 204개](../docs/questions.md) · [질문 데이터](../data/questions.jsonl) · [서비스 40개](../data/services.jsonl) · [관계 그림](figures/index.html)
 
 이 문서는 3주차에 확인한 상태와 결과를 남긴 기록이다. 이후 피드백에 따라 계속 수정되는 코드·데이터·문서는 저장소 루트에서 관리하고, 3주차에 별도로 제시한 그림만 이 폴더에 보존한다.
 
