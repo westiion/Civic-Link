@@ -53,3 +53,26 @@ python3.12 -m venv .venv
 ```
 
 Windows PowerShell에서는 가상환경의 Python 경로를 `.venv/Scripts/python.exe`로 바꾸면 됩니다.
+
+#### 전체 검색 실험
+
+BM25와 Graph는 로컬에서 실행되며, Dense와 Hybrid는 회사 VPN 및 임베딩 API 연결이 필요합니다. API 주소와 키는 저장소 파일에 기록하지 않고 PowerShell 환경변수로 설정합니다.
+
+```powershell
+$env:CIVIC_EMBEDDING_URL = "회사에서 전달받은 임베딩 API URL"
+$env:CIVIC_EMBEDDING_MODEL = "Qwen3-VL-Embedding-8B"
+# API 키가 필요한 서버에서만 설정
+$env:CIVIC_EMBEDDING_API_KEY = "발급받은 API 키"
+
+.\.venv\Scripts\python.exe scripts\run_models.py
+```
+
+실행 결과는 `results/runs/<실행시각>/`에 방법별 예측, 지표, 실패 사례와 실행 설정으로 저장됩니다. 현재 공유 기준 실행은 `results/runs/20261026_232637/`입니다.
+
+#### 개발 검증
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+.\.venv\Scripts\python.exe -m pytest tests
+.\.venv\Scripts\python.exe scripts\submission_cli.py verify
+```

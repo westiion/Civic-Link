@@ -17,13 +17,13 @@ def digest(value):
     return hashlib.sha256(value).hexdigest()
 
 def now(): return datetime.now(timezone.utc).isoformat()
-def read_jsonl(path): return [json.loads(x) for x in Path(path).read_text().splitlines() if x.strip()]
+def read_jsonl(path): return [json.loads(x) for x in Path(path).read_text(encoding='utf-8').splitlines() if x.strip()]
 def write_json(path,value):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
-    path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
+    path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 def write_jsonl(path,rows):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
-    path.write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in rows))
+    path.write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in rows),encoding='utf-8')
 def normalize(s):
     s=unicodedata.normalize('NFC',s).replace('\xa0',' ')
     return '\n'.join(re.sub(r'[ \t]+',' ',x).strip() for x in s.splitlines() if x.strip()).strip()
@@ -130,22 +130,22 @@ def effective_date_from_source(value, text):
 
 def archived_documents():
     docs=[];checks=[]
-    manifest=json.loads((ARCHIVE/'manifest.json').read_text())
+    manifest=json.loads((ARCHIVE/'manifest.json').read_text(encoding='utf-8'))
     for row in manifest['files']:
         p=ARCHIVE/row['path']
         if not p.exists() or digest(p.read_bytes())!=row['sha256']:raise ValueError('archive checksum mismatch: '+row['path'])
     for folder in ['sources','laws']:
         for meta_file in sorted((ARCHIVE/folder).glob('*.json')):
-            m=json.loads(meta_file.read_text());alias=('L'+m['law_name']) if folder=='laws' else 'G'+meta_file.stem[-3:]
+            m=json.loads(meta_file.read_text(encoding='utf-8'));alias=('L'+m['law_name']) if folder=='laws' else 'G'+meta_file.stem[-3:]
             raw=meta_file.with_suffix('.html');txt=meta_file.with_suffix('.txt')
             status='ok';reason=None
             if m.get('error') or not raw.exists() or not txt.exists():status='excluded';reason='acquisition_failed_or_missing_raw'
             elif folder=='sources' and 'gov.kr' not in urlparse(m.get('source_url','')).netloc:status='excluded';reason='auxiliary_or_legal_shell_replaced_by_full_law'
             elif '오류가 발생' in m.get('title',''):status='excluded';reason='error_page_http_200'
-            text=normalize(txt.read_text()) if txt.exists() else ''
+            text=normalize(txt.read_text(encoding='utf-8')) if txt.exists() else ''
             if folder=='laws':text=law_body(text)
             if folder=='sources' and status=='ok':
-                bf=meta_file.with_suffix('.body.txt');text=guide_body(bf.read_text() if bf.exists() else text)
+                bf=meta_file.with_suffix('.body.txt');text=guide_body(bf.read_text(encoding='utf-8') if bf.exists() else text)
                 if not text:status='excluded';reason='missing_service_body'
             ef=effective_date_from_source(m.get('effective_date'),text) if folder=='laws' else m.get('effective_date')
             if ef and ef>AS_OF:status='excluded';reason='future_effective_version'
@@ -158,7 +158,7 @@ def archived_documents():
     extra=ROOT/'data/raw/2026-09-26'
     if extra.exists():
         for mf in sorted(extra.glob('*.json')):
-            m=json.loads(mf.read_text());raw=extra/m['raw_filename'];p=HTMLText();p.feed(decode_html(raw.read_bytes()))
+            m=json.loads(mf.read_text(encoding='utf-8'));raw=extra/m['raw_filename'];p=HTMLText();p.feed(decode_html(raw.read_bytes()))
             checks.append({'alias':'L'+m['law_name'] if m.get('source_type')=='law' else 'C01','source_url':m['source_url'],'checked_at':m.get('last_checked_at',m['collected_at']),'http_status':m.get('http_status',200),'status':'ok','reason':None,'raw_hash':digest(raw.read_bytes())})
             if m.get('source_type')=='law':
                 name=m['law_name']
@@ -263,7 +263,7 @@ def build_database(output):
         for k,v in meta.items():c.execute('INSERT INTO metadata VALUES(?,?)',(k,json.dumps(v,ensure_ascii=False)))
         assert c.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
         assert not c.execute('PRAGMA foreign_key_check').fetchall()
-        report={**meta,'documents':len(docs),'chunks':len(allchunks),'tables':c.execute('SELECT count(*) FROM document_tables').fetchone()[0],'services':40,'excluded_acquisitions':[r for r in checks if r['status']!='ok'],'archive_files_verified':len(json.loads((ARCHIVE/'manifest.json').read_text())['files'])}
+        report={**meta,'documents':len(docs),'chunks':len(allchunks),'tables':c.execute('SELECT count(*) FROM document_tables').fetchone()[0],'services':40,'excluded_acquisitions':[r for r in checks if r['status']!='ok'],'archive_files_verified':len(json.loads((ARCHIVE/'manifest.json').read_text(encoding='utf-8'))['files'])}
     write_json(output.with_suffix('.build.json'),report);return report
 
 

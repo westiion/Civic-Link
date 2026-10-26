@@ -7,7 +7,7 @@
     "corpus_fingerprint": "c8b3b854cae6eb47408c84b71380c7d02d910387e87362bd016d216e684438be",
     "registry_sha256": "906342745767d5e4efecccf1514922fa1a12910fd425ea424d259284bdebaac4",
     "networkx_version": "3.4.2",
-    "builder_sha256": "83c719a0108ed6270487874170c3098dd5632e73760613281e2845a605116b1c",
+    "builder_sha256": "aefbd21ca1c9668f81736ebb00ba2f707c07f19c1a5ce30106d0ad608d6da59d",
     "unresolved_reference_count": 3022,
     "nodes_without_evidence": []
   },

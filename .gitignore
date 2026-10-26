@@ -1,7 +1,11 @@
 .venv/
+.env
+.env.*
 **/__pycache__/
 **/*.pyc
 data/processed/civic.sqlite*
+data/processed/query_embeddings.*.jsonl
+results/runs/verification-*/
 data/graphability-audit/
 data/raw/
 **/.restore-*

@@ -24,6 +24,31 @@ RELATIONS = {'REQUIRES': ('Service','Document'), 'HANDLED_BY': ('Service','Agenc
              'GROUNDED_BY': ('Service','Article'), 'PART_OF': ('Article','Law'),
              'REFERENCES': ('Article','Article')}
 
+SCOPED_SERVICE_ALIASES = (
+    dict(source_alias='C01', source_type='municipal_table', locator='표 1 행 25:',
+         category_value='가족관계등록', token='가족관계', service_id='SJ-SVC-011',
+         service_name='가족관계증명서'),
+    dict(source_alias='C01', source_type='municipal_table', locator='표 1 행 25:',
+         category_value='가족관계등록', token='기본증명', service_id='SJ-SVC-012',
+         service_name='기본증명서'),
+    dict(source_alias='C01', source_type='municipal_table', locator='표 1 행 25:',
+         category_value='가족관계등록', token='혼인관계', service_id='SJ-SVC-013',
+         service_name='혼인관계증명서'),
+    dict(source_alias='C01', source_type='municipal_table', locator='표 1 행 25:',
+         category_value='가족관계등록', token='입양관계', service_id='SJ-SVC-014',
+         service_name='입양관계증명서'),
+    dict(source_alias='C01', source_type='municipal_table', locator='표 1 행 5:',
+         category_value='토지·지적·건축', token='토지이용계획확인원', service_id='SJ-SVC-005',
+         service_name='토지이용계획확인서'),
+)
+
+SCOPED_NEGATIVE_STATEMENTS = (
+    dict(source_alias='G017', source_type='service_guide', service_id='SJ-SVC-018',
+         service_name='장애인증명서',
+         exact_statement='제출 서류\n민원인이 제출해야하는 서류\n국문 증명\n구비서류 없음\n',
+         condition='국문 증명', statement_polarity='negative'),
+)
+
 
 def compact(text): return re.sub(r'[^가-힣a-zA-Z0-9]', '', text).lower()
 def stable(prefix, *parts): return prefix+'-'+digest('\n'.join(parts))[:20]
@@ -44,6 +69,29 @@ def service_aliases(name):
     return sorted(x for x in values if x)
 
 
+def matches_scoped_service_alias(rule, service, document, chunk):
+    if (service['service_id'] != rule['service_id'] or service['name'] != rule['service_name'] or
+            document['alias'] != rule['source_alias'] or document['source_type'] != rule['source_type'] or
+            chunk['locator'] != rule['locator']):
+        return False
+    category = re.search(r'(?:^|:\s*)업무:\s*([^|]+)', chunk['text'])
+    cell = re.search(r'(?:^|\|\s*)민원증명:\s*([^|]+)', chunk['text'])
+    if not category or not cell or category.group(1).strip() != rule['category_value']:
+        return False
+    return rule['token'] in {token.strip() for token in cell.group(1).split(',')}
+
+
+def scoped_negative_span(rule, service, document):
+    if (service['service_id'] != rule['service_id'] or service['name'] != rule['service_name'] or
+            document['alias'] != rule['source_alias'] or document['source_type'] != rule['source_type']):
+        return None
+    starts = [m.start() for m in re.finditer(re.escape(rule['exact_statement']), document['body'])]
+    if len(starts) != 1:
+        return None
+    start = starts[0]
+    return start, start + len(rule['exact_statement'])
+
+
 class EvidenceBuilder:
     def __init__(self, docs, chunks, fingerprint):
         self.docs=docs; self.chunks=chunks
@@ -52,7 +100,7 @@ class EvidenceBuilder:
         self.data=dict(schema_version=VERSION,corpus_fingerprint=fingerprint,
                        records={},node_bindings={},edge_bindings={})
 
-    def span(self,did,start,end,rule,role='source_statement'):
+    def span(self,did,start,end,rule,role='source_statement',context=None):
         d=self.docs[did]; quote=d['body'][start:end]
         cs=sorted((c for c in self.by_doc[did] if c['start_char']<end and c['end_char']>start),key=lambda c:c['start_char'])
         covered=start
@@ -65,6 +113,7 @@ class EvidenceBuilder:
                     source_content_hash=d['content_hash'],effective_date=d['effective_date'],
                     collected_at=d['collected_at'],last_checked_at=d['last_checked_at'],
                     extraction_rule=rule,role=role,review_status='machine_extracted_pending_human_review')
+        if context is not None: record['semantic_context']=context
         eid=stable('EV',json.dumps(record,ensure_ascii=False,sort_keys=True))
         self.data['records'][eid]=record
         return eid
@@ -75,7 +124,7 @@ class EvidenceBuilder:
 
 
 def build_graph(db, registry):
-    services=read_jsonl(registry); registry_hash=digest(Path(registry).read_bytes())
+    services=read_jsonl(registry); registry_hash=digest(Path(registry).read_bytes().replace(b'\r\n',b'\n'))
     with connect(db,True) as c:
         docs={r['document_id']:dict(r) for r in c.execute('SELECT * FROM documents ORDER BY document_id')}
         chunks={r['chunk_id']:dict(r) for r in c.execute('SELECT * FROM chunks ORDER BY chunk_id')}
@@ -161,6 +210,14 @@ def build_graph(db, registry):
         sid=s['service_id']; d=docs[aliases[s['entry_alias']]]; did=d['document_id']
         if any(s[k]!=dbservices[sid][k] for k in ['name','category']):raise ValueError('registry identity mismatch')
         g.add_node(sid,type='Service',label=s['name'],category=s['category'],registry_sha256=registry_hash,aliases=service_aliases(s['name']),entry_source_document_id=did)
+
+        for rule in SCOPED_NEGATIVE_STATEMENTS:
+            span=scoped_negative_span(rule,s,d)
+            if span:
+                ev=eb.span(did,span[0],span[1],'scoped_negative_statement','service_context',
+                           context=dict(condition=rule['condition'],statement_polarity=rule['statement_polarity'],
+                                        meaning='source_statement_only_no_new_requires_edge'))
+                eb.bind('node',sid,[ev])
         for (src,loc),cs in sorted(sections.items()):
             if src!=did:continue
             if loc in ('서비스 개요','기본정보'):
@@ -205,8 +262,12 @@ def build_graph(db, registry):
             add_edge(sid,an,'HANDLED_BY',[ev],role=m.group(1),local_office_resolution='not_inferred')
 
         for ch in chunks.values():
-            if docs[ch['document_id']]['source_type']=='municipal_table' and any(name in ch['text'] for name in g.nodes[sid]['aliases']):
-                eb.bind('node',sid,[eb.span(ch['document_id'],ch['start_char'],min(ch['end_char'],ch['start_char']+200),'local_service_row','service_context')])
+            source=docs[ch['document_id']]
+            direct=source['source_type']=='municipal_table' and any(name in ch['text'] for name in g.nodes[sid]['aliases'])
+            scoped=any(matches_scoped_service_alias(rule,s,source,ch) for rule in SCOPED_SERVICE_ALIASES)
+            if direct or scoped:
+                extraction_rule='scoped_exact_cell_alias' if scoped and not direct else 'local_service_row'
+                eb.bind('node',sid,[eb.span(ch['document_id'],ch['start_char'],min(ch['end_char'],ch['start_char']+200),extraction_rule,'service_context')])
     g.graph['unresolved_reference_count']=len(unresolved)
 
     g.graph['nodes_without_evidence']=[n for n in g if n not in eb.data['node_bindings']]
@@ -260,13 +321,17 @@ def validate_graph(g,evidence,docs=None,chunks=None):
 
 
 def save_graph(g,evidence,path):
-    write_json(path,nx.node_link_data(g,edges='edges'))
+    try:data=nx.node_link_data(g,edges='edges')
+    except TypeError:data=nx.node_link_data(g,link='edges')
+    write_json(path,data)
     write_json(Path(path).with_suffix('.evidence.json'),evidence)
 
 
 def load_graph(path,db=None):
-    g=nx.node_link_graph(json.loads(Path(path).read_text()),edges='edges')
-    ev=json.loads(Path(path).with_suffix('.evidence.json').read_text())
+    data=json.loads(Path(path).read_text(encoding='utf-8'))
+    try:g=nx.node_link_graph(data,edges='edges')
+    except TypeError:g=nx.node_link_graph(data,link='edges')
+    ev=json.loads(Path(path).with_suffix('.evidence.json').read_text(encoding='utf-8'))
     if db:
         with connect(db,True) as c:
             if corpus_identity(c)!=g.graph['corpus_fingerprint']:raise ValueError('graph is stale for SQLite')

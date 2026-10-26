@@ -190143,6 +190143,24 @@
       "role": "source_statement",
       "review_status": "machine_extracted_pending_human_review"
     },
+    "EV-9a4503bcae4729fdb9bf": {
+      "source_document_id": "DOC-281de2ad41a7f804021d",
+      "source_alias": "C01",
+      "chunk_ids": [
+        "DOC-281de2ad41a7f804021d-C0003"
+      ],
+      "quote": "표 1 행 5: 업무: 토지·지적·건축 | 민원증명: 토지이용계획확인원 | 발급수수료 / 관내: 1,000원 | 발급수수료 / 관외: 1,000원\n",
+      "start_char": 286,
+      "end_char": 368,
+      "source_url": "https://www.seongnam.go.kr/cn020403",
+      "source_content_hash": "754153b9beb6b65ee53c59cb3948a88f6cb3c97ac044674eba27e0cedc80dee0",
+      "effective_date": null,
+      "collected_at": "2026-09-26T10:16:34.445130+00:00",
+      "last_checked_at": "2026-09-26T10:16:34.445130+00:00",
+      "extraction_rule": "scoped_exact_cell_alias",
+      "role": "service_context",
+      "review_status": "machine_extracted_pending_human_review"
+    },
     "EV-fe6714b961933590703b": {
       "source_document_id": "DOC-281de2ad41a7f804021d",
       "source_alias": "C01",
@@ -190827,6 +190845,24 @@
       "role": "service_mention",
       "review_status": "machine_extracted_pending_human_review"
     },
+    "EV-587b886c68fcdefcd911": {
+      "source_document_id": "DOC-281de2ad41a7f804021d",
+      "source_alias": "C01",
+      "chunk_ids": [
+        "DOC-281de2ad41a7f804021d-C0023"
+      ],
+      "quote": "표 1 행 25: 업무: 가족관계등록 | 민원증명: 가족관계, 기본증명, 혼인관계, 입양관계 | 발급수수료 / 관내: 500원 | 발급수수료 / 관외: 500원\n",
+      "start_char": 1934,
+      "end_char": 2024,
+      "source_url": "https://www.seongnam.go.kr/cn020403",
+      "source_content_hash": "754153b9beb6b65ee53c59cb3948a88f6cb3c97ac044674eba27e0cedc80dee0",
+      "effective_date": null,
+      "collected_at": "2026-09-26T10:16:34.445130+00:00",
+      "last_checked_at": "2026-09-26T10:16:34.445130+00:00",
+      "extraction_rule": "scoped_exact_cell_alias",
+      "role": "service_context",
+      "review_status": "machine_extracted_pending_human_review"
+    },
     "EV-c65ae16028db3eb4cce2": {
       "source_document_id": "DOC-c95ed190ec5caede9cf4",
       "source_alias": "L가족관계의 등록 등에 관한 법률",
@@ -191150,6 +191186,29 @@
       "extraction_rule": "guide_reception_processing",
       "role": "source_statement",
       "review_status": "machine_extracted_pending_human_review"
+    },
+    "EV-f57a5240c8ddbf6d0c51": {
+      "source_document_id": "DOC-30335fdd17932d9272fb",
+      "source_alias": "G017",
+      "chunk_ids": [
+        "DOC-30335fdd17932d9272fb-C0003"
+      ],
+      "quote": "제출 서류\n민원인이 제출해야하는 서류\n국문 증명\n구비서류 없음\n",
+      "start_char": 420,
+      "end_char": 455,
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=14600000273&HighCtgCD=A05001",
+      "source_content_hash": "ccc28603b34f6c92c1db796702a56def5a38fe0651c3218f1a3926a0f67c33bf",
+      "effective_date": null,
+      "collected_at": "2026-09-23T14:53:55.480204+00:00",
+      "last_checked_at": "2026-09-23T14:53:55.480204+00:00",
+      "extraction_rule": "scoped_negative_statement",
+      "role": "service_context",
+      "review_status": "machine_extracted_pending_human_review",
+      "semantic_context": {
+        "condition": "국문 증명",
+        "statement_polarity": "negative",
+        "meaning": "source_statement_only_no_new_requires_edge"
+      }
     },
     "EV-36036bf420f9136729e1": {
       "source_document_id": "DOC-30335fdd17932d9272fb",
@@ -215433,6 +215492,7 @@
     ],
     "SJ-SVC-005": [
       "EV-3c153946800045c70202",
+      "EV-9a4503bcae4729fdb9bf",
       "EV-b00720c792742200ebd0",
       "EV-f0f52c37d801c38d6497",
       "EV-fe6714b961933590703b"
@@ -215497,16 +215557,20 @@
       "EV-e212797c559de5bc0918"
     ],
     "SJ-SVC-011": [
+      "EV-587b886c68fcdefcd911",
       "EV-7367178662f0937d67df"
     ],
     "SJ-SVC-012": [
+      "EV-587b886c68fcdefcd911",
       "EV-c65ae16028db3eb4cce2"
     ],
     "SJ-SVC-013": [
+      "EV-587b886c68fcdefcd911",
       "EV-b708298e4e1105d410de"
     ],
     "SJ-SVC-014": [
       "EV-3210c1ad2aed596ea206",
+      "EV-587b886c68fcdefcd911",
       "EV-bfcb916b45fbd218fdd8"
     ],
     "SJ-SVC-015": [
@@ -215536,7 +215600,8 @@
     ],
     "SJ-SVC-018": [
       "EV-36036bf420f9136729e1",
-      "EV-e92d539f117c0dfa8d81"
+      "EV-e92d539f117c0dfa8d81",
+      "EV-f57a5240c8ddbf6d0c51"
     ],
     "SJ-SVC-019": [
       "EV-46cbb4d5a21c560b86b9",

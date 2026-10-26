@@ -13,7 +13,7 @@ def decode_raw(data):
     return dict(text=data.decode('utf-8',errors='replace'),encoding='utf-8')
 
 def inspect(root,command,identifier=None):
-    root=Path(root).resolve();m=preflight(root,json.loads(local_path(root,'submission_manifest.json').read_text()))
+    root=Path(root).resolve();m=preflight(root,json.loads(local_path(root,'submission_manifest.json').read_text(encoding='utf-8')))
     qs=read_jsonl(root/'data/questions.jsonl');services=read_jsonl(root/'data/services.jsonl')
     if command=='questions':return qs
     if command=='services':return services
@@ -26,9 +26,9 @@ def inspect(root,command,identifier=None):
         require(group is not None,'unknown family ID');return dict(group=group,questions=[q for q in qs if q['question_id'] in group['question_ids']])
     if command=='service':
         service=next((s for s in services if s['service_id']==identifier),None);require(service is not None,'unknown service ID')
-        graph=json.loads((root/'data/processed/graph.json').read_text())
+        graph=json.loads((root/'data/processed/graph.json').read_text(encoding='utf-8'))
         return dict(service=service,questions=[q for q in qs if identifier in q['service_ids']],relations=[e for e in graph['edges'] if identifier in (e['source'],e['target'])])
-    db=restore(root);ev=json.loads((root/'data/processed/graph.evidence.json').read_text())
+    db=restore(root);ev=json.loads((root/'data/processed/graph.evidence.json').read_text(encoding='utf-8'))
     if command=='evidence':
         require(identifier in ev['records'],'unknown evidence ID');return dict(evidence_id=identifier,record=ev['records'][identifier])
     with connect(db,True) as c:
