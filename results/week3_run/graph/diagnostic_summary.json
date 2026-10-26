@@ -1,0 +1,252 @@
+{
+  "current204": {
+    "questions": 204,
+    "hops": {
+      "0": {
+        "mean_candidates": 9.573529411764707,
+        "mean_nodes": 2.4215686274509802,
+        "mean_edges": 0.0,
+        "mean_evidence": 9.617647058823529,
+        "chunk_binding_occurrences": 2181,
+        "unique_chunks_per_query_total": 1953,
+        "truncated": 0,
+        "no_seeds": 12
+      },
+      "1": {
+        "mean_candidates": 20.245098039215687,
+        "mean_nodes": 16.602941176470587,
+        "mean_edges": 19.818627450980394,
+        "mean_evidence": 38.34803921568628,
+        "chunk_binding_occurrences": 13167,
+        "unique_chunks_per_query_total": 4130,
+        "truncated": 0,
+        "no_seeds": 12
+      },
+      "2": {
+        "mean_candidates": 27.186274509803923,
+        "mean_nodes": 22.676470588235293,
+        "mean_edges": 33.916666666666664,
+        "mean_evidence": 50.97549019607843,
+        "chunk_binding_occurrences": 18932,
+        "unique_chunks_per_query_total": 5546,
+        "truncated": 0,
+        "no_seeds": 12
+      },
+      "3": {
+        "mean_candidates": 29.975490196078432,
+        "mean_nodes": 24.852941176470587,
+        "mean_edges": 37.549019607843135,
+        "mean_evidence": 55.13725490196079,
+        "chunk_binding_occurrences": 21226,
+        "unique_chunks_per_query_total": 6115,
+        "truncated": 0,
+        "no_seeds": 12
+      }
+    },
+    "transitions": {
+      "1": {
+        "new_nodes": 192,
+        "new_edges": 192,
+        "new_evidence_ids": 192,
+        "new_chunks": 167,
+        "new_chunks_in_top10": 152,
+        "top10_order_changed": 152,
+        "top10_set_changed": 152,
+        "top1_changed": 22,
+        "scores_changed": 152,
+        "paths_changed": 152,
+        "totals": {
+          "new_nodes": 2893,
+          "new_edges": 4043,
+          "new_evidence_ids": 5861,
+          "new_chunks": 2177,
+          "new_chunks_in_top10": 779
+        }
+      },
+      "2": {
+        "new_nodes": 186,
+        "new_edges": 186,
+        "new_evidence_ids": 186,
+        "new_chunks": 186,
+        "new_chunks_in_top10": 92,
+        "top10_order_changed": 92,
+        "top10_set_changed": 92,
+        "top1_changed": 0,
+        "scores_changed": 92,
+        "paths_changed": 92,
+        "totals": {
+          "new_nodes": 1239,
+          "new_edges": 2876,
+          "new_evidence_ids": 2576,
+          "new_chunks": 1416,
+          "new_chunks_in_top10": 136
+        }
+      },
+      "3": {
+        "new_nodes": 121,
+        "new_edges": 167,
+        "new_evidence_ids": 121,
+        "new_chunks": 121,
+        "new_chunks_in_top10": 18,
+        "top10_order_changed": 23,
+        "top10_set_changed": 23,
+        "top1_changed": 0,
+        "scores_changed": 23,
+        "paths_changed": 23,
+        "totals": {
+          "new_nodes": 444,
+          "new_edges": 741,
+          "new_evidence_ids": 849,
+          "new_chunks": 569,
+          "new_chunks_in_top10": 18
+        }
+      }
+    },
+    "gold_group_set_changed": {
+      "1": 32,
+      "2": 2,
+      "3": 0
+    }
+  },
+  "structure": {
+    "nodes": 6182,
+    "edges": 9207,
+    "node_types": {
+      "Law": 64,
+      "Article": 6046,
+      "Service": 40,
+      "Document": 24,
+      "Agency": 8
+    },
+    "relations": {
+      "PART_OF": 6046,
+      "REFERENCES": 2860,
+      "GROUNDED_BY": 155,
+      "REQUIRES": 84,
+      "HANDLED_BY": 62
+    },
+    "sinks_by_type": {
+      "Law": 64,
+      "Document": 24,
+      "Agency": 8
+    }
+  },
+  "evaluation": {
+    "0": {
+      "question_count": 177,
+      "metrics": {
+        "1": {
+          "recall": 0.2401129943502825,
+          "hit": 0.2655367231638418,
+          "all_evidence": 0.21468926553672316,
+          "mrr": 0.2655367231638418
+        },
+        "3": {
+          "recall": 0.3954802259887006,
+          "hit": 0.4350282485875706,
+          "all_evidence": 0.3559322033898305,
+          "mrr": 0.3427495291902071
+        },
+        "5": {
+          "recall": 0.4152542372881356,
+          "hit": 0.4463276836158192,
+          "all_evidence": 0.384180790960452,
+          "mrr": 0.3455743879472693
+        },
+        "10": {
+          "recall": 0.423728813559322,
+          "hit": 0.4519774011299435,
+          "all_evidence": 0.3954802259887006,
+          "mrr": 0.3465160075329567
+        }
+      }
+    },
+    "1": {
+      "question_count": 177,
+      "metrics": {
+        "1": {
+          "recall": 0.2627118644067797,
+          "hit": 0.288135593220339,
+          "all_evidence": 0.23728813559322035,
+          "mrr": 0.288135593220339
+        },
+        "3": {
+          "recall": 0.4830508474576271,
+          "hit": 0.519774011299435,
+          "all_evidence": 0.4463276836158192,
+          "mrr": 0.391713747645951
+        },
+        "5": {
+          "recall": 0.5310734463276836,
+          "hit": 0.5649717514124294,
+          "all_evidence": 0.4971751412429379,
+          "mrr": 0.402165725047081
+        },
+        "10": {
+          "recall": 0.5725047080979284,
+          "hit": 0.5988700564971752,
+          "all_evidence": 0.5480225988700564,
+          "mrr": 0.40731100349744415
+        }
+      }
+    },
+    "2": {
+      "question_count": 177,
+      "metrics": {
+        "1": {
+          "recall": 0.2627118644067797,
+          "hit": 0.288135593220339,
+          "all_evidence": 0.23728813559322035,
+          "mrr": 0.288135593220339
+        },
+        "3": {
+          "recall": 0.4745762711864407,
+          "hit": 0.5084745762711864,
+          "all_evidence": 0.4406779661016949,
+          "mrr": 0.38794726930320156
+        },
+        "5": {
+          "recall": 0.5310734463276836,
+          "hit": 0.5649717514124294,
+          "all_evidence": 0.4971751412429379,
+          "mrr": 0.4012241054613936
+        },
+        "10": {
+          "recall": 0.5734463276836158,
+          "hit": 0.5988700564971752,
+          "all_evidence": 0.5480225988700564,
+          "mrr": 0.4063693839117568
+        }
+      }
+    },
+    "3": {
+      "question_count": 177,
+      "metrics": {
+        "1": {
+          "recall": 0.2627118644067797,
+          "hit": 0.288135593220339,
+          "all_evidence": 0.23728813559322035,
+          "mrr": 0.288135593220339
+        },
+        "3": {
+          "recall": 0.4745762711864407,
+          "hit": 0.5084745762711864,
+          "all_evidence": 0.4406779661016949,
+          "mrr": 0.38794726930320156
+        },
+        "5": {
+          "recall": 0.5310734463276836,
+          "hit": 0.5649717514124294,
+          "all_evidence": 0.4971751412429379,
+          "mrr": 0.4012241054613936
+        },
+        "10": {
+          "recall": 0.5734463276836158,
+          "hit": 0.5988700564971752,
+          "all_evidence": 0.5480225988700564,
+          "mrr": 0.4063693839117568
+        }
+      }
+    }
+  }
+}

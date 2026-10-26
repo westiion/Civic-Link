@@ -2,13 +2,13 @@
   "directed": true,
   "multigraph": true,
   "graph": {
-    "schema_version": "week3-restricted-v2",
+    "schema_version": "week3-restricted-v3",
     "corpus_hash": "e55238fddf3882dd3dab97cce5faa8c6b136f2dd89934cc3ff2f445abda59863",
     "corpus_fingerprint": "c8b3b854cae6eb47408c84b71380c7d02d910387e87362bd016d216e684438be",
     "registry_sha256": "906342745767d5e4efecccf1514922fa1a12910fd425ea424d259284bdebaac4",
     "networkx_version": "3.4.2",
-    "builder_sha256": "aefbd21ca1c9668f81736ebb00ba2f707c07f19c1a5ce30106d0ad608d6da59d",
-    "unresolved_reference_count": 3022,
+    "builder_sha256": "d53570d8525ef8ccc6609ecee4658dd0076adc65a0993724a77d5097ba650202",
+    "unresolved_reference_count": 3118,
     "nodes_without_evidence": []
   },
   "nodes": [
@@ -43717,6 +43717,17 @@
       "key": "EDGE-a67ab6a50746f22ee389"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-7c2f470d5f4fe98a5340",
+      "target": "ART-a3a3eed74e1555ab5009",
+      "key": "EDGE-6088d092c4f4679b7ddf"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -44476,6 +44487,17 @@
       "key": "EDGE-15a3de52cb6da1b5f2c9"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-8b91b59fa48399d51955",
+      "target": "ART-dddc10aec7cedc38e2d7",
+      "key": "EDGE-cadae4931273b3cfaefb"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -44584,6 +44606,17 @@
       "source": "ART-d075c8916cd11356c227",
       "target": "ART-e18377e2de653aa4a0c6",
       "key": "EDGE-cbe9131611b0b2c1a7c8"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d075c8916cd11356c227",
+      "target": "ART-0cb8ca6910e09278f571",
+      "key": "EDGE-bef360aca3de196137eb"
     },
     {
       "relation": "PART_OF",
@@ -44740,6 +44773,17 @@
       "key": "EDGE-f5cf81674bf7622b2790"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-56d79e6a3c0cfe8f38c5",
+      "target": "ART-4b6a4f209d670c14e88e",
+      "key": "EDGE-975cc59ae1dbb46f0edb"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -44793,6 +44837,17 @@
       "source": "ART-c45f6367567198de9ae6",
       "target": "LAW-10f0074f21331c7e8890",
       "key": "EDGE-ec9a56d2143472416710"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-c45f6367567198de9ae6",
+      "target": "ART-73392026a85836ab5042",
+      "key": "EDGE-7c3a96aa157593c2ba65"
     },
     {
       "relation": "PART_OF",
@@ -45763,6 +45818,17 @@
       "key": "EDGE-31e2582e597027a303fc"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d61b0f0a0dc9935005e9",
+      "target": "ART-03e3e714e92fdb93de1c",
+      "key": "EDGE-2bb896b6f6f38f672ac9"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -45937,6 +46003,17 @@
       "source": "ART-26424d17c0f6414f55f8",
       "target": "ART-91ae401ec4fc76b984be",
       "key": "EDGE-c3cb9112445e37d8245a"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-26424d17c0f6414f55f8",
+      "target": "ART-50f854286e57db5b74ac",
+      "key": "EDGE-e4ed77b0af6273093192"
     },
     {
       "relation": "PART_OF",
@@ -48799,6 +48876,17 @@
       "key": "EDGE-9260bca14167c8154931"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-411c4601c8d12433873d",
+      "target": "ART-1120fb97c5cd81c428a7",
+      "key": "EDGE-5c7c9329dbabeba9edea"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -50603,6 +50691,17 @@
       "key": "EDGE-1957828f6e87228b8e97"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-773c61e44a22615da875",
+      "target": "ART-62ea36fda7817afabc5e",
+      "key": "EDGE-078939e8c2d003efeaaf"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -50832,6 +50931,17 @@
       "source": "ART-593239274925b8d83ca6",
       "target": "ART-3a224b493da66ef425b5",
       "key": "EDGE-82b428743bda8cf169fe"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-593239274925b8d83ca6",
+      "target": "ART-4b3b415e786e72f931a1",
+      "key": "EDGE-32caa1f47b9049236235"
     },
     {
       "relation": "PART_OF",
@@ -54013,6 +54123,17 @@
       "key": "EDGE-85a5c4194abfdc7fcf39"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2d18b34c01b41de8528d",
+      "target": "ART-4549e68b4e43c40503a9",
+      "key": "EDGE-6e7688560520cd33e9e6"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -54143,6 +54264,17 @@
       "source": "ART-9b579db32defdf7cc6e8",
       "target": "ART-c7cde38bcb9a6687afb5",
       "key": "EDGE-ac4a262753542c139ad5"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-9b579db32defdf7cc6e8",
+      "target": "ART-5138ccbf1db733e00387",
+      "key": "EDGE-08bb73c4c4cf999664ea"
     },
     {
       "relation": "PART_OF",
@@ -57148,6 +57280,83 @@
       "key": "EDGE-1777cc65e102b0ab3da6"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabf05ab7a127252b3ce",
+      "target": "ART-2680ee267dbe63f19556",
+      "key": "EDGE-952c09ccba7cba4d125f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabf05ab7a127252b3ce",
+      "target": "ART-568aa4d4f8a2356e457b",
+      "key": "EDGE-5c5619c34f73bf5189c5"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabf05ab7a127252b3ce",
+      "target": "ART-5394becd310a7fca0e48",
+      "key": "EDGE-9fd29ef289e77514338f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabf05ab7a127252b3ce",
+      "target": "ART-93ebbbdddc98b2f143ea",
+      "key": "EDGE-c1a229242fc9247804f9"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabf05ab7a127252b3ce",
+      "target": "ART-1182564e3fa59f0015a7",
+      "key": "EDGE-68695b9de82758b678c6"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabf05ab7a127252b3ce",
+      "target": "ART-0e8eea56c4627cf0c7f4",
+      "key": "EDGE-3d22423892ecc58d92a7"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabf05ab7a127252b3ce",
+      "target": "ART-9718fe06ff1d4b896b23",
+      "key": "EDGE-49f60e598c9791870342"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -57764,6 +57973,17 @@
       "key": "EDGE-24519d8abecd715fbf8e"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-6bf4e7a62ecbbae12d26",
+      "target": "ART-9965017218596707d399",
+      "key": "EDGE-baef529f2e79bd5ef801"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -57784,6 +58004,17 @@
       "source": "ART-2d2792be5aedd9152677",
       "target": "ART-76b32b8db3baf9528920",
       "key": "EDGE-71d42b21969b6b1974f3"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2d2792be5aedd9152677",
+      "target": "ART-6bf4e7a62ecbbae12d26",
+      "key": "EDGE-3b26c310340ad325e9b8"
     },
     {
       "relation": "PART_OF",
@@ -58996,6 +59227,28 @@
       "key": "EDGE-73daaf80821299e38f49"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-b2d41cf4a377b7b269fe",
+      "target": "ART-3f4a039d280524e0f68b",
+      "key": "EDGE-b4faf571020d0d635ad5"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-b2d41cf4a377b7b269fe",
+      "target": "ART-1bf8d6694223d99e734c",
+      "key": "EDGE-d457f62a72ee98b61c42"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -59722,6 +59975,28 @@
       "key": "EDGE-ab8e9cdd6f917bdeae23"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-90bc3f9fa4745cb62af2",
+      "target": "ART-52e44aaea4c087966500",
+      "key": "EDGE-75517b73783c29ebfdd2"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-90bc3f9fa4745cb62af2",
+      "target": "ART-ba1ef3f68d92c40734fa",
+      "key": "EDGE-0f1fd2ec461103d51694"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -59995,6 +60270,17 @@
       "source": "ART-aa17cdac84d0780409b9",
       "target": "ART-e924a769ded3f3db9c94",
       "key": "EDGE-4fa2e2c2d9dfbaec519c"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-aa17cdac84d0780409b9",
+      "target": "ART-c4db5ad969658ca0687d",
+      "key": "EDGE-0867ea05e778955fcbd2"
     },
     {
       "relation": "PART_OF",
@@ -60589,6 +60875,17 @@
       "source": "ART-eefefe984b7137f2be70",
       "target": "ART-bc8caca36535910fc129",
       "key": "EDGE-b727a8c3f5833890bfe7"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eefefe984b7137f2be70",
+      "target": "ART-54aa666409a87a0ec035",
+      "key": "EDGE-462a89d834e06205b833"
     },
     {
       "relation": "REFERENCES",
@@ -61775,8 +62072,41 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-baffbeb83b4e25a53606",
+      "target": "ART-f270a448cac57304f39a",
+      "key": "EDGE-93bb0cf94c2de17971cf"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-baffbeb83b4e25a53606",
+      "target": "ART-96b8ebb86667d2a57f75",
+      "key": "EDGE-1fb81f739f9e03c52feb"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-baffbeb83b4e25a53606",
       "target": "ART-d3579e09163977037c8a",
       "key": "EDGE-f4a6d152b5cd8667a344"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-baffbeb83b4e25a53606",
+      "target": "ART-e017441a01c3518e7051",
+      "key": "EDGE-e1ef249e7a1fbf5da0f7"
     },
     {
       "relation": "REFERENCES",
@@ -61819,8 +62149,30 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-baffbeb83b4e25a53606",
+      "target": "ART-904aaef3332adeddd65a",
+      "key": "EDGE-0825eaf60b0a4d4b0e19"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-baffbeb83b4e25a53606",
       "target": "ART-0b30dd65d8d0cda326ca",
       "key": "EDGE-162abcc4ae06c60e236d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-baffbeb83b4e25a53606",
+      "target": "ART-b5f830e744cb1fa43f80",
+      "key": "EDGE-a3568502b8cc1d4e8a15"
     },
     {
       "relation": "REFERENCES",
@@ -61843,6 +62195,17 @@
       "source": "ART-baffbeb83b4e25a53606",
       "target": "ART-bc8caca36535910fc129",
       "key": "EDGE-d3dbf62ef4f46d35ae27"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-baffbeb83b4e25a53606",
+      "target": "ART-54aa666409a87a0ec035",
+      "key": "EDGE-12b8f6920e2934b9bdec"
     },
     {
       "relation": "REFERENCES",
@@ -61876,6 +62239,28 @@
       "source": "ART-baffbeb83b4e25a53606",
       "target": "ART-1873f77ab667cfd6abe8",
       "key": "EDGE-ea00849635cc3428593b"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-baffbeb83b4e25a53606",
+      "target": "ART-afd0474ab67134c749a8",
+      "key": "EDGE-ab626174ef4aaa143ebd"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-baffbeb83b4e25a53606",
+      "target": "ART-bbabd9eb59c9101c6d29",
+      "key": "EDGE-a82a006d2d4dea785c34"
     },
     {
       "relation": "REFERENCES",
@@ -61962,8 +62347,19 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-baffbeb83b4e25a53606",
-      "target": "ART-96b8ebb86667d2a57f75",
-      "key": "EDGE-1fb81f739f9e03c52feb"
+      "target": "ART-35b61a55908255333d29",
+      "key": "EDGE-7417aee15625a8ddda77"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-baffbeb83b4e25a53606",
+      "target": "ART-7a2a16033d773ec68c62",
+      "key": "EDGE-369daca06c98d9e2c6bf"
     },
     {
       "relation": "PART_OF",
@@ -62118,6 +62514,28 @@
       "source": "ART-d1f7329a22c32136001f",
       "target": "LAW-83a419a3c698a7c808eb",
       "key": "EDGE-e5f754e9e7f4a3681b7d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d1f7329a22c32136001f",
+      "target": "ART-ce075e352c8f1413b729",
+      "key": "EDGE-17a19814f05480fac115"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d1f7329a22c32136001f",
+      "target": "ART-62eae30bbc2a513c2379",
+      "key": "EDGE-fe47e65cc1d94bc893a7"
     },
     {
       "relation": "PART_OF",
@@ -62754,6 +63172,61 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-d3b373f9df6a2dd5e4a2",
+      "target": "ART-1df126ce6047cd22e47c",
+      "key": "EDGE-3e808cab23f31be8f5c7"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d3b373f9df6a2dd5e4a2",
+      "target": "ART-2dccab9fc98550ac2920",
+      "key": "EDGE-1937bd1ec2b9320257dd"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d3b373f9df6a2dd5e4a2",
+      "target": "ART-fbc61094ae500cac01ab",
+      "key": "EDGE-16a504fa209c263dbb33"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d3b373f9df6a2dd5e4a2",
+      "target": "ART-39de9c2c7af5035dc7b8",
+      "key": "EDGE-82e5dc3da4ce8f980046"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d3b373f9df6a2dd5e4a2",
+      "target": "ART-25d55987d94c174120d3",
+      "key": "EDGE-9e16df3d225d517f2469"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d3b373f9df6a2dd5e4a2",
       "target": "ART-ef390772d5da092830f4",
       "key": "EDGE-f19fa58e006931661d21"
     },
@@ -62800,6 +63273,61 @@
       "source": "ART-399c82cd91888116fe2e",
       "target": "ART-539f03395a2824812508",
       "key": "EDGE-a2999ff87291271e08b2"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-399c82cd91888116fe2e",
+      "target": "ART-1df126ce6047cd22e47c",
+      "key": "EDGE-0f8f4b39e661cf7eebf8"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-399c82cd91888116fe2e",
+      "target": "ART-2dccab9fc98550ac2920",
+      "key": "EDGE-8789805ce4573da37ad1"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-399c82cd91888116fe2e",
+      "target": "ART-fbc61094ae500cac01ab",
+      "key": "EDGE-e10508e2e421d924c472"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-399c82cd91888116fe2e",
+      "target": "ART-39de9c2c7af5035dc7b8",
+      "key": "EDGE-c12de4ba6a792e239141"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-399c82cd91888116fe2e",
+      "target": "ART-25d55987d94c174120d3",
+      "key": "EDGE-6f955c78df6bc4459cf4"
     },
     {
       "relation": "REFERENCES",
@@ -63517,6 +64045,39 @@
       "key": "EDGE-c938df75060c0c1e716b"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-c06f327362c3e6d47e30",
+      "target": "ART-0e0364a93d45bd816077",
+      "key": "EDGE-8ee7f90e97d1ea700432"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-c06f327362c3e6d47e30",
+      "target": "ART-ebf515b223c00c104f34",
+      "key": "EDGE-94d550d0a980cb8eb64d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-c06f327362c3e6d47e30",
+      "target": "ART-8b61f96a0945c1ecbd93",
+      "key": "EDGE-294e79340c3de768611d"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -63781,6 +64342,17 @@
       "key": "EDGE-435d903434f862e93534"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-91d475ecc7324e936670",
+      "target": "ART-dddf5217bcd80fc36cb9",
+      "key": "EDGE-fe84ab01993ca1d9def2"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -63966,6 +64538,17 @@
       "source": "ART-7e523b0ff1b1b90c2294",
       "target": "LAW-c2e1c3743aaf6024d753",
       "key": "EDGE-2e6cc2104f30c058e6b4"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-7e523b0ff1b1b90c2294",
+      "target": "ART-dd6eb9cb678b4dfd9561",
+      "key": "EDGE-83269e8408c6b01f0ec4"
     },
     {
       "relation": "PART_OF",
@@ -64892,6 +65475,94 @@
       "key": "EDGE-7b5b9f82a97746f5da27"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2a97139c6e96f1eb54d0",
+      "target": "ART-67c7bbd03b88e1f396b8",
+      "key": "EDGE-40aa0798df1f66728883"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2a97139c6e96f1eb54d0",
+      "target": "ART-d4749ba82dda5a24d2c0",
+      "key": "EDGE-4f6a19e9c5656dc6c57d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2a97139c6e96f1eb54d0",
+      "target": "ART-70c02edf085b8943352e",
+      "key": "EDGE-49a032fa103ebce8f357"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2a97139c6e96f1eb54d0",
+      "target": "ART-6553b6458b15ddc836f8",
+      "key": "EDGE-8f7921279b4fc8c81271"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2a97139c6e96f1eb54d0",
+      "target": "ART-a8207c81ec2a7cda1e5a",
+      "key": "EDGE-c6be33ded006ef0b7783"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2a97139c6e96f1eb54d0",
+      "target": "ART-90ebe621329378205e3e",
+      "key": "EDGE-fcc72764fe800ace87a2"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2a97139c6e96f1eb54d0",
+      "target": "ART-e74962754192508d6866",
+      "key": "EDGE-904f5e857442f6dd4480"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2a97139c6e96f1eb54d0",
+      "target": "ART-ca5d1b52fc7bec42726d",
+      "key": "EDGE-57560b60215219c18958"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -65790,6 +66461,17 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-eeeebfba738ea5bb08a6",
+      "target": "ART-05103519e0ed65f9e1a5",
+      "key": "EDGE-20519d54ce44f0859f07"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eeeebfba738ea5bb08a6",
       "target": "ART-27803222324c46413958",
       "key": "EDGE-287b9808ae2289a6959b"
     },
@@ -65847,6 +66529,17 @@
       "source": "ART-83dc7e8f64c19e976bf5",
       "target": "ART-27803222324c46413958",
       "key": "EDGE-5c1adda190659c1f4287"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-83dc7e8f64c19e976bf5",
+      "target": "ART-870428114e862ffbe858",
+      "key": "EDGE-38ae5e37c1f5d6055d4c"
     },
     {
       "relation": "REFERENCES",
@@ -66252,6 +66945,28 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-3d418490185a8bc243bf",
+      "target": "ART-ab5cf2313193ddc67a4c",
+      "key": "EDGE-15e0cbc473a2e78a3d0c"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-3d418490185a8bc243bf",
+      "target": "ART-497d171e20a99d93b3e7",
+      "key": "EDGE-92f2ff5781633a21d1a4"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-3d418490185a8bc243bf",
       "target": "ART-cee011fcaa620d1d9be6",
       "key": "EDGE-9a49b20fa9142c8e613d"
     },
@@ -66386,6 +67101,17 @@
       "source": "ART-9ad2e0b90056edc873c5",
       "target": "ART-35cb5206a47f9313a74b",
       "key": "EDGE-b8395df2c5ef47aeec30"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-9ad2e0b90056edc873c5",
+      "target": "ART-3334e117bba7ad0b618b",
+      "key": "EDGE-932ecf768e76e85ea510"
     },
     {
       "relation": "PART_OF",
@@ -66571,6 +67297,17 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-8ca81b45c3a56d0c8c30",
+      "target": "ART-d5f2cf544c4bbcfd5ace",
+      "key": "EDGE-7b3b352db9b059dfdd90"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-8ca81b45c3a56d0c8c30",
       "target": "ART-f2c5893425183b603e45",
       "key": "EDGE-d15cafc97a2434217719"
     },
@@ -66593,8 +67330,74 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-8ca81b45c3a56d0c8c30",
+      "target": "ART-861e73f9522b5c3f8bd8",
+      "key": "EDGE-fea609f3b3761abbf52c"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-8ca81b45c3a56d0c8c30",
       "target": "ART-1b884a9f4496410e5a64",
       "key": "EDGE-9860899710e7b54cc88e"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-8ca81b45c3a56d0c8c30",
+      "target": "ART-509ca8cb754b4787aad9",
+      "key": "EDGE-df23f5f454970c2e850f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-8ca81b45c3a56d0c8c30",
+      "target": "ART-56d1067969bb71fd2e69",
+      "key": "EDGE-4e85726261ddb1e1e05d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-8ca81b45c3a56d0c8c30",
+      "target": "ART-3e8a8bd6e7f8e1a0656a",
+      "key": "EDGE-9ab4fa1bba6b47a97eea"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-8ca81b45c3a56d0c8c30",
+      "target": "ART-11e2e55e654d09bd1cc5",
+      "key": "EDGE-57befc08dc1b1bc21bb8"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-8ca81b45c3a56d0c8c30",
+      "target": "ART-998493d4db22fec040ac",
+      "key": "EDGE-1da9da0bfeff024e5420"
     },
     {
       "relation": "PART_OF",
@@ -67541,6 +68344,17 @@
       "source": "ART-b415b67e91dfc43c8f75",
       "target": "ART-f9abfdf62d67ac2f54b6",
       "key": "EDGE-4836370f17dd6ee9ec5d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-b415b67e91dfc43c8f75",
+      "target": "ART-b954b7e3be1fc72d76db",
+      "key": "EDGE-0fcb5557bb72a75d990c"
     },
     {
       "relation": "PART_OF",
@@ -68694,8 +69508,107 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-a42834737d8125dc1e0d",
+      "target": "ART-a59aad1c8312fb4d6875",
+      "key": "EDGE-2a02f0fb1b8b5a23c603"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-a42834737d8125dc1e0d",
+      "target": "ART-56d1067969bb71fd2e69",
+      "key": "EDGE-ed887b92b3c562000efb"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-a42834737d8125dc1e0d",
+      "target": "ART-14e4cb01fcafb6499fbf",
+      "key": "EDGE-5f4479b000ab56085f73"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-a42834737d8125dc1e0d",
+      "target": "ART-0d25707b0ddcba77805b",
+      "key": "EDGE-081657a904577f627724"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-a42834737d8125dc1e0d",
+      "target": "ART-d62680c54de5bfe438e0",
+      "key": "EDGE-08a945ef00ffc04250c7"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-a42834737d8125dc1e0d",
+      "target": "ART-a50e66b58e5a43acd5bc",
+      "key": "EDGE-97ab3901e24869f93841"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-a42834737d8125dc1e0d",
+      "target": "ART-d5f2cf544c4bbcfd5ace",
+      "key": "EDGE-ce1a733600f4cac74ca5"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-a42834737d8125dc1e0d",
       "target": "ART-8c3596341a70aa6d789b",
       "key": "EDGE-60336141d5b4a89a54d2"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-a42834737d8125dc1e0d",
+      "target": "ART-2728bfbf75249f691d01",
+      "key": "EDGE-9baf0f83f1da01b9683a"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-a42834737d8125dc1e0d",
+      "target": "ART-61cb78208bb67ad55fc9",
+      "key": "EDGE-5041c91a0a42d96b0cc8"
     },
     {
       "relation": "REFERENCES",
@@ -68727,30 +69640,8 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-a42834737d8125dc1e0d",
-      "target": "ART-0d25707b0ddcba77805b",
-      "key": "EDGE-081657a904577f627724"
-    },
-    {
-      "relation": "REFERENCES",
-      "document_hop": 1,
-      "qualifiers": {
-        "basis": "explicit_article_reference"
-      },
-      "review_status": "machine_extracted_pending_human_review",
-      "source": "ART-a42834737d8125dc1e0d",
-      "target": "ART-a50e66b58e5a43acd5bc",
-      "key": "EDGE-97ab3901e24869f93841"
-    },
-    {
-      "relation": "REFERENCES",
-      "document_hop": 1,
-      "qualifiers": {
-        "basis": "explicit_article_reference"
-      },
-      "review_status": "machine_extracted_pending_human_review",
-      "source": "ART-a42834737d8125dc1e0d",
-      "target": "ART-14e4cb01fcafb6499fbf",
-      "key": "EDGE-5f4479b000ab56085f73"
+      "target": "ART-861e73f9522b5c3f8bd8",
+      "key": "EDGE-bebbe629178a8d24006b"
     },
     {
       "relation": "REFERENCES",
@@ -68771,19 +69662,8 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-a42834737d8125dc1e0d",
-      "target": "ART-56d1067969bb71fd2e69",
-      "key": "EDGE-ed887b92b3c562000efb"
-    },
-    {
-      "relation": "REFERENCES",
-      "document_hop": 1,
-      "qualifiers": {
-        "basis": "explicit_article_reference"
-      },
-      "review_status": "machine_extracted_pending_human_review",
-      "source": "ART-a42834737d8125dc1e0d",
-      "target": "ART-2728bfbf75249f691d01",
-      "key": "EDGE-9baf0f83f1da01b9683a"
+      "target": "ART-ffd29b2cf4eccd07a513",
+      "key": "EDGE-577a386dd8bb18eb8a20"
     },
     {
       "relation": "REFERENCES",
@@ -68980,8 +69860,52 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-6ba6feec26f68358706d",
+      "target": "ART-56d1067969bb71fd2e69",
+      "key": "EDGE-a368405d4e1b7e770beb"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-6ba6feec26f68358706d",
+      "target": "ART-14e4cb01fcafb6499fbf",
+      "key": "EDGE-c3e14a23f3474de05f19"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-6ba6feec26f68358706d",
       "target": "ART-0d25707b0ddcba77805b",
       "key": "EDGE-e02cb07952bf38001197"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-6ba6feec26f68358706d",
+      "target": "ART-a50e66b58e5a43acd5bc",
+      "key": "EDGE-483471aca968854031de"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-6ba6feec26f68358706d",
+      "target": "ART-d5f2cf544c4bbcfd5ace",
+      "key": "EDGE-fbbcd02529e5caf76246"
     },
     {
       "relation": "PART_OF",
@@ -69675,6 +70599,17 @@
       "source": "ART-1e7fc4765e56f3f134a5",
       "target": "ART-155b934e2cc78e3114e5",
       "key": "EDGE-d0c999357416be19e36d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-1e7fc4765e56f3f134a5",
+      "target": "ART-322ebbdf37d758a0f40b",
+      "key": "EDGE-4eb60f964e45d4ded965"
     },
     {
       "relation": "PART_OF",
@@ -70476,8 +71411,8 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-4bd69c7ec361a150c73a",
-      "target": "ART-90716ab5b9e2ab654ecc",
-      "key": "EDGE-4997562017a7cc8e7a02"
+      "target": "ART-16c64f2cbe6b5f4ff8d8",
+      "key": "EDGE-7edbc6afff6711201200"
     },
     {
       "relation": "REFERENCES",
@@ -70487,8 +71422,19 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-4bd69c7ec361a150c73a",
-      "target": "ART-16c64f2cbe6b5f4ff8d8",
-      "key": "EDGE-7edbc6afff6711201200"
+      "target": "ART-031bfeb5fc0656929563",
+      "key": "EDGE-a245a2035f37b39a0086"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4bd69c7ec361a150c73a",
+      "target": "ART-90716ab5b9e2ab654ecc",
+      "key": "EDGE-4997562017a7cc8e7a02"
     },
     {
       "relation": "PART_OF",
@@ -70522,6 +71468,17 @@
       "source": "ART-edd78ec037b67764a3f2",
       "target": "ART-d807cefe5c2892df5497",
       "key": "EDGE-295400cd77ac91ec55ff"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-edd78ec037b67764a3f2",
+      "target": "ART-a0499570cb4103120b5b",
+      "key": "EDGE-e43d1d987197b5389de5"
     },
     {
       "relation": "REFERENCES",
@@ -71844,6 +72801,17 @@
       "key": "EDGE-505bfbbb1a6eb7798994"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-06453ef3db0b4c8b81a5",
+      "target": "ART-52336b6fcd61aea1a74e",
+      "key": "EDGE-87381b1ef7ebec8d2fdc"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -71963,6 +72931,28 @@
       "source": "ART-47db60695cead654d48d",
       "target": "ART-31d015b8e328d0ac02a9",
       "key": "EDGE-4417c9a055df6e5ce76e"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-47db60695cead654d48d",
+      "target": "ART-0ed4a6d1e5844cf7ceef",
+      "key": "EDGE-9b6160b5456506b6414d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-47db60695cead654d48d",
+      "target": "ART-2677a2e3d08193abd1fd",
+      "key": "EDGE-3cb5d8e23e822e8665d0"
     },
     {
       "relation": "PART_OF",
@@ -72678,6 +73668,17 @@
       "source": "ART-7d5dee75e836df6760fe",
       "target": "ART-107d9eb0aa5a3bf92738",
       "key": "EDGE-c184964575bd2349351f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-7d5dee75e836df6760fe",
+      "target": "ART-653c6b73bb8d1f94f142",
+      "key": "EDGE-511cc08b8958dbe4c237"
     },
     {
       "relation": "PART_OF",
@@ -86133,6 +87134,17 @@
       "key": "EDGE-89e828799855301be0c1"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-0172d9e2c59c6840a2cb",
+      "target": "ART-61a73ec6f9cf75291244",
+      "key": "EDGE-b9270db4958d80feb44d"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -86703,6 +87715,17 @@
       "source": "ART-77731da02c00a55b4683",
       "target": "ART-7975359dfe9957e1fd66",
       "key": "EDGE-156b280f0680ae079e0c"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-77731da02c00a55b4683",
+      "target": "ART-7575dfa1f7182a4fb235",
+      "key": "EDGE-7e693e0cb33785ad2053"
     },
     {
       "relation": "PART_OF",
@@ -87748,6 +88771,17 @@
       "source": "ART-5cbf504ee65561f45481",
       "target": "ART-06453ef3db0b4c8b81a5",
       "key": "EDGE-dad7599c73614f038ad1"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-5cbf504ee65561f45481",
+      "target": "ART-004623cc7c27d588cc96",
+      "key": "EDGE-6243f647f1bd7ecee376"
     },
     {
       "relation": "PART_OF",
@@ -90621,6 +91655,17 @@
       "key": "EDGE-1b87f1725bfb6eba5075"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-c64c36b7c6f10aff22e6",
+      "target": "ART-24da340d43bc8c7cdbe8",
+      "key": "EDGE-1303917bd0581f63bc84"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -91754,6 +92799,17 @@
       "key": "EDGE-a07813283a30d986d9cd"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-3f909630e9820c7d6a05",
+      "target": "ART-c54b71de9f51359597e6",
+      "key": "EDGE-04e6cb98f9eea9dbe16b"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -92832,6 +93888,28 @@
       "key": "EDGE-552b4db179fbf0a384da"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eb08385827d9bc7e4b69",
+      "target": "ART-a0f2a1de6fb69b551f13",
+      "key": "EDGE-62e5e7b629429b780842"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eb08385827d9bc7e4b69",
+      "target": "ART-ec3e41cb5b1d3476b76c",
+      "key": "EDGE-beb35b11d33ff16cc59b"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -93028,6 +94106,17 @@
       "source": "ART-30ed17ccc328f3a2970c",
       "target": "ART-0acb3bf8f9c2cd65f65f",
       "key": "EDGE-c370f8ce382a46f2634b"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-30ed17ccc328f3a2970c",
+      "target": "ART-c54b71de9f51359597e6",
+      "key": "EDGE-8a422d27ae22f94049c5"
     },
     {
       "relation": "PART_OF",
@@ -93932,6 +95021,17 @@
       "key": "EDGE-6a66659a92e7f9ba3a33"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-f08256c0b58e055eb416",
+      "target": "ART-ccf37bcfb2b57b696a8d",
+      "key": "EDGE-d49a41a825734feb38ad"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -94207,6 +95307,28 @@
       "key": "EDGE-a8a5e0fde6859c107d48"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-38f4fe6f8268b6eb4df5",
+      "target": "ART-031bfeb5fc0656929563",
+      "key": "EDGE-dae6c8d7bde406dc4147"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-38f4fe6f8268b6eb4df5",
+      "target": "ART-c378d8bc485d5e3e4fb5",
+      "key": "EDGE-2c99988e3f8e7566d2d9"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -94324,6 +95446,28 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-4d7f265e251e5e1d5159",
+      "target": "ART-16c64f2cbe6b5f4ff8d8",
+      "key": "EDGE-644f68a67cbe1c791181"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4d7f265e251e5e1d5159",
+      "target": "ART-90716ab5b9e2ab654ecc",
+      "key": "EDGE-0eb0e184630c16170bc3"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4d7f265e251e5e1d5159",
       "target": "ART-031bfeb5fc0656929563",
       "key": "EDGE-074748e93de8029a60b2"
     },
@@ -94368,6 +95512,17 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-4d7f265e251e5e1d5159",
+      "target": "ART-dc3de1341aa9bf694616",
+      "key": "EDGE-36f91f6785f5c63a77f6"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4d7f265e251e5e1d5159",
       "target": "ART-558d7a08b0388f532213",
       "key": "EDGE-712c256083c2d803edc5"
     },
@@ -94379,8 +95534,52 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-4d7f265e251e5e1d5159",
+      "target": "ART-a5d8a87323040af5311c",
+      "key": "EDGE-a8a5e0bcc5bd6b38e8df"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4d7f265e251e5e1d5159",
+      "target": "ART-a90a0f36d99cbe545e3b",
+      "key": "EDGE-3c6b26123915582a59fb"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4d7f265e251e5e1d5159",
+      "target": "ART-0c9746c5b3ccb00c6747",
+      "key": "EDGE-337c64105542c79d6115"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4d7f265e251e5e1d5159",
       "target": "ART-7b7cf1ebea7ea314f611",
       "key": "EDGE-c5bea9d45959a30816df"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4d7f265e251e5e1d5159",
+      "target": "ART-5f75fbf4ab082c403e46",
+      "key": "EDGE-05e38c59e5df75673d89"
     },
     {
       "relation": "REFERENCES",
@@ -94425,6 +95624,17 @@
       "source": "ART-4d7f265e251e5e1d5159",
       "target": "ART-2950bc2a16eab313117d",
       "key": "EDGE-7b2adba4cc59031aab7b"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4d7f265e251e5e1d5159",
+      "target": "ART-3a23eb632f464e36c61b",
+      "key": "EDGE-f4ee53acf969ee43f6ee"
     },
     {
       "relation": "PART_OF",
@@ -94645,6 +95855,28 @@
       "source": "ART-f3dceaa633559bd0fdbf",
       "target": "ART-16c64f2cbe6b5f4ff8d8",
       "key": "EDGE-8f175546142e4d23875c"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-f3dceaa633559bd0fdbf",
+      "target": "ART-031bfeb5fc0656929563",
+      "key": "EDGE-9176e786d62de71bfc7d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-f3dceaa633559bd0fdbf",
+      "target": "ART-c378d8bc485d5e3e4fb5",
+      "key": "EDGE-ec3dbbf182bc44e70e33"
     },
     {
       "relation": "PART_OF",
@@ -95294,6 +96526,28 @@
       "source": "ART-3eee88187bb24a8e471b",
       "target": "ART-6d423e5219e9cb113856",
       "key": "EDGE-cf5f40b4b86c067abee6"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-3eee88187bb24a8e471b",
+      "target": "ART-e325df287249e8a941eb",
+      "key": "EDGE-3dfef638445525414769"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-3eee88187bb24a8e471b",
+      "target": "ART-2eeb6db0017e60106f51",
+      "key": "EDGE-0ead508f78ab36e483df"
     },
     {
       "relation": "PART_OF",
@@ -99168,6 +100422,17 @@
       "key": "EDGE-1e35db957c5ecea54ada"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-87e8738af892dfd82631",
+      "target": "ART-3ceb21b30f698350803a",
+      "key": "EDGE-3100f8717ab68ad60406"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -99243,6 +100508,17 @@
       "source": "ART-bc7f489d8c863367a698",
       "target": "ART-24bacfb93c38f162427e",
       "key": "EDGE-fed55f833c0e1b85c83e"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-bc7f489d8c863367a698",
+      "target": "ART-3ceb21b30f698350803a",
+      "key": "EDGE-e9b2d728519654b145c4"
     },
     {
       "relation": "PART_OF",
@@ -99474,6 +100750,83 @@
       "source": "ART-af17e78019f14df633cb",
       "target": "ART-539f03395a2824812508",
       "key": "EDGE-796392891f63d8a30ec9"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-af17e78019f14df633cb",
+      "target": "ART-1df126ce6047cd22e47c",
+      "key": "EDGE-6e321d7865b16c2db401"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-af17e78019f14df633cb",
+      "target": "ART-2dccab9fc98550ac2920",
+      "key": "EDGE-d03a9690de3a9e6705f1"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-af17e78019f14df633cb",
+      "target": "ART-fbc61094ae500cac01ab",
+      "key": "EDGE-4f553c0f4a5aa9135d53"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-af17e78019f14df633cb",
+      "target": "ART-39de9c2c7af5035dc7b8",
+      "key": "EDGE-b1e3a5f432411536c7ce"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-af17e78019f14df633cb",
+      "target": "ART-25d55987d94c174120d3",
+      "key": "EDGE-af5fa567f534616afd1a"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-af17e78019f14df633cb",
+      "target": "ART-555978af07a452a862de",
+      "key": "EDGE-29eabb2488abaa6f9be0"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-af17e78019f14df633cb",
+      "target": "ART-ef390772d5da092830f4",
+      "key": "EDGE-0a2f1cdc82e2a02ae0b2"
     },
     {
       "relation": "PART_OF",
@@ -103667,6 +105020,72 @@
       "key": "EDGE-1c6e9a3295beab36a928"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-70aeb773cea63d2fac0a",
+      "target": "ART-919d3882136389b37a59",
+      "key": "EDGE-bdc92f6636e7eafecc42"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-70aeb773cea63d2fac0a",
+      "target": "ART-dc3998a13a66b30eb531",
+      "key": "EDGE-ce28a2440c09c34f8bfc"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-70aeb773cea63d2fac0a",
+      "target": "ART-0e42481599f2cf3b3ca3",
+      "key": "EDGE-a3fb73d573e6a19de447"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-70aeb773cea63d2fac0a",
+      "target": "ART-9fc07ee7f14f6a7bb736",
+      "key": "EDGE-7606590274616ed41be2"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-70aeb773cea63d2fac0a",
+      "target": "ART-ce65156a2b6e4a8269af",
+      "key": "EDGE-9bef2a57ad4b99a0e8ed"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-70aeb773cea63d2fac0a",
+      "target": "ART-e656d03250ff86bbd783",
+      "key": "EDGE-22c931d80da626002678"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -105027,6 +106446,17 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-d1906226cf834508d40a",
+      "target": "ART-66537bb6912361e99c36",
+      "key": "EDGE-da9d9182ab3ce32e0c86"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d1906226cf834508d40a",
       "target": "ART-2d6e9a79b04018ed17fe",
       "key": "EDGE-8ee2e8b29e0f897cc23b"
     },
@@ -105049,8 +106479,74 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-d1906226cf834508d40a",
+      "target": "ART-241943031737bb22bb5c",
+      "key": "EDGE-41f018574c99949eb1e3"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d1906226cf834508d40a",
+      "target": "ART-094293d188496e4dc6cc",
+      "key": "EDGE-5d94cc200084d0115f0f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d1906226cf834508d40a",
+      "target": "ART-2fa868d69c2853b96ece",
+      "key": "EDGE-e0e909f01e7c909d184e"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d1906226cf834508d40a",
+      "target": "ART-c6b47d91b7c7ab86d1de",
+      "key": "EDGE-61b32b8d8f26ec194649"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d1906226cf834508d40a",
       "target": "ART-88b6d47c406526da0759",
       "key": "EDGE-386c3f4eb5b1736330a1"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d1906226cf834508d40a",
+      "target": "ART-53730c78907a1a831f23",
+      "key": "EDGE-eb49a67de8cbcda228b0"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d1906226cf834508d40a",
+      "target": "ART-c4d59d4f36d7c983d05e",
+      "key": "EDGE-80e9b0fc53540842503e"
     },
     {
       "relation": "REFERENCES",
@@ -106404,6 +107900,17 @@
       "source": "ART-cc4650d0e4fe853e36a8",
       "target": "ART-031bfeb5fc0656929563",
       "key": "EDGE-2682306038f776c12286"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-cc4650d0e4fe853e36a8",
+      "target": "ART-653c6b73bb8d1f94f142",
+      "key": "EDGE-6cb8a3fab797278172f3"
     },
     {
       "relation": "PART_OF",
@@ -109574,6 +111081,17 @@
       "key": "EDGE-8299da55a2abecf0b6c7"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-c30460c71de1a827353f",
+      "target": "ART-403bba96af7dc088e32b",
+      "key": "EDGE-8848d9009caeee7f8038"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -110190,6 +111708,83 @@
       "key": "EDGE-2585e7843a174ad73b5f"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-08a35f741cdef7fa6745",
+      "target": "ART-05d63b3f104abf01cc17",
+      "key": "EDGE-45a308c8c339a5ba21e2"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-08a35f741cdef7fa6745",
+      "target": "ART-c0ba0323215e2cf6aac7",
+      "key": "EDGE-b2cdd4c63464aec6fcb4"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-08a35f741cdef7fa6745",
+      "target": "ART-11b51e9ce672be59cfb1",
+      "key": "EDGE-56409bbbd063191ab39d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-08a35f741cdef7fa6745",
+      "target": "ART-534169a8e0ca61f66540",
+      "key": "EDGE-3d81adf8dad8bdede6bf"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-08a35f741cdef7fa6745",
+      "target": "ART-341fe12b439ab9706f00",
+      "key": "EDGE-a5fdd7fb5dd78954d9cb"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-08a35f741cdef7fa6745",
+      "target": "ART-0365e222ff8581a296a4",
+      "key": "EDGE-52f1635c4808b7a569c4"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-08a35f741cdef7fa6745",
+      "target": "ART-a805752fe767e645f55a",
+      "key": "EDGE-30216b09750d845e3b49"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -110584,6 +112179,17 @@
       "source": "ART-6a1ab025c7cd2ee6c159",
       "target": "ART-e813ba5fb9c614d5bf09",
       "key": "EDGE-111fb6396d1113e488df"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-6a1ab025c7cd2ee6c159",
+      "target": "ART-597f27d29d653dd2ccdd",
+      "key": "EDGE-ec4f9b8f5f4ed488276c"
     },
     {
       "relation": "PART_OF",
@@ -112104,6 +113710,39 @@
       "key": "EDGE-43ae17ba4b8214664e59"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-bb8a4569bdc7751d8770",
+      "target": "ART-c3b65b3c5b4920110e81",
+      "key": "EDGE-acfdca7656676e5673b3"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-bb8a4569bdc7751d8770",
+      "target": "ART-c2c465415984a9c45b0a",
+      "key": "EDGE-8b1cab8d85b6de621688"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-bb8a4569bdc7751d8770",
+      "target": "ART-1db9e16a9b39f60cc527",
+      "key": "EDGE-7f7529ca1edd9d1354ea"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -113464,6 +115103,39 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-9ec3241564dc76bd7c68",
+      "target": "ART-0e0364a93d45bd816077",
+      "key": "EDGE-fb61859f97739c898957"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-9ec3241564dc76bd7c68",
+      "target": "ART-ebf515b223c00c104f34",
+      "key": "EDGE-5234c7c93e19661ec94f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-9ec3241564dc76bd7c68",
+      "target": "ART-8b61f96a0945c1ecbd93",
+      "key": "EDGE-a9b05cf02df90e3b850e"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-9ec3241564dc76bd7c68",
       "target": "ART-c06f327362c3e6d47e30",
       "key": "EDGE-da968d45b9b8b735af2a"
     },
@@ -113499,6 +115171,17 @@
       "source": "ART-17f18cfa5049dc9a9d4f",
       "target": "ART-da5bd7ba744e910e9c7f",
       "key": "EDGE-dc9e2dac4e7e6f794729"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-17f18cfa5049dc9a9d4f",
+      "target": "ART-cc95ce3dc5dca0321b0d",
+      "key": "EDGE-12d665efb589bb494741"
     },
     {
       "relation": "PART_OF",
@@ -113653,6 +115336,39 @@
       "source": "ART-2e35ca40c1ea8aa99f3e",
       "target": "ART-e607d756b2909fccf87d",
       "key": "EDGE-04c912455be8b090b950"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2e35ca40c1ea8aa99f3e",
+      "target": "ART-53f4f9fecf0210da36e2",
+      "key": "EDGE-c1ca97bfe864b49faa6b"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2e35ca40c1ea8aa99f3e",
+      "target": "ART-2ddc640a3d0d8881c760",
+      "key": "EDGE-cfa5f5a91b0f47891177"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2e35ca40c1ea8aa99f3e",
+      "target": "ART-b78735a26eeb88c1961f",
+      "key": "EDGE-a727c31785e5d4f2a307"
     },
     {
       "relation": "REFERENCES",
@@ -113970,6 +115686,17 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-80873f24c8eb7ace5a82",
+      "key": "EDGE-3b301fb77a849dcc8810"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
       "target": "ART-08893b9a508efdeeed68",
       "key": "EDGE-eb496e482c4769d705a5"
     },
@@ -113983,6 +115710,281 @@
       "source": "ART-eabdcfefcc082b289267",
       "target": "ART-12d004046b1b56fc8cc4",
       "key": "EDGE-f68e28a5da9df6b2b985"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-c1ffc2f4ece0c753bd4f",
+      "key": "EDGE-68b85dc21b9572a0eb85"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-33b29ef7329274b5d144",
+      "key": "EDGE-07d7a29f91c5f9747604"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-4000cad75dd7f953ea39",
+      "key": "EDGE-9429c0aabf2eaf31693b"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-50304c814e160d9fe731",
+      "key": "EDGE-7167c10ad9c10afb5dbf"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-dc1dde48a916743d774e",
+      "key": "EDGE-c8a6c7fec60985a3ec5c"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-3d26903a76b482bf0bd6",
+      "key": "EDGE-12b91d3074eefd4a6078"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-7f7324702eb20b94081a",
+      "key": "EDGE-c19ccc08e95c688be4b1"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-e35da7eff803d0e6a7ef",
+      "key": "EDGE-c35d23355b678078b6a8"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-29c148988a60007c4c7f",
+      "key": "EDGE-d8670e4b02f5500e7615"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-9a6c9dffde7b1c1b762c",
+      "key": "EDGE-b191323aa72e102af040"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-c7b6f1ece56aa3cfc8b4",
+      "key": "EDGE-9d507133c783fdea9f84"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-f955e800fa6285327979",
+      "key": "EDGE-656da1b1a6c735a87f7f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-be62904838fb7740e1e0",
+      "key": "EDGE-284d45bf5f0a6a6db209"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-606b5c1b4d5a33a536a8",
+      "key": "EDGE-f0ca8fdfe2d2b1ec4396"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-41c33622cc805f42c357",
+      "key": "EDGE-ae05c4e49982e3c196dd"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-abe540a9cb31fc236620",
+      "key": "EDGE-2cb0c3f5a461e1692c2f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-68fe9a059f84cb7c5dae",
+      "key": "EDGE-192e48299574851ed17c"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-6a39bed5a8cf9a2cf621",
+      "key": "EDGE-ebbe98d36cc217f580fe"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-59739ff23d7561be74de",
+      "key": "EDGE-55dcd36681879eac9ad9"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-7d3f73cdf392a82b6ca4",
+      "key": "EDGE-9eee3bff7d4fd4dcad2d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-b696c7e0c93c5759f94e",
+      "key": "EDGE-2e54b8577f2c0a2177a7"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-6271d441cd393255f1b3",
+      "key": "EDGE-6e74a07f5a89a76f889d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-9eb2b53a8405a1fb7ec0",
+      "key": "EDGE-43794b64adbb2b4b29d2"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-08353599973ecbc0e033",
+      "key": "EDGE-659f62f10ba70be66d02"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-eabdcfefcc082b289267",
+      "target": "ART-b61227b0978972322a3c",
+      "key": "EDGE-eacb575cf88d6d58288a"
     },
     {
       "relation": "REFERENCES",
@@ -116119,6 +118121,17 @@
       "key": "EDGE-96aa60b276754eb7110d"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-155b934e2cc78e3114e5",
+      "target": "ART-0ea30a6425da854729a7",
+      "key": "EDGE-a9ab1b8dc0ac25612387"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -117448,6 +119461,17 @@
       "source": "ART-c4c460559ac4862c6cd8",
       "target": "ART-eddd5596e2529d9fc71f",
       "key": "EDGE-09dc84e89a030e380f6f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-c4c460559ac4862c6cd8",
+      "target": "ART-b68791a1bf7ef9ff7ac8",
+      "key": "EDGE-dbed8515a7c19bacd2c7"
     },
     {
       "relation": "PART_OF",
@@ -118953,6 +120977,39 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-4eaad0e51dc367fba0cc",
+      "target": "ART-2498afb3623b663a65c1",
+      "key": "EDGE-a0f83d4e0d8782c3ff9f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4eaad0e51dc367fba0cc",
+      "target": "ART-411930a183ed8f4ef231",
+      "key": "EDGE-4e84bf2b4477dd2fe57b"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4eaad0e51dc367fba0cc",
+      "target": "ART-5b54c035e6346e7f1950",
+      "key": "EDGE-bc8505c461c263f32aa2"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-4eaad0e51dc367fba0cc",
       "target": "ART-862d0e819cc5c88c25a7",
       "key": "EDGE-07b27430b37862029683"
     },
@@ -118977,6 +121034,17 @@
       "source": "ART-5b3b7c96a7337ed8efb4",
       "target": "ART-1a12fb3091b35c161e37",
       "key": "EDGE-a37dfaf7065f75fc6d65"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-5b3b7c96a7337ed8efb4",
+      "target": "ART-5b54c035e6346e7f1950",
+      "key": "EDGE-25947c2ba33bdcead56a"
     },
     {
       "relation": "REFERENCES",
@@ -120343,6 +122411,50 @@
       "key": "EDGE-a0a4234bf60211ca6b39"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-e9704e557555a0d84453",
+      "target": "ART-fee020686c92ed6907f6",
+      "key": "EDGE-221c4106067addbca244"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-e9704e557555a0d84453",
+      "target": "ART-086b4ff65c77a49e72ea",
+      "key": "EDGE-f53d021153f663ccc9c0"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-e9704e557555a0d84453",
+      "target": "ART-3ad3d32f31b2b5f50c6e",
+      "key": "EDGE-11376ba55beddab26355"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-e9704e557555a0d84453",
+      "target": "ART-55a032cf721dc64bc2f4",
+      "key": "EDGE-66f4cd3c41fc666ae28c"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -120759,6 +122871,28 @@
       "source": "ART-3a6999834372cee381a6",
       "target": "ART-143d34ce6247b8bb4b7b",
       "key": "EDGE-90b079aa88a772f8b162"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-3a6999834372cee381a6",
+      "target": "ART-7dd1e71cbff0ec59c689",
+      "key": "EDGE-954ade936529eae832e7"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-3a6999834372cee381a6",
+      "target": "ART-27803222324c46413958",
+      "key": "EDGE-0e9f07e2bfdd74e9cd41"
     },
     {
       "relation": "PART_OF",
@@ -122510,6 +124644,28 @@
       "key": "EDGE-31278424b208055c8b57"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-522236df45a16f5f0aa3",
+      "target": "ART-2d71ab4a74c78d493251",
+      "key": "EDGE-c705e2f5912195b1588e"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-522236df45a16f5f0aa3",
+      "target": "ART-712537dc652de1b1c793",
+      "key": "EDGE-316e844d6d8b7e239e85"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -122792,6 +124948,17 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-d5413cafc60f64a73b4b",
+      "target": "ART-c897e67e71f5b29ecdb3",
+      "key": "EDGE-d50ca13913ee1f5cd17c"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d5413cafc60f64a73b4b",
       "target": "ART-a6f38763af5079d212dd",
       "key": "EDGE-668e59e7ec18c2106460"
     },
@@ -122825,6 +124992,17 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-d5413cafc60f64a73b4b",
+      "target": "ART-2eeb6db0017e60106f51",
+      "key": "EDGE-afcd7e3b5193ecadfd7f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d5413cafc60f64a73b4b",
       "target": "ART-d21ad9656f96fec85f88",
       "key": "EDGE-fda191d24c4170e5d37e"
     },
@@ -122847,6 +125025,61 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-d5413cafc60f64a73b4b",
+      "target": "ART-fee020686c92ed6907f6",
+      "key": "EDGE-a159b7c46ed2f7f1536d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d5413cafc60f64a73b4b",
+      "target": "ART-086b4ff65c77a49e72ea",
+      "key": "EDGE-ed05dc67973c3a42a8d4"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d5413cafc60f64a73b4b",
+      "target": "ART-3ad3d32f31b2b5f50c6e",
+      "key": "EDGE-2e7e3a2319e57204fc87"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d5413cafc60f64a73b4b",
+      "target": "ART-55a032cf721dc64bc2f4",
+      "key": "EDGE-40e5c9c551e4496a4a15"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d5413cafc60f64a73b4b",
+      "target": "ART-d5bf78e756b640ee8ce0",
+      "key": "EDGE-eb74e4da5bd3819b2bbb"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d5413cafc60f64a73b4b",
       "target": "ART-d25d8acb2161958b6969",
       "key": "EDGE-44de26034962a379d76a"
     },
@@ -122860,17 +125093,6 @@
       "source": "ART-d5413cafc60f64a73b4b",
       "target": "ART-3abf98d697c21d96cfac",
       "key": "EDGE-6d3c585ce6874aa9be2b"
-    },
-    {
-      "relation": "REFERENCES",
-      "document_hop": 1,
-      "qualifiers": {
-        "basis": "explicit_article_reference"
-      },
-      "review_status": "machine_extracted_pending_human_review",
-      "source": "ART-d5413cafc60f64a73b4b",
-      "target": "ART-c897e67e71f5b29ecdb3",
-      "key": "EDGE-d50ca13913ee1f5cd17c"
     },
     {
       "relation": "REFERENCES",
@@ -123003,6 +125225,17 @@
       "source": "ART-5438a90367010b64fadb",
       "target": "ART-e325df287249e8a941eb",
       "key": "EDGE-9bb69150081e542a867b"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-5438a90367010b64fadb",
+      "target": "ART-2eeb6db0017e60106f51",
+      "key": "EDGE-8abf0ec76e8c6d02c990"
     },
     {
       "relation": "REFERENCES",
@@ -123212,6 +125445,17 @@
       "source": "ART-dcfdf6db367eb9b8ea4e",
       "target": "ART-6ef0f37e24d008cefbc2",
       "key": "EDGE-8f46491d8281b0cb2990"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-dcfdf6db367eb9b8ea4e",
+      "target": "ART-cc5b2cef16443afa2fec",
+      "key": "EDGE-86b3aefdd59c9ac16721"
     },
     {
       "relation": "PART_OF",
@@ -124642,6 +126886,17 @@
       "source": "ART-24adb1713fd660f94787",
       "target": "ART-bbdaf1c0517caf12d6da",
       "key": "EDGE-d3e851ef77f680cd870a"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-24adb1713fd660f94787",
+      "target": "ART-01938e0ca09cada484c1",
+      "key": "EDGE-a0f2318e41458ee3ef66"
     },
     {
       "relation": "PART_OF",
@@ -126426,6 +128681,17 @@
       "key": "EDGE-f8da51a42ba7a071a568"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-944a66e510dc7ba01a16",
+      "target": "ART-7702816aac38bb5ce5f4",
+      "key": "EDGE-b7238a661d468ca42101"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -126886,6 +129152,28 @@
       "source": "ART-69b64a5da5870ec9526a",
       "target": "ART-4d1d0876495049f91a2d",
       "key": "EDGE-985467532408cd669a8d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-69b64a5da5870ec9526a",
+      "target": "ART-56a89df67ba7f755e7f7",
+      "key": "EDGE-bb35208b17016de49503"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-69b64a5da5870ec9526a",
+      "target": "ART-1090568d529ab26d19ba",
+      "key": "EDGE-6bce25d1d5b5cc8cf163"
     },
     {
       "relation": "PART_OF",
@@ -128602,6 +130890,17 @@
       "source": "ART-2d701f9ebe9fe16becdf",
       "target": "ART-b6d0f9530fda4283458a",
       "key": "EDGE-db27cd8ee3ec7121b79d"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-2d701f9ebe9fe16becdf",
+      "target": "ART-b75146af8617c848cb52",
+      "key": "EDGE-29262d2e3bf5949d55e6"
     },
     {
       "relation": "PART_OF",
@@ -130956,6 +133255,17 @@
       "source": "ART-3638b6e5fae504a0c7a4",
       "target": "ART-7ef7c99eb23568ce51a9",
       "key": "EDGE-d58bfde32a5d6f1f2517"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-3638b6e5fae504a0c7a4",
+      "target": "ART-bf7df042a9bebe6efe6c",
+      "key": "EDGE-8f60edf02a99413a332b"
     },
     {
       "relation": "PART_OF",
@@ -135512,6 +137822,17 @@
       "key": "EDGE-26d19fedc03d2b5600f4"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-9c9a703bc6adf5fb3a86",
+      "target": "ART-e20bd17cded671ddfbb6",
+      "key": "EDGE-9639cdb781c246cf9041"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -137371,6 +139692,50 @@
       "key": "EDGE-f11f4b48c6c59a08a75e"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-ea96dc2badb4c67fdaf0",
+      "target": "ART-08002551f58af1307a1d",
+      "key": "EDGE-89f0e8f72c6b7eaa942f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-ea96dc2badb4c67fdaf0",
+      "target": "ART-66c83df181b4461eccd8",
+      "key": "EDGE-0ca1ec4b5037925bf156"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-ea96dc2badb4c67fdaf0",
+      "target": "ART-03e3e714e92fdb93de1c",
+      "key": "EDGE-319fe7fe21f8d2de74d2"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-ea96dc2badb4c67fdaf0",
+      "target": "ART-fdc29c50b3f622404613",
+      "key": "EDGE-e4d8e0fb7f22db483587"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -137457,6 +139822,17 @@
       "source": "ART-cf098ec67c5e8f580883",
       "target": "LAW-6bebe381871d300ad0de",
       "key": "EDGE-468383221196c21c3447"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-cf098ec67c5e8f580883",
+      "target": "ART-ca03b78b0c46b482b757",
+      "key": "EDGE-b89dbbe3e0c542077ffa"
     },
     {
       "relation": "PART_OF",
@@ -137976,6 +140352,28 @@
       "key": "EDGE-a4b3a09458563aab571c"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-9b0d1ccf963123a635d3",
+      "target": "ART-2bde64e1e15b4faba1bb",
+      "key": "EDGE-d5485e78b13305b0eaf3"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-9b0d1ccf963123a635d3",
+      "target": "ART-b954b7e3be1fc72d76db",
+      "key": "EDGE-4a83bf98597aa064bbe7"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -138117,6 +140515,17 @@
       "source": "ART-31219e7fcf77441158a9",
       "target": "LAW-6bebe381871d300ad0de",
       "key": "EDGE-9be8615466fe30ef437a"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-31219e7fcf77441158a9",
+      "target": "ART-1db9e16a9b39f60cc527",
+      "key": "EDGE-3ffb19d71e146e142b17"
     },
     {
       "relation": "PART_OF",
@@ -138669,6 +141078,17 @@
       "key": "EDGE-3d2203d637f757eedf11"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-9fb819213e5021185b5c",
+      "target": "ART-a379e829a6bd0b7bffe6",
+      "key": "EDGE-7a090f8632e3bd6ed29e"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -138810,6 +141230,17 @@
       "source": "ART-f014656fe28e4821cbd6",
       "target": "ART-dc95bc1762e10057eb2c",
       "key": "EDGE-76b663e3b3b05f743463"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-f014656fe28e4821cbd6",
+      "target": "ART-00a31dd4764ae741e409",
+      "key": "EDGE-e7be39472087ef07c60d"
     },
     {
       "relation": "PART_OF",
@@ -139384,6 +141815,28 @@
       "key": "EDGE-2ae14563e24802a2bada"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-1d0d2654a02d4dba798f",
+      "target": "ART-d1fa91b4c37ec939c9d9",
+      "key": "EDGE-bc5fead8d271fcc6ff60"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-1d0d2654a02d4dba798f",
+      "target": "ART-2752800e172b7b9614ca",
+      "key": "EDGE-7e8865b0eef1bf776388"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -139886,6 +142339,17 @@
       },
       "review_status": "machine_extracted_pending_human_review",
       "source": "ART-bfde1f58bbb95ae34d74",
+      "target": "ART-fdf16bc203c15d963e73",
+      "key": "EDGE-c7aa6caee8230b13e72f"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-bfde1f58bbb95ae34d74",
       "target": "ART-2cc91348d9645b7a97a1",
       "key": "EDGE-9db2996a4d26f7f93d28"
     },
@@ -139910,6 +142374,28 @@
       "source": "ART-19d353789d769a0d069e",
       "target": "ART-7d74fc39ae64cd57a2d5",
       "key": "EDGE-eb39d6ec6380007dd7e6"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-19d353789d769a0d069e",
+      "target": "ART-85bf8d5986a073770516",
+      "key": "EDGE-f449cc41042e6beaa8fb"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-19d353789d769a0d069e",
+      "target": "ART-abf3a0b3348ed3e35e87",
+      "key": "EDGE-5d1b25e5a4642758cf32"
     },
     {
       "relation": "REFERENCES",
@@ -139998,6 +142484,17 @@
       "source": "ART-19d353789d769a0d069e",
       "target": "ART-5a99bdfca4d9d7498b40",
       "key": "EDGE-5c7e0cc837b1f66c8321"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-19d353789d769a0d069e",
+      "target": "ART-2538f3e5a0c9e97e53f9",
+      "key": "EDGE-41b5b799860ad239387a"
     },
     {
       "relation": "REFERENCES",
@@ -140449,6 +142946,17 @@
       "source": "ART-c897e67e71f5b29ecdb3",
       "target": "LAW-b1067c583266c54cadb6",
       "key": "EDGE-c58197ea3d4ef25b07f3"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-c897e67e71f5b29ecdb3",
+      "target": "ART-5406e35c8d90f36dc358",
+      "key": "EDGE-17750bfe9d9cb6b73133"
     },
     {
       "relation": "PART_OF",
@@ -140924,6 +143432,17 @@
       "key": "EDGE-0b9905e58b0cdd2b5aff"
     },
     {
+      "relation": "REFERENCES",
+      "document_hop": 0,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-1778e42fa64894df406f",
+      "target": "ART-3f86c4130da816cae08a",
+      "key": "EDGE-d6e939ff63c1f998f652"
+    },
+    {
       "relation": "PART_OF",
       "document_hop": 0,
       "qualifiers": {
@@ -141329,6 +143848,17 @@
       "source": "ART-d25d8acb2161958b6969",
       "target": "ART-1640411c23818deed2bc",
       "key": "EDGE-6b7f5d0301ee2432f351"
+    },
+    {
+      "relation": "REFERENCES",
+      "document_hop": 1,
+      "qualifiers": {
+        "basis": "explicit_article_reference"
+      },
+      "review_status": "machine_extracted_pending_human_review",
+      "source": "ART-d25d8acb2161958b6969",
+      "target": "ART-5406e35c8d90f36dc358",
+      "key": "EDGE-4d073ef0074e1417e110"
     },
     {
       "relation": "PART_OF",

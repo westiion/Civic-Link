@@ -1,0 +1,7 @@
+# Preserve exact bytes used by recorded experiment SHA-256 fingerprints.
+results/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/*.jsonl -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/processed/graph*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+week4/analysis/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

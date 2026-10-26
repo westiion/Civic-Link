@@ -87,7 +87,7 @@ def output_dir(value):
     if value:
         return Path(value).resolve()
     stamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    return ROOT / 'results' / 'runs' / stamp
+    return ROOT / 'results' / 'week4_run' / stamp
 
 
 def parse_args():
@@ -113,6 +113,8 @@ def parse_args():
 
 def main():
     args = parse_args()
+    if args.top_k < 1 or args.candidate_k < args.top_k:
+        raise ValueError('require candidate_k >= top_k >= 1')
     methods = list(dict.fromkeys(args.methods))
     destination = output_dir(args.output_dir)
     if destination.exists() and any(destination.iterdir()):
@@ -180,10 +182,21 @@ def main():
                     args.db,
                     queries,
                     method,
-                    args.top_k,
+                    args.candidate_k if method == 'hybrid' else args.top_k,
                     args.candidate_k,
                     client if method != 'bm25' else None,
                 )
+                if method == 'hybrid':
+                    # Export this retrieval's deeper candidates; evaluate the same top_k as before.
+                    candidate_path = destination / 'hybrid_candidates.jsonl'
+                    write_jsonl(candidate_path, predictions)
+                    candidate_settings = dict(settings, queries_sha256=sources['queries'],
+                                              predictions_sha256=file_hash(candidate_path))
+                    write_json(candidate_path.with_suffix('.run.json'), candidate_settings)
+                    manifest['hybrid_candidates'] = {'path': candidate_path.name,
+                        'top_k': args.candidate_k, 'predictions_sha256': candidate_settings['predictions_sha256']}
+                    predictions = [{**row, 'hits': row['hits'][:args.top_k]} for row in predictions]
+                    settings = dict(settings, top_k=args.top_k)
             else:
                 hops = int(method[-1])
                 graph_config = {

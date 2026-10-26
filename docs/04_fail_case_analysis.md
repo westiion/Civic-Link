@@ -30,7 +30,7 @@ Graph의 hop 1→2에서는 92/204문항, 2→3에서는 23/204문항의 상위 
 
 “선택”은 검색 1위 근거를 뜻한다. 답변 생성·추가 확인/보류 판단·정답 문구의 의미 충족은 평가하지 않았다. 조항 일부가 검색돼도 해당 근거 그룹 발견으로 계산하며, 인용 구간의 문자 회수율은 별도 원자료에 남겼다. 질문·Gold는 같은 자료에서 만든 합성 개발자료이며 사람의 독립 검증은 없다. 기본 자료 기준일은 2026-09-24이다. 다만 성남시 안내는 2026-09-26 수집본으로 기준일에 소급하지 않으며, 국세청민원사무처리규정은 2025-08-12 시행본을 2026-09-26에 재수집했다.
 
-[204문항 비교 JSONL](../results/current204/per_question.jsonl) · [표 CSV](../results/current204/per_question.csv) · [저장된 상위 10 검색 결과](../results/current204/predictions.jsonl) · [수치 JSON](../results/current204/summary.json) · [재현 설정](../results/current204/run_manifest.json)
+[204문항 비교 JSONL](../results/week3_run/per_question.jsonl) · [표 CSV](../results/week3_run/per_question.csv) · [저장된 상위 10 검색 결과](../results/week3_run/predictions.jsonl) · [수치 JSON](../results/week3_run/summary.json) · [재현 설정](../results/week3_run/run_manifest.json)
 
 <a id="query-types"></a>
 
@@ -105,7 +105,7 @@ hop은 질문에서 찾은 서비스·법령을 탐색 출발점(seed)으로 삼
 
 검색 1위는 검색기가 매긴 순위이며 생성모델의 선택이 아닙니다. 근거 회수는 조항·안내절 수준의 일치로, 답변 정확성이나 모든 조건의 의미적 충족을 뜻하지 않습니다.
 
-[문항별 hop 변화](../results/current204/graph/hop_changes.jsonl) · [상위3·Gold·경로](../results/current204/graph/question_graph_evidence.jsonl) · [대표 사례 상세](../results/current204/graph/representative_examples.json) · [실행·해시 기록](../results/current204/graph/run_manifest.json)
+[문항별 hop 변화](../results/week3_run/graph/hop_changes.jsonl) · [상위3·Gold·경로](../results/week3_run/graph/question_graph_evidence.jsonl) · [대표 사례 상세](../results/week3_run/graph/representative_examples.json) · [실행·해시 기록](../results/week3_run/graph/run_manifest.json)
 
 <a id="failure-mechanisms"></a>
 
@@ -386,7 +386,7 @@ Hybrid 상위 10개: 0/1 근거 그룹. 누락: L부동산등기법 제19조. �
 
 ## 전체 204문항 상세
 
-판정은 상위 10개의 필수 근거 그룹 발견 기준이다. 전체 발견·일부 발견·미발견은 검색 판정이며, 추가 확인·응답 보류는 행동을 평가하지 않았다. 각 문항의 상위 3개와 1위 차이는 Hybrid 기준이며 문서·조항·짧은 원문을 순서대로 적었다. 일곱 방법의 상위 3개·점수·누락 근거는 [비교 JSONL](../results/current204/per_question.jsonl)과 [CSV](../results/current204/per_question.csv), 상위 10개 검색 결과의 발췌문·근거 인용은 [검색 결과 JSONL](../results/current204/predictions.jsonl)에 있다.
+판정은 상위 10개의 필수 근거 그룹 발견 기준이다. 전체 발견·일부 발견·미발견은 검색 판정이며, 추가 확인·응답 보류는 행동을 평가하지 않았다. 각 문항의 상위 3개와 1위 차이는 Hybrid 기준이며 문서·조항·짧은 원문을 순서대로 적었다. 일곱 방법의 상위 3개·점수·누락 근거는 [비교 JSONL](../results/week3_run/per_question.jsonl)과 [CSV](../results/week3_run/per_question.csv), 상위 10개 검색 결과의 발췌문·근거 인용은 [검색 결과 JSONL](../results/week3_run/predictions.jsonl)에 있다.
 
 ### 실패 22개
 
@@ -1588,7 +1588,7 @@ Graph 0: 전체 발견 · Graph 1: 일부 발견 · Graph 2: 일부 발견 · Gr
 
 성공 139문항의 질문·방법별 판정·Hybrid 상위 3개·1위와 Gold를 질문별로 확인할 수 있다.
 
-Hybrid에서 필수 근거 그룹을 상위 10개 안에 모두 찾은 139문항이다. 방법별 판정은 전체 발견·일부 발견·미발견으로 표시했다. 아래의 상위 3개와 검색 1위의 근거 그룹 수는 Hybrid 기준이다. 전체 방법별 근거와 Gold는 [비교 JSONL](../results/current204/per_question.jsonl)에 있다.
+Hybrid에서 필수 근거 그룹을 상위 10개 안에 모두 찾은 139문항이다. 방법별 판정은 전체 발견·일부 발견·미발견으로 표시했다. 아래의 상위 3개와 검색 1위의 근거 그룹 수는 Hybrid 기준이다. 전체 방법별 근거와 Gold는 [비교 JSONL](../results/week3_run/per_question.jsonl)에 있다.
 
 <a id="case-sj-n-001"></a>
 
@@ -4232,7 +4232,7 @@ Graph 0: 미발견 · Graph 1: 전체 발견 · Graph 2: 전체 발견 · Graph 
 </details>
 
 
-전체 204문항의 질문·Gold는 [질문 목록](questions.md), 7개 방법의 판정·누락 근거·문자 구간 회수율은 [JSONL](../results/current204/per_question.jsonl)과 [CSV](../results/current204/per_question.csv), 상위 10개 검색 결과의 발췌문·근거 인용·점수·경로는 [검색 결과](../results/current204/predictions.jsonl)에 있다. 짧게 표시한 질문·원문은 읽기용 축약이다. 재현 설정은 [실행 기록](../results/current204/run_manifest.json)과 [Graph 실행 기록](../results/current204/graph/run_manifest.json)을 따른다.
+전체 204문항의 질문·Gold는 [질문 목록](questions.md), 7개 방법의 판정·누락 근거·문자 구간 회수율은 [JSONL](../results/week3_run/per_question.jsonl)과 [CSV](../results/week3_run/per_question.csv), 상위 10개 검색 결과의 발췌문·근거 인용·점수·경로는 [검색 결과](../results/week3_run/predictions.jsonl)에 있다. 짧게 표시한 질문·원문은 읽기용 축약이다. 재현 설정은 [실행 기록](../results/week3_run/run_manifest.json)과 [Graph 실행 기록](../results/week3_run/graph/run_manifest.json)을 따른다.
 
 <a id="failure-storage"></a>
 

@@ -5,9 +5,12 @@
 **/*.pyc
 data/processed/civic.sqlite*
 data/processed/query_embeddings.*.jsonl
-results/runs/verification-*/
+results/week4_run/verification-*/
 data/graphability-audit/
 data/raw/
 **/.restore-*
 **/.DS_Store
 **/.DS-Store
+.pytest_cache/
+# Distributed as lossless gzip; restored by submission_cli.py verify.
+/results/week4_run/20261027_052016/week4/predictions/h1_lexical_uniform.jsonl

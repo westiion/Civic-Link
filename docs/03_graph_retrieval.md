@@ -347,33 +347,29 @@ Evidence:
 
 Rank는 각 질문·검색 설정 안의 순위다. max_hops는 탐색 상한이고 실제 graph_hops는 개별 hit가 이동한 edge 수다. SJ-N-003의 1위와 SJ-N-020의 10위는 edge를 타지 않은 Service node evidence다. 가상의 서비스→조항 경로를 붙이지 않는다. SJ-N-003의 3위는 조항 간 참조를 따른 결과이며 해당 질문의 필수 정답 근거라는 뜻은 아니다.
 
-위 다섯 예시는 결과 형식을 익히기 위한 것이다. [이 문서의 질문별 전건 결과](#all-graph-results)에는 204문항과 h=0~3의 저장된 Graph 결과를 모두 실었다. 인용은 evidence_quote의 앞부분을 공백 정규화해 짧게 표시했으며 생략은 …로 표시한다. [검색 원자료](../results/current204/predictions.jsonl)는 표시를 줄이지 않은 Evidence 인용과 경로 ID를 보관한다. [Graph 문항별 근거](../results/current204/graph/question_graph_evidence.jsonl)와 [04의 hop 분석](04_fail_case_analysis.md#hop-ablation)에도 연결된다.
+위 다섯 예시는 결과 형식을 익히기 위한 것이다. [이 문서의 질문별 전건 결과](#all-graph-results)에는 204문항과 h=0~3의 저장된 Graph 결과를 모두 실었다. 인용은 evidence_quote의 앞부분을 공백 정규화해 짧게 표시했으며 생략은 …로 표시한다. [검색 원자료](../results/week3_run/predictions.jsonl)는 표시를 줄이지 않은 Evidence 인용과 경로 ID를 보관한다. [Graph 문항별 근거](../results/week3_run/graph/question_graph_evidence.jsonl)와 [04의 hop 분석](04_fail_case_analysis.md#hop-ablation)에도 연결된다.
 
 <a id="section-03-5"></a>
 
-## 대표 Subgraph 3개
+## 대표 관계 예시 3개
 
-실제 구축된 5가지 관계를 세 사례로 나누어 제시한다. 실선은 Domain 관계, 점선은 Evidence 연결이다. 화살표가 자격 충족이나 모든 조건의 적용을 뜻하지 않는다.
 
 ### 1. 제출서류와 처리기관
 
-![Service → Document / Agency](../week3/figures/01_service_requirements.svg)
 
 주민등록표 등본 서비스의 대리 신청 위임장과 원문에 적힌 접수기관 범주를 보여준다. REQUIRES의 조건·대안과 원문 전체를 함께 읽는다.
 
 ### 2. 민원 안내에서 조항과 소속 법령으로
 
-![Service → Article → Law](../week3/figures/02_legal_grounding.svg)
 
 주민등록표 등본 안내의 명시적 인용을 따라 주민등록법 시행규칙 제13조와 소속 법령에 연결한다.
 
 ### 3. 조항 사이의 명시적 참조
 
-![Service → Article → Article](../week3/figures/03_article_reference.svg)
 
-토지대장 서비스에서 공간정보 관련 시행규칙 제74조를 거쳐 건축물대장 규칙 제11조로 이어지는 실제 참조다. 현재 SJ-N-003의 관련 청크는 앞의 3위 예시이며, 대표 그림을 검색 성능 자체의 증거로 해석하지 않는다.
+토지대장 서비스에서 공간정보 관련 시행규칙 제74조를 거쳐 건축물대장 규칙 제11조로 이어지는 실제 참조다. 현재 SJ-N-003의 관련 청크는 앞의 3위 예시이며, 이 관계 예시를 검색 성능 자체의 증거로 해석하지 않는다.
 
-[그림만 확대해서 보기](../week3/figures/index.html) · [실패·부분·성공과 hop ablation](04_fail_case_analysis.md)
+[실패·부분·성공과 hop ablation](04_fail_case_analysis.md)
 
 <a id="all-graph-results"></a>
 

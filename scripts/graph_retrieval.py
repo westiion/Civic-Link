@@ -2,25 +2,22 @@
 from __future__ import annotations
 import argparse
 import json
+import math
 import re
 import time
-from collections import deque
+from collections import Counter,deque
 from pathlib import Path
 from civic_data import ROOT,connect,digest,read_jsonl,write_json,write_jsonl
 from graph_construct import compact,load_graph
+from tokenization import TOKENIZER_NAME,token_set
 
 DEFAULTS=dict(top_k=10,seed_k=3,max_hops=2,max_nodes=12000,seed_threshold=.18)
-
-
-def bigrams(value):
-    s=compact(value)
-    return {s[i:i+2] for i in range(len(s)-1)}
-
 
 def label_score(question,label):
     q=compact(question);n=compact(label)
     if not q or not n:return 0.
-    return .7*len(bigrams(q)&bigrams(n))/max(1,len(bigrams(n)))+(.3 if n in q else 0.)
+    qterms=token_set(question);nterms=token_set(label)
+    return .7*len(qterms&nterms)/max(1,len(nterms))+(.3 if n in q else 0.)
 
 
 def path_text(graph,nodes,edges):
@@ -35,7 +32,9 @@ class GraphRetriever:
         with connect(db,True) as c:
             self.chunks={r['chunk_id']:dict(r) for r in c.execute('SELECT * FROM chunks')}
             self.docs={r['document_id']:dict(r) for r in c.execute('SELECT document_id,source_url FROM documents')}
-        self.chunk_terms={cid:bigrams(ch['text']) for cid,ch in self.chunks.items()}
+        self.chunk_terms={cid:token_set(ch['title']+' '+ch['text']) for cid,ch in self.chunks.items()}
+        frequency=Counter(term for terms in self.chunk_terms.values() for term in terms);total=len(self.chunk_terms)
+        self.idf={term:math.log(1+(total-count+.5)/(count+.5)) for term,count in frequency.items()}
         self.outgoing={n:sorted([(v,k,e) for _,v,k,e in graph.out_edges(n,keys=True,data=True)],key=lambda x:(x[0],x[1])) for n in graph}
 
     def seeds(self,question,seed_k=3,threshold=.18):
@@ -54,7 +53,8 @@ class GraphRetriever:
         if min(cfg['top_k'],cfg['seed_k'],cfg['max_nodes'])<1 or cfg['max_hops']<0 or not 0<cfg['seed_threshold']<=1:raise ValueError('invalid search limits')
         if not isinstance(question,str) or not question.strip():raise ValueError('empty question')
         seeds=self.seeds(question,cfg['seed_k'],cfg['seed_threshold']);candidates={};reached=set();truncated=False
-        qterms=bigrams(question);method='graph_h'+str(cfg['max_hops'])
+        qterms=token_set(question);known_qterms=qterms&self.idf.keys();query_weight=sum(self.idf[t] for t in known_qterms)
+        method='graph_h'+str(cfg['max_hops'])
         def collect(kind,owner,nodes,edges,seed):
             for eid in self.evidence[kind+'_bindings'].get(owner,[]):
                 ev=self.evidence['records'][eid]
@@ -63,7 +63,7 @@ class GraphRetriever:
                     if ev['source_document_id'] not in source_docs:continue
                 for cid in ev['chunk_ids']:
 
-                    relevance=len(qterms & self.chunk_terms[cid])/max(1,len(qterms))
+                    relevance=sum(self.idf[t] for t in known_qterms&self.chunk_terms[cid])/max(1.,query_weight)
                     score=seed['score']*(.45+relevance)/(1+.12*len(edges))
                     if ev['role']=='condition':score*=.95
                     identity=(tuple(nodes),tuple(e['key'] for e in edges),kind,owner,eid)
@@ -123,7 +123,7 @@ def main():
     qs=read_jsonl(a.queries) if a.queries else [dict(query_id='interactive',question=a.query)]
     cfg={k:getattr(a,k) for k in ['top_k','seed_k','max_hops','max_nodes']};rows,times=r.run(qs,**cfg)
     if a.output:
-        write_jsonl(a.output,rows);write_json(a.output.with_suffix('.run.json'),dict(config=cfg,query_latency_ms=times,graph_sha256=digest(a.graph.read_bytes()),evidence_sha256=digest(a.graph.with_suffix('.evidence.json').read_bytes()),generation=None))
+        write_jsonl(a.output,rows);write_json(a.output.with_suffix('.run.json'),dict(config=cfg,tokenizer=TOKENIZER_NAME,query_latency_ms=times,graph_sha256=digest(a.graph.read_bytes()),evidence_sha256=digest(a.graph.with_suffix('.evidence.json').read_bytes()),generation=None))
         print(f'{len(rows)} query results written')
     else:print(json.dumps(rows,ensure_ascii=False,indent=2))
 

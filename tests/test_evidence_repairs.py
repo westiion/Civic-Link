@@ -12,13 +12,24 @@ from graph_construct import (  # noqa: E402
     SCOPED_NEGATIVE_STATEMENTS,
     SCOPED_SERVICE_ALIASES,
     build_graph,
+    expand_article_range,
     matches_scoped_service_alias,
+    parse_article_sequence,
     scoped_negative_span,
 )
 from graph_retrieval import GraphRetriever  # noqa: E402
 
 
 class ScopedRuleTests(unittest.TestCase):
+    def test_article_ranges_expand_only_when_bounded_and_unambiguous(self):
+        self.assertEqual(expand_article_range('제1조', '제3조'), ['제1조', '제2조', '제3조'])
+        self.assertEqual(expand_article_range('제4조의2', '제4조의4'), ['제4조의2', '제4조의3', '제4조의4'])
+        self.assertIsNone(expand_article_range('제1조', '제100조'))
+        articles, _, error, is_range = parse_article_sequence(' 제1조부터 제3조까지 및 제7조')
+        self.assertEqual(articles, ['제1조', '제2조', '제3조', '제7조'])
+        self.assertIsNone(error)
+        self.assertTrue(is_range)
+
     def test_alias_requires_exact_source_row_category_and_cell_token(self):
         rule = SCOPED_SERVICE_ALIASES[0]
         service = {'service_id': 'SJ-SVC-011', 'name': '가족관계증명서'}
@@ -104,6 +115,11 @@ class RebuiltGraphTests(unittest.TestCase):
             edge['relation'] == 'REQUIRES' and '없음' in self.graph.nodes[target].get('label', '')
             for _, target, edge in self.graph.edges(data=True)
         ))
+
+    def test_contextual_and_range_references_are_bound_to_evidence(self):
+        rules = {record['extraction_rule'] for record in self.evidence['records'].values()}
+        self.assertTrue({'contextual_same_law_article', 'current_law_article'} & rules)
+        self.assertTrue(any(rule.endswith('_range') for rule in rules))
 
     def test_existing_graph_retriever_collects_seed_evidence_at_zero_hops(self):
         retriever = GraphRetriever(

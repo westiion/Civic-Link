@@ -43,11 +43,14 @@ def inspect(root,command,identifier=None):
 
 def main():
     p=argparse.ArgumentParser();sub=p.add_subparsers(dest='command',required=True)
-    for name in ('inventory','questions','services','documents','restore','verify'):sub.add_parser(name)
+    for name in ('inventory','questions','services','documents','restore','restore-results','verify'):sub.add_parser(name)
     for name in ('question','family','service','document','raw','chunk','evidence'):sub.add_parser(name).add_argument('identifier')
     search=sub.add_parser('search');search.add_argument('question');search.add_argument('--hops',type=int,choices=range(4),default=2)
     a=p.parse_args()
     if a.command=='verify':result=verify(ROOT)
+    elif a.command=='restore-results':
+        from restore_results import restore_results
+        result=restore_results(ROOT)
     elif a.command=='restore':result=dict(database=str(restore(ROOT).relative_to(ROOT)))
     elif a.command=='search':
         from graph_construct import load_graph

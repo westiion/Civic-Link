@@ -1,0 +1,3329 @@
+[
+  {
+    "query_id": "SJ-N-020",
+    "question": "지방세 과세된 내역 내라길래 체납 없다는 서류 떼갔더니 또 아니래요. 서류 이름이 왜 이렇게 비슷해요? 세목별로 과세된 거랑 체납 없다는 거, 다른 서류라는 거죠?",
+    "expected_action": "answer",
+    "gold": [
+      {
+        "acceptable_chunk_ids": [
+          "DOC-2a946aa97bd76df4af4e-C0001"
+        ],
+        "document_id": "DOC-2a946aa97bd76df4af4e",
+        "end_char": 520,
+        "evidence_id": "Q060-E1",
+        "locator": "기본정보",
+        "quote": "기본정보\n제공 내용\n이 민원은 지방세 세목별 과세사실을 증명하는 서류를 발급받기 위한 민원 사무입니다.\nㅇ 신청대상\n- 납세자 또는 위임받은 자\nㅇ 신청방법\n- 관할 지방정부 세무부서 방문 신청, 우편, 정부24·위택스(Wetax), 무인민원발급기 신청\nㅇ 제출서류\n- (본인 신청) 본인(법인의 경우 대표이사)임을 확인할 수 있는 신분증\n- (대리 신청) 위임장, 위임인의 신분증(사본), 대리인 신분증 ※ 법인의 경우, 위임장, 법인인감증명서, 대리인 신분증\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n",
+        "source_alias": "G021",
+        "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000084",
+        "start_char": 224,
+        "status": "source_located_pending_human_review"
+      },
+      {
+        "acceptable_chunk_ids": [
+          "DOC-b03c8e7d1701192d2c31-C0001"
+        ],
+        "document_id": "DOC-b03c8e7d1701192d2c31",
+        "end_char": 420,
+        "evidence_id": "Q060-E2",
+        "locator": "기본정보",
+        "quote": "기본정보\n제공 내용\n이 민원은 발급일 현재 아래의 금액을 제외한 다른 체납액이 없음을 증명하는 민원입니다.\n1. 지방세징수법 제25조·제25조의2·제26조 또는 제105조에 따른 유예액\n2. 채무자회생법 제140조에 따른 징수유예액 또는 체납처분에 따라 압류된 재산의 환가유예에 관련된 체납액 등\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n",
+        "source_alias": "G022",
+        "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000056",
+        "start_char": 217,
+        "status": "source_located_pending_human_review"
+      }
+    ],
+    "states": [
+      {
+        "hop": 0,
+        "top10_gold_group_ids": [
+          "Q060-E1",
+          "Q060-E2"
+        ],
+        "candidate_gold_group_ids": [
+          "Q060-E1",
+          "Q060-E2"
+        ],
+        "top3": [
+          {
+            "score": 0.20287037037037034,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-8193b7e2f7557023874b"
+            },
+            "evidence_quote": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n발급서류\n지방세 세목별 과세증명서 (지방세기본법 시행규칙: 별지 서식 49호)\n발급서식간편이름:\n( )\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n자치단체 조",
+            "evidence_span": [
+              0,
+              200
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-2a946aa97bd76df4af4e",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h0",
+            "rank": 1,
+            "chunk_id": "DOC-2a946aa97bd76df4af4e-C0000",
+            "document_id": "DOC-2a946aa97bd76df4af4e",
+            "title": "지방세 세목별 과세증명서 발급 / 서비스 개요",
+            "snippet": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n발급서류\n지방세 세목별 과세증명서 (지방세기본법 시행규칙: 별지 서식 49호)\n발급서식간편이름:\n( )\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n자치단체 조례로 결정, 전자민원(인터넷) 신청시 무료\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000084",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "서비스 개요",
+            "source_alias": "G021",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          },
+          {
+            "score": 0.20287037037037034,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-66c2bf0deff008894bd0"
+            },
+            "evidence_quote": "기본정보\n제공 내용\n이 민원은 지방세 세목별 과세사실을 증명하는 서류를 발급받기 위한 민원 사무입니다.\nㅇ 신청대상\n- 납세자 또는 위임받은 자\nㅇ 신청방법\n- 관할 지방정부 세무부서 방문 신청, 우편, 정부24·위택스(Wetax), 무인민원발급기 신청\nㅇ 제출서류\n- (본인 신청) 본인(법인의 경우 대표이사)임을 확인할 수 있는 신분증\n- (대리 신청) ",
+            "evidence_span": [
+              224,
+              424
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-2a946aa97bd76df4af4e",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h0",
+            "rank": 2,
+            "chunk_id": "DOC-2a946aa97bd76df4af4e-C0001",
+            "document_id": "DOC-2a946aa97bd76df4af4e",
+            "title": "지방세 세목별 과세증명서 발급 / 기본정보",
+            "snippet": "기본정보\n제공 내용\n이 민원은 지방세 세목별 과세사실을 증명하는 서류를 발급받기 위한 민원 사무입니다.\nㅇ 신청대상\n- 납세자 또는 위임받은 자\nㅇ 신청방법\n- 관할 지방정부 세무부서 방문 신청, 우편, 정부24·위택스(Wetax), 무인민원발급기 신청\nㅇ 제출서류\n- (본인 신청) 본인(법인의 경우 대표이사)임을 확인할 수 있는 신분증\n- (대리 신청) 위임장, 위임인의 신분증(사본), 대리인 신분증 ※ 법인의 경우, 위임장, 법인인감증명서, 대리인 신분증\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000084",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "기본정보",
+            "source_alias": "G021",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          },
+          {
+            "score": 0.1899074074074074,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-49c7efaed7ab92a7efc2"
+            },
+            "evidence_quote": "표 1 행 21: 업무: 지방세 | 민원증명: 지방세세목별과세증명서 | 발급수수료 / 관내: 시군구조례에 따라 다름 | 발급수수료 / 관외: 발급불가\n",
+            "evidence_span": [
+              1598,
+              1682
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-281de2ad41a7f804021d",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h0",
+            "rank": 3,
+            "chunk_id": "DOC-281de2ad41a7f804021d-C0019",
+            "document_id": "DOC-281de2ad41a7f804021d",
+            "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 21:",
+            "snippet": "표 1 행 21: 업무: 지방세 | 민원증명: 지방세세목별과세증명서 | 발급수수료 / 관내: 시군구조례에 따라 다름 | 발급수수료 / 관외: 발급불가\n",
+            "source_url": "https://www.seongnam.go.kr/cn020403",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "표 1 행 21:",
+            "source_alias": "C01",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          }
+        ]
+      },
+      {
+        "hop": 1,
+        "top10_gold_group_ids": [
+          "Q060-E1",
+          "Q060-E2"
+        ],
+        "candidate_gold_group_ids": [
+          "Q060-E1",
+          "Q060-E2"
+        ],
+        "top3": [
+          {
+            "score": 0.20287037037037034,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-8193b7e2f7557023874b"
+            },
+            "evidence_quote": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n발급서류\n지방세 세목별 과세증명서 (지방세기본법 시행규칙: 별지 서식 49호)\n발급서식간편이름:\n( )\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n자치단체 조",
+            "evidence_span": [
+              0,
+              200
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-2a946aa97bd76df4af4e",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h1",
+            "rank": 1,
+            "chunk_id": "DOC-2a946aa97bd76df4af4e-C0000",
+            "document_id": "DOC-2a946aa97bd76df4af4e",
+            "title": "지방세 세목별 과세증명서 발급 / 서비스 개요",
+            "snippet": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n발급서류\n지방세 세목별 과세증명서 (지방세기본법 시행규칙: 별지 서식 49호)\n발급서식간편이름:\n( )\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n자치단체 조례로 결정, 전자민원(인터넷) 신청시 무료\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000084",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "서비스 개요",
+            "source_alias": "G021",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          },
+          {
+            "score": 0.20287037037037034,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-66c2bf0deff008894bd0"
+            },
+            "evidence_quote": "기본정보\n제공 내용\n이 민원은 지방세 세목별 과세사실을 증명하는 서류를 발급받기 위한 민원 사무입니다.\nㅇ 신청대상\n- 납세자 또는 위임받은 자\nㅇ 신청방법\n- 관할 지방정부 세무부서 방문 신청, 우편, 정부24·위택스(Wetax), 무인민원발급기 신청\nㅇ 제출서류\n- (본인 신청) 본인(법인의 경우 대표이사)임을 확인할 수 있는 신분증\n- (대리 신청) ",
+            "evidence_span": [
+              224,
+              424
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-2a946aa97bd76df4af4e",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h1",
+            "rank": 2,
+            "chunk_id": "DOC-2a946aa97bd76df4af4e-C0001",
+            "document_id": "DOC-2a946aa97bd76df4af4e",
+            "title": "지방세 세목별 과세증명서 발급 / 기본정보",
+            "snippet": "기본정보\n제공 내용\n이 민원은 지방세 세목별 과세사실을 증명하는 서류를 발급받기 위한 민원 사무입니다.\nㅇ 신청대상\n- 납세자 또는 위임받은 자\nㅇ 신청방법\n- 관할 지방정부 세무부서 방문 신청, 우편, 정부24·위택스(Wetax), 무인민원발급기 신청\nㅇ 제출서류\n- (본인 신청) 본인(법인의 경우 대표이사)임을 확인할 수 있는 신분증\n- (대리 신청) 위임장, 위임인의 신분증(사본), 대리인 신분증 ※ 법인의 경우, 위임장, 법인인감증명서, 대리인 신분증\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000084",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "기본정보",
+            "source_alias": "G021",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          },
+          {
+            "score": 0.1899074074074074,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-49c7efaed7ab92a7efc2"
+            },
+            "evidence_quote": "표 1 행 21: 업무: 지방세 | 민원증명: 지방세세목별과세증명서 | 발급수수료 / 관내: 시군구조례에 따라 다름 | 발급수수료 / 관외: 발급불가\n",
+            "evidence_span": [
+              1598,
+              1682
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-281de2ad41a7f804021d",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h1",
+            "rank": 3,
+            "chunk_id": "DOC-281de2ad41a7f804021d-C0019",
+            "document_id": "DOC-281de2ad41a7f804021d",
+            "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 21:",
+            "snippet": "표 1 행 21: 업무: 지방세 | 민원증명: 지방세세목별과세증명서 | 발급수수료 / 관내: 시군구조례에 따라 다름 | 발급수수료 / 관외: 발급불가\n",
+            "source_url": "https://www.seongnam.go.kr/cn020403",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "표 1 행 21:",
+            "source_alias": "C01",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          }
+        ]
+      },
+      {
+        "hop": 2,
+        "top10_gold_group_ids": [
+          "Q060-E1"
+        ],
+        "candidate_gold_group_ids": [
+          "Q060-E1",
+          "Q060-E2"
+        ],
+        "top3": [
+          {
+            "score": 0.20287037037037034,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-8193b7e2f7557023874b"
+            },
+            "evidence_quote": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n발급서류\n지방세 세목별 과세증명서 (지방세기본법 시행규칙: 별지 서식 49호)\n발급서식간편이름:\n( )\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n자치단체 조",
+            "evidence_span": [
+              0,
+              200
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-2a946aa97bd76df4af4e",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h2",
+            "rank": 1,
+            "chunk_id": "DOC-2a946aa97bd76df4af4e-C0000",
+            "document_id": "DOC-2a946aa97bd76df4af4e",
+            "title": "지방세 세목별 과세증명서 발급 / 서비스 개요",
+            "snippet": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n발급서류\n지방세 세목별 과세증명서 (지방세기본법 시행규칙: 별지 서식 49호)\n발급서식간편이름:\n( )\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n자치단체 조례로 결정, 전자민원(인터넷) 신청시 무료\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000084",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "서비스 개요",
+            "source_alias": "G021",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          },
+          {
+            "score": 0.20287037037037034,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-66c2bf0deff008894bd0"
+            },
+            "evidence_quote": "기본정보\n제공 내용\n이 민원은 지방세 세목별 과세사실을 증명하는 서류를 발급받기 위한 민원 사무입니다.\nㅇ 신청대상\n- 납세자 또는 위임받은 자\nㅇ 신청방법\n- 관할 지방정부 세무부서 방문 신청, 우편, 정부24·위택스(Wetax), 무인민원발급기 신청\nㅇ 제출서류\n- (본인 신청) 본인(법인의 경우 대표이사)임을 확인할 수 있는 신분증\n- (대리 신청) ",
+            "evidence_span": [
+              224,
+              424
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-2a946aa97bd76df4af4e",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h2",
+            "rank": 2,
+            "chunk_id": "DOC-2a946aa97bd76df4af4e-C0001",
+            "document_id": "DOC-2a946aa97bd76df4af4e",
+            "title": "지방세 세목별 과세증명서 발급 / 기본정보",
+            "snippet": "기본정보\n제공 내용\n이 민원은 지방세 세목별 과세사실을 증명하는 서류를 발급받기 위한 민원 사무입니다.\nㅇ 신청대상\n- 납세자 또는 위임받은 자\nㅇ 신청방법\n- 관할 지방정부 세무부서 방문 신청, 우편, 정부24·위택스(Wetax), 무인민원발급기 신청\nㅇ 제출서류\n- (본인 신청) 본인(법인의 경우 대표이사)임을 확인할 수 있는 신분증\n- (대리 신청) 위임장, 위임인의 신분증(사본), 대리인 신분증 ※ 법인의 경우, 위임장, 법인인감증명서, 대리인 신분증\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000084",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "기본정보",
+            "source_alias": "G021",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          },
+          {
+            "score": 0.1899074074074074,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-49c7efaed7ab92a7efc2"
+            },
+            "evidence_quote": "표 1 행 21: 업무: 지방세 | 민원증명: 지방세세목별과세증명서 | 발급수수료 / 관내: 시군구조례에 따라 다름 | 발급수수료 / 관외: 발급불가\n",
+            "evidence_span": [
+              1598,
+              1682
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-281de2ad41a7f804021d",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h2",
+            "rank": 3,
+            "chunk_id": "DOC-281de2ad41a7f804021d-C0019",
+            "document_id": "DOC-281de2ad41a7f804021d",
+            "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 21:",
+            "snippet": "표 1 행 21: 업무: 지방세 | 민원증명: 지방세세목별과세증명서 | 발급수수료 / 관내: 시군구조례에 따라 다름 | 발급수수료 / 관외: 발급불가\n",
+            "source_url": "https://www.seongnam.go.kr/cn020403",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "표 1 행 21:",
+            "source_alias": "C01",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          }
+        ]
+      },
+      {
+        "hop": 3,
+        "top10_gold_group_ids": [
+          "Q060-E1"
+        ],
+        "candidate_gold_group_ids": [
+          "Q060-E1",
+          "Q060-E2"
+        ],
+        "top3": [
+          {
+            "score": 0.20287037037037034,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-8193b7e2f7557023874b"
+            },
+            "evidence_quote": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n발급서류\n지방세 세목별 과세증명서 (지방세기본법 시행규칙: 별지 서식 49호)\n발급서식간편이름:\n( )\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n자치단체 조",
+            "evidence_span": [
+              0,
+              200
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-2a946aa97bd76df4af4e",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h3",
+            "rank": 1,
+            "chunk_id": "DOC-2a946aa97bd76df4af4e-C0000",
+            "document_id": "DOC-2a946aa97bd76df4af4e",
+            "title": "지방세 세목별 과세증명서 발급 / 서비스 개요",
+            "snippet": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n발급서류\n지방세 세목별 과세증명서 (지방세기본법 시행규칙: 별지 서식 49호)\n발급서식간편이름:\n( )\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n자치단체 조례로 결정, 전자민원(인터넷) 신청시 무료\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000084",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "서비스 개요",
+            "source_alias": "G021",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          },
+          {
+            "score": 0.20287037037037034,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-66c2bf0deff008894bd0"
+            },
+            "evidence_quote": "기본정보\n제공 내용\n이 민원은 지방세 세목별 과세사실을 증명하는 서류를 발급받기 위한 민원 사무입니다.\nㅇ 신청대상\n- 납세자 또는 위임받은 자\nㅇ 신청방법\n- 관할 지방정부 세무부서 방문 신청, 우편, 정부24·위택스(Wetax), 무인민원발급기 신청\nㅇ 제출서류\n- (본인 신청) 본인(법인의 경우 대표이사)임을 확인할 수 있는 신분증\n- (대리 신청) ",
+            "evidence_span": [
+              224,
+              424
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-2a946aa97bd76df4af4e",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h3",
+            "rank": 2,
+            "chunk_id": "DOC-2a946aa97bd76df4af4e-C0001",
+            "document_id": "DOC-2a946aa97bd76df4af4e",
+            "title": "지방세 세목별 과세증명서 발급 / 기본정보",
+            "snippet": "기본정보\n제공 내용\n이 민원은 지방세 세목별 과세사실을 증명하는 서류를 발급받기 위한 민원 사무입니다.\nㅇ 신청대상\n- 납세자 또는 위임받은 자\nㅇ 신청방법\n- 관할 지방정부 세무부서 방문 신청, 우편, 정부24·위택스(Wetax), 무인민원발급기 신청\nㅇ 제출서류\n- (본인 신청) 본인(법인의 경우 대표이사)임을 확인할 수 있는 신분증\n- (대리 신청) 위임장, 위임인의 신분증(사본), 대리인 신분증 ※ 법인의 경우, 위임장, 법인인감증명서, 대리인 신분증\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000084",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "기본정보",
+            "source_alias": "G021",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          },
+          {
+            "score": 0.1899074074074074,
+            "seed_id": "SJ-SVC-020",
+            "path_nodes": [
+              "SJ-SVC-020"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-020",
+              "evidence_id": "EV-49c7efaed7ab92a7efc2"
+            },
+            "evidence_quote": "표 1 행 21: 업무: 지방세 | 민원증명: 지방세세목별과세증명서 | 발급수수료 / 관내: 시군구조례에 따라 다름 | 발급수수료 / 관외: 발급불가\n",
+            "evidence_span": [
+              1598,
+              1682
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-281de2ad41a7f804021d",
+            "query_id": "SJ-N-020",
+            "retriever": "graph_h3",
+            "rank": 3,
+            "chunk_id": "DOC-281de2ad41a7f804021d-C0019",
+            "document_id": "DOC-281de2ad41a7f804021d",
+            "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 21:",
+            "snippet": "표 1 행 21: 업무: 지방세 | 민원증명: 지방세세목별과세증명서 | 발급수수료 / 관내: 시군구조례에 따라 다름 | 발급수수료 / 관외: 발급불가\n",
+            "source_url": "https://www.seongnam.go.kr/cn020403",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "표 1 행 21:",
+            "source_alias": "C01",
+            "path_labels": [
+              "지방세 세목별 과세증명서"
+            ]
+          }
+        ]
+      }
+    ],
+    "all_ranked_paths": {
+      "0": [
+        {
+          "rank": 1,
+          "title": "지방세 세목별 과세증명서 발급 / 서비스 개요",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0000",
+          "score": 0.20287037037037034,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-8193b7e2f7557023874b"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "지방세 세목별 과세증명서 발급 / 기본정보",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0001",
+          "score": 0.20287037037037034,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-66c2bf0deff008894bd0"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 3,
+          "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 21:",
+          "chunk_id": "DOC-281de2ad41a7f804021d-C0019",
+          "score": 0.1899074074074074,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-49c7efaed7ab92a7efc2"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 4,
+          "title": "지방세 납세증명서 발급 / 기본정보",
+          "chunk_id": "DOC-b03c8e7d1701192d2c31-C0001",
+          "score": 0.10481481481481482,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-021",
+            "evidence_id": "EV-681f604a38401574b541"
+          },
+          "path_labels": [
+            "지방세 납세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 5,
+          "title": "지방세 납세증명서 발급 / 서비스 개요",
+          "chunk_id": "DOC-b03c8e7d1701192d2c31-C0000",
+          "score": 0.1011111111111111,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-021",
+            "evidence_id": "EV-3b99ca1e00fdf08a2dc7"
+          },
+          "path_labels": [
+            "지방세 납세증명서"
+          ],
+          "relations": []
+        }
+      ],
+      "1": [
+        {
+          "rank": 1,
+          "title": "지방세 세목별 과세증명서 발급 / 서비스 개요",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0000",
+          "score": 0.20287037037037034,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-8193b7e2f7557023874b"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "지방세 세목별 과세증명서 발급 / 기본정보",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0001",
+          "score": 0.20287037037037034,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-66c2bf0deff008894bd0"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 3,
+          "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 21:",
+          "chunk_id": "DOC-281de2ad41a7f804021d-C0019",
+          "score": 0.1899074074074074,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-49c7efaed7ab92a7efc2"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 4,
+          "title": "지방세기본법 시행령 / 제57조",
+          "chunk_id": "DOC-26c8eb8c3408473cc8ed-C0067",
+          "score": 0.18113425925925922,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-fc71cc0a02659bd5e318",
+            "evidence_id": "EV-349f95be44cbc792a205"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제57조(제공 정보의 범위 등)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "지방세기본법 시행규칙 / 제33조",
+          "chunk_id": "DOC-c0617e515b9fe8adbdfc-C0035",
+          "score": 0.1753472222222222,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-bb849190bd5752c69558",
+            "evidence_id": "EV-49ddf5440fa30c3d2802"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제33조(지방세 정보의 제공방법)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 6,
+          "title": "지방세 세목별 과세증명서 발급 / 부가정보",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0004",
+          "score": 0.15798611111111108,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "edge",
+            "owner_id": "EDGE-f0321fa221dd05d94629",
+            "evidence_id": "EV-b1079785c6749c356f97"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제87조(납세자 권리 행사에 필요한 정보의 제공)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 7,
+          "title": "지방세 세목별 과세증명서 발급 / 제출 서류",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0003",
+          "score": 0.15219907407407404,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "edge",
+            "owner_id": "EDGE-100867cc38fc0b3cadd9",
+            "evidence_id": "EV-abcdda7af0e39c23027d"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "위임장"
+          ],
+          "relations": [
+            "REQUIRES"
+          ]
+        },
+        {
+          "rank": 8,
+          "title": "지방세 세목별 과세증명서 발급 / 신청 방법 및 절차",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0002",
+          "score": 0.140625,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "edge",
+            "owner_id": "EDGE-1a1f487a225d8b741b96",
+            "evidence_id": "EV-d5495ba4f4ab80f9d43b"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "시.군.구"
+          ],
+          "relations": [
+            "HANDLED_BY"
+          ]
+        },
+        {
+          "rank": 9,
+          "title": "지방세기본법 / 제87조",
+          "chunk_id": "DOC-a7d44f2d899ad9c51df0-C0108",
+          "score": 0.140625,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-b3019d3aae7cc3b1e5e5",
+            "evidence_id": "EV-4d13ef1e54e7d7489f83"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제87조(납세자 권리 행사에 필요한 정보의 제공)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 10,
+          "title": "지방세 납세증명서 발급 / 기본정보",
+          "chunk_id": "DOC-b03c8e7d1701192d2c31-C0001",
+          "score": 0.10481481481481482,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-021",
+            "evidence_id": "EV-681f604a38401574b541"
+          },
+          "path_labels": [
+            "지방세 납세증명서"
+          ],
+          "relations": []
+        }
+      ],
+      "2": [
+        {
+          "rank": 1,
+          "title": "지방세 세목별 과세증명서 발급 / 서비스 개요",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0000",
+          "score": 0.20287037037037034,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-8193b7e2f7557023874b"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "지방세 세목별 과세증명서 발급 / 기본정보",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0001",
+          "score": 0.20287037037037034,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-66c2bf0deff008894bd0"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 3,
+          "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 21:",
+          "chunk_id": "DOC-281de2ad41a7f804021d-C0019",
+          "score": 0.1899074074074074,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-49c7efaed7ab92a7efc2"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 4,
+          "title": "지방세기본법 시행령 / 제57조",
+          "chunk_id": "DOC-26c8eb8c3408473cc8ed-C0067",
+          "score": 0.18113425925925922,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-fc71cc0a02659bd5e318",
+            "evidence_id": "EV-349f95be44cbc792a205"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제57조(제공 정보의 범위 등)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "지방세기본법 시행규칙 / 제33조",
+          "chunk_id": "DOC-c0617e515b9fe8adbdfc-C0035",
+          "score": 0.1753472222222222,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-bb849190bd5752c69558",
+            "evidence_id": "EV-49ddf5440fa30c3d2802"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제33조(지방세 정보의 제공방법)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 6,
+          "title": "지방세 세목별 과세증명서 발급 / 부가정보",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0004",
+          "score": 0.15798611111111108,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "edge",
+            "owner_id": "EDGE-f0321fa221dd05d94629",
+            "evidence_id": "EV-b1079785c6749c356f97"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제87조(납세자 권리 행사에 필요한 정보의 제공)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 7,
+          "title": "지방세 세목별 과세증명서 발급 / 제출 서류",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0003",
+          "score": 0.15219907407407404,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "edge",
+            "owner_id": "EDGE-100867cc38fc0b3cadd9",
+            "evidence_id": "EV-abcdda7af0e39c23027d"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "위임장"
+          ],
+          "relations": [
+            "REQUIRES"
+          ]
+        },
+        {
+          "rank": 8,
+          "title": "지방세기본법 / 제89조",
+          "chunk_id": "DOC-a7d44f2d899ad9c51df0-C0111",
+          "score": 0.1479241338112306,
+          "graph_hops": 2,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-0c265142fac780b953a6",
+            "evidence_id": "EV-1ff83d90e4d5b1cdbe2d"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제57조(제공 정보의 범위 등)",
+            "제89조(청구대상)"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "REFERENCES"
+          ]
+        },
+        {
+          "rank": 9,
+          "title": "지방세 세목별 과세증명서 발급 / 신청 방법 및 절차",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0002",
+          "score": 0.140625,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "edge",
+            "owner_id": "EDGE-1a1f487a225d8b741b96",
+            "evidence_id": "EV-d5495ba4f4ab80f9d43b"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "시.군.구"
+          ],
+          "relations": [
+            "HANDLED_BY"
+          ]
+        },
+        {
+          "rank": 10,
+          "title": "지방세기본법 / 제87조",
+          "chunk_id": "DOC-a7d44f2d899ad9c51df0-C0108",
+          "score": 0.140625,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-b3019d3aae7cc3b1e5e5",
+            "evidence_id": "EV-4d13ef1e54e7d7489f83"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제87조(납세자 권리 행사에 필요한 정보의 제공)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        }
+      ],
+      "3": [
+        {
+          "rank": 1,
+          "title": "지방세 세목별 과세증명서 발급 / 서비스 개요",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0000",
+          "score": 0.20287037037037034,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-8193b7e2f7557023874b"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "지방세 세목별 과세증명서 발급 / 기본정보",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0001",
+          "score": 0.20287037037037034,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-66c2bf0deff008894bd0"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 3,
+          "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 21:",
+          "chunk_id": "DOC-281de2ad41a7f804021d-C0019",
+          "score": 0.1899074074074074,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-020",
+            "evidence_id": "EV-49c7efaed7ab92a7efc2"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 4,
+          "title": "지방세기본법 시행령 / 제57조",
+          "chunk_id": "DOC-26c8eb8c3408473cc8ed-C0067",
+          "score": 0.18113425925925922,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-fc71cc0a02659bd5e318",
+            "evidence_id": "EV-349f95be44cbc792a205"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제57조(제공 정보의 범위 등)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "지방세기본법 시행규칙 / 제33조",
+          "chunk_id": "DOC-c0617e515b9fe8adbdfc-C0035",
+          "score": 0.1753472222222222,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-bb849190bd5752c69558",
+            "evidence_id": "EV-49ddf5440fa30c3d2802"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제33조(지방세 정보의 제공방법)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 6,
+          "title": "지방세 세목별 과세증명서 발급 / 부가정보",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0004",
+          "score": 0.15798611111111108,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "edge",
+            "owner_id": "EDGE-f0321fa221dd05d94629",
+            "evidence_id": "EV-b1079785c6749c356f97"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제87조(납세자 권리 행사에 필요한 정보의 제공)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 7,
+          "title": "지방세 세목별 과세증명서 발급 / 제출 서류",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0003",
+          "score": 0.15219907407407404,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "edge",
+            "owner_id": "EDGE-100867cc38fc0b3cadd9",
+            "evidence_id": "EV-abcdda7af0e39c23027d"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "위임장"
+          ],
+          "relations": [
+            "REQUIRES"
+          ]
+        },
+        {
+          "rank": 8,
+          "title": "지방세기본법 / 제89조",
+          "chunk_id": "DOC-a7d44f2d899ad9c51df0-C0111",
+          "score": 0.1479241338112306,
+          "graph_hops": 2,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-0c265142fac780b953a6",
+            "evidence_id": "EV-1ff83d90e4d5b1cdbe2d"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제57조(제공 정보의 범위 등)",
+            "제89조(청구대상)"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "REFERENCES"
+          ]
+        },
+        {
+          "rank": 9,
+          "title": "지방세 세목별 과세증명서 발급 / 신청 방법 및 절차",
+          "chunk_id": "DOC-2a946aa97bd76df4af4e-C0002",
+          "score": 0.140625,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "edge",
+            "owner_id": "EDGE-1a1f487a225d8b741b96",
+            "evidence_id": "EV-d5495ba4f4ab80f9d43b"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "시.군.구"
+          ],
+          "relations": [
+            "HANDLED_BY"
+          ]
+        },
+        {
+          "rank": 10,
+          "title": "지방세기본법 / 제87조",
+          "chunk_id": "DOC-a7d44f2d899ad9c51df0-C0108",
+          "score": 0.140625,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-b3019d3aae7cc3b1e5e5",
+            "evidence_id": "EV-4d13ef1e54e7d7489f83"
+          },
+          "path_labels": [
+            "지방세 세목별 과세증명서",
+            "제87조(납세자 권리 행사에 필요한 정보의 제공)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "SJ-N-050",
+    "question": "휴업사실증명을 무인발급기로 뗄 수 있다는 근거가 어디 있어요? 국세청 규정에서 다른 법을 연결해 놓았다면 그 법도 알려주세요.",
+    "expected_action": "answer",
+    "gold": [
+      {
+        "acceptable_chunk_ids": [
+          "DOC-1bac55fd50fbfb130cff-C0041"
+        ],
+        "document_id": "DOC-1bac55fd50fbfb130cff",
+        "end_char": 14025,
+        "evidence_id": "Q103-E1",
+        "locator": "제41조",
+        "quote": "제41조(무인민원발급창구를 통한 민원증명의 발급) ① 민원인이 「민원처리에 관한 법률」 제28조 및 같은 법 시행령 제32조에 따른 무인민원발급창구를 이용하여 신청한 국세 민원증명은 국세행정전산시스템(NTIS)과 연계하여 제공한다.\n② 무인민원발급창구의 취급민원은 행정안전부장관이 「민원처리에 관한 법률 시행령」 제32조제3항에 고시한 바와 같다.\n③ 발급번호는 국세행정전산시스템(NTIS)에서 부여한 번호를 사용한다.\n④ 무인민원발급창구를 통한 민원증명에 대하여 민원인 또는 수요기관이 문의할 경우 관할 세무서의 담당자는 친절하게 답해야 하고, 상세한 상담을 위하여 세무서 주무과의 담당자를 연결할 수 있다.\n",
+        "source_alias": "L국세청민원사무처리규정",
+        "source_url": "https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000263130&joTpYn=N&languageType=KO&chrClsCd=010202",
+        "start_char": 13683,
+        "status": "source_located_pending_human_review"
+      },
+      {
+        "acceptable_chunk_ids": [
+          "DOC-47bbf4a18be5224eb47f-C0035"
+        ],
+        "document_id": "DOC-47bbf4a18be5224eb47f",
+        "end_char": 12453,
+        "evidence_id": "Q103-E2",
+        "locator": "제28조",
+        "quote": "제28조(무인민원발급창구를 이용한 민원문서의 발급) ① 행정기관의 장은 무인민원발급창구를 통하여 민원문서(다른 행정기관 소관의 민원문서를 포함한다)를 발급할 수 있다.\n② 제1항에 따라 민원문서를 발급하는 경우에는 다른 법률에도 불구하고 수수료를 감면할 수 있다.\n③ 제1항에 따라 발급할 수 있는 민원문서의 종류는 행정안전부장관이 관계 행정기관의 장과의 협의를 거쳐 결정ㆍ고시한다. <개정 2017. 7. 26.>\n",
+        "source_alias": "L민원 처리에 관한 법률",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=239293&efYd=20220712&chrClsCd=010202",
+        "start_char": 12220,
+        "status": "source_located_pending_human_review"
+      },
+      {
+        "acceptable_chunk_ids": [
+          "DOC-5203497c9029e9024eb1-C0045"
+        ],
+        "document_id": "DOC-5203497c9029e9024eb1",
+        "end_char": 21620,
+        "evidence_id": "Q103-E3",
+        "locator": "제32조",
+        "quote": "제32조(무인민원발급창구를 이용한 민원문서 발급) ① 행정기관의 장은 법 제28조제1항에 따라 무인민원발급창구를 이용하여 민원문서를 발급할 때에는 소관 행정기관의 관인(전자이미지 관인을 포함한다. 이하 같다)을 생략하고 해당 기관의 관인을 찍어 발급할 수 있다. 다만, 법령상 또는 그 민원의 성질상 소관 행정기관의 관인을 찍을 필요가 있는 민원문서에는 소관 행정기관의 관인을 찍어야 한다.\n② 행정기관의 장은 민원문서를 발급할 때 법령에 따라 본인임을 확인하여야 하는 경우에 법령에서 특별히 본인 확인 방법을 정하고 있지 아니한 경우에는 행정안전부장관이 정한 전자적 매체를 이용하여 확인할 수 있다. <개정 2017. 7. 26.>\n③ 행정안전부장관은 무인민원발급창구를 이용하여 처리할 수 있는 민원의 종류 및 추가비용과 제2항에 따른 전자적 매체를 이용하여 본인 확인을 할 수 있는 민원의 종류 등을 정하여 관보에 고시하고, 인터넷 홈페이지에 게시하여야 한다. 이 경우 소관 민원을 관장하는 중앙행정기관의 장과 미리 협의하여야 한다. <개정 2017. 7. 26.>\n④ 제1항부터 제3항까지에서 규정한 사항 외에 무인민원발급창구의 설치ㆍ운영 등에 필요한 사항은 행정안전부장관이 정한다. <개정 2017. 7. 26.>\n제4절 법정민원\n",
+        "source_alias": "L민원 처리에 관한 법률 시행령",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=285815&efYd=20260506&chrClsCd=010202",
+        "start_char": 20983,
+        "status": "source_located_pending_human_review"
+      }
+    ],
+    "states": [
+      {
+        "hop": 0,
+        "top10_gold_group_ids": [],
+        "candidate_gold_group_ids": [],
+        "top3": [
+          {
+            "score": 0.6068627450980393,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-27258945b0c30578e438"
+            },
+            "evidence_quote": "표 1 행 36: 업무: 국세청 증명 | 민원증명: 휴업사실증명 | 발급수수료 / 관내: 무료 | 발급수수료 / 관외: 무료\n",
+            "evidence_span": [
+              2880,
+              2950
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-281de2ad41a7f804021d",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h0",
+            "rank": 1,
+            "chunk_id": "DOC-281de2ad41a7f804021d-C0034",
+            "document_id": "DOC-281de2ad41a7f804021d",
+            "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 36:",
+            "snippet": "표 1 행 36: 업무: 국세청 증명 | 민원증명: 휴업사실증명 | 발급수수료 / 관내: 무료 | 발급수수료 / 관외: 무료\n",
+            "source_url": "https://www.seongnam.go.kr/cn020403",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "표 1 행 36:",
+            "source_alias": "C01",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          },
+          {
+            "score": 0.6068627450980393,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-e836bc9b8c1c737c8f9c"
+            },
+            "evidence_quote": "서비스 개요\n신청방법\n인터넷, 방문, 민원우편, 모바일, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n국세 증명발급 등 민원신청서 (국세청민원사무처리규정: 별지 서식 1호)\n신청작성예시\n구비서류\n구비서류 없음 (하단 참조)\n수수료\n수수료 없음\n",
+            "evidence_span": [
+              0,
+              183
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-777d3a3655239e31dc63",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h0",
+            "rank": 2,
+            "chunk_id": "DOC-777d3a3655239e31dc63-C0000",
+            "document_id": "DOC-777d3a3655239e31dc63",
+            "title": "휴업사실증명 발급 / 서비스 개요",
+            "snippet": "서비스 개요\n신청방법\n인터넷, 방문, 민원우편, 모바일, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n국세 증명발급 등 민원신청서 (국세청민원사무처리규정: 별지 서식 1호)\n신청작성예시\n구비서류\n구비서류 없음 (하단 참조)\n수수료\n수수료 없음\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000017",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "서비스 개요",
+            "source_alias": "G024",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          },
+          {
+            "score": 0.5872549019607843,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-ef2b323c9001bcc6018f"
+            },
+            "evidence_quote": "기본정보\n제공 내용\n이 민원은 휴업 사실 확인을 증명받고자 신청하는 민원입니다.\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n온라인열람 민원사무는 MyGOV > 나의 신청내역 > 서비스 신청내역에서 수령물을 열람할 수 있습니다.\n",
+            "evidence_span": [
+              183,
+              323
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-777d3a3655239e31dc63",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h0",
+            "rank": 3,
+            "chunk_id": "DOC-777d3a3655239e31dc63-C0001",
+            "document_id": "DOC-777d3a3655239e31dc63",
+            "title": "휴업사실증명 발급 / 기본정보",
+            "snippet": "기본정보\n제공 내용\n이 민원은 휴업 사실 확인을 증명받고자 신청하는 민원입니다.\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n온라인열람 민원사무는 MyGOV > 나의 신청내역 > 서비스 신청내역에서 수령물을 열람할 수 있습니다.\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000017",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "기본정보",
+            "source_alias": "G024",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          }
+        ]
+      },
+      {
+        "hop": 1,
+        "top10_gold_group_ids": [
+          "Q103-E1"
+        ],
+        "candidate_gold_group_ids": [
+          "Q103-E1"
+        ],
+        "top3": [
+          {
+            "score": 0.6068627450980393,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-27258945b0c30578e438"
+            },
+            "evidence_quote": "표 1 행 36: 업무: 국세청 증명 | 민원증명: 휴업사실증명 | 발급수수료 / 관내: 무료 | 발급수수료 / 관외: 무료\n",
+            "evidence_span": [
+              2880,
+              2950
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-281de2ad41a7f804021d",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h1",
+            "rank": 1,
+            "chunk_id": "DOC-281de2ad41a7f804021d-C0034",
+            "document_id": "DOC-281de2ad41a7f804021d",
+            "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 36:",
+            "snippet": "표 1 행 36: 업무: 국세청 증명 | 민원증명: 휴업사실증명 | 발급수수료 / 관내: 무료 | 발급수수료 / 관외: 무료\n",
+            "source_url": "https://www.seongnam.go.kr/cn020403",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "표 1 행 36:",
+            "source_alias": "C01",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          },
+          {
+            "score": 0.6068627450980393,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-e836bc9b8c1c737c8f9c"
+            },
+            "evidence_quote": "서비스 개요\n신청방법\n인터넷, 방문, 민원우편, 모바일, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n국세 증명발급 등 민원신청서 (국세청민원사무처리규정: 별지 서식 1호)\n신청작성예시\n구비서류\n구비서류 없음 (하단 참조)\n수수료\n수수료 없음\n",
+            "evidence_span": [
+              0,
+              183
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-777d3a3655239e31dc63",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h1",
+            "rank": 2,
+            "chunk_id": "DOC-777d3a3655239e31dc63-C0000",
+            "document_id": "DOC-777d3a3655239e31dc63",
+            "title": "휴업사실증명 발급 / 서비스 개요",
+            "snippet": "서비스 개요\n신청방법\n인터넷, 방문, 민원우편, 모바일, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n국세 증명발급 등 민원신청서 (국세청민원사무처리규정: 별지 서식 1호)\n신청작성예시\n구비서류\n구비서류 없음 (하단 참조)\n수수료\n수수료 없음\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000017",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "서비스 개요",
+            "source_alias": "G024",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          },
+          {
+            "score": 0.5872549019607843,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-ef2b323c9001bcc6018f"
+            },
+            "evidence_quote": "기본정보\n제공 내용\n이 민원은 휴업 사실 확인을 증명받고자 신청하는 민원입니다.\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n온라인열람 민원사무는 MyGOV > 나의 신청내역 > 서비스 신청내역에서 수령물을 열람할 수 있습니다.\n",
+            "evidence_span": [
+              183,
+              323
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-777d3a3655239e31dc63",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h1",
+            "rank": 3,
+            "chunk_id": "DOC-777d3a3655239e31dc63-C0001",
+            "document_id": "DOC-777d3a3655239e31dc63",
+            "title": "휴업사실증명 발급 / 기본정보",
+            "snippet": "기본정보\n제공 내용\n이 민원은 휴업 사실 확인을 증명받고자 신청하는 민원입니다.\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n온라인열람 민원사무는 MyGOV > 나의 신청내역 > 서비스 신청내역에서 수령물을 열람할 수 있습니다.\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000017",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "기본정보",
+            "source_alias": "G024",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          }
+        ]
+      },
+      {
+        "hop": 2,
+        "top10_gold_group_ids": [
+          "Q103-E1",
+          "Q103-E2",
+          "Q103-E3"
+        ],
+        "candidate_gold_group_ids": [
+          "Q103-E1",
+          "Q103-E2",
+          "Q103-E3"
+        ],
+        "top3": [
+          {
+            "score": 0.6068627450980393,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-27258945b0c30578e438"
+            },
+            "evidence_quote": "표 1 행 36: 업무: 국세청 증명 | 민원증명: 휴업사실증명 | 발급수수료 / 관내: 무료 | 발급수수료 / 관외: 무료\n",
+            "evidence_span": [
+              2880,
+              2950
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-281de2ad41a7f804021d",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h2",
+            "rank": 1,
+            "chunk_id": "DOC-281de2ad41a7f804021d-C0034",
+            "document_id": "DOC-281de2ad41a7f804021d",
+            "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 36:",
+            "snippet": "표 1 행 36: 업무: 국세청 증명 | 민원증명: 휴업사실증명 | 발급수수료 / 관내: 무료 | 발급수수료 / 관외: 무료\n",
+            "source_url": "https://www.seongnam.go.kr/cn020403",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "표 1 행 36:",
+            "source_alias": "C01",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          },
+          {
+            "score": 0.6068627450980393,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-e836bc9b8c1c737c8f9c"
+            },
+            "evidence_quote": "서비스 개요\n신청방법\n인터넷, 방문, 민원우편, 모바일, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n국세 증명발급 등 민원신청서 (국세청민원사무처리규정: 별지 서식 1호)\n신청작성예시\n구비서류\n구비서류 없음 (하단 참조)\n수수료\n수수료 없음\n",
+            "evidence_span": [
+              0,
+              183
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-777d3a3655239e31dc63",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h2",
+            "rank": 2,
+            "chunk_id": "DOC-777d3a3655239e31dc63-C0000",
+            "document_id": "DOC-777d3a3655239e31dc63",
+            "title": "휴업사실증명 발급 / 서비스 개요",
+            "snippet": "서비스 개요\n신청방법\n인터넷, 방문, 민원우편, 모바일, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n국세 증명발급 등 민원신청서 (국세청민원사무처리규정: 별지 서식 1호)\n신청작성예시\n구비서류\n구비서류 없음 (하단 참조)\n수수료\n수수료 없음\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000017",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "서비스 개요",
+            "source_alias": "G024",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          },
+          {
+            "score": 0.5872549019607843,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-ef2b323c9001bcc6018f"
+            },
+            "evidence_quote": "기본정보\n제공 내용\n이 민원은 휴업 사실 확인을 증명받고자 신청하는 민원입니다.\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n온라인열람 민원사무는 MyGOV > 나의 신청내역 > 서비스 신청내역에서 수령물을 열람할 수 있습니다.\n",
+            "evidence_span": [
+              183,
+              323
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-777d3a3655239e31dc63",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h2",
+            "rank": 3,
+            "chunk_id": "DOC-777d3a3655239e31dc63-C0001",
+            "document_id": "DOC-777d3a3655239e31dc63",
+            "title": "휴업사실증명 발급 / 기본정보",
+            "snippet": "기본정보\n제공 내용\n이 민원은 휴업 사실 확인을 증명받고자 신청하는 민원입니다.\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n온라인열람 민원사무는 MyGOV > 나의 신청내역 > 서비스 신청내역에서 수령물을 열람할 수 있습니다.\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000017",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "기본정보",
+            "source_alias": "G024",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          }
+        ]
+      },
+      {
+        "hop": 3,
+        "top10_gold_group_ids": [
+          "Q103-E1",
+          "Q103-E2",
+          "Q103-E3"
+        ],
+        "candidate_gold_group_ids": [
+          "Q103-E1",
+          "Q103-E2",
+          "Q103-E3"
+        ],
+        "top3": [
+          {
+            "score": 0.6068627450980393,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-27258945b0c30578e438"
+            },
+            "evidence_quote": "표 1 행 36: 업무: 국세청 증명 | 민원증명: 휴업사실증명 | 발급수수료 / 관내: 무료 | 발급수수료 / 관외: 무료\n",
+            "evidence_span": [
+              2880,
+              2950
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-281de2ad41a7f804021d",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h3",
+            "rank": 1,
+            "chunk_id": "DOC-281de2ad41a7f804021d-C0034",
+            "document_id": "DOC-281de2ad41a7f804021d",
+            "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 36:",
+            "snippet": "표 1 행 36: 업무: 국세청 증명 | 민원증명: 휴업사실증명 | 발급수수료 / 관내: 무료 | 발급수수료 / 관외: 무료\n",
+            "source_url": "https://www.seongnam.go.kr/cn020403",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "표 1 행 36:",
+            "source_alias": "C01",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          },
+          {
+            "score": 0.6068627450980393,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-e836bc9b8c1c737c8f9c"
+            },
+            "evidence_quote": "서비스 개요\n신청방법\n인터넷, 방문, 민원우편, 모바일, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n국세 증명발급 등 민원신청서 (국세청민원사무처리규정: 별지 서식 1호)\n신청작성예시\n구비서류\n구비서류 없음 (하단 참조)\n수수료\n수수료 없음\n",
+            "evidence_span": [
+              0,
+              183
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-777d3a3655239e31dc63",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h3",
+            "rank": 2,
+            "chunk_id": "DOC-777d3a3655239e31dc63-C0000",
+            "document_id": "DOC-777d3a3655239e31dc63",
+            "title": "휴업사실증명 발급 / 서비스 개요",
+            "snippet": "서비스 개요\n신청방법\n인터넷, 방문, 민원우편, 모바일, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n국세 증명발급 등 민원신청서 (국세청민원사무처리규정: 별지 서식 1호)\n신청작성예시\n구비서류\n구비서류 없음 (하단 참조)\n수수료\n수수료 없음\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000017",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "서비스 개요",
+            "source_alias": "G024",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          },
+          {
+            "score": 0.5872549019607843,
+            "seed_id": "SJ-SVC-023",
+            "path_nodes": [
+              "SJ-SVC-023"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-023",
+              "evidence_id": "EV-ef2b323c9001bcc6018f"
+            },
+            "evidence_quote": "기본정보\n제공 내용\n이 민원은 휴업 사실 확인을 증명받고자 신청하는 민원입니다.\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n온라인열람 민원사무는 MyGOV > 나의 신청내역 > 서비스 신청내역에서 수령물을 열람할 수 있습니다.\n",
+            "evidence_span": [
+              183,
+              323
+            ],
+            "evidence_role": "service_context",
+            "evidence_source_document_id": "DOC-777d3a3655239e31dc63",
+            "query_id": "SJ-N-050",
+            "retriever": "graph_h3",
+            "rank": 3,
+            "chunk_id": "DOC-777d3a3655239e31dc63-C0001",
+            "document_id": "DOC-777d3a3655239e31dc63",
+            "title": "휴업사실증명 발급 / 기본정보",
+            "snippet": "기본정보\n제공 내용\n이 민원은 휴업 사실 확인을 증명받고자 신청하는 민원입니다.\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n온라인열람 민원사무는 MyGOV > 나의 신청내역 > 서비스 신청내역에서 수령물을 열람할 수 있습니다.\n",
+            "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000017",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "기본정보",
+            "source_alias": "G024",
+            "path_labels": [
+              "휴업사실증명"
+            ]
+          }
+        ]
+      }
+    ],
+    "all_ranked_paths": {
+      "0": [
+        {
+          "rank": 1,
+          "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 36:",
+          "chunk_id": "DOC-281de2ad41a7f804021d-C0034",
+          "score": 0.6068627450980393,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-27258945b0c30578e438"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "휴업사실증명 발급 / 서비스 개요",
+          "chunk_id": "DOC-777d3a3655239e31dc63-C0000",
+          "score": 0.6068627450980393,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-e836bc9b8c1c737c8f9c"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 3,
+          "title": "휴업사실증명 발급 / 기본정보",
+          "chunk_id": "DOC-777d3a3655239e31dc63-C0001",
+          "score": 0.5872549019607843,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-ef2b323c9001bcc6018f"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 4,
+          "title": "폐업사실증명 발급 / 서비스 개요",
+          "chunk_id": "DOC-e86265e53821e68b3f2b-C0000",
+          "score": 0.3837647058823529,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-024",
+            "evidence_id": "EV-2e1e423185ef14d35a96"
+          },
+          "path_labels": [
+            "폐업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 5,
+          "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 37:",
+          "chunk_id": "DOC-281de2ad41a7f804021d-C0035",
+          "score": 0.3288627450980392,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-024",
+            "evidence_id": "EV-0031b820080bf4cda9b8"
+          },
+          "path_labels": [
+            "폐업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 6,
+          "title": "폐업사실증명 발급 / 기본정보",
+          "chunk_id": "DOC-e86265e53821e68b3f2b-C0001",
+          "score": 0.31788235294117645,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-024",
+            "evidence_id": "EV-7be07cfacfd79a922c1a"
+          },
+          "path_labels": [
+            "폐업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 7,
+          "title": "납세증명서 발급 / 서비스 개요",
+          "chunk_id": "DOC-5d0e1bfb8332bbf12a07-C0000",
+          "score": 0.1507516339869281,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-025",
+            "evidence_id": "EV-1bb6e18fd532bb1e8ee2"
+          },
+          "path_labels": [
+            "국세 납세증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 8,
+          "title": "납세증명서 발급 / 기본정보",
+          "chunk_id": "DOC-5d0e1bfb8332bbf12a07-C0001",
+          "score": 0.14617647058823527,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-025",
+            "evidence_id": "EV-a80bc80b560fdffa00a3"
+          },
+          "path_labels": [
+            "국세 납세증명서"
+          ],
+          "relations": []
+        }
+      ],
+      "1": [
+        {
+          "rank": 1,
+          "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 36:",
+          "chunk_id": "DOC-281de2ad41a7f804021d-C0034",
+          "score": 0.6068627450980393,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-27258945b0c30578e438"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "휴업사실증명 발급 / 서비스 개요",
+          "chunk_id": "DOC-777d3a3655239e31dc63-C0000",
+          "score": 0.6068627450980393,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-e836bc9b8c1c737c8f9c"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 3,
+          "title": "휴업사실증명 발급 / 기본정보",
+          "chunk_id": "DOC-777d3a3655239e31dc63-C0001",
+          "score": 0.5872549019607843,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-ef2b323c9001bcc6018f"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 4,
+          "title": "국세청민원사무처리규정 / 제40조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0040",
+          "score": 0.5768557422969187,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-f800577388ae8a4e1870",
+            "evidence_id": "EV-3a8918eacc86dcef41d6"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제40조(어디서나 민원처리제를 통한 민원증명의 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "국세청민원사무처리규정 / 제37조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0037",
+          "score": 0.5418417366946778,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-5826f074c09b1fb3a49a",
+            "evidence_id": "EV-18ff5e3d5882a654f549"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제37조(홈택스에 의한 민원증명)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 6,
+          "title": "국세청민원사무처리규정 / 제41조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0041",
+          "score": 0.5418417366946778,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-f3d7c23927a1efd22f0f",
+            "evidence_id": "EV-00832e9f78dd7cb3e8bd"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제41조(무인민원발급창구를 통한 민원증명의 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 7,
+          "title": "국세청민원사무처리규정 / 제39조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0039",
+          "score": 0.5243347338935574,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-cffb70ce6df7fe771004",
+            "evidence_id": "EV-3eec81235cda116b6d32"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제39조(통합전자민원창구에 의한 민원증명)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 8,
+          "title": "국세청민원사무처리규정 / 제33조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0034",
+          "score": 0.47181372549019607,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-8cc52aeb2e72b25a2d8a",
+            "evidence_id": "EV-2e2c2ac09bef0260dd07"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제33조(민원봉사실에서 전산확인하여 발급하는 민원증명의 처리)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 9,
+          "title": "국세청민원사무처리규정 / 제42조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0042",
+          "score": 0.47181372549019607,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-48a8def69d4063cc87e5",
+            "evidence_id": "EV-f91cb9d2eb3c8c009318"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제42조(민원우편을 통한 민원증명의 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 10,
+          "title": "휴업사실증명 발급 / 부가정보",
+          "chunk_id": "DOC-777d3a3655239e31dc63-C0004",
+          "score": 0.47181372549019607,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "edge",
+            "owner_id": "EDGE-b8e13d6591a4c814808e",
+            "evidence_id": "EV-4a10be246388c20f2551"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제42조(민원우편을 통한 민원증명의 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        }
+      ],
+      "2": [
+        {
+          "rank": 1,
+          "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 36:",
+          "chunk_id": "DOC-281de2ad41a7f804021d-C0034",
+          "score": 0.6068627450980393,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-27258945b0c30578e438"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "휴업사실증명 발급 / 서비스 개요",
+          "chunk_id": "DOC-777d3a3655239e31dc63-C0000",
+          "score": 0.6068627450980393,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-e836bc9b8c1c737c8f9c"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 3,
+          "title": "휴업사실증명 발급 / 기본정보",
+          "chunk_id": "DOC-777d3a3655239e31dc63-C0001",
+          "score": 0.5872549019607843,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-ef2b323c9001bcc6018f"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 4,
+          "title": "국세청민원사무처리규정 / 제40조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0040",
+          "score": 0.5768557422969187,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-f800577388ae8a4e1870",
+            "evidence_id": "EV-3a8918eacc86dcef41d6"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제40조(어디서나 민원처리제를 통한 민원증명의 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "국세청민원사무처리규정 / 제37조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0037",
+          "score": 0.5418417366946778,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-5826f074c09b1fb3a49a",
+            "evidence_id": "EV-18ff5e3d5882a654f549"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제37조(홈택스에 의한 민원증명)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 6,
+          "title": "국세청민원사무처리규정 / 제41조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0041",
+          "score": 0.5418417366946778,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-f3d7c23927a1efd22f0f",
+            "evidence_id": "EV-00832e9f78dd7cb3e8bd"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제41조(무인민원발급창구를 통한 민원증명의 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 7,
+          "title": "국세청민원사무처리규정 / 제39조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0039",
+          "score": 0.5243347338935574,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-cffb70ce6df7fe771004",
+            "evidence_id": "EV-3eec81235cda116b6d32"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제39조(통합전자민원창구에 의한 민원증명)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 8,
+          "title": "민원 처리에 관한 법률 / 제28조",
+          "chunk_id": "DOC-47bbf4a18be5224eb47f-C0035",
+          "score": 0.4735926628716003,
+          "graph_hops": 2,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-eba088eacf08b6cb19be",
+            "evidence_id": "EV-ddea1cdad35a2f15e82c"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제41조(무인민원발급창구를 통한 민원증명의 발급)",
+            "제28조(무인민원발급창구를 이용한 민원문서의 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "REFERENCES"
+          ]
+        },
+        {
+          "rank": 9,
+          "title": "민원 처리에 관한 법률 시행령 / 제32조",
+          "chunk_id": "DOC-5203497c9029e9024eb1-C0045",
+          "score": 0.4735926628716003,
+          "graph_hops": 2,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-6e070eac29065d257737",
+            "evidence_id": "EV-4f6ad00820bbc862b398"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제41조(무인민원발급창구를 통한 민원증명의 발급)",
+            "제32조(무인민원발급창구를 이용한 민원문서 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "REFERENCES"
+          ]
+        },
+        {
+          "rank": 10,
+          "title": "국세청민원사무처리규정 / 제33조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0034",
+          "score": 0.47181372549019607,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-8cc52aeb2e72b25a2d8a",
+            "evidence_id": "EV-2e2c2ac09bef0260dd07"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제33조(민원봉사실에서 전산확인하여 발급하는 민원증명의 처리)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        }
+      ],
+      "3": [
+        {
+          "rank": 1,
+          "title": "성남시 무인민원발급 — 발급 민원과 본인확인 / 표 1 행 36:",
+          "chunk_id": "DOC-281de2ad41a7f804021d-C0034",
+          "score": 0.6068627450980393,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-27258945b0c30578e438"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "휴업사실증명 발급 / 서비스 개요",
+          "chunk_id": "DOC-777d3a3655239e31dc63-C0000",
+          "score": 0.6068627450980393,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-e836bc9b8c1c737c8f9c"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 3,
+          "title": "휴업사실증명 발급 / 기본정보",
+          "chunk_id": "DOC-777d3a3655239e31dc63-C0001",
+          "score": 0.5872549019607843,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-023",
+            "evidence_id": "EV-ef2b323c9001bcc6018f"
+          },
+          "path_labels": [
+            "휴업사실증명"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 4,
+          "title": "국세청민원사무처리규정 / 제40조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0040",
+          "score": 0.5768557422969187,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-f800577388ae8a4e1870",
+            "evidence_id": "EV-3a8918eacc86dcef41d6"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제40조(어디서나 민원처리제를 통한 민원증명의 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 5,
+          "title": "국세청민원사무처리규정 / 제37조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0037",
+          "score": 0.5418417366946778,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-5826f074c09b1fb3a49a",
+            "evidence_id": "EV-18ff5e3d5882a654f549"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제37조(홈택스에 의한 민원증명)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 6,
+          "title": "국세청민원사무처리규정 / 제41조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0041",
+          "score": 0.5418417366946778,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-f3d7c23927a1efd22f0f",
+            "evidence_id": "EV-00832e9f78dd7cb3e8bd"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제41조(무인민원발급창구를 통한 민원증명의 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 7,
+          "title": "국세청민원사무처리규정 / 제39조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0039",
+          "score": 0.5243347338935574,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-cffb70ce6df7fe771004",
+            "evidence_id": "EV-3eec81235cda116b6d32"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제39조(통합전자민원창구에 의한 민원증명)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 8,
+          "title": "민원 처리에 관한 법률 / 제28조",
+          "chunk_id": "DOC-47bbf4a18be5224eb47f-C0035",
+          "score": 0.4735926628716003,
+          "graph_hops": 2,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-eba088eacf08b6cb19be",
+            "evidence_id": "EV-ddea1cdad35a2f15e82c"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제41조(무인민원발급창구를 통한 민원증명의 발급)",
+            "제28조(무인민원발급창구를 이용한 민원문서의 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "REFERENCES"
+          ]
+        },
+        {
+          "rank": 9,
+          "title": "민원 처리에 관한 법률 시행령 / 제32조",
+          "chunk_id": "DOC-5203497c9029e9024eb1-C0045",
+          "score": 0.4735926628716003,
+          "graph_hops": 2,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-6e070eac29065d257737",
+            "evidence_id": "EV-4f6ad00820bbc862b398"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제41조(무인민원발급창구를 통한 민원증명의 발급)",
+            "제32조(무인민원발급창구를 이용한 민원문서 발급)"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "REFERENCES"
+          ]
+        },
+        {
+          "rank": 10,
+          "title": "국세청민원사무처리규정 / 제33조",
+          "chunk_id": "DOC-1bac55fd50fbfb130cff-C0034",
+          "score": 0.47181372549019607,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-8cc52aeb2e72b25a2d8a",
+            "evidence_id": "EV-2e2c2ac09bef0260dd07"
+          },
+          "path_labels": [
+            "휴업사실증명",
+            "제33조(민원봉사실에서 전산확인하여 발급하는 민원증명의 처리)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "SJ-N-011",
+    "question": "저하고 제 아이가 부모 자녀 사이라는 서류가 필요해요. 가족관계증명서 떼는 게 맞나요? 혼인관계증명서랑은 뭐가 나오는 게 달라요?",
+    "expected_action": "answer",
+    "gold": [
+      {
+        "acceptable_chunk_ids": [
+          "DOC-c95ed190ec5caede9cf4-C0019",
+          "DOC-c95ed190ec5caede9cf4-C0020"
+        ],
+        "document_id": "DOC-c95ed190ec5caede9cf4",
+        "end_char": 7559,
+        "evidence_id": "Q051-E1",
+        "locator": "제15조",
+        "quote": "제15조(증명서의 종류 및 기록사항) ① 등록부등의 기록사항은 다음 각 호의 증명서별로 제2항에 따른 일반증명서와 제3항에 따른 상세증명서로 발급한다. 다만, 외국인의 기록사항에 관하여는 성명ㆍ성별ㆍ출생연월일ㆍ국적 및 외국인등록번호를 기재하여 증명서를 발급하여야 한다. <개정 2009. 12. 29., 2010. 5. 4., 2016. 5. 29.>\n1. 가족관계증명서\n가. 삭제 <2016. 5. 29.>\n나. 삭제 <2016. 5. 29.>\n다. 삭제 <2016. 5. 29.>\n2. 기본증명서\n가. 삭제 <2016. 5. 29.>\n나. 삭제 <2016. 5. 29.>\n3. 혼인관계증명서\n가. 삭제 <2016. 5. 29.>\n나. 삭제 <2016. 5. 29.>\n다. 삭제 <2016. 5. 29.>\n4. 입양관계증명서\n가. 삭제 <2016. 5. 29.>\n나. 삭제 <2016. 5. 29.>\n다. 삭제 <2016. 5. 29.>\n5. 친양자입양관계증명서\n가. 삭제 <2016. 5. 29.>\n나. 삭제 <2016. 5. 29.>\n다. 삭제 <2016. 5. 29.>\n② 제1항 각 호의 증명서에 대한 일반증명서의 기재사항은 다음 각 호와 같다. <개정 2016. 5. 29.>\n1. 가족관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 부모의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호(입양의 경우 양부모를 부모로 기록한다. 다만, 단독입양한 양부가 친생모와 혼인관계에 있는 때에는 양부와 친생모를, 단독입양한 양모가 친생부와 혼인관계에 있는 때에는 양모와 친생부를 각각 부모로 기록한다)\n다. 배우자, 생존한 현재의 혼인 중의 자녀의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n2. 기본증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 본인의 출생, 사망, 국적상실에 관한 사항\n3. 혼인관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 배우자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 혼인에 관한 사항\n4. 입양관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 입양에 관한 사항\n5. 친양자입양관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 친양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 친양자 입양에 관한 사항\n③ 제1항 각 호의 증명서에 대한 상세증명서의 기재사항은 제2항에 따른 일반증명서의 기재사항에 다음 각 호의 사항을 추가한 것으로 한다. <신설 2016. 5. 29.>\n1. 가족관계증명서: 모든 자녀의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n2. 기본증명서: 국적취득 및 회복 등에 관한 사항\n3. 혼인관계증명서: 혼인 및 이혼에 관한 사항\n4. 입양관계증명서: 입양 및 파양에 관한 사항\n5. 친양자입양관계증명서: 친양자 입양 및 파양에 관한 사항\n④ 제1항에도 불구하고 같은 항 각 호의 증명서 중 대법원규칙으로 정하는 증명서에 대해서는 해당 증명서의 상세증명서 기재사항 중 신청인이 대법원규칙으로 정하는 바에 따라 선택한 사항을 기재한 특정증명서를 발급한다. <신설 2016. 5. 29.>\n⑤ 제2항부터 제4항까지의 규정에 따른 일반증명서ㆍ상세증명서ㆍ특정증명서, 가족관계에 관한 그 밖의 증명서 및 가족관계 기록사항에 관하여 필요한 사항은 대법원규칙으로 정한다. <개정 2009. 12. 29., 2016. 5. 29.>\n",
+        "source_alias": "L가족관계의 등록 등에 관한 법률",
+        "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+        "start_char": 5801,
+        "status": "source_located_pending_human_review"
+      }
+    ],
+    "states": [
+      {
+        "hop": 0,
+        "top10_gold_group_ids": [
+          "Q051-E1"
+        ],
+        "candidate_gold_group_ids": [
+          "Q051-E1"
+        ],
+        "top3": [
+          {
+            "score": 0.6627659574468084,
+            "seed_id": "SJ-SVC-011",
+            "path_nodes": [
+              "SJ-SVC-011"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-011",
+              "evidence_id": "EV-7367178662f0937d67df"
+            },
+            "evidence_quote": "가족관계증명서",
+            "evidence_span": [
+              6001,
+              6008
+            ],
+            "evidence_role": "service_mention",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h0",
+            "rank": 1,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0019",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+            "snippet": "제15조(증명서의 종류 및 기록사항) ① 등록부등의 기록사항은 다음 각 호의 증명서별로 제2항에 따른 일반증명서와 제3항에 따른 상세증명서로 발급한다. 다만, 외국인의 기록사항에 관하여는 성명ㆍ성별ㆍ출생연월일ㆍ국적 및 외국인등록번호를 기재하여 증명서를 발급하여야 한다. <개정 2009. 12. 29., 2010. 5. 4., 2016. 5. 29.>\n1. 가족관계증명서\n가. 삭제 <2016. 5. 29.>\n나. 삭제 <2016. 5. 29.>\n다. 삭제 <2016. 5. 29.>\n2. 기본증명서\n가. 삭제 <2016. 5. 29.>",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "제15조",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "가족관계증명서"
+            ]
+          },
+          {
+            "score": 0.29936170212765956,
+            "seed_id": "SJ-SVC-014",
+            "path_nodes": [
+              "SJ-SVC-014"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-014",
+              "evidence_id": "EV-3210c1ad2aed596ea206"
+            },
+            "evidence_quote": "입양관계증명서",
+            "evidence_span": [
+              3855,
+              3862
+            ],
+            "evidence_role": "service_mention",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h0",
+            "rank": 2,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0015",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 제14조",
+            "snippet": "제14조(증명서의 교부 등) ① 본인 또는 배우자, 직계혈족(이하 “본인등”이라 한다)은 제15조에 규정된 등록부등의 기록사항에 관하여 발급할 수 있는 증명서(이하 “등록사항별 증명서”라 한다)의 교부를 청구할 수 있고, 본인등의 대리인이 청구하는 경우에는 본인등의 위임을 받아야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 본인등이 아닌 경우에도 교부를 신청할 수 있다. <개정 2017. 10. 31., 2021. 12. 28.>\n1. 국가 또는 지방자치단체가 직무상 필요에 따라 문서로 신청하는 경우\n2. 소송ㆍ비송ㆍ",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "제14조",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "입양관계증명서"
+            ]
+          }
+        ]
+      },
+      {
+        "hop": 1,
+        "top10_gold_group_ids": [
+          "Q051-E1"
+        ],
+        "candidate_gold_group_ids": [
+          "Q051-E1"
+        ],
+        "top3": [
+          {
+            "score": 0.6627659574468084,
+            "seed_id": "SJ-SVC-011",
+            "path_nodes": [
+              "SJ-SVC-011"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-011",
+              "evidence_id": "EV-7367178662f0937d67df"
+            },
+            "evidence_quote": "가족관계증명서",
+            "evidence_span": [
+              6001,
+              6008
+            ],
+            "evidence_role": "service_mention",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h1",
+            "rank": 1,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0019",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+            "snippet": "제15조(증명서의 종류 및 기록사항) ① 등록부등의 기록사항은 다음 각 호의 증명서별로 제2항에 따른 일반증명서와 제3항에 따른 상세증명서로 발급한다. 다만, 외국인의 기록사항에 관하여는 성명ㆍ성별ㆍ출생연월일ㆍ국적 및 외국인등록번호를 기재하여 증명서를 발급하여야 한다. <개정 2009. 12. 29., 2010. 5. 4., 2016. 5. 29.>\n1. 가족관계증명서\n가. 삭제 <2016. 5. 29.>\n나. 삭제 <2016. 5. 29.>\n다. 삭제 <2016. 5. 29.>\n2. 기본증명서\n가. 삭제 <2016. 5. 29.>",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "제15조",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "가족관계증명서"
+            ]
+          },
+          {
+            "score": 0.6297492401215804,
+            "seed_id": "SJ-SVC-011",
+            "path_nodes": [
+              "SJ-SVC-011",
+              "ART-c7add019698b49c06065"
+            ],
+            "path_edges": [
+              {
+                "source": "SJ-SVC-011",
+                "target": "ART-c7add019698b49c06065",
+                "key": "EDGE-64101f54f5e9455c46ae",
+                "relation": "GROUNDED_BY"
+              }
+            ],
+            "path": "Service-GROUNDED_BY-Article",
+            "evidence_path": "Service-GROUNDED_BY-Article → Article node evidence",
+            "graph_hops": 1,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "ART-c7add019698b49c06065",
+              "evidence_id": "EV-511a0401e1c2547ab8dd"
+            },
+            "evidence_quote": "관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 입양에 관한 사항\n5. 친양자입양관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 친양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의",
+            "evidence_span": [
+              6822,
+              7022
+            ],
+            "evidence_role": "article_context",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h1",
+            "rank": 2,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0020",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+            "snippet": "관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 입양에 관한 사항\n5. 친양자입양관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 친양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 친양자 입양에 관한 사항\n③ 제1항 각 호의 증명서에 대한 상세증명서의 기재사항은 제2항에 따른 일반증명서의 기재사항에 다음 각 호의 사항을 추가한 것으로 한다. <신설 2016",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "제15조",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "가족관계증명서",
+              "제15조(증명서의 종류 및 기록사항)"
+            ]
+          },
+          {
+            "score": 0.29936170212765956,
+            "seed_id": "SJ-SVC-014",
+            "path_nodes": [
+              "SJ-SVC-014"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-014",
+              "evidence_id": "EV-3210c1ad2aed596ea206"
+            },
+            "evidence_quote": "입양관계증명서",
+            "evidence_span": [
+              3855,
+              3862
+            ],
+            "evidence_role": "service_mention",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h1",
+            "rank": 3,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0015",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 제14조",
+            "snippet": "제14조(증명서의 교부 등) ① 본인 또는 배우자, 직계혈족(이하 “본인등”이라 한다)은 제15조에 규정된 등록부등의 기록사항에 관하여 발급할 수 있는 증명서(이하 “등록사항별 증명서”라 한다)의 교부를 청구할 수 있고, 본인등의 대리인이 청구하는 경우에는 본인등의 위임을 받아야 한다. 다만, 다음 각 호의 어느 하나에 해당하는 경우에는 본인등이 아닌 경우에도 교부를 신청할 수 있다. <개정 2017. 10. 31., 2021. 12. 28.>\n1. 국가 또는 지방자치단체가 직무상 필요에 따라 문서로 신청하는 경우\n2. 소송ㆍ비송ㆍ",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "제14조",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "입양관계증명서"
+            ]
+          }
+        ]
+      },
+      {
+        "hop": 2,
+        "top10_gold_group_ids": [
+          "Q051-E1"
+        ],
+        "candidate_gold_group_ids": [
+          "Q051-E1"
+        ],
+        "top3": [
+          {
+            "score": 0.6627659574468084,
+            "seed_id": "SJ-SVC-011",
+            "path_nodes": [
+              "SJ-SVC-011"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-011",
+              "evidence_id": "EV-7367178662f0937d67df"
+            },
+            "evidence_quote": "가족관계증명서",
+            "evidence_span": [
+              6001,
+              6008
+            ],
+            "evidence_role": "service_mention",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h2",
+            "rank": 1,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0019",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+            "snippet": "제15조(증명서의 종류 및 기록사항) ① 등록부등의 기록사항은 다음 각 호의 증명서별로 제2항에 따른 일반증명서와 제3항에 따른 상세증명서로 발급한다. 다만, 외국인의 기록사항에 관하여는 성명ㆍ성별ㆍ출생연월일ㆍ국적 및 외국인등록번호를 기재하여 증명서를 발급하여야 한다. <개정 2009. 12. 29., 2010. 5. 4., 2016. 5. 29.>\n1. 가족관계증명서\n가. 삭제 <2016. 5. 29.>\n나. 삭제 <2016. 5. 29.>\n다. 삭제 <2016. 5. 29.>\n2. 기본증명서\n가. 삭제 <2016. 5. 29.>",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "제15조",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "가족관계증명서"
+            ]
+          },
+          {
+            "score": 0.6297492401215804,
+            "seed_id": "SJ-SVC-011",
+            "path_nodes": [
+              "SJ-SVC-011",
+              "ART-c7add019698b49c06065"
+            ],
+            "path_edges": [
+              {
+                "source": "SJ-SVC-011",
+                "target": "ART-c7add019698b49c06065",
+                "key": "EDGE-64101f54f5e9455c46ae",
+                "relation": "GROUNDED_BY"
+              }
+            ],
+            "path": "Service-GROUNDED_BY-Article",
+            "evidence_path": "Service-GROUNDED_BY-Article → Article node evidence",
+            "graph_hops": 1,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "ART-c7add019698b49c06065",
+              "evidence_id": "EV-511a0401e1c2547ab8dd"
+            },
+            "evidence_quote": "관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 입양에 관한 사항\n5. 친양자입양관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 친양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의",
+            "evidence_span": [
+              6822,
+              7022
+            ],
+            "evidence_role": "article_context",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h2",
+            "rank": 2,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0020",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+            "snippet": "관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 입양에 관한 사항\n5. 친양자입양관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 친양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 친양자 입양에 관한 사항\n③ 제1항 각 호의 증명서에 대한 상세증명서의 기재사항은 제2항에 따른 일반증명서의 기재사항에 다음 각 호의 사항을 추가한 것으로 한다. <신설 2016",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "제15조",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "가족관계증명서",
+              "제15조(증명서의 종류 및 기록사항)"
+            ]
+          },
+          {
+            "score": 0.4143788606726149,
+            "seed_id": "SJ-SVC-011",
+            "path_nodes": [
+              "SJ-SVC-011",
+              "ART-c7add019698b49c06065",
+              "LAW-8ca1b96f196fe2ed118f"
+            ],
+            "path_edges": [
+              {
+                "source": "SJ-SVC-011",
+                "target": "ART-c7add019698b49c06065",
+                "key": "EDGE-64101f54f5e9455c46ae",
+                "relation": "GROUNDED_BY"
+              },
+              {
+                "source": "ART-c7add019698b49c06065",
+                "target": "LAW-8ca1b96f196fe2ed118f",
+                "key": "EDGE-1c4d6af3d1bc9d5a6116",
+                "relation": "PART_OF"
+              }
+            ],
+            "path": "Service-GROUNDED_BY-Article-PART_OF-Law",
+            "evidence_path": "Service-GROUNDED_BY-Article-PART_OF-Law → Law node evidence",
+            "graph_hops": 2,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "LAW-8ca1b96f196fe2ed118f",
+              "evidence_id": "EV-aa6f7e0f291a0090044b"
+            },
+            "evidence_quote": "가족관계의 등록 등에 관한 법률 ( 약칭: 가족관계등록법 )\n[시행 2024. 12. 27.] [법률 제19841호, 2023. 12. 26., 타법개정]\n법무부 (법무심의관실), 02-2110-3164\n제1장 총칙\n",
+            "evidence_span": [
+              0,
+              121
+            ],
+            "evidence_role": "identity_context",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h2",
+            "rank": 3,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0000",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 문서 머리말",
+            "snippet": "가족관계의 등록 등에 관한 법률 ( 약칭: 가족관계등록법 )\n[시행 2024. 12. 27.] [법률 제19841호, 2023. 12. 26., 타법개정]\n법무부 (법무심의관실), 02-2110-3164\n제1장 총칙\n",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "문서 머리말",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "가족관계증명서",
+              "제15조(증명서의 종류 및 기록사항)",
+              "가족관계의 등록 등에 관한 법률"
+            ]
+          }
+        ]
+      },
+      {
+        "hop": 3,
+        "top10_gold_group_ids": [
+          "Q051-E1"
+        ],
+        "candidate_gold_group_ids": [
+          "Q051-E1"
+        ],
+        "top3": [
+          {
+            "score": 0.6627659574468084,
+            "seed_id": "SJ-SVC-011",
+            "path_nodes": [
+              "SJ-SVC-011"
+            ],
+            "path_edges": [],
+            "path": "Service",
+            "evidence_path": "Service → Service node evidence",
+            "graph_hops": 0,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "SJ-SVC-011",
+              "evidence_id": "EV-7367178662f0937d67df"
+            },
+            "evidence_quote": "가족관계증명서",
+            "evidence_span": [
+              6001,
+              6008
+            ],
+            "evidence_role": "service_mention",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h3",
+            "rank": 1,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0019",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+            "snippet": "제15조(증명서의 종류 및 기록사항) ① 등록부등의 기록사항은 다음 각 호의 증명서별로 제2항에 따른 일반증명서와 제3항에 따른 상세증명서로 발급한다. 다만, 외국인의 기록사항에 관하여는 성명ㆍ성별ㆍ출생연월일ㆍ국적 및 외국인등록번호를 기재하여 증명서를 발급하여야 한다. <개정 2009. 12. 29., 2010. 5. 4., 2016. 5. 29.>\n1. 가족관계증명서\n가. 삭제 <2016. 5. 29.>\n나. 삭제 <2016. 5. 29.>\n다. 삭제 <2016. 5. 29.>\n2. 기본증명서\n가. 삭제 <2016. 5. 29.>",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "제15조",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "가족관계증명서"
+            ]
+          },
+          {
+            "score": 0.6297492401215804,
+            "seed_id": "SJ-SVC-011",
+            "path_nodes": [
+              "SJ-SVC-011",
+              "ART-c7add019698b49c06065"
+            ],
+            "path_edges": [
+              {
+                "source": "SJ-SVC-011",
+                "target": "ART-c7add019698b49c06065",
+                "key": "EDGE-64101f54f5e9455c46ae",
+                "relation": "GROUNDED_BY"
+              }
+            ],
+            "path": "Service-GROUNDED_BY-Article",
+            "evidence_path": "Service-GROUNDED_BY-Article → Article node evidence",
+            "graph_hops": 1,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "ART-c7add019698b49c06065",
+              "evidence_id": "EV-511a0401e1c2547ab8dd"
+            },
+            "evidence_quote": "관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 입양에 관한 사항\n5. 친양자입양관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 친양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의",
+            "evidence_span": [
+              6822,
+              7022
+            ],
+            "evidence_role": "article_context",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h3",
+            "rank": 2,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0020",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+            "snippet": "관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 입양에 관한 사항\n5. 친양자입양관계증명서\n가. 본인의 등록기준지ㆍ성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n나. 친생부모ㆍ양부모 또는 친양자의 성명ㆍ성별ㆍ본ㆍ출생연월일 및 주민등록번호\n다. 현재의 친양자 입양에 관한 사항\n③ 제1항 각 호의 증명서에 대한 상세증명서의 기재사항은 제2항에 따른 일반증명서의 기재사항에 다음 각 호의 사항을 추가한 것으로 한다. <신설 2016",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "제15조",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "가족관계증명서",
+              "제15조(증명서의 종류 및 기록사항)"
+            ]
+          },
+          {
+            "score": 0.4143788606726149,
+            "seed_id": "SJ-SVC-011",
+            "path_nodes": [
+              "SJ-SVC-011",
+              "ART-c7add019698b49c06065",
+              "LAW-8ca1b96f196fe2ed118f"
+            ],
+            "path_edges": [
+              {
+                "source": "SJ-SVC-011",
+                "target": "ART-c7add019698b49c06065",
+                "key": "EDGE-64101f54f5e9455c46ae",
+                "relation": "GROUNDED_BY"
+              },
+              {
+                "source": "ART-c7add019698b49c06065",
+                "target": "LAW-8ca1b96f196fe2ed118f",
+                "key": "EDGE-1c4d6af3d1bc9d5a6116",
+                "relation": "PART_OF"
+              }
+            ],
+            "path": "Service-GROUNDED_BY-Article-PART_OF-Law",
+            "evidence_path": "Service-GROUNDED_BY-Article-PART_OF-Law → Law node evidence",
+            "graph_hops": 2,
+            "document_hops": 0,
+            "evidence_binding": {
+              "kind": "node",
+              "owner_id": "LAW-8ca1b96f196fe2ed118f",
+              "evidence_id": "EV-aa6f7e0f291a0090044b"
+            },
+            "evidence_quote": "가족관계의 등록 등에 관한 법률 ( 약칭: 가족관계등록법 )\n[시행 2024. 12. 27.] [법률 제19841호, 2023. 12. 26., 타법개정]\n법무부 (법무심의관실), 02-2110-3164\n제1장 총칙\n",
+            "evidence_span": [
+              0,
+              121
+            ],
+            "evidence_role": "identity_context",
+            "evidence_source_document_id": "DOC-c95ed190ec5caede9cf4",
+            "query_id": "SJ-N-011",
+            "retriever": "graph_h3",
+            "rank": 3,
+            "chunk_id": "DOC-c95ed190ec5caede9cf4-C0000",
+            "document_id": "DOC-c95ed190ec5caede9cf4",
+            "title": "가족관계의 등록 등에 관한 법률 / 문서 머리말",
+            "snippet": "가족관계의 등록 등에 관한 법률 ( 약칭: 가족관계등록법 )\n[시행 2024. 12. 27.] [법률 제19841호, 2023. 12. 26., 타법개정]\n법무부 (법무심의관실), 02-2110-3164\n제1장 총칙\n",
+            "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=257203&efYd=20241227&chrClsCd=010202",
+            "evidence_status": "retrieved_not_entailment_verified",
+            "locator": "문서 머리말",
+            "source_alias": "L가족관계의 등록 등에 관한 법률",
+            "path_labels": [
+              "가족관계증명서",
+              "제15조(증명서의 종류 및 기록사항)",
+              "가족관계의 등록 등에 관한 법률"
+            ]
+          }
+        ]
+      }
+    ],
+    "all_ranked_paths": {
+      "0": [
+        {
+          "rank": 1,
+          "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0019",
+          "score": 0.6627659574468084,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-011",
+            "evidence_id": "EV-7367178662f0937d67df"
+          },
+          "path_labels": [
+            "가족관계증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "가족관계의 등록 등에 관한 법률 / 제14조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0015",
+          "score": 0.29936170212765956,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-014",
+            "evidence_id": "EV-3210c1ad2aed596ea206"
+          },
+          "path_labels": [
+            "입양관계증명서"
+          ],
+          "relations": []
+        }
+      ],
+      "1": [
+        {
+          "rank": 1,
+          "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0019",
+          "score": 0.6627659574468084,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-011",
+            "evidence_id": "EV-7367178662f0937d67df"
+          },
+          "path_labels": [
+            "가족관계증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0020",
+          "score": 0.6297492401215804,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-c7add019698b49c06065",
+            "evidence_id": "EV-511a0401e1c2547ab8dd"
+          },
+          "path_labels": [
+            "가족관계증명서",
+            "제15조(증명서의 종류 및 기록사항)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 3,
+          "title": "가족관계의 등록 등에 관한 법률 / 제14조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0015",
+          "score": 0.29936170212765956,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-014",
+            "evidence_id": "EV-3210c1ad2aed596ea206"
+          },
+          "path_labels": [
+            "입양관계증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 4,
+          "title": "가족관계의 등록 등에 관한 법률 / 제14조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0016",
+          "score": 0.2761524822695035,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-3048ba6e16b3d6400d1c",
+            "evidence_id": "EV-c0f8043a7051297d48ff"
+          },
+          "path_labels": [
+            "입양관계증명서",
+            "제14조(증명서의 교부 등)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        }
+      ],
+      "2": [
+        {
+          "rank": 1,
+          "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0019",
+          "score": 0.6627659574468084,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-011",
+            "evidence_id": "EV-7367178662f0937d67df"
+          },
+          "path_labels": [
+            "가족관계증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0020",
+          "score": 0.6297492401215804,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-c7add019698b49c06065",
+            "evidence_id": "EV-511a0401e1c2547ab8dd"
+          },
+          "path_labels": [
+            "가족관계증명서",
+            "제15조(증명서의 종류 및 기록사항)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 3,
+          "title": "가족관계의 등록 등에 관한 법률 / 문서 머리말",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0000",
+          "score": 0.4143788606726149,
+          "graph_hops": 2,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "LAW-8ca1b96f196fe2ed118f",
+            "evidence_id": "EV-aa6f7e0f291a0090044b"
+          },
+          "path_labels": [
+            "가족관계증명서",
+            "제15조(증명서의 종류 및 기록사항)",
+            "가족관계의 등록 등에 관한 법률"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "PART_OF"
+          ]
+        },
+        {
+          "rank": 4,
+          "title": "가족관계의 등록 등에 관한 법률 / 제14조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0015",
+          "score": 0.29936170212765956,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-014",
+            "evidence_id": "EV-3210c1ad2aed596ea206"
+          },
+          "path_labels": [
+            "입양관계증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 5,
+          "title": "가족관계의 등록 등에 관한 법률 / 제14조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0016",
+          "score": 0.2761524822695035,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-3048ba6e16b3d6400d1c",
+            "evidence_id": "EV-c0f8043a7051297d48ff"
+          },
+          "path_labels": [
+            "입양관계증명서",
+            "제14조(증명서의 교부 등)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 6,
+          "title": "민법 / 제809조",
+          "chunk_id": "DOC-4b5b1b8c3bb4076587ae-C0825",
+          "score": 0.19337680164722032,
+          "graph_hops": 2,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-7c07cb1740f693ca9df5",
+            "evidence_id": "EV-b6fda2ff847faefb75d3"
+          },
+          "path_labels": [
+            "입양관계증명서",
+            "제14조(증명서의 교부 등)",
+            "제809조(근친혼 등의 금지)"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "REFERENCES"
+          ]
+        }
+      ],
+      "3": [
+        {
+          "rank": 1,
+          "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0019",
+          "score": 0.6627659574468084,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-011",
+            "evidence_id": "EV-7367178662f0937d67df"
+          },
+          "path_labels": [
+            "가족관계증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 2,
+          "title": "가족관계의 등록 등에 관한 법률 / 제15조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0020",
+          "score": 0.6297492401215804,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-c7add019698b49c06065",
+            "evidence_id": "EV-511a0401e1c2547ab8dd"
+          },
+          "path_labels": [
+            "가족관계증명서",
+            "제15조(증명서의 종류 및 기록사항)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 3,
+          "title": "가족관계의 등록 등에 관한 법률 / 문서 머리말",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0000",
+          "score": 0.4143788606726149,
+          "graph_hops": 2,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "LAW-8ca1b96f196fe2ed118f",
+            "evidence_id": "EV-aa6f7e0f291a0090044b"
+          },
+          "path_labels": [
+            "가족관계증명서",
+            "제15조(증명서의 종류 및 기록사항)",
+            "가족관계의 등록 등에 관한 법률"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "PART_OF"
+          ]
+        },
+        {
+          "rank": 4,
+          "title": "가족관계의 등록 등에 관한 법률 / 제14조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0015",
+          "score": 0.29936170212765956,
+          "graph_hops": 0,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "SJ-SVC-014",
+            "evidence_id": "EV-3210c1ad2aed596ea206"
+          },
+          "path_labels": [
+            "입양관계증명서"
+          ],
+          "relations": []
+        },
+        {
+          "rank": 5,
+          "title": "가족관계의 등록 등에 관한 법률 / 제14조",
+          "chunk_id": "DOC-c95ed190ec5caede9cf4-C0016",
+          "score": 0.2761524822695035,
+          "graph_hops": 1,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-3048ba6e16b3d6400d1c",
+            "evidence_id": "EV-c0f8043a7051297d48ff"
+          },
+          "path_labels": [
+            "입양관계증명서",
+            "제14조(증명서의 교부 등)"
+          ],
+          "relations": [
+            "GROUNDED_BY"
+          ]
+        },
+        {
+          "rank": 6,
+          "title": "민법 / 제809조",
+          "chunk_id": "DOC-4b5b1b8c3bb4076587ae-C0825",
+          "score": 0.19337680164722032,
+          "graph_hops": 2,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "ART-7c07cb1740f693ca9df5",
+            "evidence_id": "EV-b6fda2ff847faefb75d3"
+          },
+          "path_labels": [
+            "입양관계증명서",
+            "제14조(증명서의 교부 등)",
+            "제809조(근친혼 등의 금지)"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "REFERENCES"
+          ]
+        },
+        {
+          "rank": 7,
+          "title": "민법 / 문서 머리말",
+          "chunk_id": "DOC-4b5b1b8c3bb4076587ae-C0000",
+          "score": 0.15441176470588236,
+          "graph_hops": 3,
+          "evidence_binding": {
+            "kind": "node",
+            "owner_id": "LAW-0f4298a9ade8ca1fe25f",
+            "evidence_id": "EV-bc5e252adc397a5725ed"
+          },
+          "path_labels": [
+            "입양관계증명서",
+            "제14조(증명서의 교부 등)",
+            "제809조(근친혼 등의 금지)",
+            "민법"
+          ],
+          "relations": [
+            "GROUNDED_BY",
+            "REFERENCES",
+            "PART_OF"
+          ]
+        }
+      ]
+    }
+  }
+]

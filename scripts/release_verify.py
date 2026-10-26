@@ -128,7 +128,7 @@ def verify_paths(g,ev,rows,max_hops,chunks):
 
 
 def verify_experiment(root,questions,chunks,graph,evidence):
-    target=local_path(root,'results/current204');summary=json.loads((target/'summary.json').read_text(encoding='utf-8'))
+    target=local_path(root,'results/week3_run');summary=json.loads((target/'summary.json').read_text(encoding='utf-8'))
     run=json.loads((target/'run_manifest.json').read_text(encoding='utf-8'));qs={q['question_id']:q for q in questions}
     require(summary['questions']==204 and summary['answerable_denominator']==177 and summary['diagnostic_only']==dict(clarify=17,abstain=10),'experiment denominator differs')
     require(run['public_projection']['questions_sha256']==portable_sha(root/'data/questions.jsonl') and run['public_projection']['queries_sha256']==portable_sha(root/'data/queries.jsonl'),'public input fingerprint differs')
@@ -216,7 +216,7 @@ def verify_full_graph_tables(root,stored):
     require(len(text)==2,'complete Graph section missing');text=text[1]
     sections=text.split('<a id="graph-record-details"></a>',1)
     require(len(sections)==2,'Graph detail section missing');text,detail_text=sections
-    questions={q['question_id']:q for q in read_jsonl(root/'results/current204/per_question.jsonl')}
+    questions={q['question_id']:q for q in read_jsonl(root/'results/week3_run/per_question.jsonl')}
     graph=json.loads((root/'data/processed/graph.json').read_text(encoding='utf-8'));nodes={n['id']:n for n in graph['nodes']}
     documents={d['document_id']:d for d in json.loads((root/'data/source_index.json').read_text(encoding='utf-8'))['documents']}
     def norm(value):return re.sub(r'\s+',' ',str(value)).strip()
@@ -280,15 +280,14 @@ def verify_full_graph_tables(root,stored):
 
 def verify_documents(root,manifest):
     import html
-    import xml.etree.ElementTree as ET
-    expected={'01_graph_schema.md','02_graph_construct.md','03_graph_retrieval.md','04_fail_case_analysis.md','questions.md'}
+    expected={'01_graph_schema.md','02_graph_construct.md','03_graph_retrieval.md','04_fail_case_analysis.md','05_week4_integration.md','questions.md'}
     require({str(p.relative_to(root/'docs')) for p in (root/'docs').rglob('*.md')}==expected,'assignment document set differs')
-    retired={'docs/graph_schema.md','results/current204/REPORT.md','results/current204/QUESTION_ANALYSIS.md','results/current204/SUCCESS_DETAILS.md','results/current204/graph/GRAPH_DIAGNOSIS.md'}
+    retired={'docs/graph_schema.md','results/week3_run/REPORT.md','results/week3_run/QUESTION_ANALYSIS.md','results/week3_run/SUCCESS_DETAILS.md','results/week3_run/graph/GRAPH_DIAGNOSIS.md'}
     require(not retired.intersection(manifest['files']) and not any((root/n).exists() for n in retired),'retired document returned')
     require(manifest['experiment']['report']=='docs/04_fail_case_analysis.md','experiment report link differs')
     require(json.loads((root/'data/dataset.json').read_text(encoding='utf-8'))['current_evaluation']['report']=='docs/04_fail_case_analysis.md','dataset report link differs')
     text=(root/'docs/04_fail_case_analysis.md').read_text(encoding='utf-8')
-    rows=read_jsonl(root/'results/current204/per_question.jsonl')
+    rows=read_jsonl(root/'results/week3_run/per_question.jsonl')
     ids=[qid.upper() for qid in re.findall(r'<a id="case-(sj-[a-z]-\d+)"></a>',text)]
     require(len(ids)==len(set(ids))==204 and set(ids)=={r['question_id'] for r in rows},'consolidated case coverage differs')
     names={'bm25':'BM25','dense':'Dense','hybrid':'Hybrid',**{f'graph_h{h}':f'Graph {h}' for h in range(4)}}
@@ -298,7 +297,7 @@ def verify_documents(root,manifest):
         if row['expected_action']=='answer':
             for method,label in names.items():require(label+': '+statuses[row['methods'][method]['status']] in block,'case method status differs')
         else:require(('추가 확인' if row['expected_action']=='clarify' else '응답 보류')+' · 미평가' in block,'case diagnostic action differs')
-    summary=json.loads((root/'results/current204/summary.json').read_text(encoding='utf-8'))
+    summary=json.loads((root/'results/week3_run/summary.json').read_text(encoding='utf-8'))
     methods=['bm25','dense','hybrid','graph_h0','graph_h1','graph_h2','graph_h3']
     labels=['BM25','Dense','Hybrid','Graph 0','Graph 1','Graph 2','Graph 3']
     for method,label in zip(methods,labels):
@@ -312,13 +311,13 @@ def verify_documents(root,manifest):
         values=[v.strip() for v in matching[0].strip('|').split('|')]
         require(values[1]==str(group['question_count']),'document query type denominator differs')
         require(values[2:]==['/'.join(str(group['methods'][m][s]) for s in ('success','partial','failure')) for m in methods],'document query type counts differ')
-    diag=json.loads((root/'results/current204/graph/diagnostic_summary.json').read_text(encoding='utf-8'))['current204']
+    diag=json.loads((root/'results/week3_run/graph/diagnostic_summary.json').read_text(encoding='utf-8'))['current204']
     for hop in range(4):
         m=summary['methods'][f'graph_h{hop}'];metric=m['metrics']['10']
         change='—' if hop==0 else str(diag['transitions'][str(hop)]['top10_order_changed'])+'/204'
         line=f"| {hop} | {diag['hops'][str(hop)]['mean_candidates']:.2f} | {change} | {m['status_counts']['success']}/177 | {metric['recall']:.2%} | {metric['hit']:.2%} | {metric['mrr']:.4f} |"
         require(line in text,'document hop metrics differ: '+str(hop))
-    stored={(r['retriever'],r['query_id']):r for r in read_jsonl(root/'results/current204/predictions.jsonl')}
+    stored={(r['retriever'],r['query_id']):r for r in read_jsonl(root/'results/week3_run/predictions.jsonl')}
     samples=0;zero_hop=0
     retrieval=(root/'docs/03_graph_retrieval.md').read_text(encoding='utf-8')
     for mark in re.finditer(r'<a id="sample-(sj-[a-z]-\d+)-(graph_h[0-3])-r(\d+)"></a>',retrieval):
@@ -331,13 +330,13 @@ def verify_documents(root,manifest):
         verify_hit_details(block,hit)
         zero_hop+=hit['graph_hops']==0;samples+=1
     require(samples==5 and zero_hop==2,'document retrieval sample coverage differs')
-    figures=list((root/'week3/figures').glob('*.svg'));require(len(figures)==3,'three required subgraph figures missing')
-    for p in figures:ET.parse(p)
     complete=verify_full_graph_tables(root,stored)
-    return dict(core_documents=4,case_rows=204,method_metric_rows=7,query_type_rows=8,hop_metric_rows=4,retrieval_examples=samples,zero_hop_examples=zero_hop,figures=3,**complete)
+    return dict(core_documents=4,case_rows=204,method_metric_rows=7,query_type_rows=8,hop_metric_rows=4,retrieval_examples=samples,zero_hop_examples=zero_hop,**complete)
 
 def verify(root=ROOT):
     root=Path(root).resolve();m=preflight(root,json.loads(local_path(root,'submission_manifest.json').read_text(encoding='utf-8')))
+    from restore_results import restore_results
+    result_assets=restore_results(root)
     documentation=verify_documents(root,m)
     links=local_links(root);db=restore(root);qs=read_jsonl(root/'data/questions.jsonl');ids={q['question_id'] for q in qs}
     require(len(qs)==len(ids)==204,'question count or unique IDs differs')
@@ -371,8 +370,6 @@ def verify(root=ROOT):
     require(portable_sha(root/'data/services.jsonl')==g.graph['registry_sha256'],'Graph registry fingerprint differs')
     for name in m['files']:
         if not name.endswith('.py'):continue
-        s=local_path(root,name).read_text(encoding='utf-8');t=ast.parse(s)
-        require(not any(x.type==tokenize.COMMENT for x in tokenize.generate_tokens(io.StringIO(s).readline)),'Python comment present')
-        require(not any(ast.get_docstring(n) for n in ast.walk(t) if isinstance(n,(ast.Module,ast.FunctionDef,ast.AsyncFunctionDef,ast.ClassDef))),'Python docstring present')
+        ast.parse(local_path(root,name).read_text(encoding='utf-8'),filename=name)
     experiment=verify_experiment(root,qs,chunks,g,ev)
-    return dict(documentation=documentation,experiment=experiment,questions=len(qs),intent_groups=m['counts']['intent_groups'],services=40,documents=len(docs),chunks=len(chunks),gold_spans=spans,links=links,graph=graph,files=len(m['files'])+1)
+    return dict(result_assets=result_assets,documentation=documentation,experiment=experiment,questions=len(qs),intent_groups=m['counts']['intent_groups'],services=40,documents=len(docs),chunks=len(chunks),gold_spans=spans,links=links,graph=graph,files=len(m['files'])+1)

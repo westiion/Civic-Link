@@ -3,7 +3,7 @@ import argparse,ast,json,math,os,time,urllib.request,urllib.error
 from collections import Counter,defaultdict
 from pathlib import Path
 from civic_data import connect,digest,now,read_jsonl,write_json,write_jsonl
-from tokenization import tokenize
+from tokenization import TOKENIZER_NAME,tokenize
 try:
     import numpy as np
 except ImportError:
@@ -163,7 +163,7 @@ def run(db,queries,method='bm25',top_k=10,candidate_k=100,client=None):
                 d=lookup[cid];hits.append({'query_id':q['query_id'],'retriever':method,'rank':rank,'document_id':d['document_id'],'chunk_id':cid,'score':score,'title':d['title'],'snippet':d['text'][:300],'source_url':d['source_url']})
             results.append({'query_id':q['query_id'],'retriever':method,'hits':hits})
         meta={r['key']:json.loads(r['value']) for r in c.execute('SELECT * FROM metadata')}
-    settings={'method':method,'query_count':len(queries),'corpus_hash':meta['corpus_hash'],'top_k':top_k,'candidate_k':candidate_k,'bm25':{'k1':1.2,'b':.75,'tokenizer':'words+Hangul bigrams'},'rrf_constant':60,'embedding_model':client.model if client else None,'encoder_fingerprint':client.fingerprint if client else None,'created_at':now(),'query_latency_ms':timings,'generation':None,'answerability_classifier':None}
+    settings={'method':method,'query_count':len(queries),'corpus_hash':meta['corpus_hash'],'top_k':top_k,'candidate_k':candidate_k,'bm25':{'k1':1.2,'b':.75,'tokenizer':TOKENIZER_NAME},'rrf_constant':60,'embedding_model':client.model if client else None,'encoder_fingerprint':client.fingerprint if client else None,'created_at':now(),'query_latency_ms':timings,'generation':None,'answerability_classifier':None}
     if dense:settings.update(dense_backend=dense.backend,embedding_input_format=client.input_format,embedding_dimension=dense.dim,query_prefix=client.query_prefix,document_prefix=client.document_prefix)
     return results,settings
 

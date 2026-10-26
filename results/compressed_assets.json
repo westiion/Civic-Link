@@ -1,0 +1,11 @@
+{
+  "assets": [
+    {
+      "path": "results/week4_run/20261027_052016/week4/predictions/h1_lexical_uniform.jsonl",
+      "archive": "results/week4_run/20261027_052016/week4/predictions/h1_lexical_uniform.jsonl.gz",
+      "bytes": 145987470,
+      "sha256": "02c0aa172f68f08afcb0dc16c2849103f8401e96cddd6341786347600b4d33d4",
+      "archive_sha256": "f35c3a3088a5ab42190f50193f0b9beefd553ee27e7a877bd1a342737c36eb0f"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "stored_results_only": true,
+  "model_api_calls_during_analysis": 0,
+  "current_metric_conditions_recomputed_and_matched": 14,
+  "original_week3_top10_metrics_recomputed_and_matched": 7,
+  "previous_vs_current_base_predictions_identical": 7,
+  "all_question_details_and_anchors": 204,
+  "scored_questions": 177,
+  "diagnostic_questions": 27,
+  "required_evidence_groups": 220,
+  "local_links_and_python_syntax": "passed",
+  "report_inputs_sha256": {
+    "results\\week4_run\\20261027_052016\\bm25.predictions.jsonl": "130279ecbd6314515e59e847ff82ac9ba95123951ba6f15f0fbf10133075a550",
+    "results\\week4_run\\20261027_052016\\dense.predictions.jsonl": "ebc1c8d92c2a66f8658730238167ba05679547b77f7d4f8109a48d63b95a4771",
+    "results\\week4_run\\20261027_052016\\hybrid.predictions.jsonl": "fc8b9d13a4249022ffb2e981cf13e1555fe2ee051ad7ddb43e32e7a1ec1e7020",
+    "results\\week4_run\\20261027_052016\\graph_h0.predictions.jsonl": "f8e153abb3b32592fcdad988d4931d0d788cbda1a4eeb37d26c50ac5a56b36b7",
+    "results\\week4_run\\20261027_052016\\graph_h1.predictions.jsonl": "fa9eb897f3c1dfc4c270ed743dd11474bbe75f523e0c43c1e446b795786e6569",
+    "results\\week4_run\\20261027_052016\\graph_h2.predictions.jsonl": "8754de8ea32b689b8c06ab37cb7a198238c4cae444a0b00cecdeeb64c7b01633",
+    "results\\week4_run\\20261027_052016\\graph_h3.predictions.jsonl": "9507ba803c51915834c744ae15c3767a572c980be46969fae543dfbefe3ffaf6",
+    "results\\week4_run\\20261027_052016\\week4\\predictions\\hybrid_graph.jsonl": "c0f227f7774a7c4f101a1c9e700ff7cf640288e9afcbf51a870ecd6388802041",
+    "results\\week4_run\\20261027_052016\\week4\\predictions\\h1_lexical_uniform.jsonl": "02c0aa172f68f08afcb0dc16c2849103f8401e96cddd6341786347600b4d33d4",
+    "results\\week4_run\\20261027_052016\\week4\\predictions\\h1_hybrid_uniform.jsonl": "01a8ec538b49c690bef90d70733fdd7a53bd4724fd90f20c12077bb377168cde",
+    "results\\week4_run\\20261027_052016\\week4\\predictions\\h2_before.jsonl": "5bae4124a9b1a4d5496f4963fc7e0aa025fc62f557903ec9217f1036eba297e0",
+    "results\\week4_run\\20261027_052016\\week4\\predictions\\h2_after.jsonl": "c0f227f7774a7c4f101a1c9e700ff7cf640288e9afcbf51a870ecd6388802041",
+    "results\\week4_run\\20261027_052016\\week4\\predictions\\h3_rrf.jsonl": "c0f227f7774a7c4f101a1c9e700ff7cf640288e9afcbf51a870ecd6388802041",
+    "results\\week4_run\\20261027_052016\\week4\\predictions\\h3_feature.jsonl": "8bb96d4602a534575b108c9c53c5e9b88df2c74400c29038d7267ab7d95677ac",
+    "data/questions.jsonl": "a470d8722b7ce98d725e36c9e1100e34d4df0b3b9d52fc186f49f237c60f5f11",
+    "data/queries.jsonl": "fdbbce590a339c4b8554420420260d891cfb3da57ef72bf0bee0fef90420db2a",
+    "data/intent_groups.jsonl": "d107652172d5a3a0f480bf2fd8f423bb897484c916ddc7d8ea8f70d6f43354a2",
+    "data/processed/graph.json": "3ede7e2d0e4579a386c979304f0097bd9a9077e44e59337d6fa412b098f03e55",
+    "data/processed/graph.evidence.json": "9a884f7dc76edb0b93a1b3601a5af716f106cd8a8463a5cd28ffb610d2593b42",
+    "scripts/evaluate.py": "db04fe1fc1cb78afa6d7496d253d9b73e5f1e5a855bbc2aaa91e0aa9c7156c2c",
+    "scripts/hybrid_graph.py": "703fbc1d5bd082437226f88c3821297c02e283d40625f1ab3397af753398781c",
+    "scripts/run_week4.py": "9413d8a14a9e79df3c5cc6e7ec48523b71983eb6823f1d14df8b0de15de8c8ae",
+    "scripts/tokenization.py": "b5374982734102df9b9b7e2238ee47cec4725a4a1a73becc37aedb2508afafc6"
+  },
+  "report_artifacts_sha256": {
+    "analysis_facts.json": "0f950e34bfeb22cfc6a7bcc36864cfc3b1e10458c77ed9f30c6628720c83df9b",
+    "QUESTION_TRACES.md": "c3c156fe6ef2ad9dd65f161205ecb824167e46a59d5adbf2b59032112054a754",
+    "REPORT.md": "74450fda5fe5ada9ed6835c0377dd94d516e2971ea4b00407a1711d294ab80a0",
+    "reproduce_analysis.py": "7612127fcdb2dc502c156a4604bbca9a66efe78510e207a04c41e99451094c5b"
+  },
+  "original_analysis_review": "completed; corrected B022 failure-to-success and N039 recovered-group wording",
+  "editorial_revision": {
+    "purpose": "Explain extension design before benchmarks; define why H1/H2/H3 target entry, binding, and final ranking; separate tested results from future improvements.",
+    "design_source": {
+      "url": "https://app.notion.com/p/4056d1078cb3805ba16df4a2b737fc94",
+      "title": "6️⃣ Week 6 Meeting",
+      "source_last_edited_at": "2026-10-26T22:08:37.091Z",
+      "sections_read": [
+        "Hybrid+Graph Extension 구현 / 정리",
+        "Hybrid+Graph Extension 구현 / 구현 / 설정",
+        "Hybrid+Graph Extension 구현 / 구현 / 기준",
+        "Hybrid+Graph Extension 구현 / 구현 / 비교",
+        "실패 분석 및 개선 가설"
+      ],
+      "returned_toggle_pairs": 7
+    },
+    "source_vs_implementation_differences_explained": [
+      "H1 bigram design vs current Kiwi lexical control",
+      "H2 broad connection hypothesis vs scoped three-evidence ablation",
+      "H3 reranking hypothesis vs fixed feature reranking implementation"
+    ],
+    "checks": [
+      "local links and question anchors exist",
+      "all new metric tables generated from audited run results",
+      "8 details blocks balanced",
+      "H1 first appears at full definition",
+      "architecture precedes benchmark and hypotheses",
+      "future work separated from implemented experiments"
+    ],
+    "new_retrieval_or_model_execution": false
+  }
+}

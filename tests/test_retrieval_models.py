@@ -6,7 +6,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
 from evaluate import evaluate
+from graph_retrieval import label_score
 from retrieval import BM25, EmbeddingClient, normalize_vector, rrf
+from tokenization import tokenize
 
 
 def test_bm25_finds_matching_korean_document():
@@ -15,6 +17,17 @@ def test_bm25_finds_matching_korean_document():
         {'chunk_id': 'c2', 'title': '토지대장', 'text': '토지 소재와 지목 기록'},
     ]
     assert BM25(docs).search('세대 구성원 등본', 1)[0][0] == 'c1'
+
+
+def test_korean_tokenizer_uses_morphemes_without_character_bigrams():
+    tokens = tokenize('가족관계증명서를 발급받으려면 제14조의2를 확인하세요')
+    assert 'm:발급' in tokens
+    assert 'l:제14조의2' in tokens
+    assert not any(token.startswith('b:') for token in tokens)
+
+
+def test_graph_seed_score_matches_inflected_user_expression():
+    assert label_score('가족관계증명서를 발급받으려면 어떻게 하나요?', '가족관계증명서') >= .18
 
 
 def test_rrf_combines_ranks_without_using_raw_scores():

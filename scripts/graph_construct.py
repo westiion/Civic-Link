@@ -7,12 +7,14 @@ import argparse
 import json
 import re
 from collections import Counter, defaultdict
+from contextlib import closing
 from pathlib import Path
 import networkx as nx
 from civic_data import ROOT, connect, digest, read_jsonl, write_json
 
-VERSION = 'week3-restricted-v2'
+VERSION = 'week3-restricted-v3'
 ARTICLE = r'제\s*\d+\s*조(?:\s*의\s*\d+)?'
+MAX_ARTICLE_RANGE = 50
 NODE_REQUIRED = {
     'Service': ['label', 'category', 'registry_sha256', 'aliases', 'entry_source_document_id'],
     'Document': ['label', 'document_kind'],
@@ -53,6 +55,42 @@ SCOPED_NEGATIVE_STATEMENTS = (
 def compact(text): return re.sub(r'[^가-힣a-zA-Z0-9]', '', text).lower()
 def stable(prefix, *parts): return prefix+'-'+digest('\n'.join(parts))[:20]
 def article_id(did, locator): return stable('ART',did,compact(locator))
+
+
+def article_parts(value):
+    match=re.fullmatch(r'제\s*(\d+)\s*조(?:\s*의\s*(\d+))?',value)
+    return (int(match.group(1)),int(match.group(2)) if match.group(2) else None) if match else None
+
+
+def expand_article_range(first,last):
+    a=article_parts(first);b=article_parts(last)
+    if not a or not b:return None
+    if a[1] is None and b[1] is None and a[0]<=b[0] and b[0]-a[0]<MAX_ARTICLE_RANGE:
+        return [f'제{number}조' for number in range(a[0],b[0]+1)]
+    if a[0]==b[0] and a[1] is not None and b[1] is not None and a[1]<=b[1] and b[1]-a[1]<MAX_ARTICLE_RANGE:
+        return [f'제{a[0]}조의{number}' for number in range(a[1],b[1]+1)]
+    return None
+
+
+def parse_article_mentions(text):
+    lead=re.match(r'\s*(?:\(이하[^)\n]{1,70}\)\s*)?\(?\s*('+ARTICLE+')',text)
+    if not lead:return [],0,None,False
+    mentions=[(lead.group(1),lead.end())];pos=lead.end();is_range=False
+    ranged=re.match(r'\s*(?:부터|내지|[~∼～-])\s*('+ARTICLE+r')(?:\s*까지)?',text[pos:])
+    if ranged:
+        expanded=expand_article_range(mentions[0][0],ranged.group(1));pos+=ranged.end();is_range=True
+        if expanded is None:return [(mentions[0][0],pos),(ranged.group(1),pos)],pos,'unsupported_or_oversized_article_range',True
+        mentions=[(article,pos) for article in expanded]
+    while True:
+        extra=re.match(r'[\s,ㆍ·)(]*(?:및|또는)?\s*('+ARTICLE+')',text[pos:])
+        if not extra:break
+        pos+=extra.end();mentions.append((extra.group(1),pos))
+    return mentions,pos,None,is_range
+
+
+def parse_article_sequence(text):
+    mentions,pos,error,is_range=parse_article_mentions(text)
+    return [article for article,_ in mentions],pos,error,is_range
 
 
 def corpus_identity(c):
@@ -123,7 +161,8 @@ class EvidenceBuilder:
         bs[:]=sorted(set(bs)|set(eids))
 
 
-def build_graph(db, registry):
+def build_graph(db, registry, *, scoped_repairs=True):
+    if type(scoped_repairs) is not bool:raise ValueError('scoped_repairs must be bool')
     services=read_jsonl(registry); registry_hash=digest(Path(registry).read_bytes().replace(b'\r\n',b'\n'))
     with connect(db,True) as c:
         docs={r['document_id']:dict(r) for r in c.execute('SELECT * FROM documents ORDER BY document_id')}
@@ -171,7 +210,7 @@ def build_graph(db, registry):
     named=re.compile(r'「(?P<quoted>[^」\n]{2,100})」|(?P<known>'+('|'.join(r'\s*'.join(map(re.escape,t.split())) for t in names) or r'(?!)')+')')
     def citations(did,loc,cs):
         start=min(c['start_char'] for c in cs); end=max(c['end_char'] for c in cs)
-        body=docs[did]['body'][start:end]; found=[]; occupied=[]
+        body=docs[did]['body'][start:end]; found=[]; occupied=[];target_events=[]
         def record(target,article,a,b,rule):
             dest=articles.get((target,compact(article)))
             if dest: found.append((dest,eb.span(did,start+a,start+b,rule)))
@@ -181,23 +220,49 @@ def build_graph(db, registry):
             target=laws.get(compact(m.group('quoted') or m.group('known')))
             if not target:
                 unresolved.append(dict(source_document_id=did,locator=loc,quote=m.group(),reason='named_law_not_in_corpus')); continue
-            tail=body[m.end():]
-            lead=re.match(r'\s*(?:\(이하[^)\n]{1,70}\)\s*)?\(?\s*('+ARTICLE+')',tail)
-            if not lead:
+            target_events.append((m.start(),target));tail=body[m.end():]
+            mentioned,pos,range_error,is_range=parse_article_mentions(tail)
+            if not mentioned:
                 unresolved.append(dict(source_document_id=did,locator=loc,quote=m.group(),reason='law_mention_without_article'));continue
-            pos=lead.end();record(target,lead.group(1),m.start(),m.end()+pos,'explicit_law_article')
-            while True:
-                extra=re.match(r'[\s,ㆍ·)(]*(?:및|또는)?\s*('+ARTICLE+')',tail[pos:])
-                if not extra:break
-                pos+=extra.end();record(target,extra.group(1),m.start(),m.end()+pos,'explicit_law_article')
+            rule='explicit_law_article_range' if is_range else 'explicit_law_article'
+            for article,article_end in mentioned:record(target,article,m.start(),m.end()+article_end,rule)
+            if range_error:unresolved.append(dict(source_document_id=did,locator=loc,target_document_id=target,
+                                                   quote=body[m.start():m.end()+pos],reason=range_error))
             occupied.append((m.start(),m.end()+pos))
         declared={}
         for m in re.finditer(r'「([^」]+)」\s*\(이하\s*[“"「]([^”"」]+)[”"」]이라?\s*한다\)',docs[did]['body']):
             td=laws.get(compact(m.group(1)))
             if td:declared[m.group(2)]=td
         for alias,target in declared.items():
-            for m in re.finditer(r'(?<![가-힣])'+re.escape(alias)+r'\s+('+ARTICLE+')',body):
-                if not any(a<=m.start()<b for a,b in occupied):record(target,m.group(1),m.start(),m.end(),'document_declared_alias')
+            for m in re.finditer(r'(?<![가-힣])'+re.escape(alias),body):
+                if any(a<=m.start()<b for a,b in occupied):continue
+                mentioned,pos,range_error,is_range=parse_article_mentions(body[m.end():])
+                if not mentioned:continue
+                target_events.append((m.start(),target));rule='document_declared_alias_range' if is_range else 'document_declared_alias'
+                for article,article_end in mentioned:record(target,article,m.start(),m.end()+article_end,rule)
+                if range_error:unresolved.append(dict(source_document_id=did,locator=loc,target_document_id=target,
+                                                       quote=body[m.start():m.end()+pos],reason=range_error))
+                occupied.append((m.start(),m.end()+pos))
+        contextual=re.compile(r'(?<![가-힣])(같은 법|동일한 법|이 법)(?:\s*(시행령|시행규칙))?')
+        for m in contextual.finditer(body):
+            if any(a<=m.start()<b for a,b in occupied):continue
+            mentioned,pos,range_error,is_range=parse_article_mentions(body[m.end():])
+            if not mentioned:continue
+            if m.group(1)=='이 법':target=did if docs[did]['source_type']=='law' else None
+            else:
+                prior=[event for event in target_events if event[0]<m.start()]
+                target=max(prior,key=lambda event:event[0])[1] if prior else None
+            suffix=m.group(2)
+            if target and suffix and not compact(docs[target]['title']).endswith(compact(suffix)):
+                target=laws.get(compact(docs[target]['title']+' '+suffix))
+            if not target:
+                unresolved.append(dict(source_document_id=did,locator=loc,quote=body[m.start():m.end()+pos],
+                                       reason='contextual_law_without_resolvable_antecedent'));continue
+            target_events.append((m.start(),target));rule=('current_law_article_range' if is_range else 'current_law_article') if m.group(1)=='이 법' else ('contextual_same_law_article_range' if is_range else 'contextual_same_law_article')
+            for article,article_end in mentioned:record(target,article,m.start(),m.end()+article_end,rule)
+            if range_error:unresolved.append(dict(source_document_id=did,locator=loc,target_document_id=target,
+                                                   quote=body[m.start():m.end()+pos],reason=range_error))
+            occupied.append((m.start(),m.end()+pos))
         return found
 
     for (did,loc),cs in sorted(sections.items()):
@@ -211,7 +276,7 @@ def build_graph(db, registry):
         if any(s[k]!=dbservices[sid][k] for k in ['name','category']):raise ValueError('registry identity mismatch')
         g.add_node(sid,type='Service',label=s['name'],category=s['category'],registry_sha256=registry_hash,aliases=service_aliases(s['name']),entry_source_document_id=did)
 
-        for rule in SCOPED_NEGATIVE_STATEMENTS:
+        for rule in (SCOPED_NEGATIVE_STATEMENTS if scoped_repairs else ()):
             span=scoped_negative_span(rule,s,d)
             if span:
                 ev=eb.span(did,span[0],span[1],'scoped_negative_statement','service_context',
@@ -264,7 +329,7 @@ def build_graph(db, registry):
         for ch in chunks.values():
             source=docs[ch['document_id']]
             direct=source['source_type']=='municipal_table' and any(name in ch['text'] for name in g.nodes[sid]['aliases'])
-            scoped=any(matches_scoped_service_alias(rule,s,source,ch) for rule in SCOPED_SERVICE_ALIASES)
+            scoped=scoped_repairs and any(matches_scoped_service_alias(rule,s,source,ch) for rule in SCOPED_SERVICE_ALIASES)
             if direct or scoped:
                 extraction_rule='scoped_exact_cell_alias' if scoped and not direct else 'local_service_row'
                 eb.bind('node',sid,[eb.span(ch['document_id'],ch['start_char'],min(ch['end_char'],ch['start_char']+200),extraction_rule,'service_context')])
@@ -333,7 +398,7 @@ def load_graph(path,db=None):
     except TypeError:g=nx.node_link_graph(data,link='edges')
     ev=json.loads(Path(path).with_suffix('.evidence.json').read_text(encoding='utf-8'))
     if db:
-        with connect(db,True) as c:
+        with closing(connect(db,True)) as c:
             if corpus_identity(c)!=g.graph['corpus_fingerprint']:raise ValueError('graph is stale for SQLite')
             docs={r['document_id']:dict(r) for r in c.execute('SELECT * FROM documents')}
             chunks={r['chunk_id']:dict(r) for r in c.execute('SELECT * FROM chunks')}
