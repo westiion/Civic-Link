@@ -41,6 +41,9 @@ def validate_pair(a, b, kind):
     if kind == 'h1':
         require(ca.pop('seed_mode') == 'lexical' and cb.pop('seed_mode') == 'hybrid', 'H1 requires lexical -> hybrid')
         require(ca['seed_weight'] == cb['seed_weight'] == 'uniform', 'H1 requires uniform seed weights')
+    elif kind == 'relations':
+        require(set(ca.pop('relations')) == {'GROUNDED_BY', 'REFERENCES'}, 'relations requires two-relation baseline')
+        require(set(cb.pop('relations')) == {'GROUNDED_BY', 'REFERENCES', 'REQUIRES', 'HANDLED_BY', 'PART_OF'}, 'relations requires all five relations')
     elif kind == 'h3':
         require(ca.pop('rerank') == 'none' and cb.pop('rerank') == 'feature', 'H3 requires none -> feature')
     require(ca == cb, 'only the tested policy may differ')
@@ -150,7 +153,7 @@ def compare_files(before, after, output_dir, *, kind, db, questions, queries, be
 
 def main(kind=None):
     p=argparse.ArgumentParser(description=__doc__)
-    if kind is None:p.add_argument('--kind', required=True, choices=['baseline','h1','h2','h3'])
+    if kind is None:p.add_argument('--kind', required=True, choices=['baseline','h1','h2','h3','relations'])
     p.add_argument('--before', type=Path, required=True);p.add_argument('--after', type=Path, required=True)
     p.add_argument('--output-dir', type=Path, required=True)
     p.add_argument('--db', type=Path, default=ROOT/'data/processed/civic.sqlite')

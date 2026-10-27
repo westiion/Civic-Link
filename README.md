@@ -1,5 +1,7 @@
 ## Civic-Link
 
+최신 `20261027_091116`의 다섯 관계 Extension·H1·H2·H3 결과는 [통합 보고서](week4/analysis/REPORT.md)에 정리했습니다. [두 관계→다섯 관계 비교 기록](week4/analysis/RELATION_ABLATION.md)도 함께 보존합니다.
+
 Civic-Link는 수정구청의 무인민원발급 서비스에 적용하기 위한 행정·법률 기반 Graph RAG 시스템 구축 프로젝트입니다. 행정 서비스와 필요 서류, 근거 조문 및 관련 법령 간의 관계를 지식 그래프로 구조화하고, 이를 바탕으로 사용자의 질문에 적합한 행정 서비스를 안내하며 해당 서비스의 공식적인 법적·행정적 근거를 함께 제시하는 것을 목표로 합니다.
 
 현재 BM25와 Graph의 문자열 기반 점수는 동일한 Kiwi 형태소·표면어 토큰화를 사용합니다. Dense는 임베딩 모델의 자체 토크나이저를 사용하며, Hybrid는 BM25와 Dense 순위를 RRF로 결합합니다. Graph는 Hybrid에 자동으로 포함되지 않고 서비스·법령 시작점에서 근거가 연결된 관계를 탐색하는 별도 검색 방식입니다.
@@ -73,7 +75,7 @@ $env:CIVIC_EMBEDDING_API_KEY = "발급받은 API 키"
 .\.venv\Scripts\python.exe scripts\run_models.py
 ```
 
-실행 결과는 `results/week4_run/<실행시각>/`에 방법별 예측, 지표, 실패 사례와 실행 설정으로 저장됩니다. 최신 비교 실행은 `results/week4_run/20261027_052016/`이며, 이전 Week3 기준 결과는 `results/week3_run/`에 보관합니다. `week4_run`에는 피드백 반영 전후 실행도 비교용으로 함께 보존합니다.
+실행 결과는 `results/week4_run/<실행시각>/`에 방법별 예측, 지표, 실패 사례와 실행 설정으로 저장됩니다. 최신 비교 실행은 `results/week4_run/20261027_091116/`이며, 이전 Week3 기준 결과는 `results/week3_run/`에 보관합니다. `week4_run`에는 피드백 반영 전후 실행도 비교용으로 함께 보존합니다.
 
 새 실행은 같은 Hybrid 검색의 상위 후보를 `hybrid_candidates.jsonl`과 `hybrid_candidates.run.json`으로도 저장합니다. 기존 Hybrid 평가는 요청한 Top-10을 그대로 사용합니다. 이 후보를 이용한 Week4 확장·가설 비교는 아래처럼 별도 실행하며 회사 API를 호출하지 않습니다.
 
@@ -95,7 +97,7 @@ $run = "results\week4_run\<실행시각>"
 
 #### 저장된 결과 복원
 
-대용량 H1 상세 결과 한 개는 `.jsonl.gz`로 공유합니다. 원본 JSONL은 로컬에 유지하고 Git에서는 제외합니다. 새로 clone한 뒤 아래 명령으로 원래 바이트와 SHA-256을 검증하며 복원합니다. `verify`도 이 복원을 자동 수행하며 모델 API를 호출하지 않습니다. 기존 파일이 다르면 덮어쓰지 않고 중단합니다.
+대용량 H1 상세 결과는 `.jsonl.gz`로 공유합니다. 원본 JSONL은 로컬에 유지하고 Git에서는 제외합니다. 새로 clone한 뒤 아래 명령으로 원래 바이트와 SHA-256을 검증하며 복원합니다. `verify`도 이 복원을 자동 수행하며 모델 API를 호출하지 않습니다. 기존 파일이 다르면 덮어쓰지 않고 중단합니다.
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\submission_cli.py restore-results

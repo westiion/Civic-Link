@@ -5,7 +5,7 @@ from types import SimpleNamespace
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import networkx as nx
-from hybrid_graph import Config, HybridGraph
+from hybrid_graph import Config, HybridGraph, LEGAL_RELATIONS
 from tokenization import token_set
 
 
@@ -36,7 +36,7 @@ def ranking(*ids):
 
 class ExtensionTests(unittest.TestCase):
     def test_unbound_candidates_preserved_and_two_hop_extension(self):
-        result = HybridGraph(fixture()).search('증명', ranking('c0', 'c1'))
+        result = HybridGraph(fixture(), Config(relations=LEGAL_RELATIONS)).search('증명', ranking('c0', 'c1'))
         hits = {h['chunk_id']: h for h in result['hits']}
         self.assertEqual(hits['c0']['origins'], ['hybrid'])
         self.assertIsNone(hits['c0']['graph_path'])
@@ -77,7 +77,7 @@ class ExtensionTests(unittest.TestCase):
             HybridGraph(fixture(), Config(max_nodes=0))
 
     def test_rrf_uses_ranks_and_keeps_baseline_for_evaluation(self):
-        result = HybridGraph(fixture()).search('증명', ranking('c0', 'c1'))
+        result = HybridGraph(fixture(), Config(relations=LEGAL_RELATIONS)).search('증명', ranking('c0', 'c1'))
         h = next(h for h in result['hits'] if h['chunk_id'] == 'c1')
         self.assertAlmostEqual(h['score'], 1 / 62 + 1 / (60 + h['graph_rank']))
         self.assertEqual([h['chunk_id'] for h in result['baseline_hits']], ['c0', 'c1'])

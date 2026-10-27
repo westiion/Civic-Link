@@ -6,6 +6,13 @@
       "bytes": 145987470,
       "sha256": "02c0aa172f68f08afcb0dc16c2849103f8401e96cddd6341786347600b4d33d4",
       "archive_sha256": "f35c3a3088a5ab42190f50193f0b9beefd553ee27e7a877bd1a342737c36eb0f"
+    },
+    {
+      "path": "results/week4_run/20261027_091116/week4/predictions/h1_lexical_uniform.jsonl",
+      "archive": "results/week4_run/20261027_091116/week4/predictions/h1_lexical_uniform.jsonl.gz",
+      "bytes": 158301968,
+      "sha256": "99ca724a17ca844215ad272e2543e3172cd75768c921ed7e4c2d839e400d17a5",
+      "archive_sha256": "4abeb6e08ab93c0b1f2fc77405e73e38c5611d7891a2cc38ad3a6aec1f98c8e0"
     }
   ]
 }

@@ -1,0 +1,1498 @@
+{
+  "summary": {
+    "kind": "relations",
+    "question_count": 204,
+    "transitions": {
+      "unchanged": 166,
+      "improved": 10,
+      "worsened": 1,
+      "diagnostic_only": 27
+    },
+    "methods": {
+      "before": {
+        "metrics": {
+          "recall": 0.7796610169491526,
+          "hit": 0.8135593220338984,
+          "all_evidence": 0.7457627118644068,
+          "mrr": 0.5578513137835172
+        },
+        "status_counts": {
+          "success": 132,
+          "failure": 33,
+          "partial": 12,
+          "not_scored_unanswerable": 27
+        },
+        "pool_recall": 0.980225988700565,
+        "graph_pool_recall": 0.7288135593220338
+      },
+      "after": {
+        "metrics": {
+          "recall": 0.827683615819209,
+          "hit": 0.8531073446327684,
+          "all_evidence": 0.8022598870056498,
+          "mrr": 0.6117836965294593
+        },
+        "status_counts": {
+          "success": 142,
+          "failure": 26,
+          "partial": 9,
+          "not_scored_unanswerable": 27
+        },
+        "pool_recall": 0.980225988700565,
+        "graph_pool_recall": 0.8333333333333334
+      }
+    },
+    "scored_questions": 177,
+    "top10_set_changed_queries": 155,
+    "missed_in_pool_groups": 41
+  },
+  "hybrid_comparison": {
+    "kind": "baseline",
+    "question_count": 204,
+    "transitions": {
+      "unchanged": 161,
+      "improved": 9,
+      "same_count_changed_groups": 1,
+      "worsened": 6,
+      "diagnostic_only": 27
+    },
+    "methods": {
+      "before": {
+        "metrics": {
+          "recall": 0.8220338983050848,
+          "hit": 0.8531073446327684,
+          "all_evidence": 0.7909604519774012,
+          "mrr": 0.6060532687651332
+        },
+        "status_counts": {
+          "success": 140,
+          "failure": 26,
+          "partial": 11,
+          "not_scored_unanswerable": 27
+        },
+        "pool_recall": 0.9764595103578155,
+        "graph_pool_recall": 0.0
+      },
+      "after": {
+        "metrics": {
+          "recall": 0.827683615819209,
+          "hit": 0.8531073446327684,
+          "all_evidence": 0.8022598870056498,
+          "mrr": 0.6117836965294593
+        },
+        "status_counts": {
+          "success": 142,
+          "failure": 26,
+          "partial": 9,
+          "not_scored_unanswerable": 27
+        },
+        "pool_recall": 0.980225988700565,
+        "graph_pool_recall": 0.8333333333333334
+      }
+    },
+    "scored_questions": 177,
+    "top10_set_changed_queries": 200,
+    "missed_in_pool_groups": 41
+  },
+  "types": {
+    "before": {
+      "cross_reference": {
+        "question_count": 10,
+        "metrics": {
+          "1": {
+            "recall": 0.18333333333333332,
+            "hit": 0.3,
+            "all_evidence": 0.1,
+            "mrr": 0.3
+          },
+          "3": {
+            "recall": 0.4166666666666667,
+            "hit": 0.6,
+            "all_evidence": 0.3,
+            "mrr": 0.45
+          },
+          "5": {
+            "recall": 0.5333333333333333,
+            "hit": 0.7,
+            "all_evidence": 0.3,
+            "mrr": 0.47000000000000003
+          },
+          "10": {
+            "recall": 0.5333333333333333,
+            "hit": 0.7,
+            "all_evidence": 0.3,
+            "mrr": 0.47000000000000003
+          }
+        }
+      },
+      "direct_qa": {
+        "question_count": 45,
+        "metrics": {
+          "1": {
+            "recall": 0.6444444444444445,
+            "hit": 0.6666666666666666,
+            "all_evidence": 0.6222222222222222,
+            "mrr": 0.6666666666666666
+          },
+          "3": {
+            "recall": 0.8111111111111111,
+            "hit": 0.8222222222222222,
+            "all_evidence": 0.8,
+            "mrr": 0.7370370370370369
+          },
+          "5": {
+            "recall": 0.8444444444444444,
+            "hit": 0.8444444444444444,
+            "all_evidence": 0.8444444444444444,
+            "mrr": 0.7425925925925926
+          },
+          "10": {
+            "recall": 0.9111111111111111,
+            "hit": 0.9111111111111111,
+            "all_evidence": 0.9111111111111111,
+            "mrr": 0.749753086419753
+          }
+        }
+      },
+      "handling_agency": {
+        "question_count": 1,
+        "metrics": {
+          "1": {
+            "recall": 1.0,
+            "hit": 1.0,
+            "all_evidence": 1.0,
+            "mrr": 1.0
+          },
+          "3": {
+            "recall": 1.0,
+            "hit": 1.0,
+            "all_evidence": 1.0,
+            "mrr": 1.0
+          },
+          "5": {
+            "recall": 1.0,
+            "hit": 1.0,
+            "all_evidence": 1.0,
+            "mrr": 1.0
+          },
+          "10": {
+            "recall": 1.0,
+            "hit": 1.0,
+            "all_evidence": 1.0,
+            "mrr": 1.0
+          }
+        }
+      },
+      "legal_grounding": {
+        "question_count": 4,
+        "metrics": {
+          "1": {
+            "recall": 0.25,
+            "hit": 0.25,
+            "all_evidence": 0.25,
+            "mrr": 0.25
+          },
+          "3": {
+            "recall": 0.25,
+            "hit": 0.25,
+            "all_evidence": 0.25,
+            "mrr": 0.25
+          },
+          "5": {
+            "recall": 0.5833333333333334,
+            "hit": 0.75,
+            "all_evidence": 0.5,
+            "mrr": 0.35
+          },
+          "10": {
+            "recall": 0.5833333333333334,
+            "hit": 0.75,
+            "all_evidence": 0.5,
+            "mrr": 0.35
+          }
+        }
+      },
+      "multi_source_multi_hop": {
+        "question_count": 5,
+        "metrics": {
+          "1": {
+            "recall": 0.0,
+            "hit": 0.0,
+            "all_evidence": 0.0,
+            "mrr": 0.0
+          },
+          "3": {
+            "recall": 0.13333333333333333,
+            "hit": 0.2,
+            "all_evidence": 0.0,
+            "mrr": 0.1
+          },
+          "5": {
+            "recall": 0.3,
+            "hit": 0.4,
+            "all_evidence": 0.2,
+            "mrr": 0.15
+          },
+          "10": {
+            "recall": 0.6,
+            "hit": 0.8,
+            "all_evidence": 0.4,
+            "mrr": 0.2033333333333333
+          }
+        }
+      },
+      "required_documents": {
+        "question_count": 19,
+        "metrics": {
+          "1": {
+            "recall": 0.13157894736842105,
+            "hit": 0.21052631578947367,
+            "all_evidence": 0.05263157894736842,
+            "mrr": 0.21052631578947367
+          },
+          "3": {
+            "recall": 0.2631578947368421,
+            "hit": 0.3157894736842105,
+            "all_evidence": 0.21052631578947367,
+            "mrr": 0.2631578947368421
+          },
+          "5": {
+            "recall": 0.3157894736842105,
+            "hit": 0.42105263157894735,
+            "all_evidence": 0.21052631578947367,
+            "mrr": 0.2868421052631579
+          },
+          "10": {
+            "recall": 0.6052631578947368,
+            "hit": 0.6842105263157895,
+            "all_evidence": 0.5263157894736842,
+            "mrr": 0.31956975772765245
+          }
+        }
+      },
+      "requirement_condition": {
+        "question_count": 78,
+        "metrics": {
+          "1": {
+            "recall": 0.40384615384615385,
+            "hit": 0.4230769230769231,
+            "all_evidence": 0.38461538461538464,
+            "mrr": 0.4230769230769231
+          },
+          "3": {
+            "recall": 0.5833333333333334,
+            "hit": 0.6153846153846154,
+            "all_evidence": 0.5512820512820513,
+            "mrr": 0.5042735042735043
+          },
+          "5": {
+            "recall": 0.6837606837606838,
+            "hit": 0.717948717948718,
+            "all_evidence": 0.6538461538461539,
+            "mrr": 0.5273504273504274
+          },
+          "10": {
+            "recall": 0.7927350427350428,
+            "hit": 0.8076923076923077,
+            "all_evidence": 0.782051282051282,
+            "mrr": 0.5399013024013024
+          }
+        }
+      },
+      "service_discovery": {
+        "question_count": 15,
+        "metrics": {
+          "1": {
+            "recall": 0.4666666666666667,
+            "hit": 0.4666666666666667,
+            "all_evidence": 0.4666666666666667,
+            "mrr": 0.4666666666666667
+          },
+          "3": {
+            "recall": 0.6333333333333333,
+            "hit": 0.6666666666666666,
+            "all_evidence": 0.6,
+            "mrr": 0.5555555555555556
+          },
+          "5": {
+            "recall": 0.7,
+            "hit": 0.7333333333333333,
+            "all_evidence": 0.6666666666666666,
+            "mrr": 0.5688888888888889
+          },
+          "10": {
+            "recall": 0.8,
+            "hit": 0.8,
+            "all_evidence": 0.8,
+            "mrr": 0.58
+          }
+        }
+      }
+    },
+    "after": {
+      "cross_reference": {
+        "question_count": 10,
+        "metrics": {
+          "1": {
+            "recall": 0.18333333333333332,
+            "hit": 0.3,
+            "all_evidence": 0.1,
+            "mrr": 0.3
+          },
+          "3": {
+            "recall": 0.45,
+            "hit": 0.6,
+            "all_evidence": 0.3,
+            "mrr": 0.45
+          },
+          "5": {
+            "recall": 0.4833333333333333,
+            "hit": 0.6,
+            "all_evidence": 0.3,
+            "mrr": 0.45
+          },
+          "10": {
+            "recall": 0.5333333333333333,
+            "hit": 0.7,
+            "all_evidence": 0.3,
+            "mrr": 0.4666666666666667
+          }
+        }
+      },
+      "direct_qa": {
+        "question_count": 45,
+        "metrics": {
+          "1": {
+            "recall": 0.6222222222222222,
+            "hit": 0.6444444444444445,
+            "all_evidence": 0.6,
+            "mrr": 0.6444444444444445
+          },
+          "3": {
+            "recall": 0.8333333333333334,
+            "hit": 0.8444444444444444,
+            "all_evidence": 0.8222222222222222,
+            "mrr": 0.7296296296296296
+          },
+          "5": {
+            "recall": 0.8555555555555555,
+            "hit": 0.8666666666666667,
+            "all_evidence": 0.8444444444444444,
+            "mrr": 0.7351851851851853
+          },
+          "10": {
+            "recall": 0.9333333333333333,
+            "hit": 0.9333333333333333,
+            "all_evidence": 0.9333333333333333,
+            "mrr": 0.7423456790123457
+          }
+        }
+      },
+      "handling_agency": {
+        "question_count": 1,
+        "metrics": {
+          "1": {
+            "recall": 1.0,
+            "hit": 1.0,
+            "all_evidence": 1.0,
+            "mrr": 1.0
+          },
+          "3": {
+            "recall": 1.0,
+            "hit": 1.0,
+            "all_evidence": 1.0,
+            "mrr": 1.0
+          },
+          "5": {
+            "recall": 1.0,
+            "hit": 1.0,
+            "all_evidence": 1.0,
+            "mrr": 1.0
+          },
+          "10": {
+            "recall": 1.0,
+            "hit": 1.0,
+            "all_evidence": 1.0,
+            "mrr": 1.0
+          }
+        }
+      },
+      "legal_grounding": {
+        "question_count": 4,
+        "metrics": {
+          "1": {
+            "recall": 0.25,
+            "hit": 0.25,
+            "all_evidence": 0.25,
+            "mrr": 0.25
+          },
+          "3": {
+            "recall": 0.25,
+            "hit": 0.25,
+            "all_evidence": 0.25,
+            "mrr": 0.25
+          },
+          "5": {
+            "recall": 0.3333333333333333,
+            "hit": 0.5,
+            "all_evidence": 0.25,
+            "mrr": 0.3
+          },
+          "10": {
+            "recall": 0.5833333333333334,
+            "hit": 0.75,
+            "all_evidence": 0.5,
+            "mrr": 0.3416666666666667
+          }
+        }
+      },
+      "multi_source_multi_hop": {
+        "question_count": 5,
+        "metrics": {
+          "1": {
+            "recall": 0.0,
+            "hit": 0.0,
+            "all_evidence": 0.0,
+            "mrr": 0.0
+          },
+          "3": {
+            "recall": 0.13333333333333333,
+            "hit": 0.2,
+            "all_evidence": 0.0,
+            "mrr": 0.1
+          },
+          "5": {
+            "recall": 0.3,
+            "hit": 0.4,
+            "all_evidence": 0.2,
+            "mrr": 0.15
+          },
+          "10": {
+            "recall": 0.5,
+            "hit": 0.6,
+            "all_evidence": 0.4,
+            "mrr": 0.175
+          }
+        }
+      },
+      "required_documents": {
+        "question_count": 19,
+        "metrics": {
+          "1": {
+            "recall": 0.42105263157894735,
+            "hit": 0.5263157894736842,
+            "all_evidence": 0.3157894736842105,
+            "mrr": 0.5263157894736842
+          },
+          "3": {
+            "recall": 0.7368421052631579,
+            "hit": 0.7368421052631579,
+            "all_evidence": 0.7368421052631579,
+            "mrr": 0.631578947368421
+          },
+          "5": {
+            "recall": 0.8947368421052632,
+            "hit": 0.9473684210526315,
+            "all_evidence": 0.8421052631578947,
+            "mrr": 0.6842105263157895
+          },
+          "10": {
+            "recall": 0.9210526315789473,
+            "hit": 0.9473684210526315,
+            "all_evidence": 0.8947368421052632,
+            "mrr": 0.6842105263157895
+          }
+        }
+      },
+      "requirement_condition": {
+        "question_count": 78,
+        "metrics": {
+          "1": {
+            "recall": 0.4423076923076923,
+            "hit": 0.46153846153846156,
+            "all_evidence": 0.4230769230769231,
+            "mrr": 0.46153846153846156
+          },
+          "3": {
+            "recall": 0.6410256410256411,
+            "hit": 0.6794871794871795,
+            "all_evidence": 0.6025641025641025,
+            "mrr": 0.5534188034188033
+          },
+          "5": {
+            "recall": 0.7222222222222222,
+            "hit": 0.7564102564102564,
+            "all_evidence": 0.6923076923076923,
+            "mrr": 0.5713675213675214
+          },
+          "10": {
+            "recall": 0.8055555555555556,
+            "hit": 0.8205128205128205,
+            "all_evidence": 0.7948717948717948,
+            "mrr": 0.5798738298738298
+          }
+        }
+      },
+      "service_discovery": {
+        "question_count": 15,
+        "metrics": {
+          "1": {
+            "recall": 0.4666666666666667,
+            "hit": 0.4666666666666667,
+            "all_evidence": 0.4666666666666667,
+            "mrr": 0.4666666666666667
+          },
+          "3": {
+            "recall": 0.6333333333333333,
+            "hit": 0.6666666666666666,
+            "all_evidence": 0.6,
+            "mrr": 0.5444444444444444
+          },
+          "5": {
+            "recall": 0.7666666666666667,
+            "hit": 0.8,
+            "all_evidence": 0.7333333333333333,
+            "mrr": 0.5744444444444444
+          },
+          "10": {
+            "recall": 0.8666666666666667,
+            "hit": 0.8666666666666667,
+            "all_evidence": 0.8666666666666667,
+            "mrr": 0.5827777777777778
+          }
+        }
+      }
+    }
+  },
+  "seed_changed": 26,
+  "seed_changed_ids": [
+    "SJ-N-022",
+    "SJ-N-025",
+    "SJ-N-027",
+    "SJ-N-035",
+    "SJ-N-053",
+    "SJ-N-066",
+    "SJ-X-050",
+    "SJ-X-054",
+    "SJ-A-014",
+    "SJ-A-031",
+    "SJ-A-032",
+    "SJ-A-033",
+    "SJ-A-035",
+    "SJ-A-036",
+    "SJ-A-037",
+    "SJ-A-042",
+    "SJ-A-044",
+    "SJ-A-045",
+    "SJ-A-057",
+    "SJ-A-089",
+    "SJ-A-091",
+    "SJ-B-009",
+    "SJ-B-015",
+    "SJ-B-037",
+    "SJ-B-040",
+    "SJ-B-042"
+  ],
+  "relation_query_counts": {
+    "two": {
+      "REFERENCES": 179,
+      "GROUNDED_BY": 164
+    },
+    "five": {
+      "REFERENCES": 181,
+      "REQUIRES": 102,
+      "GROUNDED_BY": 171,
+      "PART_OF": 204,
+      "HANDLED_BY": 131
+    }
+  },
+  "truncation": {
+    "two": {},
+    "five": {}
+  },
+  "cases": [
+    {
+      "query_id": "SJ-N-025",
+      "question": "해외이주 여권에 낼 국세 납세증명이 필요한데 시간부터 알아야 해요. 일반용은 바로 나온다던데 여권용도 그렇게 생각하고 준비하면 돼요?",
+      "type": "requirement_condition",
+      "change": "improved",
+      "seed_changed": true,
+      "found_before": [],
+      "found_after": [
+        1
+      ],
+      "required": 1,
+      "groups": [
+        {
+          "group": 1,
+          "source": "G026",
+          "locator": "신청 방법 및 절차",
+          "quote": "신청 방법 및 절차\n일반용 | 즉시(근무시간 내 3시간)\n1\n접수\n세무서\n시군구 및 읍면동 출장소\n2\n처리\n세무서\n해외이주여권용 | 총10일\n1\n접수\n세무서\n2\n처리\n세무서\n참고\n각 기관을 선택하면 해당기관 정보조회가 가능하며, 조회된 접수/처리기관에 대한 실제 민원 접수/처리 가능여부는 해당기관에 확인해 주시기 바랍니다.\n",
+          "ranks": {
+            "hybrid": 2,
+            "two": null,
+            "five": 2
+          },
+          "paths": {
+            "two": [],
+            "five": [
+              {
+                "path": "Service-HANDLED_BY-Agency",
+                "hops": 1,
+                "quote": "처리\n세무서",
+                "relations": [
+                  "HANDLED_BY"
+                ]
+              },
+              {
+                "path": "Service-HANDLED_BY-Agency",
+                "hops": 1,
+                "quote": "처리\n세무서",
+                "relations": [
+                  "HANDLED_BY"
+                ]
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-5d0e1bfb8332bbf12a07-C0002",
+              "hybrid_rank": 2,
+              "graph_rank": null,
+              "fusion_rank": 13,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-5d0e1bfb8332bbf12a07-C0002",
+              "hybrid_rank": 2,
+              "graph_rank": 3,
+              "fusion_rank": 2,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "SJ-N-027",
+      "question": "회사랑 장사해서 번돈 증명하래. 공식서류 이름뭐임 소득나오는거.",
+      "type": "service_discovery",
+      "change": "improved",
+      "seed_changed": true,
+      "found_before": [],
+      "found_after": [
+        1
+      ],
+      "required": 1,
+      "groups": [
+        {
+          "group": 1,
+          "source": "G044",
+          "locator": "기본정보",
+          "quote": "기본정보\n제공 내용\n이 민원은 종합소득 또는 연말정산 소득 또는 일용근로소득이 있는 자가 과세된 소득에 대한 소득금액을 증명받고자 신청하는 민원입니다.\n(영문)(약호) C225B\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n온라인열람 민원사무는 MyGOV > 나의 신청내역 > 서비스 신청내역에서 수령물을 열람할 수 있습니다.\n",
+          "ranks": {
+            "hybrid": 60,
+            "two": null,
+            "five": 8
+          },
+          "paths": {
+            "two": [],
+            "five": [
+              {
+                "path": "Service",
+                "hops": 0,
+                "quote": "기본정보\n제공 내용\n이 민원은 종합소득 또는 연말정산 소득 또는 일용근로소득이 있는 자가 과세된 소득에 대한 소득금액을 증명받고자 신청하는 민원입니다.\n(영문)(약호) C225B\n본민원은 방문, 인터넷으로\n어디서나민원처리\n가 가능한 민원입니다.\n온라인열람 민원사무는 MyGOV > 나의 신청내역 > 서비스 신청내역에서 수령물을 열람할 수 있습니다.\n",
+                "relations": []
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-3d836bae6e4c1e777653-C0001",
+              "hybrid_rank": 60,
+              "graph_rank": null,
+              "fusion_rank": 64,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-3d836bae6e4c1e777653-C0001",
+              "hybrid_rank": 60,
+              "graph_rank": 12,
+              "fusion_rank": 8,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "SJ-N-057",
+      "question": "국세 납세증명이랑 지방세 납세증명 신청 근거 법이 같아? 각각 알려줘.",
+      "type": "multi_source_multi_hop",
+      "change": "worsened",
+      "seed_changed": false,
+      "found_before": [
+        2
+      ],
+      "found_after": [],
+      "required": 2,
+      "groups": [
+        {
+          "group": 1,
+          "source": "L국세징수법",
+          "locator": "제108조",
+          "quote": "제108조(납세증명서의 발급) 관할 세무서장은 납세자로부터 납세증명서의 발급을 신청받은 경우 그 사실을 확인한 후 즉시 납세증명서를 발급하여야 한다.\n",
+          "ranks": {
+            "hybrid": 43,
+            "two": null,
+            "five": null
+          },
+          "paths": {
+            "two": [],
+            "five": []
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-0e23b2c7491675b140e2-C0114",
+              "hybrid_rank": 43,
+              "graph_rank": null,
+              "fusion_rank": 56,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-0e23b2c7491675b140e2-C0114",
+              "hybrid_rank": 43,
+              "graph_rank": null,
+              "fusion_rank": 62,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        },
+        {
+          "group": 2,
+          "source": "L지방세징수법",
+          "locator": "제5조",
+          "quote": "제5조(납세증명서의 제출 및 발급) ① 납세자(미과세된 자를 포함한다. 이하 이 조에서 같다)는 다음 각 호의 어느 하나에 해당하는 경우에는 대통령령으로 정하는 바에 따라 납세증명서를 제출하여야 한다. 다만, 제4호에 해당하여 납세증명서를 제출할 때에는 이전하는 부동산의 소유자에게 부과되었거나 납세의무가 성립된 해당 부동산에 대한 취득세, 재산세, 지방교육세 및 지역자원시설세의 납세증명서로 한정한다. <개정 2020. 1. 29., 2022. 1. 28., 2023. 3. 4.>\n1. 국가ㆍ지방자치단체 또는 대통령령으로 정하는 정부관리기관으로부터 대금을 받을 때\n2. 「출입국관리법」 제31조에 따른 외국인등록 또는 「재외동포의 출입국과 법적 지위에 관한 법률」 제6조에 따른 국내거소신고를 한 외국인이 체류기간 연장허가 등 대통령령으로 정하는 체류 관련 허가 등을 법무부장관에게 신청하는 경우\n3. 내국인이 해외이주 목적으로 「해외이주법」 제6조에 따라 재외동포청장에게 해외이주신고를 하는 경우\n4. 「신탁법」에 따른 신탁을 원인으로 부동산의 소유권을 수탁자에게 이전하기 위하여 등기관서의 장에게 등기를 신청할 때\n② 납세자로부터 납세증명서의 발급신청을 받으면 세무공무원은 그 사실을 확인하여 즉시 발급하여야 한다.\n",
+          "ranks": {
+            "hybrid": 60,
+            "two": 10,
+            "five": null
+          },
+          "paths": {
+            "two": [
+              {
+                "path": "Article-REFERENCES-Article",
+                "hops": 1,
+                "quote": "제5조(납세증명서의 제출 및 발급) ① 납세자(미과세된 자를 포함한다. 이하 이 조에서 같다)는 다음 각 호의 어느 하나에 해당하는 경우에는 대통령령으로 정하는 바에 따라 납세증명서를 제출하여야 한다. 다만, 제4호에 해당하여 납세증명서를 제출할 때에는 이전하는 부동산의 소유자에게 부과되었거나 납세의무가 성립된 해당 부동산에 대한 취득세, 재산세, 지방교육",
+                "relations": [
+                  "REFERENCES"
+                ]
+              },
+              {
+                "path": "Article-REFERENCES-Article-REFERENCES-Article",
+                "hops": 2,
+                "quote": "제5조(납세증명서의 제출 및 발급) ① 납세자(미과세된 자를 포함한다. 이하 이 조에서 같다)는 다음 각 호의 어느 하나에 해당하는 경우에는 대통령령으로 정하는 바에 따라 납세증명서를 제출하여야 한다. 다만, 제4호에 해당하여 납세증명서를 제출할 때에는 이전하는 부동산의 소유자에게 부과되었거나 납세의무가 성립된 해당 부동산에 대한 취득세, 재산세, 지방교육",
+                "relations": [
+                  "REFERENCES",
+                  "REFERENCES"
+                ]
+              }
+            ],
+            "five": [
+              {
+                "path": "Article-REFERENCES-Article",
+                "hops": 1,
+                "quote": "제5조(납세증명서의 제출 및 발급) ① 납세자(미과세된 자를 포함한다. 이하 이 조에서 같다)는 다음 각 호의 어느 하나에 해당하는 경우에는 대통령령으로 정하는 바에 따라 납세증명서를 제출하여야 한다. 다만, 제4호에 해당하여 납세증명서를 제출할 때에는 이전하는 부동산의 소유자에게 부과되었거나 납세의무가 성립된 해당 부동산에 대한 취득세, 재산세, 지방교육",
+                "relations": [
+                  "REFERENCES"
+                ]
+              },
+              {
+                "path": "Article-REFERENCES-Article-REFERENCES-Article",
+                "hops": 2,
+                "quote": "제5조(납세증명서의 제출 및 발급) ① 납세자(미과세된 자를 포함한다. 이하 이 조에서 같다)는 다음 각 호의 어느 하나에 해당하는 경우에는 대통령령으로 정하는 바에 따라 납세증명서를 제출하여야 한다. 다만, 제4호에 해당하여 납세증명서를 제출할 때에는 이전하는 부동산의 소유자에게 부과되었거나 납세의무가 성립된 해당 부동산에 대한 취득세, 재산세, 지방교육",
+                "relations": [
+                  "REFERENCES",
+                  "REFERENCES"
+                ]
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-3aff11611b27b7ac7bf1-C0005",
+              "hybrid_rank": 60,
+              "graph_rank": 3,
+              "fusion_rank": 10,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-3aff11611b27b7ac7bf1-C0005",
+              "hybrid_rank": 60,
+              "graph_rank": 3,
+              "fusion_rank": 12,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "SJ-A-014",
+      "question": "개별공시지가확인서 신청하려는데 챙길 게 뭐예요? 안내에 있는 제출 서류만 먼저 말해 주세요. 준비부터 하게요.",
+      "type": "required_documents",
+      "change": "improved",
+      "seed_changed": true,
+      "found_before": [
+        1
+      ],
+      "found_after": [
+        1,
+        2
+      ],
+      "required": 2,
+      "groups": [
+        {
+          "group": 1,
+          "source": "G010",
+          "locator": "서비스 개요",
+          "quote": "서비스 개요\n신청방법\n인터넷, 방문, 우편, 무인발급기\n신청자격\n누구나 신청 가능\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n개별공시지가 확인(신청)서 (부동산 가격공시에 관한 법률 시행규칙: 별지 서식 6호)\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n수수료는 조례로 결정\n",
+          "ranks": {
+            "hybrid": 3,
+            "two": 2,
+            "five": 3
+          },
+          "paths": {
+            "two": [
+              {
+                "path": "Service",
+                "hops": 0,
+                "quote": "서비스 개요\n신청방법\n인터넷, 방문, 우편, 무인발급기\n신청자격\n누구나 신청 가능\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n개별공시지가 확인(신청)서 (부동산 가격공시에 관한 법률 시행규칙: 별지 서식 6호)\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n수수료는 조례로 결정\n",
+                "relations": []
+              }
+            ],
+            "five": [
+              {
+                "path": "Service",
+                "hops": 0,
+                "quote": "서비스 개요\n신청방법\n인터넷, 방문, 우편, 무인발급기\n신청자격\n누구나 신청 가능\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n개별공시지가 확인(신청)서 (부동산 가격공시에 관한 법률 시행규칙: 별지 서식 6호)\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n수수료는 조례로 결정\n",
+                "relations": []
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-9d40cfbe681f6a61d0f5-C0000",
+              "hybrid_rank": 3,
+              "graph_rank": 6,
+              "fusion_rank": 2,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-9d40cfbe681f6a61d0f5-C0000",
+              "hybrid_rank": 3,
+              "graph_rank": 3,
+              "fusion_rank": 3,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        },
+        {
+          "group": 2,
+          "source": "G010",
+          "locator": "제출 서류",
+          "quote": "제출 서류\n민원인이 제출해야하는 서류\n신청서\n참고\n담당공무원 확인, 본인정보 제공 요구 사항은 본인이 행정정보공동이용에 동의하지 않는 경우 민원인이 제출하여야 합니다.\n",
+          "ranks": {
+            "hybrid": 1,
+            "two": null,
+            "five": 1
+          },
+          "paths": {
+            "two": [],
+            "five": [
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "신청서",
+                "relations": [
+                  "REQUIRES"
+                ]
+              },
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "신청서",
+                "relations": [
+                  "REQUIRES"
+                ]
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-9d40cfbe681f6a61d0f5-C0003",
+              "hybrid_rank": 1,
+              "graph_rank": null,
+              "fusion_rank": 16,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-9d40cfbe681f6a61d0f5-C0003",
+              "hybrid_rank": 1,
+              "graph_rank": 4,
+              "fusion_rank": 1,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "SJ-A-029",
+      "question": "한부모가족증명서 받으러 나가려는데 주민등록증이랑 운전면허증 둘 다 챙겨야 돼요? 하나만 가져가면 안 되는 거예요?",
+      "type": "required_documents",
+      "change": "improved",
+      "seed_changed": false,
+      "found_before": [],
+      "found_after": [
+        1
+      ],
+      "required": 1,
+      "groups": [
+        {
+          "group": 1,
+          "source": "G018",
+          "locator": "제출 서류",
+          "quote": "제출 서류\n민원인이 제출해야하는 서류\n신분증명서\n「주민등록법」 상 주민등록증, 「여권법」 상 여권, 「도로교통법」 상 자동차 운전면허증, 「출입국관리법」상 외국인등록증 중 택1\n참고\n담당공무원 확인, 본인정보 제공 요구 사항은 본인이 행정정보공동이용에 동의하지 않는 경우 민원인이 제출하여야 합니다.\n",
+          "ranks": {
+            "hybrid": 2,
+            "two": null,
+            "five": 2
+          },
+          "paths": {
+            "two": [],
+            "five": [
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "신분증명서",
+                "relations": [
+                  "REQUIRES"
+                ]
+              },
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "신분증명서",
+                "relations": [
+                  "REQUIRES"
+                ]
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-f9dcd12fbc59d6391d4d-C0003",
+              "hybrid_rank": 2,
+              "graph_rank": null,
+              "fusion_rank": 14,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-f9dcd12fbc59d6391d4d-C0003",
+              "hybrid_rank": 2,
+              "graph_rank": 3,
+              "fusion_rank": 2,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "SJ-A-032",
+      "question": "지방세 납세증명서를 법정대리인으로 신청할 거예요. 그냥 위임받은 대리인은 아니고요. 신분증 말고 뭘 더 챙기나요?",
+      "type": "required_documents",
+      "change": "improved",
+      "seed_changed": true,
+      "found_before": [],
+      "found_after": [
+        1
+      ],
+      "required": 1,
+      "groups": [
+        {
+          "group": 1,
+          "source": "G022",
+          "locator": "제출 서류",
+          "quote": "제출 서류\n민원인이 제출해야하는 서류\n1. 본인이 신청하는 경우\n신분증 제시 (다음 중 1개: ① 주민등록증, ② 운전면허증, ③ 국가유공자증, ④ 장애인등록증 (주민등록번호가 포함된 경우만 가능함), ⑤ 외국인등록증, ⑥ 여권 (주민등록번호 뒷자리가 포함되지 않은 여권은 여권정보증명서를 함께 제시해야 함) ※ 유효기간 내 신분증에 한함)\n2. 대리인이 신청하는 경우\n아래 세부사항 참고\n2-1. 일반적인 경우\n대리인의 신분증 제시\n위임장 제출\n위임인의 신분증(법인은 인감증명서, 사용인감계, 대표자 신분증 중 1개) 제시\n2-2. 법인대표자가 신청하는 경우\n법인대표자의 신분증 제시\n2-3. 상속인이 신청하는 경우\n상속인의 신분증 제시\n2-4. 미성년자의 법정대리인이 신청하는 경우\n법정대리인의 신분증 제시\n후견인 증빙서류 제출\n2-5. 법정대리인이 신청하는 경우\n법정대리인의 신분증 제시\n법정대리인 증빙서류\n민원인이 제출하지 않아도 되는 서류 (담당공무원이 확인)\n※민원처리에 관한 법률 제 10조(불필요한 서류 요구의 금지)에 의하여 민원인이 본인정보제공 동의 후, 담당공무원이 [행정정보공동이용서비스]를 통하여 확인 가능한 서류\n1. 본인이 신청하는 경우\n법인등기부등본\n주민등록등(초)본\n해외이주신고확인서\n2. 대리인이 신청하는 경우\n본인이 신청하는 경우와 같음\n2-1. 일반적인 경우\n본인이 신청하는 경우와 같음\n2-2. 법인대표자가 신청하는 경우\n본인이 신청하는 경우와 같음\n2-3. 상속인이 신청하는 경우\n본인이 신청하는 경우와 같음\n2-4. 미성년자의 법정대리인이 신청하는 경우\n본인이 신청하는 경우와 같음\n2-5. 법정대리인이 신청하는 경우\n본인이 신청하는 경우와 같음\n민원인이 제출하지 않아도 되는 서류(본인정보제공 요구)\n※민원처리에 관한 법률 제10조2(민원인의 요구에 의한 본인정보 공동이용)에 의하여 민원인이 정보보유 기관에게 본인 정보제공을 요구한 후, 담당공무원이 [행정정보공동이용서비스]를 통해서 확인 가능한 서류\n1. 본인이 신청하는 경우\n가족관계증명서(상세)\n2. 대리인이 신청하는 경우\n가족관계증명서(상세)\n2-1. 일반적인 경우\n가족관계증명서(상세)\n2-2. 법인대표자가 신청하는 경우\n가족관계증명서(상세)\n2-3. 상속인이 신청하는 경우\n가족관계증명서(상세)\n2-4. 미성년자의 법정대리인이 신청하는 경우\n가족관계증명서(상세)\n2-5. 법정대리인이 신청하는 경우\n가족관계증명서(상세)\n참고\n담당공무원 확인, 본인정보 제공 요구 사항은 본인이 행정정보공동이용에 동의하지 않는 경우 민원인이 제출하여야 합니다.\n",
+          "ranks": {
+            "hybrid": 1,
+            "two": null,
+            "five": 1
+          },
+          "paths": {
+            "two": [],
+            "five": [
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "위임장 제출",
+                "relations": [
+                  "REQUIRES"
+                ]
+              },
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "위임장 제출",
+                "relations": [
+                  "REQUIRES"
+                ]
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-b03c8e7d1701192d2c31-C0003",
+              "hybrid_rank": 1,
+              "graph_rank": null,
+              "fusion_rank": 13,
+              "graph_excluded_by_cap": false
+            },
+            {
+              "chunk_id": "DOC-b03c8e7d1701192d2c31-C0004",
+              "hybrid_rank": 2,
+              "graph_rank": null,
+              "fusion_rank": 14,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-b03c8e7d1701192d2c31-C0003",
+              "hybrid_rank": 1,
+              "graph_rank": 1,
+              "fusion_rank": 1,
+              "graph_excluded_by_cap": false
+            },
+            {
+              "chunk_id": "DOC-b03c8e7d1701192d2c31-C0004",
+              "hybrid_rank": 2,
+              "graph_rank": null,
+              "fusion_rank": 24,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "SJ-A-042",
+      "question": "부가가치세 과세표준증명을 일반 대리인이 신청할 때 위임장 외에도 신분증이 필요한가요? 개인사업자 서류입니다.",
+      "type": "required_documents",
+      "change": "improved",
+      "seed_changed": true,
+      "found_before": [],
+      "found_after": [
+        1
+      ],
+      "required": 1,
+      "groups": [
+        {
+          "group": 1,
+          "source": "G030",
+          "locator": "제출 서류",
+          "quote": "제출 서류\n민원인이 제출해야하는 서류\n본인이 신청하는 경우\n신분증 제시\n대리인이 신청하는 경우\n위임장 제출\n대리인의 신분증 제출\n위임인의 신분증(법인은 인감증명서, 사용인감계, 대표자 신분증 중 1개) 제출\n민원인이 제출하지 않아도 되는 서류 (담당공무원이 확인)\n※민원처리에 관한 법률 제 10조(불필요한 서류 요구의 금지)에 의하여 민원인이 본인정보제공 동의 후, 담당공무원이 [행정정보공동이용서비스]를 통하여 확인 가능한 서류\n본인이 신청하는 경우\n(영문증명을 신청하는 경우) 여권\n대리인이 신청하는 경우\n유형 [대리인이 신청하는 경우]에 대한 민원인이 제출하지 않아도 되는 서류가 등록되어 있지 않습니다.\nQR코드\n본 페이지의 접수처리기관, 처리기한, 구비서류 등의 안내정보를 직접 확인할 수 있도록 QR코드를 등록해 두었습니다.\n다운로드\n참고\n담당공무원 확인, 본인정보 제공 요구 사항은 본인이 행정정보공동이용에 동의하지 않는 경우 민원인이 제출하여야 합니다.\n",
+          "ranks": {
+            "hybrid": 1,
+            "two": null,
+            "five": 1
+          },
+          "paths": {
+            "two": [],
+            "five": [
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "위임장 제출",
+                "relations": [
+                  "REQUIRES"
+                ]
+              },
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "위임장 제출",
+                "relations": [
+                  "REQUIRES"
+                ]
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-f953d1314ec8e985e85e-C0003",
+              "hybrid_rank": 1,
+              "graph_rank": null,
+              "fusion_rank": 13,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-f953d1314ec8e985e85e-C0003",
+              "hybrid_rank": 1,
+              "graph_rank": 1,
+              "fusion_rank": 1,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "SJ-A-049",
+      "question": "고등학교 졸업예정증명 대신 받으러 방문해야 해요. 시간 없는데 준비 서류 뭐뭐예요? 가서 다시 오라고 하면 곤란해서요.",
+      "type": "required_documents",
+      "change": "improved",
+      "seed_changed": false,
+      "found_before": [
+        2
+      ],
+      "found_after": [
+        1,
+        2
+      ],
+      "required": 2,
+      "groups": [
+        {
+          "group": 1,
+          "source": "G032",
+          "locator": "제출 서류",
+          "quote": "제출 서류\n민원인이 제출해야하는 서류\n주민등록증 등 신분증명서 제시\n위임장 및 정당한 이해관계 등을 입증할 수 있는 서류(본인이 아닌 경우)\n참고\n담당공무원 확인, 본인정보 제공 요구 사항은 본인이 행정정보공동이용에 동의하지 않는 경우 민원인이 제출하여야 합니다.\n",
+          "ranks": {
+            "hybrid": 4,
+            "two": null,
+            "five": 6
+          },
+          "paths": {
+            "two": [],
+            "five": [
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "주민등록증 등 신분증명서 제시",
+                "relations": [
+                  "REQUIRES"
+                ]
+              },
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "주민등록증 등 신분증명서 제시",
+                "relations": [
+                  "REQUIRES"
+                ]
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-b64fd7f88810deae9614-C0003",
+              "hybrid_rank": 4,
+              "graph_rank": null,
+              "fusion_rank": 14,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-b64fd7f88810deae9614-C0003",
+              "hybrid_rank": 4,
+              "graph_rank": 14,
+              "fusion_rank": 6,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        },
+        {
+          "group": 2,
+          "source": "G032",
+          "locator": "서비스 개요 > 신청자격",
+          "quote": "신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)",
+          "ranks": {
+            "hybrid": 3,
+            "two": 4,
+            "five": 4
+          },
+          "paths": {
+            "two": [
+              {
+                "path": "Service",
+                "hops": 0,
+                "quote": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 민원우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n국립학교는 국립학교의 각종 증명발급 등에 관한 규칙에 따라 수수료 면제 *교육감 소속 공·사립학교는 시·도 조례",
+                "relations": []
+              },
+              {
+                "path": "Service",
+                "hops": 0,
+                "quote": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 민원우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n국립학교는 국립학교의 각종 증명발급 등에 관한 규칙에 따라 수수료 면제 *교육감 소속 공·사립학교는 시·도 조례",
+                "relations": []
+              }
+            ],
+            "five": [
+              {
+                "path": "Service",
+                "hops": 0,
+                "quote": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 민원우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n국립학교는 국립학교의 각종 증명발급 등에 관한 규칙에 따라 수수료 면제 *교육감 소속 공·사립학교는 시·도 조례",
+                "relations": []
+              },
+              {
+                "path": "Service",
+                "hops": 0,
+                "quote": "서비스 개요\n신청방법\n인터넷, 방문, FAX, 민원우편, 무인발급기\n신청자격\n본인 또는 대리인(온라인은 대리인 신청 불가)\n처리기간\n즉시(근무시간 내 3시간)\n처리기간 계산 방법\n신청서\n신청서 없음\n신청작성예시\n구비서류\n있음 (하단 참조)\n수수료\n국립학교는 국립학교의 각종 증명발급 등에 관한 규칙에 따라 수수료 면제 *교육감 소속 공·사립학교는 시·도 조례",
+                "relations": []
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-b64fd7f88810deae9614-C0000",
+              "hybrid_rank": 3,
+              "graph_rank": 9,
+              "fusion_rank": 4,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-b64fd7f88810deae9614-C0000",
+              "hybrid_rank": 3,
+              "graph_rank": 11,
+              "fusion_rank": 4,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "SJ-A-053",
+      "question": "학교생활기록부를 오늘 다른 사람이 받아와야 하거든요. 위임했다는 서류도 챙겨야 해요? 그냥 보내도 되는 줄 알았는데 준비부터 알려줘요.",
+      "type": "required_documents",
+      "change": "improved",
+      "seed_changed": false,
+      "found_before": [],
+      "found_after": [
+        1
+      ],
+      "required": 1,
+      "groups": [
+        {
+          "group": 1,
+          "source": "G034",
+          "locator": "제출 서류",
+          "quote": "제출 서류\n민원인이 제출해야하는 서류\n주민등록증 등 신분증명서 제시\n위임장 및 정당한 이해관계 등을 입증할 수 있는 서류(본인이 아닌 경우)\n참고\n담당공무원 확인, 본인정보 제공 요구 사항은 본인이 행정정보공동이용에 동의하지 않는 경우 민원인이 제출하여야 합니다.\n",
+          "ranks": {
+            "hybrid": 6,
+            "two": null,
+            "five": 4
+          },
+          "paths": {
+            "two": [],
+            "five": [
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "주민등록증 등 신분증명서 제시",
+                "relations": [
+                  "REQUIRES"
+                ]
+              },
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "주민등록증 등 신분증명서 제시",
+                "relations": [
+                  "REQUIRES"
+                ]
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-8fd38e261e1a36f252c1-C0003",
+              "hybrid_rank": 6,
+              "graph_rank": null,
+              "fusion_rank": 11,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-8fd38e261e1a36f252c1-C0003",
+              "hybrid_rank": 6,
+              "graph_rank": 6,
+              "fusion_rank": 4,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "SJ-A-059",
+      "question": "농지대장 등본 바로 나온다더니 내용 고치는 건 열흘이라고요? 발급이랑 수정이랑 왜 다른데요. 각각 처리기간이 얼마라는 건지 구분해서 말해줘요.",
+      "type": "direct_qa",
+      "change": "improved",
+      "seed_changed": false,
+      "found_before": [],
+      "found_after": [
+        1
+      ],
+      "required": 1,
+      "groups": [
+        {
+          "group": 1,
+          "source": "G037",
+          "locator": "신청 방법 및 절차",
+          "quote": "신청 방법 및 절차\n농지대장등본발급신청(신규작성 및 내용수정) | 총10일\n1\n접수\n시.구\n읍.면\n2\n처리\n시.구\n읍.면\n농지대장등본발급신청(발급) | 즉시(근무시간 내 3시간)\n1\n접수\n시.구\n읍.면\n2\n처리\n시.구\n읍.면\n참고\n각 기관을 선택하면 해당기관 정보조회가 가능하며, 조회된 접수/처리기관에 대한 실제 민원 접수/처리 가능여부는 해당기관에 확인해 주시기 바랍니다.\n",
+          "ranks": {
+            "hybrid": 2,
+            "two": null,
+            "five": 3
+          },
+          "paths": {
+            "two": [],
+            "five": [
+              {
+                "path": "Service-HANDLED_BY-Agency",
+                "hops": 1,
+                "quote": "접수\n시.구",
+                "relations": [
+                  "HANDLED_BY"
+                ]
+              },
+              {
+                "path": "Service-HANDLED_BY-Agency",
+                "hops": 1,
+                "quote": "접수\n시.구",
+                "relations": [
+                  "HANDLED_BY"
+                ]
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-b5161f1f3a0895f30ba6-C0002",
+              "hybrid_rank": 2,
+              "graph_rank": null,
+              "fusion_rank": 16,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-b5161f1f3a0895f30ba6-C0002",
+              "hybrid_rank": 2,
+              "graph_rank": 4,
+              "fusion_rank": 3,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "query_id": "SJ-B-037",
+      "question": "병적증명서 국문으로 신청할 건데요. 안내에서 담당자가 확인한다는 여권정보도 국문 신청에 해당하는 거예요?",
+      "type": "required_documents",
+      "change": "improved",
+      "seed_changed": true,
+      "found_before": [],
+      "found_after": [
+        1
+      ],
+      "required": 1,
+      "groups": [
+        {
+          "group": 1,
+          "source": "G036",
+          "locator": "제출 서류",
+          "quote": "제출 서류\n민원인이 제출해야하는 서류\n신청인의 신분증 제시\n위임장, 위임한 사람과 위임을 받은 대리인의 신분증 제시(직계 존·비속, 형제자매 또는 배우자 신청인 경우 위임장 및 위임한 사람의 신분증 제출 생략 가능)\n제적등본(가족관계기록사항에 관한 증명서로 확인 불가시)\n민원인이 제출하지 않아도 되는 서류 (담당공무원이 확인)\n※민원처리에 관한 법률 제 10조(불필요한 서류 요구의 금지)에 의하여 민원인이 본인정보제공 동의 후, 담당공무원이 [행정정보공동이용서비스]를 통하여 확인 가능한 서류\n주민등록표 등·초본\n여권정보(영문표기 병적증명서 신청의 경우에만 해당)\n가족관계기록사항에 관한 증명서(주민등록을 달리하는 가족 확인 등)\n국가유공자(유족)/5.18민주유공자(유족) 확인서\nQR코드\n본 페이지의 접수처리기관, 처리기한, 구비서류 등의 안내정보를 직접 확인할 수 있도록 QR코드를 등록해 두었습니다.\n다운로드\n참고\n담당공무원 확인, 본인정보 제공 요구 사항은 본인이 행정정보공동이용에 동의하지 않는 경우 민원인이 제출하여야 합니다.\n",
+          "ranks": {
+            "hybrid": 4,
+            "two": null,
+            "five": 4
+          },
+          "paths": {
+            "two": [],
+            "five": [
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "제적등본(가족관계기록사항에 관한 증명서로 확인 불가시)",
+                "relations": [
+                  "REQUIRES"
+                ]
+              },
+              {
+                "path": "Service-REQUIRES-Document",
+                "hops": 1,
+                "quote": "제적등본(가족관계기록사항에 관한 증명서로 확인 불가시)",
+                "relations": [
+                  "REQUIRES"
+                ]
+              }
+            ]
+          },
+          "two_candidates": [
+            {
+              "chunk_id": "DOC-39fcd61c7c866d5bf770-C0003",
+              "hybrid_rank": 4,
+              "graph_rank": null,
+              "fusion_rank": 16,
+              "graph_excluded_by_cap": false
+            }
+          ],
+          "five_candidates": [
+            {
+              "chunk_id": "DOC-39fcd61c7c866d5bf770-C0003",
+              "hybrid_rank": 4,
+              "graph_rank": 12,
+              "fusion_rank": 4,
+              "graph_excluded_by_cap": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "unchanged_gold_candidate_pools": true,
+  "input_sha256": {
+    "results/week4_run/20261027_052016/relations_2_vs_5/relation_manifest.json": "2bc17d2d5988579a511e9d1e59e3da858f489f7349ae5482e60039c6f8ff1c65",
+    "data/questions.jsonl": "a470d8722b7ce98d725e36c9e1100e34d4df0b3b9d52fc186f49f237c60f5f11",
+    "scripts/compare_extension.py": "20f78e0f63a918104fb8558b3b544a659055e46a4f242e8315e9aec10dc97c0d",
+    "scripts/run_relation_ablation.py": "264d2ac077b90795db4b484039335fb40d71f25ba498c00df690e4ce3d45fddb",
+    "results/week4_run/20261027_052016/relations_2_vs_5/predictions/five_relations.jsonl": "7f76b7c6482d0bdff837633c9cefd5fa000183d5959ae16266b83024a00f1dbd",
+    "results/week4_run/20261027_052016/relations_2_vs_5/predictions/five_relations.run.json": "cf50f8fab857e54fcde9741d8cda1b0d20a7f2924e7778762d99fa1d17167368",
+    "results/week4_run/20261027_052016/relations_2_vs_5/predictions/two_relations.jsonl": "c0f227f7774a7c4f101a1c9e700ff7cf640288e9afcbf51a870ecd6388802041",
+    "results/week4_run/20261027_052016/relations_2_vs_5/predictions/two_relations.run.json": "1c120374a5f960ca7a95d8e3c870d434eab72543ff4bba106d70bca7971a8c2c"
+  }
+}

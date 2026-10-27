@@ -10,7 +10,7 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8')
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[2])
-parser.add_argument('--run', default='20261027_052016')
+parser.add_argument('--run', default='20261027_091116')
 parser.add_argument('--output-dir', type=Path, required=True)
 args=parser.parse_args()
 ROOT=args.root.resolve()
@@ -19,6 +19,7 @@ OUT=args.output_dir.resolve()
 OUT.mkdir(parents=True,exist_ok=True)
 sys.path.insert(0, str(ROOT / 'scripts'))
 from evaluate import evaluate
+from compare_extension import validate_pair
 
 def js(p): return json.loads(p.read_text(encoding='utf-8'))
 def rows(p):
@@ -26,6 +27,12 @@ def rows(p):
         for line in f:
             if line.strip(): yield json.loads(line)
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def frozen_source(name, expected):
+    current=ROOT/'scripts'/name
+    if sha(current)==expected:return current
+    snapshot=ROOT/'week4/analysis/source_snapshots'/expected/name
+    assert snapshot.is_file() and sha(snapshot)==expected, 'missing exact frozen source: '+name
+    return snapshot
 def compact(s, n=160):
     text=' '.join(str(s).split()).replace('|','／').replace('<','&lt;').replace('>','&gt;')
     return text if len(text)<=n else text[:n]+'…'
@@ -146,21 +153,45 @@ facts={'validation':{'scored':len(scored),'diagnostic':len(questions)-len(scored
        'metrics':metrics,'transitions':transitions,'hops':hops,'candidate_group_stages':candidate_totals,'failure_funnel':funnel,'input_sha256':hashes}
 for name,comp,side in [('hybrid_graph','baseline','after'),('h1_lexical_uniform','h1','before'),('h1_hybrid_uniform','h1','after'),('h2_before','h2','before'),('h2_after','h2','after'),('h3_rrf','h3','before'),('h3_feature','h3','after')]:
     assert metrics[name]['retrieval']==js(RUN/f'week4/comparisons/{comp}/{side}.metrics.json')['retrieval']
-for rel in ['data/questions.jsonl','data/queries.jsonl','data/intent_groups.jsonl','data/processed/graph.json','data/processed/graph.evidence.json','scripts/evaluate.py','scripts/hybrid_graph.py','scripts/run_week4.py','scripts/tokenization.py']:
-    hashes[rel]=sha(ROOT/rel)
+# Validate this run against its own recorded fingerprints, never an older report.
 manifest=js(RUN/'run_manifest.json')
+week4_manifest=js(RUN/'week4/week4_manifest.json')
+assert manifest['status']==week4_manifest['status']=='completed'
+assert set(week4_manifest['experiments'])=={'baseline','h1','h2','h3'}
 for key,path in [('queries','data/queries.jsonl'),('questions','data/questions.jsonl'),('graph','data/processed/graph.json'),('graph_evidence','data/processed/graph.evidence.json')]:
     assert manifest['source_sha256'][key]==sha(ROOT/path)
+    hashes[path]=sha(ROOT/path)
+hashes['data/intent_groups.jsonl']=sha(ROOT/'data/intent_groups.jsonl')
+base_meta=js(RUN/'week4/predictions/hybrid_graph.run.json')
 for path in (RUN/'week4/predictions').glob('*.run.json'):
     meta=js(path)
-    for name,h in meta['source_sha256'].items():assert sha(ROOT/'scripts'/name)==h
+    for name,h in meta['source_sha256'].items():
+        source=frozen_source(name,h)
+        hashes[source.relative_to(ROOT).as_posix()]=sha(source)
     assert meta['hybrid_run']==js(RUN/'hybrid_candidates.run.json')
+    assert meta['config']['relations']==base_meta['config']['relations']
+    hashes[path.relative_to(ROOT).as_posix()]=sha(path)
+for kind in ['baseline','h1','h2','h3']:
+    path=RUN/f'week4/comparisons/{kind}/evaluation_manifest.json'
+    evaluation=js(path)
+    assert evaluation['questions_sha256']==sha(ROOT/'data/questions.jsonl')
+    validate_pair(evaluation['input_runs']['before'],evaluation['input_runs']['after'],kind)
+    for name,key in [('evaluate.py','evaluator_sha256'),('compare_extension.py','comparison_sha256')]:
+        source=frozen_source(name,evaluation[key]);hashes[source.relative_to(ROOT).as_posix()]=sha(source)
+    hashes[path.relative_to(ROOT).as_posix()]=sha(path)
+for path in [RUN/'run_manifest.json',RUN/'week4/week4_manifest.json',RUN/'hybrid_candidates.run.json',RUN/'hybrid_candidates.jsonl']:
+    hashes[path.relative_to(ROOT).as_posix()]=sha(path)
+facts['run_id']=args.run
+facts['extension_config']=base_meta['config']
+facts['validation']['completed_run_manifests']=True
+facts['validation']['paired_comparison_settings_match']=True
+facts['validation']['source_hash_basis']='selected run metadata; archived exact sources only when needed'
 facts['validation'].update(all_14_metric_reports_match=True,current_question_graph_source_hashes_match=True,extension_source_hashes_match=True)
 (OUT/'analysis_facts.json').write_text(json.dumps(facts,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 (OUT/'question_details.json').write_text(json.dumps(details,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
 name_ko={'bm25':'BM25','dense':'Dense','hybrid':'Hybrid','graph_h0':'Graph 0-hop','graph_h1':'Graph 1-hop','graph_h2':'Graph 2-hop','graph_h3':'Graph 3-hop','hybrid_graph':'Hybrid+Graph','h1_hybrid_uniform':'H1 Hybrid 균등','h3_feature':'H3 재정렬'}
-lines=['# Week4 전체 질문 검색 경로', '', '[분석 보고서](REPORT.md) · [계산 근거](analysis_facts.json)', '',
+lines=['# Week4 전체 질문 검색 경로', '', f'기준 실행: `{args.run}` · 탐색 관계: '+', '.join(base_meta['config']['relations'])+'.', '', '[분석 보고서](REPORT.md) · [계산 근거](analysis_facts.json)', '',
        '204개 질문을 빠짐없이 수록했다. 성공은 Top-10에서 정답 근거 그룹을 모두 회수했다는 뜻이며, 답변 생성의 정확도를 뜻하지 않는다. 27개 확인 필요·범위 밖 질문은 진단용으로 분리한다.', '',
        '근거 순위의 ‘없음’은 해당 후보 목록에 없다는 뜻이다. Graph 후보 순위는 확장 후보 내부 순위, 결합 순위는 Hybrid와 Graph를 합친 최종 순위다. Gold와 서비스 ID는 사후 분석에만 사용했다.', '']
 for q in questions:
@@ -174,11 +205,15 @@ for q in questions:
         for name,label in name_ko.items():
             value=d[name];n=sum(x['rank10'] is not None for x in value['groups'])
             lines.append(f'| {label} | {n}/{len(q["evidence_requirements"])} | {value["status"]} |')
-        lines += ['', 'H1 명칭→Hybrid 시작점: '+d['h1_lexical_uniform']['status']+'→'+d['h1_hybrid_uniform']['status']+' · H2 보완 전→후: '+d['h2_before']['status']+'→'+d['h2_after']['status'], '']
+        lines += ['', '| 통제 실험 | 이전 판정 | 이후 판정 | 근거별 결합 순위 전→후 |', '|---|---|---|---|']
+        for label,before,after in [('H1 명칭→Hybrid 시작점','h1_lexical_uniform','h1_hybrid_uniform'),('H2 evidence 보완','h2_before','h2_after'),('H3 RRF→재정렬','h3_rrf','h3_feature')]:
+            ranks='; '.join(f'G{i+1}: {rlabel(x["fusion_rank"])}→{rlabel(y["fusion_rank"])}' for i,(x,y) in enumerate(zip(d[before]['groups'],d[after]['groups'])))
+            lines.append(f'| {label} | {d[before]["status"]} | {d[after]["status"]} | {ranks} |')
+        lines += ['', '세 가설은 독립 비교다. H1은 두 조건 모두 시작점 가중치 1, H2·H3는 기본 시작점 가중치를 사용한다.', '']
     seeds=b['seeds']
     entry='; '.join(f'{compact(labels.get(s["node_id"],s["node_id"]),42)}(Hybrid {s["hybrid_rank"]}위 청크)' for s in seeds) or '선택된 시작점 없음'
     diag=b['diagnostics']
-    lines += ['**기본 확장 과정:** Hybrid 상위 10개 청크 → '+entry+' → 2-hop 탐색 → Graph 후보 '+str(diag.get('graph_candidates',0))+'개 중 '+str(diag.get('graph_kept',0))+'개 사용 → Hybrid 100개와 RRF 결합 → Top-10.', '']
+    lines += ['**기본 확장 과정:** Hybrid 상위 10개 청크 → '+entry+' → '+str(len(base_meta['config']['relations']))+'개 관계·최대 '+str(base_meta['config']['max_hops'])+'-hop 탐색 → Graph 후보 '+str(diag.get('graph_candidates',0))+'개 중 '+str(diag.get('graph_kept',0))+'개 사용 → Hybrid 100개와 RRF 결합 → Top-10.', '']
     lexical_entry='; '.join(compact(labels.get(s['node_id'],s['node_id']),45) for s in d['graph_h1']['seeds']) or '없음'
     h1_entry='; '.join(compact(labels.get(s['node_id'],s['node_id']),45) for s in d['h1_lexical_uniform']['seeds']) or '없음'
     lines += ['기존 Graph 단독 시작점: '+lexical_entry+'. H1 비교의 명칭 기반 시작점: '+h1_entry+'. H1 Hybrid 조건은 위 기본 확장과 같은 시작점을 균등 가중치로 평가한다.', '']
@@ -198,8 +233,16 @@ for q in questions:
                 for e in bp['path_edges']:path+=' → '+e['relation']+' → '+labels[e['target']]
                 lines += ['그래프에서 이 근거로 가는 대표 경로: '+compact(path,400)+f' ({bp["graph_hops"]}-hop).', '', '경로에 붙은 원문 발췌(청크 회수와 별개로, 정답 명제를 직접 입증하는지는 검수 필요):', '', '> '+compact(bp['evidence_quote'],200), '']
             else:lines += ['기본 확장 로그에 이 정답 청크로 연결되는 경로가 없다. Hybrid 순위와 후보 풀 포함 여부를 함께 확인한다.', '']
-    if b['status'] in ('부분','실패','진단용'):
-        lines += ['**확장의 실제 상위 3개:** '+ ' / '.join(str(h['rank'])+'위 '+compact(h['title'],75) for h in preds['hybrid_graph'][qid]['hits'][:3]), '']
+    if q['expected_answerability']=='answerable':
+        missed=[g for g in c['groups'] if g['rank10'] is None]
+        if not missed:
+            lines += ['**최종 H3 결과:** 모든 필수 근거를 Top-10에서 회수했다. 이는 청크 검색 성공이며, 위 인용만으로 답변의 모든 조건이 입증됐다는 뜻은 아니다.', '']
+        else:
+            inside=sum(g['in_pool'] for g in missed);outside=len(missed)-inside
+            lines += [f'**H3에서 남은 실패 단계:** 누락 {len(missed)}그룹 중 후보 안 {inside}, 후보 밖 {outside}. '+('후보 안 근거는 최종 순위 선택을 점검한다. ' if inside else '')+('후보 밖 근거는 시작점·바인딩·방향·범위를 구분해 점검한다. ' if outside else '')+'이 분류만으로 세부 원인이 확정되지는 않는다.', '']
+    for name,label in [('hybrid_graph','기본 확장'),('h3_feature','H3')]:
+        if d[name]['status'] in ('부분','실패','진단용'):
+            lines += ['**'+label+' 실제 상위 3개:** '+ ' / '.join(str(h['rank'])+'위 '+compact(h['title'],75) for h in preds[name][qid]['hits'][:3]), '']
     lines += ['</details>', '']
 (OUT/'QUESTION_TRACES.md').write_text('\n'.join(lines),encoding='utf-8')
 assert sum(x=='<details>' for x in lines)==204

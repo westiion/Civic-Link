@@ -1,0 +1,23 @@
+{
+  "artifacts": {
+    "before": {
+      "graph_sha256": "d5aba47adb46fb2e65fd65404bbd7117836a7b6e425f756b426d4ea8651aad06",
+      "evidence_sha256": "470247ffeadc54983642419b155d918fe6edf86c704ed5e3c5202e7b1491da3e",
+      "nodes": 6182,
+      "edges": 9437,
+      "evidence_records": 11095
+    },
+    "after": {
+      "graph_sha256": "d5aba47adb46fb2e65fd65404bbd7117836a7b6e425f756b426d4ea8651aad06",
+      "evidence_sha256": "9a884f7dc76edb0b93a1b3601a5af716f106cd8a8463a5cd28ffb610d2593b42",
+      "nodes": 6182,
+      "edges": 9437,
+      "evidence_records": 11098
+    }
+  },
+  "database_sha256": "324b4c9f735339b942007ae14835f538680efd74cd2525319a562369bcf00f56",
+  "registry_sha256": "6a991c06de3a09abbd5535e9829144500e05daae5b5788ca86bcdf6dd9f6d8b8",
+  "builder_sha256": "5cfde8f5dfc2c16916188f04b9de46fa815554d0cf5e843bc9d62c318a3fb326",
+  "preparation_sha256": "408a83f6582fdb5159a64e9ae3f485eaa1e607ab0f64568e23b28ac3e9cfc059",
+  "api_calls": 0
+}

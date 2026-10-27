@@ -8,12 +8,12 @@
 질문 → BM25(Kiwi) + Dense → RRF → Hybrid 후보 100개
   → 상위 10개 청크의 evidence 바인딩 역조회
   → Service/Article 시작점 최대 5개(청크당 2개)
-  → GROUNDED_BY·REFERENCES 정방향 탐색, 최대 2-hop
+  → GROUNDED_BY·REFERENCES·REQUIRES·HANDLED_BY·PART_OF 정방향 탐색, 최대 2-hop
   → Kiwi IDF 겹침·시작점 점수·hop 감쇠로 Graph 후보 정렬
   → Graph100 + Hybrid100의 RRF → 최종 10개
 ```
 
-위 기본값은 팀원의 비교 기준을 이어받은 실험 설정이다. 성능 개선이 확인된 운영 최적값을 뜻하지 않는다. REQUIRES·HANDLED_BY 등 다른 관계는 단일 실행의 `--relations`로 명시할 수 있다.
+초기 보고서는 GROUNDED_BY·REFERENCES 두 관계만 사용했다. 현재 기본값은 다섯 관계 전체이며, 나머지 예산·점수 설정은 유지한다. 관계 목록은 바인딩 역조회와 탐색 양쪽에 적용된다. 시작 노드 유형은 Service/Article로 유지한다. `hybrid_graph.py`와 `run_week4.py`에서 `--relations GROUNDED_BY REFERENCES`를 지정하면 기존 두 관계 조건을 실행할 수 있다. 다섯 관계의 성능은 별도 통제 실험으로 평가한다.
 
 질문·청크(제목+본문)·인용문은 모두 현재 `tokenization.py`의 Kiwi 토큰을 사용한다. Graph 관련도는 현재 corpus의 IDF를 이용한다. 기본 Graph 단독 검색의 토큰화·점수 코드는 바꾸지 않았다.
 

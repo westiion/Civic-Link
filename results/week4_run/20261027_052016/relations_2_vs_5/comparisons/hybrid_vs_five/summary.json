@@ -1,0 +1,48 @@
+{
+  "kind": "baseline",
+  "question_count": 204,
+  "transitions": {
+    "unchanged": 161,
+    "improved": 9,
+    "same_count_changed_groups": 1,
+    "worsened": 6,
+    "diagnostic_only": 27
+  },
+  "methods": {
+    "before": {
+      "metrics": {
+        "recall": 0.8220338983050848,
+        "hit": 0.8531073446327684,
+        "all_evidence": 0.7909604519774012,
+        "mrr": 0.6060532687651332
+      },
+      "status_counts": {
+        "success": 140,
+        "failure": 26,
+        "partial": 11,
+        "not_scored_unanswerable": 27
+      },
+      "pool_recall": 0.9764595103578155,
+      "graph_pool_recall": 0.0
+    },
+    "after": {
+      "metrics": {
+        "recall": 0.827683615819209,
+        "hit": 0.8531073446327684,
+        "all_evidence": 0.8022598870056498,
+        "mrr": 0.6117836965294593
+      },
+      "status_counts": {
+        "success": 142,
+        "failure": 26,
+        "partial": 9,
+        "not_scored_unanswerable": 27
+      },
+      "pool_recall": 0.980225988700565,
+      "graph_pool_recall": 0.8333333333333334
+    }
+  },
+  "scored_questions": 177,
+  "top10_set_changed_queries": 200,
+  "missed_in_pool_groups": 41
+}

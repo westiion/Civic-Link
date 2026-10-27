@@ -14,3 +14,4 @@ data/raw/
 .pytest_cache/
 # Distributed as lossless gzip; restored by submission_cli.py verify.
 /results/week4_run/20261027_052016/week4/predictions/h1_lexical_uniform.jsonl
+/results/week4_run/20261027_091116/week4/predictions/h1_lexical_uniform.jsonl

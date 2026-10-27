@@ -14,6 +14,9 @@ from graph_construct import compact, load_graph
 from graph_retrieval import GraphRetriever, path_text
 from tokenization import TOKENIZER_NAME, token_set
 
+LEGAL_RELATIONS = ('GROUNDED_BY', 'REFERENCES')
+ALL_RELATIONS = LEGAL_RELATIONS + ('REQUIRES', 'HANDLED_BY', 'PART_OF')
+
 SCORE_VERSION = 'kiwi-idf-extension-v1'
 RERANK_WEIGHTS = dict(rrf=.5, chunk_coverage=.3, quote_coverage=.2)
 
@@ -34,7 +37,7 @@ class Config:
     graph_k: int = 100
     top_k: int = 10
     rrf_constant: int = 60
-    relations: tuple = ('GROUNDED_BY', 'REFERENCES')
+    relations: tuple = ALL_RELATIONS
 
     def validate(self):
         if self.seed_mode not in ('hybrid', 'lexical') or self.seed_weight not in ('native', 'uniform'):

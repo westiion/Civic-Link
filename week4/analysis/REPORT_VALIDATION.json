@@ -1,4 +1,12 @@
 {
+  "run_id": "20261027_091116",
+  "relation_policy": [
+    "GROUNDED_BY",
+    "REFERENCES",
+    "REQUIRES",
+    "HANDLED_BY",
+    "PART_OF"
+  ],
   "stored_results_only": true,
   "model_api_calls_during_analysis": 0,
   "current_metric_conditions_recomputed_and_matched": 14,
@@ -8,67 +16,108 @@
   "scored_questions": 177,
   "diagnostic_questions": 27,
   "required_evidence_groups": 220,
-  "local_links_and_python_syntax": "passed",
   "report_inputs_sha256": {
-    "results\\week4_run\\20261027_052016\\bm25.predictions.jsonl": "130279ecbd6314515e59e847ff82ac9ba95123951ba6f15f0fbf10133075a550",
-    "results\\week4_run\\20261027_052016\\dense.predictions.jsonl": "ebc1c8d92c2a66f8658730238167ba05679547b77f7d4f8109a48d63b95a4771",
-    "results\\week4_run\\20261027_052016\\hybrid.predictions.jsonl": "fc8b9d13a4249022ffb2e981cf13e1555fe2ee051ad7ddb43e32e7a1ec1e7020",
-    "results\\week4_run\\20261027_052016\\graph_h0.predictions.jsonl": "f8e153abb3b32592fcdad988d4931d0d788cbda1a4eeb37d26c50ac5a56b36b7",
-    "results\\week4_run\\20261027_052016\\graph_h1.predictions.jsonl": "fa9eb897f3c1dfc4c270ed743dd11474bbe75f523e0c43c1e446b795786e6569",
-    "results\\week4_run\\20261027_052016\\graph_h2.predictions.jsonl": "8754de8ea32b689b8c06ab37cb7a198238c4cae444a0b00cecdeeb64c7b01633",
-    "results\\week4_run\\20261027_052016\\graph_h3.predictions.jsonl": "9507ba803c51915834c744ae15c3767a572c980be46969fae543dfbefe3ffaf6",
-    "results\\week4_run\\20261027_052016\\week4\\predictions\\hybrid_graph.jsonl": "c0f227f7774a7c4f101a1c9e700ff7cf640288e9afcbf51a870ecd6388802041",
-    "results\\week4_run\\20261027_052016\\week4\\predictions\\h1_lexical_uniform.jsonl": "02c0aa172f68f08afcb0dc16c2849103f8401e96cddd6341786347600b4d33d4",
-    "results\\week4_run\\20261027_052016\\week4\\predictions\\h1_hybrid_uniform.jsonl": "01a8ec538b49c690bef90d70733fdd7a53bd4724fd90f20c12077bb377168cde",
-    "results\\week4_run\\20261027_052016\\week4\\predictions\\h2_before.jsonl": "5bae4124a9b1a4d5496f4963fc7e0aa025fc62f557903ec9217f1036eba297e0",
-    "results\\week4_run\\20261027_052016\\week4\\predictions\\h2_after.jsonl": "c0f227f7774a7c4f101a1c9e700ff7cf640288e9afcbf51a870ecd6388802041",
-    "results\\week4_run\\20261027_052016\\week4\\predictions\\h3_rrf.jsonl": "c0f227f7774a7c4f101a1c9e700ff7cf640288e9afcbf51a870ecd6388802041",
-    "results\\week4_run\\20261027_052016\\week4\\predictions\\h3_feature.jsonl": "8bb96d4602a534575b108c9c53c5e9b88df2c74400c29038d7267ab7d95677ac",
-    "data/questions.jsonl": "a470d8722b7ce98d725e36c9e1100e34d4df0b3b9d52fc186f49f237c60f5f11",
+    "results\\week4_run\\20261027_091116\\bm25.predictions.jsonl": "130279ecbd6314515e59e847ff82ac9ba95123951ba6f15f0fbf10133075a550",
+    "results\\week4_run\\20261027_091116\\dense.predictions.jsonl": "ebc1c8d92c2a66f8658730238167ba05679547b77f7d4f8109a48d63b95a4771",
+    "results\\week4_run\\20261027_091116\\hybrid.predictions.jsonl": "fc8b9d13a4249022ffb2e981cf13e1555fe2ee051ad7ddb43e32e7a1ec1e7020",
+    "results\\week4_run\\20261027_091116\\graph_h0.predictions.jsonl": "f8e153abb3b32592fcdad988d4931d0d788cbda1a4eeb37d26c50ac5a56b36b7",
+    "results\\week4_run\\20261027_091116\\graph_h1.predictions.jsonl": "fa9eb897f3c1dfc4c270ed743dd11474bbe75f523e0c43c1e446b795786e6569",
+    "results\\week4_run\\20261027_091116\\graph_h2.predictions.jsonl": "8754de8ea32b689b8c06ab37cb7a198238c4cae444a0b00cecdeeb64c7b01633",
+    "results\\week4_run\\20261027_091116\\graph_h3.predictions.jsonl": "9507ba803c51915834c744ae15c3767a572c980be46969fae543dfbefe3ffaf6",
+    "results\\week4_run\\20261027_091116\\week4\\predictions\\hybrid_graph.jsonl": "7f76b7c6482d0bdff837633c9cefd5fa000183d5959ae16266b83024a00f1dbd",
+    "results\\week4_run\\20261027_091116\\week4\\predictions\\h1_lexical_uniform.jsonl": "99ca724a17ca844215ad272e2543e3172cd75768c921ed7e4c2d839e400d17a5",
+    "results\\week4_run\\20261027_091116\\week4\\predictions\\h1_hybrid_uniform.jsonl": "3b8196344f646f6c14fae697edb05a551f369ea3ac0313e54bb330a0079aefaf",
+    "results\\week4_run\\20261027_091116\\week4\\predictions\\h2_before.jsonl": "997ff8ef5d961e51ccd80193f23ebd26b6b1a5ac090b163ad3fd82230290e02b",
+    "results\\week4_run\\20261027_091116\\week4\\predictions\\h2_after.jsonl": "7f76b7c6482d0bdff837633c9cefd5fa000183d5959ae16266b83024a00f1dbd",
+    "results\\week4_run\\20261027_091116\\week4\\predictions\\h3_rrf.jsonl": "7f76b7c6482d0bdff837633c9cefd5fa000183d5959ae16266b83024a00f1dbd",
+    "results\\week4_run\\20261027_091116\\week4\\predictions\\h3_feature.jsonl": "ea2ff68b7bfee6e3c59f9419f6b6192523b514fa29115f4e277fa23f1f69b70e",
     "data/queries.jsonl": "fdbbce590a339c4b8554420420260d891cfb3da57ef72bf0bee0fef90420db2a",
-    "data/intent_groups.jsonl": "d107652172d5a3a0f480bf2fd8f423bb897484c916ddc7d8ea8f70d6f43354a2",
+    "data/questions.jsonl": "a470d8722b7ce98d725e36c9e1100e34d4df0b3b9d52fc186f49f237c60f5f11",
     "data/processed/graph.json": "3ede7e2d0e4579a386c979304f0097bd9a9077e44e59337d6fa412b098f03e55",
     "data/processed/graph.evidence.json": "9a884f7dc76edb0b93a1b3601a5af716f106cd8a8463a5cd28ffb610d2593b42",
+    "data/intent_groups.jsonl": "d107652172d5a3a0f480bf2fd8f423bb897484c916ddc7d8ea8f70d6f43354a2",
+    "scripts/hybrid_graph.py": "9797e3b7d099903194850971ea7d1eced41962b3981be62479f01c6bafc80974",
+    "scripts/graph_retrieval.py": "aca1a63079f90d85326df693f409f701c47f06c9a238887a62ee7cc4baaa29ff",
+    "scripts/tokenization.py": "b5374982734102df9b9b7e2238ee47cec4725a4a1a73becc37aedb2508afafc6",
+    "scripts/graph_construct.py": "5cfde8f5dfc2c16916188f04b9de46fa815554d0cf5e843bc9d62c318a3fb326",
+    "scripts/civic_data.py": "a6b543b56a7420a2bc2486567a3946b027e6db18ee5e8080accf0967b145bf57",
+    "results/week4_run/20261027_091116/week4/predictions/h1_hybrid_uniform.run.json": "5a0975da008e11183a6c223f5c8b93c8176266a7b195354df159e02e1a977541",
+    "results/week4_run/20261027_091116/week4/predictions/h1_lexical_uniform.run.json": "3d97030ae94af3e4b7bfd527f477738afda377acf167a7ef5cb0b34703286245",
+    "results/week4_run/20261027_091116/week4/predictions/h2_after.run.json": "1cac7d9ac9db8178e0c8689f23466d1b36b689da2f5bfcf388fb39a569a07380",
+    "results/week4_run/20261027_091116/week4/predictions/h2_before.run.json": "3fc26048f39a9bf61e14c745b952d4dbc1cda6e1b64ab6a003918c52fe8a294a",
+    "results/week4_run/20261027_091116/week4/predictions/h3_feature.run.json": "5ad9ce9d8ca2565b97b3d4c233ebc0693b9158159f594771beba1f83b24aedd1",
+    "results/week4_run/20261027_091116/week4/predictions/h3_rrf.run.json": "7c951abf656e6f2147a678ae70b2425a7424114eb68c25a05a6ce5562caea86f",
+    "results/week4_run/20261027_091116/week4/predictions/hybrid_graph.run.json": "cd70cf2eaaf0937ca027deb76f11b88fd8cec756438eaf0bc08b876fa74edd9d",
     "scripts/evaluate.py": "db04fe1fc1cb78afa6d7496d253d9b73e5f1e5a855bbc2aaa91e0aa9c7156c2c",
-    "scripts/hybrid_graph.py": "703fbc1d5bd082437226f88c3821297c02e283d40625f1ab3397af753398781c",
-    "scripts/run_week4.py": "9413d8a14a9e79df3c5cc6e7ec48523b71983eb6823f1d14df8b0de15de8c8ae",
-    "scripts/tokenization.py": "b5374982734102df9b9b7e2238ee47cec4725a4a1a73becc37aedb2508afafc6"
+    "scripts/compare_extension.py": "20f78e0f63a918104fb8558b3b544a659055e46a4f242e8315e9aec10dc97c0d",
+    "results/week4_run/20261027_091116/week4/comparisons/baseline/evaluation_manifest.json": "bfa64bf8603c36b175c5375fc9e7df0bf9c788dbcb58d368fd1594fe36e372c6",
+    "results/week4_run/20261027_091116/week4/comparisons/h1/evaluation_manifest.json": "aff169045a52279812a9cb01720974bcf50c5975137ea5beed6d8df4b8c51d43",
+    "results/week4_run/20261027_091116/week4/comparisons/h2/evaluation_manifest.json": "af5d002da3a312916aef5d4b4163adf0b5a175884c707c19b15b0cb46d0eb1fb",
+    "results/week4_run/20261027_091116/week4/comparisons/h3/evaluation_manifest.json": "3c65f3375518b7d05e6e915ead4b50e5cf36d9e8c24cd933d0b13e1468775181",
+    "results/week4_run/20261027_091116/run_manifest.json": "05ab433e01d4cc25ac6cc3001910bdfb2907421b93d69224d24b844642405d6c",
+    "results/week4_run/20261027_091116/week4/week4_manifest.json": "43c732fbb7ace333551dab9383a7da12d49029182ea7f1ead67eb304eba095a9",
+    "results/week4_run/20261027_091116/hybrid_candidates.run.json": "68f79e23c59493a808395758335cf4e1415bcceabce1c98f2166accf8138172f",
+    "results/week4_run/20261027_091116/hybrid_candidates.jsonl": "58eb54cc849a09ab45c264827dc758bb1ab7a29f926050e4f96b111a64eb4452"
   },
   "report_artifacts_sha256": {
-    "analysis_facts.json": "0f950e34bfeb22cfc6a7bcc36864cfc3b1e10458c77ed9f30c6628720c83df9b",
-    "QUESTION_TRACES.md": "c3c156fe6ef2ad9dd65f161205ecb824167e46a59d5adbf2b59032112054a754",
-    "REPORT.md": "74450fda5fe5ada9ed6835c0377dd94d516e2971ea4b00407a1711d294ab80a0",
-    "reproduce_analysis.py": "7612127fcdb2dc502c156a4604bbca9a66efe78510e207a04c41e99451094c5b"
+    "REPORT.md": "1e43eb7b5f349e0276e38d9c7fd575f953f5872003d083216f22cac2212a802d",
+    "QUESTION_TRACES.md": "775449a3246cddf17a2ae274bd6ae65b05d9b3daafc46057cd53a13073131ebd",
+    "analysis_facts.json": "9d073de45853b1d923cf0b5cc74ef6f97a9a5027874212f3739f4fc5b993874f",
+    "reproduce_analysis.py": "bd2c7f2a4ac38942187b115ab2241c80169773dae543cabf5a4a3f50a5448445",
+    "RELATION_ABLATION.md": "06c5e687e6c0c2352086aaa2917f4ad50d8b0868c9158c0b0892cec1de2a1001",
+    "RELATION_CASES.md": "3b7efc930d87ff4a742144811c1499fdad48d6056f9a3f5f36f6b137a8741b94",
+    "relation_analysis_facts.json": "d3cee318b9f2401b27c6bbdd382022d910e838b9afeea1e39785d88683ca48c3"
   },
-  "original_analysis_review": "completed; corrected B022 failure-to-success and N039 recovered-group wording",
-  "editorial_revision": {
-    "purpose": "Explain extension design before benchmarks; define why H1/H2/H3 target entry, binding, and final ranking; separate tested results from future improvements.",
-    "design_source": {
-      "url": "https://app.notion.com/p/4056d1078cb3805ba16df4a2b737fc94",
-      "title": "6️⃣ Week 6 Meeting",
-      "source_last_edited_at": "2026-10-26T22:08:37.091Z",
-      "sections_read": [
-        "Hybrid+Graph Extension 구현 / 정리",
-        "Hybrid+Graph Extension 구현 / 구현 / 설정",
-        "Hybrid+Graph Extension 구현 / 구현 / 기준",
-        "Hybrid+Graph Extension 구현 / 구현 / 비교",
-        "실패 분석 및 개선 가설"
-      ],
-      "returned_toggle_pairs": 7
-    },
-    "source_vs_implementation_differences_explained": [
-      "H1 bigram design vs current Kiwi lexical control",
-      "H2 broad connection hypothesis vs scoped three-evidence ablation",
-      "H3 reranking hypothesis vs fixed feature reranking implementation"
+  "source_validation": {
+    "scored": 177,
+    "diagnostic": 27,
+    "method_results_recomputed": 14,
+    "no_api_calls": true,
+    "hybrid_top10_matches_export": true,
+    "completed_run_manifests": true,
+    "paired_comparison_settings_match": true,
+    "source_hash_basis": "selected run metadata; archived exact sources only when needed",
+    "all_14_metric_reports_match": true,
+    "current_question_graph_source_hashes_match": true,
+    "extension_source_hashes_match": true
+  },
+  "independent_review": {
+    "metric_conditions": 14,
+    "question_method_results": 2856,
+    "representative_cases": 21
+  },
+  "case_updates": {
+    "h2_improved": [
+      "SJ-A-080",
+      "SJ-B-035",
+      "SJ-B-038"
     ],
-    "checks": [
-      "local links and question anchors exist",
-      "all new metric tables generated from audited run results",
-      "8 details blocks balanced",
-      "H1 first appears at full definition",
-      "architecture precedes benchmark and hypotheses",
-      "future work separated from implemented experiments"
+    "h3_improved": [
+      "SJ-N-039",
+      "SJ-A-002",
+      "SJ-B-022"
     ],
-    "new_retrieval_or_model_execution": false
-  }
+    "h3_worsened": [
+      "SJ-N-029"
+    ],
+    "h3_remaining_partial_or_failed": 34,
+    "h3_missing_groups_in_pool": 39,
+    "h3_missing_groups_outside_pool": 4
+  },
+  "design_source": {
+    "url": "https://app.notion.com/p/4056d1078cb3805ba16df4a2b737fc94",
+    "title": "6️⃣ Week 6 Meeting",
+    "source_last_edited_at": "2026-10-26T22:08:37.091Z",
+    "sections_read": [
+      "Hybrid+Graph Extension 구현 / 정리",
+      "Hybrid+Graph Extension 구현 / 구현 / 설정",
+      "Hybrid+Graph Extension 구현 / 구현 / 기준",
+      "Hybrid+Graph Extension 구현 / 구현 / 비교",
+      "실패 분석 및 개선 가설"
+    ],
+    "returned_toggle_pairs": 7
+  },
+  "editorial_revision": "Retained architecture -> benchmarks -> failure stages -> H1/H2/H3 -> next steps; all current figures use 091116; two-relation figures labeled historical.",
+  "local_links_and_python_syntax": "passed",
+  "checked_local_links": 120
 }
