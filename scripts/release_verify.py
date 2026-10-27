@@ -280,7 +280,7 @@ def verify_full_graph_tables(root,stored):
 
 def verify_documents(root,manifest):
     import html
-    expected={'01_graph_schema.md','02_graph_construct.md','03_graph_retrieval.md','04_fail_case_analysis.md','05_week4_integration.md','questions.md'}
+    expected={'01_graph_schema.md','02_graph_construct.md','03_graph_retrieval.md','04_fail_case_analysis.md','questions.md'}
     require({str(p.relative_to(root/'docs')) for p in (root/'docs').rglob('*.md')}==expected,'assignment document set differs')
     retired={'docs/graph_schema.md','results/week3_run/REPORT.md','results/week3_run/QUESTION_ANALYSIS.md','results/week3_run/SUCCESS_DETAILS.md','results/week3_run/graph/GRAPH_DIAGNOSIS.md'}
     require(not retired.intersection(manifest['files']) and not any((root/n).exists() for n in retired),'retired document returned')

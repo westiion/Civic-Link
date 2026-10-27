@@ -60,7 +60,7 @@
     "results/week4_run/20261027_091116/hybrid_candidates.jsonl": "58eb54cc849a09ab45c264827dc758bb1ab7a29f926050e4f96b111a64eb4452"
   },
   "report_artifacts_sha256": {
-    "REPORT.md": "5d6fc6abe23b5b4004db4fb15cf36e9858da39c33db647c937dce0d16b1e35fb",
+    "REPORT.md": "fb243ec5466983cb324a418a5b1a539a249b35d47ab5086d5faf0a072883d939",
     "QUESTION_TRACES.md": "775449a3246cddf17a2ae274bd6ae65b05d9b3daafc46057cd53a13073131ebd",
     "analysis_facts.json": "9d073de45853b1d923cf0b5cc74ef6f97a9a5027874212f3739f4fc5b993874f",
     "reproduce_analysis.py": "bd2c7f2a4ac38942187b115ab2241c80169773dae543cabf5a4a3f50a5448445"
@@ -116,5 +116,6 @@
   },
   "editorial_revision": "Presentation focuses on architecture, current Hybrid benchmark, H1/H2/H3 and remaining failures; relation-count comparison documents and summaries removed. Raw experiments retained.",
   "local_links_and_python_syntax": "passed",
-  "checked_local_links": 103
+  "checked_local_links": 107,
+  "documentation_consolidation": "Implementation file roles, optional execution and result layout moved to REPORT appendices; remote README preserved; obsolete integration guide removed."
 }

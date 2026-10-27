@@ -480,6 +480,55 @@ P95는 저장된 204개 query latency를 정렬해 floor((n−1)×0.95) 위치�
 
 </details>
 
+<details>
+<summary>구현 파일과 실행 검증</summary>
+
+| 파일 | 역할 |
+|---|---|
+| [hybrid_graph.py](../../scripts/hybrid_graph.py) | 시작점 선택·확장·RRF·재정렬과 추적 로그의 공통 구현 |
+| [hybrid_graph_h1.py](../../scripts/hybrid_graph_h1.py), [hybrid_graph_h3.py](../../scripts/hybrid_graph_h3.py) | 공통 구현을 호출하는 가설별 실행 진입점 |
+| [prepare_h2.py](../../scripts/prepare_h2.py) | 최신 법령 파서를 유지한 evidence 보완 전후 그래프 생성·변경 범위 검증 |
+| [compare_extension.py](../../scripts/compare_extension.py) | 공통 평가·질문 유형별 지표·개선/악화 및 후보 탈락 분석 |
+| `compare_h1.py`, `compare_h2.py`, `compare_h3.py`, `compare_hybrid_graph.py` | 비교 종류를 지정하는 실행 진입점 |
+| [run_week4.py](../../scripts/run_week4.py) | 저장된 Hybrid 후보로 기본 확장과 세 가설 실행·평가 |
+
+H2의 전후 그래프는 실행 결과 폴더에 별도로 저장해 기본 그래프를 유지한다. 검색기에 평가용 정답 근거를 전달하지 않고, 평가 단계에서 검색 결과와 정답을 대조한다. 실행 기록에는 토큰화·점수 버전, 소스·그래프·Hybrid 입력 해시를 남긴다.
+
+자동 생성되는 `comparisons/*/report.md`는 지표 집계이며, 원문과 탐색 경로를 확인한 실패 원인 분석을 대신하지 않는다. [테스트](../../tests)는 토큰 일관성, 가설별 통제 조건, 후보·경로 보존, 입력 검증과 H2의 법령 참조 보존을 확인한다. 기본 설치·실행 방법은 [README](../../README.md), 선택 실행과 결과 파일 안내는 아래 부록에서 확인할 수 있다.
+
+</details>
+
+<details>
+<summary>선택 실행과 결과 파일 안내</summary>
+
+`run_week4.py`는 저장된 Hybrid 후보를 사용해 기본 확장과 H1·H2·H3를 모두 실행합니다. 회사 모델 API를 추가 호출하지 않습니다. 현재 코드의 토큰화·데이터와 일치하는 입력이 필요하며, 과거 bigram 실행 결과는 사용할 수 없습니다.
+
+일부 실험만 실행하려면 `--experiments baseline h1`처럼 지정합니다. 출력 폴더를 덮어쓰지 않으므로 재실행할 때는 새로운 `--output-dir`을 지정합니다.
+
+실험 결과는 `$run\week4`에 저장됩니다.
+
+| 경로 | 내용 |
+|---|---|
+| `week4_manifest.json` | 실행 완료·실패 상태와 산출물 목록 |
+| `predictions/` | 조건별 검색 결과와 `.run.json` 실행 설정 |
+| `comparisons/baseline/`, `h1/`, `h2/`, `h3/` | 지표, 질문별 변화, 자동 집계 보고서 |
+| `h2_graphs/` | H2 전후 실험용 그래프와 `repair_diff.json` 바인딩 변경 기록 |
+
+자동 집계와 원문·검색 경로를 대조한 분석은 [Week4 REPORT](REPORT.md)와 [전체 질문 분석](QUESTION_TRACES.md)에서 확인할 수 있습니다.
+
+<details>
+<summary>개별 옵션 조합과 비교 명령</summary>
+
+```powershell
+.\.venv\Scripts\python.exe scripts\hybrid_graph.py --queries data\queries.jsonl --hybrid-results "$run\hybrid_candidates.jsonl" --hybrid-run "$run\hybrid_candidates.run.json" --seed-mode hybrid --seed-weight uniform --rerank feature --output "$run\custom_extension.jsonl"
+```
+
+위 명령은 균등한 시작점 가중치와 재정렬을 조합하는 예시이며, REPORT의 독립 가설 실험 결과와 구분해야 합니다. 개별 비교 스크립트는 `--before`, `--after`, `--output-dir`로 입력·출력을 지정하고, H2 비교에는 `--before-graph`, `--after-graph`도 지정합니다. 상세 옵션은 각 스크립트의 `--help`에서 확인할 수 있습니다.
+
+</details>
+
+</details>
+
 **근거 파일**
 
 - 실행 기록: [기존 방식](../../results/week4_run/20261027_091116/run_manifest.json), [Week4 확장](../../results/week4_run/20261027_091116/week4/week4_manifest.json).
