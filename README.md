@@ -75,11 +75,3 @@ $env:CIVIC_EMBEDDING_MODEL = "Qwen3-VL-Embedding-8B"
 $run = "results\week4_run\<실행시각>"
 .\.venv\Scripts\python.exe scripts\run_week4.py --hybrid-results "$run\hybrid_candidates.jsonl" --hybrid-run "$run\hybrid_candidates.run.json" --output-dir "$run\week4"
 ```
-
-#### 개발 검증
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
-.\.venv\Scripts\python.exe -m pytest tests
-.\.venv\Scripts\python.exe scripts\submission_cli.py verify
-```
