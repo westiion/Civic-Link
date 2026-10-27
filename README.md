@@ -66,8 +66,6 @@ Windows PowerShell에서는 가상환경의 Python 경로를 `.venv/Scripts/pyth
 ```powershell
 $env:CIVIC_EMBEDDING_URL = "회사에서 전달받은 임베딩 API URL"
 $env:CIVIC_EMBEDDING_MODEL = "Qwen3-VL-Embedding-8B"
-# API 키가 필요한 서버에서만 설정
-$env:CIVIC_EMBEDDING_API_KEY = "발급받은 API 키"
 
 .\.venv\Scripts\python.exe scripts\run_models.py
 ```
