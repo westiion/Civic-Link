@@ -6,25 +6,25 @@ Civic-Link는 **수정구청의 무인민원발급 서비스에 적용하기 위
 
 ## 진행 과정
 
-### Week 1 — 문제 및 평가 기준 정의
+#### Week 1 — 문제 및 평가 기준 정의
 
 - 수정구청 무인민원발급을 중심으로 대상 서비스 범위 설정
 - 민원 질문 유형과 평가용 데이터 구조 설계
 - 질문별 행정 서비스와 공식 근거 연결
 
-### Week 2 — 데이터 및 텍스트 검색 기반 구축
+#### Week 2 — 데이터 및 텍스트 검색 기반 구축
 
 - 행정 서비스 안내와 관련 법령 원문 수집
 - BM25, Dense, Hybrid 검색 파이프라인 구현
 - 검색 방식별 성능 비교 및 실패 사례 분석
 
-### Week 3 — 지식 그래프 및 관계 검색 구축
+#### Week 3 — 지식 그래프 및 관계 검색 구축
 
 - 행정 서비스, 필요 서류, 처리기관, 법령, 조문의 관계 구조화
 - 그래프의 노드와 관계를 공식 원문 근거에 연결
 - Graph Retriever 구현 및 텍스트 검색과 비교
 
-### Week 4 — Hybrid + Graph 확장 및 개선 검증
+#### Week 4 — Hybrid + Graph 확장 및 개선 검증
 
 - 토큰화·법령 참조·누락 근거 연결 보완
 - Hybrid 기반 그래프 확장 검색 구현
@@ -33,35 +33,43 @@ Civic-Link는 **수정구청의 무인민원발급 서비스에 적용하기 위
 ## 저장소 구조
 
 ```text
-data/
-  services.jsonl
-  corpus/
-  graph/
-  retrieval/
-  benchmark/
-    diagnostic480/
-    exports/
-    reviews/
-src/civic_link/
-  common.py
-  tokenization.py
-  graph/
-  retrieval/
-  reranking/
-  evaluation/
-scripts/
-experiments/
-  score_comparison/
-    report.md
-    results/
-    figures/
-outputs/
-docs/
-  usage.md
-tests/
-pyproject.toml
-manifest.json
-file_inventory.txt
+Civic-Link/
+├─ data/                         # 검색·평가 데이터
+│  ├─ services.jsonl             # 행정 서비스 목록
+│  ├─ corpus/                    # 원문 DB·복원용 압축본
+│  ├─ graph/                     # 지식 그래프·근거 연결 데이터
+│  ├─ retrieval/                 # Hybrid 후보·질의 임베딩·실행 정보
+│  └─ benchmark/                 # 평가 질문·정답 근거
+│     ├─ diagnostic480/          # 유형 균형 진단용 480문항
+│     ├─ exports/                # 질문 목록의 CSV·Markdown 보기
+│     └─ reviews/                # 벤치마크 검수·수정 기록
+│
+├─ src/civic_link/               # 핵심 구현 코드
+│  ├─ common.py                  # 공통 데이터·DB 처리
+│  ├─ tokenization.py            # 텍스트 정규화·토큰화
+│  ├─ graph/                     # 그래프 구축·탐색
+│  ├─ retrieval/                 # Hybrid 기반 Graph 확장 검색
+│  ├─ reranking/                 # 점수식·후보 재정렬
+│  └─ evaluation/                # 검색·행동 평가·벤치마크 검증
+├─ scripts/                      # 복원·검색·평가·실험 실행 명령
+│
+├─ experiments/                  # 보관용 실험 기록
+│  └─ score_comparison/          # 점수식 비교 실험
+│     ├─ report.md               # 실험 방법·결과·해석
+│     ├─ results/                # 평가 수치·정책 선택·문항별 변화
+│     └─ figures/                # 보고서용 그림
+├─ outputs/                      # 실행 시 생성되는 결과 (Git 제외)
+├─ docs/
+│  └─ usage.md                   # 설치·복원·검색·평가 상세 안내
+├─ tests/                        # 테스트 코드·테스트용 데이터
+│
+├─ README.md                     # 프로젝트 소개·기본 실행법
+├─ pyproject.toml                # Python 패키지 설정
+├─ requirements.txt              # 실행 의존성
+├─ requirements-dev.txt          # 개발·테스트 의존성
+├─ pytest.ini                    # 테스트 실행 설정
+├─ manifest.json                 # 공유 파일·입력 데이터 검증 정보
+└─ file_inventory.txt            # 공유 파일 목록
 ```
 
 ## 실행
