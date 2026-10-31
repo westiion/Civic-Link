@@ -2,7 +2,7 @@
 
 608문항(기존 204 + 신규 404)과 균형 진단 부분집합 480개를 제공한다. 신규 404개·근거 590건 검토 후 21문항의 보조 주석과 확인 정책을 수정했다. 질문 ID·원문·검색 정답은 유지했다.
 
-[결과 보고서](../experiments/score_comparison/report.md) · [전체 질문](../data/benchmark/exports/questions.md) · [신규 질문](../data/benchmark/exports/new_questions.md) · [AI 검수](../data/benchmark/reviews/agent_review.csv)
+[주차 수행 보고서](../REPORT.md) · [전체 질문](../data/benchmark/exports/questions.md) · [신규 질문](../data/benchmark/exports/new_questions.md) · [AI 검수](../data/benchmark/reviews/agent_review.csv)
 
 ## 설치 → 현재 DB 복원 → 검색 → 평가
 

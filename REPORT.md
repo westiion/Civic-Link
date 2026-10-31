@@ -36,7 +36,7 @@ PART_OF 0.25와 hop 0.12는 구조에 관한 보수적인 가정이다. 이번 �
 
 ## 비교 조건
 
-![고정 후보에서 연속 점수로 융합하는 흐름](figures/03_formula_flow.png)
+![고정 후보에서 연속 점수로 융합하는 흐름](experiments/score_comparison/figures/03_formula_flow.png)
 
 - 전체 608문항, 답변 가능 488개만 검색 지표에 포함. 추가 확인·보류 120개는 검색 점수에서 제외.
 - 균형본 480개는 전체의 부분집합이며 검색 분모는 384개.
@@ -48,7 +48,7 @@ PART_OF 0.25와 hop 0.12는 구조에 관한 보수적인 가정이다. 이번 �
 
 ## 실측 결과
 
-![기존 H3와 새 수식의 완전회수율 비교](figures/04_formula_results.png)
+![기존 H3와 새 수식의 완전회수율 비교](experiments/score_comparison/figures/04_formula_results.png)
 
 Complete@10은 필요한 모든 근거 묶음을 상위 10개에서 찾은 비율이다. Recall@10은 근거 묶음 회수율의 문항별 평균, MRR@100은 첫 근거 순위 역수의 평균이다.
 

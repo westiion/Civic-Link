@@ -1,6 +1,7 @@
 .gitattributes
 .gitignore
 README.md
+REPORT.md
 data/benchmark/dataset.json
 data/benchmark/diagnostic480/queries.jsonl
 data/benchmark/diagnostic480/questions.jsonl
@@ -25,7 +26,6 @@ data/services.jsonl
 docs/usage.md
 experiments/score_comparison/figures/03_formula_flow.png
 experiments/score_comparison/figures/04_formula_results.png
-experiments/score_comparison/report.md
 experiments/score_comparison/results/changes.jsonl
 experiments/score_comparison/results/explanatory_ablation.json
 experiments/score_comparison/results/protocol.json

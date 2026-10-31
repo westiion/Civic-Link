@@ -55,7 +55,6 @@ Civic-Link/
 │
 ├─ experiments/                  # 보관용 실험 기록
 │  └─ score_comparison/          # 점수식 비교 실험
-│     ├─ report.md               # 실험 방법·결과·해석
 │     ├─ results/                # 평가 수치·정책 선택·문항별 변화
 │     └─ figures/                # 보고서용 그림
 ├─ outputs/                      # 실행 시 생성되는 결과 (Git 제외)
@@ -64,6 +63,7 @@ Civic-Link/
 ├─ tests/                        # 테스트 코드·테스트용 데이터
 │
 ├─ README.md                     # 프로젝트 소개·기본 실행법
+├─ REPORT.md                     # Week 7 피드백 반영·개선·수행 기록
 ├─ pyproject.toml                # Python 패키지 설정
 ├─ requirements.txt              # 실행 의존성
 ├─ requirements-dev.txt          # 개발·테스트 의존성

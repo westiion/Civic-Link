@@ -15,7 +15,7 @@ from civic_link.graph.build import corpus_identity
 from restore_data import sha
 
 def members(root):
-    names = ['README.md', 'requirements.txt', 'requirements-dev.txt', 'pyproject.toml',
+    names = ['README.md', 'REPORT.md', 'requirements.txt', 'requirements-dev.txt', 'pyproject.toml',
         'pytest.ini', '.gitattributes', '.gitignore', 'file_inventory.txt', 'data/services.jsonl',
         'data/graph/graph.json', 'data/graph/graph.evidence.json',
         'data/corpus/corpus.sqlite.gz', 'data/retrieval/hybrid_candidates.jsonl.gz',

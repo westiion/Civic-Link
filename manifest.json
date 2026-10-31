@@ -11,8 +11,12 @@
       "sha256": "27c7bfc953e45e22fe28e61e2ae3599feea676b33062dfb564284dd56c8ce815"
     },
     "README.md": {
-      "bytes": 2464,
-      "sha256": "d3b0032a405937e7a56d6662fc00c3cb2dc06cdc7e51fd06deac6794021ee228"
+      "bytes": 4468,
+      "sha256": "c804c884223402118a9ad89f7c52aa65b99318b4d2faf233e4272015d996f66b"
+    },
+    "REPORT.md": {
+      "bytes": 10661,
+      "sha256": "8856b7997a0b8ed6d5320128ab2a8f60195e4512866ab33c9564cdae9159e938"
     },
     "data/benchmark/dataset.json": {
       "bytes": 394,
@@ -99,8 +103,8 @@
       "sha256": "6a991c06de3a09abbd5535e9829144500e05daae5b5788ca86bcdf6dd9f6d8b8"
     },
     "docs/usage.md": {
-      "bytes": 4434,
-      "sha256": "0c91829e635319d2bc6be0b14ad549741ea706a6bb31bf88bf8cf174a7364f07"
+      "bytes": 4412,
+      "sha256": "c44d33da392100d59bc00d17fcdc207e657592d68828e1c4ad8786adf4568f9e"
     },
     "experiments/score_comparison/figures/03_formula_flow.png": {
       "bytes": 133276,
@@ -109,10 +113,6 @@
     "experiments/score_comparison/figures/04_formula_results.png": {
       "bytes": 73188,
       "sha256": "c72fb13c1ad0b9027fe1378d8341a32a8aa5508e724c089abb78014f5a19f10c"
-    },
-    "experiments/score_comparison/report.md": {
-      "bytes": 10603,
-      "sha256": "574403a14ab96c0759ad99bdf699ad5e76625d26568feb342ad45d41a6fa5d5a"
     },
     "experiments/score_comparison/results/changes.jsonl": {
       "bytes": 19005,
@@ -139,8 +139,8 @@
       "sha256": "242838affb794091c56d3b78eabd6c98297b64a5dcd0465bfdf02e84609019f4"
     },
     "file_inventory.txt": {
-      "bytes": 2558,
-      "sha256": "17b3b227db2cbc17cc9cd8165c6db799082a7c66d2f0b629f1e1ecfe2a92b398"
+      "bytes": 2529,
+      "sha256": "8245f7bcfbead6135ed1e71a58918378522b0e977f6bb038f231dbc3cad177e4"
     },
     "pyproject.toml": {
       "bytes": 398,
@@ -179,8 +179,8 @@
       "sha256": "e68e2f06ddd8ec922dbeff4f44f6446410b42835989e600359529c55f05a2bd5"
     },
     "scripts/refresh_manifest.py": {
-      "bytes": 4573,
-      "sha256": "86e924a71a24a88a9f976f8ad34711961afae9928c61d0810b37696e2e74bf68"
+      "bytes": 4586,
+      "sha256": "dd1c8fb0c9ca4449d43218d9b06e98d1859ce7e73f3e2def598fc2803023700c"
     },
     "scripts/restore_data.py": {
       "bytes": 5090,
