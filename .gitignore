@@ -9,8 +9,6 @@ __pycache__/
 .ruff_cache/
 .env
 .env.*
-**/*.pyc
-data/processed/civic.sqlite*
 !.env.example
 .vscode/
 .DS_Store
