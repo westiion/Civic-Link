@@ -9,7 +9,7 @@ from dataclasses import asdict, dataclass
 import math
 from pathlib import Path
 
-from civic_data import ROOT, digest, read_jsonl, write_json, write_jsonl
+from civic_data import ROOT, digest, input_bytes, read_jsonl, write_json, write_jsonl
 from graph_construct import compact, load_graph
 from graph_retrieval import GraphRetriever, path_text
 from tokenization import TOKENIZER_NAME, token_set
@@ -42,7 +42,7 @@ class Config:
     def validate(self):
         if self.seed_mode not in ('hybrid', 'lexical') or self.seed_weight not in ('native', 'uniform'):
             raise ValueError('invalid seed policy')
-        if self.rerank not in ('none', 'feature'):
+        if self.rerank not in ('none', 'feature', 'coverage'):
             raise ValueError('invalid rerank policy')
         for name, value in asdict(self).items():
             if name in ('relations', 'seed_mode', 'seed_weight', 'rerank'):
@@ -213,7 +213,7 @@ class HybridGraph:
         rrf_order = sorted(scores, key=lambda cid: (-scores[cid], cid))
         rrf_ranks = {cid: i for i, cid in enumerate(rrf_order, 1)}
         features = {}
-        if cfg.rerank == 'feature':
+        if cfg.rerank in ('feature', 'coverage'):
             for cid in scores:
                 quote_score = 0.
                 if cid in kept_graph:
@@ -244,19 +244,27 @@ class HybridGraph:
             graph_excluded_by_cap=cid in paths and cid not in kept_graph,
             selected=cid in ranks and ranks[cid] <= cfg.top_k)
             for cid in sorted(set(paths) | set(hybrid_ranks))]
-        return dict(query_id=qid, retriever='hybrid_graph', hits=hits, seeds=seeds,
+        result = dict(query_id=qid, retriever='hybrid_graph', hits=hits, seeds=seeds,
             baseline_hits=hybrid[:cfg.top_k], rrf_top_chunk_ids=rrf_order[:cfg.top_k],
             seed_decisions=decisions, candidates=diagnostics,
             diagnostics=dict(hybrid_count=len(hybrid), input_shortfall=len(hybrid) < cfg.hybrid_k,
                 graph_candidates=len(paths), graph_kept=len(kept_graph),
                 graph_only_candidates=len(kept_graph - set(hybrid_ranks)),
                 visited_nodes=node_visits, visited_edges=edge_visits, truncation_reasons=sorted(set(truncated))))
+        if cfg.rerank == 'coverage':
+            from graph_score_revision import apply
+            revised = apply(result, r.chunks, top_k=cfg.top_k)
+            for key in ('seeds', 'baseline_hits', 'seed_decisions', 'diagnostics'):
+                revised[key] = result[key]
+            return revised
+        return result
 
 
 def source_hashes():
     directory = Path(__file__).resolve().parent
     return {name: digest((directory / name).read_bytes()) for name in
-            ('hybrid_graph.py', 'graph_retrieval.py', 'tokenization.py', 'graph_construct.py', 'civic_data.py')}
+            ('hybrid_graph.py', 'graph_retrieval.py', 'tokenization.py', 'graph_construct.py', 'civic_data.py',
+             'graph_score_revision.py', 'overlap_rerank.py')}
 
 
 def load_inputs(queries_path, results_path, run_path, graph, config):
@@ -264,7 +272,7 @@ def load_inputs(queries_path, results_path, run_path, graph, config):
     if provenance.get('method') != 'hybrid':
         raise ValueError('Hybrid run metadata required')
     for name, path in [('queries_sha256', queries_path), ('predictions_sha256', results_path)]:
-        if provenance.get(name) != digest(Path(path).read_bytes()):
+        if provenance.get(name) != digest(input_bytes(path)):
             raise ValueError(f'input fingerprint mismatch: {name}')
     if provenance.get('corpus_hash') != graph.graph.get('corpus_hash'):
         raise ValueError('Hybrid and Graph corpus mismatch')
@@ -299,7 +307,9 @@ def run_frozen(retriever, queries, lookup, provenance, config, output, graph_pat
     from importlib.metadata import version
     settings = dict(method='hybrid_graph', config=asdict(config), query_count=len(predictions),
         hybrid_run=provenance, tokenizer=TOKENIZER_NAME, tokenizer_package_version=version('kiwipiepy'),
-        score_version=SCORE_VERSION, rerank_weights=RERANK_WEIGHTS, source_sha256=source_hashes(),
+        score_version='coverage-path-overlap' if config.rerank=='coverage' else SCORE_VERSION,
+        rerank_weights=dict(hybrid=.3,chunk_coverage=.5,graph_support=.2,overlap_penalty=.15)
+            if config.rerank=='coverage' else RERANK_WEIGHTS, source_sha256=source_hashes(),
         graph_sha256=digest(graph_path.read_bytes()),
         evidence_sha256=digest(graph_path.with_suffix('.evidence.json').read_bytes()),
         predictions_sha256=digest(output.read_bytes()), query_latency_ms=timings, generation=None, api_calls=0)
@@ -317,7 +327,7 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     for name, default in asdict(Config()).items():
         if name in ('seed_mode', 'seed_weight', 'rerank'):
-            choices = {'seed_mode': ('hybrid', 'lexical'), 'seed_weight': ('native', 'uniform'), 'rerank': ('none', 'feature')}
+            choices = {'seed_mode': ('hybrid', 'lexical'), 'seed_weight': ('native', 'uniform'), 'rerank': ('none', 'feature', 'coverage')}
             parser.add_argument('--' + name.replace('_', '-'), choices=choices[name], default=default)
         elif name != 'relations':
             parser.add_argument('--' + name.replace('_', '-'), type=type(default), default=default)

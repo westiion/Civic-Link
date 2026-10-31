@@ -17,7 +17,12 @@ def digest(value):
     return hashlib.sha256(value).hexdigest()
 
 def now(): return datetime.now(timezone.utc).isoformat()
-def read_jsonl(path): return [json.loads(x) for x in Path(path).read_text(encoding='utf-8').splitlines() if x.strip()]
+def input_bytes(path):
+    import gzip
+    data=Path(path).read_bytes()
+    return gzip.decompress(data) if Path(path).suffix=='.gz' else data
+
+def read_jsonl(path): return [json.loads(x) for x in input_bytes(path).decode('utf-8').splitlines() if x.strip()]
 def write_json(path,value):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

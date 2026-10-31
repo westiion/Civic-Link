@@ -1,0 +1,498 @@
+{
+  "purpose": "post-selection explanatory diagnostics; no validation-driven reselection",
+  "selected": "score_text_priority_overlap",
+  "subsets": {
+    "all": {
+      "selected": {
+        "n": 488,
+        "complete": 411,
+        "complete_at_10": 0.8422131147540983,
+        "recall_at_10": 0.8939890710382513,
+        "mrr_at_100": 0.6861000372547806,
+        "pool_complete": 481
+      },
+      "no_graph_same_weights": {
+        "n": 488,
+        "complete": 404,
+        "complete_at_10": 0.8278688524590164,
+        "recall_at_10": 0.8816939890710382,
+        "mrr_at_100": 0.6937490796626702,
+        "pool_complete": 481
+      },
+      "no_overlap": {
+        "n": 488,
+        "complete": 411,
+        "complete_at_10": 0.8422131147540983,
+        "recall_at_10": 0.8939890710382513,
+        "mrr_at_100": 0.6850347887510077,
+        "pool_complete": 481
+      },
+      "no_part_of_discount": {
+        "n": 488,
+        "complete": 411,
+        "complete_at_10": 0.8422131147540983,
+        "recall_at_10": 0.8939890710382513,
+        "mrr_at_100": 0.6859975782383874,
+        "pool_complete": 481
+      },
+      "no_hop_discount": {
+        "n": 488,
+        "complete": 411,
+        "complete_at_10": 0.8422131147540983,
+        "recall_at_10": 0.8939890710382513,
+        "mrr_at_100": 0.6872929529456472,
+        "pool_complete": 481
+      },
+      "h3_feature": {
+        "n": 488,
+        "complete": 391,
+        "complete_at_10": 0.8012295081967213,
+        "recall_at_10": 0.8533469945355191,
+        "mrr_at_100": 0.6585482495272337,
+        "pool_complete": 481
+      }
+    },
+    "balanced": {
+      "selected": {
+        "n": 384,
+        "complete": 320,
+        "complete_at_10": 0.8333333333333334,
+        "recall_at_10": 0.8917534722222222,
+        "mrr_at_100": 0.6849208211737471,
+        "pool_complete": 379
+      },
+      "no_graph_same_weights": {
+        "n": 384,
+        "complete": 314,
+        "complete_at_10": 0.8177083333333334,
+        "recall_at_10": 0.8787326388888889,
+        "mrr_at_100": 0.6960237884053414,
+        "pool_complete": 379
+      },
+      "no_overlap": {
+        "n": 384,
+        "complete": 320,
+        "complete_at_10": 0.8333333333333334,
+        "recall_at_10": 0.8917534722222222,
+        "mrr_at_100": 0.6840010956446464,
+        "pool_complete": 379
+      },
+      "no_part_of_discount": {
+        "n": 384,
+        "complete": 320,
+        "complete_at_10": 0.8333333333333334,
+        "recall_at_10": 0.8917534722222222,
+        "mrr_at_100": 0.6847906128404136,
+        "pool_complete": 379
+      },
+      "no_hop_discount": {
+        "n": 384,
+        "complete": 320,
+        "complete_at_10": 0.8333333333333334,
+        "recall_at_10": 0.8917534722222222,
+        "mrr_at_100": 0.6861764015308899,
+        "pool_complete": 379
+      },
+      "h3_feature": {
+        "n": 384,
+        "complete": 305,
+        "complete_at_10": 0.7942708333333334,
+        "recall_at_10": 0.853125,
+        "mrr_at_100": 0.6574813451845174,
+        "pool_complete": 379
+      }
+    },
+    "development": {
+      "selected": {
+        "n": 361,
+        "complete": 308,
+        "complete_at_10": 0.853185595567867,
+        "recall_at_10": 0.8987996306555862,
+        "mrr_at_100": 0.6783973975681944,
+        "pool_complete": 355
+      },
+      "no_graph_same_weights": {
+        "n": 361,
+        "complete": 303,
+        "complete_at_10": 0.8393351800554016,
+        "recall_at_10": 0.8858725761772853,
+        "mrr_at_100": 0.6867370310779789,
+        "pool_complete": 355
+      },
+      "no_overlap": {
+        "n": 361,
+        "complete": 308,
+        "complete_at_10": 0.853185595567867,
+        "recall_at_10": 0.8987996306555862,
+        "mrr_at_100": 0.6769573940506286,
+        "pool_complete": 355
+      },
+      "no_part_of_discount": {
+        "n": 361,
+        "complete": 308,
+        "complete_at_10": 0.853185595567867,
+        "recall_at_10": 0.8987996306555862,
+        "mrr_at_100": 0.6782588934130698,
+        "pool_complete": 355
+      },
+      "no_hop_discount": {
+        "n": 361,
+        "complete": 308,
+        "complete_at_10": 0.853185595567867,
+        "recall_at_10": 0.8987996306555862,
+        "mrr_at_100": 0.6786172454334717,
+        "pool_complete": 355
+      },
+      "h3_feature": {
+        "n": 361,
+        "complete": 298,
+        "complete_at_10": 0.8254847645429363,
+        "recall_at_10": 0.8637119113573407,
+        "mrr_at_100": 0.6600051728765519,
+        "pool_complete": 355
+      }
+    },
+    "validation": {
+      "selected": {
+        "n": 127,
+        "complete": 103,
+        "complete_at_10": 0.8110236220472441,
+        "recall_at_10": 0.8803149606299212,
+        "mrr_at_100": 0.7079949421906677,
+        "pool_complete": 126
+      },
+      "no_graph_same_weights": {
+        "n": 127,
+        "complete": 101,
+        "complete_at_10": 0.7952755905511811,
+        "recall_at_10": 0.8698162729658793,
+        "mrr_at_100": 0.7136809657971075,
+        "pool_complete": 126
+      },
+      "no_overlap": {
+        "n": 127,
+        "complete": 103,
+        "complete_at_10": 0.8110236220472441,
+        "recall_at_10": 0.8803149606299212,
+        "mrr_at_100": 0.7079949421906677,
+        "pool_complete": 126
+      },
+      "no_part_of_discount": {
+        "n": 127,
+        "complete": 103,
+        "complete_at_10": 0.8110236220472441,
+        "recall_at_10": 0.8803149606299212,
+        "mrr_at_100": 0.7079949421906677,
+        "pool_complete": 126
+      },
+      "no_hop_discount": {
+        "n": 127,
+        "complete": 103,
+        "complete_at_10": 0.8110236220472441,
+        "recall_at_10": 0.8803149606299212,
+        "mrr_at_100": 0.7119538223306503,
+        "pool_complete": 126
+      },
+      "h3_feature": {
+        "n": 127,
+        "complete": 93,
+        "complete_at_10": 0.7322834645669292,
+        "recall_at_10": 0.8238845144356955,
+        "mrr_at_100": 0.6544069162272034,
+        "pool_complete": 126
+      }
+    }
+  },
+  "balanced_by_type": {
+    "cross_reference": {
+      "h3_feature": {
+        "n": 48,
+        "complete": 36,
+        "complete_at_10": 0.75,
+        "recall_at_10": 0.8645833333333334,
+        "mrr_at_100": 0.7206042520054616,
+        "pool_complete": 47
+      },
+      "selected": {
+        "n": 48,
+        "complete": 36,
+        "complete_at_10": 0.75,
+        "recall_at_10": 0.8680555555555555,
+        "mrr_at_100": 0.7625490828615828,
+        "pool_complete": 47
+      }
+    },
+    "direct_qa": {
+      "h3_feature": {
+        "n": 48,
+        "complete": 46,
+        "complete_at_10": 0.9583333333333334,
+        "recall_at_10": 0.9583333333333334,
+        "mrr_at_100": 0.7119539411206078,
+        "pool_complete": 48
+      },
+      "selected": {
+        "n": 48,
+        "complete": 47,
+        "complete_at_10": 0.9791666666666666,
+        "recall_at_10": 0.9791666666666666,
+        "mrr_at_100": 0.6843262905762906,
+        "pool_complete": 48
+      }
+    },
+    "handling_agency": {
+      "h3_feature": {
+        "n": 48,
+        "complete": 42,
+        "complete_at_10": 0.875,
+        "recall_at_10": 0.90625,
+        "mrr_at_100": 0.7858405483405484,
+        "pool_complete": 48
+      },
+      "selected": {
+        "n": 48,
+        "complete": 43,
+        "complete_at_10": 0.8958333333333334,
+        "recall_at_10": 0.9270833333333334,
+        "mrr_at_100": 0.7810194911297853,
+        "pool_complete": 48
+      }
+    },
+    "legal_grounding": {
+      "h3_feature": {
+        "n": 48,
+        "complete": 42,
+        "complete_at_10": 0.875,
+        "recall_at_10": 0.8819444444444445,
+        "mrr_at_100": 0.5785768812084602,
+        "pool_complete": 48
+      },
+      "selected": {
+        "n": 48,
+        "complete": 45,
+        "complete_at_10": 0.9375,
+        "recall_at_10": 0.9583333333333334,
+        "mrr_at_100": 0.6217840608465609,
+        "pool_complete": 48
+      }
+    },
+    "multi_source_multi_hop": {
+      "h3_feature": {
+        "n": 48,
+        "complete": 20,
+        "complete_at_10": 0.4166666666666667,
+        "recall_at_10": 0.6895833333333333,
+        "mrr_at_100": 0.6528579059829059,
+        "pool_complete": 46
+      },
+      "selected": {
+        "n": 48,
+        "complete": 24,
+        "complete_at_10": 0.5,
+        "recall_at_10": 0.7277777777777777,
+        "mrr_at_100": 0.6220737108993157,
+        "pool_complete": 46
+      }
+    },
+    "required_documents": {
+      "h3_feature": {
+        "n": 48,
+        "complete": 41,
+        "complete_at_10": 0.8541666666666666,
+        "recall_at_10": 0.8645833333333334,
+        "mrr_at_100": 0.6329841128775204,
+        "pool_complete": 48
+      },
+      "selected": {
+        "n": 48,
+        "complete": 46,
+        "complete_at_10": 0.9583333333333334,
+        "recall_at_10": 0.96875,
+        "mrr_at_100": 0.7246445105820105,
+        "pool_complete": 48
+      }
+    },
+    "requirement_condition": {
+      "h3_feature": {
+        "n": 48,
+        "complete": 36,
+        "complete_at_10": 0.75,
+        "recall_at_10": 0.7743055555555555,
+        "mrr_at_100": 0.5633734192077631,
+        "pool_complete": 46
+      },
+      "selected": {
+        "n": 48,
+        "complete": 38,
+        "complete_at_10": 0.7916666666666666,
+        "recall_at_10": 0.8263888888888888,
+        "mrr_at_100": 0.6255026684316939,
+        "pool_complete": 46
+      }
+    },
+    "service_discovery": {
+      "h3_feature": {
+        "n": 48,
+        "complete": 42,
+        "complete_at_10": 0.875,
+        "recall_at_10": 0.8854166666666666,
+        "mrr_at_100": 0.6136597007328715,
+        "pool_complete": 48
+      },
+      "selected": {
+        "n": 48,
+        "complete": 41,
+        "complete_at_10": 0.8541666666666666,
+        "recall_at_10": 0.8784722222222222,
+        "mrr_at_100": 0.6574667540627362,
+        "pool_complete": 48
+      }
+    }
+  },
+  "regressions": [
+    {
+      "question_id": "SJ-N-022",
+      "question": "거래처가 가게 등록돼 있다는 서류를 달라는데요. 이미 사업자등록은 했거든요. 다시 등록하라는 건 아니죠? 증명하는 서류가 따로 있는 거예요?",
+      "split": "validation",
+      "old_ranks": [
+        7
+      ],
+      "new_ranks": [
+        28
+      ]
+    },
+    {
+      "question_id": "SJ-N-027",
+      "question": "회사랑 장사해서 번돈 증명하래. 공식서류 이름뭐임 소득나오는거.",
+      "split": "validation",
+      "old_ranks": [
+        8
+      ],
+      "new_ranks": [
+        49
+      ]
+    },
+    {
+      "question_id": "SJ-N-041",
+      "question": "등본은 수급자면 수수료 안 낸다면서요. 아직 받는 건 아니고 받을 자격만 있어도 똑같이 면제예요? 수급자, 수급권자 말이 비슷한데 기준을 분명히 알려줘요.",
+      "split": "development",
+      "old_ranks": [
+        7,
+        1
+      ],
+      "new_ranks": [
+        45,
+        1
+      ]
+    },
+    {
+      "question_id": "SJ-N-047",
+      "question": "제적등본 면제라는 수급자, 자격만 있는 사람도야? 정부24에서 연결된 법이랑 면제 규정까지 보고 말해.",
+      "split": "development",
+      "old_ranks": [
+        4,
+        9
+      ],
+      "new_ranks": [
+        2,
+        33
+      ]
+    },
+    {
+      "question_id": "SJ-N-061",
+      "question": "휴업증명 폐업증명 둘 다 달래. 같은 사실이면 하나로 안 됨?",
+      "split": "development",
+      "old_ranks": [
+        10,
+        7
+      ],
+      "new_ranks": [
+        6,
+        13
+      ]
+    },
+    {
+      "question_id": "SJ-A-003",
+      "question": "정부24엔 등본 돈 낸다고 돼 있고 성남시 무인발급 안내는 무료라는데, 뭐가 맞는 거예요? 둘이 같은 방식으로 떼는 얘기예요? 이렇게 써 놓으면 헷갈리잖아요.",
+      "split": "development",
+      "old_ranks": [
+        4,
+        2,
+        3
+      ],
+      "new_ranks": [
+        70,
+        2,
+        15
+      ]
+    },
+    {
+      "question_id": "W7-MS-018",
+      "question": "등본 창구에서 말로 신청하면 종이에 확인 같은 거 안 해도 되죠? 시행령이 구술신고 절차 따른다는데 신청할 때 뭘 하는 건지 풀어줘요.",
+      "split": "development",
+      "old_ranks": [
+        10,
+        1
+      ],
+      "new_ranks": [
+        90,
+        1
+      ]
+    },
+    {
+      "question_id": "W7-MS-034",
+      "question": "등록장애인이고 한부모 지원대상자이기도 해요. 국문 장애인증명 구비서류 없다길래 한부모증명도 신분증 안내 없이 똑같이 생각했는데 맞아요? 두 정부24 제출서류 비교해주세요.",
+      "split": "development",
+      "old_ranks": [
+        1,
+        10
+      ],
+      "new_ranks": [
+        1,
+        29
+      ]
+    },
+    {
+      "question_id": "W7V2-LA002",
+      "question": "제 초본 누가 떼 갔는지 문자 오는 거 신청할 수 있다며. 국가가 공무 때문에 발급받은 것도 전부 알려줘요? 예외 있으면 빼먹지 말고 시행령 근거까지 알려줘요.",
+      "split": "development",
+      "old_ranks": [
+        8,
+        3,
+        3
+      ],
+      "new_ranks": [
+        12,
+        2,
+        2
+      ]
+    },
+    {
+      "question_id": "W7V2-MS014",
+      "question": "미성년 친양자 초본에 입양·파양으로 바뀐 인적사항까지 다 찍혀야 하나요? 주민등록 규칙이 가족관계법 따른다는데, 그쪽 성년 기준이랑 연결해서 봐주세요.",
+      "split": "development",
+      "old_ranks": [
+        10,
+        7,
+        9
+      ],
+      "new_ranks": [
+        4,
+        9,
+        34
+      ]
+    }
+  ],
+  "ranking_change": {
+    "all": {
+      "n": 608,
+      "same_top10_order": 1,
+      "same_top10_set": 32
+    },
+    "balanced": {
+      "n": 480,
+      "same_top10_order": 1,
+      "same_top10_set": 25
+    }
+  }
+}

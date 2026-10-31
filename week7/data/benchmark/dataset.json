@@ -1,0 +1,16 @@
+{
+  "dataset_id": "week7-master608",
+  "question_count": 608,
+  "diagnostic_subset": 480,
+  "original": 204,
+  "new": 404,
+  "actions": {
+    "answer": 488,
+    "clarify": 60,
+    "abstain": 60
+  },
+  "source_snapshot": "tests/fixtures/week7_pre_review.jsonl.gz",
+  "independent_holdout": false,
+  "human_verified": false,
+  "review": "user reported + agent adjudication recorded separately"
+}

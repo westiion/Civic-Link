@@ -1,0 +1,22 @@
+{
+  "scope": "clean Git-only tree; compact corpus restored; Hybrid gzip read directly",
+  "query_count": 608,
+  "answer_count": 488,
+  "complete_at_10_count": 411,
+  "complete_at_10": 0.8422131147540983,
+  "recall_at_10": 0.8939890710382513,
+  "mrr_at_100": 0.6861000372547806,
+  "matching_top10_with_selected_experiment": 608,
+  "tests_passed": 67,
+  "test_seconds": 13.39,
+  "api_calls": 0,
+  "neural_model_loads": 0,
+  "independent_holdout": false,
+  "behavior_quality_measured": false,
+  "retired_test_scope": [
+    "Week3/4 submission and result restore",
+    "legacy retrieval and benchmark authoring"
+  ],
+  "baseline_and_explanatory_ablation_reproduced": true,
+  "expanded_hybrid_file_created": false
+}

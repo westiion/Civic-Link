@@ -1,77 +1,9 @@
-## Civic-Link
+# Civic-Link · Week 7
 
-Civic-Link는 수정구청의 무인민원발급 서비스에 적용하기 위한 행정·법률 기반 Graph RAG 시스템 구축 프로젝트입니다. 행정 서비스와 필요 서류, 근거 조문 및 관련 법령 간의 관계를 지식 그래프로 구조화하고, 이를 바탕으로 사용자의 질문에 적합한 행정 서비스를 안내하며 해당 서비스의 공식적인 법적·행정적 근거를 함께 제시하는 것을 목표로 합니다.
+세종시 민원 문서에 대한 **608문항 벤치마크와 Hybrid + Graph 검색 수식**을 재현한다. 신규 404문항을 검토하고 작성 차수별 컬럼을 통합했다. `coverage` 수식의 근거 완전회수율은 488개 답변 문항에서 **84.22% (411/488)**다. 진단용 개발 자료의 검색 성능이며 생성 답변 정확도나 독립 시험 성적은 아니다.
 
-> 인하대학교 탄소중립 아카데미 7기 산업체 연계 프로젝트 · 마음AI
+**[실행 안내](week7/README.md) · [변경·실험 보고서](week7/REPORT.md) · [질문 목록](week7/data/benchmark/questions.md)**
 
-<br>
+현재 Git 트리에는 Week7 실행·검수·평가에 필요한 파일만 둔다. 이전 Week3/4 제출물, 실험 캐시, 구형 복원 도구, 모델·가상환경과 전송용 ZIP은 공유하지 않는다. 이전 파일의 Git 이력은 유지되므로 과거 파일은 이전 커밋에서 찾아볼 수 있다. 저장소 전체 이력이 필요 없으면 `git clone --depth 1 <저장소 URL>`로 받는다.
 
-### 진행 과정
-
-#### Week 1 — 문제 및 평가 기준 정의
-
-- 수정구청 무인민원발급을 중심으로 대상 서비스 범위 설정
-- 민원 질문 유형과 평가용 데이터 구조 설계
-- 질문별 행정 서비스와 공식 근거 연결
-
-#### Week 2 — 데이터 및 텍스트 검색 기반 구축
-
-- 행정 서비스 안내와 관련 법령 원문 수집
-- BM25, Dense, Hybrid 검색 파이프라인 구현
-- 검색 방식별 성능 비교 및 실패 사례 분석
-
-#### Week 3 — 지식 그래프 및 관계 검색 구축
-
-- 행정 서비스, 필요 서류, 처리기관, 법령, 조문의 관계 구조화
-- 그래프의 노드와 관계를 공식 원문 근거에 연결
-- Graph Retriever 구현 및 텍스트 검색과 비교
-
-#### Week 4 — Hybrid+Graph 확장 및 개선 검증
-
-- 토큰화·법령 참조·누락 근거 연결 보완
-- Hybrid 기반 그래프 확장 검색 구현
-- 개선 가설 3개 실험 및 성능 비교
-  
-<br>
-
-### 저장소 구조
-
-```text
-data/       행정 서비스·질문·원문 및 검색용 그래프 데이터
-docs/       그래프 설계·검색 방식 및 결과 분석 문서
-results/    질문별 검색 결과와 검색 방식별 평가 결과
-scripts/    데이터 복원·그래프 구축·검색 및 검증 코드
-tests/      검색·그래프 구축·실험 설정 등의 자동화 테스트
-week4/      Week4 성능·실패 분석 보고서 및 분석 재현 코드
-```
-
-<br>
-
-### 실행
-
-Python 3.12와 NetworkX 3.4.2가 필요합니다.
-
-```sh
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python scripts/submission_cli.py restore
-.venv/bin/python scripts/submission_cli.py search '등본을 대신 발급받으려면 뭘 가져가야 하나요?' --hops 2
-.venv/bin/python scripts/submission_cli.py verify
-```
-
-Windows PowerShell에서는 가상환경의 Python 경로를 `.venv/Scripts/python.exe`로 바꾸면 됩니다.
-
-#### 전체 검색 실험
-
-```powershell
-$env:CIVIC_EMBEDDING_URL = "회사에서 전달받은 임베딩 API URL"
-$env:CIVIC_EMBEDDING_MODEL = "Qwen3-VL-Embedding-8B"
-
-.\.venv\Scripts\python.exe scripts\run_models.py
-```
-
-```powershell
-# <실행시각>은 새 run_models.py 실행 결과 폴더로 바꿉니다.
-$run = "results\week4_run\<실행시각>"
-.\.venv\Scripts\python.exe scripts\run_week4.py --hybrid-results "$run\hybrid_candidates.jsonl" --hybrid-run "$run\hybrid_candidates.run.json" --output-dir "$run\week4"
-```
+Python 3.12 환경에서 의존성을 설치한 뒤 [실행 안내](week7/README.md)의 명령을 실행한다. 저장된 Hybrid 입력 이후의 Graph 탐색·수식·평가는 네트워크와 BGE 없이 재현된다. 새 질문의 Hybrid 후보 생성과 원문 재수집은 현재 지원 범위가 아니다.

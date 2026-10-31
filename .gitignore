@@ -1,17 +1,40 @@
+# Local environments, models, credentials and disposable caches.
 .venv/
+.venv-reranker/
+.cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .env
 .env.*
-**/__pycache__/
 **/*.pyc
 data/processed/civic.sqlite*
-data/processed/query_embeddings.*.jsonl
-results/week4_run/verification-*/
-data/graphability-audit/
-data/raw/
-**/.restore-*
-**/.DS_Store
-**/.DS-Store
-.pytest_cache/
-# Distributed as lossless gzip; restored by submission_cli.py verify.
-/results/week4_run/20261027_052016/week4/predictions/h1_lexical_uniform.jsonl
-/results/week4_run/20261027_091116/week4/predictions/h1_lexical_uniform.jsonl
+!.env.example
+.vscode/
+.DS_Store
+.DS-Store
+._*
+
+# Retired work and local recovery notes are not current Git inputs.
+/Archive/
+/work/
+/week6/
+/week4/
+/results/
+/submission/
+/share/
+/week7/local/
+/week7/exports/
+
+# Only compressed current inputs are shared; generated DB and results stay local.
+/data/processed/civic.sqlite*
+/data/processed/query_embeddings.*.jsonl
+/data/graphability-audit/
+/data/raw/
+/data/corpus-sqlite.zip.*
+/week7/inputs/*.jsonl
+/week7/results/
+/week7/query_embeddings*.jsonl
+.restore-*

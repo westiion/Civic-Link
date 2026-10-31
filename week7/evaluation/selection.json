@@ -1,0 +1,85 @@
+{
+  "selected": "score_text_priority_overlap",
+  "config": {
+    "weights": [
+      0.3,
+      0.5,
+      0.2
+    ],
+    "penalty": 0.15
+  },
+  "development": {
+    "h3_feature": {
+      "n": 361,
+      "complete": 298,
+      "complete_at_10": 0.8254847645429363,
+      "recall_at_10": 0.8637119113573407,
+      "mrr_at_100": 0.6600051728765519,
+      "pool_complete": 355
+    },
+    "rrf_only": {
+      "n": 361,
+      "complete": 275,
+      "complete_at_10": 0.7617728531855956,
+      "recall_at_10": 0.805078485687904,
+      "mrr_at_100": 0.612154525419095,
+      "pool_complete": 355
+    },
+    "uniform_graph_rrf": {
+      "n": 361,
+      "complete": 282,
+      "complete_at_10": 0.7811634349030471,
+      "recall_at_10": 0.8207756232686981,
+      "mrr_at_100": 0.619117075962104,
+      "pool_complete": 355
+    },
+    "h3_overlap": {
+      "n": 361,
+      "complete": 298,
+      "complete_at_10": 0.8254847645429363,
+      "recall_at_10": 0.8637119113573407,
+      "mrr_at_100": 0.660418486863273,
+      "pool_complete": 355
+    },
+    "score_balanced": {
+      "n": 361,
+      "complete": 298,
+      "complete_at_10": 0.8254847645429363,
+      "recall_at_10": 0.8710987996306555,
+      "mrr_at_100": 0.6650656623601564,
+      "pool_complete": 355
+    },
+    "score_balanced_overlap": {
+      "n": 361,
+      "complete": 301,
+      "complete_at_10": 0.8337950138504155,
+      "recall_at_10": 0.8780240073868882,
+      "mrr_at_100": 0.6658085482830978,
+      "pool_complete": 355
+    },
+    "score_text_priority_overlap": {
+      "n": 361,
+      "complete": 308,
+      "complete_at_10": 0.853185595567867,
+      "recall_at_10": 0.8987996306555862,
+      "mrr_at_100": 0.6783973975681944,
+      "pool_complete": 355
+    },
+    "score_hybrid_priority_overlap": {
+      "n": 361,
+      "complete": 295,
+      "complete_at_10": 0.817174515235457,
+      "recall_at_10": 0.8627885503231763,
+      "mrr_at_100": 0.669822092595274,
+      "pool_complete": 355
+    },
+    "no_graph_control": {
+      "n": 361,
+      "complete": 298,
+      "complete_at_10": 0.8254847645429363,
+      "recall_at_10": 0.8743305632502308,
+      "mrr_at_100": 0.6884270310369155,
+      "pool_complete": 355
+    }
+  }
+}

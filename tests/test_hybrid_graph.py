@@ -1,4 +1,6 @@
 import sys
+import gzip
+import json
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -89,6 +91,39 @@ class ExtensionTests(unittest.TestCase):
         result = HybridGraph(fixture(), Config(max_nodes=1)).search('증명', ranking('c1'))
         self.assertEqual(result['diagnostics']['visited_nodes'], 1)
         self.assertIn('max_nodes', result['diagnostics']['truncation_reasons'])
+
+    def test_coverage_mode_matches_cached_application_without_neural_models(self):
+        from graph_score_revision import apply
+        r=fixture()
+        for i, chunk in enumerate(r.chunks.values()):
+            chunk.update(start_char=i*100,end_char=i*100+50)
+        row=ranking('c0','c1')
+        cached=HybridGraph(r,Config(rerank='feature')).search('증명',row)
+        expected=apply(cached,r.chunks)
+        actual=HybridGraph(r,Config(rerank='coverage')).search('증명',row)
+        self.assertEqual(actual['hits'],expected['hits'])
+        self.assertEqual(actual['candidates'],expected['candidates'])
+
+
+def test_frozen_gzip_input_preserves_content_provenance(tmp_path):
+    from hybrid_graph import load_inputs
+    from civic_data import digest
+    import pytest
+    queries=tmp_path/'queries.jsonl'
+    queries.write_text(json.dumps({'query_id':'q','question':'증명'})+'\n')
+    plain=tmp_path/'hybrid.jsonl'
+    plain.write_text(json.dumps(ranking('c0','c1'))+'\n')
+    compressed=tmp_path/'hybrid.jsonl.gz'
+    compressed.write_bytes(gzip.compress(plain.read_bytes()))
+    metadata=tmp_path/'hybrid.run.json'
+    metadata.write_text(json.dumps(dict(method='hybrid',corpus_hash='corpus',
+        queries_sha256=digest(queries.read_bytes()),predictions_sha256=digest(plain.read_bytes()),
+        top_k=100,bm25={'tokenizer':'kiwi-content+surface-v1'})))
+    graph=SimpleNamespace(graph={'corpus_hash':'corpus'})
+    assert load_inputs(queries,plain,metadata,graph,Config())==load_inputs(queries,compressed,metadata,graph,Config())
+    compressed.write_bytes(gzip.compress(b'changed input'))
+    with pytest.raises(ValueError,match='input fingerprint mismatch'):
+        load_inputs(queries,compressed,metadata,graph,Config())
 
 
 if __name__ == '__main__':
