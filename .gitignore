@@ -20,19 +20,23 @@ __pycache__/
 /work/
 /week6/
 /week4/
-/results/
+/outputs/
 /submission/
 /share/
 /week7/local/
 /week7/exports/
 
 # Only compressed current inputs are shared; generated DB and results stay local.
-/data/processed/civic.sqlite*
-/data/processed/query_embeddings.*.jsonl
+/data/corpus/civic.sqlite*
+/data/retrieval/query_embeddings.*.jsonl
 /data/graphability-audit/
 /data/raw/
 /data/corpus-sqlite.zip.*
 /week7/inputs/*.jsonl
-/week7/results/
 /week7/query_embeddings*.jsonl
 .restore-*
+
+# Reorganized local data, run outputs and Python packaging artifacts.
+/src/*.egg-info/
+/build/
+/dist/

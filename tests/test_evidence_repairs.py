@@ -6,9 +6,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'scripts'))
 
-from graph_construct import (  # noqa: E402
+from civic_link.graph.build import (  # noqa: E402
     SCOPED_NEGATIVE_STATEMENTS,
     SCOPED_SERVICE_ALIASES,
     build_graph,
@@ -17,7 +16,7 @@ from graph_construct import (  # noqa: E402
     parse_article_sequence,
     scoped_negative_span,
 )
-from graph_retrieval import GraphRetriever  # noqa: E402
+from civic_link.graph.retriever import GraphRetriever  # noqa: E402
 
 
 class ScopedRuleTests(unittest.TestCase):
@@ -71,12 +70,12 @@ class RebuiltGraphTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.graph, cls.evidence, _ = build_graph(
-            ROOT / 'data/processed/civic.sqlite', ROOT / 'data/services.jsonl'
+            ROOT / 'data/corpus/civic.sqlite', ROOT / 'data/services.jsonl'
         )
 
     def test_saved_artifacts_match_the_rebuilt_graph(self):
-        stored_graph = json.loads((ROOT / 'data/processed/graph.json').read_text(encoding='utf-8'))
-        stored_evidence = json.loads((ROOT / 'data/processed/graph.evidence.json').read_text(encoding='utf-8'))
+        stored_graph = json.loads((ROOT / 'data/graph/graph.json').read_text(encoding='utf-8'))
+        stored_evidence = json.loads((ROOT / 'data/graph/graph.evidence.json').read_text(encoding='utf-8'))
         self.assertEqual(len(self.graph), len(stored_graph['nodes']))
         self.assertEqual(self.graph.number_of_edges(), len(stored_graph['edges']))
         self.assertEqual(self.evidence, stored_evidence)
@@ -123,7 +122,7 @@ class RebuiltGraphTests(unittest.TestCase):
 
     def test_existing_graph_retriever_collects_seed_evidence_at_zero_hops(self):
         retriever = GraphRetriever(
-            self.graph, ROOT / 'data/processed/civic.sqlite', self.evidence
+            self.graph, ROOT / 'data/corpus/civic.sqlite', self.evidence
         )
         result = retriever.search('장애인증명서 국문 증명 구비서류', max_hops=0)
         target = 'DOC-30335fdd17932d9272fb-C0003'

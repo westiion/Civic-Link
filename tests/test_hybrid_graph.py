@@ -5,10 +5,9 @@ import unittest
 from pathlib import Path
 from types import SimpleNamespace
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import networkx as nx
-from hybrid_graph import Config, HybridGraph, LEGAL_RELATIONS
-from tokenization import token_set
+from civic_link.retrieval.hybrid_graph import Config, HybridGraph, LEGAL_RELATIONS
+from civic_link.tokenization import token_set
 
 
 def fixture():
@@ -93,7 +92,7 @@ class ExtensionTests(unittest.TestCase):
         self.assertIn('max_nodes', result['diagnostics']['truncation_reasons'])
 
     def test_coverage_mode_matches_cached_application_without_neural_models(self):
-        from graph_score_revision import apply
+        from civic_link.reranking.coverage import apply
         r=fixture()
         for i, chunk in enumerate(r.chunks.values()):
             chunk.update(start_char=i*100,end_char=i*100+50)
@@ -106,8 +105,8 @@ class ExtensionTests(unittest.TestCase):
 
 
 def test_frozen_gzip_input_preserves_content_provenance(tmp_path):
-    from hybrid_graph import load_inputs
-    from civic_data import digest
+    from civic_link.retrieval.hybrid_graph import load_inputs
+    from civic_link.common import digest
     import pytest
     queries=tmp_path/'queries.jsonl'
     queries.write_text(json.dumps({'query_id':'q','question':'증명'})+'\n')

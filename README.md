@@ -35,18 +35,33 @@ Civic-Link는 **수정구청의 무인민원발급 서비스에 적용하기 위
 ```text
 data/
   services.jsonl
-  processed/
-scripts/
-tests/
-week7/
-  assets/
-  inputs/
-  data/benchmark/
-  reviews/
+  corpus/
+  graph/
+  retrieval/
+  benchmark/
+    diagnostic480/
+    exports/
+    reviews/
+src/civic_link/
+  common.py
+  tokenization.py
+  graph/
+  retrieval/
+  reranking/
   evaluation/
-  docs/assets/
-  README.md
-  REPORT.md
+scripts/
+experiments/
+  score_comparison/
+    report.md
+    results/
+    figures/
+outputs/
+docs/
+  usage.md
+tests/
+pyproject.toml
+manifest.json
+file_inventory.txt
 ```
 
 ## 실행
@@ -54,14 +69,14 @@ week7/
 ```sh
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements-dev.txt
-.venv/bin/python scripts/restore_week7.py restore
+.venv/bin/python scripts/restore_data.py restore
 
-.venv/bin/python scripts/hybrid_graph.py \
-  --queries week7/data/benchmark/queries.jsonl \
-  --hybrid-results week7/assets/hybrid_candidates.jsonl.gz \
-  --hybrid-run week7/inputs/hybrid_candidates.run.json \
+.venv/bin/python scripts/run_retrieval.py \
+  --queries data/benchmark/queries.jsonl \
+  --hybrid-results data/retrieval/hybrid_candidates.jsonl.gz \
+  --hybrid-run data/retrieval/hybrid_candidates.run.json \
   --rerank coverage \
-  --output week7/results/team-run/predictions.jsonl
+  --output outputs/team-run/predictions.jsonl
 ```
 
 Windows에서는 `.venv/bin/python`을 `.venv/Scripts/python.exe`로 바꿉니다.

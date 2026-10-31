@@ -1,8 +1,7 @@
 import sys
 from pathlib import Path
 import pytest
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from overlap_rerank import rerank_overlap, span_overlap
+from civic_link.reranking.overlap import rerank_overlap, span_overlap
 
 
 def fixture():
