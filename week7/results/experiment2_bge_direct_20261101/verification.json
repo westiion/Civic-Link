@@ -1,0 +1,55 @@
+{
+  "verified_at": "2026-11-01T12:22:56.555518+00:00",
+  "status": "passed",
+  "query_count": 608,
+  "answerable_count": 488,
+  "candidate_pairs": 68430,
+  "candidate_min": 100,
+  "candidate_max": 184,
+  "exact_candidate_union": true,
+  "all_original_cache_fingerprints_match": true,
+  "finite_unique_raw_scores": true,
+  "exact_tie_key": "(-bge_raw_score, chunk_id)",
+  "input_order_independence": true,
+  "csv_raw_score_roundtrip": true,
+  "csv_reaggregation_exact": true,
+  "independent_metric_checks": 2928,
+  "corpus_setup": "restored missing data/corpus/civic.sqlite from checksum-verified archive; existing experiment corpus preserved",
+  "notion": {
+    "url": "https://app.notion.com/p/40a6d1078cb38053858edef849e30799",
+    "write_method": "logged-in native Notion UI after connector returned object_not_found",
+    "refreshed_and_read_back": true,
+    "comparison_row_verified": true,
+    "all_six_metrics_verified": true,
+    "sort_rule_and_reaggregation_path_verified": true,
+    "preserved_case_page_links": 13
+  },
+  "model_calls": 0,
+  "network_inference_calls": 0,
+  "commit": false,
+  "push": false,
+  "historical_initial_validation": {
+    "related_tests": {
+      "command": ".venv/bin/python -m pytest -q tests/test_week7_bge_direct.py tests/test_evaluation_runner.py tests/test_coverage.py",
+      "passed": 32
+    },
+    "repository_tests": {
+      "command": ".venv/bin/python -m pytest -q --ignore=tests/test_week7_behavior_runner.py --ignore=tests/test_week7_experiment2.py",
+      "passed": 84
+    },
+    "full_suite_limitation": {
+      "status": "preexisting_collection_errors",
+      "reason": "legacy scripts import removed civic_data module",
+      "modules": [
+        "tests/test_week7_behavior_runner.py",
+        "tests/test_week7_experiment2.py"
+      ]
+    },
+    "original_root_manifest_limitation": "preexisting REPORT.md fingerprint mismatch; original root manifest preserved"
+  },
+  "current_full_suite_tests": 124,
+  "clean_shared_copy_tests": 124,
+  "legacy_imports_and_paths": "migrated to current civic_link package and data layout",
+  "root_manifest": "updated and verified against the complete shared inventory",
+  "sharing_verification": "week7/evaluation/experiment2/sharing_verification.json"
+}

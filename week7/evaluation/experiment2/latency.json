@@ -1,0 +1,9 @@
+{
+  "mean_seconds": 1.6001011389292359,
+  "median_seconds": 1.5808248539997294,
+  "p95_nearest_lower_seconds": 1.988857457999984,
+  "max_seconds": 2.6257470000018657,
+  "truncated_query_count": 608,
+  "query_count": 608,
+  "scope": "per-query tokenization, padding, inference, transfer and ranking; excludes model load and checkpoint file write"
+}

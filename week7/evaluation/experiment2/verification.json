@@ -1,0 +1,66 @@
+{
+  "tests_passed": 104,
+  "clean_shared_file_copy": {
+    "shared_files": 106,
+    "restore": "passed",
+    "coverage_queries": 608,
+    "complete_at_10": 411,
+    "answer_denominator": 488,
+    "evaluation": "passed",
+    "tests_passed": 104,
+    "manifest_verify": "passed",
+    "dependency_scope": "same installed Python packages; project files copied solely from explicit Git file inventory",
+    "network_calls": 0,
+    "model_loads": 0
+  },
+  "independent_metrics": {
+    "conditions": 14,
+    "subsets": 5,
+    "checks": 210,
+    "status": "passed"
+  },
+  "case_coverage": {
+    "questions": 608,
+    "unique_ids": 608,
+    "missing_ids": 0,
+    "duplicate_ids": 0,
+    "pages": 12,
+    "priority_counts": [
+      60,
+      60,
+      100,
+      15,
+      24,
+      349
+    ],
+    "question_toggles": 608
+  },
+  "scope": "retrieval and action metrics verified; post-hoc Qwen model diagnostics executed with field-missingness and review warnings; not independent answer accuracy",
+  "behavior": {
+    "unique_requests": 1826,
+    "condition_questions": 2432,
+    "independent_metric_checks": 64,
+    "input_question_matches": 608,
+    "ordered_input_matches": 2432,
+    "raw_action_parse_errors": 1,
+    "citation_syntax_invalid_unique": 2,
+    "status": "completed_with_one_malformed_output",
+    "posthoc_content_judgments": "completed_same_model_diagnostic"
+  },
+  "local_document_links_verified": 30,
+  "content_judgment": {
+    "status": "passed",
+    "unique_judgments": 1825,
+    "metric_checks": 128,
+    "original_generation_fields_unchanged": 9720,
+    "original_generation_file_unchanged": true,
+    "reference_questions_unchanged": true,
+    "additional_model_calls": 0,
+    "structurally_invalid_unique": 0,
+    "missing_clarification_verdict_unique": 113,
+    "nonverbatim_unique": 95,
+    "assistant_crosschecked_condition_entries": 24,
+    "request_retries": 0,
+    "all_remote_requests_finished": true
+  }
+}

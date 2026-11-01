@@ -1,0 +1,133 @@
+{
+  "condition": "Hybrid+Graph → BGE 직접 정렬",
+  "inputs": [
+    {
+      "path": "data/benchmark/questions.jsonl",
+      "bytes": 3413987,
+      "sha256": "a10c1212dc937116f1f3d255c031e3c6b45452fc546d8f70cda3eca01379c3f3"
+    },
+    {
+      "path": "data/benchmark/queries.jsonl",
+      "bytes": 135996,
+      "sha256": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0"
+    },
+    {
+      "path": "data/corpus/civic.sqlite",
+      "bytes": 14925824,
+      "sha256": "f0049d9199e86bdad57bd09a4c6d07befcdc874649db308f898344e45ffbf11e"
+    },
+    {
+      "path": "scripts/evaluate_week7_bge_direct.py",
+      "bytes": 15720,
+      "sha256": "3f99c92d29529209c25930deb5109b835dea6b629cf07774330432ffbbe9cc40"
+    },
+    {
+      "path": "src/civic_link/evaluation/runner.py",
+      "bytes": 13861,
+      "sha256": "aca7c91108d82f1bd64785ba9af3759b2530bf8a578df572c565102f6eefc8d3"
+    },
+    {
+      "path": "src/civic_link/evaluation/metrics.py",
+      "bytes": 4916,
+      "sha256": "db04fe1fc1cb78afa6d7496d253d9b73e5f1e5a855bbc2aaa91e0aa9c7156c2c"
+    },
+    {
+      "path": "src/civic_link/reranking/policies.py",
+      "bytes": 4997,
+      "sha256": "a63f477907eac92b7f37004b113508585ac00b1ad0be4804cbabb1d3390d830c"
+    },
+    {
+      "path": "data/retrieval/hybrid_candidates.jsonl.gz",
+      "bytes": 10599029,
+      "sha256": "914a83139b09b18b3cfa4774412691be93de6c33f0f5b8fdf33e488abe77be3e"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/protocol.json",
+      "bytes": 26913,
+      "sha256": "48aaba97a6031e2c5b10e4712b5fd18f7f0fefce6c0d5c2baf7a67140fd6c60a"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/h3.jsonl.gz",
+      "bytes": 11329626,
+      "sha256": "1c547ac0811b1d40c03ee1a9c5b843e94e082eaeb367e06a0545a300ec7d8bee"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/h3.run.json",
+      "bytes": 32239,
+      "sha256": "7ac37988fb1fe2e6a7bacc172b27967d2308fc4760f629d3a9525647fd9bc0bd"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/coverage.jsonl.gz",
+      "bytes": 6498977,
+      "sha256": "5268865d3414405b0e19cb3a92868849a8665ca5c4cfca3a09679750ff23cc6e"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/coverage.run.json",
+      "bytes": 293,
+      "sha256": "7defb87ba9fe0759dc4af22829f2c214ea9274bd31e07d808181b82e3f4b1aed"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/bge.jsonl.gz",
+      "bytes": 866936,
+      "sha256": "a0bfc45a051dd24168d3baf9302ca20f457605830ce05b8ded042bd2bb500d79"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/bge.run.json",
+      "bytes": 1661,
+      "sha256": "fff3877a5bf58a72a1fd4d74c075ee5dabc91890d25bae573c1d3861b2649dde"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/executed_runner.py",
+      "bytes": 15734,
+      "sha256": "0201daa214d239507b24fd3bd0898a273be32dd7fd3c1446bd5e191df7e6427b"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "week7/results/experiment2_bge_direct_20261101/rankings.csv",
+      "bytes": 3763283,
+      "sha256": "94a3e35fc29b054e2c1a7f71845411c35fff0910e01687d59449d4e5ecd14c6e"
+    },
+    {
+      "path": "week7/results/experiment2_bge_direct_20261101/metrics.json",
+      "bytes": 65567,
+      "sha256": "a4420f84624ece642e8419e025bd00d9385f015343f5036da37a7c08aba38247"
+    },
+    {
+      "path": "week7/results/experiment2_bge_direct_20261101/per_question.jsonl",
+      "bytes": 209733,
+      "sha256": "64a5e285484cfc5f28dbeec77b9fab1616ced68817768dc99e3682a421d61e33"
+    },
+    {
+      "path": "week7/results/experiment2_bge_direct_20261101/README.md",
+      "bytes": 4527,
+      "sha256": "d4acb329c99cb7ef1852233eca5c62111967b92c0a1c8ffdf5e2c60f65c41460"
+    },
+    {
+      "path": "week7/results/experiment2_bge_direct_20261101/verification.json",
+      "bytes": 2246,
+      "sha256": "12f6269ab128b31d78c7e82009717394fab1da58668eafc452fa1a6e4ed7bfd1"
+    }
+  ],
+  "network_calls": 0,
+  "model_loads": 0,
+  "raw_score_csv_roundtrip_verified": true,
+  "path_base": "repository root",
+  "supporting_files": [
+    {
+      "path": "tests/test_week7_bge_direct.py",
+      "bytes": 3393,
+      "sha256": "3d95cdc1b5335aebf10d10a1cf545dc49583906d8129856f9ebda501457b9e51"
+    },
+    {
+      "path": "week7/EXPERIMENT2.md",
+      "bytes": 38133,
+      "sha256": "9435f1ca3353ddc8a67b919226f99b1bfe9d5a9e7a5f477bdf6831fa57cbd6ba"
+    },
+    {
+      "path": "week7/SHARING.md",
+      "bytes": 4475,
+      "sha256": "c957d75b5bac84245eba017720bddda81c34fe9ada35667365a239704e216ab7"
+    }
+  ]
+}

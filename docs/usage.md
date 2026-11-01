@@ -51,7 +51,7 @@ python3.12 -m venv .venv
 .venv/bin/python scripts/analyze_score_comparison.py --output-dir outputs/new-ablation
 ```
 
-저장된 Hybrid 후보 이후만 재현한다. 새 Hybrid 후보 생성, 과거 Week3/4 제출, 벤치마크 초안 생성, BGE 실행 환경은 현재 지원 범위에서 제거했다. 관련 구형 테스트·제출 manifest도 제거했고, 현재 수식·입력 검증·근거·행동·평가 테스트는 유지했다.
+저장된 Hybrid 후보 이후를 재현한다. 새 Hybrid 후보 생성, 과거 Week3/4 제출, 벤치마크 초안 생성은 현재 지원 범위에서 제외한다. 실험 2의 BGE 원점수·Qwen 원응답·원채점과 최종 사례는 손실 없는 캐시로 별도 보존하며 [공유본·재집계 안내](../week7/SHARING.md)의 명령으로 재집계한다. 재집계에는 BGE 실행 환경이나 원격 서버가 필요하지 않다. 선택적인 새 BGE 실행 의존성은 `requirements-bge.txt`에 분리되어 있다.
 
 ## Git 관리
 

@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "completed": 1825,
+  "expected": 1825,
+  "generation_invalid_conditions": 2,
+  "invalid_judgments": 113,
+  "nonverbatim_excerpts": 92,
+  "current_invocation_wall_seconds": 2230.4728966250004,
+  "sum_request_seconds": 17749.057834086005
+}

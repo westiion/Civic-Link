@@ -17,10 +17,34 @@ def digest(value):
     return hashlib.sha256(value).hexdigest()
 
 def now(): return datetime.now(timezone.utc).isoformat()
+def input_path(path):
+    """Resolve a logical input name against a lossless archived gzip, if needed."""
+    path = Path(path)
+    if not path.exists() and path.suffix != '.gz':
+        compressed = path.with_name(path.name + '.gz')
+        if compressed.is_file():
+            return compressed
+    return path
+
+
+def input_exists(path):
+    return input_path(path).is_file()
+
+
 def input_bytes(path):
     import gzip
-    data=Path(path).read_bytes()
-    return gzip.decompress(data) if Path(path).suffix=='.gz' else data
+    path = input_path(path)
+    data=path.read_bytes()
+    return gzip.decompress(data) if path.suffix=='.gz' else data
+
+
+def read_json(path):
+    return json.loads(input_bytes(path).decode('utf-8'))
+
+
+def portable_path(path):
+    path = Path(path).resolve()
+    return path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else path.name
 
 def read_jsonl(path): return [json.loads(x) for x in input_bytes(path).decode('utf-8').splitlines() if x.strip()]
 def write_json(path,value):

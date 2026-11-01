@@ -1,0 +1,354 @@
+{
+  "stages": {
+    "h3": {
+      "complete": 391,
+      "ranking_only": 90,
+      "mixed": 2,
+      "candidate_missing": 5
+    },
+    "h3_bge": {
+      "complete": 437,
+      "ranking_only": 44,
+      "mixed": 2,
+      "candidate_missing": 5
+    },
+    "coverage": {
+      "complete": 411,
+      "ranking_only": 70,
+      "candidate_missing": 6,
+      "mixed": 1
+    },
+    "bge": {
+      "complete": 437,
+      "ranking_only": 44,
+      "mixed": 2,
+      "candidate_missing": 5
+    }
+  },
+  "truncation_observations": [
+    {
+      "question_id": "SJ-N-020",
+      "evidence_number": 2,
+      "rank": 24,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-N-022",
+      "evidence_number": 1,
+      "rank": 11,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-N-028",
+      "evidence_number": 1,
+      "rank": 14,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-N-043",
+      "evidence_number": 1,
+      "rank": 15,
+      "state": "quote_not_wholly_in_chunk"
+    },
+    {
+      "question_id": "SJ-N-044",
+      "evidence_number": 1,
+      "rank": 29,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-N-050",
+      "evidence_number": 2,
+      "rank": 74,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-N-050",
+      "evidence_number": 3,
+      "rank": 58,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-N-051",
+      "evidence_number": 1,
+      "rank": 12,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-N-057",
+      "evidence_number": 1,
+      "rank": 22,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-N-060",
+      "evidence_number": 1,
+      "rank": 20,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-N-062",
+      "evidence_number": 1,
+      "rank": 25,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-A-003",
+      "evidence_number": 1,
+      "rank": 63,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "SJ-A-003",
+      "evidence_number": 3,
+      "rank": 24,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "SJ-A-058",
+      "evidence_number": 2,
+      "rank": 12,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "SJ-B-012",
+      "evidence_number": 1,
+      "rank": 14,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "SJ-B-014",
+      "evidence_number": 1,
+      "rank": 11,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "SJ-B-019",
+      "evidence_number": 2,
+      "rank": 35,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "SJ-B-034",
+      "evidence_number": 1,
+      "rank": 35,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "SJ-B-038",
+      "evidence_number": 1,
+      "rank": 12,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "W7-LA-024",
+      "evidence_number": 1,
+      "rank": 18,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "W7-LA-047",
+      "evidence_number": 2,
+      "rank": 24,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-MS-024",
+      "evidence_number": 2,
+      "rank": 23,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-MS-026",
+      "evidence_number": 2,
+      "rank": 19,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-MS-033",
+      "evidence_number": 1,
+      "rank": 42,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-MS-033",
+      "evidence_number": 3,
+      "rank": 36,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-MS-037",
+      "evidence_number": 1,
+      "rank": 12,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-MS-039",
+      "evidence_number": 2,
+      "rank": 30,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-MS-045",
+      "evidence_number": 1,
+      "rank": 12,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-PR-012",
+      "evidence_number": 1,
+      "rank": 21,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-PR-013",
+      "evidence_number": 2,
+      "rank": 13,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-PR-020",
+      "evidence_number": 1,
+      "rank": 18,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-PR-021",
+      "evidence_number": 1,
+      "rank": 13,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-PR-022",
+      "evidence_number": 1,
+      "rank": 32,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7-PR-024",
+      "evidence_number": 1,
+      "rank": 11,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-LA010",
+      "evidence_number": 1,
+      "rank": 11,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-LA010",
+      "evidence_number": 2,
+      "rank": 11,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "W7V2-LA014",
+      "evidence_number": 1,
+      "rank": 11,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-LA016",
+      "evidence_number": 1,
+      "rank": 18,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "W7V2-LA046",
+      "evidence_number": 1,
+      "rank": 31,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-LA046",
+      "evidence_number": 2,
+      "rank": 31,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-MS007",
+      "evidence_number": 2,
+      "rank": 21,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "W7V2-MS014",
+      "evidence_number": 2,
+      "rank": 15,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-MS014",
+      "evidence_number": 3,
+      "rank": 16,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-MS033",
+      "evidence_number": 3,
+      "rank": 25,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-MS036",
+      "evidence_number": 2,
+      "rank": 13,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-MS037",
+      "evidence_number": 1,
+      "rank": 23,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "W7V2-MS041",
+      "evidence_number": 3,
+      "rank": 11,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-MS042",
+      "evidence_number": 1,
+      "rank": 55,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-MS043",
+      "evidence_number": 2,
+      "rank": 11,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-MS044",
+      "evidence_number": 1,
+      "rank": 65,
+      "state": "quote_cut"
+    },
+    {
+      "question_id": "W7V2-MS044",
+      "evidence_number": 2,
+      "rank": 12,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-PR017",
+      "evidence_number": 1,
+      "rank": 12,
+      "state": "quote_visible"
+    },
+    {
+      "question_id": "W7V2-PR054",
+      "evidence_number": 1,
+      "rank": 20,
+      "state": "quote_visible"
+    }
+  ],
+  "truncation_summary": {
+    "quote_cut": 18,
+    "quote_not_wholly_in_chunk": 1,
+    "quote_visible": 34
+  },
+  "scope": "best ranked allowed chunk for each missed BGE evidence group; no causal attribution"
+}

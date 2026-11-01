@@ -74,6 +74,8 @@ Civic-Link/
 
 ## 실행
 
+[실험 2 최종 결과](week7/EXPERIMENT2.md)와 [공유본·BGE/Qwen 재집계 안내](week7/SHARING.md)를 함께 제공합니다. 저장된 원점수·원응답의 재집계에는 모델이나 서버가 필요하지 않습니다.
+
 ```sh
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements-dev.txt

@@ -1,0 +1,47 @@
+{
+  "status": "completed",
+  "identity": {
+    "model": "BAAI/bge-reranker-v2-m3",
+    "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+    "queries_sha256": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0",
+    "coverage_sha256": "2c6438857e540d8155abb0f8782767312e2de9c0454a6d7d76af6f363ecd0f23",
+    "source_sha256": "0201daa214d239507b24fd3bd0898a273be32dd7fd3c1446bd5e191df7e6427b",
+    "device": "mps",
+    "dtype": "float16",
+    "batch_size": 32,
+    "max_length": 512,
+    "truncation": "only_second",
+    "attention_implementation": "sdpa",
+    "passage": "title + newline + text",
+    "limit": null
+  },
+  "queries_sha256": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0",
+  "query_count": 608,
+  "packages": {
+    "torch": "2.9.0",
+    "transformers": "4.57.1",
+    "tokenizers": "0.22.2",
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0"
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "api_inference_calls": 0,
+  "download_included_in_timing": false,
+  "model_load_segments": [
+    1.632801333000316
+  ],
+  "attention_implementation_actual": "sdpa",
+  "parameter_count": 567755777,
+  "mps_current_bytes": 1135738112,
+  "mps_driver_bytes": 7529660416,
+  "process_peak_rss_bytes": 4777312256,
+  "predictions_sha256": "c47bc3aad75d98364a455f0628c048c52e17af149d4a872e1c337353aed71e76",
+  "inference_query_seconds": 972.8614924689755,
+  "forward_and_transfer_seconds": 951.7229354238953,
+  "tokenization_seconds": 14.843513208999866,
+  "pairs": 68430,
+  "truncated_pairs": 9958,
+  "model_load_included_in_query_seconds": false,
+  "whole_service_response_time": false
+}

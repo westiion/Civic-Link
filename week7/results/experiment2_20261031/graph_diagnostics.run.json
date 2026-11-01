@@ -1,0 +1,53 @@
+{
+  "identity": {
+    "queries.jsonl": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0",
+    "graph.json": "3ede7e2d0e4579a386c979304f0097bd9a9077e44e59337d6fa412b098f03e55",
+    "graph.evidence.json": "9a884f7dc76edb0b93a1b3601a5af716f106cd8a8463a5cd28ffb610d2593b42",
+    "graph_retrieval.py": "aca1a63079f90d85326df693f409f701c47f06c9a238887a62ee7cc4baaa29ff"
+  },
+  "setup_seconds": 12.398343124998064,
+  "status": "completed",
+  "config": {
+    "top_k": 100,
+    "seed_k": 3,
+    "seed_threshold": 0.18,
+    "max_nodes": 12000
+  },
+  "conditions": {
+    "graph_lexical_h0": {
+      "query_count": 608,
+      "query_seconds": 14.510746118037787,
+      "no_seeds": 53,
+      "traversal_truncated": 0,
+      "retained_candidates": 6688
+    },
+    "graph_lexical_h1": {
+      "query_count": 608,
+      "query_seconds": 14.758369648970984,
+      "no_seeds": 53,
+      "traversal_truncated": 0,
+      "retained_candidates": 12829
+    },
+    "graph_lexical_h2": {
+      "query_count": 608,
+      "query_seconds": 14.95514871301566,
+      "no_seeds": 53,
+      "traversal_truncated": 0,
+      "retained_candidates": 17580
+    },
+    "graph_lexical_h3": {
+      "query_count": 608,
+      "query_seconds": 14.79717256908043,
+      "no_seeds": 53,
+      "traversal_truncated": 0,
+      "retained_candidates": 20301
+    }
+  },
+  "predictions": {
+    "graph_lexical_h0.jsonl": "ba1b84e63a8aab430f2b8f12e332dbc489861e10276953f49d8793a2131acc74",
+    "graph_lexical_h1.jsonl": "29dd59b933ac0a46e06db879c5a2b8ab8bcfd06050106a8a8f6faf5d6f504f76",
+    "graph_lexical_h2.jsonl": "da497421a73e1bf64b37e0a98ab0fbc02d0b510008e6ee798d097a43a1afdc33",
+    "graph_lexical_h3.jsonl": "8a5740aac19a997711c0c374a78aa86795298bd1cac68ebab2e300c03847cc35"
+  },
+  "model_calls": 0
+}

@@ -17,14 +17,30 @@ from restore_data import sha
 def members(root):
     names = ['README.md', 'REPORT.md', 'requirements.txt', 'requirements-dev.txt', 'pyproject.toml',
         'pytest.ini', '.gitattributes', '.gitignore', 'file_inventory.txt', 'data/services.jsonl',
+        'requirements-bge.txt', 'requirements-bge-lock.txt', 'week7/EXPERIMENT2.md', 'week7/SHARING.md',
         'data/graph/graph.json', 'data/graph/graph.evidence.json',
         'data/corpus/corpus.sqlite.gz', 'data/retrieval/hybrid_candidates.jsonl.gz',
         'data/retrieval/hybrid_candidates.run.json', 'tests/fixtures/week7_pre_review.jsonl.gz']
     for directory in ('src', 'scripts', 'tests'):
         names += [p.relative_to(root).as_posix() for p in (root/directory).rglob('*.py')]
-    for directory in ('data/benchmark', 'experiments', 'docs'):
+    for directory in ('data/benchmark', 'experiments', 'docs',
+                      'week7/docs/experiment2_cases', 'week7/evaluation/experiment2',
+                      'week7/results/experiment2_bge_direct_20261101'):
         names += [p.relative_to(root).as_posix() for p in (root/directory).rglob('*')
-                  if p.is_file() and '__pycache__' not in p.parts]
+                  if p.is_file() and '__pycache__' not in p.parts and p.name != '.DS_Store']
+    source = 'week7/results/experiment2_20261031/'
+    names += [source + name for name in (
+        'h3.jsonl.gz', 'coverage.jsonl.gz', 'bge.jsonl.gz',
+        'graph_lexical_h0.jsonl.gz', 'graph_lexical_h1.jsonl.gz',
+        'graph_lexical_h2.jsonl.gz', 'graph_lexical_h3.jsonl.gz',
+        'diagnostic_metrics.json.gz', 'diagnostic_rankings.json.gz',
+        'h3.run.json', 'coverage.run.json', 'bge.run.json',
+        'graph_diagnostics.run.json', 'protocol.json', 'executed_runner.py',
+        'behavior_qwen/config.json', 'behavior_qwen/run.json',
+        'behavior_qwen/segment_workers4.json', 'behavior_qwen/input_mapping.json',
+        'behavior_qwen/responses.jsonl.gz', 'behavior_qwen/content_judge/config.json',
+        'behavior_qwen/content_judge/run.json', 'behavior_qwen/content_judge/mapping.json',
+        'behavior_qwen/content_judge/judgments.jsonl.gz')]
     return sorted(set(names))
 
 
@@ -62,13 +78,17 @@ def build(root=ROOT):
         data=gzip.decompress(path.read_bytes()) if path.suffix=='.gz' else path.read_bytes()
         if re.search(rb'/(?:Users|home)/[A-Za-z0-9_.-]+/',data) or re.search(rb'/private/var/folders/[A-Za-z0-9]',data):
             raise ValueError('local absolute path: '+name)
+        if re.search(rb'https?://(?:10\.\d+\.\d+\.\d+|192\.168\.\d+\.\d+|172\.(?:1[6-9]|2\d|3[01])\.\d+\.\d+)(?::\d+)?',data):
+            raise ValueError('private service endpoint: '+name)
         # The scanner's own regex literals are not keys; they do not match these patterns.
         if any(re.search(pattern,data) for pattern in patterns):raise ValueError('possible secret: '+name)
         if path.stat().st_size>25*1024*1024:raise ValueError('unexpected large shared file: '+name)
         files[name]=dict(bytes=path.stat().st_size,sha256=sha(path))
-    manifest=dict(format_version=1,scope='Week7 frozen Hybrid onward; no embeddings or BGE required',
+    manifest=dict(format_version=1,scope='Week7 retrieval, Experiment 2 frozen caches, Qwen raw outputs and BGE direct reaggregation; no model required for replay',
         files=files,assets=assets,questions=608,diagnostic_subset=480,
-        excluded=['Archive','work','.git','models','virtual environments','query embeddings','raw web payloads'],
+        excluded=['Archive','work','.git','models','virtual environments','query embeddings','raw web payloads',
+                  'data/processed', 'uncompressed experiment cache originals', 'smoke/pilot/partial runs',
+                  'editor notes', 'pre-final case snapshots', 'duplicate evaluation outputs', 'progress logs'],
         network_calls=0,model_loads=0)
     (root/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n', encoding='utf-8', newline='\n')
     return dict(files=len(names)+1, bytes=sum(item['bytes'] for item in files.values()), network_calls=0, model_loads=0)

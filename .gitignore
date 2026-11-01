@@ -28,6 +28,7 @@ __pycache__/
 
 # Only compressed current inputs are shared; generated DB and results stay local.
 /data/corpus/civic.sqlite*
+/data/processed/
 /data/retrieval/query_embeddings.*.jsonl
 /data/graphability-audit/
 /data/raw/
@@ -40,3 +41,30 @@ __pycache__/
 /src/*.egg-info/
 /build/
 /dist/
+
+# Experiment 2: local originals/checkpoints remain on disk. Share only the
+# lossless archives and final provenance needed to reaggregate the experiment.
+/week7/results/experiment2_20261031/**
+!/week7/results/experiment2_20261031/h3.jsonl.gz
+!/week7/results/experiment2_20261031/coverage.jsonl.gz
+!/week7/results/experiment2_20261031/bge.jsonl.gz
+!/week7/results/experiment2_20261031/graph_lexical_h[0-3].jsonl.gz
+!/week7/results/experiment2_20261031/diagnostic_metrics.json.gz
+!/week7/results/experiment2_20261031/diagnostic_rankings.json.gz
+!/week7/results/experiment2_20261031/h3.run.json
+!/week7/results/experiment2_20261031/coverage.run.json
+!/week7/results/experiment2_20261031/bge.run.json
+!/week7/results/experiment2_20261031/graph_diagnostics.run.json
+!/week7/results/experiment2_20261031/protocol.json
+!/week7/results/experiment2_20261031/executed_runner.py
+!/week7/results/experiment2_20261031/behavior_qwen/
+!/week7/results/experiment2_20261031/behavior_qwen/config.json
+!/week7/results/experiment2_20261031/behavior_qwen/run.json
+!/week7/results/experiment2_20261031/behavior_qwen/segment_workers4.json
+!/week7/results/experiment2_20261031/behavior_qwen/input_mapping.json
+!/week7/results/experiment2_20261031/behavior_qwen/responses.jsonl.gz
+!/week7/results/experiment2_20261031/behavior_qwen/content_judge/
+!/week7/results/experiment2_20261031/behavior_qwen/content_judge/config.json
+!/week7/results/experiment2_20261031/behavior_qwen/content_judge/run.json
+!/week7/results/experiment2_20261031/behavior_qwen/content_judge/mapping.json
+!/week7/results/experiment2_20261031/behavior_qwen/content_judge/judgments.jsonl.gz

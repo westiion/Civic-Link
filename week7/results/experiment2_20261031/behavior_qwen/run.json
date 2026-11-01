@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "unique_inputs": 1826,
+  "completed": 1826,
+  "conditions": 4,
+  "questions": 608,
+  "invalid_count": 3,
+  "sum_request_seconds": 15562.15326389697,
+  "current_invocation_wall_seconds": 1526.5216033750003
+}

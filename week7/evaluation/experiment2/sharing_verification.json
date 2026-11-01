@@ -1,0 +1,145 @@
+{
+  "status": "passed",
+  "verified_at": "2026-11-01T12:22:56.555518+00:00",
+  "git_policy": {
+    "stage": false,
+    "commit": false,
+    "push": false,
+    "original_files_deleted": 0,
+    "new_zip_or_recovery_copies": 0,
+    "excluded": "Original uncompressed caches, intermediate/pilot/partial/smoke/editor snapshots, logs and processed DB remain local and ignored"
+  },
+  "tests": {
+    "full_current": 124,
+    "clean_shared_copy": 124,
+    "original_before_direct_addition": 104,
+    "earlier_partial_run": 84,
+    "earlier_partial_exclusions": [
+      "tests/test_week7_experiment2.py",
+      "tests/test_week7_behavior_runner.py"
+    ],
+    "restored_legacy_cases": 37,
+    "new_bge_direct_cases": 17,
+    "new_archive_cases": 3,
+    "arithmetic": "67 existing core + 37 migrated experiment cases + 17 direct-order cases + 3 archive cases = 124"
+  },
+  "original_preservation": {
+    "all_protected_original_sha256_unchanged": true,
+    "protected_files": 16,
+    "original_query_candidate_pairs": 68430,
+    "raw_bge_values_binary_exact": true,
+    "qwen_unique_responses": 1826,
+    "qwen_unique_judgments": 1825,
+    "case_question_ids": 608
+  },
+  "reaggregation": {
+    "clean_copy_built_only_from_inventory": true,
+    "restored_corpus": true,
+    "bge_from_archived_cache": "exact rankings/metrics/per-question bytes match",
+    "bge_from_csv": "exact per-question results match",
+    "retrieval_conditions": 14,
+    "retrieval_subsets": 5,
+    "retrieval_all_subset_metrics_unchanged": true,
+    "qwen_summary_exact_semantic_match": true,
+    "manifest_verify": "passed",
+    "network_calls": 0,
+    "model_loads": 0,
+    "model_inference_calls": 0
+  },
+  "privacy": {
+    "shared_endpoint": "${QWEN_ENDPOINT}",
+    "private_service_addresses_found": 0,
+    "personal_absolute_paths_found": 0,
+    "credential_patterns_found": 0,
+    "scope": "All inventoried files including decompressed caches; major private-key/AWS/GitHub/OpenAI-token patterns, personal paths and private service URL patterns"
+  },
+  "archives": [
+    {
+      "path": "week7/results/experiment2_20261031/behavior_qwen/content_judge/judgments.jsonl.gz",
+      "original_bytes": 4439776,
+      "compressed_bytes": 551555,
+      "original_sha256": "e9e0f8410598fb5a9d7a20ddaeb54e2b6b77dfebfe4fd2527923122bbc628b5e",
+      "archive_sha256": "be0b8c8d30122098a78a89e527ee11b1b22040d721d619341293b15ee2754977"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/behavior_qwen/responses.jsonl.gz",
+      "original_bytes": 3818059,
+      "compressed_bytes": 494205,
+      "original_sha256": "a683926250cd313dc89cd1ddca6d9f2f09243dfd46b3758a338e549e4c09d683",
+      "archive_sha256": "b85ee9e7df981e77275ce0018053c673b672eeaabdd183cbba966ef06ee18b55"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/bge.jsonl.gz",
+      "original_bytes": 8374851,
+      "compressed_bytes": 866936,
+      "original_sha256": "c47bc3aad75d98364a455f0628c048c52e17af149d4a872e1c337353aed71e76",
+      "archive_sha256": "a0bfc45a051dd24168d3baf9302ca20f457605830ce05b8ded042bd2bb500d79"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/coverage.jsonl.gz",
+      "original_bytes": 39898562,
+      "compressed_bytes": 6498977,
+      "original_sha256": "2c6438857e540d8155abb0f8782767312e2de9c0454a6d7d76af6f363ecd0f23",
+      "archive_sha256": "5268865d3414405b0e19cb3a92868849a8665ca5c4cfca3a09679750ff23cc6e"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/diagnostic_metrics.json.gz",
+      "original_bytes": 18286644,
+      "compressed_bytes": 314486,
+      "original_sha256": "a3cd3e2d961a170bcddd963ed5c6fc30538aeaa065f6ed39c87b496d196e2b5d",
+      "archive_sha256": "0a70d405f9c72294e8a23e225a6885492d508df975b2d591bbc384a9d31f8898"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/diagnostic_rankings.json.gz",
+      "original_bytes": 24110327,
+      "compressed_bytes": 1887645,
+      "original_sha256": "b4d9180473cc977d3588e4391bc9b5ba9282e539174454bd3f4cd6c9f3745aeb",
+      "archive_sha256": "07e2130a32bc383220b3417fea75edb1784a23b891b828ba3ffd26ce9d232e42"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/graph_lexical_h0.jsonl.gz",
+      "original_bytes": 10560965,
+      "compressed_bytes": 1017543,
+      "original_sha256": "ba1b84e63a8aab430f2b8f12e332dbc489861e10276953f49d8793a2131acc74",
+      "archive_sha256": "b9320eed9f358a2c268186fd07d026b234ab7f3548820379364da2c72d89d630"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/graph_lexical_h1.jsonl.gz",
+      "original_bytes": 22745623,
+      "compressed_bytes": 2770012,
+      "original_sha256": "29dd59b933ac0a46e06db879c5a2b8ab8bcfd06050106a8a8f6faf5d6f504f76",
+      "archive_sha256": "c51bd22698e29994afbe43ecdfdcf5712f2f392ed5da2e56393ecddf09830235"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/graph_lexical_h2.jsonl.gz",
+      "original_bytes": 32884271,
+      "compressed_bytes": 4277550,
+      "original_sha256": "da497421a73e1bf64b37e0a98ab0fbc02d0b510008e6ee798d097a43a1afdc33",
+      "archive_sha256": "99c8162e880fa3468e92ca6b296152c613a8cbe84fb705abff1a729c80e2c450"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/graph_lexical_h3.jsonl.gz",
+      "original_bytes": 39592320,
+      "compressed_bytes": 5140552,
+      "original_sha256": "8a5740aac19a997711c0c374a78aa86795298bd1cac68ebab2e300c03847cc35",
+      "archive_sha256": "23d99c26435cc18598b217498d652d99b8ab6962644d914ad65a25b5f350a999"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/h3.jsonl.gz",
+      "original_bytes": 104555162,
+      "compressed_bytes": 11329626,
+      "original_sha256": "84fab26c44ddf3fb2c907e67302d78d0cc7fc364cd7a1b605a7c6790e399ca4d",
+      "archive_sha256": "1c547ac0811b1d40c03ee1a9c5b843e94e082eaeb367e06a0545a300ec7d8bee"
+    }
+  ],
+  "notion": {
+    "csv_path_unchanged": true,
+    "page": "https://app.notion.com/p/40a6d1078cb38053858edef849e30799",
+    "new_edit_needed": false
+  },
+  "limitations": [
+    "Neural inference was not rerun; saved original scores/responses/judgments were replayed.",
+    "Clean copy uses the existing installed Python dependency environment, not a fresh network installation.",
+    "Qwen post-hoc judgments remain same-model diagnostics; original malformed output and field warnings are preserved."
+  ]
+}

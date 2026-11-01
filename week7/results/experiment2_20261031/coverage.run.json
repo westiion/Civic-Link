@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "query_count": 608,
+  "queries_sha256": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0",
+  "predictions_sha256": "2c6438857e540d8155abb0f8782767312e2de9c0454a6d7d76af6f363ecd0f23",
+  "scoring_policy": "coverage-path-overlap",
+  "api_calls": 0
+}

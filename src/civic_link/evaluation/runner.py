@@ -11,7 +11,7 @@ from collections import defaultdict
 import json
 from pathlib import Path
 
-from civic_link.common import ROOT, connect, digest, now, read_jsonl, write_json, write_jsonl
+from civic_link.common import ROOT, connect, digest, input_bytes, now, portable_path, read_jsonl, write_json, write_jsonl
 from civic_link.evaluation.metrics import evaluate
 from civic_link.evaluation.behavior import evaluate_behavior
 
@@ -134,8 +134,8 @@ def run(questions_path, output_dir, *, benchmark_version, db=ROOT/'data/corpus/c
     questions = [json.loads(line) for line in question_bytes.decode('utf-8').splitlines() if line.strip()]
     input_snapshots = {}
     def snapshot(path, name):
-        value = Path(path).read_bytes()
-        input_snapshots[name] = dict(path=str(Path(path).resolve()), sha256=digest(value),
+        value = input_bytes(path)
+        input_snapshots[name] = dict(path=portable_path(path), sha256=digest(value),
             query_text_provenance='unverified_external_predictions; IDs_and_chunks_validated_only')
         return [json.loads(line) for line in value.decode('utf-8').splitlines() if line.strip()]
     # Behavior validation also validates question IDs and action/answerability.
@@ -147,12 +147,15 @@ def run(questions_path, output_dir, *, benchmark_version, db=ROOT/'data/corpus/c
         if prediction_queries is not None:
             query_bytes = Path(prediction_queries).read_bytes()
             queries = [json.loads(line) for line in query_bytes.decode().splitlines() if line.strip()]
-            metadata_path = Path(retrieval_predictions).with_suffix('.run.json')
+            logical = Path(retrieval_predictions)
+            if logical.suffix == '.gz':
+                logical = logical.with_suffix('')
+            metadata_path = logical.with_suffix('.run.json')
             metadata_bytes = metadata_path.read_bytes()
             metadata = json.loads(metadata_bytes)
             full_count = len(predictions)
             predictions = verify_prediction_queries(questions, predictions, queries, metadata,
-                Path(retrieval_predictions).read_bytes(), query_bytes)
+                input_bytes(retrieval_predictions), query_bytes)
             input_snapshots['retrieval'].update(query_text_provenance='verified_exact_text_and_prediction_checksum',
                 inference_query_count=full_count, evaluated_subset_count=len(predictions),
                 queries_sha256=digest(query_bytes), metadata_sha256=digest(metadata_bytes))
@@ -171,7 +174,7 @@ def run(questions_path, output_dir, *, benchmark_version, db=ROOT/'data/corpus/c
     write_json(output/'behavior.metrics.json', behavior)
     write_jsonl(output/'behavior.cases.jsonl', behavior_cases)
     manifest = dict(benchmark_version=benchmark_version, created_at=now(), status='completed',
-        questions=str(questions_path), questions_sha256=digest(question_bytes),
+        questions=portable_path(questions_path), questions_sha256=digest(question_bytes),
         question_count=len(questions), retrieval_status=retrieval['status'],
         behavior_status=behavior['status'],
         independent_holdout=False, human_review='item_level_verification_unrecorded', api_calls=0,

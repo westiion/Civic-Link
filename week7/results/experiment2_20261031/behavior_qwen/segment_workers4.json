@@ -1,0 +1,13 @@
+{
+  "status": "partial",
+  "unique_inputs": 1826,
+  "completed": 492,
+  "conditions": 4,
+  "questions": 608,
+  "invalid_count": 2,
+  "sum_request_seconds": 3391.8353325809767,
+  "current_invocation_wall_seconds": 843.9812659590025,
+  "saved_count_verified": 492,
+  "workers": 4,
+  "stopped_at_utc": "2026-10-31T11:56:02Z"
+}

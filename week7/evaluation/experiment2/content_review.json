@@ -1,0 +1,108 @@
+{
+  "scope": "assistant inspection of fixed response and judge output; not human adjudication; no scores or original outputs changed",
+  "cases": [
+    {
+      "question_id": "SJ-N-090",
+      "methods": [
+        "h3"
+      ],
+      "finding": "judge_boolean_reason_contradiction",
+      "note": "실제 응답은 나이만으로 기초연금 수급이 확정되지 않는다고 명시한다. 채점 설명은 마지막에 required_handling_ok를 true로 판정한다고 쓰지만 저장된 값은 false다. 이 채점값을 내용 실패의 확정 근거로 사용하지 않는다.",
+      "response_excerpt": "65세 이상이라는 연령 요건만으로는 기초연금 수급이 확정되지 않습니다."
+    },
+    {
+      "question_id": "SJ-N-090",
+      "methods": [
+        "h3_bge",
+        "coverage",
+        "bge"
+      ],
+      "finding": "action_label_contaminates_content_judgment",
+      "note": "채점 모델은 본문이 승인 확정을 거부하고 정답 요지를 충족한다고 설명하면서 action=answer를 이유로 required_handling_ok를 false로 냈다. 고정 채점 지침의 행동 라벨과 내용 분리 원칙을 따르지 않은 사례다. 원판정은 보존하며 사람이 확인할 대상으로 표시한다.",
+      "response_excerpt": "65세 이상이라는 연령 요건만으로는 기초연금 수급이 확정되지 않습니다."
+    },
+    {
+      "question_id": "SJ-N-092",
+      "methods": [
+        "h3_bge",
+        "coverage",
+        "bge"
+      ],
+      "finding": "action_label_contaminates_content_judgment",
+      "note": "본문은 재산 기준을 임의로 통과 처리할 수 없다고 명시한다. 채점 설명도 내용 자체의 정답 요지 충족을 인정하지만 행동 라벨 불일치만을 실패 요건으로 제시했다. 미지원 승인 확정 사례로 해석하면 안 된다.",
+      "response_excerpt": "재산 기준을 임의로 통과 처리할 수는 없습니다."
+    },
+    {
+      "question_id": "SJ-N-067",
+      "methods": [
+        "h3",
+        "h3_bge",
+        "coverage",
+        "bge"
+      ],
+      "finding": "missing_clarification_verdict_with_observed_question_omission",
+      "note": "실제 questions 배열은 비어 있고 응답은 서류 종류를 구체적으로 되묻지 않는다. 채점의 required_handling_ok=false와 별개로 clarification_sufficient는 null이므로 이 필드의 정량 판정은 미측정으로 유지한다. 설명 전체의 법적 정확성을 이 점검으로 확정하지 않는다."
+    },
+    {
+      "question_id": "SJ-A-082",
+      "methods": [
+        "h3",
+        "h3_bge",
+        "coverage",
+        "bge"
+      ],
+      "finding": "accepted_alternative_and_conditional_language_need_review",
+      "note": "이 문항은 정확한 점검목록 방식의 answer도 허용한다. 실제 응답의 원인 설명은 \"때문일 수 있습니다\"라는 조건부 표현인데 일부 채점 이유는 이를 개인 원인 확정으로 해석했다. 확인 질문이 없다는 이유만으로 허용 대안을 탈락시키거나 가능성 설명을 승인·미신고 확정과 동일시하면 안 된다. 다만 원문에 없는 절차·비과세 설명과 점검목록의 충분성은 별도 확인이 필요하므로 원판정을 성공으로 덮어쓰지 않는다.",
+      "response_excerpt": "때문일 수 있습니다."
+    },
+    {
+      "question_id": "W7-MS-028",
+      "methods": [
+        "coverage"
+      ],
+      "finding": "missing_retrieval_evidence_and_omitted_fee_exception",
+      "note": "실제 응답은 초본의 출생신고 면제 예외 대신 인터넷 무료·일반 수수료를 안내했다. 정답은 출생신고된 사람의 초본 최초 1통 면제이고, 이 조건에 관한 근거가 변경 수식에서 101·107위로 상위 10개에 없었다. 누락된 예외와 답변의 차이를 원문으로 확인했으며 검색 누락만이 유일한 원인이라고 단정하지 않는다.",
+      "response_excerpt": "출생신고 자체만으로 수수료가 자동 면제되지는 않습니다."
+    },
+    {
+      "question_id": "W7-MS-028",
+      "methods": [
+        "h3_bge",
+        "bge"
+      ],
+      "finding": "retrieved_exception_appears_in_generated_response",
+      "note": "BGE 이후 필수 근거 4개가 모두 상위 10개에 들어왔고, 실제 응답에 초본 최초 1통 면제와 기본증명서의 출생신고인·기록일로부터 2주 이내·최초 1회 조건이 등장한다. 이 핵심 요건의 반영은 직접 확인했지만 응답 모든 문장의 독립 사실 검증을 뜻하지 않는다.",
+      "response_excerpt": "출생신고된 사람의 초본을 최초 1통 발급하는 경우"
+    },
+    {
+      "question_id": "W7-MS-039",
+      "methods": [
+        "h3_bge",
+        "bge"
+      ],
+      "finding": "retrieval_failure_does_not_equal_wrong_response_conclusion",
+      "note": "졸업증명 위임장 정답 근거가 30위로 밀려 검색 Complete@10은 실패했지만, 실제 응답에는 병적증명 가족 예외가 졸업증명에 자동 적용되지 않는다는 핵심 결론이 있다. 채점 모델도 내용 충족으로 판정했다. 이 차이를 검색 실패 곧 답변 오답으로 해석하지 않으며, 당시 제공 자료가 모든 세부 설명을 뒷받침하는지는 별도 검토한다.",
+      "response_excerpt": "형제자매라는 사실만으로 위임장을 생략할 수 없으므로"
+    },
+    {
+      "question_id": "W7-BH035",
+      "methods": [
+        "h3_bge",
+        "bge"
+      ],
+      "finding": "refusal_followed_by_unsupported_reassurance",
+      "note": "실제 응답은 원격 회수·파쇄를 할 수 없다고 먼저 밝혔지만, 이어 자동 파쇄가 일반적이므로 별도 조치가 필요 없다고 안내했다. 제공된 10개 자료에서 이 자동 파쇄·안심 안내의 근거를 찾지 못했다. 보류 라벨이 맞아도 뒤에 붙는 안전성 안내는 별도로 검토해야 하는 사례다.",
+      "response_excerpt": "따라서 별도로 조치하지 않으셔도 됩니다."
+    },
+    {
+      "question_id": "W7-BH050",
+      "methods": [
+        "h3_bge",
+        "bge"
+      ],
+      "finding": "judge_overstates_jurisdiction_claim",
+      "note": "질문은 부산 관할인데 실제 응답은 성남시 수수료를 설명하여 요청한 관할의 확정 불가를 분명히 안내하지 못했다. 다만 응답이 성남시라고 명시했으므로, 채점 설명처럼 부산 요금을 직접 확정했다고 단정하는 것은 과하다. 질문 대응의 부족과 타지역 요금의 직접 확정을 구분하여 검토하며 원판정은 유지한다.",
+      "response_excerpt": "성남시에서 발급하는 토지이용계획확인서는"
+    }
+  ]
+}

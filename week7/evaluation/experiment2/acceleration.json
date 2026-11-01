@@ -1,0 +1,215 @@
+{
+  "reference_completed": 47,
+  "reference_dtype": "float32",
+  "reference_batch": 8,
+  "sample_indices": [
+    0,
+    10,
+    20,
+    30
+  ],
+  "reference_forward_seconds": 18.082725165011652,
+  "condition": "same candidates and 512 token limit; no gold used for acceleration choice",
+  "reports": [
+    {
+      "dtype": "float32",
+      "batch_size": 32,
+      "seconds": 19.83386212499863,
+      "results": [
+        {
+          "query_id": "SJ-N-001",
+          "pairs": 128,
+          "seconds": 6.112461083001108,
+          "finite": true,
+          "max_score_difference": 5.245208740234375e-06,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": true
+        },
+        {
+          "query_id": "SJ-N-013",
+          "pairs": 104,
+          "seconds": 4.024097292000079,
+          "finite": true,
+          "max_score_difference": 3.814697265625e-06,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": true
+        },
+        {
+          "query_id": "SJ-N-023",
+          "pairs": 172,
+          "seconds": 5.222537541998463,
+          "finite": true,
+          "max_score_difference": 1.239776611328125e-05,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": true
+        },
+        {
+          "query_id": "SJ-N-033",
+          "pairs": 110,
+          "seconds": 4.474766207998982,
+          "finite": true,
+          "max_score_difference": 4.76837158203125e-06,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": true
+        }
+      ],
+      "mps_driver_bytes": 7747829760
+    },
+    {
+      "dtype": "float16",
+      "batch_size": 16,
+      "seconds": 8.909239876000356,
+      "results": [
+        {
+          "query_id": "SJ-N-001",
+          "pairs": 128,
+          "seconds": 3.3901860839996516,
+          "finite": true,
+          "max_score_difference": 0.0072174072265625,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        },
+        {
+          "query_id": "SJ-N-013",
+          "pairs": 104,
+          "seconds": 1.8458877920002124,
+          "finite": true,
+          "max_score_difference": 0.0064373016357421875,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        },
+        {
+          "query_id": "SJ-N-023",
+          "pairs": 172,
+          "seconds": 2.142815667000832,
+          "finite": true,
+          "max_score_difference": 0.012320280075073242,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        },
+        {
+          "query_id": "SJ-N-033",
+          "pairs": 110,
+          "seconds": 1.5303503329996602,
+          "finite": true,
+          "max_score_difference": 0.00785064697265625,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        }
+      ],
+      "mps_driver_bytes": 7497646080
+    },
+    {
+      "dtype": "float16",
+      "batch_size": 32,
+      "seconds": 6.915697291997276,
+      "results": [
+        {
+          "query_id": "SJ-N-001",
+          "pairs": 128,
+          "seconds": 2.0830504999994446,
+          "finite": true,
+          "max_score_difference": 0.0072174072265625,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        },
+        {
+          "query_id": "SJ-N-013",
+          "pairs": 104,
+          "seconds": 1.4517200829996,
+          "finite": true,
+          "max_score_difference": 0.0064373016357421875,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        },
+        {
+          "query_id": "SJ-N-023",
+          "pairs": 172,
+          "seconds": 1.8196859999989101,
+          "finite": true,
+          "max_score_difference": 0.012320280075073242,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        },
+        {
+          "query_id": "SJ-N-033",
+          "pairs": 110,
+          "seconds": 1.5612407089993212,
+          "finite": true,
+          "max_score_difference": 0.00785064697265625,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        }
+      ],
+      "mps_driver_bytes": 7757873152
+    },
+    {
+      "dtype": "float16",
+      "batch_size": 64,
+      "seconds": 7.889235999999073,
+      "results": [
+        {
+          "query_id": "SJ-N-001",
+          "pairs": 128,
+          "seconds": 2.4458173750008427,
+          "finite": true,
+          "max_score_difference": 0.008233070373535156,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        },
+        {
+          "query_id": "SJ-N-013",
+          "pairs": 104,
+          "seconds": 1.65526191599929,
+          "finite": true,
+          "max_score_difference": 0.0064373016357421875,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        },
+        {
+          "query_id": "SJ-N-023",
+          "pairs": 172,
+          "seconds": 2.034810541999832,
+          "finite": true,
+          "max_score_difference": 0.012320280075073242,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        },
+        {
+          "query_id": "SJ-N-033",
+          "pairs": 110,
+          "seconds": 1.7533461669991084,
+          "finite": true,
+          "max_score_difference": 0.00785064697265625,
+          "same_top10": true,
+          "same_top10_set": true,
+          "same_full_order": false
+        }
+      ],
+      "mps_driver_bytes": 10215882752
+    }
+  ],
+  "matched_timing_scope": {
+    "scope": "forward and device transfer only; excludes tokenization, padding and model load",
+    "float32_batch8_seconds": 18.082725165011652,
+    "float16_batch32_seconds": 6.526140705000216,
+    "speedup": 2.7708144801654337,
+    "sample_queries": 4,
+    "sample_pairs": 514
+  }
+}
