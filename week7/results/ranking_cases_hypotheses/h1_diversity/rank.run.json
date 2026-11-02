@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "query_count": 608,
+  "api_calls": 0,
+  "source_sha256": "c86449c217eac7478a6b70de810097dfaf492811ff66d772bb55b21ad3066b7d",
+  "protocol_sha256": "36ad1fa0e011dc6857b3fdd892a26a75622a119b4888af1c762a1b3e9ae62409",
+  "baseline_sha256": "94a3e35fc29b054e2c1a7f71845411c35fff0910e01687d59449d4e5ecd14c6e",
+  "vectors_sha256": "5a9acbb0a12273b3199878a6f18e061054fc8a2af5f4f4b62a2c5f73bdc809cf",
+  "predictions_sha256": "ead537677954db6d042f7aff0181be5edfc65a4f82c6d6ea8d4fa92e2e620867",
+  "seconds": 9.760777699993923
+}

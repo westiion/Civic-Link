@@ -1,0 +1,8 @@
+{"chunk_id": "service", "text": "필요한 민원 서비스나 증명서의 이름, 용도, 증명하는 내용과 다른 서류와의 차이를 안내한다.", "input_sha256": "24fda5dbeb4098e65d6b4f85fa68aecb64a7ba7879b47bb2b13f3cbcbef26561"}
+{"chunk_id": "documents", "text": "신청할 때 제출하거나 지참할 구비서류, 신청서, 신분증, 위임장과 서류가 필요 없는 경우를 안내한다.", "input_sha256": "97e0326bb042a455eb8da68807aa95443162272cf5e2c174863b1e08478b2161"}
+{"chunk_id": "procedure", "text": "신청 방법과 접수 절차, 온라인 또는 방문 신청 경로, 접수기관과 담당기관을 안내한다.", "input_sha256": "9a55e3b0876306717dba81a5514d730d2b9f0d99da4fd6bd870027c9bc354f98"}
+{"chunk_id": "eligibility", "text": "신청 자격과 대상, 본인 또는 대리인 신청 조건, 가족관계에 따른 신청 가능 여부와 제한을 안내한다.", "input_sha256": "962acb4fb77c936bcd7d4c53103abd02b292a270b48ec585bdd432f81b80249e"}
+{"chunk_id": "timing", "text": "처리기간, 신청 기한, 발급 가능 시기, 지급 시작 시점과 유효기간을 안내한다.", "input_sha256": "37ee5a7bb293d8b2d46a1a4898d7672adb5712f62f5e578361710c1b178b9ebb"}
+{"chunk_id": "fees", "text": "발급 수수료, 비용, 납부 방법과 면제 조건을 안내한다.", "input_sha256": "931ff47efedf241ab8afac28c3a45c9e38236a6dd68052b4160de40f37d2aa20"}
+{"chunk_id": "legal", "text": "민원 업무의 법적 근거, 적용 법령과 조문, 다른 조항에 대한 참조 관계를 설명한다.", "input_sha256": "ec2d978877e37eea80b2344b228028ffbcfc5c906b904e20bb12b57a6a6b592a"}
+{"chunk_id": "scope", "text": "증명서에 표시되는 정보와 공개 범위, 일반과 상세의 차이, 개인정보 열람 제한과 예외를 설명한다.", "input_sha256": "2f585b0153a4d9676e25f490cffedd1795ff82af319aebf0744c7fff9f7e99dc"}

@@ -1,0 +1,17 @@
+{
+  "identity": {
+    "endpoint_sha256": "62f7fcc6765af718fa8da4e2ac2a15e082e3a510b85a37ce4a3331f2106eb27a",
+    "model": "Qwen3-VL-Embedding-8B",
+    "format": "qwen3-vl",
+    "instruction": "Represent the user's input.",
+    "inputs_sha256": "d6e81011f190dac50339054e378f2fe3a8c564c0592709bad0f1f9bde0d096ba"
+  },
+  "status": "completed",
+  "cached": 5474,
+  "required": 5474,
+  "dimension": 4096,
+  "requests_this_invocation": 5469,
+  "seconds_this_invocation": 480.3791566048749,
+  "source_sha256": "c86449c217eac7478a6b70de810097dfaf492811ff66d772bb55b21ad3066b7d",
+  "note": "No client truncation. Server model revision/truncation settings not verified; keep deployment fixed."
+}

@@ -1,0 +1,13 @@
+{
+  "hypothesis": "H4 same article neighboring chunks",
+  "baseline_sha256": "94a3e35fc29b054e2c1a7f71845411c35fff0910e01687d59449d4e5ecd14c6e",
+  "queries_sha256": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0",
+  "corpus_hash": "e55238fddf3882dd3dab97cce5faa8c6b136f2dd89934cc3ff2f445abda59863",
+  "graph_sha256": "3ede7e2d0e4579a386c979304f0097bd9a9077e44e59337d6fa412b098f03e55",
+  "index_sha256": "4d4407329105b6c12d91e0a7476cdf75ab511e165f1fc4df30a7e67727d2f85c",
+  "slots": 2,
+  "top_k": 10,
+  "selection_uses_gold": false,
+  "independent_holdout": false,
+  "policy": "protect BGE top(10-slots); same document and exact graph Article locator; adjacency means absolute document ordinal difference 1; select by BGE; no recursive expansion; preserve full pool"
+}

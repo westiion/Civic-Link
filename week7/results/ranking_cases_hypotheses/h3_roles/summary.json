@@ -1,0 +1,427 @@
+{
+  "overall": {
+    "bge_direct": {
+      "10": {
+        "n": 488,
+        "complete": 437,
+        "recall": 0.9325819672131148,
+        "mrr": 0.8336098100442363
+      },
+      "100": {
+        "n": 488,
+        "complete": 481,
+        "recall": 0.9904371584699453,
+        "mrr": 0.8354044364674488
+      }
+    },
+    "role_prior_control": {
+      "10": {
+        "n": 488,
+        "complete": 437,
+        "recall": 0.9325819672131148,
+        "mrr": 0.8329950559458755
+      },
+      "100": {
+        "n": 488,
+        "complete": 481,
+        "recall": 0.9904371584699453,
+        "mrr": 0.8347917480750638
+      }
+    },
+    "role_alignment": {
+      "10": {
+        "n": 488,
+        "complete": 438,
+        "recall": 0.9346311475409836,
+        "mrr": 0.8330096929482175
+      },
+      "100": {
+        "n": 488,
+        "complete": 481,
+        "recall": 0.9904371584699453,
+        "mrr": 0.8346238622029071
+      }
+    }
+  },
+  "changes": {
+    "bge_direct": {
+      "complete_gained": [],
+      "complete_lost": [],
+      "recall_improved": [],
+      "recall_worsened": []
+    },
+    "role_prior_control": {
+      "complete_gained": [],
+      "complete_lost": [],
+      "recall_improved": [],
+      "recall_worsened": []
+    },
+    "role_alignment": {
+      "complete_gained": [
+        "W7V2-LA014"
+      ],
+      "complete_lost": [],
+      "recall_improved": [
+        "W7V2-LA014"
+      ],
+      "recall_worsened": []
+    }
+  },
+  "by_type": {
+    "cross_reference": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 53,
+          "recall": 0.9361111111111111,
+          "mrr": 0.9398809523809525
+        },
+        "100": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.986111111111111,
+          "mrr": 0.9409920634920634
+        }
+      },
+      "role_prior_control": {
+        "10": {
+          "n": 60,
+          "complete": 53,
+          "recall": 0.9361111111111111,
+          "mrr": 0.9398809523809525
+        },
+        "100": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.986111111111111,
+          "mrr": 0.9409920634920634
+        }
+      },
+      "role_alignment": {
+        "10": {
+          "n": 60,
+          "complete": 53,
+          "recall": 0.9361111111111111,
+          "mrr": 0.9398809523809525
+        },
+        "100": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.986111111111111,
+          "mrr": 0.9410714285714286
+        }
+      }
+    },
+    "direct_qa": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8480753968253969
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8480753968253969
+        }
+      },
+      "role_prior_control": {
+        "10": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8472420634920634
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8472420634920634
+        }
+      },
+      "role_alignment": {
+        "10": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8479365079365079
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8479365079365079
+        }
+      }
+    },
+    "handling_agency": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8805555555555556
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.881076388888889
+        }
+      },
+      "role_prior_control": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8805555555555556
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8810931899641578
+        }
+      },
+      "role_alignment": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8805555555555556
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8810931899641578
+        }
+      }
+    },
+    "legal_grounding": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 54,
+          "recall": 0.913888888888889,
+          "mrr": 0.8352777777777778
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8401599326599327
+        }
+      },
+      "role_prior_control": {
+        "10": {
+          "n": 60,
+          "complete": 54,
+          "recall": 0.913888888888889,
+          "mrr": 0.8352777777777778
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8401599326599327
+        }
+      },
+      "role_alignment": {
+        "10": {
+          "n": 60,
+          "complete": 55,
+          "recall": 0.9305555555555556,
+          "mrr": 0.8283333333333334
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.831651603756867
+        }
+      }
+    },
+    "multi_source_multi_hop": {
+      "bge_direct": {
+        "10": {
+          "n": 48,
+          "complete": 31,
+          "recall": 0.8250000000000001,
+          "mrr": 0.7540426587301586
+        },
+        "100": {
+          "n": 48,
+          "complete": 46,
+          "recall": 0.9826388888888888,
+          "mrr": 0.7540426587301586
+        }
+      },
+      "role_prior_control": {
+        "10": {
+          "n": 48,
+          "complete": 31,
+          "recall": 0.8250000000000001,
+          "mrr": 0.7540426587301586
+        },
+        "100": {
+          "n": 48,
+          "complete": 46,
+          "recall": 0.9826388888888888,
+          "mrr": 0.7540426587301586
+        }
+      },
+      "role_alignment": {
+        "10": {
+          "n": 48,
+          "complete": 31,
+          "recall": 0.8250000000000001,
+          "mrr": 0.7510664682539683
+        },
+        "100": {
+          "n": 48,
+          "complete": 46,
+          "recall": 0.9826388888888888,
+          "mrr": 0.7510664682539683
+        }
+      }
+    },
+    "required_documents": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8697222222222222
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8711111111111111
+        }
+      },
+      "role_prior_control": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8669444444444444
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8683333333333334
+        }
+      },
+      "role_alignment": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8701388888888889
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8715277777777778
+        }
+      }
+    },
+    "requirement_condition": {
+      "bge_direct": {
+        "10": {
+          "n": 80,
+          "complete": 73,
+          "recall": 0.925,
+          "mrr": 0.7679464285714286
+        },
+        "100": {
+          "n": 80,
+          "complete": 77,
+          "recall": 0.9625,
+          "mrr": 0.7699756493506493
+        }
+      },
+      "role_prior_control": {
+        "10": {
+          "n": 80,
+          "complete": 73,
+          "recall": 0.925,
+          "mrr": 0.7658630952380953
+        },
+        "100": {
+          "n": 80,
+          "complete": 77,
+          "recall": 0.9625,
+          "mrr": 0.767892316017316
+        }
+      },
+      "role_alignment": {
+        "10": {
+          "n": 80,
+          "complete": 73,
+          "recall": 0.925,
+          "mrr": 0.7658630952380953
+        },
+        "100": {
+          "n": 80,
+          "complete": 77,
+          "recall": 0.9625,
+          "mrr": 0.767892316017316
+        }
+      }
+    },
+    "service_discovery": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 50,
+          "recall": 0.8916666666666667,
+          "mrr": 0.7793518518518519
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.7833395308395308
+        }
+      },
+      "role_prior_control": {
+        "10": {
+          "n": 60,
+          "complete": 50,
+          "recall": 0.8916666666666667,
+          "mrr": 0.7807407407407407
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.7847284197284198
+        }
+      },
+      "role_alignment": {
+        "10": {
+          "n": 60,
+          "complete": 50,
+          "recall": 0.8916666666666667,
+          "mrr": 0.7862962962962963
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.7902839752839753
+        }
+      }
+    }
+  },
+  "questions_sha256": "a10c1212dc937116f1f3d255c031e3c6b45452fc546d8f70cda3eca01379c3f3",
+  "baseline": "bge_direct",
+  "note": "Post-hoc development evaluation; no independent holdout claim; 120 non-answer queries diagnostic only."
+}

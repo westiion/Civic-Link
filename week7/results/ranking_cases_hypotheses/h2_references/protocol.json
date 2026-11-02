@@ -1,0 +1,24 @@
+{
+  "hypothesis": "Week7 H2 semantic explicit-reference selection",
+  "baseline_sha256": "94a3e35fc29b054e2c1a7f71845411c35fff0910e01687d59449d4e5ecd14c6e",
+  "inputs_sha256": "ddb508968d07d1c4c9892094b83b030ed3dc82b596fc8bf602125866eb070a3d",
+  "queries_sha256": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0",
+  "source": "C:\\Develop\\Civic-Link\\week7\\results\\diversity_h1_20261103",
+  "source_vectors_sha256": "5a9acbb0a12273b3199878a6f18e061054fc8a2af5f4f4b62a2c5f73bdc809cf",
+  "embedding_identity": {
+    "endpoint_sha256": "62f7fcc6765af718fa8da4e2ac2a15e082e3a510b85a37ce4a3331f2106eb27a",
+    "format": "qwen3-vl",
+    "inputs_sha256": "d6e81011f190dac50339054e378f2fe3a8c564c0592709bad0f1f9bde0d096ba",
+    "instruction": "Represent the user's input.",
+    "model": "Qwen3-VL-Embedding-8B"
+  },
+  "dimension": 4096,
+  "graph_sha256": "3ede7e2d0e4579a386c979304f0097bd9a9077e44e59337d6fa412b098f03e55",
+  "evidence_sha256": "9a884f7dc76edb0b93a1b3601a5af716f106cd8a8463a5cd28ffb610d2593b42",
+  "index_sha256": "02d761d2c19b7906af58a95f99202fa523c07660d8463a31c2e944e63a1dae39",
+  "slots": 3,
+  "top_k": 10,
+  "policy": "protect BGE top(10-slots); direct outgoing REFERENCES evidenced by protected chunks; same pool only; at most one chunk per target Article; BGE vs query-cosine selection",
+  "independent_holdout": false,
+  "selection_uses_gold": false
+}

@@ -1,0 +1,447 @@
+{
+  "overall": {
+    "bge_direct": {
+      "10": {
+        "n": 488,
+        "complete": 437,
+        "recall": 0.9325819672131148,
+        "mrr": 0.8336098100442363
+      },
+      "100": {
+        "n": 488,
+        "complete": 481,
+        "recall": 0.9904371584699453,
+        "mrr": 0.8354044364674488
+      }
+    },
+    "same_article_control": {
+      "10": {
+        "n": 488,
+        "complete": 437,
+        "recall": 0.933948087431694,
+        "mrr": 0.8338374967473329
+      },
+      "100": {
+        "n": 488,
+        "complete": 481,
+        "recall": 0.9904371584699453,
+        "mrr": 0.8354798619527103
+      }
+    },
+    "adjacent_article": {
+      "10": {
+        "n": 488,
+        "complete": 437,
+        "recall": 0.933948087431694,
+        "mrr": 0.8338374967473329
+      },
+      "100": {
+        "n": 488,
+        "complete": 481,
+        "recall": 0.9904371584699453,
+        "mrr": 0.8354798619527103
+      }
+    }
+  },
+  "changes": {
+    "bge_direct": {
+      "complete_gained": [],
+      "complete_lost": [],
+      "recall_improved": [],
+      "recall_worsened": []
+    },
+    "same_article_control": {
+      "complete_gained": [
+        "W7V2-LA010",
+        "W7V2-LA016"
+      ],
+      "complete_lost": [
+        "SJ-N-027",
+        "W7V2-MS038"
+      ],
+      "recall_improved": [
+        "W7V2-LA010",
+        "W7V2-LA016"
+      ],
+      "recall_worsened": [
+        "SJ-N-027",
+        "W7V2-MS038"
+      ]
+    },
+    "adjacent_article": {
+      "complete_gained": [
+        "W7V2-LA010",
+        "W7V2-LA016"
+      ],
+      "complete_lost": [
+        "SJ-N-027",
+        "W7V2-MS038"
+      ],
+      "recall_improved": [
+        "W7V2-LA010",
+        "W7V2-LA016"
+      ],
+      "recall_worsened": [
+        "SJ-N-027",
+        "W7V2-MS038"
+      ]
+    }
+  },
+  "by_type": {
+    "cross_reference": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 53,
+          "recall": 0.9361111111111111,
+          "mrr": 0.9398809523809525
+        },
+        "100": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.986111111111111,
+          "mrr": 0.9409920634920634
+        }
+      },
+      "same_article_control": {
+        "10": {
+          "n": 60,
+          "complete": 53,
+          "recall": 0.9361111111111111,
+          "mrr": 0.9398809523809525
+        },
+        "100": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.986111111111111,
+          "mrr": 0.9409920634920634
+        }
+      },
+      "adjacent_article": {
+        "10": {
+          "n": 60,
+          "complete": 53,
+          "recall": 0.9361111111111111,
+          "mrr": 0.9398809523809525
+        },
+        "100": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.986111111111111,
+          "mrr": 0.9409920634920634
+        }
+      }
+    },
+    "direct_qa": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8480753968253969
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8480753968253969
+        }
+      },
+      "same_article_control": {
+        "10": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8480753968253969
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8480753968253969
+        }
+      },
+      "adjacent_article": {
+        "10": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8480753968253969
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8480753968253969
+        }
+      }
+    },
+    "handling_agency": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8805555555555556
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.881076388888889
+        }
+      },
+      "same_article_control": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8805555555555556
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.881076388888889
+        }
+      },
+      "adjacent_article": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8805555555555556
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.881076388888889
+        }
+      }
+    },
+    "legal_grounding": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 54,
+          "recall": 0.913888888888889,
+          "mrr": 0.8352777777777778
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8401599326599327
+        }
+      },
+      "same_article_control": {
+        "10": {
+          "n": 60,
+          "complete": 56,
+          "recall": 0.9472222222222223,
+          "mrr": 0.8389814814814814
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8414225589225589
+        }
+      },
+      "adjacent_article": {
+        "10": {
+          "n": 60,
+          "complete": 56,
+          "recall": 0.9472222222222223,
+          "mrr": 0.8389814814814814
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8414225589225589
+        }
+      }
+    },
+    "multi_source_multi_hop": {
+      "bge_direct": {
+        "10": {
+          "n": 48,
+          "complete": 31,
+          "recall": 0.8250000000000001,
+          "mrr": 0.7540426587301586
+        },
+        "100": {
+          "n": 48,
+          "complete": 46,
+          "recall": 0.9826388888888888,
+          "mrr": 0.7540426587301586
+        }
+      },
+      "same_article_control": {
+        "10": {
+          "n": 48,
+          "complete": 30,
+          "recall": 0.8180555555555555,
+          "mrr": 0.7540426587301586
+        },
+        "100": {
+          "n": 48,
+          "complete": 46,
+          "recall": 0.9826388888888888,
+          "mrr": 0.7540426587301586
+        }
+      },
+      "adjacent_article": {
+        "10": {
+          "n": 48,
+          "complete": 30,
+          "recall": 0.8180555555555555,
+          "mrr": 0.7540426587301586
+        },
+        "100": {
+          "n": 48,
+          "complete": 46,
+          "recall": 0.9826388888888888,
+          "mrr": 0.7540426587301586
+        }
+      }
+    },
+    "required_documents": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8697222222222222
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8711111111111111
+        }
+      },
+      "same_article_control": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8697222222222222
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8711111111111111
+        }
+      },
+      "adjacent_article": {
+        "10": {
+          "n": 60,
+          "complete": 58,
+          "recall": 0.975,
+          "mrr": 0.8697222222222222
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.8711111111111111
+        }
+      }
+    },
+    "requirement_condition": {
+      "bge_direct": {
+        "10": {
+          "n": 80,
+          "complete": 73,
+          "recall": 0.925,
+          "mrr": 0.7679464285714286
+        },
+        "100": {
+          "n": 80,
+          "complete": 77,
+          "recall": 0.9625,
+          "mrr": 0.7699756493506493
+        }
+      },
+      "same_article_control": {
+        "10": {
+          "n": 80,
+          "complete": 73,
+          "recall": 0.925,
+          "mrr": 0.7679464285714286
+        },
+        "100": {
+          "n": 80,
+          "complete": 77,
+          "recall": 0.9625,
+          "mrr": 0.7699161255411255
+        }
+      },
+      "adjacent_article": {
+        "10": {
+          "n": 80,
+          "complete": 73,
+          "recall": 0.925,
+          "mrr": 0.7679464285714286
+        },
+        "100": {
+          "n": 80,
+          "complete": 77,
+          "recall": 0.9625,
+          "mrr": 0.7699161255411255
+        }
+      }
+    },
+    "service_discovery": {
+      "bge_direct": {
+        "10": {
+          "n": 60,
+          "complete": 50,
+          "recall": 0.8916666666666667,
+          "mrr": 0.7793518518518519
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.7833395308395308
+        }
+      },
+      "same_article_control": {
+        "10": {
+          "n": 60,
+          "complete": 49,
+          "recall": 0.875,
+          "mrr": 0.7775
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.7827697302697303
+        }
+      },
+      "adjacent_article": {
+        "10": {
+          "n": 60,
+          "complete": 49,
+          "recall": 0.875,
+          "mrr": 0.7775
+        },
+        "100": {
+          "n": 60,
+          "complete": 60,
+          "recall": 1.0,
+          "mrr": 0.7827697302697303
+        }
+      }
+    }
+  },
+  "questions_sha256": "a10c1212dc937116f1f3d255c031e3c6b45452fc546d8f70cda3eca01379c3f3",
+  "baseline": "bge_direct",
+  "note": "Post-hoc development evaluation; no independent holdout claim; 120 non-answer queries diagnostic only."
+}
