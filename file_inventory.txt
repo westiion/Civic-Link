@@ -131,6 +131,7 @@ week7/failure_analysis/README.md
 week7/failure_analysis/candidate-cases.md
 week7/failure_analysis/ranking-cases.md
 week7/failure_analysis/ranking-patterns.md
+week7/failure_analysis/results/bge-citation-weights.csv
 week7/failure_analysis/results/bge-graph-weights.csv
 week7/failure_analysis/results/bge-length-512-vs-1024.csv
 week7/failure_analysis/results/bge-length-512-vs-1024.json
