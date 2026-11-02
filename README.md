@@ -57,13 +57,20 @@ Civic-Link/
 │  └─ score_comparison/          # 점수식 비교 실험
 │     ├─ results/                # 평가 수치·정책 선택·문항별 변화
 │     └─ figures/                # 보고서용 그림
+├─ week7/                        # Week 7 보고서·실험 자료
+│  ├─ REPORT.md                  # 피드백 반영·개선·수행 기록
+│  ├─ failure_analysis/          # 실패 통계·유형별 사례 51문항
+│  ├─ EXPERIMENT2.md             # 실험 2 결과
+│  ├─ SHARING.md                 # 재집계 안내
+│  ├─ docs/                      # 실험 2 문항별 기록
+│  ├─ evaluation/                # 저장된 평가 결과
+│  └─ results/                   # 검색 순위·실험 입력 및 출력
 ├─ outputs/                      # 실행 시 생성되는 결과 (Git 제외)
 ├─ docs/
 │  └─ usage.md                   # 설치·복원·검색·평가 상세 안내
 ├─ tests/                        # 테스트 코드·테스트용 데이터
 │
 ├─ README.md                     # 프로젝트 소개·기본 실행법
-├─ REPORT.md                     # Week 7 피드백 반영·개선·수행 기록
 ├─ pyproject.toml                # Python 패키지 설정
 ├─ requirements.txt              # 실행 의존성
 ├─ requirements-dev.txt          # 개발·테스트 의존성
@@ -74,7 +81,7 @@ Civic-Link/
 
 ## 실행
 
-[실험 2 최종 결과](week7/EXPERIMENT2.md)와 [공유본·BGE/Qwen 재집계 안내](week7/SHARING.md)를 함께 제공합니다. 저장된 원점수·원응답의 재집계에는 모델이나 서버가 필요하지 않습니다.
+[Week 7 보고서](week7/REPORT.md), [실패 51문항 통계·사례](week7/failure_analysis/README.md), [실험 2 최종 결과](week7/EXPERIMENT2.md)와 [공유본·BGE/Qwen 재집계 안내](week7/SHARING.md)를 함께 제공합니다. 저장된 원점수·원응답의 재집계에는 모델이나 서버가 필요하지 않습니다.
 
 ```sh
 python3.12 -m venv .venv

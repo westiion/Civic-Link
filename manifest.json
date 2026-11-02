@@ -11,12 +11,8 @@
       "sha256": "370af9fb8f87ffc92e8e4b088e454c45c948962eba5ca70b8de374c6acbdf9fb"
     },
     "README.md": {
-      "bytes": 4703,
-      "sha256": "56fee817d44394fe16db414837f5450c0c00c6548a54f949e4bc743998a8f619"
-    },
-    "REPORT.md": {
-      "bytes": 7706,
-      "sha256": "7f78d74cd030f509456e4219e8f9a5bf53b09af86e904fbd9169c8ce193db430"
+      "bytes": 5284,
+      "sha256": "4412d1e0b1c5570eb4ac9de8b4c0417d28848a4c111e8dd2e6290f4a1a22c555"
     },
     "data/benchmark/dataset.json": {
       "bytes": 394,
@@ -103,8 +99,8 @@
       "sha256": "6a991c06de3a09abbd5535e9829144500e05daae5b5788ca86bcdf6dd9f6d8b8"
     },
     "docs/usage.md": {
-      "bytes": 4622,
-      "sha256": "a27b701d661ccd6cb45ebe37b0180493ea33fbf852a08681eb5a59c93a7435a3"
+      "bytes": 4628,
+      "sha256": "f50f1ebe8d1434017ef5a5ebe36c96959ba11d8cc981f2ccda9c2e043d3a40bc"
     },
     "experiments/score_comparison/figures/03_formula_flow.png": {
       "bytes": 133276,
@@ -139,8 +135,8 @@
       "sha256": "242838affb794091c56d3b78eabd6c98297b64a5dcd0465bfdf02e84609019f4"
     },
     "file_inventory.txt": {
-      "bytes": 6598,
-      "sha256": "f5541f9344f213fe7876137b04e4a5b902830aeefe665088a7206779cf4121b9"
+      "bytes": 6719,
+      "sha256": "4b8ffbe95bcb61a5f13310a233a410e2bd4373d313b951ffb721256c99acc4b6"
     },
     "pyproject.toml": {
       "bytes": 398,
@@ -163,8 +159,8 @@
       "sha256": "3c3ad6730cf0c0417b77bae38e53c11fa8cd96a34f2f8956998bafc0aaf3ef17"
     },
     "requirements.txt": {
-      "bytes": 48,
-      "sha256": "be845439d842472e0316c0502eeeb8364f47f20b4d13893fbf73f4ea0473f5b5"
+      "bytes": 51,
+      "sha256": "07f7e6afa86f05d05a300a7d2124874ccdf0cfb1bc6bcc9210c8eccffdb7696b"
     },
     "scripts/_bootstrap.py": {
       "bytes": 201,
@@ -207,8 +203,8 @@
       "sha256": "d8fe0dd36678babf327b32b0523c3b8411837dbcd3dcc6dff4a7a2865135cff0"
     },
     "scripts/refresh_manifest.py": {
-      "bytes": 6221,
-      "sha256": "d4f52949ef2278402d98a2cd32b89f3eec129fa88d353f9fb404506c8f7d9ee8"
+      "bytes": 6253,
+      "sha256": "37792097be8b5e4ab97d0776c3f51dbfc52fa6c6381e3b33faa14ff57c08c7ec"
     },
     "scripts/restore_data.py": {
       "bytes": 5090,
@@ -366,6 +362,10 @@
       "bytes": 38133,
       "sha256": "9435f1ca3353ddc8a67b919226f99b1bfe9d5a9e7a5f477bdf6831fa57cbd6ba"
     },
+    "week7/REPORT.md": {
+      "bytes": 8709,
+      "sha256": "d380bff086cc5cfd1a571d4fac776efc372d58a3a53aeaaee9ecd329a8d1ae65"
+    },
     "week7/SHARING.md": {
       "bytes": 4475,
       "sha256": "c957d75b5bac84245eba017720bddda81c34fe9ada35667365a239704e216ab7"
@@ -489,6 +489,18 @@
     "week7/evaluation/experiment2/verification.json": {
       "bytes": 1931,
       "sha256": "43d3adbf0aa1953d1b562991e62a0f4dc3bf24d94d1ef5a0aa28863407e66288"
+    },
+    "week7/failure_analysis/README.md": {
+      "bytes": 4317,
+      "sha256": "b86e8ab5064fe68bdae42e4b070ec8cd742c22093d0da78ab73f7905f3a86584"
+    },
+    "week7/failure_analysis/candidate-cases.md": {
+      "bytes": 21326,
+      "sha256": "09bdee42cd30cdd5f874cde8af42df3858e5b2cdb8d53fb3d038e52fc8f1dbde"
+    },
+    "week7/failure_analysis/ranking-cases.md": {
+      "bytes": 127754,
+      "sha256": "854ce50be48da9ac52f057ef47aa1290270b30e9b4ddda41a32c92743bea5992"
     },
     "week7/results/experiment2_20261031/behavior_qwen/config.json": {
       "bytes": 2566,

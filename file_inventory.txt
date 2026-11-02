@@ -1,7 +1,6 @@
 .gitattributes
 .gitignore
 README.md
-REPORT.md
 data/benchmark/dataset.json
 data/benchmark/diagnostic480/queries.jsonl
 data/benchmark/diagnostic480/questions.jsonl
@@ -90,6 +89,7 @@ tests/test_week7_behavior_runner.py
 tests/test_week7_bge_direct.py
 tests/test_week7_experiment2.py
 week7/EXPERIMENT2.md
+week7/REPORT.md
 week7/SHARING.md
 week7/docs/experiment2_cases/case_details.json
 week7/docs/experiment2_cases/failure_analysis.json
@@ -121,6 +121,9 @@ week7/evaluation/experiment2/precision_sensitivity.json
 week7/evaluation/experiment2/sharing_verification.json
 week7/evaluation/experiment2/summary.json
 week7/evaluation/experiment2/verification.json
+week7/failure_analysis/README.md
+week7/failure_analysis/candidate-cases.md
+week7/failure_analysis/ranking-cases.md
 week7/results/experiment2_20261031/behavior_qwen/config.json
 week7/results/experiment2_20261031/behavior_qwen/content_judge/config.json
 week7/results/experiment2_20261031/behavior_qwen/content_judge/judgments.jsonl.gz

@@ -15,7 +15,7 @@ from civic_link.graph.build import corpus_identity
 from restore_data import sha
 
 def members(root):
-    names = ['README.md', 'REPORT.md', 'requirements.txt', 'requirements-dev.txt', 'pyproject.toml',
+    names = ['README.md', 'week7/REPORT.md', 'requirements.txt', 'requirements-dev.txt', 'pyproject.toml',
         'pytest.ini', '.gitattributes', '.gitignore', 'file_inventory.txt', 'data/services.jsonl',
         'requirements-bge.txt', 'requirements-bge-lock.txt', 'week7/EXPERIMENT2.md', 'week7/SHARING.md',
         'data/graph/graph.json', 'data/graph/graph.evidence.json',
@@ -24,7 +24,7 @@ def members(root):
     for directory in ('src', 'scripts', 'tests'):
         names += [p.relative_to(root).as_posix() for p in (root/directory).rglob('*.py')]
     for directory in ('data/benchmark', 'experiments', 'docs',
-                      'week7/docs/experiment2_cases', 'week7/evaluation/experiment2',
+                      'week7/failure_analysis', 'week7/docs/experiment2_cases', 'week7/evaluation/experiment2',
                       'week7/results/experiment2_bge_direct_20261101'):
         names += [p.relative_to(root).as_posix() for p in (root/directory).rglob('*')
                   if p.is_file() and '__pycache__' not in p.parts and p.name != '.DS_Store']
