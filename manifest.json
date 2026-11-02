@@ -134,9 +134,25 @@
       "bytes": 7623,
       "sha256": "242838affb794091c56d3b78eabd6c98297b64a5dcd0465bfdf02e84609019f4"
     },
+    "experiments/type1_fields/README.md": {
+      "bytes": 2022,
+      "sha256": "d649d91499660d429ede2d1ef6f8a992bf395ef9522d2e4dd619e73aeab358aa"
+    },
+    "experiments/type1_fields/aggregate.py": {
+      "bytes": 19558,
+      "sha256": "4a736daa05a4366af2cfaceedd3c64321397c882387a2ba8131609249942f149"
+    },
+    "experiments/type1_fields/prepare.py": {
+      "bytes": 8472,
+      "sha256": "8f5ebad54a3d7f604ab8396292bd33c1233c8a07e2c1f27f99191bb4c07e97f2"
+    },
+    "experiments/type1_fields/score.py": {
+      "bytes": 9605,
+      "sha256": "36fda1ae7045a59d3f18bc0de338e301daa386aa16a40c9340a80e0d8b6f3dcf"
+    },
     "file_inventory.txt": {
-      "bytes": 7252,
-      "sha256": "bb287463f3ead5c5558f5caffc7bcf8594ae2f9b16ef94ee7f4b85fe243f216a"
+      "bytes": 7779,
+      "sha256": "77d08b27a05d73b58a913d2d9336b4c25ab804ab3b38e9ee8774c5ec4ff370c7"
     },
     "pyproject.toml": {
       "bytes": 398,
@@ -197,6 +213,10 @@
     "scripts/evaluate_week7_bge_input_length.py": {
       "bytes": 20248,
       "sha256": "0739792576928a6b5f8c07e84bafeee8ba9307ff0c4854c85359d8647dc5b016"
+    },
+    "scripts/evaluate_week7_graph_weights.py": {
+      "bytes": 3303,
+      "sha256": "80797266ed752c0fef581568af5a5ae0af7805e0d286040a1b8dbdeacddfc345"
     },
     "scripts/explain_week7_cases.py": {
       "bytes": 23860,
@@ -367,8 +387,8 @@
       "sha256": "33694eee1327a7028907f3f702ae85973c7c01ba345f8708c8924e506518bc80"
     },
     "week7/REPORT.md": {
-      "sha256": "027eaaab4f3536048ca057ba792d07fa1264da7e9a2e2205c22da6d66acf9249",
-      "bytes": 9632
+      "bytes": 10361,
+      "sha256": "9066428a18d8886de7a95329e2c9feb0b96491df0cfaf5bef2bfced96a8606c5"
     },
     "week7/SHARING.md": {
       "bytes": 4475,
@@ -503,12 +523,16 @@
       "sha256": "73d4066302d8d833b2e23257eb92419f664f13489350c9fc0b170db0983c052b"
     },
     "week7/failure_analysis/ranking-cases.md": {
-      "bytes": 186440,
-      "sha256": "e9e3a17e783aee9ce4e2b745545ebc3ac65a22a93cc32afc1a4a2dc21a8dab07"
+      "bytes": 194801,
+      "sha256": "ecc7d01c8c91a2048edb140c59d10ca939331e7aee7fe6f0ec7259ac26d95e4f"
     },
     "week7/failure_analysis/ranking-patterns.md": {
       "sha256": "e37ae74c0a70fffb3cfef3c7d47478cfb2269654f12f5419b994f8177379562a",
       "bytes": 928
+    },
+    "week7/failure_analysis/results/bge-graph-weights.csv": {
+      "bytes": 165390,
+      "sha256": "2c618885d61183a34a4727ebf86256ed31da522887b00aedb96a7357972cba47"
     },
     "week7/failure_analysis/results/bge-length-512-vs-1024.csv": {
       "bytes": 64081,
@@ -533,6 +557,26 @@
     "week7/failure_analysis/results/sj-n-052-bge.csv": {
       "bytes": 11823,
       "sha256": "69759d7d61be43664581e32222afe4d692cb9bc7e661133ff292588c58d281fe"
+    },
+    "week7/failure_analysis/results/type1-fields/candidate-ranks.csv": {
+      "bytes": 138815,
+      "sha256": "bb935ac6b08fde212060ca2d776839c73b29f71b474fb552d1523f606b73e62b"
+    },
+    "week7/failure_analysis/results/type1-fields/plan.json": {
+      "bytes": 1761,
+      "sha256": "c80a3ab9959db16421279cc192976e853f5339d7afd478fd16450e81d4d9305d"
+    },
+    "week7/failure_analysis/results/type1-fields/provenance.json": {
+      "bytes": 1045,
+      "sha256": "842542e5c1aee3a43cc731c98807fa75b481765a528ee6143220cf99dde58144"
+    },
+    "week7/failure_analysis/results/type1-fields/result.json": {
+      "bytes": 50073,
+      "sha256": "7519d3b42d74595bee84f879b1c398d1bba79a543636ab76392db0fac874b3ce"
+    },
+    "week7/failure_analysis/results/type1-fields/scores.jsonl": {
+      "bytes": 96492,
+      "sha256": "2a443c945de555dbf166c4d00a448779a2b93702466c5991ada89fb50723ad57"
     },
     "week7/failure_analysis/results/w7-ms-025-service-bge.csv": {
       "bytes": 9756,

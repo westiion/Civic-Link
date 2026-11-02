@@ -1,0 +1,66 @@
+{
+  "protocol": "service-guide-source-fields-v1",
+  "query_ids": [
+    "SJ-A-058",
+    "SJ-N-022",
+    "SJ-N-028",
+    "W7-PR-012",
+    "W7-PR-013",
+    "W7-PR-020",
+    "W7-PR-021",
+    "W7-PR-022",
+    "SJ-B-038",
+    "W7-LA-047",
+    "SJ-N-051",
+    "SJ-A-003",
+    "W7-MS-033",
+    "W7-MS-045"
+  ],
+  "counts": {
+    "candidates": 1568,
+    "split_candidates": 163,
+    "field_occurrences": 692
+  },
+  "unchanged_candidates": 1405,
+  "unique_new_field_inputs": 692,
+  "controls": 14,
+  "unique_inference_inputs": 706,
+  "source_counts": {
+    "law": 1210,
+    "service_guide": 230,
+    "municipal_table": 128
+  },
+  "split_section_counts": {
+    "서비스 개요": 53,
+    "제출 서류": 63,
+    "신청 방법 및 절차": 26,
+    "부가정보": 17,
+    "기본정보": 4
+  },
+  "pool_sizes": {
+    "SJ-A-058": 113,
+    "SJ-N-022": 113,
+    "SJ-N-028": 106,
+    "W7-PR-012": 113,
+    "W7-PR-013": 104,
+    "W7-PR-020": 114,
+    "W7-PR-021": 104,
+    "W7-PR-022": 102,
+    "SJ-B-038": 104,
+    "W7-LA-047": 102,
+    "SJ-N-051": 109,
+    "SJ-A-003": 131,
+    "W7-MS-033": 139,
+    "W7-MS-045": 114
+  },
+  "input_format": "Original chunk title + newline + source label and complete value block",
+  "source_hashes": {
+    "week7/results/experiment2_bge_direct_20261101/rankings.csv": "94a3e35fc29b054e2c1a7f71845411c35fff0910e01687d59449d4e5ecd14c6e",
+    "data/benchmark/queries.jsonl": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0"
+  },
+  "output_hashes": {
+    "inputs.jsonl": "9505fe3fb9cd5f2c1a5ec74960fdebf0720d8d34909f9b72d4d1b2c8db998b5d",
+    "candidates.jsonl": "2329d3787291ec4c6425dcc81bd04ddece488cca229e68dd0d7cb9f278d54dbc",
+    "controls.jsonl": "03fc4b211659aa5916e735d55feecf3103d4f8d0d496c5c0430653ca9ba91c88"
+  }
+}

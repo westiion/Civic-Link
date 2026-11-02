@@ -1,0 +1,24 @@
+{
+  "model": "BAAI/bge-reranker-v2-m3",
+  "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+  "weight_sha256": "04959d987094b10a2c6f15bf6208dc9f5e43a7734a454f76daaeaebe5c808010",
+  "assets_sha256": {
+    "config.json": "13dcd6c31d9fec9d1d8e158702072f62d7fa7d312a64b9fe057bec9a08cfe41a",
+    "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+    "special_tokens_map.json": "8c785abebea9ae3257b61681b4e6fd8365ceafde980c21970d001e834cf10835",
+    "tokenizer_config.json": "7e4c1cc848840aeccdd763458c18dd525eb0f795c992e00ebe9c28554e7db2d4",
+    "tokenizer.json": "69564b696052886ed0ac63fa393e928384e0f8caada38c1f4864a9bfbf379c15"
+  },
+  "inputs_sha256": "9505fe3fb9cd5f2c1a5ec74960fdebf0720d8d34909f9b72d4d1b2c8db998b5d",
+  "input_count": 706,
+  "max_length": 512,
+  "truncation": "only_second",
+  "device": "cpu",
+  "dtype": "float32",
+  "attention": "sdpa",
+  "torch": "2.5.1+cpu",
+  "transformers": "4.57.1",
+  "threads": 4,
+  "batch_size": 8,
+  "scoring": "raw_logit"
+}
