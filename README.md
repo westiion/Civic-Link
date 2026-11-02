@@ -59,7 +59,7 @@ Civic-Link/
 │     └─ figures/                # 보고서용 그림
 ├─ week7/                        # Week 7 보고서·실험 자료
 │  ├─ REPORT.md                  # 피드백 반영·개선·수행 기록
-│  ├─ failure_analysis/          # 실패 통계·유형별 사례 51문항
+│  ├─ failure_analysis/          # 순위 탈락·후보 누락 사례와 입력 보정 결과
 │  ├─ EXPERIMENT2.md             # 실험 2 결과
 │  ├─ SHARING.md                 # 재집계 안내
 │  ├─ docs/                      # 실험 2 문항별 기록
@@ -81,7 +81,7 @@ Civic-Link/
 
 ## 실행
 
-[Week 7 보고서](week7/REPORT.md), [실패 51문항 통계·사례](week7/failure_analysis/README.md), [실험 2 최종 결과](week7/EXPERIMENT2.md)와 [공유본·BGE/Qwen 재집계 안내](week7/SHARING.md)를 함께 제공합니다. 저장된 원점수·원응답의 재집계에는 모델이나 서버가 필요하지 않습니다.
+[Week 7 보고서](week7/REPORT.md), [실패 사례 분석 및 입력 길이 보정 결과](week7/failure_analysis/README.md), [실험 2 최종 결과](week7/EXPERIMENT2.md)와 [공유본·BGE/Qwen 재집계 안내](week7/SHARING.md)를 함께 제공합니다. 저장된 원점수·원응답의 재집계에는 모델이나 서버가 필요하지 않습니다.
 
 ```sh
 python3.12 -m venv .venv

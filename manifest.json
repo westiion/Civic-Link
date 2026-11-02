@@ -11,8 +11,8 @@
       "sha256": "370af9fb8f87ffc92e8e4b088e454c45c948962eba5ca70b8de374c6acbdf9fb"
     },
     "README.md": {
-      "bytes": 5284,
-      "sha256": "4412d1e0b1c5570eb4ac9de8b4c0417d28848a4c111e8dd2e6290f4a1a22c555"
+      "bytes": 5325,
+      "sha256": "bd053e9587e36bcc44506c3955f639a710472d668c833dd868f64f7b66c3e1e6"
     },
     "data/benchmark/dataset.json": {
       "bytes": 394,
@@ -363,12 +363,12 @@
       "sha256": "414dafd31b3a60c0224b379aa59770245a5a0b14baf217bd4594009a07f030b4"
     },
     "week7/EXPERIMENT2.md": {
-      "bytes": 38133,
-      "sha256": "9435f1ca3353ddc8a67b919226f99b1bfe9d5a9e7a5f477bdf6831fa57cbd6ba"
+      "bytes": 38422,
+      "sha256": "33694eee1327a7028907f3f702ae85973c7c01ba345f8708c8924e506518bc80"
     },
     "week7/REPORT.md": {
-      "bytes": 8788,
-      "sha256": "514d1060b34c2a94a029c4df96bd228ff50bb7c422b2d029f459759393879967"
+      "bytes": 8698,
+      "sha256": "104ba2b70acf7721c521a477800a149fb3beb3e6006ed26d254db606ce7c3a1d"
     },
     "week7/SHARING.md": {
       "bytes": 4475,
@@ -495,20 +495,20 @@
       "sha256": "43d3adbf0aa1953d1b562991e62a0f4dc3bf24d94d1ef5a0aa28863407e66288"
     },
     "week7/failure_analysis/README.md": {
-      "bytes": 4782,
-      "sha256": "c5cff0f0b06f5f057792959e0dd754cec7273b6ff98579570d26a091c1e750ad"
+      "bytes": 4965,
+      "sha256": "e9f0cce6ae85cf6595cafdc1ba2a5ff8b1aa08c7c6eb08b35862196ecec288cd"
     },
     "week7/failure_analysis/candidate-cases.md": {
-      "bytes": 55311,
-      "sha256": "420694b3139d8e253ad0be2b7e0db5fe31a515a990a536d5178b32ab414ea864"
+      "bytes": 55330,
+      "sha256": "2d0f8bf07919ee4a3f5226785f655b04f6763f73d4e00847a72a8168dd849301"
     },
     "week7/failure_analysis/ranking-cases.md": {
-      "bytes": 176103,
-      "sha256": "543976233540f0eb61b9778ab8805a784991b5d0e32bab208866a76815210954"
+      "bytes": 176071,
+      "sha256": "3b2e0d5dec1a02d55d496de6700159ce3dd3a96e90833750e4e77201b6a9ab4d"
     },
     "week7/failure_analysis/ranking-patterns.md": {
-      "bytes": 30866,
-      "sha256": "425ba9c33dc2715cb256c7e2a7dc7b9889eeb3405e399866530876eb4c840c76"
+      "bytes": 29181,
+      "sha256": "7a32ff70bbc115af0ddb35fdefaeabc55f638333bcf7dc370c6a5e79c08859f4"
     },
     "week7/failure_analysis/results/bge-length-512-vs-1024.csv": {
       "bytes": 64081,

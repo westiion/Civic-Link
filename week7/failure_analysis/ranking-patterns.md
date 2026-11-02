@@ -1,22 +1,21 @@
-# 순위 탈락 44문항의 반복 패턴
+# 순위 탈락 39문항의 반복 패턴
 
-대상은 기존 **Hybrid+Graph → BGE 직접 정렬**에서 모든 필수 근거가 100위 안에 있었지만 완전회수@10에 실패한 **44문항**이다. 놓친 근거 묶음은 51개다. 순위에서 보이는 양상, 정답표가 허용한 청크의 범위, 512토큰 입력 잘림을 따로 살폈다. [44문항 원문과 개별 순위](ranking-cases.md)
+입력 길이를 보정한 뒤에도 살펴볼 **순위 탈락 39문항**을 분석한다. 원래 512토큰에서 실패한 44문항 중 필수 문장이 잘린 6문항을 같은 후보로 재평가해, 완전회수@10에 성공한 5문항을 제외했다. 남은 39문항은 보정 후에도 근거가 13위에 머문 W7V2-MS037과 1,024토큰으로 재평가하지 않은 38문항이다. 아래 패턴과 대체 근거 판정은 이 39문항의 기존 512토큰 순위를 기준으로 한다. [39문항 원문과 개별 순위](ranking-cases.md) · [입력 길이 보정 기록](#같은-후보에서-512토큰과-1024토큰-비교)
 
 ## 1. 상위 10개에서 관찰한 양상
 
-문항에는 **확인되는 유형을 모두 표시**했다. 예를 들어 SJ-A-058은 농지대장 자료에 편중됐고, 토지대장도 자격 설명 대신 기재 항목이 앞섰다. 그래서 아래의 문항 수를 더하면 44를 넘는다. 링크는 대표 사례가 아니라 각 유형에 해당하는 **전체 문항**이다.
+문항에는 **확인되는 유형을 모두 표시**했다. 예를 들어 SJ-A-058은 농지대장 자료에 편중됐고, 토지대장도 자격 설명 대신 기재 항목이 앞섰다. 한 문항에 여러 유형을 표시할 수 있어 유형별 문항 수의 합은 39를 넘는다.
 
 | 유형 | 무엇을 보고 판정했나? | 문항 수 | 해당 문항 전체 |
 |---|---|---:|---|
-| **비교 대상 중 한쪽의 자료에 집중** | 서로 다른 대상·서류·관점을 비교해야 하는데, 상위 결과가 한쪽에 집중됐고 다른 쪽의 필요한 조건은 빠졌다. | 12 | [SJ-A-058](ranking-cases.md#sj-a-058) · [SJ-N-051](ranking-cases.md#sj-n-051) · [SJ-A-003](ranking-cases.md#sj-a-003) · [W7-MS-024](ranking-cases.md#w7-ms-024) · [W7-MS-026](ranking-cases.md#w7-ms-026) · [W7-MS-033](ranking-cases.md#w7-ms-033) · [W7-MS-039](ranking-cases.md#w7-ms-039) · [W7-MS-045](ranking-cases.md#w7-ms-045) · [W7V2-MS037](ranking-cases.md#w7v2-ms037) · [W7V2-MS042](ranking-cases.md#w7v2-ms042) · [W7V2-MS043](ranking-cases.md#w7v2-ms043) · [W7V2-MS044](ranking-cases.md#w7v2-ms044) |
+| **비교 대상 중 한쪽의 자료에 집중** | 서로 다른 대상·서류·관점을 비교해야 하는데, 상위 결과가 한쪽에 집중됐고 다른 쪽의 필요한 조건은 빠졌다. | 11 | [SJ-A-058](ranking-cases.md#sj-a-058) · [SJ-N-051](ranking-cases.md#sj-n-051) · [SJ-A-003](ranking-cases.md#sj-a-003) · [W7-MS-024](ranking-cases.md#w7-ms-024) · [W7-MS-026](ranking-cases.md#w7-ms-026) · [W7-MS-033](ranking-cases.md#w7-ms-033) · [W7-MS-039](ranking-cases.md#w7-ms-039) · [W7-MS-045](ranking-cases.md#w7-ms-045) · [W7V2-MS037](ranking-cases.md#w7v2-ms037) · [W7V2-MS042](ranking-cases.md#w7v2-ms042) · [W7V2-MS043](ranking-cases.md#w7v2-ms043) |
 | **맞는 안내문·요금표의 다른 항목이 앞섬** | 놓친 근거와 같은 안내문이나 표가 상위에 있었지만, 신청 자격·발급 목적·서류명·수수료가 적힌 항목이나 행은 달랐다. | 14 | [SJ-A-058](ranking-cases.md#sj-a-058) · [SJ-N-022](ranking-cases.md#sj-n-022) · [SJ-N-028](ranking-cases.md#sj-n-028) · [W7-PR-012](ranking-cases.md#w7-pr-012) · [W7-PR-013](ranking-cases.md#w7-pr-013) · [W7-PR-020](ranking-cases.md#w7-pr-020) · [W7-PR-021](ranking-cases.md#w7-pr-021) · [W7-PR-022](ranking-cases.md#w7-pr-022) · [SJ-B-038](ranking-cases.md#sj-b-038) · [W7-LA-047](ranking-cases.md#w7-la-047) · [SJ-N-051](ranking-cases.md#sj-n-051) · [SJ-A-003](ranking-cases.md#sj-a-003) · [W7-MS-033](ranking-cases.md#w7-ms-033) · [W7-MS-045](ranking-cases.md#w7-ms-045) |
-| **비슷한 표현의 다른 업무·단계가 앞섬** | 민원이나 표현은 관련돼도, 상위 조항이 설명하는 주체·절차·대상·시점은 질문이 요구한 것과 달랐다. | 10 | [SJ-B-012](ranking-cases.md#sj-b-012) · [SJ-B-014](ranking-cases.md#sj-b-014) · [SJ-B-019](ranking-cases.md#sj-b-019) · [SJ-N-022](ranking-cases.md#sj-n-022) · [W7-PR-021](ranking-cases.md#w7-pr-021) · [SJ-B-038](ranking-cases.md#sj-b-038) · [W7V2-LA046](ranking-cases.md#w7v2-la046) · [W7-LA-024](ranking-cases.md#w7-la-024) · [W7V2-LA014](ranking-cases.md#w7v2-la014) · [W7-MS-033](ranking-cases.md#w7-ms-033) |
-| **인용 관계의 한쪽 원문이 밀림** | 상위 조항과 누락 조항 사이의 명시적 인용을 그래프 간선과 해당 청크에서 확인했다. 어느 쪽이 인용하는지도 구분했다. | 10 | [W7V2-PR017](ranking-cases.md#w7v2-pr017) · [W7V2-LA046](ranking-cases.md#w7v2-la046) · [SJ-N-050](ranking-cases.md#sj-n-050) · [SJ-B-034](ranking-cases.md#sj-b-034) · [SJ-N-044](ranking-cases.md#sj-n-044) · [SJ-N-060](ranking-cases.md#sj-n-060) · [W7V2-MS007](ranking-cases.md#w7v2-ms007) · [W7V2-MS014](ranking-cases.md#w7v2-ms014) · [SJ-N-057](ranking-cases.md#sj-n-057) · [W7V2-MS041](ranking-cases.md#w7v2-ms041) |
-| **같은 법령·같은 조에서 필요한 항이 밀림** | 상위 10개에 같은 문서 ID와 같은 조 번호의 다른 청크가 있었으나, 필요한 항·호가 담긴 허용 청크는 밖에 있었다. | 3 | [W7V2-LA010](ranking-cases.md#w7v2-la010) · [W7V2-LA016](ranking-cases.md#w7v2-la016) · [W7V2-MS007](ranking-cases.md#w7v2-ms007) |
+| **비슷한 표현의 다른 업무·단계가 앞섬** | 민원이나 표현은 관련돼도, 상위 조항이 설명하는 주체·절차·대상·시점은 질문이 요구한 것과 달랐다. | 9 | [SJ-B-012](ranking-cases.md#sj-b-012) · [SJ-B-014](ranking-cases.md#sj-b-014) · [SJ-B-019](ranking-cases.md#sj-b-019) · [SJ-N-022](ranking-cases.md#sj-n-022) · [W7-PR-021](ranking-cases.md#w7-pr-021) · [SJ-B-038](ranking-cases.md#sj-b-038) · [W7V2-LA046](ranking-cases.md#w7v2-la046) · [W7V2-LA014](ranking-cases.md#w7v2-la014) · [W7-MS-033](ranking-cases.md#w7-ms-033) |
+| **인용 관계의 한쪽 원문이 밀림** | 상위 조항과 누락 조항 사이의 명시적 인용을 그래프 간선과 해당 청크에서 확인했다. 어느 쪽이 인용하는지도 구분했다. | 9 | [W7V2-PR017](ranking-cases.md#w7v2-pr017) · [W7V2-LA046](ranking-cases.md#w7v2-la046) · [SJ-N-050](ranking-cases.md#sj-n-050) · [SJ-B-034](ranking-cases.md#sj-b-034) · [SJ-N-044](ranking-cases.md#sj-n-044) · [SJ-N-060](ranking-cases.md#sj-n-060) · [W7V2-MS014](ranking-cases.md#w7v2-ms014) · [SJ-N-057](ranking-cases.md#sj-n-057) · [W7V2-MS041](ranking-cases.md#w7v2-ms041) |
 | **구체적 요건이 정의·목적·효력 조항보다 앞섬** | 인정 기준·지급 항목·계약 내용 등 구체적 조항은 앞섰지만, 별도로 필요한 정의·목적·법적 효력·지급 단위 같은 원칙이 밀렸다. | 5 | [W7-PR-024](ranking-cases.md#w7-pr-024) · [W7V2-PR054](ranking-cases.md#w7v2-pr054) · [W7V2-MS033](ranking-cases.md#w7v2-ms033) · [W7V2-MS036](ranking-cases.md#w7v2-ms036) · [W7V2-MS043](ranking-cases.md#w7v2-ms043) |
 
-- **인용 방향**이 다르다. 상위 청크가 누락 조항을 인용한 문항은 8개다. 반대로 [W7V2-PR017](ranking-cases.md#w7v2-pr017) · [SJ-B-034](ranking-cases.md#sj-b-034)에서는 **누락 조항이 상위 조항을 인용**했다. 한 방향의 인용만 따라가서는 두 경우를 함께 다룰 수 없다.
-- 위 여섯 양상이 확인된 문항은 **42개**다. [SJ-N-020](ranking-cases.md#sj-n-020) · [SJ-N-062](ranking-cases.md#sj-n-062)는 비교 양쪽의 내용을 이미 서로 다른 원문에서 찾을 수 있었다. 두 문항은 정답으로 인정하는 출처가 달랐다는 점을 아래에서 따로 판독했다.
+- **인용 방향**이 다르다. 상위 청크가 누락 조항을 인용한 문항은 7개다. 반대로 [W7V2-PR017](ranking-cases.md#w7v2-pr017) · [SJ-B-034](ranking-cases.md#sj-b-034)에서는 **누락 조항이 상위 조항을 인용**했다. 한 방향의 인용만 따라가서는 두 경우를 함께 다룰 수 없다.
+- 이 다섯 양상 중 하나 이상이 확인된 문항은 **37개**다. [SJ-N-020](ranking-cases.md#sj-n-020) · [SJ-N-062](ranking-cases.md#sj-n-062)는 비교 양쪽의 내용을 이미 서로 다른 원문에서 찾을 수 있었다. 두 문항은 정답으로 인정하는 출처가 달랐다는 점을 아래에서 따로 판독했다.
 
 ## 2. 정답표가 허용하는 근거의 범위
 
@@ -26,7 +25,7 @@
 |---|---:|---|
 | 직접 확인 · 허용 근거 재검토 후보 | 9 | [SJ-N-020](ranking-cases.md#sj-n-020) · [W7-PR-013](ranking-cases.md#w7-pr-013) · [W7-PR-020](ranking-cases.md#w7-pr-020) · [W7-PR-021](ranking-cases.md#w7-pr-021) · [W7-PR-022](ranking-cases.md#w7-pr-022) · [W7-PR-024](ranking-cases.md#w7-pr-024) · [W7V2-PR017](ranking-cases.md#w7v2-pr017) · [SJ-N-062](ranking-cases.md#sj-n-062) · [W7V2-MS036](ranking-cases.md#w7v2-ms036) |
 | 일부 확인 · 필요한 조건 또는 원문은 빠짐 | 9 | [SJ-N-022](ranking-cases.md#sj-n-022) · [SJ-N-028](ranking-cases.md#sj-n-028) · [W7-PR-012](ranking-cases.md#w7-pr-012) · [SJ-N-050](ranking-cases.md#sj-n-050) · [SJ-N-044](ranking-cases.md#sj-n-044) · [SJ-N-060](ranking-cases.md#sj-n-060) · [SJ-N-057](ranking-cases.md#sj-n-057) · [W7-MS-033](ranking-cases.md#w7-ms-033) · [W7-MS-045](ranking-cases.md#w7-ms-045) |
-| 확인 못함 | 26 | [SJ-A-058](ranking-cases.md#sj-a-058) · [SJ-B-012](ranking-cases.md#sj-b-012) · [SJ-B-014](ranking-cases.md#sj-b-014) · [SJ-B-019](ranking-cases.md#sj-b-019) · [W7V2-PR054](ranking-cases.md#w7v2-pr054) · [SJ-B-038](ranking-cases.md#sj-b-038) · [W7-LA-047](ranking-cases.md#w7-la-047) · [W7V2-LA046](ranking-cases.md#w7v2-la046) · [SJ-N-051](ranking-cases.md#sj-n-051) · [W7-LA-024](ranking-cases.md#w7-la-024) · [W7V2-LA010](ranking-cases.md#w7v2-la010) · [W7V2-LA014](ranking-cases.md#w7v2-la014) · [W7V2-LA016](ranking-cases.md#w7v2-la016) · [SJ-B-034](ranking-cases.md#sj-b-034) · [W7V2-MS007](ranking-cases.md#w7v2-ms007) · [W7V2-MS014](ranking-cases.md#w7v2-ms014) · [SJ-A-003](ranking-cases.md#sj-a-003) · [W7-MS-024](ranking-cases.md#w7-ms-024) · [W7-MS-026](ranking-cases.md#w7-ms-026) · [W7-MS-039](ranking-cases.md#w7-ms-039) · [W7V2-MS033](ranking-cases.md#w7v2-ms033) · [W7V2-MS037](ranking-cases.md#w7v2-ms037) · [W7V2-MS041](ranking-cases.md#w7v2-ms041) · [W7V2-MS042](ranking-cases.md#w7v2-ms042) · [W7V2-MS043](ranking-cases.md#w7v2-ms043) · [W7V2-MS044](ranking-cases.md#w7v2-ms044) |
+| 확인 못함 | 21 | [SJ-A-058](ranking-cases.md#sj-a-058) · [SJ-B-012](ranking-cases.md#sj-b-012) · [SJ-B-014](ranking-cases.md#sj-b-014) · [SJ-B-019](ranking-cases.md#sj-b-019) · [W7V2-PR054](ranking-cases.md#w7v2-pr054) · [SJ-B-038](ranking-cases.md#sj-b-038) · [W7-LA-047](ranking-cases.md#w7-la-047) · [W7V2-LA046](ranking-cases.md#w7v2-la046) · [SJ-N-051](ranking-cases.md#sj-n-051) · [W7V2-LA014](ranking-cases.md#w7v2-la014) · [SJ-B-034](ranking-cases.md#sj-b-034) · [W7V2-MS014](ranking-cases.md#w7v2-ms014) · [SJ-A-003](ranking-cases.md#sj-a-003) · [W7-MS-024](ranking-cases.md#w7-ms-024) · [W7-MS-026](ranking-cases.md#w7-ms-026) · [W7-MS-039](ranking-cases.md#w7-ms-039) · [W7V2-MS033](ranking-cases.md#w7v2-ms033) · [W7V2-MS037](ranking-cases.md#w7v2-ms037) · [W7V2-MS041](ranking-cases.md#w7v2-ms041) · [W7V2-MS042](ranking-cases.md#w7v2-ms042) · [W7V2-MS043](ranking-cases.md#w7v2-ms043) |
 
 직접 확인한 사례라도 원문 출처 자체를 요구하는 질문이면 다른 청크를 정답으로 인정할지는 별도 판단이 필요하다. 이 판독은 기존 벤치마크 점수에 합산하지 않았다.
 
@@ -49,9 +48,9 @@
 
 </details>
 
-## 3. BGE 입력 512토큰에서 필요한 문장이 보였나?
+## 3. 기존 44문항의 BGE 입력 길이 점검과 보정
 
-기존 실행은 질문과 ‘청크 제목 + 줄바꿈 + 본문’을 합쳐 최대 512토큰으로 채점했다. 초과하면 질문은 보존하고 후보 쪽 끝을 자른다. 기존 모델과 같은 토크나이저 파일로 입력을 다시 만들었고, 44문항 각각의 원래 토큰 총수·최댓값·잘린 후보 수가 실행 기록과 일치했다. [실행 코드](../results/experiment2_20261031/executed_runner.py) · [실행 설정](../results/experiment2_20261031/bge.run.json)
+이 절의 입력 점검 대상은 보정 전 순위 탈락 44문항이다. 기존 실행은 질문과 ‘청크 제목 + 줄바꿈 + 본문’을 합쳐 최대 512토큰으로 채점했다. 초과하면 질문은 보존하고 후보 쪽 끝을 자른다. 기존 모델과 같은 토크나이저 파일로 입력을 다시 만들었고, 44문항 각각의 원래 토큰 총수·최댓값·잘린 후보 수가 실행 기록과 일치했다. [실행 코드](../results/experiment2_20261031/executed_runner.py) · [실행 설정](../results/experiment2_20261031/bge.run.json)
 
 - 전체 후보 **4,958개 질문–청크 쌍 중 781개**에서 끝부분이 잘렸다. 44문항 모두 후보 중 하나 이상이 잘렸지만, 그 후보가 정답이었다는 뜻은 아니다.
 - 놓친 근거 51묶음 중 **9문항의 12묶음**에서 허용 청크 자체가 잘렸다(중복을 뺀 질문–청크 쌍 11개). 그중 **6문항의 6묶음**은 벤치마크에 인용된 필수 문장이 통째로 512토큰 밖에 있었다. 나머지 6묶음은 청크 끝이 잘렸어도 필요한 문장은 남았다.
@@ -73,7 +72,7 @@
 
 필수 문장 전체가 512토큰 밖에 있던 6문항에서 같은 질문·후보·BGE 모델로 입력 한도를 비교했다. 후보 660개 중 512토큰을 넘은 **104개**는 1,024토큰으로 다시 채점했고, 입력이 같았던 **556개**는 기존 점수를 사용했다. 가장 긴 입력은 757토큰이었다. 새 조건에서는 정답 청크와 경쟁 후보 모두에서 잘렸던 뒷부분 전체가 점수에 반영된다.
 
-**완전회수@10은 0/6 → 5/6, 완전회수@100은 6/6 → 6/6**이었다. 잘렸던 필수 문장이 있는 청크의 최종 순위는 상승 6문항, 동일 0문항, 하락 0문항이었다.
+**완전회수@10은 0/6 → 5/6, 완전회수@100은 6/6 → 6/6**이었다. 완전회수@10에 성공한 5문항은 입력 잘림으로 회수된 사례로 분리했다. ‘같은 법령·같은 조에서 필요한 항이 밀림’으로 분류했던 3문항도 모두 여기에 해당한다.
 
 | 문항 | 잘렸던 근거의 최종 순위<br>512 → 1,024 | 상위 10개에서 찾은 묶음<br>512 → 1,024 | 상위 100개에서 찾은 묶음<br>512 → 1,024 |
 |---|---:|---:|---:|
@@ -99,9 +98,9 @@ python scripts/evaluate_week7_bge_input_length.py --model-dir "<MODEL_DIR>" --ou
 
 </details>
 
-## 4. 44문항별 판정 근거
+## 4. 39문항별 판정 근거
 
-아래 44문항의 순위와 입력 잘림 판정은 기존 BGE 입력 512토큰 기준이다. [1,024토큰으로 다시 평가한 6문항의 순위](#같은-후보에서-512토큰과-1024토큰-비교)는 별도로 비교했다. 마지막 열은 다른 상위 원문이 누락 근거를 뒷받침하는지 보여 주며, 누락 청크가 잘린 문항에는 입력 점검 결과도 표시했다. 문항 ID를 누르면 원질문과 실제 상위 10개 청크를 볼 수 있다.
+아래 39문항의 패턴은 기존 512토큰 순위에서 확인했다. W7V2-MS037에는 보정 후 순위도 함께 표시했다. [1,024토큰으로 다시 평가한 6문항의 순위](#같은-후보에서-512토큰과-1024토큰-비교)는 별도로 비교했다. 마지막 열은 다른 상위 원문이 누락 근거를 뒷받침하는지 보여 주며, 누락 청크가 잘린 문항에는 입력 점검 결과도 표시했다. 문항 ID를 누르면 원질문과 실제 상위 10개 청크를 볼 수 있다.
 
 <details>
 <summary>조건·예외 판단 · 4문항</summary>
@@ -154,34 +153,30 @@ python scripts/evaluate_week7_bge_input_length.py --model-dir "<MODEL_DIR>" --ou
 </details>
 
 <details>
-<summary>법적 근거 · 6문항</summary>
+<summary>법적 근거 · 3문항</summary>
 
 | 문항 | 순위에서 보인 양상 | 앞선 내용과 놓친 근거 | 다른 원문 · 입력 점검 |
 |---|---|---|---|
 | [SJ-N-050](ranking-cases.md#sj-n-050) | 인용 대상 누락 | 국세청 규정 제41조 6위가 인용한 무인발급의 법률 제28조와 시행령 제32조는 각각 74·58위였다. | 일부만 확인 |
 | [SJ-N-051](ranking-cases.md#sj-n-051) | 비교 한쪽 집중 · 안내 항목·표 행 | 소득세법 근로소득 정의가 1위, 상위 9개가 소득 정의·과세 관련 법령이었고 증명서 부가정보가 10위, 용도를 설명한 기본정보가 12위였다. | 확인 못함 |
-| [W7-LA-024](ranking-cases.md#w7-la-024) | 업무·단계 차이 | 유증의 포기를 다룬 민법이 1위였지만 기관이 급여 신청 포기를 유도할 수 있는지 다룬 보장법 조항은 18위였다. | 확인 못함<br>512토큰 · 필수 문장 잘림 |
-| [W7V2-LA010](ranking-cases.md#w7v2-la010) | 같은 조의 다른 청크 | 같은 수수료규칙 제6조 뒷부분은 4위, 과납 환급·포기 기재를 포함한 제1·4항은 같은 청크에서 11위였다. | 확인 못함<br>512토큰 · 필수 문장 잘림 |
 | [W7V2-LA014](ranking-cases.md#w7v2-la014) | 업무·단계 차이 | 폐업사실증명 안내의 서비스 개요가 1위, 신청 방법이 2위였다. 처리된 종이 증명서의 미수령 종결 기준과 전자문서 예외를 정한 조항은 11위였다. | 확인 못함 |
-| [W7V2-LA016](ranking-cases.md#w7v2-la016) | 같은 조의 다른 청크 | 건축물대장 규칙 제11조의 신청 예외 부분은 2위였지만 일부 발급임을 표시하는 제2항의 문구는 18위였다. | 확인 못함<br>512토큰 · 필수 문장 잘림 |
 
 </details>
 
 <details>
-<summary>문서 간 참조 · 5문항</summary>
+<summary>문서 간 참조 · 4문항</summary>
 
 | 문항 | 순위에서 보인 양상 | 앞선 내용과 놓친 근거 | 다른 원문 · 입력 점검 |
 |---|---|---|---|
 | [SJ-B-034](ranking-cases.md#sj-b-034) | 준용·인용 근거 누락 | 이사 후 조사 생략·예외 본문은 4위, 그 규정을 주거급여에 준용하도록 하는 규칙 원문은 35위였다. 밀린 조항이 4위 조항을 인용하는 방향이다. | 확인 못함 |
 | [SJ-N-044](ranking-cases.md#sj-n-044) | 인용 대상 누락 | 재열람 시간과 추가 과금 여부를 정한 지침은 1·2위였고 같은 지침 10위가 인용한 부동산등기규칙 원문은 29위였다. | 일부만 확인 |
 | [SJ-N-060](ranking-cases.md#sj-n-060) | 인용 대상 누락 | 서비스 종료 후 재열람 시점은 지침 1위, 같은 지침 제1조 10위가 인용한 규칙 원문은 20위였다. | 일부만 확인 |
-| [W7V2-MS007](ranking-cases.md#w7v2-ms007) | 인용 대상 누락 · 같은 조의 다른 청크 | 부동산종합증명서의 평면도 열람 규정이 1위였고 그 조항이 인용한 건축물대장 규칙 제11조가 9위에도 나왔지만 평면도 소유자 동의 부분은 별도 청크 21위였다. | 확인 못함<br>512토큰 · 필수 문장 잘림 |
 | [W7V2-MS014](ranking-cases.md#w7v2-ms014) | 인용 대상 누락 | 미성년 친양자의 인적사항 생략을 다룬 규칙 1위가 인용한 법률 제14조의 성년 기준은 두 청크 15·16위였다. | 확인 못함<br>512토큰 · 필수 문장은 보존 |
 
 </details>
 
 <details>
-<summary>여러 근거 종합 · 15문항</summary>
+<summary>여러 근거 종합 · 14문항</summary>
 
 | 문항 | 순위에서 보인 양상 | 앞선 내용과 놓친 근거 | 다른 원문 · 입력 점검 |
 |---|---|---|---|
@@ -195,11 +190,10 @@ python scripts/evaluate_week7_bge_input_length.py --model-dir "<MODEL_DIR>" --ou
 | [W7-MS-045](ranking-cases.md#w7-ms-045) | 비교 한쪽 집중 · 안내 항목·표 행 | 소득금액증명의 용도는 1위이고 상위 9개 중 다수가 소득금액·근로소득을 다뤘다. 부가세 증명의 개요는 10위였지만 증명 범위는 기본정보 13위였다. | 일부만 확인 |
 | [W7V2-MS033](ranking-cases.md#w7v2-ms033) | 정의·원칙 누락 | 농지대장 작성과 매매계약 성립은 2·1위였지만 부동산물권의 등기 효력을 정한 조항은 25위였다. | 확인 못함 |
 | [W7V2-MS036](ranking-cases.md#w7v2-ms036) | 정의·원칙 누락 | 퇴직소득 정의는 1위, 별도 과세표준 계산은 8위였지만 종합소득과 퇴직소득을 나열하는 지정 조항은 13위였다. | 다른 원문에서 확인 |
-| [W7V2-MS037](ranking-cases.md#w7v2-ms037) | 비교 한쪽 집중 | 상위 10개 모두 학교생활기록 관련 문서였고 증빙으로 제출하려는 기본증명서에 성별이 기재되는 근거는 23위였다. | 확인 못함<br>512토큰 · 필수 문장 잘림 |
+| [W7V2-MS037](ranking-cases.md#w7v2-ms037) | 비교 한쪽 집중 | 상위 10개 모두 학교생활기록 관련 문서였고 증빙으로 제출하려는 기본증명서에 성별이 기재되는 근거는 23위였다. | 확인 못함<br>1,024토큰 보정 후 13위 · 상위 10개에서 4/5묶음 회수 |
 | [W7V2-MS041](ranking-cases.md#w7v2-ms041) | 인용 대상 누락 | 연금 대리신청·대리수령인 규칙은 2·1위였지만 신청 조항에 명시된 민법 제777조의 친족 범위 원문은 11위였다. | 확인 못함 |
 | [W7V2-MS042](ranking-cases.md#w7v2-ms042) | 비교 한쪽 집중 | 상위 10개 모두 등기 관련 문서였고 국세증명 진위확인 입력값을 정한 규정은 55위였다. | 확인 못함 |
 | [W7V2-MS043](ranking-cases.md#w7v2-ms043) | 비교 한쪽 집중 · 정의·원칙 누락 | 기초연금 문서가 9/10, 주거급여 지급 내용을 정한 법 제11조는 1위였지만 개별가구 단위의 주거급여 원칙은 11위였다. | 확인 못함<br>512토큰 · 필수 문장은 보존 |
-| [W7V2-MS044](ranking-cases.md#w7v2-ms044) | 비교 한쪽 집중 | 등기 문서가 8/10이고 등기 부속서류 근거는 7위였지만 평면도 열람 규칙의 일반·임차인 요건은 65·12위였다. | 확인 못함<br>512토큰 · 필수 문장 잘림 |
 
 </details>
 
