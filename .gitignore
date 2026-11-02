@@ -1,5 +1,8 @@
 # Local environments, models, credentials and disposable caches.
 .venv/
+.venv-week7/
+/week7/results/diversity_h1_*/vectors.sqlite*
+/week7/results/references_h2_*/vectors.sqlite*
 .venv-reranker/
 .cache/
 __pycache__/
@@ -68,3 +71,7 @@ __pycache__/
 !/week7/results/experiment2_20261031/behavior_qwen/content_judge/run.json
 !/week7/results/experiment2_20261031/behavior_qwen/content_judge/mapping.json
 !/week7/results/experiment2_20261031/behavior_qwen/content_judge/judgments.jsonl.gz
+# Local embedding cache for Week7 role alignment
+/week7/results/roles_h3_*/vectors.sqlite*
+
+/week7/results/ranking_cases_hypotheses/*/vectors.sqlite*
