@@ -367,8 +367,8 @@
       "sha256": "33694eee1327a7028907f3f702ae85973c7c01ba345f8708c8924e506518bc80"
     },
     "week7/REPORT.md": {
-      "bytes": 9707,
-      "sha256": "5ea00127ae74abba017c19e2cb4c6fc189692672f99c37f1254b06b3a4f3944b"
+      "sha256": "027eaaab4f3536048ca057ba792d07fa1264da7e9a2e2205c22da6d66acf9249",
+      "bytes": 9632
     },
     "week7/SHARING.md": {
       "bytes": 4475,
@@ -503,12 +503,12 @@
       "sha256": "73d4066302d8d833b2e23257eb92419f664f13489350c9fc0b170db0983c052b"
     },
     "week7/failure_analysis/ranking-cases.md": {
-      "bytes": 186121,
-      "sha256": "290c144a06d9adb5ff781d7334d6247ff74ca07947ecffa68d78f2cc1c6afd86"
+      "sha256": "0bbf8502726eeba8ea93efc3dd4e3ce8e8163d65096f60054f15f445713215f4",
+      "bytes": 186176
     },
     "week7/failure_analysis/ranking-patterns.md": {
-      "bytes": 906,
-      "sha256": "e33f2a73fd40d68be533a49629ad6b8cebe90b16d0f85ab169c88fd550ec46e2"
+      "sha256": "e37ae74c0a70fffb3cfef3c7d47478cfb2269654f12f5419b994f8177379562a",
+      "bytes": 928
     },
     "week7/failure_analysis/results/bge-length-512-vs-1024.csv": {
       "bytes": 64081,
