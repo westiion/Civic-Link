@@ -499,8 +499,8 @@
       "sha256": "98cea0c0114c5c0d2a08c2b3dfa37d14423a4d35eff20b0c7f5bf73c6d152a7a"
     },
     "week7/failure_analysis/ranking-cases.md": {
-      "bytes": 164083,
-      "sha256": "14fda4cee0a8df330c8f11b93d3707115e584188a9cfd1e7855871f15d8ad4e7"
+      "bytes": 172889,
+      "sha256": "df9dca7ae4ea11f9dccc0a599c0b1a7fd685ac8d7f0e1b98b7127a41e2f8501f"
     },
     "week7/failure_analysis/results/sj-b-010-service-docs-bge.csv": {
       "bytes": 10309,
