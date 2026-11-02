@@ -363,8 +363,8 @@
       "sha256": "9435f1ca3353ddc8a67b919226f99b1bfe9d5a9e7a5f477bdf6831fa57cbd6ba"
     },
     "week7/REPORT.md": {
-      "bytes": 8709,
-      "sha256": "d380bff086cc5cfd1a571d4fac776efc372d58a3a53aeaaee9ecd329a8d1ae65"
+      "bytes": 8475,
+      "sha256": "42c5a6e884b3895997dc5128454dae9705449b60270450927873adc62420a8b1"
     },
     "week7/SHARING.md": {
       "bytes": 4475,
@@ -495,12 +495,12 @@
       "sha256": "b86e8ab5064fe68bdae42e4b070ec8cd742c22093d0da78ab73f7905f3a86584"
     },
     "week7/failure_analysis/candidate-cases.md": {
-      "bytes": 21326,
-      "sha256": "09bdee42cd30cdd5f874cde8af42df3858e5b2cdb8d53fb3d038e52fc8f1dbde"
+      "bytes": 24648,
+      "sha256": "a58fc679ecd050a61b3f616b76c23b270676c7ebb5fff9c21f46b7da0dfcad36"
     },
     "week7/failure_analysis/ranking-cases.md": {
-      "bytes": 127754,
-      "sha256": "854ce50be48da9ac52f057ef47aa1290270b30e9b4ddda41a32c92743bea5992"
+      "bytes": 127678,
+      "sha256": "672c2310c07b42a70f30687c30e8ec6c5daad40969e1c2cec28334e284f1c607"
     },
     "week7/results/experiment2_20261031/behavior_qwen/config.json": {
       "bytes": 2566,
