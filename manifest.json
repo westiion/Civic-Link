@@ -135,8 +135,8 @@
       "sha256": "242838affb794091c56d3b78eabd6c98297b64a5dcd0465bfdf02e84609019f4"
     },
     "file_inventory.txt": {
-      "bytes": 7092,
-      "sha256": "b675550831e347218699af96478ef112b8ccdbf4c6b42eab0d876d0de446e142"
+      "bytes": 7252,
+      "sha256": "bb287463f3ead5c5558f5caffc7bcf8594ae2f9b16ef94ee7f4b85fe243f216a"
     },
     "pyproject.toml": {
       "bytes": 398,
@@ -193,6 +193,10 @@
     "scripts/evaluate_week7_bge_direct.py": {
       "bytes": 15720,
       "sha256": "3f99c92d29529209c25930deb5109b835dea6b629cf07774330432ffbbe9cc40"
+    },
+    "scripts/evaluate_week7_bge_input_length.py": {
+      "bytes": 20248,
+      "sha256": "0739792576928a6b5f8c07e84bafeee8ba9307ff0c4854c85359d8647dc5b016"
     },
     "scripts/explain_week7_cases.py": {
       "bytes": 23860,
@@ -363,8 +367,8 @@
       "sha256": "9435f1ca3353ddc8a67b919226f99b1bfe9d5a9e7a5f477bdf6831fa57cbd6ba"
     },
     "week7/REPORT.md": {
-      "bytes": 8475,
-      "sha256": "42c5a6e884b3895997dc5128454dae9705449b60270450927873adc62420a8b1"
+      "bytes": 8788,
+      "sha256": "514d1060b34c2a94a029c4df96bd228ff50bb7c422b2d029f459759393879967"
     },
     "week7/SHARING.md": {
       "bytes": 4475,
@@ -491,8 +495,8 @@
       "sha256": "43d3adbf0aa1953d1b562991e62a0f4dc3bf24d94d1ef5a0aa28863407e66288"
     },
     "week7/failure_analysis/README.md": {
-      "bytes": 4487,
-      "sha256": "1ebaa39c078aa90f96930d143822024293839649a14d0fb8bed7e4537d027539"
+      "bytes": 4571,
+      "sha256": "8a248a0c8cb8846f2bc2cb00412c2ff73eb7e072e867e94d49e6fa2edbdcf047"
     },
     "week7/failure_analysis/candidate-cases.md": {
       "bytes": 55182,
@@ -503,8 +507,16 @@
       "sha256": "1015358bf26f061b3d39a8fb3886db2b31cd56181aa5b58ec219f7b52be60bc8"
     },
     "week7/failure_analysis/ranking-patterns.md": {
-      "bytes": 28255,
-      "sha256": "a2a3e7f75c8d4740316ba74c6ca281521e4ddb34acd19caea719c778ca44dc3e"
+      "bytes": 30686,
+      "sha256": "184e9efa80e8a34995d134f38889bee6d7a1dd6124d5e4b3c89d30e5c0454a69"
+    },
+    "week7/failure_analysis/results/bge-length-512-vs-1024.csv": {
+      "bytes": 64081,
+      "sha256": "ef539b0455b307cd12c9be43f85eba5659078c4d693dd45e8d809cc6dc6bc5a9"
+    },
+    "week7/failure_analysis/results/bge-length-512-vs-1024.json": {
+      "bytes": 14452,
+      "sha256": "90a6a578e70ddbe23968eb68a45f80c1bcc45bdf906cbc017c99397ee0b6f2fc"
     },
     "week7/failure_analysis/results/sj-b-010-service-docs-bge.csv": {
       "bytes": 10309,

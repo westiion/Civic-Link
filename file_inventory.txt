@@ -47,6 +47,7 @@ scripts/download_bge.py
 scripts/evaluate.py
 scripts/evaluate_behavior.py
 scripts/evaluate_week7_bge_direct.py
+scripts/evaluate_week7_bge_input_length.py
 scripts/explain_week7_cases.py
 scripts/judge_week7_responses.py
 scripts/refresh_manifest.py
@@ -125,6 +126,8 @@ week7/failure_analysis/README.md
 week7/failure_analysis/candidate-cases.md
 week7/failure_analysis/ranking-cases.md
 week7/failure_analysis/ranking-patterns.md
+week7/failure_analysis/results/bge-length-512-vs-1024.csv
+week7/failure_analysis/results/bge-length-512-vs-1024.json
 week7/failure_analysis/results/sj-b-010-service-docs-bge.csv
 week7/failure_analysis/results/sj-b-011-bge.csv
 week7/failure_analysis/results/sj-n-043-citation-bge.csv

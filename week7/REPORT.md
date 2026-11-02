@@ -146,3 +146,5 @@ BGE는 질문과 후보 청크의 제목·본문을 한 쌍으로 읽고, 해당
 - [실패 유형·질문 유형별 통계 및 분석](failure_analysis/README.md)
 - [순위 탈락 44문항의 질문·근거·순위](failure_analysis/ranking-cases.md)
 - [후보 누락 7문항의 질문·근거·순위](failure_analysis/candidate-cases.md) 
+
+필수 문장이 잘렸던 6문항에서 BGE 입력을 512토큰에서 1,024토큰으로 늘렸을 때, 완전회수@10은 **0/6 → 5/6**, 완전회수@100은 **6/6 → 6/6**이었다. [6문항의 근거별 순위 변화](failure_analysis/ranking-patterns.md#같은-후보에서-512토큰과-1024토큰-비교)
