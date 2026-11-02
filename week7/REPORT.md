@@ -144,5 +144,5 @@ BGE는 질문과 후보 청크의 제목·본문을 한 쌍으로 읽고, 해당
 51문항 중 36문항은 필요한 근거의 일부만 찾았고, 15문항은 상위 10개에서 한 묶음도 찾지 못했다. 질문 유형별로는 여러 근거 종합이 17/48문항(35.4%)으로 실패율이 가장 높았다. 순위 탈락 44문항 중 24문항은 필요한 근거가 모두 20위 안에 있었다. 후보 누락 7문항 중 2문항에서는 다른 필수 근거도 10위 밖에 있었다.
 
 - [실패 유형·질문 유형별 통계 및 분석](failure_analysis/README.md)
-- [순위 탈락 44문항의 질문·근거·순위](failure_analysis/ranking-cases.md) · 예시 [같은 규정의 다른 조항이 먼저 검색된 문항](failure_analysis/ranking-cases.md#w7v2-la014)
-- [후보 누락 7문항의 질문·근거·순위](failure_analysis/candidate-cases.md) · 예시 [발급 매수에 관한 조항이 후보에서 빠진 문항](failure_analysis/candidate-cases.md#sj-b-010)
+- [순위 탈락 44문항의 질문·근거·순위](failure_analysis/ranking-cases.md)
+- [후보 누락 7문항의 질문·근거·순위](failure_analysis/candidate-cases.md) 
