@@ -503,8 +503,8 @@
       "sha256": "73d4066302d8d833b2e23257eb92419f664f13489350c9fc0b170db0983c052b"
     },
     "week7/failure_analysis/ranking-cases.md": {
-      "sha256": "0bbf8502726eeba8ea93efc3dd4e3ce8e8163d65096f60054f15f445713215f4",
-      "bytes": 186176
+      "bytes": 186182,
+      "sha256": "a388ea9b3d3fdb94e6640732c53bf10970e4938264a8224057580d2587ea4c05"
     },
     "week7/failure_analysis/ranking-patterns.md": {
       "sha256": "e37ae74c0a70fffb3cfef3c7d47478cfb2269654f12f5419b994f8177379562a",
