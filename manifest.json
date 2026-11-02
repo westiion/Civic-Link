@@ -135,8 +135,8 @@
       "sha256": "242838affb794091c56d3b78eabd6c98297b64a5dcd0465bfdf02e84609019f4"
     },
     "file_inventory.txt": {
-      "bytes": 6931,
-      "sha256": "fc3f8061d09ee17980a9eae9cf51b04564e0fb72e2cd7c148c2986d26d1cd64b"
+      "bytes": 7049,
+      "sha256": "a48007f789cfe5c1693b257a733e6a0acd8c5ba51cdf6533524c596db004ab17"
     },
     "pyproject.toml": {
       "bytes": 398,
@@ -495,12 +495,16 @@
       "sha256": "b86e8ab5064fe68bdae42e4b070ec8cd742c22093d0da78ab73f7905f3a86584"
     },
     "week7/failure_analysis/candidate-cases.md": {
-      "bytes": 52595,
-      "sha256": "69e5f33f96b961d639be7f78b012a3ad02f207554e1a1409534309946fb8ef84"
+      "bytes": 55182,
+      "sha256": "98cea0c0114c5c0d2a08c2b3dfa37d14423a4d35eff20b0c7f5bf73c6d152a7a"
     },
     "week7/failure_analysis/ranking-cases.md": {
       "bytes": 127678,
       "sha256": "672c2310c07b42a70f30687c30e8ec6c5daad40969e1c2cec28334e284f1c607"
+    },
+    "week7/failure_analysis/results/sj-b-010-service-docs-bge.csv": {
+      "bytes": 10309,
+      "sha256": "17915390cc332adb455881c4930c25956b5e4e7e733b08f4f6622ea83bc2f020"
     },
     "week7/failure_analysis/results/sj-b-011-bge.csv": {
       "bytes": 9147,
@@ -513,6 +517,10 @@
     "week7/failure_analysis/results/sj-n-052-bge.csv": {
       "bytes": 11823,
       "sha256": "69759d7d61be43664581e32222afe4d692cb9bc7e661133ff292588c58d281fe"
+    },
+    "week7/failure_analysis/results/w7-ms-025-service-bge.csv": {
+      "bytes": 9756,
+      "sha256": "d9e2f98a9d43bbdc3c168b4132b8aebffde816d1a581b0fb10c3cf38d6299a4e"
     },
     "week7/failure_analysis/results/w7v2-ms016-citation-bge.csv": {
       "bytes": 8567,

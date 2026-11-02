@@ -124,9 +124,11 @@ week7/evaluation/experiment2/verification.json
 week7/failure_analysis/README.md
 week7/failure_analysis/candidate-cases.md
 week7/failure_analysis/ranking-cases.md
+week7/failure_analysis/results/sj-b-010-service-docs-bge.csv
 week7/failure_analysis/results/sj-b-011-bge.csv
 week7/failure_analysis/results/sj-n-043-citation-bge.csv
 week7/failure_analysis/results/sj-n-052-bge.csv
+week7/failure_analysis/results/w7-ms-025-service-bge.csv
 week7/failure_analysis/results/w7v2-ms016-citation-bge.csv
 week7/results/experiment2_20261031/behavior_qwen/config.json
 week7/results/experiment2_20261031/behavior_qwen/content_judge/config.json
