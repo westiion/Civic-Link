@@ -1,0 +1,62 @@
+{
+  "inputs": [
+    {
+      "path": "data/benchmark/questions.jsonl",
+      "logical_sha256": "a10c1212dc937116f1f3d255c031e3c6b45452fc546d8f70cda3eca01379c3f3"
+    },
+    {
+      "path": "data/benchmark/queries.jsonl",
+      "logical_sha256": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0"
+    },
+    {
+      "path": "data/graph/graph.json",
+      "logical_sha256": "3ede7e2d0e4579a386c979304f0097bd9a9077e44e59337d6fa412b098f03e55"
+    },
+    {
+      "path": "data/graph/graph.evidence.json",
+      "logical_sha256": "9a884f7dc76edb0b93a1b3601a5af716f106cd8a8463a5cd28ffb610d2593b42"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/h3.jsonl",
+      "logical_sha256": "84fab26c44ddf3fb2c907e67302d78d0cc7fc364cd7a1b605a7c6790e399ca4d"
+    },
+    {
+      "path": "week7/results/experiment2_bge_direct_20261101/rankings.csv",
+      "logical_sha256": "94a3e35fc29b054e2c1a7f71845411c35fff0910e01687d59449d4e5ecd14c6e"
+    },
+    {
+      "path": "scripts/explore_graph_traversal.py",
+      "logical_sha256": "75cfffb9ef714e90c18a190b6cd85123280bfb9832bee8e7c94d106f5c4dfd39"
+    },
+    {
+      "path": "scripts/explore_graph_weights.py",
+      "logical_sha256": "1f06f71b3527ccc1549321102870489505b63770f70dedae3f776034d4e3989a"
+    },
+    {
+      "path": "src/civic_link/graph/retriever.py",
+      "logical_sha256": "6dbecf492370afe7f436c8441d7c925e1628145c778689b9a436b6c0b0f59fd4"
+    },
+    {
+      "path": "src/civic_link/retrieval/hybrid_graph.py",
+      "logical_sha256": "6ab254d2f29621a2f78546b0db16f6d3d9c062452e5e70852a7af201171bc9b6"
+    },
+    {
+      "path": "src/civic_link/tokenization.py",
+      "logical_sha256": "eb331a195acc334033fed418974e3c6b50411b8c69ebafbc91379f183f40a785"
+    }
+  ],
+  "corpus_fingerprint": "c8b3b854cae6eb47408c84b71380c7d02d910387e87362bd016d216e684438be",
+  "outputs": [
+    {
+      "path": "per_question.jsonl.gz",
+      "sha256": "65a109667fc97844024dcd17f5e850696227a3c6a6b3695d93e9b67037ae144e"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "f4b9836e6f2221d05126b4777045ef163e4c21a064af1b8a33177a9888acb5d3"
+    }
+  ],
+  "ranking_uses_gold": false,
+  "independent_holdout": false,
+  "api_calls": 0
+}

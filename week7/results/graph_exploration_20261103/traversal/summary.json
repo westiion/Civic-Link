@@ -1,0 +1,251 @@
+{
+  "overall": {
+    "native": {
+      "graph": {
+        "n": 488,
+        "complete10": 316,
+        "recall10": 0.7228825136612022,
+        "mrr10": 0.5843107598230549,
+        "complete100": 366,
+        "pool_complete": 366
+      },
+      "fusion": {
+        "n": 488,
+        "complete10": 391,
+        "recall10": 0.8533469945355191,
+        "mrr10": 0.6531339448347645,
+        "complete100": 481,
+        "pool_complete": 481
+      }
+    },
+    "uniform": {
+      "graph": {
+        "n": 488,
+        "complete10": 355,
+        "recall10": 0.7856215846994535,
+        "mrr10": 0.6355784868592246,
+        "complete100": 366,
+        "pool_complete": 366
+      },
+      "fusion": {
+        "n": 488,
+        "complete10": 392,
+        "recall10": 0.8526639344262296,
+        "mrr10": 0.6526338472547488,
+        "complete100": 481,
+        "pool_complete": 481
+      }
+    },
+    "more_seeds": {
+      "graph": {
+        "n": 488,
+        "complete10": 324,
+        "recall10": 0.7396174863387979,
+        "mrr10": 0.5862883814728077,
+        "complete100": 408,
+        "pool_complete": 408
+      },
+      "fusion": {
+        "n": 488,
+        "complete10": 380,
+        "recall10": 0.8331967213114755,
+        "mrr10": 0.6559475019516003,
+        "complete100": 482,
+        "pool_complete": 482
+      }
+    },
+    "ranked_seeds": {
+      "graph": {
+        "n": 488,
+        "complete10": 313,
+        "recall10": 0.7191256830601093,
+        "mrr10": 0.584217245641426,
+        "complete100": 366,
+        "pool_complete": 366
+      },
+      "fusion": {
+        "n": 488,
+        "complete10": 391,
+        "recall10": 0.8540300546448087,
+        "mrr10": 0.6535258912308093,
+        "complete100": 478,
+        "pool_complete": 479
+      }
+    },
+    "reverse5": {
+      "graph": {
+        "n": 488,
+        "complete10": 319,
+        "recall10": 0.7269808743169398,
+        "mrr10": 0.5924212854540724,
+        "complete100": 400,
+        "pool_complete": 400
+      },
+      "fusion": {
+        "n": 488,
+        "complete10": 388,
+        "recall10": 0.8420765027322404,
+        "mrr10": 0.6546439955763725,
+        "complete100": 482,
+        "pool_complete": 482
+      }
+    },
+    "reverse20": {
+      "graph": {
+        "n": 488,
+        "complete10": 289,
+        "recall10": 0.6683060109289617,
+        "mrr10": 0.5857281095498309,
+        "complete100": 409,
+        "pool_complete": 409
+      },
+      "fusion": {
+        "n": 488,
+        "complete10": 379,
+        "recall10": 0.8304644808743169,
+        "mrr10": 0.6451055490502212,
+        "complete100": 481,
+        "pool_complete": 482
+      }
+    },
+    "ranked_reverse5": {
+      "graph": {
+        "n": 488,
+        "complete10": 320,
+        "recall10": 0.7280054644808743,
+        "mrr10": 0.5926091269841269,
+        "complete100": 403,
+        "pool_complete": 403
+      },
+      "fusion": {
+        "n": 488,
+        "complete10": 388,
+        "recall10": 0.8406420765027323,
+        "mrr10": 0.6536356687483736,
+        "complete100": 479,
+        "pool_complete": 480
+      }
+    }
+  },
+  "budget": {
+    "native": {
+      "mean_pool": 112.54934210526316,
+      "new_pairs": 0,
+      "lost_pairs": 0,
+      "capped_queries": 0
+    },
+    "uniform": {
+      "mean_pool": 112.54934210526316,
+      "new_pairs": 2,
+      "lost_pairs": 2,
+      "capped_queries": 0
+    },
+    "more_seeds": {
+      "mean_pool": 123.11842105263158,
+      "new_pairs": 6430,
+      "lost_pairs": 4,
+      "capped_queries": 0
+    },
+    "ranked_seeds": {
+      "mean_pool": 113.66940789473684,
+      "new_pairs": 1445,
+      "lost_pairs": 764,
+      "capped_queries": 0
+    },
+    "reverse5": {
+      "mean_pool": 116.53125,
+      "new_pairs": 2431,
+      "lost_pairs": 10,
+      "capped_queries": 0
+    },
+    "reverse20": {
+      "mean_pool": 135.74177631578948,
+      "new_pairs": 14263,
+      "lost_pairs": 162,
+      "capped_queries": 0
+    },
+    "ranked_reverse5": {
+      "mean_pool": 117.6282894736842,
+      "new_pairs": 3846,
+      "lost_pairs": 758,
+      "capped_queries": 0
+    }
+  },
+  "candidate_changes": {
+    "native": {
+      "recovered": [],
+      "lost": []
+    },
+    "uniform": {
+      "recovered": [],
+      "lost": []
+    },
+    "more_seeds": {
+      "recovered": [
+        "SJ-N-052"
+      ],
+      "lost": []
+    },
+    "ranked_seeds": {
+      "recovered": [],
+      "lost": [
+        "W7-MS-028",
+        "W7-MS-033"
+      ]
+    },
+    "reverse5": {
+      "recovered": [
+        "SJ-B-011"
+      ],
+      "lost": []
+    },
+    "reverse20": {
+      "recovered": [
+        "SJ-B-011"
+      ],
+      "lost": []
+    },
+    "ranked_reverse5": {
+      "recovered": [
+        "SJ-B-011"
+      ],
+      "lost": [
+        "W7-MS-028",
+        "W7-MS-033"
+      ]
+    }
+  },
+  "variants": {
+    "native": {},
+    "uniform": {
+      "uniform": true
+    },
+    "more_seeds": {
+      "seed_policy": "more"
+    },
+    "ranked_seeds": {
+      "seed_policy": "ranked"
+    },
+    "reverse5": {
+      "reverse": 5
+    },
+    "reverse20": {
+      "reverse": 20
+    },
+    "ranked_reverse5": {
+      "seed_policy": "ranked",
+      "reverse": 5
+    }
+  },
+  "setup_seconds": 17.320677333002095,
+  "total_seconds": 29.54278520799562,
+  "baseline_exactly_reproduced_queries": 608,
+  "api_calls": 0,
+  "new_model_inferences": 0,
+  "limitations": [
+    "Exploratory synthetic development data.",
+    "New candidate pairs have no BGE scores; no end-to-end BGE gain claimed.",
+    "Reverse steps are bounded navigation over existing membership edges.",
+    "Same graph cap100, Hybrid100, hops2, max_nodes1000, max_edges5000."
+  ]
+}

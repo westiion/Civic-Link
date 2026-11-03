@@ -1,0 +1,19 @@
+{
+  "queries_sha256": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0",
+  "questions_sha256": "a10c1212dc937116f1f3d255c031e3c6b45452fc546d8f70cda3eca01379c3f3",
+  "corpus_hash": "e55238fddf3882dd3dab97cce5faa8c6b136f2dd89934cc3ff2f445abda59863",
+  "original_pairs": 68430,
+  "new_pairs": 8799,
+  "anchors": 1216,
+  "scoring_pairs": 10015,
+  "baseline_sha256": "94a3e35fc29b054e2c1a7f71845411c35fff0910e01687d59449d4e5ecd14c6e",
+  "traversal_manifest_sha256": "89705b98f13a1ff60a5e7dd16bcb509425af4c8d91f8a08ee58aac9229424369",
+  "traversal_records_sha256": "2063b86dcab55ef64f6020552d5e6c79c2c3a98190f0538e9fb1bcd0ce9baf9e",
+  "plan_sha256": "50924624ad18035f47d12833d2a76891fd3a8554f13191c93897b81998af87c1",
+  "coverage_sha256": "c7c5bac00ddab382b8814b054b12ed117b45b791f931495d7872ea20bf03b8a9",
+  "revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+  "max_length": 512,
+  "policy": "Original candidate pool always preserved. Union of additional more_seeds and reverse5 graph candidates.",
+  "ranking_uses_gold": false,
+  "independent_holdout": false
+}
