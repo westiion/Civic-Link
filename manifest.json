@@ -151,8 +151,8 @@
       "sha256": "36fda1ae7045a59d3f18bc0de338e301daa386aa16a40c9340a80e0d8b6f3dcf"
     },
     "file_inventory.txt": {
-      "bytes": 7886,
-      "sha256": "9c8f3ff9ed2425d1616621c7e7733b394aaea29aec788d9374f36e2f54734858"
+      "bytes": 7945,
+      "sha256": "9367d32cb11635b12686b4bd40a66495b314afef4ab8a108edd5e440d08ab44f"
     },
     "pyproject.toml": {
       "bytes": 398,
@@ -387,8 +387,8 @@
       "sha256": "33694eee1327a7028907f3f702ae85973c7c01ba345f8708c8924e506518bc80"
     },
     "week7/REPORT.md": {
-      "bytes": 23601,
-      "sha256": "9611084b9f96b41f4cd304c16c23f840b5db31c49ff8328d8b121bc1d93878bc"
+      "bytes": 22933,
+      "sha256": "06059fafd88ce5177b96a04259a9a6fce7ff43e0807cb70b6d6d254beebd5738"
     },
     "week7/SHARING.md": {
       "bytes": 4475,
@@ -561,6 +561,10 @@
     "week7/failure_analysis/results/sj-n-052-bge.csv": {
       "bytes": 11823,
       "sha256": "69759d7d61be43664581e32222afe4d692cb9bc7e661133ff292588c58d281fe"
+    },
+    "week7/failure_analysis/results/t4-1024-candidate-cases.csv": {
+      "bytes": 7829,
+      "sha256": "14b036a64fabeb771136f6b0cba6a41e3d98af4ff5b83078d5778d5e9f4c710f"
     },
     "week7/failure_analysis/results/t4-1024-summary.csv": {
       "bytes": 55644,

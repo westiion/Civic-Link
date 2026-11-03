@@ -139,6 +139,7 @@ week7/failure_analysis/results/sj-b-010-service-docs-bge.csv
 week7/failure_analysis/results/sj-b-011-bge.csv
 week7/failure_analysis/results/sj-n-043-citation-bge.csv
 week7/failure_analysis/results/sj-n-052-bge.csv
+week7/failure_analysis/results/t4-1024-candidate-cases.csv
 week7/failure_analysis/results/t4-1024-summary.csv
 week7/failure_analysis/results/type1-fields/candidate-ranks.csv
 week7/failure_analysis/results/type1-fields/plan.json
