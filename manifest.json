@@ -151,8 +151,8 @@
       "sha256": "36fda1ae7045a59d3f18bc0de338e301daa386aa16a40c9340a80e0d8b6f3dcf"
     },
     "file_inventory.txt": {
-      "bytes": 7945,
-      "sha256": "9367d32cb11635b12686b4bd40a66495b314afef4ab8a108edd5e440d08ab44f"
+      "bytes": 8168,
+      "sha256": "eccb61cc05d0a7902ab62647e6fd102c6af9228da223f64dbece3ac523672ea4"
     },
     "pyproject.toml": {
       "bytes": 398,
@@ -387,8 +387,8 @@
       "sha256": "33694eee1327a7028907f3f702ae85973c7c01ba345f8708c8924e506518bc80"
     },
     "week7/REPORT.md": {
-      "bytes": 24383,
-      "sha256": "42c355b6461b54ccb7355a207af41c2d291e5987842bea5d3326bcd6eca8096f"
+      "bytes": 23974,
+      "sha256": "8cd0926e2124936bea5802ef7c2111e2b589fe4d523e670da5d11b8a25edeb38"
     },
     "week7/SHARING.md": {
       "bytes": 4475,
@@ -515,12 +515,16 @@
       "sha256": "43d3adbf0aa1953d1b562991e62a0f4dc3bf24d94d1ef5a0aa28863407e66288"
     },
     "week7/failure_analysis/README.md": {
-      "bytes": 4997,
-      "sha256": "f4b661397e7ee010163cbebd75f633c2e1f787a1b255b3c0d45d54917048c155"
+      "bytes": 5222,
+      "sha256": "1a7ec72aebbd844afa33f1af2b8c42b2bb0977ee8804293660ef064b5964ff0b"
     },
     "week7/failure_analysis/candidate-cases.md": {
-      "bytes": 55391,
-      "sha256": "73d4066302d8d833b2e23257eb92419f664f13489350c9fc0b170db0983c052b"
+      "bytes": 55484,
+      "sha256": "9a261d38829df5765407bdc307e8233d39886c03886cbc4bb9ab0690903da8fc"
+    },
+    "week7/failure_analysis/ranking-cases-1024.md": {
+      "bytes": 73372,
+      "sha256": "9ce641caf73b6d42b180bbe3ddbc6758c6abe73bef94a051f2a840f614bdcf58"
     },
     "week7/failure_analysis/ranking-cases.md": {
       "bytes": 196859,
@@ -562,9 +566,21 @@
       "bytes": 11823,
       "sha256": "69759d7d61be43664581e32222afe4d692cb9bc7e661133ff292588c58d281fe"
     },
+    "week7/failure_analysis/results/t4-1024-baselines.csv": {
+      "bytes": 822,
+      "sha256": "03bb5cfeb66a2f70cd1e5b93c4d6e87398704e06b6a840c266b4e259f0d21ebe"
+    },
     "week7/failure_analysis/results/t4-1024-candidate-cases.csv": {
       "bytes": 7829,
       "sha256": "14b036a64fabeb771136f6b0cba6a41e3d98af4ff5b83078d5778d5e9f4c710f"
+    },
+    "week7/failure_analysis/results/t4-1024-rank-weights-per-question.csv": {
+      "bytes": 431485,
+      "sha256": "55db54cf19b5f99539baeea8864f73377a55aa1f87ccd97b04616aa73dc6a4fa"
+    },
+    "week7/failure_analysis/results/t4-1024-rank-weights.csv": {
+      "bytes": 1561,
+      "sha256": "87a688c796ef732b07be1bb282816d50e98d846cd96776ce2b17b9e73fe10c71"
     },
     "week7/failure_analysis/results/t4-1024-summary.csv": {
       "bytes": 55644,
