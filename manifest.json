@@ -151,8 +151,8 @@
       "sha256": "36fda1ae7045a59d3f18bc0de338e301daa386aa16a40c9340a80e0d8b6f3dcf"
     },
     "file_inventory.txt": {
-      "bytes": 8168,
-      "sha256": "eccb61cc05d0a7902ab62647e6fd102c6af9228da223f64dbece3ac523672ea4"
+      "bytes": 8368,
+      "sha256": "7b68f68f04cec51a4011652f0ede92dc5cefeacf07f73bd4adc9293d1323681f"
     },
     "pyproject.toml": {
       "bytes": 398,
@@ -387,8 +387,8 @@
       "sha256": "33694eee1327a7028907f3f702ae85973c7c01ba345f8708c8924e506518bc80"
     },
     "week7/REPORT.md": {
-      "bytes": 24952,
-      "sha256": "13b3dfdcb4904c50ebbb64959db618d39614f52527d0ec433ce95bbba143d40d"
+      "bytes": 28784,
+      "sha256": "83074fa23708076f74d02b4a6b508ce05d8c03d138d91888c430022db453ed1d"
     },
     "week7/SHARING.md": {
       "bytes": 4475,
@@ -574,6 +574,10 @@
       "bytes": 7829,
       "sha256": "14b036a64fabeb771136f6b0cba6a41e3d98af4ff5b83078d5778d5e9f4c710f"
     },
+    "week7/failure_analysis/results/t4-1024-graph-type1-summary.csv": {
+      "bytes": 4220,
+      "sha256": "21f31d7eadc2b683ac59da517aded636b1da40fa080d01b816d741c19b82d887"
+    },
     "week7/failure_analysis/results/t4-1024-rank-weights-per-question.csv": {
       "bytes": 431485,
       "sha256": "55db54cf19b5f99539baeea8864f73377a55aa1f87ccd97b04616aa73dc6a4fa"
@@ -585,6 +589,14 @@
     "week7/failure_analysis/results/t4-1024-summary.csv": {
       "bytes": 55644,
       "sha256": "72c21b5856bc68ec4f542040c462309c73eb885a3d4aed315cae642e1749ab12"
+    },
+    "week7/failure_analysis/results/t4-1024-top10-citation-per-question.csv": {
+      "bytes": 355172,
+      "sha256": "025f1a78c2c8206bc53ac9e199a1ee16df970695b07ab566871d125005fd9557"
+    },
+    "week7/failure_analysis/results/t4-1024-top10-citation-summary.csv": {
+      "bytes": 4576,
+      "sha256": "b63e608387a0dc3e2bf8fe708b4c0c536a6e51c86ca2b5a1909f10535a35565e"
     },
     "week7/failure_analysis/results/type1-fields/candidate-ranks.csv": {
       "bytes": 138815,
