@@ -8,7 +8,6 @@ import csv
 import gzip
 import hashlib
 import json
-import re
 import sqlite3
 from collections import Counter, defaultdict
 
@@ -68,8 +67,10 @@ def load_jsonl(path):
 
 def main():
     folder = ROOT/'week7/failure_analysis'
-    case_text = (folder/'ranking-cases.md').read_text(encoding='utf-8')
-    ids = re.findall(r'^## ([\w-]+)$', case_text, re.M)
+    baseline_path = ROOT/'week7/results/experiment2_bge_direct_20261101/per_question.jsonl'
+    ids = [row['query_id'] for row in load_jsonl(baseline_path)
+           if row['metrics'] and row['metrics']['100']['all_evidence']
+           and not row['metrics']['10']['all_evidence']]
     assert len(ids) == len(set(ids)) == 44 and set(ids) == set(NOTES)
     qs = {q['question_id']: q for q in load_jsonl(ROOT/'data/benchmark/questions.jsonl')}
     ranked = defaultdict(list)
@@ -127,7 +128,7 @@ def main():
         case_queries_with_any_truncation=sum(d['input_stats']['truncated_pairs']>0 for d in details),
         note='Truncation counts are query-level; no claim that a particular gold sentence was truncated.',
         sources_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in
-            [csvpath,folder/'ranking-cases.md',ROOT/'data/benchmark/questions.jsonl']})
+            [csvpath,baseline_path,ROOT/'data/benchmark/questions.jsonl']})
     assert (summary['partial'],summary['multi_group'],summary['complete_by20'],summary['missing_groups'])==(33,35,24,51)
     for name,obj in [('ranking-cause-summary.json',summary)]:
         (folder/name).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -136,7 +137,7 @@ def main():
         'BGE 직접 정렬의 저장 점수·순위를 재검산했다. 아래 원인 설명은 관찰에 근거한 가설이며 모델 내부 원인 확정이나 사람의 정답 검수 완료를 뜻하지 않는다.', '',
         '| 질문 ID | 필수 근거 순위 | 주된 관찰 | 원인 가설·추가 검수 |','|---|---|---|---|']
     for d in details:
-        qid=d['question_id'];lines.append(f"| [{qid}](ranking-cases.md#{qid.lower()}) | {d['group_ranks']} | {d['primary_observation']} | {d['cause_hypothesis']} |")
+        qid=d['question_id'];lines.append(f"| [{qid}](#{qid.lower()}) | {d['group_ranks']} | {d['primary_observation']} | {d['cause_hypothesis']} |")
     lines += ['', '## 실제 점수와 필수 문장', '', '점수는 BGE 원점수(logit)이며 정답 확률이 아니다. 10위와의 차이는 해당 질문 내부에서만 비교한다. 원문 인용은 저장된 정답표이며 최신 법령 검증을 수행한 것은 아니다.', '']
     for d in details:
         lines += [f"### {d['question_id']}", '', d['question'], '', d['cause_hypothesis'], '',

@@ -135,8 +135,8 @@
       "sha256": "242838affb794091c56d3b78eabd6c98297b64a5dcd0465bfdf02e84609019f4"
     },
     "experiments/type1_fields/README.md": {
-      "bytes": 2022,
-      "sha256": "d649d91499660d429ede2d1ef6f8a992bf395ef9522d2e4dd619e73aeab358aa"
+      "bytes": 2026,
+      "sha256": "a84b45b443ad8a7a76d92a69e5f31a74233ae9a7152f75272612c5d3ad58b30e"
     },
     "experiments/type1_fields/aggregate.py": {
       "bytes": 19558,
@@ -151,8 +151,8 @@
       "sha256": "36fda1ae7045a59d3f18bc0de338e301daa386aa16a40c9340a80e0d8b6f3dcf"
     },
     "file_inventory.txt": {
-      "bytes": 8368,
-      "sha256": "7b68f68f04cec51a4011652f0ede92dc5cefeacf07f73bd4adc9293d1323681f"
+      "bytes": 8412,
+      "sha256": "fc30127987df946b7a10c62ffa03ae5bbeffc7f445a9c2578ab0bb9c36350a1f"
     },
     "pyproject.toml": {
       "bytes": 398,
@@ -387,8 +387,8 @@
       "sha256": "33694eee1327a7028907f3f702ae85973c7c01ba345f8708c8924e506518bc80"
     },
     "week7/REPORT.md": {
-      "bytes": 30971,
-      "sha256": "2e74deac73bd63e64bb50bf5333bf8a11c609d516b73024a022709274c135800"
+      "bytes": 31276,
+      "sha256": "4fb6d7212c8a0c7102ef7de5c7819b80176933e239fad50b35ffe08101168831"
     },
     "week7/SHARING.md": {
       "bytes": 4475,
@@ -515,24 +515,28 @@
       "sha256": "43d3adbf0aa1953d1b562991e62a0f4dc3bf24d94d1ef5a0aa28863407e66288"
     },
     "week7/failure_analysis/README.md": {
-      "bytes": 5222,
-      "sha256": "1a7ec72aebbd844afa33f1af2b8c42b2bb0977ee8804293660ef064b5964ff0b"
+      "bytes": 6124,
+      "sha256": "65c1b464733d7b2b2e3e9424890e2173a51857d8ea36db39d95c422817e3fc85"
     },
     "week7/failure_analysis/candidate-cases.md": {
-      "bytes": 55484,
-      "sha256": "9a261d38829df5765407bdc307e8233d39886c03886cbc4bb9ab0690903da8fc"
+      "bytes": 55458,
+      "sha256": "299038226890873bdf6c6bd02873fe74c12017a869aeb50ac7ca7502479b48f8"
     },
     "week7/failure_analysis/ranking-cases-1024.md": {
-      "bytes": 73372,
-      "sha256": "9ce641caf73b6d42b180bbe3ddbc6758c6abe73bef94a051f2a840f614bdcf58"
+      "bytes": 73462,
+      "sha256": "01c607959216eea22332d21d6fa0d305ffc945febd1fcc74ad9ecbe4ad290d8a"
     },
-    "week7/failure_analysis/ranking-cases.md": {
+    "week7/failure_analysis/ranking-cases-512.md": {
       "bytes": 196859,
       "sha256": "c434d33f11caa7b51fc2f0938cde57b0c50ac8125b677070639cb7ad81f0dcdc"
     },
+    "week7/failure_analysis/ranking-cases.md": {
+      "bytes": 132130,
+      "sha256": "6024491fccb8e82054d62c811df8d4ddf5096f2842df7c768ad4d911f323475b"
+    },
     "week7/failure_analysis/ranking-patterns.md": {
-      "sha256": "e37ae74c0a70fffb3cfef3c7d47478cfb2269654f12f5419b994f8177379562a",
-      "bytes": 928
+      "bytes": 1789,
+      "sha256": "30685de7bb6383643579be20780546ce8e324f590f4d9050d83914778cb5a346"
     },
     "week7/failure_analysis/results/bge-citation-weights.csv": {
       "bytes": 121226,
