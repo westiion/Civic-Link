@@ -1,0 +1,66 @@
+{
+  "inputs": [
+    {
+      "path": "week7/results/experiment2_bge_direct_20261101/rankings.csv",
+      "logical_sha256": "94a3e35fc29b054e2c1a7f71845411c35fff0910e01687d59449d4e5ecd14c6e"
+    },
+    {
+      "path": "data/benchmark/questions.jsonl",
+      "logical_sha256": "a10c1212dc937116f1f3d255c031e3c6b45452fc546d8f70cda3eca01379c3f3"
+    },
+    {
+      "path": "data/benchmark/queries.jsonl",
+      "logical_sha256": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0"
+    },
+    {
+      "path": "scripts/explore_graph_expansion.py",
+      "logical_sha256": "0067bc32085943d4f1871d959c9aa0d4852dc7890ade07bc4361aa835be46969"
+    },
+    {
+      "path": "scripts/run_week7_experiment2.py",
+      "logical_sha256": "1c410ce2c2d167056dc572aa99d51e741666ad2a0b7ec263b707a86cf06e0738"
+    }
+  ],
+  "corpus_hash": "e55238fddf3882dd3dab97cce5faa8c6b136f2dd89934cc3ff2f445abda59863",
+  "outputs": [
+    {
+      "path": "bge.jsonl",
+      "sha256": "68582366eaaa10da0d78d43715320c2c048255ce9890ae87a47c4ae02c8c2577"
+    },
+    {
+      "path": "bge.run.json",
+      "sha256": "5566331334a097a3c99eeb116618bd69bda74b5ea24ca4df4b32211af0ba2e31"
+    },
+    {
+      "path": "controls.jsonl",
+      "sha256": "586b9b6e8d262853ed2b587159a1ff5f1662b4b0b7bcc2a2f6b7083117e4640d"
+    },
+    {
+      "path": "coverage.jsonl.gz",
+      "sha256": "bb2097baaaed7237eba36c0775290513d6f241949f7be01f9292fced3c76b02c"
+    },
+    {
+      "path": "per_question.jsonl.gz",
+      "sha256": "26a853c5dfc2fca322ee14ddf116c764f1f313bf35dab422419d834438daa7bf"
+    },
+    {
+      "path": "plan.jsonl",
+      "sha256": "50924624ad18035f47d12833d2a76891fd3a8554f13191c93897b81998af87c1"
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "bd507ea232281cc88a01c3a7d915cf2c1f40f8d253561eb5472a32bb11a408b6"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "ca3e74c1546b3c7438a04030070b08b79ce901b0b2f761dbf10c6374317cd47a"
+    },
+    {
+      "path": "top10.jsonl",
+      "sha256": "a6fb1c9838d47e505dee1432aeeabb4d2608250922259029e57adff9baad172f"
+    }
+  ],
+  "ranking_uses_gold": false,
+  "independent_holdout": false,
+  "api_calls": 0
+}

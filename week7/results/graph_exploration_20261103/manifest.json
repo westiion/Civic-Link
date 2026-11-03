@@ -1,0 +1,59 @@
+{
+  "inputs": [
+    {
+      "path": "data/benchmark/questions.jsonl",
+      "logical_sha256": "a10c1212dc937116f1f3d255c031e3c6b45452fc546d8f70cda3eca01379c3f3"
+    },
+    {
+      "path": "data/benchmark/queries.jsonl",
+      "logical_sha256": "b951eb6f08d250b5069b0f184733ea079e6b16a76352b5cff501eeb73ad614a0"
+    },
+    {
+      "path": "data/graph/graph.json",
+      "logical_sha256": "3ede7e2d0e4579a386c979304f0097bd9a9077e44e59337d6fa412b098f03e55"
+    },
+    {
+      "path": "data/graph/graph.evidence.json",
+      "logical_sha256": "9a884f7dc76edb0b93a1b3601a5af716f106cd8a8463a5cd28ffb610d2593b42"
+    },
+    {
+      "path": "week7/results/experiment2_bge_direct_20261101/rankings.csv",
+      "logical_sha256": "94a3e35fc29b054e2c1a7f71845411c35fff0910e01687d59449d4e5ecd14c6e"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/h3.jsonl",
+      "logical_sha256": "84fab26c44ddf3fb2c907e67302d78d0cc7fc364cd7a1b605a7c6790e399ca4d"
+    },
+    {
+      "path": "week7/results/experiment2_20261031/coverage.jsonl",
+      "logical_sha256": "2c6438857e540d8155abb0f8782767312e2de9c0454a6d7d76af6f363ecd0f23"
+    },
+    {
+      "path": "scripts/explore_graph_weights.py",
+      "logical_sha256": "1f06f71b3527ccc1549321102870489505b63770f70dedae3f776034d4e3989a"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "diagnostics.json",
+      "sha256": "b164e1b92ce0d20721a5f2627110ed1ad6a87f93c93b15fca56e0e601f299f97"
+    },
+    {
+      "path": "metrics.csv",
+      "sha256": "6a0e3752e224120449a1ca6f6c96fe15e7ae575af7fff7b87cad851ce14fd288"
+    },
+    {
+      "path": "per_question.jsonl.gz",
+      "sha256": "6dd8381c9a7a6da3aea0e57d20491443fe1895b777f29d2716e1f452994796a8"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "47952d2523e4a6030fe7302353d8e1ce249ce06dccd09bc7af49ed780e372cac"
+    }
+  ],
+  "selection_uses_gold": false,
+  "hyperparameter_selection_uses_gold": true,
+  "independent_holdout": false,
+  "api_calls": 0,
+  "new_model_inferences": 0
+}
