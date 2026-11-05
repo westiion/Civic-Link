@@ -1,0 +1,26 @@
+{
+  "dataset_id": "week8-composition1000-v1",
+  "question_count": 1000,
+  "base_dataset": "week7-master608",
+  "preserved_questions": 608,
+  "composed_questions": 392,
+  "actions": {
+    "answer": 800,
+    "clarify": 100,
+    "abstain": 100
+  },
+  "independent_holdout": false,
+  "human_verified": false,
+  "temporal_scope": "existing_frozen_corpus; no_web_refresh",
+  "inference_input": "queries.jsonl: query_id and question only; all other files are evaluator/review inputs",
+  "legacy_rows": "608 original rows retained byte-for-byte, including their week7 dataset_id",
+  "selection_policy": "shared service, distinct evidence contributions and question types for answer pairs; deterministic greedy diversity; one nonanswer parent per mixed task",
+  "split_policy": "all diagnostic development; leakage_groups.jsonl supersedes per-row split_group_id for any future partition",
+  "mixed_task_policy": "Task expected_action refers to unresolved case; other case still requires an answer. Use subtask evaluation.",
+  "limitations": [
+    "392 compositions are not 392 newly sourced independent intents.",
+    "Two independent cases in one prompt; no multi-turn user simulator or agent runtime.",
+    "No inferred minimum graph hop count or mandatory chain-of-thought/tool order.",
+    "Human semantic review remains pending. Model evaluation and agent implementation are outside this benchmark-only task."
+  ]
+}

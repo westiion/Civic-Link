@@ -1,0 +1,22 @@
+{
+  "dataset_id": "week8-composition1000-v1",
+  "inputs": {
+    "base_sha256": "a10c1212dc937116f1f3d255c031e3c6b45452fc546d8f70cda3eca01379c3f3",
+    "corpus_identity": "c8b3b854cae6eb47408c84b71380c7d02d910387e87362bd016d216e684438be",
+    "generator_sha256": "9a4e3c36289fafc2d6149cc1b6f9e2ec8570e5389c852dec791d2bff75d538a7"
+  },
+  "outputs": {
+    "dataset.json": "7de379075437e7e68c980632f7769fcd87bf7629ae9ea8e278f319eda3fc24cf",
+    "leakage_groups.jsonl": "bf8ca03efc0a13d15c195301df2e90096bc9fadeb0ee31bd4925f1f3ec006913",
+    "new_queries.jsonl": "2dcc7e3d5dfb8cdfa477d701ec0492df66d565f1786d3f9fe7f3ac5d0d679df1",
+    "new_questions.jsonl": "d8082abe18ae3cf6d4c8fd5f481ac9a07cba164dadaf3eeceef08d36646af239",
+    "queries.jsonl": "2d1afc922b47dd43ea641efdff2b506c5ac5a538228183faf079ae3aa78cda5f",
+    "questions.csv": "4ab1d74f21408b07b88fb3c839a8c932db1fcc01115397fb67632f950be16612",
+    "questions.jsonl": "534a1668e24e2731504cb4188de0d22f286ddce1a620643c84f643f182fd5dd2",
+    "selection.jsonl": "9ecce31587facc5eb6efaf178eb8660fa38788b6dbe9f4e25d91076c7fa7695f",
+    "validation.json": "3b96030ad793f499ec9692c1e1b0fb6a24f1cd9bddf3da9376d46ba91995bfe9"
+  },
+  "api_calls": 0,
+  "model_inferences": 0,
+  "deterministic": true
+}

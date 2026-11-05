@@ -1,4 +1,17 @@
-# Week 7 · Git 실행 안내
+# Git 실행 안내
+
+## Week 8 벤치마크
+
+`data/benchmark/week8/questions.jsonl`은 기존 608문항과 복합 문의 392문항을 합친 **1,000문항**이다. `questions.csv`는 검토용, `queries.jsonl`은 정답을 제외한 입력용이다. [Week 8 보고서](../week8/REPORT.md)에 구성과 한계를 정리했다. 아래 생성·검증은 네트워크와 모델 호출 없이 실행한다.
+
+```sh
+.venv/bin/python scripts/build_week8_benchmark.py verify
+.venv/bin/python scripts/build_week8_benchmark.py build --output-dir outputs/week8-rebuilt
+```
+
+DB가 없다면 아래 설치·복원 절차를 먼저 실행한다. 기존 출력 디렉터리는 덮어쓰지 않는다. 기존 608문항용 Hybrid 후보·임베딩·BGE 결과를 새 392문항에 재사용할 수 없다. 이번 작업은 데이터 확장이며, Agent 구현이나 모델 성능 평가는 포함하지 않는다.
+
+## Week 7 보존 데이터
 
 608문항(기존 204 + 신규 404)과 균형 진단 부분집합 480개를 제공한다. 신규 404개·근거 590건 검토 후 21문항의 보조 주석과 확인 정책을 수정했다. 질문 ID·원문·검색 정답은 유지했다.
 

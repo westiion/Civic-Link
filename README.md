@@ -30,6 +30,13 @@ Civic-Link는 **수정구청의 무인민원발급 서비스에 적용하기 위
 - Hybrid 기반 그래프 확장 검색 구현
 - 개선 가설 3개 실험 및 성능 비교
 
+#### Week 8 — 벤치마크 1,000문항 확장
+
+- 기존 608문항을 보존하고, 기존 근거에 기반한 복합 문의 392문항 추가
+- 답변 가능 800·추가 확인 100·답변 보류 100문항의 별도 개발용 버전 제공
+- 문항별 출처·하위 문의 정답·누수 연결 그룹과 재생성/검증 코드 제공
+- 이번 범위는 벤치마크 확장이다. [Week 8 보고서](week8/REPORT.md) · [1,000문항 CSV](data/benchmark/week8/questions.csv)
+
 ## 저장소 구조
 
 ```text
@@ -41,6 +48,7 @@ Civic-Link/
 │  ├─ retrieval/                 # Hybrid 후보·질의 임베딩·실행 정보
 │  └─ benchmark/                 # 평가 질문·정답 근거
 │     ├─ diagnostic480/          # 유형 균형 진단용 480문항
+│     ├─ week8/                  # 기존 608 + 복합 392 = 개발용 1,000문항
 │     ├─ exports/                # 질문 목록의 CSV·Markdown 보기
 │     └─ reviews/                # 벤치마크 검수·수정 기록
 │
@@ -66,6 +74,7 @@ Civic-Link/
 │  ├─ evaluation/                # 저장된 평가 결과
 │  └─ results/                   # 검색 순위·실험 입력 및 출력
 ├─ outputs/                      # 실행 시 생성되는 결과 (Git 제외)
+├─ week8/REPORT.md               # 벤치마크 확장·검증·한계
 ├─ docs/
 │  └─ usage.md                   # 설치·복원·검색·평가 상세 안내
 ├─ tests/                        # 테스트 코드·테스트용 데이터
@@ -80,6 +89,12 @@ Civic-Link/
 ```
 
 ## 실행
+
+Week 8 벤치마크는 `data/benchmark/week8/`에 별도로 제공한다. 기존 DB를 복원한 뒤 아래 명령으로 데이터·원문 인용·체크섬을 검증할 수 있다. 기존 검색 캐시는 Week 7 입력에만 대응한다.
+
+```sh
+.venv/bin/python scripts/build_week8_benchmark.py verify
+```
 
 [Week 7 보고서](week7/REPORT.md), [실패 사례 분석 및 입력 길이 보정 결과](week7/failure_analysis/README.md), [실험 2 최종 결과](week7/EXPERIMENT2.md)와 [공유본·BGE/Qwen 재집계 안내](week7/SHARING.md)를 함께 제공합니다. 저장된 원점수·원응답의 재집계에는 모델이나 서버가 필요하지 않습니다.
 
