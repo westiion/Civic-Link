@@ -11,8 +11,8 @@
       "sha256": "2221ffa58a3521fc0c746c0ec3f05e16762eb8ab074caba45c8151359ec1ad3e"
     },
     "README.md": {
-      "bytes": 7389,
-      "sha256": "10dacf39f4d38dbe6938fa09945b9dffe6acaeb822f1466afc5783b32b55113d"
+      "bytes": 12887,
+      "sha256": "60cad2904782b250baa2038a3c4f21daf8af9fdb0c28bc3ec8bbf7f464d0685b"
     },
     "data/benchmark/dataset.json": {
       "bytes": 394,
@@ -138,10 +138,6 @@
       "bytes": 8512,
       "sha256": "6a991c06de3a09abbd5535e9829144500e05daae5b5788ca86bcdf6dd9f6d8b8"
     },
-    "docs/usage.md": {
-      "bytes": 6657,
-      "sha256": "ad4dca7e03bb703ded8f320c94732ae9110b1d882554957df8f13c17ce5c51fb"
-    },
     "experiments/score_comparison/results/changes.jsonl": {
       "bytes": 19005,
       "sha256": "0db6dfbd02a135a3ad79e149f548a13730e516119605cbdfef7145a98a560275"
@@ -183,8 +179,8 @@
       "sha256": "36fda1ae7045a59d3f18bc0de338e301daa386aa16a40c9340a80e0d8b6f3dcf"
     },
     "file_inventory.txt": {
-      "bytes": 10203,
-      "sha256": "a7cca78525a1fdc49893a212f388629c8788dfea091418f36cbf5ff01d6e20b3"
+      "bytes": 10189,
+      "sha256": "45148ad98613f2fd8b5f1ad7a0c6da38303fdfd6e8b7afc6bcf993365d1a7a3b"
     },
     "pyproject.toml": {
       "bytes": 398,

@@ -32,7 +32,6 @@ data/graph/graph.json
 data/retrieval/hybrid_candidates.jsonl.gz
 data/retrieval/hybrid_candidates.run.json
 data/services.jsonl
-docs/usage.md
 experiments/score_comparison/results/changes.jsonl
 experiments/score_comparison/results/explanatory_ablation.json
 experiments/score_comparison/results/protocol.json
