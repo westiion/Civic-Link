@@ -8,6 +8,7 @@ from contextlib import closing
 from pathlib import Path
 import re
 import sqlite3
+import subprocess
 import tempfile
 
 from civic_link.common import ROOT
@@ -15,32 +16,35 @@ from civic_link.graph.build import corpus_identity
 from restore_data import sha
 
 def members(root):
-    names = ['README.md', 'week7/REPORT.md', 'requirements.txt', 'requirements-dev.txt', 'pyproject.toml',
+    root = Path(root)
+    names = ['README.md', 'requirements.txt', 'requirements-dev.txt', 'pyproject.toml',
         'pytest.ini', '.gitattributes', '.gitignore', 'file_inventory.txt', 'data/services.jsonl',
-        'requirements-bge.txt', 'requirements-bge-lock.txt', 'week7/EXPERIMENT2.md', 'week7/SHARING.md',
+        'requirements-bge.txt', 'requirements-bge-lock.txt',
         'data/graph/graph.json', 'data/graph/graph.evidence.json',
         'data/corpus/corpus.sqlite.gz', 'data/retrieval/hybrid_candidates.jsonl.gz',
         'data/retrieval/hybrid_candidates.run.json', 'tests/fixtures/week7_pre_review.jsonl.gz']
     for directory in ('src', 'scripts', 'tests'):
         names += [p.relative_to(root).as_posix() for p in (root/directory).rglob('*.py')]
-    for directory in ('data/benchmark', 'experiments', 'docs', 'week8',
-                      'week7/failure_analysis', 'week7/docs/experiment2_cases', 'week7/evaluation/experiment2',
-                      'week7/results/experiment2_bge_direct_20261101'):
+    # Include complete published report trees, not a hand-maintained subset of
+    # experiments. This covers historical reports and new lossless archives.
+    for directory in ('data/benchmark', 'experiments', 'docs',
+                      'week4', 'week6', 'week7', 'week8'):
         names += [p.relative_to(root).as_posix() for p in (root/directory).rglob('*')
                   if p.is_file() and '__pycache__' not in p.parts and p.name != '.DS_Store']
-    source = 'week7/results/experiment2_20261031/'
-    names += [source + name for name in (
-        'h3.jsonl.gz', 'coverage.jsonl.gz', 'bge.jsonl.gz',
-        'graph_lexical_h0.jsonl.gz', 'graph_lexical_h1.jsonl.gz',
-        'graph_lexical_h2.jsonl.gz', 'graph_lexical_h3.jsonl.gz',
-        'diagnostic_metrics.json.gz', 'diagnostic_rankings.json.gz',
-        'h3.run.json', 'coverage.run.json', 'bge.run.json',
-        'graph_diagnostics.run.json', 'protocol.json', 'executed_runner.py',
-        'behavior_qwen/config.json', 'behavior_qwen/run.json',
-        'behavior_qwen/segment_workers4.json', 'behavior_qwen/input_mapping.json',
-        'behavior_qwen/responses.jsonl.gz', 'behavior_qwen/content_judge/config.json',
-        'behavior_qwen/content_judge/run.json', 'behavior_qwen/content_judge/mapping.json',
-        'behavior_qwen/content_judge/judgments.jsonl.gz')]
+    if (root / '.git').exists():
+        # A regenerated local JSON or an old working file must not enter the
+        # published manifest merely because it lives under a report directory.
+        visible = subprocess.check_output(
+            ['git', 'ls-files', '--cached', '--others', '--exclude-standard', '-z'],
+            cwd=root,
+        ).decode('utf-8').split('\0')
+        allowed = set(visible)
+        names = [name for name in names if name in allowed]
+    elif (root / 'file_inventory.txt').is_file():
+        # Exported source archives have no Git metadata. Keep their declared
+        # published membership instead of adding local regenerated outputs.
+        allowed = set((root / 'file_inventory.txt').read_text(encoding='utf-8').splitlines())
+        names = [name for name in names if name in allowed]
     return sorted(set(names))
 
 
@@ -84,7 +88,7 @@ def build(root=ROOT):
         if any(re.search(pattern,data) for pattern in patterns):raise ValueError('possible secret: '+name)
         if path.stat().st_size>25*1024*1024:raise ValueError('unexpected large shared file: '+name)
         files[name]=dict(bytes=path.stat().st_size,sha256=sha(path))
-    manifest=dict(format_version=1,scope='Week7 frozen retrieval experiments and Week8 benchmark-only composition expansion; no model required for data verification',
+    manifest=dict(format_version=1,scope='Historical presentation reports, retained Week7 retrieval experiments and benchmark-only composition expansion; no model required for data verification',
         files=files,assets=assets,questions=608,diagnostic_subset=480,
         benchmarks={'week7-master608': 608, 'week8-composition1000-v1': 1000},
         excluded=['Archive','work','.git','models','virtual environments','query embeddings','raw web payloads',

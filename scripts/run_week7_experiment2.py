@@ -8,7 +8,6 @@ import json
 import math
 from pathlib import Path
 import platform
-import resource
 import time
 
 from civic_link.common import ROOT, connect, digest, read_jsonl, write_json, write_jsonl, input_bytes, input_exists, input_path, read_json
@@ -90,6 +89,9 @@ def infer(out, model_dir, revision, name='bge', limit=None, dtype='float16', bat
         raise ValueError('use the pinned Hugging Face snapshot directory')
     from transformers import AutoTokenizer, AutoModelForSequenceClassification
     if not torch.backends.mps.is_available():raise RuntimeError('MPS unavailable; no silent device change')
+    # Only the macOS inference path needs resource; cached-result analysis also
+    # runs on Windows, where that standard-library module is unavailable.
+    import resource
     torch.set_num_threads(4)
     torch.manual_seed(0)
     protocol=read_json((out/'protocol.json'))

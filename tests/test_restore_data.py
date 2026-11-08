@@ -33,5 +33,15 @@ def test_restore_is_idempotent_and_confined(tmp_path):
     assert restore_asset(tmp_path,item)
     assert not restore_asset(tmp_path,item)
     with pytest.raises(ValueError,match='unsafe'):member(tmp_path,'../outside')
-    link=tmp_path/'linked';link.symlink_to(tmp_path/'restored/input.jsonl')
+
+
+def test_restore_rejects_symbolic_links(tmp_path):
+    target=tmp_path/'input.jsonl';target.write_bytes(b'input')
+    link=tmp_path/'linked'
+    try:
+        link.symlink_to(target)
+    except OSError as exc:
+        if getattr(exc, 'winerror', None) == 1314:
+            pytest.skip('Windows account lacks symbolic-link creation privilege')
+        raise
     with pytest.raises(ValueError,match='unsafe'):member(tmp_path,'linked')

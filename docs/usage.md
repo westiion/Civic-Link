@@ -1,8 +1,12 @@
 # Git 실행 안내
 
-## Week 8 벤치마크
+## 주차별 발표 보고서
 
-`data/benchmark/week8/questions.jsonl`은 기존 608문항과 복합 문의 392문항을 합친 **1,000문항**이다. `questions.csv`는 검토용, `queries.jsonl`은 정답을 제외한 입력용이다. [Week 8 보고서](../week8/REPORT.md)에 구성과 한계를 정리했다. 아래 생성·검증은 네트워크와 모델 호출 없이 실행한다.
+[Week 4 보고서](../week4/REPORT.md)는 Git에 남은 2026-10-27 최종본에서 본문과 수치를 복원하고, 이전 구현·데이터 링크를 당시 커밋에 고정했다. [Week 7 보고서](../week7/REPORT.md)는 기존 원문과 연결된 실패 분석·실험 기록을 유지한다. Week 6 원문은 Git 전체 이력에서 확인되지 않아 별도 보고서를 만들지 않았다.
+
+## 별도 벤치마크 1,000문항 확장
+
+`data/benchmark/week8/questions.jsonl`은 기존 608문항과 복합 문의 392문항을 합친 **1,000문항**이다. `questions.csv`는 검토용, `queries.jsonl`은 정답을 제외한 입력용이다. [벤치마크 확장 기록](../week8/REPORT.md)에 구성과 한계를 정리했다. 이 기록은 발표 보고서와 별개이며 기존 `week8/` 경로를 유지한다. 아래 생성·검증은 네트워크와 모델 호출 없이 실행한다.
 
 ```sh
 .venv/bin/python scripts/build_week8_benchmark.py verify
@@ -52,6 +56,9 @@ python3.12 -m venv .venv
 - `data/retrieval/hybrid_candidates.run.json`: 입력 질의와 후보의 일치 검사용 메타데이터다. 다른 질문이나 후보를 섞으면 실행을 거부한다.
 - `data/benchmark/`: 현재 정답·질의와 균형 480개 부분집합. `data/benchmark/reviews/`와 작은 검수 전 fixture는 수정 이력 검증에 필요하다.
 - `experiments/score_comparison/results/`: 개발·검증 분리, 정책 선택, 항별 비교, 개선·퇴보 및 재현 결과다.
+- `experiments/type1_fields/`: 당시 유형 1의 14문항을 원래 후보와 저장된 항목별 BGE 점수로 다시 집계하는 코드다. [재현 방법](../experiments/type1_fields/README.md)을 따른다.
+
+Week 7 보고서의 고정 실험과 그 재현 자료는 보존한다. 별도 팀원 가설 H1~H5의 실험 묶음·실행기·전용 테스트는 현재 공유본에서 제외했으며, 과거 기록은 Git 이력에 남아 있다. 이는 Week 4 보고서 안의 H1·H2·H3 실험이나 Week 7의 coverage·BGE·Graph 가중치 실험을 제거했다는 뜻이 아니다.
 
 압축 입력 두 개는 전송용 ZIP이 아니라 현재 실행에 필요한 동결 데이터다. SQLite는 파일로 열어야 하므로 현재 DB만 압축본과 함께 존재한다. 복원된 DB와 실행 결과는 Git에서 제외한다. 원본과 다른 기존 DB는 덮어쓰지 않는다.
 

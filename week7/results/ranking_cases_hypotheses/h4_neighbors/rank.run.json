@@ -1,9 +1,0 @@
-{
-  "status": "completed",
-  "query_count": 608,
-  "api_calls": 0,
-  "source_sha256": "62b9b91f53f4cc3d0ea8591c24f17be65533ae0d3046b2237fef755f7cbf02c9",
-  "protocol_sha256": "a833891171491b8c4de82805f4260ec7c44feea5d5ebae93be5e33eac3cd288c",
-  "predictions_sha256": "77869286426e232c06c4d5b3a314b1025327b873e53b9a385b94ef04798918f9",
-  "seconds": 0.17211349995341152
-}

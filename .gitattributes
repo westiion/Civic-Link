@@ -8,3 +8,6 @@ docs/** -text
 manifest.json -text
 file_inventory.txt -text
 tests/fixtures/** -text
+
+# Preserve the historical presentation's original Markdown whitespace.
+week4/REPORT.md whitespace=-blank-at-eol

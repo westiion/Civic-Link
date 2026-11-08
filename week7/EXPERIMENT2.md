@@ -365,7 +365,7 @@ RRF는 각 검색 순위를 합치는 방식이다. Graph 점수의 크기가 �
 2. BGE 악화 17개와 서비스 탐색·법적 근거 유형의 실패를 검토한다.
 3. 상위 50개 후보 선택은 별도 문서·질문 시험과 실제 시간 측정으로 검증한 뒤 운영 여부를 정한다.
 
-[조건별 전체 지표](evaluation/experiment2/summary.json) · [문항별 핵심 지표](evaluation/experiment2/per_question.json) · [개선·악화 근거 순위](evaluation/experiment2/changed_questions.jsonl) · [실제 행동 지표](evaluation/experiment2/behavior_summary.json) · [전체 실제 응답](evaluation/experiment2/behavior_cases.json)
+[조건별 전체 지표](evaluation/experiment2/summary.json) · [문항별 핵심 지표](evaluation/experiment2/per_question.json) · [개선·악화 근거 순위](evaluation/experiment2/changed_questions.jsonl) · [실제 행동 지표](evaluation/experiment2/behavior_summary.json) · [전체 실제 응답 · gzip](evaluation/experiment2/behavior_cases.json.gz)
 
 ## 재현 명령
 

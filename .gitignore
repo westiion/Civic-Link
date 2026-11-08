@@ -21,8 +21,11 @@ __pycache__/
 # Retired work and local recovery notes are not current Git inputs.
 /Archive/
 /work/
-/week6/
-/week4/
+# Keep published reports while excluding recovered historical working files.
+/week6/*
+!/week6/REPORT.md
+/week4/*
+!/week4/REPORT.md
 /outputs/
 /submission/
 /share/
@@ -75,3 +78,7 @@ __pycache__/
 /week7/results/roles_h3_*/vectors.sqlite*
 
 /week7/results/ranking_cases_hypotheses/*/vectors.sqlite*
+
+# Read the committed gzip archives directly; regenerated JSON stays local.
+/week7/docs/experiment2_cases/case_details.json
+/week7/evaluation/experiment2/behavior_cases.json
