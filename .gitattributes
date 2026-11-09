@@ -6,7 +6,6 @@ scripts/*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-e
 week7/experiments/** -text
 docs/** -text
 manifest.json -text
-file_inventory.txt -text
 tests/fixtures/** -text
 
 # Preserve the historical presentation's original Markdown whitespace.

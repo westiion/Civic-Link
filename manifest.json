@@ -3,16 +3,16 @@
   "scope": "Historical presentation reports, retained Week7 retrieval experiments and benchmark-only composition expansion; no model required for data verification",
   "files": {
     ".gitattributes": {
-      "bytes": 470,
-      "sha256": "22c7a784e375f9473e0113fbda0c42f307db7059b73b1262e5254122533d9908"
+      "bytes": 445,
+      "sha256": "2dcd47ace94c19e19bf3884263d052da2cb13c9e0bc6d82cfe5e2845219cf0f6"
     },
     ".gitignore": {
       "bytes": 2961,
       "sha256": "2221ffa58a3521fc0c746c0ec3f05e16762eb8ab074caba45c8151359ec1ad3e"
     },
     "README.md": {
-      "bytes": 12926,
-      "sha256": "893daee226dc15f5650153034d8288fd2f1e00ca4016137818a022701512a8ba"
+      "bytes": 12919,
+      "sha256": "7af53af6e02c2dee741572ecc87183a25003f63ede99b71b98e799be5f732920"
     },
     "data/benchmark/dataset.json": {
       "bytes": 394,
@@ -138,17 +138,9 @@
       "bytes": 8512,
       "sha256": "6a991c06de3a09abbd5535e9829144500e05daae5b5788ca86bcdf6dd9f6d8b8"
     },
-    "file_inventory.txt": {
-      "bytes": 10249,
-      "sha256": "e2f96db2a7bc2aee40ce91b38495e11504b4cd9d3c98806aced990c1094a2517"
-    },
     "pyproject.toml": {
-      "bytes": 398,
-      "sha256": "6a8179e05f87e71dc70d740e2a2be85e418a5d4a02e83ea0d039b82ec2a12e0b"
-    },
-    "pytest.ini": {
-      "bytes": 84,
-      "sha256": "5f1e36061eb5b2a2d17ea04bc12de7f6f8b04d8732878015b30bb1e378da9646"
+      "bytes": 521,
+      "sha256": "778decfc455cc19df18888519d984e42b61f5431a8a6c898b59fca73abd35efd"
     },
     "requirements-bge-lock.txt": {
       "bytes": 555,
@@ -235,8 +227,8 @@
       "sha256": "a7e3574aec7588555cf746b5958e105080d8668c0b2b84236f4a182bae86ba25"
     },
     "scripts/refresh_manifest.py": {
-      "bytes": 6306,
-      "sha256": "cb238e44d814400f31a80813216a529883abaaaa642039d02384237117499463"
+      "bytes": 6131,
+      "sha256": "cf16d9a200839d4a0aafeaacffb71e38f8dacfc1b2f8e94b37fb178af51d22f3"
     },
     "scripts/restore_data.py": {
       "bytes": 5090,
@@ -383,8 +375,8 @@
       "sha256": "cc589314b4d4fff84416cc36fb0f26af58b37ab857ce58cb69000317f61aeb6e"
     },
     "tests/test_refresh_manifest.py": {
-      "bytes": 2067,
-      "sha256": "41ba497e40fb36069ce786431d4ee37fbc24c3543631db22d8e72490bdc90021"
+      "bytes": 2177,
+      "sha256": "5e5d7303884438f51acbe0c3889f86ce53de8cb70098bea4d1d30b30d4a1df88"
     },
     "tests/test_restore_data.py": {
       "bytes": 1744,
@@ -423,8 +415,8 @@
       "sha256": "4fb6d7212c8a0c7102ef7de5c7819b80176933e239fad50b35ffe08101168831"
     },
     "week7/SHARING.md": {
-      "bytes": 4475,
-      "sha256": "c957d75b5bac84245eba017720bddda81c34fe9ada35667365a239704e216ab7"
+      "bytes": 4552,
+      "sha256": "3d8b00b6c3fc08679a1440af7272c9bf750821fd47ed85fd3f00cf2252066e96"
     },
     "week7/docs/experiment2_cases/case_details.json.gz": {
       "bytes": 1012491,

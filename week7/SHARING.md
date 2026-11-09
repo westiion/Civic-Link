@@ -17,7 +17,7 @@ gzip을 풀면 기존 원본과 바이트 단위로 같다. 로더는 논리적 
 
 `.gitignore`에서 원본 비압축 캐시, smoke·float32 pilot·partial 실행, Gemma 시도, 작업 로그·편집 메모, `cases_before_*`, `editor_reference`, 중복 `evaluation_*`·`expanded_summary`·`final_summary`를 제외한다. `data/processed/`의 기존 DB도 이미 공유하는 corpus 압축본으로 복원할 수 있어 제외한다. 원본 파일은 삭제하거나 별도 Recovery/ZIP 사본으로 옮기지 않았다.
 
-공유 파일은 루트 `file_inventory.txt`와 `manifest.json`에 명시한다. 파일을 수정하면 `scripts/refresh_manifest.py`를 다시 실행한다. 이 도구는 개인 경로·사설 endpoint·주요 비밀키 패턴과 파일 크기를 검사하며 stage·commit·push하지 않는다.
+공유 파일 목록과 체크섬은 루트 `manifest.json`의 `files`에 함께 기록한다. `manifest.json` 자체는 체크섬 대상에서 제외한다. 파일을 수정하면 `scripts/refresh_manifest.py`를 다시 실행한다. 이 도구는 개인 경로·사설 endpoint·주요 비밀키 패턴과 파일 크기를 검사하며 stage·commit·push하지 않는다.
 
 ## 모델 호출 없이 재집계
 

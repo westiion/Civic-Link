@@ -1,3 +1,4 @@
+import json
 import shutil
 import subprocess
 
@@ -6,7 +7,7 @@ import pytest
 from refresh_manifest import members
 
 
-def test_inventory_covers_historical_reports_and_all_published_experiments(tmp_path):
+def test_members_cover_historical_reports_and_all_published_experiments(tmp_path):
     if not shutil.which('git'):
         pytest.skip('Git is required for checkout membership validation')
     subprocess.run(['git', 'init', '--quiet', str(tmp_path)], check=True)
@@ -50,7 +51,8 @@ def test_exported_archive_keeps_declared_membership(tmp_path):
     report.parent.mkdir()
     report.write_text('published report', encoding='utf-8')
     (report.parent / 'local.json').write_text('{}', encoding='utf-8')
-    (tmp_path / 'file_inventory.txt').write_text(
-        'file_inventory.txt\nmanifest.json\nweek4/REPORT.md\n', encoding='utf-8'
+    (tmp_path / 'pyproject.toml').write_text('[project]\nname = "example"\n', encoding='utf-8')
+    (tmp_path / 'manifest.json').write_text(
+        json.dumps({'files': {'pyproject.toml': {}, 'week4/REPORT.md': {}}}), encoding='utf-8'
     )
-    assert members(tmp_path) == ['file_inventory.txt', 'week4/REPORT.md']
+    assert members(tmp_path) == ['pyproject.toml', 'week4/REPORT.md']

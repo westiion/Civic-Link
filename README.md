@@ -94,12 +94,10 @@ Civic-Link/
 ├─ tests/                        # 테스트 코드·테스트용 데이터
 │
 ├─ README.md                     # 프로젝트 소개·실행·평가 안내
-├─ pyproject.toml                # Python 패키지 설정
+├─ pyproject.toml                # Python 패키지·테스트 설정
 ├─ requirements.txt              # 실행 의존성
 ├─ requirements-dev.txt          # 개발·테스트 의존성
-├─ pytest.ini                    # 테스트 실행 설정
-├─ manifest.json                 # 공유 파일·입력 데이터 검증 정보
-└─ file_inventory.txt            # 공유 파일 목록
+└─ manifest.json                 # 공유 파일 목록·입력 데이터 검증 정보
 ```
 
 ## 실행
@@ -177,6 +175,6 @@ Week 7 보고서의 고정 실험과 그 재현 자료는 보존한다. 별도 �
 
 ### Git 관리
 
-`file_inventory.txt`는 현재 공유 파일의 전체 목록이다. ZIP 생성이나 별도 업로드는 없다. 의도적으로 공유 파일을 수정한 경우 `scripts/refresh_manifest.py`를 실행해 목록과 검증 manifest를 갱신한다. 해당 도구는 stage·commit·push하지 않는다.
+공유 파일 목록과 체크섬은 `manifest.json`의 `files`에 함께 기록한다. `manifest.json` 자체는 체크섬 대상에서 제외한다. 의도적으로 공유 파일을 수정한 경우 `scripts/refresh_manifest.py`를 실행해 갱신한다. Git 정보가 없는 배포본에서도 기존 manifest의 파일 목록을 사용한다. 해당 도구는 stage·commit·push하지 않는다.
 
 과거 이력은 Git에 남아 있으므로 전체 clone 크기는 현재 파일 합계보다 크다. 최신 상태만 받으려면 shallow clone을 사용한다. 로컬 복구 기록과 개인 환경은 공유하지 않는다.

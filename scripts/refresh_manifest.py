@@ -1,4 +1,4 @@
-"""Refresh the shared file inventory and frozen input manifest."""
+"""Refresh the shared file list and frozen input checksums in manifest.json."""
 
 import _bootstrap  # Make the local src package available to script entry points.
 import gzip
@@ -18,7 +18,7 @@ from restore_data import sha
 def members(root):
     root = Path(root)
     names = ['README.md', 'requirements.txt', 'requirements-dev.txt', 'pyproject.toml',
-        'pytest.ini', '.gitattributes', '.gitignore', 'file_inventory.txt', 'data/services.jsonl',
+        '.gitattributes', '.gitignore', 'data/services.jsonl',
         'requirements-bge.txt', 'requirements-bge-lock.txt',
         'data/graph/graph.json', 'data/graph/graph.evidence.json',
         'data/corpus/corpus.sqlite.gz', 'data/retrieval/hybrid_candidates.jsonl.gz',
@@ -40,10 +40,10 @@ def members(root):
         ).decode('utf-8').split('\0')
         allowed = set(visible)
         names = [name for name in names if name in allowed]
-    elif (root / 'file_inventory.txt').is_file():
+    elif (root / 'manifest.json').is_file():
         # Exported source archives have no Git metadata. Keep their declared
         # published membership instead of adding local regenerated outputs.
-        allowed = set((root / 'file_inventory.txt').read_text(encoding='utf-8').splitlines())
+        allowed = set(json.loads((root / 'manifest.json').read_text(encoding='utf-8'))['files'])
         names = [name for name in names if name in allowed]
     return sorted(set(names))
 
@@ -59,8 +59,6 @@ def describe_asset(root, archive, target, kind):
 
 def build(root=ROOT):
     root = Path(root)
-    names = members(root)
-    (root/'file_inventory.txt').write_text('\n'.join(sorted(names+['manifest.json']))+'\n', encoding='utf-8', newline='\n')
     names = members(root)
     assets = [describe_asset(root,'data/corpus/corpus.sqlite.gz','data/corpus/civic.sqlite','corpus'),
               describe_asset(root,'data/retrieval/hybrid_candidates.jsonl.gz',None,'hybrid')]
