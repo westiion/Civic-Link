@@ -118,7 +118,7 @@ def compare(out, destination):
         ('hybrid','graph_lexical_h2'),('graph_lexical_h0','graph_lexical_h1'),
         ('graph_lexical_h1','graph_lexical_h2'),('graph_lexical_h2','graph_lexical_h3')]
     questions_all=read_jsonl(QUESTIONS)
-    frozen_split=read_json((ROOT/'experiments/score_comparison/results/protocol.json'))['split']
+    frozen_split=read_json((ROOT/'week7/experiments/score_comparison/results/protocol.json'))['split']
     subsets={'all':questions_all,'balanced':read_jsonl(CORE),
              'original204':[q for q in questions_all if q['row_origin']=='historical204']}
     subsets.update({name:[q for q in questions_all if frozen_split[q['question_id']]['split']==name]

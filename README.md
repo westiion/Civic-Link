@@ -77,13 +77,13 @@ Civic-Link/
 │  └─ evaluation/                # 검색·행동 평가·벤치마크 검증
 ├─ scripts/                      # 복원·검색·평가·실험 실행 명령
 │
-├─ experiments/                  # 보관용 실험 기록
-│  ├─ score_comparison/results/  # 수식 비교·정책 선택·문항별 변화
-│  └─ type1_fields/             # 유형 1 항목별 BGE 실험 재현 코드
 ├─ week4/REPORT.md               # 당시 보고서 원문·과거 자료 링크
 ├─ week7/                        # Week 7 보고서·실험 자료
 │  ├─ REPORT.md                  # 피드백 반영·개선·수행 기록
 │  ├─ failure_analysis/          # 순위 탈락·후보 누락 사례와 입력 보정 결과
+│  ├─ experiments/               # Week 7 실험 자료·재현 코드
+│  │  ├─ score_comparison/results/ # 수식 비교·정책 선택·문항별 변화
+│  │  └─ type1_fields/           # 유형 1 항목별 BGE 실험 재현 코드
 │  ├─ EXPERIMENT2.md             # 실험 2 결과
 │  ├─ SHARING.md                 # 재집계 안내
 │  ├─ docs/                      # 실험 2 문항별 기록
@@ -157,8 +157,8 @@ DB가 없다면 위 설치·복원 절차를 먼저 실행한다. 기존 출력 
 - `data/retrieval/hybrid_candidates.jsonl.gz`: 약 10.6MB. 고정 Hybrid 후보를 압축 상태로 직접 읽는다. 55.9MB의 별도 복원본을 만들지 않는다.
 - `data/retrieval/hybrid_candidates.run.json`: 입력 질의와 후보의 일치 검사용 메타데이터다. 다른 질문이나 후보를 섞으면 실행을 거부한다.
 - `data/benchmark/`: 현재 정답·질의와 균형 480개 부분집합. `data/benchmark/reviews/`와 작은 검수 전 fixture는 수정 이력 검증에 필요하다.
-- `experiments/score_comparison/results/`: 개발·검증 분리, 정책 선택, 항별 비교, 개선·퇴보 및 재현 결과다.
-- `experiments/type1_fields/`: 당시 유형 1의 14문항을 원래 후보와 저장된 항목별 BGE 점수로 다시 집계하는 코드다. [재현 방법](experiments/type1_fields/README.md)을 따른다.
+- `week7/experiments/score_comparison/results/`: 개발·검증 분리, 정책 선택, 항별 비교, 개선·퇴보 및 재현 결과다.
+- `week7/experiments/type1_fields/`: 당시 유형 1의 14문항을 원래 후보와 저장된 항목별 BGE 점수로 다시 집계하는 코드다. [재현 방법](week7/experiments/type1_fields/README.md)을 따른다.
 
 Week 7 보고서의 고정 실험과 그 재현 자료는 보존한다. 별도 팀원 가설 H1~H5의 실험 묶음·실행기·전용 테스트는 현재 공유본에서 제외했으며, 과거 기록은 Git 이력에 남아 있다. 이는 Week 4 보고서 안의 H1·H2·H3 실험이나 Week 7의 coverage·BGE·Graph 가중치 실험을 제거했다는 뜻이 아니다.
 

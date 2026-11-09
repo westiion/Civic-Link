@@ -101,7 +101,7 @@ Graph 비중을 `w`로 두고 `(1 − w)/(60 + BGE 순위) + w/(60 + Graph 순�
 | [W7-MS-033](#w7-ms-033) | 42 / 1 / 36 | 42 / 1 / 36 | 41 / 1 / 36 |
 | [W7-MS-045](#w7-ms-045) | 13 / 1 | 12 / 1 | 12 / 1 |
 
-[전체 후보 순위](results/type1-fields/candidate-ranks.csv) · [문항별 지표](results/type1-fields/result.json) · [실행 방법](../../experiments/type1_fields/README.md)
+[전체 후보 순위](results/type1-fields/candidate-ranks.csv) · [문항별 지표](results/type1-fields/result.json) · [실행 방법](../experiments/type1_fields/README.md)
 
 </details>
 

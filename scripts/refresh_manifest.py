@@ -27,7 +27,7 @@ def members(root):
         names += [p.relative_to(root).as_posix() for p in (root/directory).rglob('*.py')]
     # Include complete published report trees, not a hand-maintained subset of
     # experiments. This covers historical reports and new lossless archives.
-    for directory in ('data/benchmark', 'experiments', 'docs',
+    for directory in ('data/benchmark', 'docs',
                       'week4', 'week6', 'week7', 'week8'):
         names += [p.relative_to(root).as_posix() for p in (root/directory).rglob('*')
                   if p.is_file() and '__pycache__' not in p.parts and p.name != '.DS_Store']

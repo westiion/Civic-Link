@@ -97,7 +97,7 @@ def summarize(directory,destination,require_complete=True):
         judge_config=read_json((judge_path.parent/'config.json'))
         if judge_config['generation_sha256']!=digest(input_bytes((directory/'responses.jsonl'))):raise ValueError('judged generations changed')
         if judge_config['questions_sha256']!=digest(input_bytes(QUESTIONS)):raise ValueError('judged reference changed')
-    split=read_json((ROOT/'experiments/score_comparison/results/protocol.json'))['split']
+    split=read_json((ROOT/'week7/experiments/score_comparison/results/protocol.json'))['split']
     subsets=dict(all=questions,balanced=read_jsonl(CORE))
     subsets.update({s:[q for q in questions if split[q['question_id']]['split']==s] for s in ('development','validation')})
     review_path=ROOT/'week7/evaluation/experiment2/content_review.json'

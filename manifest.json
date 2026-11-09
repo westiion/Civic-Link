@@ -3,16 +3,16 @@
   "scope": "Historical presentation reports, retained Week7 retrieval experiments and benchmark-only composition expansion; no model required for data verification",
   "files": {
     ".gitattributes": {
-      "bytes": 464,
-      "sha256": "69e3ab51cf36cb9e42d597c9ade90f28ee3a360ef260179c008ee0d0a3a73bf6"
+      "bytes": 470,
+      "sha256": "22c7a784e375f9473e0113fbda0c42f307db7059b73b1262e5254122533d9908"
     },
     ".gitignore": {
       "bytes": 2961,
       "sha256": "2221ffa58a3521fc0c746c0ec3f05e16762eb8ab074caba45c8151359ec1ad3e"
     },
     "README.md": {
-      "bytes": 12887,
-      "sha256": "60cad2904782b250baa2038a3c4f21daf8af9fdb0c28bc3ec8bbf7f464d0685b"
+      "bytes": 12926,
+      "sha256": "893daee226dc15f5650153034d8288fd2f1e00ca4016137818a022701512a8ba"
     },
     "data/benchmark/dataset.json": {
       "bytes": 394,
@@ -138,49 +138,9 @@
       "bytes": 8512,
       "sha256": "6a991c06de3a09abbd5535e9829144500e05daae5b5788ca86bcdf6dd9f6d8b8"
     },
-    "experiments/score_comparison/results/changes.jsonl": {
-      "bytes": 19005,
-      "sha256": "0db6dfbd02a135a3ad79e149f548a13730e516119605cbdfef7145a98a560275"
-    },
-    "experiments/score_comparison/results/explanatory_ablation.json": {
-      "bytes": 13854,
-      "sha256": "c791fa1e9236903f9f1d2b959d09c2d7254abb6e7c453793e7cd652c4d73babb"
-    },
-    "experiments/score_comparison/results/protocol.json": {
-      "bytes": 56475,
-      "sha256": "cfb3331f35f1eed064483e0b7127d27a08e1356fa12302d8d84dea1fb2055a4c"
-    },
-    "experiments/score_comparison/results/reproduction.json": {
-      "bytes": 711,
-      "sha256": "fd30e3b7974d1b84512962aff1bd27dac7dbb90b30b5db30ae743a152aa2805b"
-    },
-    "experiments/score_comparison/results/selection.json": {
-      "bytes": 2193,
-      "sha256": "10b4d8a3bb0ada3674905e7296eaeae4062c2d33939f3ec36527f7ac685bf72b"
-    },
-    "experiments/score_comparison/results/summary.json": {
-      "bytes": 7623,
-      "sha256": "242838affb794091c56d3b78eabd6c98297b64a5dcd0465bfdf02e84609019f4"
-    },
-    "experiments/type1_fields/README.md": {
-      "bytes": 2026,
-      "sha256": "a84b45b443ad8a7a76d92a69e5f31a74233ae9a7152f75272612c5d3ad58b30e"
-    },
-    "experiments/type1_fields/aggregate.py": {
-      "bytes": 19558,
-      "sha256": "4a736daa05a4366af2cfaceedd3c64321397c882387a2ba8131609249942f149"
-    },
-    "experiments/type1_fields/prepare.py": {
-      "bytes": 8472,
-      "sha256": "8f5ebad54a3d7f604ab8396292bd33c1233c8a07e2c1f27f99191bb4c07e97f2"
-    },
-    "experiments/type1_fields/score.py": {
-      "bytes": 9605,
-      "sha256": "36fda1ae7045a59d3f18bc0de338e301daa386aa16a40c9340a80e0d8b6f3dcf"
-    },
     "file_inventory.txt": {
-      "bytes": 10189,
-      "sha256": "45148ad98613f2fd8b5f1ad7a0c6da38303fdfd6e8b7afc6bcf993365d1a7a3b"
+      "bytes": 10249,
+      "sha256": "e2f96db2a7bc2aee40ce91b38495e11504b4cd9d3c98806aced990c1094a2517"
     },
     "pyproject.toml": {
       "bytes": 398,
@@ -227,8 +187,8 @@
       "sha256": "482dedeecb15e1373adcc57b26634a74a731f7d56d9d595ed67ee31ce4211b28"
     },
     "scripts/compare_week7_experiment2.py": {
-      "bytes": 12037,
-      "sha256": "6d76fee51f37cddd0984792735ed398263ebf8c449fb30d83e73efb535ce0a56"
+      "bytes": 12043,
+      "sha256": "d8cbd85a6a07f58e465b23064bf84982ff8a079d87ad4dc79799315d04364a7c"
     },
     "scripts/download_bge.py": {
       "bytes": 814,
@@ -271,12 +231,12 @@
       "sha256": "1f06f71b3527ccc1549321102870489505b63770f70dedae3f776034d4e3989a"
     },
     "scripts/judge_week7_responses.py": {
-      "bytes": 12346,
-      "sha256": "d8fe0dd36678babf327b32b0523c3b8411837dbcd3dcc6dff4a7a2865135cff0"
+      "bytes": 12352,
+      "sha256": "a7e3574aec7588555cf746b5958e105080d8668c0b2b84236f4a182bae86ba25"
     },
     "scripts/refresh_manifest.py": {
-      "bytes": 6321,
-      "sha256": "3b6737e990356856df6b99070e86c3e872fc9e3be778b0fc3cf289c22170f8a8"
+      "bytes": 6306,
+      "sha256": "cb238e44d814400f31a80813216a529883abaaaa642039d02384237117499463"
     },
     "scripts/restore_data.py": {
       "bytes": 5090,
@@ -303,8 +263,8 @@
       "sha256": "39d7a015d7f8dddc5ac9872115796adbb18494aa1d828618be74f48bc2ada3bc"
     },
     "scripts/summarize_week7_behavior.py": {
-      "bytes": 20152,
-      "sha256": "a84e73f7e924c47d1beda973588c902b33dbbe648ee0ed716f70ff2efa1715cb"
+      "bytes": 20158,
+      "sha256": "324462e12a75795909ec5b0fbda43875af285e2c73f359092897537d15afbb6b"
     },
     "scripts/week7_hypothesis_support.py": {
       "bytes": 1497,
@@ -586,6 +546,46 @@
       "bytes": 1931,
       "sha256": "43d3adbf0aa1953d1b562991e62a0f4dc3bf24d94d1ef5a0aa28863407e66288"
     },
+    "week7/experiments/score_comparison/results/changes.jsonl": {
+      "bytes": 19005,
+      "sha256": "0db6dfbd02a135a3ad79e149f548a13730e516119605cbdfef7145a98a560275"
+    },
+    "week7/experiments/score_comparison/results/explanatory_ablation.json": {
+      "bytes": 13854,
+      "sha256": "c791fa1e9236903f9f1d2b959d09c2d7254abb6e7c453793e7cd652c4d73babb"
+    },
+    "week7/experiments/score_comparison/results/protocol.json": {
+      "bytes": 56475,
+      "sha256": "cfb3331f35f1eed064483e0b7127d27a08e1356fa12302d8d84dea1fb2055a4c"
+    },
+    "week7/experiments/score_comparison/results/reproduction.json": {
+      "bytes": 711,
+      "sha256": "fd30e3b7974d1b84512962aff1bd27dac7dbb90b30b5db30ae743a152aa2805b"
+    },
+    "week7/experiments/score_comparison/results/selection.json": {
+      "bytes": 2193,
+      "sha256": "10b4d8a3bb0ada3674905e7296eaeae4062c2d33939f3ec36527f7ac685bf72b"
+    },
+    "week7/experiments/score_comparison/results/summary.json": {
+      "bytes": 7623,
+      "sha256": "242838affb794091c56d3b78eabd6c98297b64a5dcd0465bfdf02e84609019f4"
+    },
+    "week7/experiments/type1_fields/README.md": {
+      "bytes": 2044,
+      "sha256": "da42fff036d6fa69a2d895b40cceac53651f8b24ad74bbecc1b64da7898ecfc9"
+    },
+    "week7/experiments/type1_fields/aggregate.py": {
+      "bytes": 19558,
+      "sha256": "4a736daa05a4366af2cfaceedd3c64321397c882387a2ba8131609249942f149"
+    },
+    "week7/experiments/type1_fields/prepare.py": {
+      "bytes": 8472,
+      "sha256": "8f5ebad54a3d7f604ab8396292bd33c1233c8a07e2c1f27f99191bb4c07e97f2"
+    },
+    "week7/experiments/type1_fields/score.py": {
+      "bytes": 9605,
+      "sha256": "36fda1ae7045a59d3f18bc0de338e301daa386aa16a40c9340a80e0d8b6f3dcf"
+    },
     "week7/failure_analysis/README.md": {
       "bytes": 6124,
       "sha256": "65c1b464733d7b2b2e3e9424890e2173a51857d8ea36db39d95c422817e3fc85"
@@ -595,8 +595,8 @@
       "sha256": "299038226890873bdf6c6bd02873fe74c12017a869aeb50ac7ca7502479b48f8"
     },
     "week7/failure_analysis/ranking-cases-512.md": {
-      "bytes": 196859,
-      "sha256": "c434d33f11caa7b51fc2f0938cde57b0c50ac8125b677070639cb7ad81f0dcdc"
+      "bytes": 196856,
+      "sha256": "093ad887a3966f026cde9ff533ef8275ef5eaf1e8c024e39ec6c3d624ff4d0f8"
     },
     "week7/failure_analysis/ranking-cases.md": {
       "bytes": 153270,

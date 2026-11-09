@@ -3,7 +3,7 @@
 data/** -text
 src/**/*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 scripts/*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-experiments/** -text
+week7/experiments/** -text
 docs/** -text
 manifest.json -text
 file_inventory.txt -text

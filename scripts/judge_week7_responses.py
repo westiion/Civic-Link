@@ -102,7 +102,7 @@ def run(directory,endpoint,model,workers):
     write_json(destination/'mapping.json',refs)
     path=destination/'judgments.jsonl';rows=read_jsonl(path) if input_exists(path) else [];cache={r['judge_key']:r for r in rows}
     if len(cache)!=len(rows) or not set(cache)<=set(jobs):raise ValueError('judge cache mismatch')
-    split=read_json((ROOT/'experiments/score_comparison/results/protocol.json'))['split']
+    split=read_json((ROOT/'week7/experiments/score_comparison/results/protocol.json'))['split']
     smoke=[]
     for action in ('answer','clarify','abstain'):
         for key,(qid,_,_) in jobs.items():
