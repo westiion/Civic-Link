@@ -12,7 +12,13 @@ Civic-Link는 **수정구청의 무인민원발급 서비스에 적용하기 위
 | Week 6 | 원문 미확인 | Git 전체 이력에서 원본을 찾지 못해 별도 보고서를 만들지 않음 |
 | Week 7 | [피드백 반영과 검색 개선 실험](week7/REPORT.md) | 기존 보고서와 연결된 실패 분석·실험 기록 보존 |
 
-[1,000문항 벤치마크 확장 기록](week8/REPORT.md)은 발표 보고서와 별도로 관리합니다. 기존 `week8/` 경로를 유지하며, 에이전트 구현이나 성능 평가를 완료했다는 의미는 아닙니다.
+[1,000문항 벤치마크 확장 기록](week8/REPORT.md)은 발표 보고서와 별도로 보존합니다. 현재 구현은 [Week 8 에이전트 구조·실행·초기 선택](week8/AGENT.md)에 정리합니다. 구현 검증과 1,000문항 성능 평가는 구분합니다.
+
+## 현재 구조 — Qwen이 첫 행동부터 선택
+
+사용자 질문을 받으면 중앙 Python 프로그램이 `system`·`user` 입력을 구성해 Qwen을 호출합니다. Qwen은 확인 항목과 다음 행동을 반환하고, 프로그램이 요청을 검사해 **Hybrid+BGE 내용 검색**, **Graph 관계 탐색**, **사용자 응답** 중 선택된 행동을 실행합니다. 도구 결과는 보관·정리한 뒤 원래 질문과 필요한 기록을 함께 Qwen에 다시 전달합니다.
+
+첫 검색을 고정하지 않습니다. Hybrid+BGE는 새 검색어로 저장 코퍼스를 검색하고, Graph는 대상과 관계를 지정해 기존 연결을 조회합니다. [노션의 전체 흐름](https://app.notion.com/p/4146d1078cb3804994ccda312c40e9c2)을 기준으로 구현했습니다.
 
 ## 진행 과정
 
@@ -71,6 +77,7 @@ Civic-Link/
 ├─ src/civic_link/               # 핵심 구현 코드
 │  ├─ common.py                  # 공통 데이터·DB 처리
 │  ├─ tokenization.py            # 텍스트 정규화·토큰화
+│  ├─ agent/                     # Qwen 판단·중앙 제어·실시간 검색 도구
 │  ├─ graph/                     # 그래프 구축·탐색
 │  ├─ retrieval/                 # Hybrid 기반 Graph 확장 검색
 │  ├─ reranking/                 # 점수식·후보 재정렬
@@ -90,7 +97,9 @@ Civic-Link/
 │  ├─ evaluation/                # 저장된 평가 결과
 │  └─ results/                   # 검색 순위·실험 입력 및 출력
 ├─ outputs/                      # 실행 시 생성되는 결과 (Git 제외)
-├─ week8/REPORT.md               # 별도 벤치마크 확장·검증·한계 기록
+├─ week8/                        # 현재 구현과 벤치마크 확장 기록
+│  ├─ AGENT.md                   # 노션 구조 대응·실행·미합의 초기 선택
+│  └─ REPORT.md                  # 기존 벤치마크 확장·검증·한계 기록
 ├─ tests/                        # 테스트 코드·테스트용 데이터
 │
 ├─ README.md                     # 프로젝트 소개·실행·평가 안내
@@ -101,6 +110,32 @@ Civic-Link/
 ```
 
 ## 실행
+
+### Qwen 에이전트
+
+Python 환경과 원문 DB를 아래 설치·복원 절차로 준비한 뒤 실행합니다. 첫 입력만 확인하는 명령은 모델 서버나 도구를 호출하지 않습니다.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/run_agent.py --question "대리 신청에 필요한 서류는 무엇인가요?" --show-input
+```
+
+실제 실행에는 생성 서버 `QWEN_ENDPOINT`가 필요합니다. 내용 검색에는 임베딩 서버 `QWEN_EMBEDDING_ENDPOINT`, 문서 Dense 색인, 로컬 BGE 모델 `BGE_MODEL_PATH`도 필요합니다. 서버 주소·인증 정보는 환경 변수로 설정하며 저장소에 넣지 않습니다. Graph는 저장된 로컬 Graph와 원문 DB를 조회합니다.
+
+```powershell
+# 최초 검색 준비: 기존 선택 의존성·고정 BGE 모델 준비 후 실제 모델 폴더를 BGE_MODEL_PATH로 설정
+.\.venv\Scripts\python.exe -m pip install -r requirements-bge.txt
+.\.venv\Scripts\python.exe scripts/download_bge.py
+
+# 명시적으로 문서 색인을 생성하며, 기존 출력은 덮어쓰지 않음
+.\.venv\Scripts\python.exe scripts/build_agent_index.py --output outputs/agent-index/corpus.npz
+
+# Qwen의 첫 판단부터 실행. 새 출력 폴더를 사용
+.\.venv\Scripts\python.exe scripts/run_agent.py --question "대리 신청에 필요한 서류는 무엇인가요?" --output-dir outputs/agent-run
+```
+
+`result.json`은 응답·근거·실행 상태, `trace.jsonl`은 각 Qwen 입력·출력과 도구 결과, `config.json`은 실행 설정을 남깁니다. 자료·색인·모델이 없으면 해당 도구의 오류를 전달하며 BM25만 실행해 Hybrid라고 표시하지 않습니다. 새 검색기는 과거 고정 후보의 순위 재현을 보장하지 않습니다. [단계별 구현과 아직 합의하지 않은 초기값](week8/AGENT.md)을 확인하세요.
+
+### 기존 Week 7 검색·평가 재현
 
 [Week 7 보고서](week7/REPORT.md), [실패 사례 분석 및 입력 길이 보정 결과](week7/failure_analysis/README.md), [실험 2 최종 결과](week7/EXPERIMENT2.md)와 [공유본·BGE/Qwen 재집계 안내](week7/SHARING.md)를 함께 제공합니다. 저장된 원점수·원응답의 재집계에는 모델이나 서버가 필요하지 않습니다.
 
@@ -141,7 +176,7 @@ python3.12 -m venv .venv
 .venv/bin/python scripts/build_week8_benchmark.py build --output-dir outputs/week8-rebuilt
 ```
 
-DB가 없다면 위 설치·복원 절차를 먼저 실행한다. 기존 출력 디렉터리는 덮어쓰지 않는다. 기존 608문항용 Hybrid 후보·임베딩·BGE 결과를 새 392문항에 재사용할 수 없다. 이번 작업은 데이터 확장이며, Agent 구현이나 모델 성능 평가는 포함하지 않는다.
+DB가 없다면 위 설치·복원 절차를 먼저 실행한다. 기존 출력 디렉터리는 덮어쓰지 않는다. 기존 608문항용 Hybrid 후보·임베딩·BGE 결과를 새 392문항에 재사용할 수 없다. 이 명령은 데이터 확장·검증이며 에이전트 모델 성능 평가를 수행하지 않는다.
 
 ### Week 7 보존 데이터
 
@@ -171,7 +206,7 @@ Week 7 보고서의 고정 실험과 그 재현 자료는 보존한다. 별도 �
 .venv/bin/python scripts/analyze_score_comparison.py --output-dir outputs/new-ablation
 ```
 
-저장된 Hybrid 후보 이후를 재현한다. 새 Hybrid 후보 생성, 과거 Week3/4 제출, 벤치마크 초안 생성은 현재 지원 범위에서 제외한다. 실험 2의 BGE 원점수·Qwen 원응답·원채점과 최종 사례는 손실 없는 캐시로 별도 보존하며 [공유본·재집계 안내](week7/SHARING.md)의 명령으로 재집계한다. 재집계에는 BGE 실행 환경이나 원격 서버가 필요하지 않다. 선택적인 새 BGE 실행 의존성은 `requirements-bge.txt`에 분리되어 있다.
+위 Week7 명령은 저장된 Hybrid 후보 이후를 재현한다. 새 질문 검색은 별도의 에이전트 검색 도구를 사용한다. 과거 Week3/4 제출과 벤치마크 초안 생성은 해당 재현 명령의 범위 밖이다. 실험 2의 BGE 원점수·Qwen 원응답·원채점과 최종 사례는 손실 없는 캐시로 별도 보존하며 [공유본·재집계 안내](week7/SHARING.md)의 명령으로 재집계한다. 재집계에는 BGE 실행 환경이나 원격 서버가 필요하지 않다. 선택적인 새 BGE 실행 의존성은 `requirements-bge.txt`에 분리되어 있다.
 
 ### Git 관리
 

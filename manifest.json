@@ -1,6 +1,6 @@
 {
   "format_version": 1,
-  "scope": "Historical presentation reports, retained Week7 retrieval experiments and benchmark-only composition expansion; no model required for data verification",
+  "scope": "Historical reports, retained Week7 experiments, composition benchmark and Qwen-led agent implementation; data verification and offline tests require no model server",
   "files": {
     ".gitattributes": {
       "bytes": 445,
@@ -11,8 +11,8 @@
       "sha256": "2221ffa58a3521fc0c746c0ec3f05e16762eb8ab074caba45c8151359ec1ad3e"
     },
     "README.md": {
-      "bytes": 12919,
-      "sha256": "7af53af6e02c2dee741572ecc87183a25003f63ede99b71b98e799be5f732920"
+      "bytes": 16003,
+      "sha256": "b09b45e8a2667c7c5015371cf2a9088ebb41d34b750892df93793529efc676ef"
     },
     "data/benchmark/dataset.json": {
       "bytes": 394,
@@ -139,8 +139,8 @@
       "sha256": "6a991c06de3a09abbd5535e9829144500e05daae5b5788ca86bcdf6dd9f6d8b8"
     },
     "pyproject.toml": {
-      "bytes": 521,
-      "sha256": "778decfc455cc19df18888519d984e42b61f5431a8a6c898b59fca73abd35efd"
+      "bytes": 523,
+      "sha256": "d488023ac2f01eb4eaa1205309c3cdc7f87e56d976a7d1e17479aa0a62ea3ccd"
     },
     "requirements-bge-lock.txt": {
       "bytes": 555,
@@ -169,6 +169,10 @@
     "scripts/analyze_week7_ranking_failures.py": {
       "bytes": 18795,
       "sha256": "19343fda0a92da3f9c18a68e7876d3653b2a44e1fceb220fccf5c818b3ac2038"
+    },
+    "scripts/build_agent_index.py": {
+      "bytes": 2259,
+      "sha256": "d6eefbd9c5b1baee2b38c8f98b1390e9acbea9eae3d007e2fa8b55b62197d265"
     },
     "scripts/build_graph.py": {
       "bytes": 186,
@@ -227,12 +231,16 @@
       "sha256": "a7e3574aec7588555cf746b5958e105080d8668c0b2b84236f4a182bae86ba25"
     },
     "scripts/refresh_manifest.py": {
-      "bytes": 6131,
-      "sha256": "cf16d9a200839d4a0aafeaacffb71e38f8dacfc1b2f8e94b37fb178af51d22f3"
+      "bytes": 6144,
+      "sha256": "3acd2c81c26cf1beca3c20d50c0684ed8b3ee46ed39330181685b315ea8684f9"
     },
     "scripts/restore_data.py": {
       "bytes": 5090,
       "sha256": "65bb053f69927e2587ba0305021c159cf5dad60f6cf1b5af4671bb178a690307"
+    },
+    "scripts/run_agent.py": {
+      "bytes": 8336,
+      "sha256": "9355f6186bad3b17538f136e646a04ea3ae6ab5034af29f3b160526e9e8acbf8"
     },
     "scripts/run_graph_retrieval.py": {
       "bytes": 194,
@@ -265,6 +273,38 @@
     "src/civic_link/__init__.py": {
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/civic_link/agent/__init__.py": {
+      "bytes": 176,
+      "sha256": "ca5659fed86be96822d2ade323708ff83a46f0cba6059574fe81ae3521866b50"
+    },
+    "src/civic_link/agent/client.py": {
+      "bytes": 2598,
+      "sha256": "0650da813b51b653b07b10f8e2b53a20a39fbbcd216ec116d221829924315dff"
+    },
+    "src/civic_link/agent/controller.py": {
+      "bytes": 10192,
+      "sha256": "5ea77c7a901bebe32f5b60a465f546cd9b8a332752e02da1bd03fe0610a5ed77"
+    },
+    "src/civic_link/agent/graph.py": {
+      "bytes": 10400,
+      "sha256": "f474e575c133fcaaa199ecf5c5dbdb8331139ee27cd7e7e55acbadf646d9a7d3"
+    },
+    "src/civic_link/agent/index.py": {
+      "bytes": 6116,
+      "sha256": "d97628c3e998eb72837573a410b8610fa2ea8f74b2432398e9bb46f9b5e4c0f6"
+    },
+    "src/civic_link/agent/prompts.py": {
+      "bytes": 3873,
+      "sha256": "4b5262ad49d72abb1e2ef143d477f87a49862005a09a01ab734ecff99eae3d2c"
+    },
+    "src/civic_link/agent/protocol.py": {
+      "bytes": 3331,
+      "sha256": "d150f8ae702b41735507f92bcee38b6a6df5d2ed61e671d9f8b5a0869afe8faf"
+    },
+    "src/civic_link/agent/search.py": {
+      "bytes": 12579,
+      "sha256": "09d2720ea81ed326a831f2d191aa0d31c5b52c4118488a5bce011886fa14008c"
     },
     "src/civic_link/common.py": {
       "bytes": 21712,
@@ -338,6 +378,22 @@
       "bytes": 415677,
       "sha256": "22386fce3cb5a9e36902258c4ab3a7a15c9309ff9cdc28ee3b614e8a55f79fab"
     },
+    "tests/test_agent_cli.py": {
+      "bytes": 2799,
+      "sha256": "b932587b34aff6ebe032faed1e8d0202d5679107e2dddec299593348c2def6d7"
+    },
+    "tests/test_agent_graph.py": {
+      "bytes": 8275,
+      "sha256": "0d6ea09c6d764d12224a86e86d7e2f4947b53d9d3edee65bdc01be64ff60dbca"
+    },
+    "tests/test_agent_search.py": {
+      "bytes": 8788,
+      "sha256": "99b6cc0a3cb1cdc3b04aae7f2ef2a54b8eaa6cfb572dfb6e2412a4380983a7ab"
+    },
+    "tests/test_agent_workflow.py": {
+      "bytes": 9578,
+      "sha256": "d3ccccf437129f3a7722d829ace5230f1f49775c838445fd7c4cd9f361c18693"
+    },
     "tests/test_behavior_evaluation.py": {
       "bytes": 10274,
       "sha256": "d18c8b299c6576d4f47221fedb5ad1df82a9f167428bda3275a5b21b4b164294"
@@ -391,8 +447,8 @@
       "sha256": "3d95cdc1b5335aebf10d10a1cf545dc49583906d8129856f9ebda501457b9e51"
     },
     "tests/test_week7_experiment2.py": {
-      "bytes": 3536,
-      "sha256": "414dafd31b3a60c0224b379aa59770245a5a0b14baf217bd4594009a07f030b4"
+      "bytes": 3568,
+      "sha256": "708cd9f3839a6600bb096d79725f6e6d203b1af430dc206d702eab336c3f5cbc"
     },
     "tests/test_week8_benchmark.py": {
       "bytes": 3340,
@@ -886,9 +942,13 @@
       "bytes": 1122,
       "sha256": "1ea403e059a2347ffa7477157ead62fce94c3a9f439a4a9b7b3347cad6d62e5a"
     },
+    "week8/AGENT.md": {
+      "bytes": 13515,
+      "sha256": "69d4423974f838c482b3f220c6b39ab7d420eb56e048e094db914cf10f56326a"
+    },
     "week8/REPORT.md": {
-      "bytes": 7170,
-      "sha256": "a7ca01cb315a5aac21a29781b74a5fb390a07de42ac42d824ebdf634fe4490b9"
+      "bytes": 7255,
+      "sha256": "f54156829d1ea37147ca1b065c19dcd9d7415a83dc40548d10fdb198d09e910c"
     }
   },
   "assets": [

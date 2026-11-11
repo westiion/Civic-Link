@@ -86,7 +86,7 @@ def build(root=ROOT):
         if any(re.search(pattern,data) for pattern in patterns):raise ValueError('possible secret: '+name)
         if path.stat().st_size>25*1024*1024:raise ValueError('unexpected large shared file: '+name)
         files[name]=dict(bytes=path.stat().st_size,sha256=sha(path))
-    manifest=dict(format_version=1,scope='Historical presentation reports, retained Week7 retrieval experiments and benchmark-only composition expansion; no model required for data verification',
+    manifest=dict(format_version=1,scope='Historical reports, retained Week7 experiments, composition benchmark and Qwen-led agent implementation; data verification and offline tests require no model server',
         files=files,assets=assets,questions=608,diagnostic_subset=480,
         benchmarks={'week7-master608': 608, 'week8-composition1000-v1': 1000},
         excluded=['Archive','work','.git','models','virtual environments','query embeddings','raw web payloads',

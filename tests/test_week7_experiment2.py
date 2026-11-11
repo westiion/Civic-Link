@@ -72,7 +72,7 @@ def test_full_case_appendix_is_a_partition_of_current_608_questions():
     root=Path(__file__).resolve().parents[1]
     folder=root/'week7/docs/experiment2_cases'
     if not folder.exists():pytest.skip('case appendix not generated')
-    questions=[json.loads(l) for l in (root/'data/benchmark/questions.jsonl').read_text().splitlines()]
-    ids=[qid for p in sorted(folder.glob('*.md')) for qid in re.findall(r'^## (\S+) · ',p.read_text(),flags=re.M)]
+    questions=[json.loads(l) for l in (root/'data/benchmark/questions.jsonl').read_text(encoding='utf-8').splitlines()]
+    ids=[qid for p in sorted(folder.glob('*.md')) for qid in re.findall(r'^## (\S+) · ',p.read_text(encoding='utf-8'),flags=re.M)]
     assert len(ids)==len(set(ids))==608
     assert set(ids)=={q['question_id'] for q in questions}
