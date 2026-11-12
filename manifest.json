@@ -943,12 +943,12 @@
       "sha256": "1ea403e059a2347ffa7477157ead62fce94c3a9f439a4a9b7b3347cad6d62e5a"
     },
     "week8/AGENT.md": {
-      "bytes": 20731,
-      "sha256": "c5214141e340358630f0e9d1ee274896ee4f42d77d425cd4329a818bf049c72f"
+      "bytes": 23849,
+      "sha256": "95fcd83480f809217749b95f0ea2e616760d12c22a3872ce60c3e0c69e98312e"
     },
     "week8/REPORT.md": {
-      "bytes": 7255,
-      "sha256": "f54156829d1ea37147ca1b065c19dcd9d7415a83dc40548d10fdb198d09e910c"
+      "bytes": 9091,
+      "sha256": "6144969f102a61ac2b18d1599c810c4d59073309d11305a3ce863059e9570c5d"
     },
     "week8/examples/first_qwen_request.json": {
       "bytes": 17022,
