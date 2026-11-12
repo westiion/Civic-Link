@@ -4,6 +4,7 @@ import networkx as nx
 import pytest
 
 from civic_link.agent.graph import GraphTool
+from civic_link.agent.prompts import describe_tools
 
 
 @pytest.fixture
@@ -45,6 +46,11 @@ def test_first_call_exact_alias_returns_scoped_evidence_and_conditions(graph_dat
     before = deepcopy((evidence, chunks, documents, dict(graph.edges["S1", "REQ1", "EDGE1"])))
     result = GraphTool(*graph_data).run({"target": " A 증명 ", "relation": "REQUIRES"})
     assert result["status"] == "ok"
+    contract = describe_tools()['graph']['returns']
+    assert result['status'] in contract['status']
+    assert set(result['evidence'][0]) == set(contract['evidence_item'])
+    assert set(result['relations'][0]) == set(contract['relation_item'])
+    assert set(result['metadata']) <= set(contract['metadata'])
     assert result["target"]["id"] == "S1"
     assert [e["id"] for e in result["evidence"]] == ["CS"]
     assert result["evidence"][0]["source"] == documents["DS"]["source_url"]

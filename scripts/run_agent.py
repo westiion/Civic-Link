@@ -12,8 +12,8 @@ import sys
 
 from civic_link.common import ROOT, write_json, write_jsonl
 from civic_link.agent import AgentConfig, RetrievalAgent
-from civic_link.agent.client import QwenClient
-from civic_link.agent.prompts import corpus_scope
+from civic_link.agent.client import QwenClient, request_body
+from civic_link.agent.prompts import corpus_scope, describe_tools
 
 
 class LazyTool:
@@ -52,7 +52,7 @@ def parser():
     p.add_argument('--timeout', type=float, default=120)
     p.add_argument('--max-output-tokens', type=int, default=2000)
     p.add_argument('--json-mode', action='store_true', help='only enable after checking server support')
-    p.add_argument('--show-input', action='store_true', help='print first messages; no model or search call')
+    p.add_argument('--show-input', action='store_true', help='print the full first API request body; no model or search call')
     p.add_argument('--output-dir', type=Path, help='new directory for result, trace and run configuration')
     return p
 
@@ -77,22 +77,11 @@ def main(argv=None):
             raise ValueError('invalid timeout or BGE input limit')
     except ValueError as exc:
         p.error(str(exc))
-    descriptions = {
-        'search': {'arguments': {'query': 'nonempty search text'},
-                   'method': 'BM25 + Dense, RRF then BGE',
-                   'candidate_k': args.candidate_k, 'result_k': args.result_k},
-        'graph': {'arguments': {'target': 'actual node ID or stored name', 'relation': 'one supported relation'},
-                  'relations': ['GROUNDED_BY', 'REFERENCES', 'REQUIRES', 'HANDLED_BY', 'PART_OF'],
-                  'relation_meanings': {
-                      'REQUIRES': 'Service → Document: 제출서류 종류. Document는 검색 원문 파일을 뜻하지 않음. 조건은 qualifiers 확인.',
-                      'HANDLED_BY': 'Service → Agency: 처리·접수기관 관계. 개인 접수 결과를 뜻하지 않음.',
-                      'GROUNDED_BY': 'Service → Article: 연결된 조문. 명칭 언급도 포함하므로 자격·적용의 증명이 아님.',
-                      'PART_OF': 'Article → Law: 조문이 속한 법령.',
-                      'REFERENCES': 'Article → Article: 조문 간 인용 관계. 본문과 적용 조건을 함께 확인.',
-                  },
-                  'direction': args.graph_direction, 'hops': 1,
-                  'max_relations': args.graph_max_relations, 'max_evidence': args.graph_max_evidence},
-    }
+    descriptions = describe_tools(
+        candidate_k=args.candidate_k, result_k=args.result_k,
+        graph_direction=args.graph_direction, graph_max_relations=args.graph_max_relations,
+        graph_max_evidence=args.graph_max_evidence,
+    )
 
     def search_factory():
         from civic_link.agent.search import HybridSearchTool, SearchConfig, QwenEmbeddingClient, LocalBGEReranker
@@ -122,7 +111,9 @@ def main(argv=None):
     agent = RetrievalAgent(client, tools, scope=corpus_scope(args.db),
                            tool_descriptions=descriptions, config=config)
     if args.show_input:
-        print(json.dumps({'messages': agent.initial_messages(args.question)}, ensure_ascii=False, indent=2))
+        body = request_body(agent.initial_messages(args.question), args.model,
+                            max_tokens=args.max_output_tokens, json_mode=args.json_mode)
+        print(json.dumps(body, ensure_ascii=False, indent=2))
         return 0
     result = agent.run(args.question)
     print(result['rendered_response'])

@@ -60,12 +60,16 @@ def test_first_action_can_be_graph_and_sources_come_from_tools():
     out = agent.run('  원문 질문을 유지  ')
     first = json.loads(client.messages[0][1]['content'])
     second = json.loads(client.messages[1][1]['content'])
-    assert first['question'] == second['question'] == '  원문 질문을 유지  '
-    assert first['checks'] == first['evidence'] == first['history'] == []
-    assert first['latest_result'] is None
+    assert first['원래 질문'] == second['원래 질문'] == '  원문 질문을 유지  '
+    first_state, second_state = first['현재 실행 상태'], second['현재 실행 상태']
+    assert first_state['checks'] == first_state['evidence'] == first_state['history'] == []
+    assert first_state['latest_result'] is None
+    assert first_state['phase'] == 'initial' and second_state['phase'] == 'followup'
+    assert first['실행 규칙']['remaining_tool_calls'] == second['실행 규칙']['remaining_tool_calls'] + 1
+    assert client.messages[0][0] == client.messages[1][0]
     assert tools['search'].calls == []
     assert graph.calls == [{'target': '민법 제777조', 'relation': 'REFERENCES'}]
-    assert second['evidence'][0]['id'] == 'c1'
+    assert second_state['evidence'][0]['id'] == 'c1'
     assert out['status'] == 'responded'
     assert out['sources'][0]['source'] == 'https://example.org/source'
 
@@ -77,7 +81,7 @@ def test_rewritten_query_and_accumulated_checks_survive_observations():
         decision(arguments={'query': 'A 서류'}),
         decision(arguments={'query': 'B 서류'}, checks=checks), respond(['a', 'b'])], search=search)
     out = agent.run('A와 B를 비교해줘')
-    last = json.loads(client.messages[-1][1]['content'])
+    last = json.loads(client.messages[-1][1]['content'])['현재 실행 상태']
     assert search.calls == [{'query': 'A 서류'}, {'query': 'B 서류'}]
     assert last['checks'] == checks
     assert {x['id'] for x in last['evidence']} == {'a', 'b'}
@@ -96,7 +100,7 @@ def test_bad_model_request_is_rejected_before_any_tool(bad):
     out = agent.run('질문')
     assert out['status'] == 'responded'
     assert tools['search'].calls == tools['graph'].calls == []
-    assert json.loads(client.messages[1][1]['content'])['controller_feedback']['type'] == 'invalid_request'
+    assert json.loads(client.messages[1][1]['content'])['현재 실행 상태']['controller_feedback']['type'] == 'invalid_request'
 
 
 def test_identical_search_is_cached_but_still_consumes_model_turns():
@@ -113,7 +117,7 @@ def test_tool_error_and_empty_results_are_distinct():
     agent, client, _ = make_agent([decision(), decision(arguments={'query': '다른 검색'}), respond()], search=search)
     out = agent.run('질문')
     assert [x['status'] for x in out['history']] == ['error', 'no_results']
-    assert json.loads(client.messages[1][1]['content'])['latest_result']['status'] == 'error'
+    assert json.loads(client.messages[1][1]['content'])['현재 실행 상태']['latest_result']['status'] == 'error'
 
 
 def test_limits_stop_repeated_model_requests_without_unbounded_tools():
@@ -123,14 +127,14 @@ def test_limits_stop_repeated_model_requests_without_unbounded_tools():
     assert out['status'] == 'invalid_output'
     assert out['tool_calls'] == 1
     assert out['model_calls'] <= 4
-    assert json.loads(client.messages[1][1]['content'])['state']['allowed_actions'] == ['respond']
+    assert json.loads(client.messages[1][1]['content'])['실행 규칙']['allowed_actions'] == ['respond']
 
 
 def test_context_omission_is_explicit_and_unseen_evidence_cannot_be_cited():
     search = Tool([result(rows=[evidence(text='본문' * 1000)])])
     agent, client, _ = make_agent([decision(), respond(['c1']), respond()], search=search, max_evidence_chars=100)
     out = agent.run('질문')
-    second = json.loads(client.messages[1][1]['content'])
+    second = json.loads(client.messages[1][1]['content'])['현재 실행 상태']
     assert second['evidence'] == []
     assert second['context']['omitted_evidence_ids'] == ['c1']
     assert out['sources'] == []
@@ -145,7 +149,7 @@ def test_new_evidence_is_not_starved_by_large_previously_supported_evidence():
         decision(arguments={'query': 'B'}, checks=checks), respond(['b'])],
         search=search, max_evidence_chars=330)
     out = agent.run('A와 B 비교')
-    final_input = json.loads(client.messages[-1][1]['content'])
+    final_input = json.loads(client.messages[-1][1]['content'])['현재 실행 상태']
     assert 'b' in final_input['context']['supplied_evidence_ids']
     assert 'a' in final_input['context']['omitted_evidence_ids']
     assert {row['id'] for row in out['evidence']} == {'a', 'b'}
@@ -166,7 +170,7 @@ def test_query_specific_scores_stay_in_trace_not_reused_evidence():
     row = {**evidence(), 'rank': 1, 'metadata': {'bge_relevance': 5.0}}
     agent, client, _ = make_agent([decision(), respond(['c1'])], search=Tool([result(rows=[row])]))
     out = agent.run('질문')
-    supplied = json.loads(client.messages[1][1]['content'])['evidence'][0]
+    supplied = json.loads(client.messages[1][1]['content'])['현재 실행 상태']['evidence'][0]
     assert 'rank' not in supplied and 'metadata' not in supplied
     trace = next(e for e in out['events'] if e['stage'] == 'tool_result')
     assert trace['result']['evidence'][0]['metadata']['bge_relevance'] == 5.0

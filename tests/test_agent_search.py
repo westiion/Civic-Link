@@ -8,6 +8,7 @@ import numpy as np
 import pytest
 
 from civic_link.agent.index import DenseIndex, build_dense_index, load_corpus
+from civic_link.agent.prompts import describe_tools
 from civic_link.agent.search import (HybridSearchTool, LocalBGEReranker,
                                      QwenEmbeddingClient, SearchConfig)
 
@@ -70,6 +71,11 @@ def test_new_queries_retrieve_and_rerank_actual_corpus_each_time(corpus, tmp_pat
     first = tool.run({"query": "alpha documents"})
     second = tool.run({"query": "meaning-b"})
     assert first["status"] == second["status"] == "ok"
+    contract = describe_tools()['search']['returns']
+    assert first['status'] in contract['status']
+    assert set(first['evidence'][0]) == set(contract['evidence_item'])
+    assert set(first['evidence'][0]['metadata']) == set(contract['evidence_item']['metadata'])
+    assert set(first['metadata']) == set(contract['metadata'])
     assert first["evidence"][0]["id"] == "a"
     assert second["evidence"][0]["id"] == "b"
     assert first["evidence"][0]["source"] == "https://source.test/a"

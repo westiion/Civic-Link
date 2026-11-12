@@ -11,6 +11,15 @@ class ModelError(RuntimeError):
     pass
 
 
+def request_body(messages, model, *, max_tokens=2000, json_mode=False):
+    """Build the same API body for transmission and offline input inspection."""
+    payload = {'model': model, 'messages': messages, 'temperature': 0,
+               'stream': False, 'max_tokens': max_tokens}
+    if json_mode:
+        payload['response_format'] = {'type': 'json_object'}
+    return payload
+
+
 class QwenClient:
     def __init__(self, endpoint, model, *, api_key=None, timeout=120, max_tokens=2000,
                  json_mode=False, opener=None):
@@ -24,10 +33,7 @@ class QwenClient:
         self.json_mode, self.opener = json_mode, opener or urllib.request.urlopen
 
     def complete(self, messages):
-        payload = {'model': self.model, 'messages': messages, 'temperature': 0,
-                   'stream': False, 'max_tokens': self.max_tokens}
-        if self.json_mode:
-            payload['response_format'] = {'type': 'json_object'}
+        payload = request_body(messages, self.model, max_tokens=self.max_tokens, json_mode=self.json_mode)
         headers = {'Content-Type': 'application/json'}
         if self.api_key:
             headers['Authorization'] = 'Bearer ' + self.api_key

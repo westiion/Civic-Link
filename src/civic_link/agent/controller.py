@@ -6,7 +6,7 @@ import json
 from dataclasses import asdict, dataclass
 
 from .client import ModelError
-from .prompts import messages
+from .prompts import describe_tools, messages
 from .protocol import InvalidDecision, parse_decision
 
 
@@ -55,7 +55,7 @@ class RetrievalAgent:
             raise ValueError('exactly search and graph tools are required')
         self.client, self.tools = client, tools
         self.scope = scope or {}
-        self.tool_descriptions = tool_descriptions or {}
+        self.tool_descriptions = tool_descriptions if tool_descriptions is not None else describe_tools()
         self.config = config or AgentConfig()
 
     def initial_messages(self, question):
@@ -97,17 +97,23 @@ class RetrievalAgent:
             observation['evidence_ids'] = [row['id'] for row in latest['evidence']]
         can_search = (state['tool_calls'] < self.config.max_tool_calls
                       and state['model_calls'] < self.config.max_model_calls - 1)
-        payload = {'question': state['question'], 'checks': state['checks'],
-                   'state': {'phase': 'initial' if not state['history'] else 'followup',
-                             'model_calls_completed': state['model_calls'],
-                             'tool_calls_completed': state['tool_calls'],
-                             'remaining_model_calls': self.config.max_model_calls - state['model_calls'],
-                             'remaining_tool_calls': self.config.max_tool_calls - state['tool_calls'],
-                             'allowed_actions': ['search', 'graph', 'respond'] if can_search else ['respond']},
-                   'latest_result': observation, 'evidence': selected,
-                   'context': {'supplied_evidence_ids': selected_ids, 'omitted_evidence_ids': omitted,
-                               'stored_evidence_count': len(state['evidence'])},
-                   'history': state['history'], 'controller_feedback': state['feedback']}
+        payload = {
+            '원래 질문': state['question'],
+            '현재 실행 상태': {
+                'phase': 'initial' if not state['history'] else 'followup',
+                'model_calls_completed': state['model_calls'],
+                'tool_calls_completed': state['tool_calls'],
+                'checks': state['checks'], 'latest_result': observation, 'evidence': selected,
+                'context': {'supplied_evidence_ids': selected_ids, 'omitted_evidence_ids': omitted,
+                            'stored_evidence_count': len(state['evidence'])},
+                'history': state['history'], 'controller_feedback': state['feedback'],
+            },
+            '실행 규칙': {
+                'allowed_actions': ['search', 'graph', 'respond'] if can_search else ['respond'],
+                'remaining_model_calls': self.config.max_model_calls - state['model_calls'],
+                'remaining_tool_calls': self.config.max_tool_calls - state['tool_calls'],
+            },
+        }
         return messages(payload, self.scope, self.tool_descriptions)
 
     @staticmethod
