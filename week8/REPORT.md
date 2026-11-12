@@ -34,6 +34,7 @@
 | [questions.csv](../data/benchmark/week8/questions.csv) | 질문·기대 행동·정답·부모 ID를 확인할 검토용 목록 |
 | [selection.jsonl](../data/benchmark/week8/selection.jsonl) | 선정된 부모 쌍과 서비스 기록 |
 | [leakage_groups.jsonl](../data/benchmark/week8/leakage_groups.jsonl) | 근거·부모·규칙을 공유하는 연결 그룹 |
+| [dataset.json](../data/benchmark/week8/dataset.json) | 데이터 버전·문항 수·선정 및 분할 정책 |
 | [validation.json](../data/benchmark/week8/validation.json) | 실제 데이터 검증 결과 |
 | [manifest.json](../data/benchmark/week8/manifest.json) | 원본·코퍼스·생성기·출력 체크섬 |
 
@@ -53,6 +54,21 @@
 # 데이터 보존·재현성·잘못된 인용 및 체크섬 거부 테스트
 .venv/bin/python -m pytest tests/test_week8_benchmark.py -q
 ```
+
+## 에이전트 응답을 평가할 때 볼 항목
+
+복합 문항은 최종 응답을 A/B 문의별로 읽고 `agentic.subtasks`의 기대 행동과 대조한다. 아래 기준은 후속 평가에 사용할 검토 기준이며, 이번 보고서에는 데이터 제작 당시의 검증 결과를 기록한다.
+
+| 문의별 기대 행동 | 응답에서 확인할 내용 |
+|---|---|
+| 답변 (`answer`) | 필요한 내용을 모두 안내했는지, 제시한 출처의 본문이 답변을 뒷받침하는지 확인한다. |
+| 추가 확인 (`clarify`) | 답을 바꾸는 누락 정보만 구체적으로 물었는지, 이미 주어진 조건을 다시 묻거나 추정하지 않았는지 확인한다. |
+| 답변 보류 (`abstain`) | 자료나 도구의 범위를 밝혔는지, 실제 조회·발급·변경을 수행했다고 주장하지 않았는지 확인한다. |
+| 복합 문항 전체 | 두 문의를 모두 처리하고, 한 사람의 조건을 다른 사람에게 적용하지 않았는지 확인한다. |
+
+예를 들어 `W8-COMP-0313`은 A에게 필요한 서류 종류를 되묻고 B에게는 확보한 근거로 안내해야 한다. `W8-COMP-0392`는 A의 제도 관련 질문에 답하면서 B의 실제 기록 변경 요청은 보류해야 한다. 두 사례 모두 실행 결과의 `responded`는 응답 전달 상태이므로, 문의별 행동의 적절성은 응답 내용에서 판단한다.
+
+검색 결과를 분석할 때는 **필요한 근거를 가져왔는지**, 응답을 분석할 때는 **그 근거를 적절하게 인용하고 필요한 답변·질문·보류를 전달했는지**를 본다. 도구 호출 이력은 누락된 근거를 어떻게 찾았는지 설명하는 자료로 활용한다.
 
 ## 검증 결과
 
