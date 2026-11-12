@@ -67,16 +67,21 @@ class RetrievalAgent:
         if not isinstance(question, str) or not question.strip():
             raise ValueError('question must be nonempty original user text')
         return {'question': question, 'checks': [], 'evidence': {}, 'seen_ids': set(),
+                'supplied_ids': set(),
                 'latest_result': None, 'history': [], 'events': [], 'cache': {},
                 'model_calls': 0, 'tool_calls': 0, 'feedback': None}
 
     def _messages(self, state):
         candidates = []
         latest = state['latest_result']
+        can_search = (state['tool_calls'] < self.config.max_tool_calls
+                      and state['model_calls'] < self.config.max_model_calls - 1)
+        check_ids = [eid for check in state['checks'] for eid in check['evidence_ids']]
+        if not can_search:
+            candidates.extend(check_ids)
         if latest:
             candidates.extend(row['id'] for row in latest['evidence'])
-        for check in state['checks']:
-            candidates.extend(check['evidence_ids'])
+        candidates.extend(check_ids)
         candidates.extend(state['evidence'])
         selected, omitted, used = [], [], 0
         for eid in dict.fromkeys(candidates):
@@ -90,13 +95,12 @@ class RetrievalAgent:
                 selected.append(row)
                 used += size
         selected_ids = [row['id'] for row in selected]
+        state['supplied_ids'] = set(selected_ids)
         state['seen_ids'].update(selected_ids)
         observation = None
         if latest:
             observation = {k: v for k, v in latest.items() if k != 'evidence'}
             observation['evidence_ids'] = [row['id'] for row in latest['evidence']]
-        can_search = (state['tool_calls'] < self.config.max_tool_calls
-                      and state['model_calls'] < self.config.max_model_calls - 1)
         payload = {
             '원래 질문': state['question'],
             '현재 실행 상태': {
@@ -146,6 +150,10 @@ class RetrievalAgent:
             state['events'].append({'stage': 'qwen_output', 'raw': raw})
             try:
                 decision = parse_decision(raw, state['seen_ids'])
+                if decision['action'] == 'respond' and (
+                    not set(decision['arguments']['evidence_ids']) <= state['supplied_ids']
+                ):
+                    raise InvalidDecision('respond evidence_ids must be supplied in the current input')
                 if decision['action'] != 'respond' and (
                     state['tool_calls'] >= self.config.max_tool_calls
                     or state['model_calls'] >= self.config.max_model_calls

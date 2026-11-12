@@ -166,6 +166,28 @@ def test_evidence_id_cannot_change_source_between_tools():
     assert out['sources'][0]['source'] == 'https://example.org/source'
 
 
+@pytest.mark.parametrize('max_tool_calls', [2, 3])
+def test_respond_requires_current_evidence_and_prioritizes_checks_at_limit(max_tool_calls):
+    checks = [{'item': 'A 항목', 'status': '확인', 'evidence_ids': ['a']}]
+    search = Tool([result(rows=[evidence('a', 'A' * 180)]),
+                   result(rows=[evidence('b', 'B')])])
+    agent, client, _ = make_agent([
+        decision(arguments={'query': 'A'}),
+        decision(arguments={'query': 'B'}, checks=checks),
+        decision('respond', {'text': 'A 안내', 'evidence_ids': ['a']}, checks),
+        decision('respond', {'text': 'B 안내', 'evidence_ids': ['b']}, checks),
+    ], search=search, max_evidence_chars=330, max_tool_calls=max_tool_calls)
+
+    out = agent.run('A와 B 비교')
+    context = json.loads(client.messages[2][1]['content'])['현재 실행 상태']['context']
+    expected_id = 'a' if max_tool_calls == 2 else 'b'
+    assert context['supplied_evidence_ids'] == [expected_id]
+    assert out['status'] == 'responded'
+    assert [row['id'] for row in out['sources']] == [expected_id]
+    assert out['checks'] == checks
+    assert any(e['stage'] == 'request_rejected' for e in out['events']) == (max_tool_calls == 3)
+
+
 def test_query_specific_scores_stay_in_trace_not_reused_evidence():
     row = {**evidence(), 'rank': 1, 'metadata': {'bge_relevance': 5.0}}
     agent, client, _ = make_agent([decision(), respond(['c1'])], search=Tool([result(rows=[row])]))
