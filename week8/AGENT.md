@@ -99,8 +99,17 @@ flowchart TD
 검사를 통과한 요청은 다음 순서로 처리한다.
 
 ```mermaid
+---
+config:
+  themeVariables:
+    fontSize: "16px"
+  flowchart:
+    nodeSpacing: 24
+    rankSpacing: 28
+    padding: 10
+---
 flowchart TD
-    Q["2번 · Qwen 판단 결과 수신"] --> V["JSON을 읽고 요청 검사<br/>형식 · 입력값 · 근거 ID · 호출 한도"]
+    Q["2번 · Qwen 판단 결과 수신"] --> V["3번 · 중앙 프로그램<br/>JSON을 읽고 요청 검사<br/>형식 · 입력값 · 근거 ID · 호출 한도"]
     V -->|통과| A{"선택된 action"}
     A -->|search| S["4번 · Hybrid + BGE 호출<br/>query를 검색어로 전달"]
     A -->|graph| G["4번 · Graph 호출<br/>target과 relation을 전달"]
