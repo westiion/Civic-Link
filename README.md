@@ -98,6 +98,10 @@ Civic-Link/
 
 ### Qwen 에이전트
 
+Graph 직접 조회·후보 제공·이어 읽기를 포함한 설계는 [Week8 AGENT](week8/AGENT.md), 한 번 검색 / 검색 반복 / 검색+Graph 반복의 가설과 실행·평가 명령은 [비교 실험 계획](week8/EXPERIMENT.md)을 참고합니다. `scripts/run_agent_comparison.py`는 문항별 결과를 저장하고 같은 설정으로 재개합니다.
+
+**Colab T4에서 전체 1,000문항 A/B/C 실행:** [Colab 실행 안내](week8/COLAB.md) · [실행 노트북 열기](https://colab.research.google.com/github/westiion/Civic-Link/blob/main/week8/run_comparison_colab.ipynb). BGE는 Colab GPU를 사용하고 Qwen 생성·임베딩은 설정한 서버를 호출합니다. 서버 연결 확인이 먼저 필요합니다.
+
 Python 환경과 원문 DB를 아래 설치·복원 절차로 준비한 뒤 실행합니다. 첫 입력만 확인하는 명령은 모델 서버나 도구를 호출하지 않습니다.
 
 ```powershell

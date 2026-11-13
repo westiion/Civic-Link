@@ -56,7 +56,7 @@ def respond(ids=None):
 def test_first_action_can_be_graph_and_sources_come_from_tools():
     graph = Tool([result('graph')])
     agent, client, tools = make_agent([
-        decision('graph', {'target': '민법 제777조', 'relation': 'REFERENCES'}), respond(['c1'])], graph=graph)
+        decision('graph', {'mode': 'traverse', 'target_type': 'node', 'target_id': 'ART1', 'relation': 'REFERENCES'}), respond(['c1'])], graph=graph)
     out = agent.run('  원문 질문을 유지  ')
     first = json.loads(client.messages[0][1]['content'])
     second = json.loads(client.messages[1][1]['content'])
@@ -68,7 +68,7 @@ def test_first_action_can_be_graph_and_sources_come_from_tools():
     assert first['실행 규칙']['remaining_tool_calls'] == second['실행 규칙']['remaining_tool_calls'] + 1
     assert client.messages[0][0] == client.messages[1][0]
     assert tools['search'].calls == []
-    assert graph.calls == [{'target': '민법 제777조', 'relation': 'REFERENCES'}]
+    assert graph.calls == [{'mode': 'traverse', 'target_type': 'node', 'target_id': 'ART1', 'relation': 'REFERENCES'}]
     assert second_state['evidence'][0]['id'] == 'c1'
     assert out['status'] == 'responded'
     assert out['sources'][0]['source'] == 'https://example.org/source'
@@ -159,7 +159,7 @@ def test_evidence_id_cannot_change_source_between_tools():
     changed = evidence()
     changed['source'] = 'https://example.org/different'
     agent, client, _ = make_agent([
-        decision(), decision('graph', {'target': 'A', 'relation': 'REQUIRES'}), respond(['c1'])],
+        decision(), decision('graph', {'mode': 'traverse', 'target_type': 'node', 'target_id': 'A', 'relation': 'REQUIRES'}), respond(['c1'])],
         search=Tool([result()]), graph=Tool([result('graph', [changed])]))
     out = agent.run('질문')
     assert out['history'][-1]['status'] == 'error'
@@ -218,6 +218,7 @@ def test_qwen_client_preserves_messages_and_does_not_force_json_mode():
     assert json.loads(client.complete(messages))['action'] == 'respond'
     assert captured['messages'] == messages
     assert 'response_format' not in captured
+    assert captured['chat_template_kwargs']=={'enable_thinking':False}
 
 
 def test_model_connection_failure_does_not_become_no_evidence_answer():

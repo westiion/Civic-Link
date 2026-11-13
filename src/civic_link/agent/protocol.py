@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from .graph_access import graph_arguments
 
 ACTIONS = ('search', 'graph', 'respond')
 CHECK_STATUSES = ('미확인', '일부 확인', '확인', '충돌')
@@ -68,7 +69,13 @@ def parse_decision(raw, known_ids):
     arguments = decision['arguments']
     if not isinstance(arguments, dict):
         raise InvalidDecision('arguments must be an object')
-    fields = {'search': {'query'}, 'graph': {'target', 'relation'},
+    if action == 'graph':
+        try:
+            graph_arguments(arguments)
+        except ValueError as exc:
+            raise InvalidDecision(str(exc)) from exc
+        return decision
+    fields = {'search': {'query'},
               'respond': {'text', 'evidence_ids'}}[action]
     if set(arguments) != fields:
         raise InvalidDecision(f'{action} arguments must be {sorted(fields)}')

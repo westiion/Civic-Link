@@ -1,7 +1,7 @@
-"""Targeted, read-only graph lookup for the agent's ``graph`` action.
+"""Read-only direct source access and one-hop graph traversal with body paging.
 
-This tool deliberately does not select Hybrid seeds or expand an entire retrieval
-pipeline. One call resolves an existing entity and reads one requested relation.
+The old target/relation interface remains available to historical callers;
+the Qwen protocol uses mode/target_type/target_id and issued cursors.
 """
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ import networkx as nx
 
 from civic_link.common import ROOT, connect
 from civic_link.graph.build import RELATIONS, load_graph
+from .graph_access import GraphAccessMixin
 
 
 def _name(value: str) -> str:
@@ -23,7 +24,7 @@ def _name(value: str) -> str:
     return re.sub(r"\s+", "", unicodedata.normalize("NFKC", value)).casefold()
 
 
-class GraphTool:
+class GraphTool(GraphAccessMixin):
     """A bounded one-hop lookup with explicit target-resolution outcomes.
 
     ``direction`` and limits belong to application configuration, not LLM args.
@@ -35,7 +36,7 @@ class GraphTool:
 
     def __init__(self, graph, evidence, chunks, documents, *,
                  max_relations: int = 20, max_evidence: int = 50,
-                 direction: str = "outgoing"):
+                 direction: str = "outgoing", max_body_chars: int = 12000):
         if not isinstance(graph, nx.MultiDiGraph):
             raise ValueError("GraphTool requires a directed multigraph")
         if direction not in {"outgoing", "incoming", "both"}:
@@ -67,6 +68,7 @@ class GraphTool:
             for alias in aliases:
                 if isinstance(alias, str) and _name(alias):
                     self._names[_name(alias)].add(node_id)
+        self._init_access(max_body_chars)
 
     @classmethod
     def from_files(cls, db=ROOT / "data/corpus/civic.sqlite",
@@ -75,9 +77,9 @@ class GraphTool:
         graph, evidence = load_graph(Path(graph_path), Path(db))
         with closing(connect(Path(db), True)) as connection:
             chunks = {r["chunk_id"]: dict(r) for r in connection.execute(
-                "SELECT chunk_id, document_id, title, text FROM chunks")}
+                "SELECT * FROM chunks")}
             documents = {r["document_id"]: dict(r) for r in connection.execute(
-                "SELECT document_id, source_url FROM documents")}
+                "SELECT document_id, title, body, source_url, source_type FROM documents")}
         return cls(graph, evidence, chunks, documents, **options)
 
     def _target(self, node_id):
@@ -115,6 +117,12 @@ class GraphTool:
         return [rows[key] for key in sorted(rows)]
 
     def run(self, arguments: dict) -> dict:
+        if isinstance(arguments, dict) and 'mode' in arguments:
+            return self.read(arguments)
+        # Kept for historical callers; the Qwen protocol only accepts the new schema.
+        return self._legacy_run(arguments)
+
+    def _legacy_run(self, arguments: dict) -> dict:
         result = {"tool": self.name, "status": "error", "evidence": [],
                   "relations": [], "metadata": {"direction": self.direction,
                   "max_hops": 1, "max_relations": self.max_relations,

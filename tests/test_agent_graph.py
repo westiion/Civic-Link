@@ -49,7 +49,9 @@ def test_first_call_exact_alias_returns_scoped_evidence_and_conditions(graph_dat
     contract = describe_tools()['graph']['returns']
     assert result['status'] in contract['status']
     assert set(result['evidence'][0]) == set(contract['evidence_item'])
-    assert set(result['relations'][0]) == set(contract['relation_item'])
+    # The legacy API retains its original provenance envelope; the Qwen schema
+    # now describes mode-based reads with page-specific source ranges.
+    assert {'from', 'to', 'relation', 'qualifiers'} <= set(contract['relation_item'])
     assert set(result['metadata']) <= set(contract['metadata'])
     assert result["target"]["id"] == "S1"
     assert [e["id"] for e in result["evidence"]] == ["CS"]

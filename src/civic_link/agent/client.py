@@ -11,10 +11,11 @@ class ModelError(RuntimeError):
     pass
 
 
-def request_body(messages, model, *, max_tokens=2000, json_mode=False):
+def request_body(messages, model, *, max_tokens=2000, json_mode=False, enable_thinking=False):
     """Build the same API body for transmission and offline input inspection."""
     payload = {'model': model, 'messages': messages, 'temperature': 0,
-               'stream': False, 'max_tokens': max_tokens}
+               'stream': False, 'max_tokens': max_tokens,
+               'chat_template_kwargs': {'enable_thinking': enable_thinking}}
     if json_mode:
         payload['response_format'] = {'type': 'json_object'}
     return payload
@@ -22,7 +23,7 @@ def request_body(messages, model, *, max_tokens=2000, json_mode=False):
 
 class QwenClient:
     def __init__(self, endpoint, model, *, api_key=None, timeout=120, max_tokens=2000,
-                 json_mode=False, opener=None):
+                 json_mode=False, opener=None, enable_thinking=False):
         parsed = urlparse(endpoint)
         if parsed.scheme not in ('http', 'https') or not parsed.netloc:
             raise ValueError('QWEN_ENDPOINT must be a full HTTP(S) chat/completions URL')
@@ -31,9 +32,12 @@ class QwenClient:
         self.endpoint, self.model = endpoint, model
         self.api_key, self.timeout, self.max_tokens = api_key, timeout, max_tokens
         self.json_mode, self.opener = json_mode, opener or urllib.request.urlopen
+        self.enable_thinking = enable_thinking
 
     def complete(self, messages):
-        payload = request_body(messages, self.model, max_tokens=self.max_tokens, json_mode=self.json_mode)
+        self.last_usage = None
+        payload = request_body(messages, self.model, max_tokens=self.max_tokens, json_mode=self.json_mode,
+                               enable_thinking=self.enable_thinking)
         headers = {'Content-Type': 'application/json'}
         if self.api_key:
             headers['Authorization'] = 'Bearer ' + self.api_key
@@ -41,6 +45,7 @@ class QwenClient:
         try:
             with self.opener(request, timeout=self.timeout) as response:
                 result = json.load(response)
+                self.last_usage = result.get('usage') if isinstance(result, dict) else None
         except urllib.error.HTTPError as exc:
             raise ModelError(f'Qwen HTTP error: {exc.code}') from exc
         except (OSError, ValueError) as exc:

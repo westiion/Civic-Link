@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from copy import deepcopy
 from contextlib import closing
 
 from civic_link.common import connect
@@ -12,10 +13,12 @@ ROLE = '당신은 Civic-Link의 공공 민원 안내를 위한 검색·근거 �
 GUIDELINES = [
     # 질문 분해와 상태 갱신
     '사용자의 의도·조건을 유지하고 요청별 확인 항목을 만드세요. 비교 질문은 대상별·비교 기준별로 나누며, 한쪽 근거를 다른 쪽에 적용하지 마세요.',
-    '첫 호출에는 근거가 없습니다. 이후 evidence·checks·latest_result·history를 보고 기존 확인 항목을 유지·갱신하며 다음 행동을 선택하세요. 미해결 항목을 누락하지 마세요.',
+    '현재 실행 상태의 phase가 initial이면 근거가 없습니다. followup에서는 evidence·checks·latest_result·history를 보고 기존 확인 항목을 유지·갱신하며 다음 행동을 선택하세요. 미해결 항목을 누락하지 마세요.',
     # 부족한 근거 탐색
     'search는 미확인·일부 확인·충돌 항목에 집중하세요. 비교에서 빠진 대상과 조건, 확보한 공식 명칭·법령명·조문 번호로 검색어를 구체화하고 추측한 결론을 전제하지 마세요.',
-    '연결 확인이 필요하면 실제 대상과 지원 관계로 graph를 조회하세요. 관계만 있고 필요한 본문이 없으면 대상명·법령명·조문 번호로 search하세요.',
+    'graph_candidates는 관찰한 후보 전체의 요약입니다. ID·이름·연결 근거·선택 가능한 관계를 보고 이번 대상 하나를 고르세요. 후보나 조문 목록만으로 본문을 읽었다고 판단하지 마세요.',
+    '노드·문서 본문이 부족하면 graph mode=direct로 읽으세요. 연결 근거는 mode=traverse로 시작점 하나·관계 하나를 선택하세요. 알려진 연결 대상은 destination_id로 지정하세요.',
+    '법령 조회가 article_catalog를 반환하면 필요한 조문 ID를 선택하세요. next_cursor가 있으면 같은 조회 조건에 cursor로 전달해 이어 읽으세요. 저장본 누락과 한도에 따른 미반환을 구분하세요.',
     '진전 없는 동일 요청은 반복하지 말고 검색어·대상·관계를 바꾸세요. 실행 오류는 필요할 때 예산 안에서 재시도하고, allowed_actions와 호출 한도를 따르세요. 남은 모델 호출에는 이번 호출이 포함됩니다.',
     # 근거 판정
     '제공받은 본문이 대상·조건·시점과 필요한 예외를 뒷받침해야 확인입니다. 일부만 뒷받침하면 일부 확인, 출처 간 내용이 어긋나면 충돌로 남기세요. 점수·관계·후보 ID만으로 확인하지 마세요.',
@@ -41,7 +44,10 @@ OUTPUT_FORMAT = {
                    'description': '실행 규칙에서 현재 허용한 다음 행동 하나'},
         'arguments': {
             'search': {'query': '비어 있지 않은 검색어'},
-            'graph': {'target': '실제 대상 ID 또는 저장된 이름', 'relation': '지원 관계 하나'},
+            'graph': {'mode': 'direct 또는 traverse', 'target_type': 'direct는 node/document, traverse는 node',
+                      'target_id': '실제 노드 또는 문서 ID', 'relation': 'traverse에만 필수인 관계 하나',
+                      'destination_id': 'traverse에서 연결 대상을 지정할 때만 사용',
+                      'cursor': '이어 읽을 때만 이전 next_cursor를 그대로 사용. 다른 조건은 유지'},
             'respond': {'text': '사용자에게 전달할 답변·추가 질문·보류 문장',
                         'evidence_ids': '응답에 사용한 실제 근거 ID 목록'},
         },
@@ -69,10 +75,10 @@ def corpus_scope(db_path):
 
 
 def describe_tools(*, candidate_k=100, result_k=10, graph_direction='outgoing',
-                   graph_max_relations=20, graph_max_evidence=50):
+                   graph_max_relations=20, graph_max_evidence=50, graph_max_body_chars=12000):
     """Describe actual tool returns and how the controller exposes them to Qwen."""
-    evidence_fields = {'id': '근거 청크 ID', 'document_id': '원문 문서 ID',
-                       'title': '제목', 'text': '청크 본문', 'source': '출처 URL'}
+    evidence_fields = {'id': '근거 ID(청크 또는 원문 범위)', 'document_id': '원문 문서 ID',
+                       'title': '제목', 'text': '실제 반환한 본문', 'source': '출처 URL'}
     error = '실패 시 code 또는 type과 message. 오류는 근거가 없다는 뜻이 아닙니다.'
     return {
         'search': {
@@ -100,8 +106,8 @@ def describe_tools(*, candidate_k=100, result_k=10, graph_direction='outgoing',
             },
         },
         'graph': {
-            'function': '실제 대상 ID 또는 저장된 이름에서 지정한 저장 관계를 조회합니다. 없는 관계를 만들지 않습니다.',
-            'arguments': {'target': '실제 대상 ID 또는 저장된 이름·별칭', 'relation': '지원 관계 하나'},
+            'function': '노드·문서의 근거를 직접 읽거나 관계를 1홉 탐색합니다. 안내 문서·선택한 조문의 전체 본문을 모아 한도 내 반환합니다. 법령 문서만 지정하면 먼저 조문 목록을 제공합니다.',
+            'arguments': OUTPUT_FORMAT['fields']['arguments']['graph'],
             'relations': ['GROUNDED_BY', 'REFERENCES', 'REQUIRES', 'HANDLED_BY', 'PART_OF'],
             'relation_meanings': {
                 'REQUIRES': 'Service → Document: 제출서류 종류. Document는 검색 원문 파일이 아님. qualifiers의 조건 확인.',
@@ -112,26 +118,32 @@ def describe_tools(*, candidate_k=100, result_k=10, graph_direction='outgoing',
             },
             'direction': graph_direction, 'hops': 1,
             'max_relations': graph_max_relations, 'max_evidence': graph_max_evidence,
+            'legacy_limits': '위 개수 한도는 과거 API 전용. 새 입력은 본문 문자 한도와 cursor를 사용합니다.',
+            'max_body_chars': graph_max_body_chars,
             'returns': {
                 'tool': 'graph',
                 'status': {'ok': '연결 근거를 반환함. 자격·적용 충족 판정은 아님.',
                            'not_found': '일치하는 저장 대상을 찾지 못함.',
-                           'ambiguous': '여러 대상과 일치함. candidates의 실제 ID를 확인.',
+                           'ambiguous': '여러 서비스가 공유하는 대상. candidates에서 서비스 범위를 선택.',
                            'no_results': '대상은 찾았지만 해당 관계 또는 반환 가능한 근거가 없음. reason 확인.',
                            'error': '입력 또는 실행 오류.'},
                 'target': '대상을 확정했을 때 id·label·type',
                 'candidates': '대상이 없으면 빈 목록, 모호하면 후보별 id·label·type',
                 'evidence_item': evidence_fields,
+                'optional_evidence_fields': {'start_char': '원문 시작 위치', 'end_char': '끝 위치(미포함)',
+                    'chunk_ids': '본문과 겹치는 청크 ID. 청크 전체를 읽었다는 뜻은 아님'},
+                'next_cursor': '다음 본문 페이지 커서. 완료하면 null',
+                'article_catalog': '법령의 조문 목록. 본문은 선택한 조문 ID로 별도 조회',
                 'relation_item': {
                     'from': '저장 관계의 출발 ID', 'to': '저장 관계의 도착 ID',
                     'from_label': '출발 대상명', 'to_label': '도착 대상명',
                     'relation': '관계 종류', 'edge_id': '관계 ID', 'path': '이번 조회의 대상→연결 대상 경로',
                     'evidence_ids': '관계 자체의 반환 근거 ID',
                     'connected_evidence_ids': '연결 대상의 반환 근거 ID',
-                    'evidence_status': 'bound: 관계 근거 반환 / not_returned: 근거 미반환 / no_bound_evidence: 연결된 관계 근거 없음',
+                    'source_ranges': '관계 출처의 원문 문서·범위. 이번 페이지의 반환 근거 ID와 구분',
+                    'connected_ranges': '연결 대상 원문의 문서·범위. 범위만으로 본문을 읽었다고 판단하지 않음',
                     'qualifiers': '저장된 적용 조건 등. 자동 추출 결과일 수 있으므로 본문과 대조.',
                     'review_status': '관계 검토 상태',
-                    'provenance': '관계 출처 기록. 문서·청크 ID, 인용문과 위치 등',
                 },
                 'metadata': {
                     'direction': '조회 방향', 'max_hops': '최대 홉 수',
@@ -139,7 +151,12 @@ def describe_tools(*, candidate_k=100, result_k=10, graph_direction='outgoing',
                     'candidate_count': '모호한 대상의 전체 후보 수. 모호한 경우에만 제공.',
                     'relation_count': '대상에 연결된 해당 관계 수', 'returned_relation_count': '반환 관계 수',
                     'evidence_count': '선택된 관계들에서 모은 근거 수', 'returned_evidence_count': '반환 근거 수',
-                    'truncated': '대상 후보·관계·근거 중 한도로 일부만 반환했는지 여부',
+                    'truncated': '한도로 일부 본문만 반환했는지 여부',
+                    'mode': 'direct 또는 traverse', 'max_body_chars': '본문 문자 한도',
+                    'total_body_chars': '조회 조건의 전체 본문 길이', 'returned_body_chars': '이번 페이지 본문 길이',
+                    'offset': '페이지 시작 위치', 'remaining_body_chars': '미반환 길이',
+                    'returned_ranges': '문서별 start_char·end_char·evidence_id',
+                    'missing_source_targets': '저장 본문을 확보하지 못한 대상. 커서로 해결되는 미반환과 구분',
                 },
                 'reason': 'no_matching_relation 또는 relations_exist_without_bound_corpus_evidence 등 결과 없는 이유',
                 'error': error,
@@ -150,17 +167,26 @@ def describe_tools(*, candidate_k=100, result_k=10, graph_direction='outgoing',
             'latest_result': '현재 실행 상태.latest_result에는 최신 도구 결과에서 evidence 본문 목록을 제외한 상태·관계·metadata 등이 들어갑니다. 대신 evidence_ids가 붙습니다.',
             'evidence': '현재 실행 상태.evidence에서 실제 전달된 본문을 ID로 찾아 읽으세요. id·document_id·title·text·source를 제공합니다. 검색 rank·점수는 원기록에만 보관합니다.',
             'context': 'supplied_evidence_ids는 이번에 본문을 전달한 ID, omitted_evidence_ids는 보관 중이지만 이번에 제외한 ID, stored_evidence_count는 누적 보관 근거 수입니다.',
+            'graph_state': 'graph_candidates는 질문 명시 대상→미해결 항목 관련→나머지 관찰 대상 순서의 누적 후보입니다. document_candidates는 식별한 원문 ID, graph_pages는 조회 조건·반환 범위·커서를 보관합니다.',
             'limits': '후보 ID나 Graph 관계가 있어도 본문이 전달되지 않았을 수 있습니다. 반환 개수·truncated·context를 확인하세요. no_results·not_found가 전체 코퍼스에 답이 없다는 증명은 아닙니다.',
         },
     }
 
 
 def messages(payload, scope, tool_descriptions):
+    output = deepcopy(OUTPUT_FORMAT)
+    available = [name for name in ACTIONS if name == 'respond' or name in tool_descriptions]
+    output['fields']['action']['allowed_values'] = available
+    output['fields']['arguments'] = {k:v for k,v in output['fields']['arguments'].items() if k in available}
+    if 'search' not in available:
+        output['example'] = {'checks': [], 'action': 'respond',
+                             'arguments': {'text': '확인된 내용 또는 필요한 추가 질문·한계', 'evidence_ids': []},
+                             'reason': '제공된 근거로 응답'}
     system = {
         '역할·데이터 범위': {'role': ROLE, **scope},
         '도구와 관계 설명': tool_descriptions,
         '판단 지침': GUIDELINES,
-        '출력 양식': OUTPUT_FORMAT,
+        '출력 양식': output,
     }
     return [{'role': 'system', 'content': json.dumps(system, ensure_ascii=False, indent=2)},
             {'role': 'user', 'content': json.dumps(payload, ensure_ascii=False, indent=2)}]

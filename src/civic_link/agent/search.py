@@ -97,11 +97,14 @@ class LocalBGEReranker:
     """Explicit local BGE model; never downloads weights or switches devices."""
 
     def __init__(self, model_path: str | Path, *, device: str = "cpu",
-                 batch_size: int = 8, max_length: int = 1024):
+                 batch_size: int = 8, max_length: int = 1024, threads: int | None = None):
         if type(batch_size) is not int or batch_size < 1 or type(max_length) is not int or max_length < 8:
             raise ValueError("invalid BGE batch size/input limit")
         self.model_path, self.device = Path(model_path), device
         self.batch_size, self.max_length = batch_size, max_length
+        if threads is not None and (type(threads) is not int or threads < 1):
+            raise ValueError('BGE threads must be a positive integer')
+        self.threads = threads
         self._model = self._tokenizer = None
 
     def _load(self) -> None:
@@ -110,6 +113,8 @@ class LocalBGEReranker:
         if not self.model_path.is_dir():
             raise FileNotFoundError("local BGE model directory is missing; provision it explicitly")
         import torch
+        if self.threads is not None:
+            torch.set_num_threads(self.threads)
         from transformers import AutoModelForSequenceClassification, AutoTokenizer
         tokenizer = AutoTokenizer.from_pretrained(self.model_path, local_files_only=True,
                                                   trust_remote_code=False)
