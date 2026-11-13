@@ -1,4 +1,4 @@
-"""Spawn one persistent BGE worker per GPU; schedule whole questions across them."""
+"""Spawn persistent BGE workers on GPUs; schedule whole questions across them."""
 from __future__ import annotations
 
 import multiprocessing as mp
@@ -97,20 +97,24 @@ def _event(events, workers):
 
 
 def run_parallel_comparison(queries, directory, conditions, configuration, factory, devices,
-                            *, api_concurrency=None, progress=print):
+                            *, api_concurrency=None, workers_per_gpu=1, progress=print):
     """Write the standard flat output layout, with exclusive ownership per query.
 
     A parent lock protects the entire run. Children write disjoint query IDs;
     no shard merge is needed. On interruption all owned children stop before unlock.
     """
     validate_devices(devices)
-    api_concurrency = len(devices) if api_concurrency is None else api_concurrency
-    if type(api_concurrency) is not int or not 1 <= api_concurrency <= len(devices):
-        raise ValueError('API concurrency must be between 1 and the number of GPU workers')
+    if type(workers_per_gpu) is not int or workers_per_gpu < 1:
+        raise ValueError('workers per GPU must be a positive integer')
+    worker_devices = list(devices) * workers_per_gpu
+    api_concurrency = len(worker_devices) if api_concurrency is None else api_concurrency
+    if type(api_concurrency) is not int or not 1 <= api_concurrency <= len(worker_devices):
+        raise ValueError('API concurrency must be between 1 and the number of workers')
     if not queries or len({q['query_id'] for q in queries}) != len(queries):
         raise ValueError('parallel execution requires nonempty, unique queries')
     configuration = dict(configuration, execution=dict(mode='spawn_per_gpu', devices=list(devices),
-        api_concurrency=api_concurrency, assignment='dynamic_whole_question', warmup='before_dispatch'))
+        workers_per_gpu=workers_per_gpu, api_concurrency=api_concurrency,
+        assignment='dynamic_whole_question', warmup='before_dispatch'))
     config = comparison_config(queries, conditions, configuration)
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=True)
@@ -130,13 +134,13 @@ def run_parallel_comparison(queries, directory, conditions, configuration, facto
         semaphore = ctx.BoundedSemaphore(api_concurrency)
         ready = []
         try:
-            for device in devices[:len(pending)]:
-                process = ctx.Process(target=_worker, name=f'comparison-{device}',
+            for slot, device in enumerate(worker_devices[:len(pending)]):
+                process = ctx.Process(target=_worker, name=f'comparison-{device}-{slot}',
                     args=(device, factory, semaphore, tasks, events, directory, conditions), daemon=True)
                 process.start()
                 workers.append(process)
                 atomic_json(directory/'workers.json', dict(parent_pid=os.getpid(), workers=[
-                    dict(device=devices[i], pid=worker.pid, state='starting') for i,worker in enumerate(workers)]))
+                    dict(device=worker_devices[i], pid=worker.pid, state='starting') for i,worker in enumerate(workers)]))
             # All models/indices are ready before timed questions are dispatched.
             while len(ready) < len(workers):
                 event = _event(events, workers)

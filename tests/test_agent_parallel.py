@@ -89,15 +89,18 @@ def no_workers():
     assert not [p for p in mp.active_children() if p.name.startswith('comparison-')]
 
 
-def test_four_workers_preserve_pairing_limit_api_calls_and_resume(tmp_path):
+@pytest.mark.parametrize('devices,workers_per_gpu', [
+    (['cuda:0', 'cuda:1', 'cuda:2', 'cuda:3'], 1),
+    (['cuda:0', 'cuda:1'], 2),
+])
+def test_four_workers_preserve_pairing_limit_api_calls_and_resume(tmp_path, devices, workers_per_gpu):
     ctx = mp.get_context('spawn')
     counters = (ctx.Value('i', 0), ctx.Value('i', 0))
     markers = tmp_path/'markers'; markers.mkdir()
     factory = FakeFactory(str(markers), ctx.Barrier(4), counters, ctx.Lock())
     directory = tmp_path/'run'; qs = queries(8)
-    devices = ['cuda:0', 'cuda:1', 'cuda:2', 'cuda:3']
     config = run_parallel_comparison(qs, directory, list(CONDITIONS), {}, factory, devices,
-                                     api_concurrency=2, progress=lambda x:None)
+        api_concurrency=2, workers_per_gpu=workers_per_gpu, progress=lambda x:None)
     assert config['settings']['execution']['api_concurrency'] == 2
     assert counters[0].value == 0 and counters[1].value == 2
     assert len(list(markers.iterdir())) == 8
@@ -114,7 +117,7 @@ def test_four_workers_preserve_pairing_limit_api_calls_and_resume(tmp_path):
     assert seen_devices == set(devices) and len(seen_pids) == 4
     # A completely cached run must not construct workers/models at all.
     run_parallel_comparison(qs, directory, list(CONDITIONS), {}, FakeFactory(str(markers), hard_exit=True),
-                            devices, api_concurrency=2, progress=lambda x:None)
+        devices, api_concurrency=2, workers_per_gpu=workers_per_gpu, progress=lambda x:None)
     assert all(path.read_bytes() == value for path,value in snapshots.items())
     assert read_json(directory/'run.json')['cached_conditions'] == 24
     assert evaluate_comparison(directory, gold(qs))['paired_questions'] == 8
@@ -170,6 +173,14 @@ def test_invalid_devices(devices):
         validate_devices(devices)
 
 
+@pytest.mark.parametrize('count', [0, -1, True, 1.5])
+def test_invalid_worker_count_rejected_before_startup(tmp_path, count):
+    with pytest.raises(ValueError, match='positive integer'):
+        run_parallel_comparison(queries(2), tmp_path, list(CONDITIONS), {},
+            FakeFactory(str(tmp_path)), ['cuda:0'], workers_per_gpu=count)
+    no_workers()
+
+
 def test_limiter_releases_on_error_and_forwards_client_metadata():
     import threading
     class Client:
@@ -207,12 +218,12 @@ def test_cli_dispatches_gpu_workers_after_preflight(tmp_path, monkeypatch):
         seen.append('parallel')
         assert len(qs) == 4 and list(conditions) == list(CONDITIONS)
         assert devices == ['cuda:0','cuda:1','cuda:2','cuda:3']
-        assert kwargs['api_concurrency'] == 2
+        assert kwargs['api_concurrency'] == 8 and kwargs['workers_per_gpu'] == 2
         assert settings['bge_device'] == 'per_worker' and settings['bge_dtype'] == 'float32'
         assert isinstance(factory, cli.Components)
     monkeypatch.setattr(cli, 'run_parallel_comparison', parallel)
     assert cli.main(['--queries', str(query_file), '--output-dir', str(tmp_path/'run'),
         '--endpoint', 'https://example.org/chat', '--embedding-endpoint', 'https://example.org/embed',
         '--bge-model', str(model), '--bge-devices', 'cuda:0', 'cuda:1', 'cuda:2', 'cuda:3',
-        '--api-concurrency', '2']) == 0
+        '--workers-per-gpu', '2', '--api-concurrency', '8']) == 0
     assert seen == ['cuda', 'api', 'parallel']

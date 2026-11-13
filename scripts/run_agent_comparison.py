@@ -81,7 +81,8 @@ def main(argv=None):
     p.add_argument('--conditions', nargs='+', choices=tuple(CONDITIONS), default=list(CONDITIONS))
     p.add_argument('--limit', type=int, help='fixed prefix size for a smoke run; omit for the full selected query file')
     p.add_argument('--bge-devices', nargs='+', help='one worker per device, e.g. cuda:0 cuda:1 cuda:2 cuda:3')
-    p.add_argument('--api-concurrency', type=int, help='shared maximum in-flight generation/embedding calls; defaults to GPU count')
+    p.add_argument('--workers-per-gpu', type=int, default=1, help='independent question workers per device; each owns a BGE model')
+    p.add_argument('--api-concurrency', type=int, help='shared maximum in-flight generation/embedding calls; defaults to worker count')
     args = p.parse_args(argv)
     if args.question or args.show_input or not args.output_dir:
         p.error('comparison needs --queries and --output-dir; --question/--show-input are single-session options')
@@ -100,10 +101,14 @@ def main(argv=None):
             p.error(str(exc))
         if args.bge_device != 'cpu':
             p.error('use --bge-devices alone for parallel execution, without --bge-device')
-        if args.api_concurrency is not None and not 1 <= args.api_concurrency <= len(args.bge_devices):
-            p.error('--api-concurrency must be between 1 and the GPU count')
+        if args.workers_per_gpu < 1:
+            p.error('--workers-per-gpu must be positive')
+        if args.api_concurrency is not None and not 1 <= args.api_concurrency <= len(args.bge_devices) * args.workers_per_gpu:
+            p.error('--api-concurrency must be between 1 and the total worker count')
     elif args.api_concurrency is not None:
         p.error('--api-concurrency requires --bge-devices')
+    elif args.workers_per_gpu != 1:
+        p.error('--workers-per-gpu requires --bge-devices')
     config = AgentConfig(args.max_model_calls, args.max_tool_calls, args.max_invalid_responses, args.max_evidence_chars)
     if config.max_tool_calls < 1:
         p.error('the shared initial search needs at least one tool call')
@@ -137,7 +142,7 @@ def main(argv=None):
         check_apis(args)
         print('API checks passed; starting GPU workers...', flush=True)
         run_parallel_comparison(queries, args.output_dir, args.conditions, settings, components,
-            args.bge_devices, api_concurrency=args.api_concurrency,
+            args.bge_devices, api_concurrency=args.api_concurrency, workers_per_gpu=args.workers_per_gpu,
             progress=lambda message: print(message, flush=True))
     else:
         search, factory = components(args.bge_device, None)
