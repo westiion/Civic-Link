@@ -69,3 +69,59 @@ Colab T4 실행은 [전용 안내](COLAB.md)와 [노트북](run_comparison_colab
 BGE CLI 기본값은 입력 1,024토큰·배치 4·CPU 스레드 4·float32다. Colab에서는 `--bge-device cuda`로 명시하며 CPU로 자동 전환하지 않는다. Qwen thinking은 기본적으로 비활성화한다. A/B/C의 모델·정밀도·배치·입력 한도를 동일하게 유지한다.
 
 결과물: 문항별 응답·출처·전체 도구 및 Qwen 입력 이력, 고정 실행 설정, `report.json`, `summary.csv`, `REPORT.md`. 실제 성능 수치는 모델 실행과 평가 후 이 결과에서 작성한다.
+
+## 여러 GPU로 병렬 실행
+
+폴더와 입력·출력 형식은 동일하다. `--bge-devices`에 지정한 GPU마다 독립 프로세스와 BGE 모델 하나를 만들고, 준비된 작업자에게 **문항 단위**로 일을 나눠 준다. 같은 문항의 A/B/C는 한 작업자에서 실행하므로 첫 검색 결과를 공유하며, 조건 순환은 원본 문항 순서를 따른다. 작업자는 처리 후 다음 문항을 가져가므로 어려운 문항이 특정 GPU에 몰려도 남은 일을 나눌 수 있다.
+
+`--api-concurrency 4`는 전체 작업자의 **생성·임베딩 요청을 합쳐 최대 4개**로 제한한다. 서버가 동시 요청 4개를 감당하기 어렵다면 첫 점검부터 2로 정한다. 동시 요청 수를 포함한 설정은 재개 시 고정하며, 변경하려면 새 출력 폴더를 사용한다. GPU가 4장이어도 Qwen 서버 응답 대기 때문에 전체 속도가 정확히 4배가 되지는 않는다.
+
+### V100 × 4 설치
+
+Python 3.12 이상인 Linux GPU 서버에서 저장소를 받은 뒤 실행한다. V100은 Volta(`sm_70`)이므로 **PyTorch 2.9.0의 CUDA 12.6 빌드**를 사용한다. CUDA 12.8/12.9 빌드에서 Volta 지원이 제외된 점은 [PyTorch 공식 안내](https://github.com/pytorch/pytorch/issues/157517), 설치 명령은 [이전 버전 설치 안내](https://pytorch.org/get-started/previous-versions/)를 참고한다.
+
+```bash
+python3.12 -m venv .venv
+.venv/bin/python -m pip install torch==2.9.0 --index-url https://download.pytorch.org/whl/cu126
+.venv/bin/python -m pip install -r requirements-bge.txt
+.venv/bin/python scripts/restore_data.py restore
+.venv/bin/python scripts/download_bge.py
+export BGE_MODEL_PATH="$PWD/.cache/reranker-models/models--BAAI--bge-reranker-v2-m3/snapshots/953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e"
+```
+
+`QWEN_ENDPOINT`, `QWEN_EMBEDDING_ENDPOINT`와 필요한 키는 서버의 환경 변수로 설정한다. **대여 서버에서 해당 API에 접근할 수 있어야 한다.** PC의 VPN 연결이 자동으로 대여 서버에 적용되지는 않는다. 이 실행기는 내부 서버를 외부에 공개하거나 VPN을 구성하지 않는다. 문서 색인이 없다면 같은 임베딩 설정으로 한 번 생성한다.
+
+```bash
+.venv/bin/python scripts/build_agent_index.py --output outputs/agent-index/corpus.npz --timeout 180
+```
+
+기존 색인이 있으면 위 생성 명령은 생략한다. 재개 중 색인을 새로 만들지 않는다. 생성 도중 중단돼 불완전한 파일이 남았다면 해당 파일을 확인하고 새 출력 경로로 색인을 완성한 뒤 `--index`로 지정한다.
+
+### 실행과 평가
+
+```bash
+# 실제 GPU 연산, 생성·임베딩 연결, BGE 최대 입력·배치 적재를 점검하고 앞 20문항 실행
+.venv/bin/python -u scripts/run_agent_comparison.py \
+  --queries data/benchmark/week8/queries.jsonl \
+  --output-dir outputs/week8-gpu-smoke20 --limit 20 \
+  --bge-devices cuda:0 cuda:1 cuda:2 cuda:3 --api-concurrency 4 \
+  --bge-batch-size 4 --bge-max-length 1024 --timeout 180 --json-mode
+
+# 전체 1,000문항 × A/B/C. 같은 명령으로 재개
+.venv/bin/python -u scripts/run_agent_comparison.py \
+  --queries data/benchmark/week8/queries.jsonl \
+  --output-dir outputs/week8-gpu-1000 \
+  --bge-devices cuda:0 cuda:1 cuda:2 cuda:3 --api-concurrency 4 \
+  --bge-batch-size 4 --bge-max-length 1024 --timeout 180 --json-mode
+
+# 별도 결과 병합 없이 기존 평가기를 그대로 사용
+.venv/bin/python scripts/evaluate_agent_comparison.py \
+  --run-dir outputs/week8-gpu-1000 --questions data/benchmark/week8/questions.jsonl \
+  --output-dir outputs/week8-gpu-evaluation
+```
+
+`cuda:0` 등의 번호는 `CUDA_VISIBLE_DEVICES`가 적용된 뒤 프로세스에서 보이는 GPU 순서다. 각 GPU가 같은 모델인지, CUDA 커널이 실행되는지, API 응답과 색인이 일치하는지 확인한 뒤 작업자를 시작한다. 시작 점검의 소량 API 요청은 성능 집계에서 제외한다. 네 작업자의 BGE·검색 색인 준비를 마친 뒤 측정 문항을 배분한다. GPU는 기본 float32를 유지하며 이 변경에서 BF16·FP16으로 바꾸지 않는다.
+
+완료한 조건별 결과는 같은 폴더에 즉시 저장한다. 중단 후 재개할 때 완료된 결과를 검사해 건너뛰고, 일부 조건만 끝난 문항은 저장된 첫 검색을 재사용해 남은 조건만 실행한다. 워커 오류나 Ctrl+C가 발생하면 이 실행기가 만든 작업 프로세스를 종료한 후 잠금을 해제한다. **프로그램 종료는 GPU 대여 반납이 아니므로 대여 종료는 별도로 해야 한다.** 강제 종료로 `.running`이 남으면 `workers.json`의 프로세스들이 모두 종료됐는지 확인한 뒤 잠금 파일만 제거한다.
+
+원결과의 `execution`에 GPU와 프로세스 ID, `config.json`에 GPU·PyTorch·CUDA·동시 요청 설정을 남긴다. `run.json`의 `attempt_wall_seconds`는 마지막 실행 시도의 작업자 준비·처리 시간을 포함하며, 과거 실행 시간이나 실행기 시작 전 설치·다운로드·API 점검 시간은 합산하지 않는다. 조건별 평균 응답 시간은 병렬 부하 상태의 지연 시간이며, 전체 대여 시간과 구분한다. 내용 평가기는 기존과 같이 별도 실행한다.

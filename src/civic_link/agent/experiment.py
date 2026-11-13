@@ -77,68 +77,103 @@ def result_path(directory, condition, qid):
     return Path(directory)/condition/(identity(qid)+'.json')
 
 
-def run_comparison(queries, directory, conditions, configuration, search, agent_factory, *, progress=print):
-    """Persist each first search and complete question atomically; resume by identity.
-
-    initial_search_seconds is charged to each condition for comparable latency,
-    although that common computation is physically performed only once.
-    """
+def comparison_config(queries, conditions, configuration):
     if not conditions or len(conditions) != len(set(conditions)) or set(conditions) - CONDITIONS.keys():
         raise ValueError('invalid comparison conditions')
+    return dict(version=1, conditions=list(conditions), queries=queries, settings=configuration,
+                query_sha256=identity(queries), protocol='shared_original_question_search_then_condition',
+                gold_in_generation=False, benchmark_scope='development_comparison_not_independent_holdout')
+
+
+def prepare_comparison(directory, config):
+    """Caller must hold the directory's run_lock."""
+    path = Path(directory)/'config.json'
+    if path.exists():
+        if read_json(path) != config:
+            raise ValueError('resume configuration, code, corpus or queries changed; use a new output directory')
+    else:
+        if set(p.name for p in Path(directory).iterdir()) - {'.running'}:
+            raise ValueError('nonempty directory without comparison configuration')
+        atomic_json(path, config)
+
+
+def cached_question(directory, query, conditions):
+    """Validate all existing files even for a partially completed question."""
+    qid, question = query['query_id'], query['question']
+    path = result_path(directory, 'initial', qid)
+    first = read_json(path) if path.exists() else None
+    if first is not None and (first['query_id'] != qid or first['question'] != question or
+                              first['sha256'] != identity(first['result'])):
+        raise ValueError('initial search cache identity mismatch')
+    completed = set()
+    for condition in conditions:
+        path = result_path(directory, condition, qid)
+        if not path.exists():
+            continue
+        row = read_json(path)
+        if (first is None or row['query_id'] != qid or row['condition'] != condition or
+                row['question'] != question or row['initial_sha256'] != first['sha256'] or
+                row['result_sha256'] != identity(row['result']) or
+                row['response_sha256'] != identity(row['result']['text'])):
+            raise ValueError('stored response identity mismatch')
+        completed.add(condition)
+    return first, completed
+
+
+def run_question(index, query, directory, conditions, search, agent_factory, *, progress=None, execution=None):
+    """One owner per question; A/B/C share one persisted first search.
+
+    The global query index controls condition rotation regardless of GPU scheduling.
+    Initial search time is charged to every condition, but is computed only once.
+    """
+    qid, question = query['query_id'], query['question']
+    first, completed = cached_question(directory, query, conditions)
+    if first is None:
+        started = time.perf_counter()
+        try:
+            result = normalize_result(search.run({'query': question}), 'search')
+        except Exception as exc:
+            result = dict(tool='search', status='error', evidence=[], relations=[],
+                          error=dict(type=type(exc).__name__, message=str(exc)))
+        first = dict(query_id=qid, question=question, result=result, sha256=identity(result),
+                     seconds=time.perf_counter()-started)
+        if execution is not None:
+            first['execution'] = execution
+        atomic_json(result_path(directory, 'initial', qid), first)
+    order = list(conditions[index % len(conditions):]) + list(conditions[:index % len(conditions)])
+    for condition in order:
+        if condition in completed:
+            if progress:
+                progress(condition, qid, 'cached')
+            continue
+        started = time.perf_counter()
+        result = agent_factory(condition).run(question, initial_result=first['result'])
+        row = dict(query_id=qid, question=question, condition=condition, result=result,
+                   initial_sha256=first['sha256'], initial_search_seconds=first['seconds'],
+                   elapsed_seconds=time.perf_counter()-started+first['seconds'],
+                   result_sha256=identity(result), response_sha256=identity(result['text']))
+        if execution is not None:
+            row['execution'] = execution
+        atomic_json(result_path(directory, condition, qid), row)
+        if progress:
+            progress(condition, qid, result['status'])
+
+
+def run_comparison(queries, directory, conditions, configuration, search, agent_factory, *, progress=print):
+    """Persist complete conditions atomically; resume using the frozen identity."""
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=True)
-    config = dict(version=1, conditions=list(conditions), queries=queries, settings=configuration,
-                  query_sha256=identity(queries), protocol='shared_original_question_search_then_condition',
-                  gold_in_generation=False, benchmark_scope='development_comparison_not_independent_holdout')
+    config = comparison_config(queries, conditions, configuration)
     with run_lock(directory):
-        path = directory/'config.json'
-        if path.exists():
-            if read_json(path) != config:
-                raise ValueError('resume configuration, code, corpus or queries changed; use a new output directory')
-        else:
-            if any(directory.iterdir()) and set(p.name for p in directory.iterdir()) != {'.running'}:
-                raise ValueError('nonempty directory without comparison configuration')
-            atomic_json(path, config)
+        prepare_comparison(directory, config)
         completed = 0
+        def report(condition, qid, status):
+            nonlocal completed
+            completed += 1
+            if status != 'cached':
+                progress(f'{completed}/{len(queries)*len(conditions)} {condition} {qid}: {status}')
         for index, query in enumerate(queries):
-            qid, question = query['query_id'], query['question']
-            first_path = result_path(directory, 'initial', qid)
-            if first_path.exists():
-                first = read_json(first_path)
-                if first['query_id'] != qid or first['question'] != question or first['sha256'] != identity(first['result']):
-                    raise ValueError('initial search cache identity mismatch')
-            else:
-                started = time.perf_counter()
-                try:
-                    result = normalize_result(search.run({'query': question}), 'search')
-                except Exception as exc:
-                    result = dict(tool='search', status='error', evidence=[], relations=[],
-                                  error=dict(type=type(exc).__name__, message=str(exc)))
-                first = dict(query_id=qid, question=question, result=result, sha256=identity(result),
-                             seconds=time.perf_counter()-started)
-                atomic_json(first_path, first)
-            # Rotate order to reduce a fixed warm-up/server-load advantage.
-            order = list(conditions[index % len(conditions):]) + list(conditions[:index % len(conditions)])
-            for condition in order:
-                destination = result_path(directory, condition, qid)
-                if destination.exists():
-                    existing = read_json(destination)
-                    if (existing['query_id'] != qid or existing['condition'] != condition or existing['question'] != question
-                            or existing['initial_sha256'] != first['sha256'] or
-                            existing['result_sha256'] != identity(existing['result'])):
-                        raise ValueError('stored response identity mismatch')
-                    completed += 1
-                    continue
-                started = time.perf_counter()
-                agent = agent_factory(condition)
-                result = agent.run(question, initial_result=first['result'])
-                row = dict(query_id=qid, question=question, condition=condition, result=result,
-                           initial_sha256=first['sha256'], initial_search_seconds=first['seconds'],
-                           elapsed_seconds=time.perf_counter()-started+first['seconds'],
-                           result_sha256=identity(result), response_sha256=identity(result['text']))
-                atomic_json(destination, row)
-                completed += 1
-                progress(f'{completed}/{len(queries)*len(conditions)} {condition} {qid}: {result["status"]}')
+            run_question(index, query, directory, conditions, search, agent_factory, progress=report)
         atomic_json(directory/'run.json', dict(status='completed', questions=len(queries),
                     conditions=list(conditions), completed=completed))
     return config

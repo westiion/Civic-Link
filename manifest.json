@@ -11,8 +11,8 @@
       "sha256": "2221ffa58a3521fc0c746c0ec3f05e16762eb8ab074caba45c8151359ec1ad3e"
     },
     "README.md": {
-      "bytes": 9973,
-      "sha256": "f545f3166bbd817699d04d2fa62b32b79857639377cf2e46dbba9bbb4c38d1a1"
+      "bytes": 10282,
+      "sha256": "76de9e648ce3af84be1b8e15224702a6c822cdda0e33ba5607ef663400a5e7a4"
     },
     "data/benchmark/dataset.json": {
       "bytes": 394,
@@ -255,8 +255,8 @@
       "sha256": "290f1242abaa5e8f91039f15b50d4b619ee7f2fc5c617918ebaee3719e0b8049"
     },
     "scripts/run_agent_comparison.py": {
-      "bytes": 4979,
-      "sha256": "e84ab4b21cc45868d9d32a6c34454eb3c4c246f93ce17b1172e95765b513761f"
+      "bytes": 8874,
+      "sha256": "90976a0c1afcd445e972ade8b3b06e71fdae11b3134e76a5d18055cc1d141b64"
     },
     "scripts/run_graph_retrieval.py": {
       "bytes": 194,
@@ -307,8 +307,8 @@
       "sha256": "9d45eee8c552a68532f68903a657b8c637e4482021922ae81706960217957c17"
     },
     "src/civic_link/agent/experiment.py": {
-      "bytes": 6805,
-      "sha256": "79e0265f9b297f938c03817f7f9df520132cc92c2ed143635bbebc3191ed5ba0"
+      "bytes": 7863,
+      "sha256": "1bfe01a8265e5962cf662db4b71ea5993b8af788fd049f13d09c40a14609a428"
     },
     "src/civic_link/agent/graph.py": {
       "bytes": 10803,
@@ -321,6 +321,10 @@
     "src/civic_link/agent/index.py": {
       "bytes": 6116,
       "sha256": "d97628c3e998eb72837573a410b8610fa2ea8f74b2432398e9bb46f9b5e4c0f6"
+    },
+    "src/civic_link/agent/parallel.py": {
+      "bytes": 8854,
+      "sha256": "450c13c38d210ad002cc2fb2a3a1cc9b8a0925151fdd451d853ef2a10592b1ca"
     },
     "src/civic_link/agent/prompts.py": {
       "bytes": 16593,
@@ -421,6 +425,10 @@
     "tests/test_agent_graph_access.py": {
       "bytes": 8784,
       "sha256": "3c9a9e938fdef62f600bf361d9f66abbf212c176562d39eb2c7c9e9e6958cf73"
+    },
+    "tests/test_agent_parallel.py": {
+      "bytes": 10059,
+      "sha256": "27db0f2e60d7f1bdea7c2e26dbc704f92bf1a8b9520495eed57ef12771244cac"
     },
     "tests/test_agent_search.py": {
       "bytes": 9171,
@@ -979,16 +987,16 @@
       "sha256": "1ea403e059a2347ffa7477157ead62fce94c3a9f439a4a9b7b3347cad6d62e5a"
     },
     "week8/AGENT.md": {
-      "bytes": 44964,
-      "sha256": "25cf5a854759fb329846544308296119453af15b494ce0aa91251bf50d9e1c12"
+      "bytes": 45178,
+      "sha256": "a3f015c6b6339a766929c17f2ddbb1a3ab5fec917cbf5435a678ea87dd12c0ba"
     },
     "week8/COLAB.md": {
       "bytes": 4284,
       "sha256": "3612edfed56d187be3d0c06b8994768e1c82c77e5cb22a34d4393ff652cfaccf"
     },
     "week8/EXPERIMENT.md": {
-      "bytes": 8192,
-      "sha256": "520210ea74e8d76a8a4e4dff9d7c7ded0231d3950e59023300289ee76580120a"
+      "bytes": 13513,
+      "sha256": "77afa704032d5b90b3485c1d3f28a1ed68aebbdd13f0ff3bc5b183bab8967962"
     },
     "week8/GRAPH_CASE_REVIEW.md": {
       "bytes": 96325,

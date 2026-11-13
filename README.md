@@ -102,6 +102,8 @@ Graph 직접 조회·후보 제공·이어 읽기를 포함한 설계는 [Week8 
 
 **Colab T4에서 전체 1,000문항 A/B/C 실행:** [Colab 실행 안내](week8/COLAB.md) · [실행 노트북 열기](https://colab.research.google.com/github/westiion/Civic-Link/blob/main/week8/run_comparison_colab.ipynb). BGE는 Colab GPU를 사용하고 Qwen 생성·임베딩은 설정한 서버를 호출합니다. 서버 연결 확인이 먼저 필요합니다.
 
+**V100 4장 등 여러 GPU 사용:** 같은 실행기에 `--bge-devices cuda:0 cuda:1 cuda:2 cuda:3`를 지정합니다. GPU마다 BGE를 한 번 적재하고 서로 다른 문항을 병렬 처리합니다. [설치·실행·재개 안내](week8/EXPERIMENT.md#여러-gpu로-병렬-실행)를 참고합니다.
+
 Python 환경과 원문 DB를 아래 설치·복원 절차로 준비한 뒤 실행합니다. 첫 입력만 확인하는 명령은 모델 서버나 도구를 호출하지 않습니다.
 
 ```powershell
