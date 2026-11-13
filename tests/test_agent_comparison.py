@@ -132,3 +132,48 @@ def test_evaluation_and_blinded_judge_clis_offline(tmp_path,monkeypatch):
     assert all(v['content_pass_rate']==1 for v in report['summaries'].values())
     assert report['summaries']['iterative_graph']['subtask_handling']['answer']['required_handling_rate']==1
     assert (destination/'summary.csv').is_file() and (destination/'REPORT.md').is_file()
+
+
+def test_parallel_judge_limits_requests_isolates_usage_and_retries_only_failures(tmp_path,monkeypatch):
+    import threading
+    import time
+    import judge_agent_comparison as cli
+    from civic_link.agent.client import ModelError
+    search=Search(); run=tmp_path/'run'
+    run_comparison([dict(query_id='Q1',question='question')],run,list(CONDITIONS),{},search,factory(search),progress=lambda x:None)
+    questions=tmp_path/'questions.jsonl'
+    questions.write_text(json.dumps(question())+'\n',encoding='utf-8')
+    lock=threading.Lock(); barrier=threading.Barrier(2)
+    counts={'calls':0,'active':0,'peak':0}
+    class Judge:
+        def __init__(self,*args,**kwargs): self.last_usage=None
+        def complete(self,messages):
+            with lock:
+                counts['calls']+=1
+                number=counts['calls']
+                counts['active']+=1
+                counts['peak']=max(counts['peak'],counts['active'])
+            try:
+                if number<=2: barrier.wait(timeout=5)
+                time.sleep(.02)
+                if number==1: raise ModelError('temporary failure')
+                self.last_usage={'total_tokens':number}
+                return json.dumps({'subtasks':[dict(subtask_id='main',observed_action='answer',
+                    required_handling_ok=True,factual_correct=True,grounded_in_provided_passages=True,
+                    citations_supported=True,unsupported_claim=False,reason=str(number))]})
+            finally:
+                with lock: counts['active']-=1
+    monkeypatch.setattr(cli,'QwenClient',Judge)
+    output=tmp_path/'judgments'
+    args=['--run-dir',str(run),'--questions',str(questions),'--output-dir',str(output),
+          '--model','test','--endpoint','https://example.org/chat','--workers','2']
+    assert cli.main(args)==0
+    saved={p:p.read_bytes() for p in output.glob('*.json') if p.name!='config.json'}
+    assert len(saved)==2 and len(list((output/'errors').glob('*.json')))==1
+    assert counts=={'calls':3,'active':0,'peak':2}
+    assert cli.main(args)==0
+    assert counts['calls']==4 and all(p.read_bytes()==data for p,data in saved.items())
+    rows=[read_json(p) for p in output.glob('*.json') if p.name!='config.json']
+    assert len(rows)==3
+    assert all(r['usage']['total_tokens']==int(r['judgment']['subtasks'][0]['reason']) for r in rows)
+    assert not (output/'.running').exists()

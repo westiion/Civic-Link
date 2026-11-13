@@ -235,8 +235,8 @@
       "sha256": "e237f4505e31b92f4b1fa770acf7d74f202bd1d51f1ea6658a0aba2394eb030c"
     },
     "scripts/judge_agent_comparison.py": {
-      "bytes": 6475,
-      "sha256": "3aa499759d5e6da3ca23b292e618cc0dce801144d284ea7bc4135f30b0765da1"
+      "bytes": 7429,
+      "sha256": "4bcb1e6cc519f3c64bdaafb36515c89c34176546e60c1c895c537b7927531105"
     },
     "scripts/judge_week7_responses.py": {
       "bytes": 12352,
@@ -415,8 +415,8 @@
       "sha256": "4631e03b5393f98ab1770cd16687a0e41278b0d4c4621a74ee1239473d4da8c0"
     },
     "tests/test_agent_comparison.py": {
-      "bytes": 7383,
-      "sha256": "de588f690af5f5ad5c7e570c06fee228010c6ec6214f58b15af7b9eba9379ff2"
+      "bytes": 9766,
+      "sha256": "87b7678eb95a8faa5da4d4db93b2c74e691246fc9e957186bb3ff573aedcc56e"
     },
     "tests/test_agent_graph.py": {
       "bytes": 8801,
@@ -995,8 +995,8 @@
       "sha256": "3612edfed56d187be3d0c06b8994768e1c82c77e5cb22a34d4393ff652cfaccf"
     },
     "week8/EXPERIMENT.md": {
-      "bytes": 14162,
-      "sha256": "a9c2ddde00a92652b6dc301cb01aeb443b87cb88c47c8489b1b169bb7b91736e"
+      "bytes": 14783,
+      "sha256": "07e98748f6d70afa8b0a5ef9a4b078fb1e77d12a9dfec8ed7c1283e62d15d9e4"
     },
     "week8/GRAPH_CASE_REVIEW.md": {
       "bytes": 96325,

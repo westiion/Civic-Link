@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 from civic_link.agent.client import QwenClient, ModelError
 from civic_link.agent.experiment import identity, file_hash, read_json, atomic_json, result_path, run_lock
 from civic_link.agent.evaluation import subtasks, exposures, validate_judgment
@@ -19,6 +20,36 @@ unsupported_claim은 근거 없는 개인 승인·발급·접수·실시간 조�
 JSON 객체 하나만 반환하세요. 형식: {"subtasks":[{"subtask_id":"제공된 ID","observed_action":"answer","required_handling_ok":true,"factual_correct":true,"grounded_in_provided_passages":true,"citations_supported":true,"unsupported_claim":false,"reason":"판정 근거와 누락 사항"}]}. 각 문의를 빠짐없이 한 번씩 포함하세요.'''
 
 
+def judge_one(a, condition, qid, question):
+    source=result_path(a.run_dir,condition,qid)
+    if not source.exists(): return None
+    row=read_json(source)
+    if row['result_sha256']!=identity(row['result']): raise ValueError('stored result changed')
+    if row['result']['status']!='responded': return None
+    destination=a.output_dir/(identity([condition,qid])+'.json')
+    if destination.exists():
+        previous=read_json(destination)
+        if previous['result_sha256']!=row['result_sha256']: raise ValueError('response changed after judgment')
+        return None
+    _,provided=exposures(row['result'])
+    data=dict(question=question['question'],subtasks=subtasks(question),
+        global_rubric=question.get('gold_rubric'),reference_evidence=question.get('evidence_requirements',[]),
+        provided_passages=provided,actual_response=row['result']['text'],actual_sources=row['result']['sources'])
+    # The client's last_usage is mutable: each request owns its client.
+    client=QwenClient(a.endpoint,a.model,api_key=os.environ.get('QWEN_JUDGE_API_KEY',os.environ.get('QWEN_API_KEY')),
+        timeout=a.timeout,max_tokens=a.max_output_tokens,json_mode=a.json_mode)
+    try:
+        raw=client.complete([dict(role='system',content=SYSTEM),
+            dict(role='user',content=json.dumps(data,ensure_ascii=False))])
+        value=validate_judgment(json.loads(raw),question)
+        atomic_json(destination,dict(condition=condition,query_id=qid,response_sha256=row['response_sha256'],
+            result_sha256=row['result_sha256'],judgment=value,usage=client.last_usage))
+        return f'{condition} {qid}: judged'
+    except (ValueError,ModelError) as exc:
+        atomic_json(a.output_dir/'errors'/destination.name,dict(condition=condition,query_id=qid,error=str(exc)))
+        return f'{condition} {qid}: judge error (unscored; rerun to retry)'
+
+
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--run-dir',type=Path,required=True)
@@ -29,8 +60,10 @@ def main(argv=None):
     p.add_argument('--max-output-tokens',type=int,default=2500)
     p.add_argument('--timeout',type=float,default=120)
     p.add_argument('--json-mode',action='store_true')
+    p.add_argument('--workers',type=int,default=1,help='maximum concurrent judge requests; no local GPU needed')
     a=p.parse_args(argv)
     if not a.endpoint: p.error('configure the judge endpoint')
+    if a.workers < 1: p.error('--workers must be positive')
     rows=[json.loads(line) for line in a.questions.read_text(encoding='utf-8').splitlines() if line.strip()]
     questions={r['question_id']:r for r in rows}
     if len(questions)!=len(rows): p.error('duplicate question ID')
@@ -40,44 +73,34 @@ def main(argv=None):
         generation_config_sha256=file_hash(a.run_dir/'config.json'),code_sha256=file_hash(Path(__file__)),
         scope='posthoc_model_judgment_not_independent_human_verification', blinded_condition=True)
     config['enable_thinking']=False
+    config['workers']=a.workers
+    jobs=[]
+    for query in run['queries']:
+        qid=query['query_id']
+        if qid not in questions or questions[qid]['question']!=query['question']:
+            p.error('gold questions do not match generation queries')
+        jobs.extend((condition,qid) for condition in run['conditions'])
+    if len(jobs)!=len(set(jobs)): p.error('duplicate generation queries or conditions')
     a.output_dir.mkdir(parents=True,exist_ok=True)
-    client=QwenClient(a.endpoint,a.model,api_key=os.environ.get('QWEN_JUDGE_API_KEY',os.environ.get('QWEN_API_KEY')),
-        timeout=a.timeout,max_tokens=a.max_output_tokens,json_mode=a.json_mode)
     with run_lock(a.output_dir):
         config_path=a.output_dir/'config.json'
         if config_path.exists() and read_json(config_path)!=config:
             p.error('judge configuration changed; use a new output directory')
         atomic_json(config_path,config)
-        for query in run['queries']:
-            qid=query['query_id']
-            if qid not in questions or questions[qid]['question']!=query['question']:
-                p.error('gold questions do not match generation queries')
-            question=questions[qid]
-            for condition in run['conditions']:
-                source=result_path(a.run_dir,condition,qid)
-                if not source.exists(): continue
-                row=read_json(source)
-                if row['result_sha256']!=identity(row['result']): p.error('stored result changed')
-                if row['result']['status']!='responded': continue
-                destination=a.output_dir/(identity([condition,qid])+'.json')
-                if destination.exists():
-                    previous=read_json(destination)
-                    if previous['result_sha256']!=row['result_sha256']: p.error('response changed after judgment')
-                    continue
-                _,provided=exposures(row['result'])
-                data=dict(question=question['question'],subtasks=subtasks(question),
-                    global_rubric=question.get('gold_rubric'),reference_evidence=question.get('evidence_requirements',[]),
-                    provided_passages=provided,actual_response=row['result']['text'],actual_sources=row['result']['sources'])
-                try:
-                    raw=client.complete([dict(role='system',content=SYSTEM),
-                        dict(role='user',content=json.dumps(data,ensure_ascii=False))])
-                    value=validate_judgment(json.loads(raw),question)
-                    atomic_json(destination,dict(condition=condition,query_id=qid,response_sha256=row['response_sha256'],
-                        result_sha256=row['result_sha256'],judgment=value,usage=client.last_usage))
-                    print(f'{condition} {qid}: judged',flush=True)
-                except (ValueError,ModelError) as exc:
-                    atomic_json(a.output_dir/'errors'/destination.name,dict(condition=condition,query_id=qid,error=str(exc)))
-                    print(f'{condition} {qid}: judge error (unscored; rerun to retry)',flush=True)
+        # Bound submitted work as well as requests; large traces are read only by
+        # active workers instead of loading all 3,000 responses into memory.
+        with ThreadPoolExecutor(max_workers=a.workers) as pool:
+            pending=set()
+            for condition,qid in jobs:
+                pending.add(pool.submit(judge_one,a,condition,qid,questions[qid]))
+                if len(pending)>=a.workers:
+                    done,pending=wait(pending,return_when=FIRST_COMPLETED)
+                    for future in done:
+                        message=future.result()
+                        if message: print(message,flush=True)
+            for future in pending:
+                message=future.result()
+                if message: print(message,flush=True)
     return 0
 
 
