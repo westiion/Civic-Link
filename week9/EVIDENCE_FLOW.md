@@ -17,23 +17,34 @@
 아래는 **`W7-MS-011`의 `iterative_graph` 조건에서 실제로 일어난 한 차례의 반복**이다. 추상적인 전체 구조를 반복해서 그리는 대신, 어떤 자료가 생기고 저장되며 다음 Qwen 호출에 무엇이 넘어갔는지 한 그림에 연결했다. 본문 수·후보 수·조회 대상은 실행 기록의 값이다. 실제 질문과 판단·반환 내용은 **5.4절**, 관계 이동 없이 직접 조회한 다른 사례는 **5.5절**에 정리한다.
 
 ```mermaid
+---
+config:
+  flowchart:
+    wrappingWidth: 460
+    nodeSpacing: 35
+    rankSpacing: 30
+    padding: 20
+    subGraphTitleMargin:
+      top: 10
+      bottom: 20
+---
 flowchart TB
-    subgraph INITIAL["① 비교 실행기와 제어 프로그램: 첫 검색·보관"]
+    subgraph INITIAL["① 프로그램: 첫 검색·보관"]
         S["원래 질문으로 저장 코퍼스 검색<br/>BM25 + Dense → RRF 후보 100개<br/>BGE 재정렬 → 청크 본문 10개 반환"]
         M1[("질문별 메모리 state<br/>evidence: 본문 10개를 ID별 보관<br/>latest_result: 검색 원결과<br/>history: 요청 1건 · events: 원결과 기록")]
         S --> M1
     end
-    subgraph INPUT1["② 제어 프로그램: 읽을 본문과 조회 후보 구성"]
+    subgraph INPUT1["② 프로그램: 본문·후보 구성"]
         P1["근거 JSON 합계 60,000자 한도 적용<br/>본문 10개 모두 선택 · 제외 0개<br/>질문 이름 + 전달 청크의 저장 연결로 후보 구성"]
         I1["Qwen 첫 입력<br/>원래 질문 + 본문 10개 + checks 빈 목록<br/>Graph 후보 30개 + 문서 후보 10개<br/>검색 metadata · 이력 · 남은 호출 횟수"]
         M1 --> P1 --> I1
     end
-    subgraph DECIDE["③ Qwen 첫 판단과 프로그램의 요청 검사"]
+    subgraph DECIDE["③ Qwen 판단·요청 검사"]
         Q1["Qwen: 확인 항목 3개 작성<br/>대상 범위·요건은 확인<br/>서비스와 조문 연결은 미확인<br/>다음 행동으로 graph 선택"]
         V["프로그램: 형식 · 실제 ID · 관계 · 예산 검사<br/>통과한 checks 3개를 state에 저장<br/>mode=traverse · target_type=node<br/>target_id=SJ-SVC-039 · relation=GROUNDED_BY"]
         I1 --> Q1 --> V
     end
-    subgraph LOOKUP["④ Graph 도구 1회: 지정된 관계 조회와 본문 수집"]
+    subgraph LOOKUP["④ Graph 조회·본문 수집"]
         N["시작 노드<br/>긴급복지 생계지원 요청<br/>SJ-SVC-039"]
         A["연결 조문: 제7조<br/>지원요청 및 신고"]
         B["연결 조문: 제9조<br/>긴급지원의 종류 및 내용"]
@@ -44,12 +55,12 @@ flowchart TB
         A --> R
         B --> R
     end
-    subgraph NEXT["⑤ 제어 프로그램: 반환 결과를 저장하고 다음 입력 구성"]
+    subgraph NEXT["⑤ 프로그램: 저장·입력 갱신"]
         M2[("같은 질문의 state 갱신<br/>evidence: 기존 10개 + 새 본문 2개 = 12개<br/>latest_result: Graph 원결과로 교체<br/>history 2건 · graph_pages 1건 · events 추가<br/>checks의 미확인 상태는 그대로 유지")]
         I2["Qwen 두 번째 입력<br/>최신 본문 → checks 근거 → 나머지 순서로 선택<br/>본문 12개 모두 전달 · 제외 0개<br/>이전 checks 3개 + 갱신된 Graph 후보 31개<br/>문서 후보 10개 + 관계 2개 · 이력 · 남은 횟수"]
         R --> M2 --> I2
     end
-    subgraph FINISH["⑥ Qwen 재판단과 응답 종료"]
+    subgraph FINISH["⑥ Qwen 재판단·응답"]
         Q2["Qwen: 새 본문을 읽고 연결 항목도 확인으로 갱신<br/>action=respond · text 작성 · 인용 ID 4개 선택"]
         F["프로그램: 이번 입력에 있는 인용 ID인지 검사<br/>최종 checks 저장 · 문장과 출처 목록 반환<br/>responded로 종료<br/>합계: search 1회 + graph 1회 / Qwen 2회"]
         I2 --> Q2 --> F
