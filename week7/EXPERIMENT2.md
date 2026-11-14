@@ -377,7 +377,7 @@ RRF는 각 검색 순위를 합치는 방식이다. Graph 점수의 크기가 �
 python3.12 -m venv .venv-reranker
 .venv-reranker/bin/python -m pip install -r week7/results/experiment2_20261031/requirements-bge-lock.txt
 .venv-reranker/bin/python scripts/download_bge.py
-.venv/bin/python scripts/restore_week7.py restore
+.venv/bin/python scripts/restore_data.py restore
 .venv/bin/python scripts/run_week7_experiment2.py prepare \
   --output-dir week7/results/experiment2-new
 

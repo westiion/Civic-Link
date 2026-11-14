@@ -41,8 +41,6 @@ Week8 1,000문항은 기존 문항을 재조합한 **개발 벤치마크**다. �
 
 ## PowerShell 실행
 
-Colab T4 실행은 [전용 안내](COLAB.md)와 [노트북](run_comparison_colab.ipynb)을 사용한다. 기본값은 전체 1,000문항 × A/B/C이며, 결과와 색인을 Drive에 저장한다. Colab에서 생성·임베딩 서버까지 연결돼야 실행할 수 있다.
-
 전제: `QWEN_ENDPOINT`, `QWEN_EMBEDDING_ENDPOINT`, `BGE_MODEL_PATH`를 현재 실행 환경에 설정한다. 필요한 경우 `QWEN_API_KEY`, `QWEN_EMBEDDING_API_KEY`도 설정한다. 서버 주소·키를 결과 설정 파일에 평문으로 저장하지 않는다. Dense 색인은 사용한 임베딩 모델·revision·query instruction과 일치해야 한다.
 
 ```powershell
@@ -68,7 +66,7 @@ Colab T4 실행은 [전용 안내](COLAB.md)와 [노트북](run_comparison_colab
 
 내용 평가기에 `--workers 8`을 추가하면 최대 8개 응답을 동시에 평가한다. 기본값은 1이다. 요청마다 별도 클라이언트를 사용해 토큰 사용량이 섞이지 않으며, 성공한 판정은 재사용하고 실패한 판정만 다시 시도한다. 동시 실행 수를 바꾸면 새 평가 출력 폴더를 사용한다. 내용 평가는 로컬 GPU가 필요 없으므로 원결과를 PC에 백업하고 대여 GPU를 반환한 뒤 실행할 수 있다. 생성 실험과 평가 요청을 동시에 보내면 처리 시간에 영향을 주므로 시간 비교 시에는 분리한다.
 
-BGE CLI 기본값은 입력 1,024토큰·배치 4·CPU 스레드 4·float32다. Colab에서는 `--bge-device cuda`로 명시하며 CPU로 자동 전환하지 않는다. Qwen thinking은 기본적으로 비활성화한다. A/B/C의 모델·정밀도·배치·입력 한도를 동일하게 유지한다.
+BGE CLI 기본값은 입력 1,024토큰·배치 4·CPU 스레드 4·float32다. CUDA GPU를 사용할 때는 `--bge-device cuda`로 명시하며 CPU로 자동 전환하지 않는다. Qwen thinking은 기본적으로 비활성화한다. A/B/C의 모델·정밀도·배치·입력 한도를 동일하게 유지한다.
 
 결과물: 문항별 응답·출처·전체 도구 및 Qwen 입력 이력, 고정 실행 설정, `report.json`, `summary.csv`, `REPORT.md`. 실제 성능 수치는 모델 실행과 평가 후 이 결과에서 작성한다.
 
