@@ -1,159 +1,105 @@
 # Civic-Link
 
-Civic-Link는 **수정구청의 무인민원발급 서비스에 적용하기 위한 행정·법률 기반 Graph RAG 시스템 구축 프로젝트**입니다. 행정 서비스와 필요 서류, 처리기관, 근거 조문 및 관련 법령의 관계를 지식 그래프로 구조화합니다. 이를 바탕으로 민원인의 질문에 적합한 서비스를 안내하고, 안내 내용의 공식적인 법적·행정적 근거를 함께 제시하는 것을 목표로 합니다.
+Civic-Link는 **수정구청의 무인민원발급 서비스에 적용하기 위한 행정·법률 기반 Graph RAG 프로젝트**입니다. 행정 서비스, 필요 서류, 처리기관, 근거 조문과 관련 법령을 연결하고, 민원 질문에 맞는 안내와 공식 원문 근거를 함께 제공하는 것을 목표로 합니다.
 
 > 인하대학교 탄소중립 아카데미 7기 산업체 연계 프로젝트 · 마음AI
 
-## 주차별 발표 보고서
+현재 **Week 8에서는 Qwen이 필요한 근거를 판단하고 검색·Graph 조회를 반복하는 에이전트를 구현해, 기존 608문항으로 세 가지 탐색 방식을 비교했습니다.** 반복 검색으로 필수 근거 회수는 개선됐으며, 응답 내용의 충족 여부와 Graph의 추가 효과를 함께 분석하고 있습니다.
 
-| 주차 | 보고서 | 보존 상태 |
+[에이전트 설계](week8/AGENT.md) · [성능 평가 결과](week8/AGENT.md#performance-results) · [비교 실험 설계](week8/EXPERIMENT.md) · [벤치마크 구성](week8/REPORT.md)
+
+## Week 8 — 질문에 필요한 근거를 찾아가는 에이전트
+
+Week 7에서는 필요한 근거가 검색 후보에 있어도 최종 상위 결과에서 빠지는 사례를 확인했습니다. Week 8에서는 Qwen이 질문을 확인 항목으로 나누고, 확보한 본문을 읽은 뒤 부족한 내용을 추가로 찾도록 구성했습니다.
+
+예를 들어 두 증명서의 대리 발급 서류를 비교할 때 한쪽 안내만 확보했다면, 다른 증명서의 서류와 적용 조건을 미확인 항목으로 남깁니다. 이후 검색어를 바꾸거나 특정 서비스·조문을 직접 조회해 두 대상의 근거를 모읍니다.
+
+```mermaid
+flowchart TD
+    U["민원 질문"] --> Q["Qwen<br/>확인 항목과 다음 행동 판단"]
+    Q --> C["중앙 프로그램<br/>요청 검사·실행 관리"]
+    C -->|search| S["내용 검색<br/>BM25 + Dense → BGE 재정렬"]
+    C -->|graph| G["Graph<br/>본문 직접 조회·관계 탐색·이어 읽기"]
+    S --> E["근거·출처·진행 상태 보관"]
+    G --> E
+    E --> Q
+    C -->|respond| R["응답과 출처 전달<br/>답변·추가 질문·보류"]
+```
+
+| 구성 요소 | 역할 |
+|---|---|
+| **Qwen** | 질문에서 확인할 항목을 만들고, 본문의 충족 여부를 검토해 검색·조회·응답 중 다음 행동을 선택 |
+| **내용 검색** | BM25와 Dense 검색의 후보를 합치고 BGE로 재정렬해 현재 검색어에 맞는 본문 제공 |
+| **Graph 도구** | 서비스·문서·조문을 직접 조회하거나 저장된 관계를 따라 연결 본문을 확인. 긴 본문은 이어 읽기 지원 |
+| **중앙 프로그램** | 요청 형식과 근거 사용을 검사하고, 도구 호출·근거 누적·호출 한도·응답 종료 관리 |
+
+판단·응답 모델은 **Qwen3.8-Flash-Next**, Dense 검색은 **Qwen3-VL-Embedding-8B**, 재정렬은 **BAAI/bge-reranker-v2-m3**를 사용합니다. Qwen은 제목이나 검색 점수만으로 결론을 내리지 않고, 실제 전달받은 본문과 적용 조건을 확인하도록 설계했습니다. 세부 입력·출력은 [실제 요청 예시](week8/examples/first_qwen_request.md)에 정리했습니다.
+
+## Week 8 비교 실험과 결과
+
+**V100 GPU 4장·총 16개 작업자로 기존 608문항 × 세 조건을 실행했습니다.** 각 문항의 첫 검색 결과를 공유하고, 이후 허용하는 탐색 행동을 달리해 반복 검색과 Graph의 효과를 비교했습니다.
+
+| 조건 | 탐색 방식 | 비교 목적 |
 |---|---|---|
-| Week 4 | [Hybrid+Graph 확장 구현과 성능 분석](week4/REPORT.md) | Git에 남아 있는 2026-10-27 최종본 복원. 본문·수치는 유지하고 당시 자료 링크만 연결 |
-| Week 6 | 원문 미확인 | Git 전체 이력에서 원본을 찾지 못해 별도 보고서를 만들지 않음 |
-| Week 7 | [피드백 반영과 검색 개선 실험](week7/REPORT.md) | 기존 보고서와 연결된 실패 분석·실험 기록 보존 |
+| **A · 한 번 검색** | 원래 질문으로 Hybrid+BGE 검색 후 응답 | 같은 환경에서 측정한 기준선 |
+| **B · 반복 검색** | 공통 첫 결과를 읽고 검색·응답을 반복 선택 | 부족한 항목을 재검색하는 효과 |
+| **C · 반복 검색 + Graph** | 공통 첫 결과를 읽고 검색·Graph·응답을 반복 선택 | 직접 조회·관계 탐색·이어 읽기의 추가 효과 |
 
-## 진행 과정
+비교 실험은 첫 검색 이후의 보완 효과를 측정합니다. 일반 에이전트는 Qwen이 첫 행동부터 선택하며, 비교 실험에서는 세 조건에 같은 첫 검색 결과를 제공합니다. B와 C의 한도는 Qwen 최대 8회·도구 최대 6회이며, 공통 첫 검색도 도구 호출에 포함합니다.
 
-#### Week 1 — 문제 및 평가 기준 정의
+### 대표 지표
 
-- 수정구청 무인민원발급을 중심으로 대상 서비스 범위 설정
-- 민원 질문 유형과 평가용 데이터 구조 설계
-- 질문별 행정 서비스와 공식 근거 연결
+| 지표 · 평가 범위 | A | B | C |
+|---|---:|---:|---:|
+| **필수 근거 완전회수율** · 답변형 488문항 | 89.14% (435/488) | 93.85% (458/488) | 94.26% (460/488) |
+| **내용 통과율** · 표본 60문항 | 75.0% (45/60) | 71.7% (43/60) | 76.7% (46/60) |
+| 실행 실패율 · 전체 608문항 | 0.33% (2/608) | 0.16% (1/608) | 0.49% (3/608) |
+| 문항당 평균 시간 · 전체 608문항 | 35.0초 | 44.7초 | 46.6초 |
 
-#### Week 2 — 데이터 및 텍스트 검색 기반 구축
+**필수 근거 완전회수율**은 문항에 지정된 필수 근거를 모두 최종 Qwen 입력에 전달한 비율입니다. **내용 통과율**은 요구한 답변·추가 질문·보류를 적절히 수행하고, 사실 주장과 인용이 본문으로 뒷받침되는지를 판정한 비율입니다.
 
-- 행정 서비스 안내와 관련 법령 원문 수집
-- BM25, Dense, Hybrid 검색 파이프라인 구현
-- 검색 방식별 성능 비교 및 실패 사례 분석
+내용 평가는 사전에 선정한 60문항에 대해 조건 이름을 가린 뒤 **응답 생성과 같은 Qwen 모델**로 수행했습니다. 일부 자동 채점 설명에 오독이 있어 사람 검토가 필요하며, 이 수치를 전체 608문항의 답변 정확도로 해석하지 않습니다. [상세 결과와 판정 기준](week8/AGENT.md#performance-results)
 
-#### Week 3 — 지식 그래프 및 관계 검색 구축
+### 현재 확인한 점
 
-- 행정 서비스, 필요 서류, 처리기관, 법령, 조문의 관계 구조화
-- 그래프의 노드와 관계를 공식 원문 근거에 연결
-- Graph Retriever 구현 및 텍스트 검색과 비교
+- **반복 검색은 근거 회수를 늘렸습니다.** A에서 B로 바꾸면 완전회수가 23문항 늘었지만, 표본 내용 통과는 2문항 줄었습니다. 근거 확보와 응답 충족을 각각 평가해야 합니다.
+- **Graph의 추가 효과는 사례별 확인이 필요합니다.** B에서 C로 바꾸면 완전회수가 5문항 개선되고 3문항 퇴보해 순증 2문항이었습니다. 개선된 5문항 중 실제 Graph 조회를 한 경우는 1문항이므로, 조건 간 차이 전체를 Graph 조회의 효과로 설명하기는 어렵습니다.
+- **추가 질문·보류가 주요 보완 대상입니다.** 표본의 추가 질문 6문항은 세 조건 모두 내용 판정에서 통과하지 못했습니다. 보류 6문항의 통과 수는 A·B 각 2개, C 1개였습니다. 자동 판정 검수와 함께 응답 내용 및 종료 판단을 검토해야 합니다.
 
-#### Week 4 — Hybrid + Graph 확장 및 개선 검증
+## 벤치마크와 평가 범위
 
-- 토큰화·법령 참조·누락 근거 연결 보완
-- Hybrid 기반 그래프 확장 검색 구현
-- 개선 가설 3개 실험 및 성능 비교
+| 데이터 | 구성 | 현재 확인 범위 |
+|---|---|---|
+| **기존 608문항** | 답변 488 · 추가 확인 60 · 보류 60 | 위 A/B/C 실험의 실행·근거 회수 평가 대상. 내용 판정은 이 중 60문항 |
+| **Week 8 개발 벤치마크 1,000문항** | 기존 608 + 복합 과제 392 | 문항 구성·원문 인용·출처 연결 검증 완료. 위 성능표의 평가 대상은 기존 608문항 |
 
-#### Week 7 — 벤치마크 검수와 검색 개선
+새 복합 과제는 두 문의를 한 요청에 담아, 한쪽의 조건을 다른 쪽에 적용하지 않고 각각 처리할 수 있는지 살펴보기 위한 데이터입니다. 복합 답변 312개, 부분 안내와 추가 확인 40개, 부분 안내와 보류 40개를 추가했습니다. 전체 기대 행동은 답변 800개·추가 확인 100개·보류 100개입니다.
 
-- 608문항에서 coverage 수식과 BGE 재정렬 비교
-- 입력 길이·순위 탈락·후보 누락 사례를 구분하고 개선 효과 검증
-- 생성 응답의 행동 선택과 근거 충실성을 검색 성적과 구분해 기록
+벤치마크 입력 파일에는 질문 ID와 질문만 담고, 정답·필수 근거·문의별 기대 행동은 평가에만 사용합니다. 확장 문항은 기존 질문과 근거를 재조합한 **개발용 데이터**로, 독립적으로 검수한 홀드아웃 평가셋은 아닙니다. [구성·검증·한계](week8/REPORT.md) · [데이터 검증 기록](data/benchmark/week8/validation.json)
 
-## 저장소 구조
+## 프로젝트 진행 과정
 
-```text
-Civic-Link/
-├─ data/                         # 검색·평가 데이터
-│  ├─ services.jsonl             # 행정 서비스 목록
-│  ├─ corpus/                    # 원문 DB·복원용 압축본
-│  ├─ graph/                     # 지식 그래프·근거 연결 데이터
-│  ├─ retrieval/                 # 고정 Hybrid 후보·실행 정보
-│  └─ benchmark/                 # 평가 질문·정답 근거
-│     ├─ diagnostic480/          # 유형 균형 진단용 480문항
-│     ├─ week8/                  # 기존 608 + 복합 392 = 개발용 1,000문항
-│     ├─ exports/                # 질문 목록의 CSV·Markdown 보기
-│     └─ reviews/                # 벤치마크 검수·수정 기록
-│
-├─ src/civic_link/               # 핵심 구현 코드
-│  ├─ common.py                  # 공통 데이터·DB 처리
-│  ├─ tokenization.py            # 텍스트 정규화·토큰화
-│  ├─ agent/                     # Qwen 판단·중앙 제어·실시간 검색 도구
-│  ├─ graph/                     # 그래프 구축·탐색
-│  ├─ retrieval/                 # Hybrid 기반 Graph 확장 검색
-│  ├─ reranking/                 # 점수식·후보 재정렬
-│  └─ evaluation/                # 검색·행동 평가·벤치마크 검증
-├─ scripts/                      # 복원·검색·평가·실험 실행 명령
-│
-├─ week4/REPORT.md               # 당시 보고서 원문·과거 자료 링크
-├─ week7/                        # Week 7 보고서·실험 자료
-│  ├─ REPORT.md                  # 피드백 반영·개선·수행 기록
-│  ├─ failure_analysis/          # 순위 탈락·후보 누락 사례와 입력 보정 결과
-│  ├─ experiments/               # Week 7 실험 자료·재현 코드
-│  │  ├─ score_comparison/results/ # 수식 비교·정책 선택·문항별 변화
-│  │  └─ type1_fields/           # 유형 1 항목별 BGE 실험 재현 코드
-│  ├─ EXPERIMENT2.md             # 실험 2 결과
-│  ├─ SHARING.md                 # 재집계 안내
-│  ├─ docs/                      # 실험 2 문항별 기록
-│  ├─ evaluation/                # 저장된 평가 결과
-│  └─ results/                   # 검색 순위·실험 입력 및 출력
-├─ outputs/                      # 실행 시 생성되는 결과 (Git 제외)
-├─ week8/                        # 현재 구현과 벤치마크 확장 기록
-│  ├─ AGENT.md                   # 노션 구조 대응·실행·미합의 초기 선택
-│  └─ REPORT.md                  # 기존 벤치마크 확장·검증·한계 기록
-├─ tests/                        # 테스트 코드·테스트용 데이터
-│
-├─ README.md                     # 프로젝트 소개·실행·평가 안내
-├─ pyproject.toml                # Python 패키지·테스트 설정
-├─ requirements.txt              # 실행 의존성
-├─ requirements-dev.txt          # 개발·테스트 의존성
-└─ manifest.json                 # 공유 파일 목록·입력 데이터 검증 정보
-```
+| 주차 | 주요 내용 | 자료 |
+|---|---|---|
+| Week 1 | 대상 서비스와 민원 질문 범위, 평가 데이터 구조 정의 | — |
+| Week 2 | 행정 안내·법령 수집, BM25·Dense·Hybrid 검색 기반 구축 | — |
+| Week 3 | 서비스·서류·기관·조문 관계 구조화, Graph Retriever 구현 | — |
+| Week 4 | Hybrid 기반 Graph 확장, 토큰화·참조·누락 근거 보완 | [보고서](week4/REPORT.md) |
+| Week 7 | 608문항 검수, coverage·BGE 비교, 후보 누락·순위 탈락·입력 길이 분석 | [보고서](week7/REPORT.md) · [실험 2](week7/EXPERIMENT2.md) |
+| **Week 8** | **Qwen 에이전트와 Graph 도구 구현, A/B/C 비교, 복합 벤치마크 확장** | [설계·평가 결과](week8/AGENT.md) · [벤치마크](week8/REPORT.md) |
 
-## 실행
+Week 7은 고정 후보의 검색·재정렬을 비교했고, Week 8은 같은 첫 검색 이후의 추가 탐색과 최종 응답을 비교합니다. 모델·검색 환경과 지표 범위가 달라 두 주차의 수치를 직접 차감하지 않습니다.
 
-### Qwen 에이전트
+## 저장소 안내
 
-Graph 직접 조회·후보 제공·이어 읽기를 포함한 설계는 [Week8 AGENT](week8/AGENT.md), 한 번 검색 / 검색 반복 / 검색+Graph 반복의 가설과 실행·평가 명령은 [비교 실험 계획](week8/EXPERIMENT.md)을 참고합니다. `scripts/run_agent_comparison.py`는 문항별 결과를 저장하고 같은 설정으로 재개합니다.
-
-**Colab T4에서 전체 1,000문항 A/B/C 실행:** [Colab 실행 안내](week8/COLAB.md) · [실행 노트북 열기](https://colab.research.google.com/github/westiion/Civic-Link/blob/main/week8/run_comparison_colab.ipynb). BGE는 Colab GPU를 사용하고 Qwen 생성·임베딩은 설정한 서버를 호출합니다. 서버 연결 확인이 먼저 필요합니다.
-
-**V100 4장 등 여러 GPU 사용:** 같은 실행기에 `--bge-devices cuda:0 cuda:1 cuda:2 cuda:3`를 지정합니다. 기본적으로 GPU마다 BGE를 한 번 적재하고 서로 다른 문항을 병렬 처리합니다. API 대기가 길고 메모리에 여유가 있으면 `--workers-per-gpu 2 --api-concurrency 8`로 GPU당 작업자를 늘릴 수 있습니다. [설치·실행·재개 안내](week8/EXPERIMENT.md#여러-gpu로-병렬-실행)를 참고합니다.
-
-Python 환경과 원문 DB를 아래 설치·복원 절차로 준비한 뒤 실행합니다. 첫 입력만 확인하는 명령은 모델 서버나 도구를 호출하지 않습니다.
-
-```powershell
-.\.venv\Scripts\python.exe scripts/run_agent.py --question "대리 신청에 필요한 서류는 무엇인가요?" --show-input
-```
-
-실제 실행에는 생성 서버 `QWEN_ENDPOINT`가 필요합니다. 내용 검색에는 임베딩 서버 `QWEN_EMBEDDING_ENDPOINT`, 문서 Dense 색인, 로컬 BGE 모델 `BGE_MODEL_PATH`도 필요합니다. 서버 주소·인증 정보는 환경 변수로 설정하며 저장소에 넣지 않습니다. Graph는 저장된 로컬 Graph와 원문 DB를 조회합니다.
-
-```powershell
-# 최초 검색 준비: 기존 선택 의존성·고정 BGE 모델 준비 후 실제 모델 폴더를 BGE_MODEL_PATH로 설정
-.\.venv\Scripts\python.exe -m pip install -r requirements-bge.txt
-.\.venv\Scripts\python.exe scripts/download_bge.py
-
-# 명시적으로 문서 색인을 생성하며, 기존 출력은 덮어쓰지 않음
-.\.venv\Scripts\python.exe scripts/build_agent_index.py --output outputs/agent-index/corpus.npz
-
-# Qwen의 첫 판단부터 실행. 새 출력 폴더를 사용
-.\.venv\Scripts\python.exe scripts/run_agent.py --question "대리 신청에 필요한 서류는 무엇인가요?" --output-dir outputs/agent-run
-```
-
-### 설치 → 현재 DB 복원 → 검색 → 평가
-
-Git clone 후 저장소 루트에서 실행한다. Python 3.12와 최초 패키지 설치용 인터넷이 필요하다. 이후 명령은 BGE·임베딩 서버·모델 API를 호출하지 않는다.
-
-```sh
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -r requirements-dev.txt
-.venv/bin/python scripts/restore_data.py restore
-
-.venv/bin/python scripts/run_retrieval.py \
-  --queries data/benchmark/queries.jsonl \
-  --hybrid-results data/retrieval/hybrid_candidates.jsonl.gz \
-  --hybrid-run data/retrieval/hybrid_candidates.run.json \
-  --rerank coverage --output outputs/team-run/predictions.jsonl
-
-.venv/bin/python scripts/evaluate.py \
-  --questions data/benchmark/questions.jsonl \
-  --benchmark-version week7-master608 \
-  --retrieval-predictions outputs/team-run/predictions.jsonl \
-  --retrieval-format h3 --prediction-queries data/benchmark/queries.jsonl \
-  --output-dir outputs/team-run/evaluation
-
-.venv/bin/python -m pytest -q
-.venv/bin/python scripts/restore_data.py verify
-```
-
-출력 경로가 이미 있으면 새 이름을 사용한다. Windows에서는 가상환경을 `py -3.12 -m venv .venv`로 만들고, `.venv/bin/python`을 `.venv/Scripts/python.exe`로 바꾼다. 위 예시는 Bash의 줄 이어쓰기(`\`)를 사용하므로, PowerShell에서는 각 명령을 한 줄로 입력하거나 줄 끝의 `\`를 백틱으로 바꾼다. 기대 결과는 Complete@10 **411/488 (84.22%)**다. 기본 행동 라벨과 허용 행동 대안은 별도로 평가하며, 검색 점수로 행동·답변 품질을 추정하지 않는다.
-
-### Git 관리
-
-공유 파일 목록과 체크섬은 `manifest.json`의 `files`에 함께 기록한다. `manifest.json` 자체는 체크섬 대상에서 제외한다. 의도적으로 공유 파일을 수정한 경우 `scripts/refresh_manifest.py`를 실행해 갱신한다. Git 정보가 없는 배포본에서도 기존 manifest의 파일 목록을 사용한다. 해당 도구는 stage·commit·push하지 않는다.
-
-과거 이력은 Git에 남아 있으므로 전체 clone 크기는 현재 파일 합계보다 크다. 최신 상태만 받으려면 shallow clone을 사용한다. 로컬 복구 기록과 개인 환경은 공유하지 않는다.
+| 위치 | 내용 |
+|---|---|
+| [week8/AGENT.md](week8/AGENT.md) | 현재 에이전트 설계, 구현 현황, 실제 비교 실험 결과 |
+| [week8/EXPERIMENT.md](week8/EXPERIMENT.md) | A/B/C 가설·공통 조건·평가 기준 |
+| [week8/REPORT.md](week8/REPORT.md) | 1,000문항 벤치마크 구성과 데이터 검증 |
+| [week8/GRAPH_CASE_REVIEW.md](week8/GRAPH_CASE_REVIEW.md) | Graph 도구 설계에 활용한 Week 7 순위 탈락 44문항 검토 |
+| [src/civic_link/agent/](src/civic_link/agent/) | Qwen 입력·판단 제어, 실시간 검색, Graph 조회, 비교 실험·평가 |
+| [src/civic_link/](src/civic_link/) | Graph 구축, 검색·재정렬, 벤치마크·평가 공통 코드 |
+| [data/](data/) | 행정 서비스, 원문 코퍼스, Graph, 검색 후보, 평가 데이터 |
+| [scripts/](scripts/) · [tests/](tests/) | 데이터·실험·평가 도구와 테스트 |
+| [week7/](week7/) · [week4/REPORT.md](week4/REPORT.md) | 이전 주차의 보고서·실험 기록 |
