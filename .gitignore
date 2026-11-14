@@ -62,6 +62,7 @@ __pycache__/
 !/week7/results/experiment2_20261031/bge.run.json
 !/week7/results/experiment2_20261031/graph_diagnostics.run.json
 !/week7/results/experiment2_20261031/protocol.json
+!/week7/results/experiment2_20261031/requirements-bge-lock.txt
 !/week7/results/experiment2_20261031/executed_runner.py
 !/week7/results/experiment2_20261031/behavior_qwen/
 !/week7/results/experiment2_20261031/behavior_qwen/config.json

@@ -371,9 +371,11 @@ RRF는 각 검색 순위를 합치는 방식이다. Graph 점수의 크기가 �
 
 저장소 루트, Python 3.12 기준이다. 기본 검색 실험은 기존 `.venv`를 사용한다. BGE는 선택 의존성이므로 별도 환경에 설치한다.
 
+원 실험의 Python 3.12 / macOS arm64 고정 의존성은 [실험 폴더의 lock 파일](results/experiment2_20261031/requirements-bge-lock.txt)에 보관한다.
+
 ```sh
 python3.12 -m venv .venv-reranker
-.venv-reranker/bin/python -m pip install -r requirements-bge-lock.txt
+.venv-reranker/bin/python -m pip install -r week7/results/experiment2_20261031/requirements-bge-lock.txt
 .venv-reranker/bin/python scripts/download_bge.py
 .venv/bin/python scripts/restore_week7.py restore
 .venv/bin/python scripts/run_week7_experiment2.py prepare \

@@ -7,7 +7,7 @@
 ## 먼저 필요한 것
 
 - **Colab에서 접근할 수 있는** 생성 API와 임베딩 API 주소. 노트북의 Colab Secrets에 `QWEN_ENDPOINT`(전체 `/v1/chat/completions` URL), `QWEN_EMBEDDING_ENDPOINT`(전체 `/v1/embeddings` URL)를 설정하고 노트북 접근을 허용한다. 인증이 있으면 `QWEN_API_KEY`, `QWEN_EMBEDDING_API_KEY`도 추가한다. 주소·키를 코드에 적지 않는다.
-- Python 3.12 이상과 CUDA 사용 가능한 PyTorch. 노트북은 Colab에 설치된 CUDA PyTorch를 사용하는 별도 가상환경에 프로젝트 의존성을 설치한다. Mac용 `requirements-bge-lock.txt`는 사용하지 않는다.
+- Python 3.12 이상과 CUDA 사용 가능한 PyTorch. 노트북은 Colab에 설치된 CUDA PyTorch를 사용하는 별도 가상환경에 프로젝트 의존성을 설치한다. [실험 2의 Mac용 lock 파일](../week7/results/experiment2_20261031/requirements-bge-lock.txt)은 사용하지 않는다.
 - 결과·색인을 저장할 Drive 공간. BGE는 고정 revision을 명시적으로 다운로드하며 런타임이 새로 만들어지면 다시 준비한다.
 
 **PC의 VPN 연결이 Colab에 자동으로 적용되지는 않는다.** Colab 코드는 별도 VM에서 실행되므로, 내부망 주소만 제공된 현재 조건에서는 연결 가능 여부부터 확인해야 한다. 연결 점검이 실패하면 1,000문항 실행을 시작하지 말고 서버 담당자에게 Colab에서 사용할 수 있는 승인된 접속 경로를 확인한다. 이 저장소는 서버를 외부에 공개하거나 VPN을 구성하지 않는다. Colab의 별도 VM·런타임 제한은 [공식 FAQ](https://research.google.com/colaboratory/faq.html)를 참고한다.

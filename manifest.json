@@ -7,8 +7,8 @@
       "sha256": "2dcd47ace94c19e19bf3884263d052da2cb13c9e0bc6d82cfe5e2845219cf0f6"
     },
     ".gitignore": {
-      "bytes": 2961,
-      "sha256": "2221ffa58a3521fc0c746c0ec3f05e16762eb8ab074caba45c8151359ec1ad3e"
+      "bytes": 3024,
+      "sha256": "318e60131e4998ac8711ccdef0cb3df9acab3de49b235ed15493457830b5aab3"
     },
     "README.md": {
       "bytes": 10442,
@@ -142,10 +142,6 @@
       "bytes": 523,
       "sha256": "d488023ac2f01eb4eaa1205309c3cdc7f87e56d976a7d1e17479aa0a62ea3ccd"
     },
-    "requirements-bge-lock.txt": {
-      "bytes": 555,
-      "sha256": "af5f60ea78a165fcda642b8f5f7c4ca83c3cd66ed9efc76eaf758e60763771a3"
-    },
     "requirements-bge.txt": {
       "bytes": 75,
       "sha256": "9e855fadaf435a64760b789f40b1fe0c9b71c63b3e6af8401cd59bfe32fc1bcc"
@@ -243,8 +239,8 @@
       "sha256": "a7e3574aec7588555cf746b5958e105080d8668c0b2b84236f4a182bae86ba25"
     },
     "scripts/refresh_manifest.py": {
-      "bytes": 6144,
-      "sha256": "3acd2c81c26cf1beca3c20d50c0684ed8b3ee46ed39330181685b315ea8684f9"
+      "bytes": 6115,
+      "sha256": "92aba24cfff6e53e64546fd29a3ef83884a858dbb5de698ce91ea85a6bb76a08"
     },
     "scripts/restore_data.py": {
       "bytes": 5090,
@@ -503,8 +499,8 @@
       "sha256": "25e8c55cf141b4f6c3cd368a26c89a6c0db5cf6021d12e81f20ffd9529ba66b9"
     },
     "week7/EXPERIMENT2.md": {
-      "bytes": 38433,
-      "sha256": "66b409220582cb0891570f0efd472dd49efd9b8d471c5577f7655a2317d4d272"
+      "bytes": 38633,
+      "sha256": "f3735e0e3800b77552bdc0dfce15d68215b2a3902e087df9f459c8f519a381b9"
     },
     "week7/GRAPH_EXPLORATION.md": {
       "bytes": 15691,
@@ -886,6 +882,10 @@
       "bytes": 26913,
       "sha256": "48aaba97a6031e2c5b10e4712b5fd18f7f0fefce6c0d5c2baf7a67140fd6c60a"
     },
+    "week7/results/experiment2_20261031/requirements-bge-lock.txt": {
+      "bytes": 555,
+      "sha256": "af5f60ea78a165fcda642b8f5f7c4ca83c3cd66ed9efc76eaf758e60763771a3"
+    },
     "week7/results/experiment2_bge_direct_20261101/README.md": {
       "bytes": 4527,
       "sha256": "d4acb329c99cb7ef1852233eca5c62111967b92c0a1c8ffdf5e2c60f65c41460"
@@ -987,12 +987,12 @@
       "sha256": "1ea403e059a2347ffa7477157ead62fce94c3a9f439a4a9b7b3347cad6d62e5a"
     },
     "week8/AGENT.md": {
-      "bytes": 45154,
-      "sha256": "4796e0c9ccd622e598377080ab5af58c4a0632c599700d9fe4325c9d1e5e23da"
+      "bytes": 42712,
+      "sha256": "0d70e5a85db4fa8db5656524b19e31be8a7b441684df32726f5440614d60a47a"
     },
     "week8/COLAB.md": {
-      "bytes": 4284,
-      "sha256": "3612edfed56d187be3d0c06b8994768e1c82c77e5cb22a34d4393ff652cfaccf"
+      "bytes": 4347,
+      "sha256": "3d6b604b1a50b5f9d9046e896123f458100eeed8cb13ed0450bb7c67513ef688"
     },
     "week8/EXPERIMENT.md": {
       "bytes": 14783,

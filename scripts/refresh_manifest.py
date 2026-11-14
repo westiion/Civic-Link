@@ -19,7 +19,7 @@ def members(root):
     root = Path(root)
     names = ['README.md', 'requirements.txt', 'requirements-dev.txt', 'pyproject.toml',
         '.gitattributes', '.gitignore', 'data/services.jsonl',
-        'requirements-bge.txt', 'requirements-bge-lock.txt',
+        'requirements-bge.txt',
         'data/graph/graph.json', 'data/graph/graph.evidence.json',
         'data/corpus/corpus.sqlite.gz', 'data/retrieval/hybrid_candidates.jsonl.gz',
         'data/retrieval/hybrid_candidates.run.json', 'tests/fixtures/week7_pre_review.jsonl.gz']
