@@ -1,0 +1,25 @@
+{
+  "suite": "reranking",
+  "question_ids": [
+    "W7-PR-024",
+    "SJ-B-012",
+    "W7-MS-043",
+    "SJ-B-003",
+    "SJ-N-018",
+    "SJ-N-014",
+    "SJ-N-028",
+    "SJ-N-052"
+  ],
+  "cases": "57fa5c73eacd14df8e99ffd21fae4275df8177b16b9dcacd6425dc8748ae31cf",
+  "scope": "a0f5187026e1ae2d8b8d4d173f8d18ed0face566160de6b3b258538cab040334",
+  "guidelines": "d39fb0fbe6ea3ddf8a1af6ea96a6f642e120a7d85370efad28741ff96222c163",
+  "plan": {},
+  "generation": {
+    "model": "Qwen3.8-Flash-Next",
+    "max_output_tokens": 2000,
+    "json_mode": true,
+    "enable_thinking": false,
+    "temperature": 0,
+    "timeout": 180.0
+  }
+}

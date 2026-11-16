@@ -1,0 +1,230 @@
+[
+  {
+    "query_id": "SJ-N-027",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "SJ-A-028",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W7-MS-033",
+    "group": "original",
+    "without_plan": false,
+    "with_plan": false
+  },
+  {
+    "query_id": "W7V2-MS042",
+    "group": "original",
+    "without_plan": false,
+    "with_plan": false
+  },
+  {
+    "query_id": "W7V2-BH002",
+    "group": "original",
+    "without_plan": false,
+    "with_plan": true
+  },
+  {
+    "query_id": "W7-BH029",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W7V2-LA040",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W7-LA-009",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W7-MS-013",
+    "group": "original",
+    "without_plan": false,
+    "with_plan": true
+  },
+  {
+    "query_id": "SJ-N-046",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "SJ-N-035",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W7V2-MS025",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W7-PR-033",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W7V2-MS006",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "SJ-B-039",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W7V2-PR004",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W7-LA-035",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "SJ-N-028",
+    "group": "original",
+    "without_plan": false,
+    "with_plan": true
+  },
+  {
+    "query_id": "SJ-N-043",
+    "group": "original",
+    "without_plan": false,
+    "with_plan": false
+  },
+  {
+    "query_id": "W7-LA-033",
+    "group": "original",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0188",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0231",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0253",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0256",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0138",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0175",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": false
+  },
+  {
+    "query_id": "W8-COMP-0326",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0328",
+    "group": "composite",
+    "without_plan": false,
+    "with_plan": false
+  },
+  {
+    "query_id": "W8-COMP-0332",
+    "group": "composite",
+    "without_plan": false,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0314",
+    "group": "composite",
+    "without_plan": false,
+    "with_plan": false
+  },
+  {
+    "query_id": "W8-COMP-0321",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0348",
+    "group": "composite",
+    "without_plan": false,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0384",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0387",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0390",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0353",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0382",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  },
+  {
+    "query_id": "W8-COMP-0362",
+    "group": "composite",
+    "without_plan": true,
+    "with_plan": true
+  }
+]

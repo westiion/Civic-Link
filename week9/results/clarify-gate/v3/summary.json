@@ -1,0 +1,97 @@
+[
+  {
+    "query_id": "SJ-X-050",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "발급받으려는 서류의 종류(예: 주민등록등본, 소득금액증명 등)와 신청하실 채널(방문, 무인발급기, 인터넷 등)을 알려주세요.",
+    "ask_term_hits": [
+      true,
+      true
+    ],
+    "pass_auto": true,
+    "resume_status": "responded",
+    "resume_seconds": 12.775229800026864
+  },
+  {
+    "query_id": "SJ-A-086",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "온라인 발급 시 화면에 뜨는 구체적인 오류 메시지나 안내 문구가 무엇이며, 졸업하신 연도(또는 학교급)는 언제인가요?",
+    "ask_term_hits": [
+      true,
+      true
+    ],
+    "pass_auto": true,
+    "resume_status": "responded",
+    "resume_seconds": 7.083775100065395
+  },
+  {
+    "query_id": "SJ-A-087",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "현재 농지대장이 이미 작성되어 있는지, 아니면 새로 만들어야 하거나 내용을 고쳐야 하는지 확인하기 위해 농지대장 조회를 해보셨나요? 조회 결과 기존 대장이 존재하고 내용이 정확한지, 아니면 대장이 없거나 수정이 필요한 상태인지 알려주세요.",
+    "ask_term_hits": [
+      true,
+      false
+    ],
+    "pass_auto": false,
+    "resume_status": "responded",
+    "resume_seconds": 5.37317619996611
+  },
+  {
+    "query_id": "W7-BH021",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "현재 화면이 '임시저장' 상태인지, 아니면 '접수 완료' 상태인지 확인 부탁드립니다. 또한 화면에 '접수 시각'이나 '접수 완료' 안내 문구가 표시되어 있는지 알려주세요.",
+    "ask_term_hits": [
+      false,
+      true
+    ],
+    "pass_auto": false,
+    "resume_status": "responded",
+    "resume_seconds": 10.739685000036843
+  },
+  {
+    "query_id": "W7V2-BH002",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "현재 '직접 입력해서 뽑는' 화면이 무인 발급기(키오스크)인지, 아니면 인터넷 발급 사이트(대법원 전자가족관계등록시스템 등)인지 확인해 주세요.",
+    "ask_term_hits": [
+      true,
+      true
+    ],
+    "pass_auto": true,
+    "resume_status": "responded",
+    "resume_seconds": 8.469167400035076
+  },
+  {
+    "query_id": "W7V2-BH005",
+    "control": false,
+    "gate_status": "ok",
+    "asked": false,
+    "question": "",
+    "ask_term_hits": [
+      false
+    ],
+    "pass_auto": false
+  },
+  {
+    "query_id": "W7-MS-033",
+    "control": true,
+    "gate_status": "ok",
+    "asked": false,
+    "pass": true
+  },
+  {
+    "query_id": "W7V2-MS042",
+    "control": true,
+    "gate_status": "ok",
+    "asked": false,
+    "pass": true
+  }
+]

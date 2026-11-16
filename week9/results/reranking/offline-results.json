@@ -1,0 +1,452 @@
+{
+  "answer_questions": 488,
+  "stages": {
+    "single_search": {
+      "complete_by_stage": {
+        "first_returned_complete": 435,
+        "retrieved_complete": 435,
+        "supplied_complete": 435,
+        "final_complete": 435,
+        "cited_complete": 419
+      },
+      "any_context_omission_answer_questions": 0,
+      "final_requirements_lost_after_retrieval": 0,
+      "review_flags": {
+        "respond_only_with_missing_coverage": 53
+      },
+      "first_decision": {
+        "respond": 488
+      },
+      "first_decision_given_coverage": {
+        "complete": {
+          "respond": 435
+        },
+        "incomplete": {
+          "respond": 53
+        }
+      },
+      "calls_that_added_required_evidence": {},
+      "max_input_chars": 28242
+    },
+    "iterative_search": {
+      "complete_by_stage": {
+        "first_returned_complete": 435,
+        "retrieved_complete": 458,
+        "supplied_complete": 458,
+        "final_complete": 458,
+        "cited_complete": 439
+      },
+      "any_context_omission_answer_questions": 0,
+      "final_requirements_lost_after_retrieval": 0,
+      "review_flags": {
+        "tool_call_with_complete_coverage": 47,
+        "respond_with_missing_coverage": 30
+      },
+      "first_decision": {
+        "respond": 430,
+        "search": 58
+      },
+      "first_decision_given_coverage": {
+        "complete": {
+          "respond": 405,
+          "search": 30
+        },
+        "incomplete": {
+          "search": 28,
+          "respond": 25
+        }
+      },
+      "calls_that_added_required_evidence": {
+        "search": 24
+      },
+      "max_input_chars": 54725
+    },
+    "iterative_graph": {
+      "complete_by_stage": {
+        "first_returned_complete": 435,
+        "retrieved_complete": 460,
+        "supplied_complete": 460,
+        "final_complete": 460,
+        "cited_complete": 441
+      },
+      "any_context_omission_answer_questions": 0,
+      "final_requirements_lost_after_retrieval": 0,
+      "review_flags": {
+        "tool_call_with_complete_coverage": 80,
+        "respond_with_missing_coverage": 27
+      },
+      "first_decision": {
+        "respond": 419,
+        "search": 57,
+        "graph": 11,
+        "request_rejected": 1
+      },
+      "first_decision_given_coverage": {
+        "complete": {
+          "respond": 399,
+          "search": 30,
+          "graph": 6
+        },
+        "incomplete": {
+          "search": 27,
+          "respond": 20,
+          "graph": 5,
+          "request_rejected": 1
+        }
+      },
+      "calls_that_added_required_evidence": {
+        "search": 23,
+        "graph": 3
+      },
+      "max_input_chars": 664549
+    }
+  },
+  "graph": {
+    "calls": 15,
+    "questions": 13,
+    "questions_shown_candidates": 608,
+    "status": {
+      "ok": 13,
+      "no_results": 2
+    },
+    "modes": {
+      "direct": 9,
+      "traverse": 6
+    },
+    "final_complete_changes": [
+      {
+        "query_id": "SJ-B-014",
+        "change": "improved",
+        "used_graph": false,
+        "actions_c": [
+          "search",
+          "respond"
+        ]
+      },
+      {
+        "query_id": "SJ-B-019",
+        "change": "improved",
+        "used_graph": false,
+        "actions_c": [
+          "search",
+          "respond"
+        ]
+      },
+      {
+        "query_id": "SJ-N-043",
+        "change": "regressed",
+        "used_graph": true,
+        "actions_c": [
+          "graph",
+          "respond"
+        ]
+      },
+      {
+        "query_id": "SJ-N-050",
+        "change": "improved",
+        "used_graph": true,
+        "actions_c": [
+          "graph",
+          "respond"
+        ]
+      },
+      {
+        "query_id": "SJ-N-052",
+        "change": "improved",
+        "used_graph": false,
+        "actions_c": [
+          "search",
+          "search",
+          "search",
+          "search",
+          "respond"
+        ]
+      },
+      {
+        "query_id": "W7-MS-018",
+        "change": "improved",
+        "used_graph": false,
+        "actions_c": [
+          "search",
+          "respond"
+        ]
+      },
+      {
+        "query_id": "W7V2-LA014",
+        "change": "regressed",
+        "used_graph": false,
+        "actions_c": [
+          "search",
+          "respond"
+        ]
+      },
+      {
+        "query_id": "W7V2-MS038",
+        "change": "regressed",
+        "used_graph": false,
+        "actions_c": [
+          "search",
+          "search",
+          "respond"
+        ]
+      }
+    ],
+    "calls_adding_required_evidence": [
+      {
+        "query_id": "SJ-N-040",
+        "new": [
+          "Q080-E3"
+        ]
+      },
+      {
+        "query_id": "SJ-N-050",
+        "new": [
+          "Q103-E2",
+          "Q103-E3"
+        ]
+      },
+      {
+        "query_id": "W7V2-MS014",
+        "new": [
+          "W7V2-MS014-E2",
+          "W7V2-MS014-E3"
+        ]
+      }
+    ],
+    "calls_detail": [
+      {
+        "query_id": "SJ-N-024",
+        "turn": "1",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"direct\", \"target_type\": \"document\", \"target_id\": \"DOC-281de2ad41a7f804021d\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "SJ-N-040",
+        "turn": "1",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"direct\", \"target_type\": \"node\", \"target_id\": \"ART-8f8b5f6b0d1aeaff0f6f\"}",
+        "newly_covered_requirement_ids": "[\"Q080-E3\"]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "SJ-N-043",
+        "turn": "1",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"direct\", \"target_type\": \"node\", \"target_id\": \"ART-e562d0cce235c4d78a42\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "SJ-N-050",
+        "turn": "1",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"traverse\", \"target_type\": \"node\", \"target_id\": \"ART-f3d7c23927a1efd22f0f\", \"relation\": \"REFERENCES\"}",
+        "newly_covered_requirement_ids": "[\"Q103-E2\", \"Q103-E3\"]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "SJ-A-028",
+        "turn": "2",
+        "tool_status": "no_results",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"traverse\", \"target_type\": \"node\", \"target_id\": \"SJ-SVC-018\", \"relation\": \"REQUIRES\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "W7-BH023",
+        "turn": "2",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"traverse\", \"target_type\": \"node\", \"target_id\": \"SJ-SVC-007\", \"relation\": \"HANDLED_BY\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "W7-MS-011",
+        "turn": "1",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"traverse\", \"target_type\": \"node\", \"target_id\": \"SJ-SVC-039\", \"relation\": \"GROUNDED_BY\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "W7-PR-020",
+        "turn": "1",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"traverse\", \"target_type\": \"node\", \"target_id\": \"SJ-SVC-033\", \"relation\": \"HANDLED_BY\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "W7-PR-025",
+        "turn": "1",
+        "tool_status": "no_results",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"traverse\", \"target_type\": \"node\", \"target_id\": \"SJ-SVC-039\", \"relation\": \"HANDLED_BY\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "W7V2-LA018",
+        "turn": "1",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"direct\", \"target_type\": \"document\", \"target_id\": \"DOC-7b131b062187951fed06\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "W7V2-LA018",
+        "turn": "2",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"direct\", \"target_type\": \"node\", \"target_id\": \"ART-eb8641ad21f53cc6f4da\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "W7V2-MS008",
+        "turn": "1",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"direct\", \"target_type\": \"document\", \"target_id\": \"DOC-4b5b1b8c3bb4076587ae\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "W7V2-MS010",
+        "turn": "1",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"direct\", \"target_type\": \"node\", \"target_id\": \"ART-31d015b8e328d0ac02a9\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "W7V2-MS010",
+        "turn": "2",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"direct\", \"target_type\": \"node\", \"target_id\": \"ART-2677a2e3d08193abd1fd\"}",
+        "newly_covered_requirement_ids": "[]",
+        "tool_next_cursor": ""
+      },
+      {
+        "query_id": "W7V2-MS014",
+        "turn": "1",
+        "tool_status": "ok",
+        "tool_cached": "False",
+        "arguments": "{\"mode\": \"direct\", \"target_type\": \"node\", \"target_id\": \"ART-3048ba6e16b3d6400d1c\"}",
+        "newly_covered_requirement_ids": "[\"W7V2-MS014-E2\", \"W7V2-MS014-E3\"]",
+        "tool_next_cursor": ""
+      }
+    ]
+  },
+  "planning_population": {
+    "original": {
+      "direct": 140,
+      "single-hop": 16,
+      "multi-source": 8,
+      "multi-hop": 9,
+      "unresolved": 22,
+      "unclassified": 5,
+      "multi_source": 3,
+      "cross_reference": 1,
+      "not_adjudicated": 404
+    },
+    "composite": {
+      "answer": 312,
+      "clarify": 40,
+      "abstain": 40
+    }
+  },
+  "reverse_reference": {
+    "outgoing": {
+      "status": "ok",
+      "has_expected_reference": false,
+      "required_covered": [
+        false,
+        true
+      ],
+      "evidence_ids": [
+        "DOC-0bce286b4d09b5ab71f3@10139:10807:f23462c0fc4d",
+        "DOC-3f9c0b8ace31b269c5eb@13834:14850:603e73fc4bfb",
+        "DOC-9a267ca0017b1b6b6230@18720:19381:64160f40f4dc",
+        "DOC-9a267ca0017b1b6b6230@21332:24416:64de3c2df7a4",
+        "DOC-9a267ca0017b1b6b6230@26261:26932:58ec446facdf",
+        "DOC-9b83eab3c2398a4079e3@1342:1848:751f7dec7312",
+        "DOC-9b83eab3c2398a4079e3@2059:2411:086cc955f219"
+      ],
+      "expected_article": "제2조(거주지 변경에 따른 처리방법 등)"
+    },
+    "incoming": {
+      "status": "ok",
+      "has_expected_reference": true,
+      "required_covered": [
+        true,
+        false
+      ],
+      "evidence_ids": [
+        "DOC-47d7106e715511059973@173:306:a3c3067f80b9"
+      ],
+      "expected_article": "제2조(거주지 변경에 따른 처리방법 등)"
+    },
+    "both": {
+      "status": "ok",
+      "has_expected_reference": true,
+      "required_covered": [
+        true,
+        true
+      ],
+      "evidence_ids": [
+        "DOC-0bce286b4d09b5ab71f3@10139:10807:f23462c0fc4d",
+        "DOC-3f9c0b8ace31b269c5eb@13834:14850:603e73fc4bfb",
+        "DOC-47d7106e715511059973@173:306:a3c3067f80b9",
+        "DOC-9a267ca0017b1b6b6230@18720:19381:64160f40f4dc",
+        "DOC-9a267ca0017b1b6b6230@21332:24416:64de3c2df7a4",
+        "DOC-9a267ca0017b1b6b6230@26261:26932:58ec446facdf",
+        "DOC-9b83eab3c2398a4079e3@1342:1848:751f7dec7312",
+        "DOC-9b83eab3c2398a4079e3@2059:2411:086cc955f219"
+      ],
+      "expected_article": "제2조(거주지 변경에 따른 처리방법 등)"
+    }
+  },
+  "reranking": {
+    "groups": {
+      "existing_success": {
+        "retained_success": 404,
+        "regressed": 31
+      },
+      "rank_miss": {
+        "still_missing": 34,
+        "recovered": 13
+      },
+      "pool_miss": {
+        "still_missing": 6
+      }
+    },
+    "archived_bge_complete": 435,
+    "fusion_complete": 417,
+    "average_incremental_seconds": 0.0014757430333583081,
+    "corpus_fingerprint": "1bc7f58a9280d8adf8814d076d2d4e809be43f20bca4b154816e5325e5b8afb6",
+    "answer_case_ids": [
+      "W7-PR-024",
+      "SJ-B-012",
+      "W7-MS-043",
+      "SJ-B-003",
+      "SJ-N-018",
+      "SJ-N-014",
+      "SJ-N-028",
+      "SJ-N-052"
+    ]
+  }
+}

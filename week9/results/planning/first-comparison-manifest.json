@@ -1,0 +1,32 @@
+{
+  "suite": "planning",
+  "question_ids": [
+    "SJ-N-027",
+    "SJ-A-028",
+    "W7-MS-033",
+    "W7V2-MS042",
+    "W7V2-BH002",
+    "W7-BH029",
+    "W8-COMP-0188",
+    "W8-COMP-0231",
+    "W8-COMP-0326",
+    "W8-COMP-0328",
+    "W8-COMP-0384",
+    "W8-COMP-0387"
+  ],
+  "cases": "4c6c25ed4ff8386e24645ab17574b0cf3faaa01fc7f41bf3c133c4fd566f4f01",
+  "scope": "a0f5187026e1ae2d8b8d4d173f8d18ed0face566160de6b3b258538cab040334",
+  "guidelines": "d39fb0fbe6ea3ddf8a1af6ea96a6f642e120a7d85370efad28741ff96222c163",
+  "plan": {
+    "without_explicit_plan": "질문에 대해 바로 응답을 작성하고 checks에는 빈 목록을 반환하세요.",
+    "with_explicit_plan": "답변을 작성하기 전에 요청별로 확인할 항목과 필요한 조건을 나누고 checks에 기록하세요. 복합 문의는 A/B의 상태, 조건, 근거를 각각 연결하고, 이어서 각 문의에 응답하세요."
+  },
+  "generation": {
+    "model": "Qwen3.8-Flash-Next",
+    "max_output_tokens": 2000,
+    "json_mode": true,
+    "enable_thinking": false,
+    "temperature": 0,
+    "timeout": 180.0
+  }
+}

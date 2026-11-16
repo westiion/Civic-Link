@@ -1,0 +1,99 @@
+[
+  {
+    "query_id": "SJ-X-050",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "부모님 서류 중 구체적으로 어떤 서류(예: 주민등록등본, 병적증명서, 소득금액증명 등)를 발급받으시려 하나요?",
+    "ask_term_hits": [
+      true,
+      false
+    ],
+    "pass_auto": false,
+    "resume_status": "responded",
+    "resume_seconds": 11.783788200002164
+  },
+  {
+    "query_id": "SJ-A-086",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "졸업하신 학교의 졸업 연도(학년도)가 언제인가요? (예: 1982년 2월 이후 졸업인지 확인)",
+    "ask_term_hits": [
+      true,
+      false
+    ],
+    "pass_auto": false,
+    "resume_status": "responded",
+    "resume_seconds": 6.6517012000549585
+  },
+  {
+    "query_id": "SJ-A-087",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "농지대장 조회를 해보셨을 때, 등본이 바로 나오는지 아니면 '농지대장이 작성되어 있지 않습니다'와 같은 안내가 뜨는지 확인해 주시겠어요?",
+    "ask_term_hits": [
+      true,
+      true
+    ],
+    "pass_auto": true,
+    "resume_status": "responded",
+    "resume_seconds": 7.8734131999081
+  },
+  {
+    "query_id": "W7-BH021",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "현재 화면이 '임시저장' 상태인지, 아니면 '접수 완료' 상태인지 확인해 주시겠어요?",
+    "ask_term_hits": [
+      false,
+      true
+    ],
+    "pass_auto": false,
+    "resume_status": "responded",
+    "resume_seconds": 10.517282300046645
+  },
+  {
+    "query_id": "W7V2-BH002",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "현재 이용하시려는 발급 채널이 무인발급기인지, 인터넷(대법원 전자가족관계등록시스템)인지, 아니면 방문인지 알려주세요.",
+    "ask_term_hits": [
+      true,
+      true
+    ],
+    "pass_auto": true,
+    "resume_status": "responded",
+    "resume_seconds": 8.65780819999054
+  },
+  {
+    "query_id": "W7V2-BH005",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "해당 토지의 정확한 지번을 알려주시거나, 지적도상 위치를 확인하여 토지가 성남시 관할인지 하남시 관할인지 확정할 수 있나요?",
+    "ask_term_hits": [
+      true
+    ],
+    "pass_auto": true,
+    "resume_status": "responded",
+    "resume_seconds": 7.223440999980085
+  },
+  {
+    "query_id": "W7-MS-033",
+    "control": true,
+    "gate_status": "ok",
+    "asked": false,
+    "pass": true
+  },
+  {
+    "query_id": "W7V2-MS042",
+    "control": true,
+    "gate_status": "ok",
+    "asked": true,
+    "pass": false
+  }
+]

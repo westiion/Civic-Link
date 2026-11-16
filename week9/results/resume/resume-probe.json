@@ -1,0 +1,43 @@
+{
+  "query_id": "W7V2-BH002",
+  "clarification": "지금 보고 계신 화면이 인터넷 신청 사이트인가요, 아니면 무인발급기 화면인가요?",
+  "known_channel": {
+    "channel": "internet",
+    "answer": "저장된 규정의 인터넷 신청 범위에는 자녀가 부모 기준으로 신청하는 경우가 포함됩니다. 본인 확인과 별도 교부제한을 확인해야 합니다.",
+    "evidence_ids": [
+      "DOC-c95ed190ec5caede9cf4-C0017",
+      "DOC-74fb8e3f4207ccfdb0ce-C0028"
+    ],
+    "new_tool_calls": 0
+  },
+  "resumed_internet": {
+    "channel": "internet",
+    "answer": "저장된 규정의 인터넷 신청 범위에는 자녀가 부모 기준으로 신청하는 경우가 포함됩니다. 본인 확인과 별도 교부제한을 확인해야 합니다.",
+    "evidence_ids": [
+      "DOC-c95ed190ec5caede9cf4-C0017",
+      "DOC-74fb8e3f4207ccfdb0ce-C0028"
+    ],
+    "new_tool_calls": 0
+  },
+  "resumed_kiosk": {
+    "channel": "kiosk",
+    "answer": "저장된 규정상 무인증명서발급기는 본인의 증명서로 한정됩니다.",
+    "evidence_ids": [
+      "DOC-c95ed190ec5caede9cf4-C0018",
+      "DOC-74fb8e3f4207ccfdb0ce-C0027"
+    ],
+    "new_tool_calls": 0
+  },
+  "restored_fields": [
+    "query_id",
+    "question",
+    "evidence",
+    "checks",
+    "history",
+    "pending_field"
+  ],
+  "saved_evidence_count": 10,
+  "retry_idempotent": true,
+  "sessions_isolated": true,
+  "conflicting_reply_rejected": true
+}

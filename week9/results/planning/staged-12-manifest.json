@@ -1,0 +1,33 @@
+{
+  "suite": "planning-staged",
+  "question_ids": [
+    "SJ-N-027",
+    "SJ-A-028",
+    "W7-MS-033",
+    "W7V2-MS042",
+    "W7V2-BH002",
+    "W7-BH029",
+    "W8-COMP-0188",
+    "W8-COMP-0231",
+    "W8-COMP-0326",
+    "W8-COMP-0328",
+    "W8-COMP-0384",
+    "W8-COMP-0387"
+  ],
+  "cases": "4c6c25ed4ff8386e24645ab17574b0cf3faaa01fc7f41bf3c133c4fd566f4f01",
+  "scope": "a0f5187026e1ae2d8b8d4d173f8d18ed0face566160de6b3b258538cab040334",
+  "guidelines": "d39fb0fbe6ea3ddf8a1af6ea96a6f642e120a7d85370efad28741ff96222c163",
+  "plan": {},
+  "generation": {
+    "model": "Qwen3.8-Flash-Next",
+    "max_output_tokens": 2000,
+    "json_mode": true,
+    "enable_thinking": false,
+    "temperature": 0,
+    "timeout": 180.0
+  },
+  "instructions": {
+    "plan": "사용자 질문과 근거를 읽고 답변 전에 처리할 항목을 정하세요. 복합 문의는 A/B별로 필요한 결론, 사용자가 알려줘야 하는 정보, 근거로 확인된 조건을 구분하세요. 서로의 조건을 섞지 마세요. 답변 대신 {\"checks\":[\"짧은 확인 항목\", \"...\"]} 형식의 JSON만 반환하세요.",
+    "answer": "제공된 본문에 근거하여 사용자의 질문에 직접 답하세요. 복합 문의는 요청된 A/B별로 답변하고, 사용자 정보가 부족한 부분은 필요한 정보를 질문하며, 시스템이 실행할 수 없는 작업은 한계를 밝히세요. 각 사람의 조건을 유지하고 근거가 없는 주장을 추가하지 마세요. 사실 주장에는 제공된 실제 근거 ID를 함께 표시하세요. 계획 항목이 제공되면 참고하여 답변을 쓰세요. {\"answer\":\"사용자에게 전달할 답변\"} 형식의 JSON만 반환하세요."
+  }
+}

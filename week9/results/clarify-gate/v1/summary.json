@@ -1,0 +1,99 @@
+[
+  {
+    "query_id": "SJ-X-050",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "어떤 서류를 발급받으시려는지, 그리고 방문, 무인발급기, 인터넷 중 어떤 방법으로 신청하시려는지 알려주세요.",
+    "ask_term_hits": [
+      true,
+      true
+    ],
+    "pass_auto": true,
+    "resume_status": "responded",
+    "resume_seconds": 15.712176200002432
+  },
+  {
+    "query_id": "SJ-A-086",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "졸업증명서를 발급받으려는 학교가 초·중·고등학교인지, 검정고시 합격자용인지, 아니면 대학인지와 졸업 연도를 알려주시고, 온라인 발급 시도 시 화면에 뜨는 구체적인 오류 메시지나 상태 문구를 알려주시겠어요?",
+    "ask_term_hits": [
+      true,
+      true
+    ],
+    "pass_auto": true,
+    "resume_status": "responded",
+    "resume_seconds": 6.952778400038369
+  },
+  {
+    "query_id": "SJ-A-087",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "농지대장 등본을 발급받으려는 농지의 소재지(시·구·읍·면)와, 신청하시는 분이 해당 농지의 소유자 또는 임차인인지 알려주세요. 또한 인터넷, 방문, 무인발급기 중 어떤 방법으로 신청하시려는지 확인 부탁드립니다.",
+    "ask_term_hits": [
+      false,
+      false
+    ],
+    "pass_auto": false,
+    "resume_status": "responded",
+    "resume_seconds": 7.973632799927145
+  },
+  {
+    "query_id": "W7-BH021",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "현재 화면 상단에 '임시저장' 또는 '접수 완료(접수증 발급)' 중 어떤 문구가 표시되어 있는지, 그리고 신청하신 민원의 정확한 명칭(예: 검정고시 합격증명, 휴업사실증명 등)과 신청 방법(인터넷, 방문 등)을 알려주세요.",
+    "ask_term_hits": [
+      false,
+      true
+    ],
+    "pass_auto": false,
+    "resume_status": "responded",
+    "resume_seconds": 12.478114599944092
+  },
+  {
+    "query_id": "W7V2-BH002",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "현재 보고 계신 화면이 시청이나 구청 등에 설치된 '무인발급기' 화면인가요, 아니면 인터넷으로 접속한 '전자가족관계등록시스템' 등의 화면인가요?",
+    "ask_term_hits": [
+      true,
+      true
+    ],
+    "pass_auto": true,
+    "resume_status": "responded",
+    "resume_seconds": 7.762161899940111
+  },
+  {
+    "query_id": "W7V2-BH005",
+    "control": false,
+    "gate_status": "ok",
+    "asked": true,
+    "question": "해당 토지의 정확한 지번이나 도로명주소를 알려주시겠어요? (개별공시지가는 토지의 소재지 관할 지자체가 결정하므로, 거주지인 서울이 아닌 토지가 속한 성남시 또는 하남시 중 어느 곳인지 확인이 필요합니다.)",
+    "ask_term_hits": [
+      true
+    ],
+    "pass_auto": true,
+    "resume_status": "responded",
+    "resume_seconds": 6.635047600022517
+  },
+  {
+    "query_id": "W7-MS-033",
+    "control": true,
+    "gate_status": "ok",
+    "asked": false,
+    "pass": true
+  },
+  {
+    "query_id": "W7V2-MS042",
+    "control": true,
+    "gate_status": "ok",
+    "asked": true,
+    "pass": false
+  }
+]
