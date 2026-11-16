@@ -1,0 +1,142 @@
+{
+  "created_utc": "2026-11-13T06:07:08.964807+00:00",
+  "seed": "20261113",
+  "count": 60,
+  "selection": "proportional strata with minimum one, hash-ranked within stratum",
+  "strata_fields": [
+    "question_type",
+    "expected_action"
+  ],
+  "generation_results_used_in_selection": false,
+  "questions_sha256": "a10c1212dc937116f1f3d255c031e3c6b45452fc546d8f70cda3eca01379c3f3",
+  "allocation": [
+    {
+      "question_type": "ambiguous",
+      "expected_action": "clarify",
+      "population": 2,
+      "sample": 1
+    },
+    {
+      "question_type": "clarification",
+      "expected_action": "clarify",
+      "population": 58,
+      "sample": 5
+    },
+    {
+      "question_type": "cross_reference",
+      "expected_action": "answer",
+      "population": 60,
+      "sample": 6
+    },
+    {
+      "question_type": "direct_qa",
+      "expected_action": "answer",
+      "population": 60,
+      "sample": 6
+    },
+    {
+      "question_type": "handling_agency",
+      "expected_action": "answer",
+      "population": 60,
+      "sample": 6
+    },
+    {
+      "question_type": "legal_grounding",
+      "expected_action": "answer",
+      "population": 60,
+      "sample": 6
+    },
+    {
+      "question_type": "multi_source_multi_hop",
+      "expected_action": "answer",
+      "population": 48,
+      "sample": 4
+    },
+    {
+      "question_type": "required_documents",
+      "expected_action": "answer",
+      "population": 60,
+      "sample": 6
+    },
+    {
+      "question_type": "requirement_condition",
+      "expected_action": "answer",
+      "population": 80,
+      "sample": 8
+    },
+    {
+      "question_type": "service_discovery",
+      "expected_action": "answer",
+      "population": 60,
+      "sample": 6
+    },
+    {
+      "question_type": "unanswerable",
+      "expected_action": "abstain",
+      "population": 60,
+      "sample": 6
+    }
+  ],
+  "query_ids": [
+    "SJ-N-008",
+    "SJ-N-018",
+    "SJ-N-025",
+    "SJ-N-027",
+    "SJ-N-028",
+    "SJ-N-032",
+    "SJ-N-033",
+    "SJ-N-034",
+    "SJ-N-055",
+    "SJ-X-050",
+    "SJ-A-017",
+    "SJ-A-021",
+    "SJ-A-028",
+    "SJ-A-037",
+    "SJ-A-053",
+    "SJ-A-058",
+    "SJ-A-060",
+    "SJ-A-078",
+    "SJ-A-086",
+    "SJ-A-087",
+    "SJ-A-092",
+    "SJ-B-021",
+    "SJ-B-035",
+    "W7-BH021",
+    "W7-BH029",
+    "W7-BH030",
+    "W7-BH033",
+    "W7-BH053",
+    "W7-LA-001",
+    "W7-LA-014",
+    "W7-LA-038",
+    "W7-LA-041",
+    "W7-LA-043",
+    "W7-LA-047",
+    "W7-MS-009",
+    "W7-MS-033",
+    "W7-PR-004",
+    "W7-PR-014",
+    "W7-PR-025",
+    "W7-PR-029",
+    "W7-PR-037",
+    "W7V2-BH002",
+    "W7V2-BH005",
+    "W7V2-BH031",
+    "W7V2-LA010",
+    "W7V2-LA022",
+    "W7V2-LA047",
+    "W7V2-LA055",
+    "W7V2-MS001",
+    "W7V2-MS003",
+    "W7V2-MS006",
+    "W7V2-MS013",
+    "W7V2-MS024",
+    "W7V2-MS039",
+    "W7V2-MS042",
+    "W7V2-PR021",
+    "W7V2-PR024",
+    "W7V2-PR028",
+    "W7V2-PR047",
+    "W7V2-PR059"
+  ]
+}
