@@ -14,6 +14,7 @@ Civic-Link는 **수정구청의 무인민원발급 서비스에 적용하기 위
 | Week 4 | Hybrid 기반 Graph 확장, 토큰화·참조·누락 근거 보완 | [보고서](week4/REPORT.md) |
 | Week 7 | 벤치마크 검수, coverage·BGE 비교, 검색 실패 원인 분석 | [보고서](week7/REPORT.md) · [실험 2](week7/EXPERIMENT2.md) |
 | Week 8 | Qwen 에이전트와 Graph 도구 구현, 탐색 방식 비교, 복합 벤치마크 확장 | [에이전트](week8/AGENT.md) · [비교 실험](week8/EXPERIMENT.md) · [벤치마크](week8/REPORT.md) |
+| Week 9 | 6개 검증: 단계별 성능, 근거 보관·재정렬, Planning, Graph, 재질문 이후 상태 유지, 비용 | [보고서](week9/REPORT.md) · [근거 흐름](week9/EVIDENCE_FLOW.md) · [재현 명령](week9/EXPERIMENTS.md) |
 
 주차별 설계, 실험 결과와 분석은 각 보고서에 정리합니다.
 
@@ -29,3 +30,4 @@ Civic-Link는 **수정구청의 무인민원발급 서비스에 적용하기 위
 | [week4/REPORT.md](week4/REPORT.md) | Hybrid+Graph 확장 구현과 성능 분석 보고서 |
 | [week7/](week7/) | 벤치마크 검수, 검색 개선 실험과 실패 사례 분석 |
 | [week8/](week8/) | 에이전트 설계, 탐색 방식 비교, 복합 벤치마크와 사례 검토 |
+| [week9/](week9/) | 실험/검증 보고서, 근거 흐름, 실험별 결과 요약과 검수 자료 |
