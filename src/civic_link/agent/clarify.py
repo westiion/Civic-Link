@@ -37,6 +37,18 @@ GATE_PROMPT = (
     '"changes_answer":"어떻게 결론이 달라지는지"}],"can_answer_now":true 또는 false,"question":"사용자에게 할 질문"} 형식의 JSON만 반환하세요.'
 )
 
+# v4 (experimental, not the default): do not ask about an inquiry the system cannot carry out anyway.
+_UNSUPPORTED_RULE = (
+    '(8) 사용자가 시스템이 할 수 없는 일을 요청한 문의에 대해서는 묻지 마세요. 시스템이 할 수 없는 일은 공식 접수·신청 취소·철회·발급·승인 같은 실제 처리, '
+    '개인 기록이나 진행 상태의 조회, 문서의 진위·동일인 확정, 행정기관 명의의 공식 결정·유권해석 발행, 저장된 자료에 없는 외부 기관의 개별 판단 확답입니다. '
+    '이런 문의는 사용자 정보와 관계없이 "할 수 없다"고 안내하면 되므로 missing_facts에 넣지 마세요. '
+    '복합 문의에서 다른 문의가 답변 가능하면 그 문의에 필요한 사실만 판단하세요. '
+)
+_FORMAT_SENTENCE = '다른 설명 없이 {"core_conclusion"'
+assert GATE_PROMPT.count(_FORMAT_SENTENCE) == 1
+GATE_PROMPT_V4 = GATE_PROMPT.replace(_FORMAT_SENTENCE, _UNSUPPORTED_RULE + _FORMAT_SENTENCE)
+GATE_PROMPTS = {'v3': GATE_PROMPT, 'v4': GATE_PROMPT_V4}
+
 RESUME_RULE = (
     '사용자가 방금 답한 사실을 그대로 적용해 원래 질문에 답하세요. 사실 주장마다 이번 입력의 supplied_evidence_ids에 있는 '
     '[근거 ID]를 문장 옆에 표시하고 arguments.evidence_ids에도 넣으세요. 근거 본문이 뒷받침하지 않는 채널별 규칙·서류·기간은 쓰지 말고, '
@@ -110,9 +122,9 @@ def parse_gate(raw):
     return value
 
 
-def check_gate(client, question, evidence):
+def check_gate(client, question, evidence, prompt=None):
     """One model call. Returns (decision or None, raw output or error text)."""
-    request = [{'role': 'system', 'content': GATE_PROMPT},
+    request = [{'role': 'system', 'content': prompt or GATE_PROMPT},
                {'role': 'user', 'content': json.dumps({'question': question, 'evidence': evidence},
                                                       ensure_ascii=False)}]
     try:
