@@ -134,6 +134,77 @@ def test_evaluation_and_blinded_judge_clis_offline(tmp_path,monkeypatch):
     assert (destination/'summary.csv').is_file() and (destination/'REPORT.md').is_file()
 
 
+def test_trace_cli_separates_search_rank_context_loss_and_content_change(tmp_path):
+    import csv
+    import analyze_agent_trace
+    from civic_link.agent.controller import AgentConfig
+    from civic_link.agent.experiment import atomic_json, file_hash
+
+    class FollowupSearch:
+        def run(self, args):
+            eid = 'C1' if args['query'] == 'question' else 'C2'
+            evidence = dict(id=eid, document_id='D', title='source', text='근거' * 300, source='https://example.org')
+            return dict(tool='search', status='ok', relations=[], evidence=[evidence],
+                        metadata={'candidate_ids': [eid, 'C2'] if eid == 'C1' else [eid]})
+
+    class FollowupClient:
+        def complete(self, messages):
+            payload = json.loads(messages[1]['content'])
+            state = payload['현재 실행 상태']
+            if state['tool_calls_completed'] == 1:
+                return json.dumps(dict(checks=[], action='search', arguments={'query': 'followup'}, reason='missing'))
+            return json.dumps(dict(checks=[], action='respond',
+                                   arguments={'text': 'second answer', 'evidence_ids': ['C2']}, reason='done'))
+
+    def make(condition):
+        client = Client() if condition == 'single_search' else FollowupClient()
+        return RetrievalAgent(client, {'search': search, 'graph': object()}, allowed_tools=CONDITIONS[condition],
+                              config=AgentConfig(max_evidence_chars=900))
+
+    run = tmp_path / 'run'
+    search = FollowupSearch()
+    conditions = ['single_search', 'iterative_search']
+    run_comparison([dict(query_id='Q1', question='question')], run, conditions, {}, search, make,
+                   progress=lambda _: None)
+    q = question()
+    q['evidence_requirements'].append(dict(evidence_id='E2', acceptable_chunk_ids=['C2']))
+    questions = tmp_path / 'questions.jsonl'
+    questions.write_text(json.dumps(q) + '\n', encoding='utf-8')
+    judgments = tmp_path / 'judgments'
+    atomic_json(judgments / 'config.json', dict(questions_sha256=file_hash(questions),
+                                               generation_config_sha256=file_hash(run / 'config.json')))
+    for condition in conditions:
+        row = read_json(result_path(run, condition, 'Q1'))
+        enough = condition == 'single_search'
+        atomic_json(judgments / f'{condition}.json', dict(
+            query_id='Q1', condition=condition, result_sha256=row['result_sha256'],
+            response_sha256=row['response_sha256'], judgment={'subtasks': [dict(
+                subtask_id='main', observed_action='answer', required_handling_ok=enough,
+                factual_correct=True, grounded_in_provided_passages=True, citations_supported=True,
+                unsupported_claim=False, reason='reviewed')]}))
+
+    output = tmp_path / 'trace'
+    assert analyze_agent_trace.main(['--run-dir', str(run), '--questions', str(questions),
+                                     '--judgments', str(judgments), '--output-dir', str(output)]) == 0
+
+    def rows(name):
+        with (output / name).open(encoding='utf-8-sig', newline='') as stream:
+            return list(csv.DictReader(stream))
+
+    single, followup = rows('questions.csv')
+    assert single['first_search_group'] == 'candidate_only_complete'
+    assert json.loads(single['candidate_accepted_chunk_ranks'])['E2'] == 2
+    assert followup['retrieved_complete'] == 'True'
+    assert json.loads(followup['final_missing_ids']) == ['E1']
+    first, second, third = rows('turns.csv')
+    assert first['review_flag'] == 'respond_only_with_missing_coverage'
+    assert json.loads(second['newly_covered_requirement_ids']) == ['E2']
+    assert json.loads(third['stored_but_not_covered_ids']) == ['E1']
+    change, = rows('content_changes.csv')
+    assert change['change'] == 'regressed'
+    assert json.loads(change['after_judge_failures']) == {'main': ['required_handling_ok']}
+
+
 def test_parallel_judge_limits_requests_isolates_usage_and_retries_only_failures(tmp_path,monkeypatch):
     import threading
     import time

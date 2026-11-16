@@ -58,7 +58,14 @@ Week8 1,000문항은 기존 문항을 재조합한 **개발 벤치마크**다. �
 
 # 내용 판정을 합쳐 새 보고서 생성.
 .\.venv\Scripts\python.exe scripts/evaluate_agent_comparison.py --run-dir outputs/week8-agent-comparison --questions data/benchmark/week8/questions.jsonl --judgments outputs/week8-agent-judgments --output-dir outputs/week8-agent-full-eval
+
+# 저장된 실행 기록으로 호출별 근거와 내용 통과 변화를 확인한다.
+.\.venv\Scripts\python.exe scripts/analyze_agent_trace.py --run-dir outputs/week8-agent-comparison --questions data/benchmark/week8/questions.jsonl --judgments outputs/week8-agent-judgments --output-dir outputs/week8-agent-trace
 ```
+
+`--judgments`는 선택이다. `questions.csv`는 문항·조건별 첫 검색 그룹, 근거 수집·전달·최종 입력·인용 충족 여부, 응답, Judge 판정과 비용을 담는다. 첫 검색 후보의 순위는 로그에 기록된 후보 ID와 허용 청크 ID로 확인한다. 후보에 본문이 없으므로 ID가 일치하지 않는 원문 범위는 후보 단계에서 직접 검증할 수 없다.
+
+`turns.csv`는 모델 호출별 확인 항목, 허용 행동과 남은 예산, 입력에서 빠진 근거, 선택한 행동, 도구가 새로 확보한 근거를 보여준다. `review_flag`는 지정 근거 회수에 기반한 사람 검수 표시다. 대체 근거로 답할 수 있었는지, 실제로 추가 탐색이 필요했는지는 입력 본문과 답변을 읽어 판단한다. `content_changes.csv`에는 같은 문항에서 내용 통과 여부가 바뀐 조건 쌍과 양쪽 답변·Judge 사유가 들어간다. 실행 실패는 상태 열로 구분하며, 미채점 응답은 내용 변화 비교에서 제외한다.
 
 `--conditions single_search iterative_graph`처럼 일부 조건만 먼저 돌릴 수 있다. 조건·질문·코드·모델·데이터가 바뀌면 새 출력 폴더를 사용한다. 결과는 문항 단위 원자적 저장이므로 중간에 중단하면 완료된 문항은 보존되고, 진행 중이던 문항은 다시 실행한다. 비정상 종료로 `.running`이 남으면 이전 프로세스가 종료됐는지 확인한 뒤 그 잠금 파일만 제거한다.
 

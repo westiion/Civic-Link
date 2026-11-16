@@ -31,6 +31,7 @@ __pycache__/
 /share/
 /week7/local/
 /week7/exports/
+/week8/local/pytest-*/
 
 # Only compressed current inputs are shared; generated DB and results stay local.
 /data/corpus/civic.sqlite*

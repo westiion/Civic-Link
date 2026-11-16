@@ -8,6 +8,26 @@ from civic_link.agent.experiment import atomic_json, file_hash, read_json
 from civic_link.agent.evaluation import evaluate_comparison
 
 
+def load_evaluation_inputs(run_dir, questions_path, judgments_dir):
+    values=[json.loads(line) for line in questions_path.read_text(encoding='utf-8').splitlines() if line.strip()]
+    questions={r['question_id']:r for r in values}
+    if len(values)!=len(questions): raise ValueError('duplicate evaluation question ID')
+    judgments={}
+    judge_config=None
+    if judgments_dir:
+        judge_config=read_json(judgments_dir/'config.json')
+        if (judge_config['questions_sha256']!=file_hash(questions_path) or
+                judge_config['generation_config_sha256']!=file_hash(run_dir/'config.json')):
+            raise ValueError('judgment configuration belongs to a different benchmark or generation run')
+        for path in sorted(judgments_dir.glob('*.json')):
+            if path.name=='config.json': continue
+            row=read_json(path)
+            key=(row['condition'],row['query_id'])
+            if key in judgments: raise ValueError('duplicate judgment')
+            judgments[key]=row
+    return questions, judgments, judge_config
+
+
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--run-dir',type=Path,required=True)
@@ -16,22 +36,10 @@ def main(argv=None):
     p.add_argument('--output-dir',type=Path,required=True)
     a=p.parse_args(argv)
     if a.output_dir.exists(): p.error('use a new evaluation output directory')
-    values=[json.loads(line) for line in a.questions.read_text(encoding='utf-8').splitlines() if line.strip()]
-    questions={r['question_id']:r for r in values}
-    if len(values)!=len(questions): p.error('duplicate evaluation question ID')
-    judgments={}
-    judge_config=None
-    if a.judgments:
-        judge_config=read_json(a.judgments/'config.json')
-        if (judge_config['questions_sha256']!=file_hash(a.questions) or
-                judge_config['generation_config_sha256']!=file_hash(a.run_dir/'config.json')):
-            p.error('judgment configuration belongs to a different benchmark or generation run')
-        for path in sorted(a.judgments.glob('*.json')):
-            if path.name=='config.json': continue
-            row=read_json(path)
-            key=(row['condition'],row['query_id'])
-            if key in judgments: p.error('duplicate judgment')
-            judgments[key]=row
+    try:
+        questions, judgments, judge_config = load_evaluation_inputs(a.run_dir, a.questions, a.judgments)
+    except ValueError as exc:
+        p.error(str(exc))
     report=evaluate_comparison(a.run_dir,questions,judgments)
     report['questions_sha256']=file_hash(a.questions)
     report['run_config_sha256']=file_hash(a.run_dir/'config.json')
