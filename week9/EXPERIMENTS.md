@@ -9,6 +9,11 @@
 | 1·5 | 확인 질문 점검 단계와 재개 | Qwen 약 14회 | `python run_week9_clarify_gate.py` | [clarify-gate/](results/clarify-gate/) |
 | 1·5 | 확인 질문 점검 60문항 확대 | Qwen 약 180회 | `..\.venv\Scripts\python.exe run_week9_gate_scale.py gate` | [clarify-gate/scale/](results/clarify-gate/scale/) |
 | 5 | 정답이 있는 5문항 재개(Qwen 사용자) | Qwen 약 15회 | `..\.venv\Scripts\python.exe run_week9_gate_scale.py resume` | [clarify-gate/scale/](results/clarify-gate/scale/) |
+| 1 | 내용 채점의 답변·판정 구분(미통과 원인, 판정이 갈린 문항 목록; 분류는 검수표 직접 대조) | 없음 | `python analyze_week9_judge_vs_answer.py` | [judge/](results/judge/judge-vs-answer.json) |
+| 1·4 | 복합 문항 확인 질문 점검(복합 40 + 대조 80) | Qwen 약 120회 | `python run_week9_composite_gate.py --workers 4` | [composite/](results/clarify-gate/composite/summary.json) |
+| 1·4 | 점검 프롬프트 v4 비교: 단일 문항(확인 질문 60·답변 대조 60·보류 60) | Qwen 약 240회 | `python run_week9_gate_single_variants.py --prompt v4 --workers 8` | [v4/](results/clarify-gate/v4/single-v4-summary.json) |
+| 1·4 | 점검 프롬프트 v3 기준: 단일 보류 60 | Qwen 60회 | `python run_week9_gate_single_variants.py --prompt v3 --groups abstain --workers 8` | [v4/](results/clarify-gate/v4/single-abstain-v3-summary.json) |
+| 1·4 | 점검 프롬프트 v4 비교: 복합 문항 | Qwen 약 160회 | `python run_week9_composite_gate.py --prompt v4 --workers 8 --output-dir ..\outputs\week8-608-analysis\feedback\composite-gate-v4` | [v4/](results/clarify-gate/v4/composite-v4-summary.json) |
 | 3 | Planning 첫 비교·보정 비교 | Qwen 36회 | `python run_week9_probes.py planning` / `planning-staged` | [planning/](results/planning/) |
 | 3 | Planning 38문항 확대 | Qwen 114회 | `python run_week9_probes.py planning-staged --per-action 6 --extra-originals 14 --output-dir ..\outputs\week8-608-analysis\feedback\planning-staged-38` | [planning/](results/planning/) |
 | 3 | Planning 38문항 채점 | Qwen 76회 | `python judge_week9_planning.py` | [judge-38-summary.json](results/planning/judge-38-summary.json) |
