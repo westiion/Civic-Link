@@ -1,0 +1,1394 @@
+[
+  {
+    "query_id": "W8-COMP-0339",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해 정확한 비용을 안내해 드리기 위해 확인이 필요합니다. 자동차등록원부를 '발급'받았는지 '열람'만 했는지, 그리고 인터넷, 방문, 무인발급기 중 어떤 방법으로 이용하셨는지 알려주시겠어요? (B 문의는 신청 시 요청하면 효력 있는 사항만 기재하여 발급받을 수 있습니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 발급/열람 여부와 채널에 따라 수수료가 달라지므로 확인이 필요하고, B 문의는 신청 시 요청하면 효력 있는 사항만 기재하여 발급받을 수 있습니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의: 자동차등록원부를 발급받았는지 열람만 했는지, 그리고 인터넷/방문/무인발급기 중 어떤 채널을 이용했는지\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"발급(300원)인지 열람(100원)인지, 인터넷(무료)인지 방문/무인발급기(유료)인지에 따라 정확한 비용이 결정됩니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해 정확한 비용을 안내해 드리기 위해 확인이 필요합니다. 자동차등록원부를 '발급'받았는지 '열람'만 했는지, 그리고 인터넷, 방문, 무인발급기 중 어떤 방법으로 이용하셨는지 알려주시겠어요? (B 문의는 신청 시 요청하면 효력 있는 사항만 기재하여 발급받을 수 있습니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 A 문의의 required 조건인 '발급/열람 여부'와 '발급 방식(채널)'을 명확히 묻고 있어 정보가 부족한 A 문의에 적절합니다. B 문의는 답변 가능한 상태이므로 추가 질문을 하지 않고 안내를 제공하여 asks_unneeded가 false입니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 14.019460599985905
+  },
+  {
+    "query_id": "W8-COMP-0313",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 서류를 제출하라고 한 기관이나 용도에서 '제적등본'과 '제적초본' 중 구체적으로 어느 것을 요구했는지 확인되나요? (예: 안내문에 '제적등본'이라고 적혀 있었는지 등)",
+    "raw": "{\n  \"core_conclusion\": \"A는 요구한 서류가 제적등본인지 제적초본인지 확인해야 하며, B는 가족 전원이 포함된 서류가 필요하므로 제적등본을 발급받아야 한다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A가 제출을 요구받은 기관(또는 용도)이 명시적으로 '제적등본'인지 '제적초본'인지 구분하여 요구했는지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"요구받은 서류가 등본이면 초본 제출 시 반려될 수 있고, 초본이면 등본 제출 시 불필요한 개인정보 노출이나 비용 차이가 발생할 수 있어 정확한 서류명을 알려줄 수 없음\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 서류를 제출하라고 한 기관이나 용도에서 '제적등본'과 '제적초본' 중 구체적으로 어느 것을 요구했는지 확인되나요? (예: 안내문에 '제적등본'이라고 적혀 있었는지 등)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 A 문의의 required 항목인 '제출처가 요구한 정확한 명칭 확인'을 실질적으로 묻고 있습니다. B 문의는 이미 제적초본이 아닌 전체 기록(등본)이 필요함을 인지하고 있어 추가 확인이 불필요하므로, A에만 초점을 맞춘 질문은 적절합니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 14.018634999985807
+  },
+  {
+    "query_id": "W8-COMP-0340",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해, 가족이 화면을 조작했을 때 여권정보 공동이용 동의 절차가 완료되었는지(동의 버튼 클릭 또는 완료 안내 문구 확인) 알 수 있나요?",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 두 증명서의 정의 및 용도 차이를 설명하고, B 문의는 여권정보 공동이용 동의 여부에 따라 여권 지참 필요 여부를 판단한다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 여권정보 공동이용 동의 화면에서 '동의' 버튼을 눌렀는지 또는 동의 완료 안내 문구가 떴는지 확인된 상태\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"동의가 완료된 상태라면 여권을 별도로 챙길 필요가 없고, 동의하지 않았거나 확인이 안 된 상태라면 여권을 지참해야 하므로 결론이 달라짐\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해, 가족이 화면을 조작했을 때 여권정보 공동이용 동의 절차가 완료되었는지(동의 버튼 클릭 또는 완료 안내 문구 확인) 알 수 있나요?\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 B 문의의 핵심 불명확 사항인 '여권정보 공동이용 동의 여부'를 구체적으로 묻고 있어 required를 충족하며, A 문의에는 영향을 주지 않고 B 문의의 must_not(가정하여 확정)를 위반하지 않습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 12.022801200044341
+  },
+  {
+    "query_id": "W8-COMP-0351",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에서 '이 화면'이라고 하신 것이 무인발급기 화면인지, 인터넷 발급 사이트 화면인지, 아니면 방문 접수 창구 화면인지 알려주세요.",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 무인발급기 사용 가능 여부에 대한 확인, B 문의는 정당한 이해관계인 자격으로 가족관계증명서를 발급받기 위한 필요 서류 안내입니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의에서 언급한 '이 화면'이 무인발급기 화면인지, 인터넷 발급 사이트 화면인지, 또는 방문 접수 창구 화면인지\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"무인발급기는 본인만 가능하여 자녀가 부모의 증명서를 발급받을 수 없으나, 인터넷 발급은 부모가 자녀의 증명서를 발급받을 수 있어 채널에 따라 가능 여부가 완전히 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에서 '이 화면'이라고 하신 것이 무인발급기 화면인지, 인터넷 발급 사이트 화면인지, 아니면 방문 접수 창구 화면인지 알려주세요.\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 A 문의의 불명확한 부분인 '이 화면'의 구체적 매체(무인발급기/인터넷/방문)를 묻고 있어 required 조건인 채널 확인에 부합합니다. B 문의는 이미 답변 가능한 상태이므로 질문 대상이 아니며, A 문의의 must_not 위반 소지도 없습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 13.095141400001012
+  },
+  {
+    "query_id": "W8-COMP-0343",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "아버지가 해외로 출국하신 정확한 날짜(또는 국외 체류 기간이 60일이 되는 날)를 알려주세요. B 문의의 경우 주소지 관할이 아닌 지자체에 접수된 신청서는 관할 지자체로 이송된다는 규정이 명확하여 추가 정보 없이 답변 가능합니다.",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 아버지의 국외 체류 60일 도달 시점(사유 발생일)을 기준으로 다음 달부터 지급이 정지되며, B 문의는 주소지 관할이 아닌 지자체에 접수된 기초연금 신청서는 관할 지자체로 지체 없이 이송됩니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"아버지가 해외로 출국한 정확한 날짜(또는 국외 체류가 60일이 되는 날)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"법령상 '사유가 발생한 날(국외 체류 60일이 되는 날)이 속하는 달의 다음 달'부터 정지되므로, 출국일이 없으면 정지 시작 월을 특정할 수 없습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"아버지가 해외로 출국하신 정확한 날짜(또는 국외 체류 기간이 60일이 되는 날)를 알려주세요. B 문의의 경우 주소지 관할이 아닌 지자체에 접수된 신청서는 관할 지자체로 이송된다는 규정이 명확하여 추가 정보 없이 답변 가능합니다.\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 A 문의의 필수 정보인 '60일 도달일을 정할 날짜(출국일)'를 명확히 요구하고 있으며, B 문의는 답변 가능함을 명시하여 불필요한 질문을 하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 14.875355200027116
+  },
+  {
+    "query_id": "W8-COMP-0341",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 전자등기사항증명서 발급 시 수수료가 면제되지 않은 사유를 정확히 짚어드리기 위해 두 가지를 확인해 주세요. 1) 해당 부동산의 등기기록에 소유자의 주민등록번호(또는 부동산등기용등록번호)가 기록되어 있나요? 2) 발급을 신청하신 분의 성명과 주민등록번호(또는 부동산등기용등록번호)가 등기기록에 적힌 소유권 등기명의인의 정보와 완전히 일치하나요?",
+    "raw": "{\n  \"core_conclusion\": \"A는 전자등기사항증명서 발급 시 수수료 면제 제외 사유(등기기록상 주민등록번호 미기록 또는 명의 불일치) 중 어느 것에 해당하는지 확인이 필요하며, B는 초과 납부된 수수료의 환급 근거(수수료규칙 제6조 제4항)와 환급 포기 시 기재 사항(등기신청서 여백에 포기 취지 기재 및 기명날인 또는 서명)을 안내할 수 있습니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A의 등기기록에 주민등록번호(또는 부동산등기용등록번호)가 기록되어 있는지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"등기기록에 주민등록번호가 기록되어 있지 않은 경우(제15조의2 제1항 제1호)에는 면제 대상에서 제외되어 수수료가 부과됩니다. 기록되어 있다면 명의 일치 여부를 확인해야 합니다.\"\n    },\n    {\n      \"fact\": \"A의 발급 신청인 성명 및 주민등록번호(또는 부동산등기용등록번호)가 등기기록상 소유권 등기명의인의 정보와 일치하는지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"등기기록상 명의인의 정보와 신청인의 정보가 일치하지 않는 경우(제15조의2 제1항 제2호)에는 면제 대상에서 제외되어 수수료가 부과됩니다. 일치한다면 다른 사유(예: 시스템 오류 등)를 확인해야 하므로 결론이 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 전자등기사항증명서 발급 시 수수료가 면제되지 않은 사유를 정확히 짚어드리기 위해 두 가지를 확인해 주세요. 1) 해당 부동산의 등기기록에 소유자의 주민등록번호(또는 부동산등기용등록번호)가 기록되어 있나요? 2) 발급을 신청하신 분의 성명과 주민등록번호(또는 부동산등기용등록번호)가 등기기록에 적힌 소유권 등기명의인의 정보와 완전히 일치하나요?\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 A 문의의 면제 요건(명의 일치 여부)을 확인하기 위해 필요한 정보(등기부 기재 여부 및 신청자 정보 일치 여부)를 묻고 있어 required를 충족합니다. 또한 주민등록번호 전체나 비밀번호를 요구하지 않아 must_not을 위반하지 않았으며, 답변 가능한 B 문의에는 질문하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 23.387790799955837
+  },
+  {
+    "query_id": "W8-COMP-0333",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해 답변드리기 위해 두 가지 정보가 필요합니다. 1) 발급받은 확인서의 토지 소재지(지번)와 해당 토지가 어떤 지역·지구로 지정되어 있는지(예: 주거지역, 개발제한구역 등)를 알려주세요. 2) 신청 당시 '행위제한 내용 제외' 항목을 체크했는지 기억나시나요? (기억이 안 나신다면 신청하신 채널과 접수번호를 알려주시면 확인 방법을 안내해 드리겠습니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 발급된 확인서에 행위제한 내용이 없는 것이 누락인지 확인하려면 해당 토지의 실제 규제 현황과 신청 시 제외 옵션 체크 여부를 알아야 하며, B 문의는 토지이용계획확인서의 법정 처리기간은 '총 1일'이므로 등본의 '3시간' 기준과 다릅니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의: 발급받은 토지이용계획확인서에 표시된 토지 소재지(또는 지번)와 해당 토지에 적용되는 지역·지구 지정 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"해당 토지에 행위제한이 있는 지역·지구가 지정되어 있지 않다면 내용이 없는 것이 정상(누락 아님)이고, 지정되어 있다면 누락일 수 있어 결론이 달라짐.\"\n    },\n    {\n      \"fact\": \"A 문의: 신청 시 '행위제한 내용 제외' 항목을 체크했는지 여부 (기억이 안 난다면 신청 채널 및 접수번호 등 조회 가능한 정보)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"신청 시 제외 옵션을 체크했다면 정상 발급이고, 체크하지 않았는데 내용이 없다면 발급 오류(누락)일 가능성이 높아짐.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해 답변드리기 위해 두 가지 정보가 필요합니다. 1) 발급받은 확인서의 토지 소재지(지번)와 해당 토지가 어떤 지역·지구로 지정되어 있는지(예: 주거지역, 개발제한구역 등)를 알려주세요. 2) 신청 당시 '행위제한 내용 제외' 항목을 체크했는지 기억나시나요? (기억이 안 나신다면 신청하신 채널과 접수번호를 알려주시면 확인 방법을 안내해 드리겠습니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 A 문의의 required인 '행위제한 내용 제외 선택 여부'를 명확히 묻고 있으며, 추가적으로 소재지 정보를 요청하여 누락 여부를 판단하기 위한 필수 맥락을 확보합니다. B 문의(처리기간 안내)에는 불필요한 질문을 하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 20.426743599935435
+  },
+  {
+    "query_id": "W8-COMP-0317",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의의 경우, 해당 부동산의 등기부가 현재 전산등기부인지, 아니면 아직 전산으로 전환되지 않은 폐쇄등기부(이미지 또는 수작업)인지 확인해 주시겠어요? (B 문의는 30분 이내 재열람이므로 추가 비용 없이 재열람 가능하다는 안내가 가능합니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A는 등기부 종류(전산/폐쇄)에 따라 말소사항 포함 여부가 결정되며, B는 최초 열람 후 1시간 이내라면 재열람이 가능하여 추가 수수료가 발생하지 않습니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의 대상 부동산의 등기부가 전산등기부인지, 아니면 이미지폐쇄등기부 또는 수작업폐쇄등기부인지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"전산등기부는 '현재 유효사항'만 뽑을 수 있지만, 폐쇄등기부(이미지/수작업)는 '말소사항 포함' 또는 '일부사항'으로만 발급 가능하여 '현재 유효사항만 뽑기'가 불가능할 수 있음\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의의 경우, 해당 부동산의 등기부가 현재 전산등기부인지, 아니면 아직 전산으로 전환되지 않은 폐쇄등기부(이미지 또는 수작업)인지 확인해 주시겠어요? (B 문의는 30분 이내 재열람이므로 추가 비용 없이 재열람 가능하다는 안내가 가능합니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 A 문의의 required인 '등기기록의 폐쇄 여부(전산/폐쇄 구분)'를 명확히 묻고 있으며, B 문의는 이미 답변 가능한 상태이므로 불필요한 정보를 요구하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 16.49965719995089
+  },
+  {
+    "query_id": "W8-COMP-0352",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해 안내드리기 위해 확인이 필요합니다. 발급받으실 중학교가 국립학교인지, 아니면 교육감 소속의 공립 또는 사립학교인지 알려주세요.",
+    "raw": "{\n  \"core_conclusion\": \"A는 경기도 2005년 졸업으로 발급 대상이 아니며, B는 학교 유형(국립/공립/사립)에 따라 수수료가 달라지므로 학교 유형 확인이 필요합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 언급한 중학교의 학교 유형(국립, 공립, 사립 중 어디인지)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"국립학교는 수수료가 면제되지만, 공립 및 사립학교는 시·도 조례에 따라 수수료가 부과될 수 있어 무료 여부 판단이 불가능합니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해 안내드리기 위해 확인이 필요합니다. 발급받으실 중학교가 국립학교인지, 아니면 교육감 소속의 공립 또는 사립학교인지 알려주세요.\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 B 문의의 필수 정보인 학교 설립구분(국립/공립/사립)을 명확히 묻고 있으며, A 문의에는 불필요한 정보를 요구하지 않습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 12.533533800044097
+  },
+  {
+    "query_id": "W8-COMP-0347",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 개별공시지가확인서 발급이 가능하며, B는 신청서(별지 제6호서식)를 제출해야 합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "passed": false,
+    "seconds": 4.917872599908151
+  },
+  {
+    "query_id": "W8-COMP-0330",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해, 해당 사업자가 현재 '휴업' 상태인지 '폐업' 상태인지 확인 부탁드립니다. (가족에게 확인이 어렵다면, 사업자등록증명이나 홈택스 조회 등을 통해 현재 사업자 상태를 먼저 확인해 주셔야 어떤 증명을 발급받아야 하는지 안내가 가능합니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A는 인감증명서 사본의 유효기간(3개월)이 경과하여 사용 불가하며, B는 사업자의 현재 상태(휴업 또는 폐업)에 따라 발급받을 증명서 종류가 달라지므로 상태 확인이 필요합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B의 사업자가 현재 '휴업' 상태인지 '폐업' 상태인지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"휴업이면 '휴업사실증명', 폐업이면 '폐업사실증명'을 발급받아야 하므로 증명서 종류가 결정되지 않음\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해, 해당 사업자가 현재 '휴업' 상태인지 '폐업' 상태인지 확인 부탁드립니다. (가족에게 확인이 어렵다면, 사업자등록증명이나 홈택스 조회 등을 통해 현재 사업자 상태를 먼저 확인해 주셔야 어떤 증명을 발급받아야 하는지 안내가 가능합니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 B 문의의 핵심 불명확 사항인 '휴업'과 '폐업' 중 실제 상태를 명확히 하도록 요구하여 required 조건을 충족합니다. A 문의에는 불필요한 질문을 하지 않았으며, B 문의의 must_not(폐업 확정 금지)을 위반하지 않고 오히려 구분을 유도합니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 13.759884100058116
+  },
+  {
+    "query_id": "W8-COMP-0328",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해, 가족관계증명서를 발급받으려는 주체(본인)가 아버지 본인인지 아니면 B 본인인지 확인 부탁드립니다.",
+    "raw": "{\n  \"core_conclusion\": \"A는 손자로서 직계혈족이 아니므로 인터넷 발급이 불가하며, B는 가족관계증명서 발급 주체(본인)를 특정해야 신청 가능 여부가 결정됩니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B가 가족관계증명서를 발급받으려는 주체(본인)가 누구인지 (아버지 본인인지, B 본인인지)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"발급 주체가 아버지라면 B는 직계비속(자녀)이므로 인터넷 발급이 가능하지만, 발급 주체가 B 본인이라면 형제(형제자매)는 직계혈족이 아니므로 인터넷 발급이 불가능합니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해, 가족관계증명서를 발급받으려는 주체(본인)가 아버지 본인인지 아니면 B 본인인지 확인 부탁드립니다.\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 B 문의의 기준인(발급 주체)을 명확히 하려는 것으로, B의 required 조건을 충족하며 A 문의에는 불필요한 정보를 묻지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 12.355071699945256
+  },
+  {
+    "query_id": "W8-COMP-0321",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의의 마감일 계산을 위해 다음 두 가지 정보를 알려주세요. 1) 기초연금 결정 통지서를 받거나 내용을 알게 된 정확한 날짜는 언제인가요? 2) 입원으로 인해 신청을 하지 못한 기간이 언제 종료되었나요(퇴원일 등)?",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 이의신청 마감일 계산을 위해 '결정 통지일'과 '입원 종료일(사유 소멸일)'이 필요하며, B 문의는 국적 상실·국외 이주 시 수급권 상실(기초연금법 제17조)과 단순 국외 체류 시 지급 정지(기초연금법 제16조)의 법적 근거를 안내한다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A의 기초연금 결정 통지(알게 된) 날짜\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"이의신청 기간은 처분이 있음을 안 날부터 90일 이내이므로, 이 날짜가 없으면 기본 마감일을 계산할 수 없습니다.\"\n    },\n    {\n      \"fact\": \"A의 입원 종료일(정당한 사유가 소멸한 날)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"정당한 사유로 기간 내 신청 불가 시 사유 소멸일부터 60일 이내로 신청 가능하므로, 이 날짜가 없으면 연장된 마감일을 계산할 수 없습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의의 마감일 계산을 위해 다음 두 가지 정보를 알려주세요. 1) 기초연금 결정 통지서를 받거나 내용을 알게 된 정확한 날짜는 언제인가요? 2) 입원으로 인해 신청을 하지 못한 기간이 언제 종료되었나요(퇴원일 등)?\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 A 문의의 마감일 계산에 필수적인 '결정 통지일'과 '입원 종료일'을 명확히 요구하고 있어 required 조건을 충족합니다. B 문의는 답변 가능한 상태이므로 추가 질문이 없으며, A 문의에 대한 질문이므로 targets_right_inquiry가 참입니다. must_not 위반 사항(자동 기산일 설정 등)은 없습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 17.132626099977642
+  },
+  {
+    "query_id": "W8-COMP-0324",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해, 서류를 요구한 기관에서 '주민등록표 등본'과 '주민등록표 초본' 중 어떤 것을 명시했거나, 가족 전체가 기재된 서류를 원하는지 본인만 기재된 서류를 원하는지 구체적으로 안내받은 내용이 있나요?",
+    "raw": "{\n  \"core_conclusion\": \"A는 기관 명의로 신청하므로 신분증 외에 사원증 또는 재직증명서 등 소속 증명 자료가 필요하며, B는 요청 기관의 요구사항(등본/초본 여부)에 따라 발급 서류가 달라지므로 이를 확인해야 합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B가 제출해야 하는 서류가 '주민등록표 등본'인지 '주민등록표 초본'인지, 또는 요청 기관에서 지정한 구체적인 서류명\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"등본은 세대원 전체가 기재되고 초본은 개인만 기재되므로, 요청 기관의 요구사항에 따라 발급받을 서류 종류가 완전히 달라짐\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해, 서류를 요구한 기관에서 '주민등록표 등본'과 '주민등록표 초본' 중 어떤 것을 명시했거나, 가족 전체가 기재된 서류를 원하는지 본인만 기재된 서류를 원하는지 구체적으로 안내받은 내용이 있나요?\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 B 문의의 핵심 불명확 사항인 '등본/초본 구분' 및 '개인/세대 범위'를 구체적으로 묻고 있어 required 요건을 충족합니다. A 문의에는 영향을 주지 않으므로 asks_unneeded는 false이며, B 문의의 must_not(추정 금지)를 위반하지 않고 정확한 확인을 요청합니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 12.513999399961904
+  },
+  {
+    "query_id": "W8-COMP-0320",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해 확인드립니다. 현재 주거급여를 정상적으로 수급 중이신 상태에서 이사하신 것인지, 아니면 자격이 중단된 후 다시 신청하시는 것인지 알려주세요.",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 전입일(16일) 기준에 따라 주거급여와 기초연금 모두 종전 거주지(옛 동네)에서 지급하며, B 문의는 현재 주거급여 수급 중 이사한 경우이므로 '주거급여 변경신청' 절차로 진행해야 합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의자가 현재 주거급여 수급자로서 이사로 인한 변경신청을 하는 것인지, 아니면 자격이 상실되어 새로 신청하는 것인지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"현재 수급 중 변경신청이면 '변경신청' 절차(임대차계약서 등 제출)로 진행되지만, 자격 상실 후 신규 신청이면 '신규신청' 절차(소득·재산 조사 등 전면 재심사)로 진행되므로 답변의 핵심 결론(절차의 성격)이 완전히 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해 확인드립니다. 현재 주거급여를 정상적으로 수급 중이신 상태에서 이사하신 것인지, 아니면 자격이 중단된 후 다시 신청하시는 것인지 알려주세요.\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 B 문의의 clarify 요구사항인 '현재 수급 여부와 변경 사유'를 명확히 묻고 있으며, A 문의에는 불필요한 정보를 요구하지 않습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 11.391131300013512
+  },
+  {
+    "query_id": "W8-COMP-0323",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해 안내드리기 위해 확인이 필요합니다. 생기부 글자 오류를 정정하기 위해 제출했거나 제출할 수 있는 객관적인 증빙자료(예: 원본 성적표, 시험지, 관련 공문 등)가 있으신가요?",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 정정 가능 여부(예외 적용)를 판단하기 위해 '증빙자료의 존재 여부'가 필요하며, B 문의는 학교 보관 기간(8년)과 그 이후 보존 방식(전산 준영구)의 차이를 지침으로 설명할 수 있습니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의: 글자 오류를 정정하기 위해 제출했거나 제출할 수 있는 객관적인 증빙자료(원본 서류, 성적표 등)가 있는지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"증빙자료가 있으면 학년도 종료 후에도 정정 예외로 처리 가능하지만, 없으면 원칙적으로 정정이 불가능하여 결론이 완전히 달라짐.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해 안내드리기 위해 확인이 필요합니다. 생기부 글자 오류를 정정하기 위해 제출했거나 제출할 수 있는 객관적인 증빙자료(예: 원본 성적표, 시험지, 관련 공문 등)가 있으신가요?\"\n}",
+    "judge": {
+      "asked_required": false,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "A 문의의 required는 '해당 학년도 작성 종료 여부' 확인이지만, 확인 질문은 '증빙자료 유무'를 묻고 있어 필수 정보를 묻지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": false,
+    "seconds": 11.571895899949595
+  },
+  {
+    "query_id": "W8-COMP-0344",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해, 현재 서류를 확인하지 못해 본인 소유인지 임차인지 불분명하다고 하셨는데, 등기부등본이나 임대차계약서 등 주택의 권리 관계를 확인할 수 있는 서류를 확인하셨거나, 해당 서류를 통해 확인된 사실(소유 또는 임차)이 있으신가요?",
+    "raw": "{\n  \"core_conclusion\": \"A는 사회복지 전담공무원의 직권 신청이 가능하며 수급권자의 동의가 필요하고, B는 본인 소유 여부에 따라 임차료 또는 수선유지비 중 하나를 신청해야 하므로 현재 서류 확인이 필요합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B의 주택이 본인 소유인지 임차인지 확인된 사실 (현재 서류 미확보 및 가족 진술 불일치 상태)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"본인 소유이면 '수선유지비' 신청 대상이고, 임차이면 '임차료' 신청 대상이므로 신청 항목이 완전히 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해, 현재 서류를 확인하지 못해 본인 소유인지 임차인지 불분명하다고 하셨는데, 등기부등본이나 임대차계약서 등 주택의 권리 관계를 확인할 수 있는 서류를 확인하셨거나, 해당 서류를 통해 확인된 사실(소유 또는 임차)이 있으신가요?\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 B 문의의 required인 '소유·임차 관계 확인'을 위해 필요한 서류 확인 여부를 묻고 있어 필수 정보를 실질적으로 요구합니다. A 문의에는 영향을 주지 않으며, B 문의의 must_not(섣부른 판단 금지)을 위반하지 않고 정확한 정보 수집을 유도합니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 12.223892699927092
+  },
+  {
+    "query_id": "W8-COMP-0349",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 농지대장 등본을 발급받으려는 농지가 현재 농지대장에 이미 작성되어 있는지, 아니면 신규로 작성하거나 내용을 수정해야 하는지 확인해 주세요. (B 문의는 발급과 수정의 처리기간 차이를 구분하여 안내해 드리겠습니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A는 농지대장 등본 발급(즉시)과 신규작성/수정(10일) 중 어떤 것을 원하는지 확인이 필요하며, B는 발급과 수정의 처리기간 차이를 구분하여 안내할 수 있습니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A가 농지대장 등본을 발급받으려는 농지가 현재 농지대장에 이미 작성되어 있는지, 아니면 신규로 작성하거나 내용을 수정해야 하는지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"이미 작성된 경우 '발급'으로 즉시(근무시간 내 3시간) 처리되지만, 신규작성이나 내용수정이 필요한 경우 '신청'으로 총 10일이 소요되므로 A의 '오늘 바로 받을 수 있는지'에 대한 결론이 완전히 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 농지대장 등본을 발급받으려는 농지가 현재 농지대장에 이미 작성되어 있는지, 아니면 신규로 작성하거나 내용을 수정해야 하는지 확인해 주세요. (B 문의는 발급과 수정의 처리기간 차이를 구분하여 안내해 드리겠습니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 A 문의의 핵심 불명확 사항(기존 대장 여부)을 정확히 묻고 있으며, 답변 가능한 B 문의에는 불필요한 질문을 하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 13.076551200007088
+  },
+  {
+    "query_id": "W8-COMP-0348",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해 안내드리기 위해 두 가지 정보가 필요합니다. 1) 발급받은 납세증명서의 정확한 발급일은 언제인가요? 2) 발급일 현재 고지된 세금이 있었다고 하셨는데, 그 세금의 지정납부기한이 오늘보다 늦은지(아직 납부 전인지) 확인 부탁드립니다.",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 민원처리법 제19조에 따라 5일 이하는 시간 단위(공휴일·토요일 제외), 6일 이상은 일 단위(첫날 산입, 공휴일·토요일 제외)로 계산하며, B 문의는 국세 납세증명서의 유효기간이 발급일로부터 30일이나 발급일 현재 고지된 국세가 있는 경우 해당 지정납부기한까지로 단축될 수 있어 발급일과 고지세금의 납부기한 확인이 필요합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 언급된 '고지된 세금'의 지정납부기한이 오늘보다 늦은지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"고지된 세금의 지정납부기한이 오늘보다 늦다면 유효기간이 30일이 아니라 그 납부기한까지로 단축되어 오늘까지 사용 가능할 수 있으나, 납부기한이 지났거나 없다면 30일 기준만 적용되므로 결론이 달라짐\"\n    },\n    {\n      \"fact\": \"B 문의에서 발급받은 납세증명서의 정확한 발급일\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"발급일로부터 30일이 경과했는지 여부를 판단할 수 없어 오늘까지 사용 가능한지 결론을 내릴 수 없음\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해 안내드리기 위해 두 가지 정보가 필요합니다. 1) 발급받은 납세증명서의 정확한 발급일은 언제인가요? 2) 발급일 현재 고지된 세금이 있었다고 하셨는데, 그 세금의 지정납부기한이 오늘보다 늦은지(아직 납부 전인지) 확인 부탁드립니다.\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "B 문의는 발급일과 고지된 세금의 납부기한 여부가 불명확하여 유효기간 판단이 불가능한 상태(clarify)입니다. 확인 질문은 B의 required 정보인 발급일과 단축 사유(미납 세금 유무)를 정확히 요구하고 있으며, A 문의에는 불필요한 질문을 하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 19.493196700001135
+  },
+  {
+    "query_id": "W8-COMP-0325",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해 답변드리기 위해, 발급받으려는 납세증명서의 용도가 '일반용'인지 '해외이주여권용'인지 확인 부탁드립니다. (B 문의는 채권양도 규정에 따라 양수인 본인뿐 아니라 양도인의 납세증명서도 필요하다는 점을 안내드릴 수 있습니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A는 용도(일반용/해외이주여권용)에 따라 처리기간이 즉시(3시간) 또는 10일로 달라지므로 용도 확인이 필요하고, B는 채권양도 시 양수인(본인)뿐 아니라 양도인의 납세증명서도 함께 제출해야 합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A의 납세증명서 발급 용도(일반용 또는 해외이주여권용)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"일반용은 즉시(근무시간 내 3시간), 해외이주여권용은 총 10일이 소요되므로 용도에 따라 답변이 완전히 달라짐\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해 답변드리기 위해, 발급받으려는 납세증명서의 용도가 '일반용'인지 '해외이주여권용'인지 확인 부탁드립니다. (B 문의는 채권양도 규정에 따라 양수인 본인뿐 아니라 양도인의 납세증명서도 필요하다는 점을 안내드릴 수 있습니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 A 문의의 필수 정보(용도)를 정확히 묻고 있으며, 답변 가능한 B 문의에 대해서는 불필요한 질문을 하지 않고 안내 가능함을 명시하여 조건을 충족합니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 12.483633000054397
+  },
+  {
+    "query_id": "W8-COMP-0315",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의의 경우, 해당 사업자가 부가가치세 과세사업자인지 면세사업자인지 확인되시나요? (과세/면세 여부에 따라 발급받아야 할 증명서 종류가 다릅니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 사업자 유형(과세/면세)에 따라 발급받을 증명 종류가 달라지므로 유형 확인이 필요하며, B 문의는 대리인 신청 시 위임인의 신분증 사본 대신 인감증명서 사본을 제출할 수 있습니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의 대상 사업자의 부가가치세 과세 여부(과세사업자 또는 면세사업자)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"과세사업자라면 '부가가치세과세표준증명'을 발급받아야 하지만, 면세사업자라면 '부가가치세면세사업자수입금액증명'을 발급받아야 하므로 증명 종류가 완전히 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의의 경우, 해당 사업자가 부가가치세 과세사업자인지 면세사업자인지 확인되시나요? (과세/면세 여부에 따라 발급받아야 할 증명서 종류가 다릅니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 A 문의의 핵심 미확인 정보인 '과세/면세 구분'을 명확히 묻고 있으며, 답변 가능한 B 문의에는 개입하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 12.120634299935773
+  },
+  {
+    "query_id": "W8-COMP-0329",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 농지 임대차계약의 체결일이나 변경일이 2022년 8월 18일 이후인지 확인되나요? (해당 날짜를 찾지 못하셨다면, 계약서 원본이나 등기부등본 등을 통해 정확한 날짜를 확인해 주셔야 신고 대상 여부를 판단할 수 있습니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 계약 체결·변경일이 2022년 8월 18일 이후인지에 따라 신고 대상 여부가 결정되며, B 문의는 시·구·읍·면장이 농지대장 정리를 위해 소유자에게 보고를 요구하거나 공무원을 파견해 조사할 법적 권한이 있습니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A의 농지 임대차계약 체결일 또는 변경일이 2022년 8월 18일 이후인지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"체결·변경일이 2022년 8월 18일 이후라면 농지대장 변경 신고 대상이지만, 그 이전이라면 신고 대상이 아닙니다. 사용자가 날짜를 찾지 못했다고 했으므로 이 사실 없이는 결론을 내릴 수 없습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 농지 임대차계약의 체결일이나 변경일이 2022년 8월 18일 이후인지 확인되나요? (해당 날짜를 찾지 못하셨다면, 계약서 원본이나 등기부등본 등을 통해 정확한 날짜를 확인해 주셔야 신고 대상 여부를 판단할 수 있습니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 A 문의의 핵심 누락 정보인 계약 체결일 및 변경일 확인을 요구하고 있으며, B 문의에는 불필요한 질문을 하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 14.201460400014184
+  },
+  {
+    "query_id": "W8-COMP-0334",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 공동사업자 구성원 변경(중대한 사안) 대리 접수 시 공동사업자 전원의 인감증명서 등이 첨부된 합의의사 확인 서류가 필요하며, 위임인 확인서류는 사본 제출이 가능합니다. B 문의는 '사업 내역'을 보려면 사업자등록증명, '낸 세금'을 보려면 국세 납부내역증명을 발급받아야 합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "passed": false,
+    "seconds": 3.6525238999165595
+  },
+  {
+    "query_id": "W8-COMP-0319",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 병적증명서를 대리 신청하시는 분이 발급 대상자와 어떤 친족 관계인지(예: 부모, 자녀, 형제자매, 배우자 등) 확인해 주시겠어요?",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 대리인의 친족 관계(직계존비속, 형제자매, 배우자 여부)에 따라 위임장 생략 가능 여부가 결정되며, B 문의는 인터넷 신청 시 방문 수령이 가능합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의에서 병적증명서를 대리 신청하려는 사람이 발급 대상자와 어떤 친족 관계인지(직계존비속, 형제자매, 배우자 중 하나인지 여부)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"발급 대상자의 직계존비속, 형제자매 또는 배우자인 경우에만 위임장 및 위임한 사람의 신분증 제출이 생략 가능합니다. 그 외의 가족 관계(예: 사촌, 고모 등)라면 위임장이 필수이므로, 관계 확인 없이는 '위임장 생략 준비'가 올바른지 판단할 수 없습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 병적증명서를 대리 신청하시는 분이 발급 대상자와 어떤 친족 관계인지(예: 부모, 자녀, 형제자매, 배우자 등) 확인해 주시겠어요?\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 A 문의의 불명확한 친족 관계를 구체적으로 묻고 있어 required 조건을 충족하며, B 문의에는 영향을 주지 않습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 13.763377199997194
+  },
+  {
+    "query_id": "W8-COMP-0326",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B의 경우, 고등학교를 졸업한 시·도와 졸업 연도를 알려주세요. (거주지와 졸업지는 다를 수 있으며, 본문 기준에 따라 졸업한 시·도와 연도에 따라 발급 가능 여부가 달라집니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A는 '중등학교 성적증명' 민원을 이용해야 하며, B는 졸업한 시·도와 연도에 따라 발급 가능 여부가 달라지므로 해당 정보를 확인해야 합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B의 고등학교 졸업 연도\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"본문에 따르면 고등학교 성적증명은 2003년 1월 이후 졸업자부터 가능하나, 경기도는 2006년 이후 졸업자부터 가능합니다. 연도에 따라 발급 가능 여부가 결정됩니다.\"\n    },\n    {\n      \"fact\": \"B의 고등학교 졸업 소재지(시·도)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"본문은 거주지(경기도)가 아닌 졸업한 시·도 기준으로 발급 가능 연도를 구분합니다(예: 강원/충남은 2004년 이후). 거주지와 졸업지가 다를 경우 적용 기준이 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B의 경우, 고등학교를 졸업한 시·도와 졸업 연도를 알려주세요. (거주지와 졸업지는 다를 수 있으며, 본문 기준에 따라 졸업한 시·도와 연도에 따라 발급 가능 여부가 달라집니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 B 문의의 필수 정보(졸업 시·도, 연도)를 정확히 요구하고 있으며, A 문의에는 불필요한 정보를 묻지 않고, B 문의의 금지 사항(현재 주소 기준 간주 등)을 위반하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 16.794635400059633
+  },
+  {
+    "query_id": "W8-COMP-0331",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 지갑에서 챙기신 신분증의 종류(예: 주민등록증, 운전면허증, 여권 등)와 유효기간이 남아 있는지 알려주세요.",
+    "raw": "{\n  \"core_conclusion\": \"A는 신분증의 종류와 유효기간을 확인해야 발급 가능 여부를 판단할 수 있고, B는 등본 발급 취소 시 수수료 반환 여부는 성남시 조례(반환 가능)와 주민등록법 시행규칙(반환 불가) 중 어느 규정이 우선 적용되는지 해석이 필요하나, 일반적으로 민원 처리 전 취소 시 조례에 따라 반환 가능할 수 있음.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A가 지갑에서 챙긴 신분증의 종류(예: 주민등록증, 운전면허증, 여권 등)와 유효기간 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"신분증 종류가 인정 목록(주민등록증, 청소년증, 운전면허증, 국가유공자증, 장애인등록증, 외국인등록증, 여권)에 포함되지 않거나 유효기간이 만료된 경우 신분 확인이 불가하여 등본 발급이 거부됨.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 지갑에서 챙기신 신분증의 종류(예: 주민등록증, 운전면허증, 여권 등)와 유효기간이 남아 있는지 알려주세요.\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 A 문의에 대해 신분증의 종류와 유효기간이라는 필수 정보를 명확히 요구하고 있으며, B 문의의 답변 가능 사항에는 불필요한 질문을 하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 15.398372199968435
+  },
+  {
+    "query_id": "W8-COMP-0318",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 주거가 일정하지 않은 경우 실제 거주지 관할 시장·군수·구청장이 담당하며, B는 개별가구 구성원 수(주민등록표 등재자 중 동거인 제외, 배우자·미혼자녀·생계주거공동자 포함)를 기준으로 기재해야 한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "passed": false,
+    "seconds": 2.699607399990782
+  },
+  {
+    "query_id": "W8-COMP-0327",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 제출해야 하는 서류의 정확한 명칭이나 해당 서류가 필요한 민원의 종류(예: 농지전용허가, 지적공부정리, 토지이용계획확인 등)를 알려주시겠어요? (B 문의는 개별공시지가 확인서 발급 처리기간이 '즉시(근무시간 내 3시간)'임을 안내해 드립니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A는 필요한 서류의 종류를 알 수 없어 답변이 불가능하며, B는 개별공시지가 확인서 발급 처리기간이 즉시(근무시간 내 3시간)입니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A가 제출해야 하는 서류의 정확한 명칭 또는 용도(예: 토지대장, 등기부등본, 토지이용계획확인서 등)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"A는 '토지 서류 아무거나'라고 했으나, 민원 목적에 따라 필요한 서류가 다르고(예: 농지전용허가 시 개별공시지가확인서, 지적공부정리 시 소유권증명서류 등), 어떤 서류가 필요한지 알 수 없으므로 답변할 수 없습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 제출해야 하는 서류의 정확한 명칭이나 해당 서류가 필요한 민원의 종류(예: 농지전용허가, 지적공부정리, 토지이용계획확인 등)를 알려주시겠어요? (B 문의는 개별공시지가 확인서 발급 처리기간이 '즉시(근무시간 내 3시간)'임을 안내해 드립니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 A 문의에 대해 필요한 서류의 정확한 명칭이나 민원 종류를 요구하여 required 조건을 충족하며, 답변 가능한 B 문의에는 불필요한 정보를 묻지 않고 처리 기간만 안내하여 asks_unneeded 조건을 만족합니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 14.852922599995509
+  },
+  {
+    "query_id": "W8-COMP-0314",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해 안내를 위해, 졸업증명서 발급을 시도했을 때 화면에 표시된 구체적인 오류 메시지나 안내 문구를 알려주세요.",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 초·중·고 졸업증명 온라인 발급 가능 연도(81학년도/1982년 2월)를 안내하고, B 문의는 온라인 발급 실패 시 화면에 표시되는 오류 메시지나 안내 문구를 확인하여 원인(자격 미달, 시스템 오류 등)을 파악한 후 적절한 대안(방문, 무인발급기 등)을 안내하는 것입니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 졸업증명서 발급 시도 시 화면에 표시되는 구체적인 오류 메시지나 안내 문구\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"오류 메시지에 따라 '졸업 연도 미달(온라인 불가)', '시스템 일시적 오류', '본인 인증 실패' 등 원인이 달라지며, 이에 따라 방문 발급, 무인발급기 이용, 또는 재시도 등 안내해야 할 처리 방식이 완전히 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해 안내를 위해, 졸업증명서 발급을 시도했을 때 화면에 표시된 구체적인 오류 메시지나 안내 문구를 알려주세요.\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 B 문의의 required 항목인 '어떤 오류가 나는지'를 구체적으로 묻고 있어 필수 정보를 적절히 요청합니다. A 문의는 이미 답변 가능한 상태이므로 불필요한 정보를 묻지 않았으며, B 문의의 must_not(개인정보 요구 등) 위반 사항도 없습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 14.781092999968678
+  },
+  {
+    "query_id": "W8-COMP-0316",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 재난 시 국가·지자체의 건축물현황도 열람 특례가 존재하며, B 문의는 신청인이 소유자 현황의 범위(현 소유자 또는 전체)를 직접 선택해야 하므로 대리가 불가능합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "passed": false,
+    "seconds": 3.913580699940212
+  },
+  {
+    "query_id": "W8-COMP-0345",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 대상자의 병역 상태가 '복무필자 또는 미필자'인지 '병역면제자 등'인지 확인해 주시겠어요? (복무필/미필은 즉시, 면제자는 1일 소요)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 대상자의 병역 상태(복무필/미필/면제)에 따라 처리기간이 즉시(3시간) 또는 1일로 달라지므로 상태 확인이 필요하며, B 문의는 전산 확인 가능 시 발급 담당자가 소관부서 날인을 갈음할 수 있는지 여부에 대한 규정 안내입니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의 대상자의 병역 상태(복무필, 미필, 면제 등)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"복무필자·미필자는 즉시(근무시간 내 3시간), 병역면제자 등은 총 1일로 처리기간이 달라짐\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 대상자의 병역 상태가 '복무필자 또는 미필자'인지 '병역면제자 등'인지 확인해 주시겠어요? (복무필/미필은 즉시, 면제자는 1일 소요)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 A 문의의 처리기간 산정을 위해 필수적인 대상자 유형(복무필/미필 vs 면제)을 명확히 묻고 있으며, B 문의에는 불필요한 정보를 요구하지 않습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 13.07956079998985
+  },
+  {
+    "query_id": "W8-COMP-0336",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"교육급여 수급자 증명서 단독 발급 주체는 시·도 교육감(교육청)이며, 일반 국민기초생활수급자 증명서는 시장·군수·구청장(시·군·구)이 발급한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "passed": false,
+    "seconds": 4.013715700013563
+  },
+  {
+    "query_id": "W8-COMP-0342",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의와 관련하여, 요청하신 건축물현황도가 건물과 대지의 배치를 나타내는 '배치도'인지, 아니면 층별 내부 구조를 나타내는 '평면도(층 안 방 배치)'인지 확인 부탁드립니다. (참고: A 문의의 경우, 폐쇄된 기존 건축물대장을 원형 그대로 복사하고 데이터베이스화한 경우에는 '정부기록보존소'로 이관할 수 있습니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 폐쇄된 기존 건축물대장을 원형 복사 및 DB화한 경우 정부기록보존소로 이관할 수 있으며, B 문의는 건축물현황도 중 '배치도'는 소유자 동의 없이 발급 가능하나 '평면도(층 안 방 배치)'는 소유자 동의 또는 특정 자격 요건이 필요합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 요청한 건축물현황도가 '배치도'인지 '평면도(층 안 방 배치)'인지 구분되지 않는 상태\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"배치도인지 평면도인지에 따라 소유자 동의 필요 여부가 완전히 달라지므로, 사용자가 어떤 도면을 원하는지(또는 화면에 표시된 도면의 종류)를 알아야 정확한 답변이 가능합니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의와 관련하여, 요청하신 건축물현황도가 건물과 대지의 배치를 나타내는 '배치도'인지, 아니면 층별 내부 구조를 나타내는 '평면도(층 안 방 배치)'인지 확인 부탁드립니다. (참고: A 문의의 경우, 폐쇄된 기존 건축물대장을 원형 그대로 복사하고 데이터베이스화한 경우에는 '정부기록보존소'로 이관할 수 있습니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 B 문의의 required인 '현황도의 구체적인 종류(배치도 vs 평면도)'를 명확히 묻고 있습니다. A 문의는 답변 가능한 상태이므로 추가 질문이 불필요하며, 질문은 B에만 집중되어 있습니다. 또한 B의 must_not인 '단정하지 않는다'를 위반하지 않고 선택지를 제시하여 확인을 구하고 있습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 17.045048900065012
+  },
+  {
+    "query_id": "W8-COMP-0337",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의의 경우, 서류를 제출해야 하는 기관(제출처)에서 '일반증명서'와 '상세증명서' 중 어떤 것을 요구했는지 알려주세요. (B 문의는 특정증명서로 특정 과거 혼인 기록만 선택하여 발급받을 수 있습니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 제출처의 요구 서류(일반/상세)에 따라 버튼이 달라지므로 확인이 필요하고, B 문의는 특정증명서로 과거 혼인 중 하나만 선택 발급이 가능합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의에서 제출처(기관)가 요구하는 혼인관계증명서의 종류(일반증명서 또는 상세증명서)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"제출처가 '일반'을 요구하면 일반증명서 버튼을, '상세'를 요구하면 상세증명서 버튼을 선택해야 하므로 결론이 달라짐\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의의 경우, 서류를 제출해야 하는 기관(제출처)에서 '일반증명서'와 '상세증명서' 중 어떤 것을 요구했는지 알려주세요. (B 문의는 특정증명서로 특정 과거 혼인 기록만 선택하여 발급받을 수 있습니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 A 문의의 불명확한 부분(일반/상세 중 요구 사항)을 명확히 묻고 있어 required를 충족합니다. B 문의는 답변 가능한 상태이므로 추가 질문을 하지 않고 정보를 제공하여 asks_unneeded 조건을 만족합니다. 또한 A 문의의 must_not(일반과 상세가 같다는 주장)을 위반하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 13.397109200013801
+  },
+  {
+    "query_id": "W8-COMP-0350",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해 안내드리기 위해 확인이 필요합니다. 이혼한 아버지와 현재 주민등록상 같은 세대에 속해 계신가요? (아니면 다른 세대로 분리되어 계신가요?)",
+    "raw": "{\n  \"core_conclusion\": \"이혼한 부모와 같은 세대를 구성하지 않은 직계비속이 신청하는 경우, 주민등록법 제29조 제10항에 따라 등본은 발급 불가하며 초본만 발급 가능합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B의 경우, 이혼한 아버지와 현재 주민등록상 같은 세대에 속해 있는지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"같은 세대라면 제29조 제10항의 '같은 세대를 구성하지 아니한' 요건에 해당하지 않아 등본 발급이 가능할 수 있으며, 다른 세대라면 초본만 가능합니다. B는 이 사실을 모른다고 했으므로 확인이 필요합니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해 안내드리기 위해 확인이 필요합니다. 이혼한 아버지와 현재 주민등록상 같은 세대에 속해 계신가요? (아니면 다른 세대로 분리되어 계신가요?)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "B 문의는 주민등록상 세대 구성 여부가 불명확하여 이를 확인하는 것이 필수적이며, 질문은 정확히 그 정보를 요구하고 있다. A 문의는 이미 정보가 충분하여 질문 대상이 아니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 11.396155199967325
+  },
+  {
+    "query_id": "W8-COMP-0322",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해, 심의까지 거쳤을 때 적용되는 최대 지원 기간을 정확히 알려드리기 위해 확인이 필요합니다. 현재 지원받거나 지원받으려는 항목이 '생계지원(식료품비 등)'인지 '주거지원(임시거소 또는 주거비)'인지 알려주세요.",
+    "raw": "{\n  \"core_conclusion\": \"A는 현장 확인 공무원에게 신분 확인 자료(증표 및 기재 서류)를 요구할 수 있으며, B는 지원 종류(생계지원 또는 주거지원)에 따라 심의 후 최대 지원 기간이 각각 6개월 또는 12개월로 달라진다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B가 실제로 지원받거나 지원받으려는 구체적인 지원 종류(생계지원인지 주거지원인지)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"생계지원(제9조제1항제1호가목)인 경우 심의 후 총 6개월을 초과할 수 없고, 주거지원(제9조제1항제1호다목)인 경우 총 12개월을 초과할 수 없으므로 지원 종류에 따라 적용되는 한도가 완전히 달라짐.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해, 심의까지 거쳤을 때 적용되는 최대 지원 기간을 정확히 알려드리기 위해 확인이 필요합니다. 현재 지원받거나 지원받으려는 항목이 '생계지원(식료품비 등)'인지 '주거지원(임시거소 또는 주거비)'인지 알려주세요.\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 B 문의의 required 조건인 '생계지원·주거지원 중 지원 종류 확인'을 정확히 묻고 있으며, A 문의에는 불필요한 정보를 요구하지 않습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 14.92586439999286
+  },
+  {
+    "query_id": "W8-COMP-0332",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해 안내를 위해 확인이 필요합니다. 회사에서 요구한 서류의 정확한 명칭이 '졸업증명서'인지, 아니면 '검정고시 합격증명서'인지(혹은 다른 명칭인지) 알려주시겠어요?",
+    "raw": "{\n  \"core_conclusion\": \"A는 검정고시 합격증명 민원이 맞으며, B는 최종학력 증명 서류(졸업증명서 또는 검정고시 합격증명서 등)가 필요하나 정확한 서류명을 알 수 없어 추가 확인이 필요합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B가 회사에서 요구받은 서류의 정확한 명칭 또는 해당 서류가 졸업증명서인지 검정고시 합격증명서인지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"B의 문의는 '무슨 민원을 찾아야 하는지'이므로, 요구받은 서류가 '졸업증명서'라면 '초·중·고 졸업증명' 민원을 안내해야 하고, '검정고시 합격증명서'라면 '검정고시 합격증명' 민원을 안내해야 하므로 결론이 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해 안내를 위해 확인이 필요합니다. 회사에서 요구한 서류의 정확한 명칭이 '졸업증명서'인지, 아니면 '검정고시 합격증명서'인지(혹은 다른 명칭인지) 알려주시겠어요?\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 B 문의의 불명확한 서류 명칭을 구체화하여 required 조건(정확한 서류명 확인)을 충족하며, A 문의에는 영향을 주지 않습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 15.64491250005085
+  },
+  {
+    "query_id": "W8-COMP-0346",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해, 현재 돌보고 계신 자녀가 대한민국 국적을 보유하고 있는지 확인 부탁드립니다.",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 긴급복지지원법상 긴급지원금의 양도·담보 제공이 금지되므로 불가능하며, B 문의는 이혼한 외국인이라도 대한민국 국적의 직계존비속을 돌보고 있으면 긴급지원 대상이 될 수 있습니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B의 자녀가 대한민국 국적인지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"긴급복지지원법 시행령 제1조의2 제2호는 '대한민국 국적을 가진 직계존비속을 돌보고 있는 사람'을 대상으로 하므로, 자녀의 국적이 대한민국이 아니면 특례 적용 대상이 아닐 수 있습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해, 현재 돌보고 계신 자녀가 대한민국 국적을 보유하고 있는지 확인 부탁드립니다.\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "B 문의는 긴급지원 특례 적용 여부를 판단하기 위해 자녀의 국적 확인이 필수적이며, 확인 질문이 이 정보를 정확히 요구하고 있습니다. A 문의는 법적 해석으로 답변 가능하므로 불필요한 질문을 하지 않았습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 14.935927100013942
+  },
+  {
+    "query_id": "W8-COMP-0335",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의의 경우, 위임인(사장님)이 개인(사업자)인지 법인인지 확인해 주세요. (B 문의는 법인 위임 시 인감증명서, 사용인감계, 대표자 신분증 중 1개만 제출하면 되므로 추가 확인 사항이 없습니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 위임인이 개인인지 법인인지에 따라 제출 서류가 달라지므로 확인이 필요하며, B 문의는 법인 위임 시 인감증명서, 사용인감계, 대표자 신분증 중 1개만 제출하면 됩니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의에서 위임인(사장님)이 개인(사업자)인지 법인인지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"위임인이 개인이면 신분증 사본으로 충분하지만, 법인이라면 인감증명서, 사용인감계, 대표자 신분증 중 1개를 추가로 제출해야 하므로 결론이 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의의 경우, 위임인(사장님)이 개인(사업자)인지 법인인지 확인해 주세요. (B 문의는 법인 위임 시 인감증명서, 사용인감계, 대표자 신분증 중 1개만 제출하면 되므로 추가 확인 사항이 없습니다.)\"\n}",
+    "judge": {
+      "asked_required": true,
+      "must_not_hit": false,
+      "targets_right_inquiry": true,
+      "asks_unneeded": false,
+      "note": "확인 질문은 정보가 부족한 A 문의의 핵심 미확인 사항(위임 주체가 개인인지 법인인지)을 정확히 묻고 있습니다. B 문의는 이미 답변 가능한 상태이므로 추가 질문을 하지 않고 안내만 하여 불필요한 질문을 피했습니다."
+    },
+    "judge_valid": true,
+    "passed": true,
+    "seconds": 18.302527300082147
+  },
+  {
+    "query_id": "W8-COMP-0338",
+    "group": "clarify",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 지방세 납세증명은 팩스 신청이 가능하나 국세 납세증명(납부내역증명 등)은 팩스 신청 방법이 명시되어 있지 않아 불가능할 수 있으며, B 문의는 지방세 징수유예액은 납세증명서 발급 시 체납액에서 제외됩니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "passed": false,
+    "seconds": 3.8154623999726027
+  },
+  {
+    "query_id": "W8-COMP-0370",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 시설 설치·관리 주체와 입소자 주소지 관계에 따라 지급 주체가 달라지며, B 문의는 이의신청 접수 및 번호 발급은 시스템이 직접 처리할 수 없어 안내만 가능합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의에서 입소자가 A시 주민인지 B시 주민인지 명확히 구분되지 않거나, 두 경우 모두에 대한 답변을 원할 수 있으나, 질문 문맥상 'A시 주민인 경우'와 'B시 주민인 경우'를 비교하는 것이므로 추가 확인이 불필요합니다. 단, B 문의의 경우 '접수 처리'라는 요청 자체가 시스템 불가 영역이므로 사실 확인이 필요 없습니다.\",\n      \"blocks_core_answer\": false,\n      \"changes_answer\": \"A 문의의 경우 질문에서 이미 'A시 주민'과 'B시 주민' 두 경우를 모두 명시하여 비교를 요청했으므로, 추가 사실 확인 없이 근거 법령(기초연금법 시행규칙 제9조 제6항)에 따라 각각의 지급 주체를 설명할 수 있습니다. B 문의는 시스템이 접수·발급을 할 수 없으므로 사용자 정보와 무관하게 거절 안내가 가능합니다.\"\n    }\n  ],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 15.94222660001833
+  },
+  {
+    "query_id": "W8-COMP-0375",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 실제 매매가격 예측이 불가능하며, B 문의는 개별공시지가확인서와 등기사항증명서가 각각 가격과 소유권을 증명하는 별개의 서류이므로 두 서류 모두 필요합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.289495300035924
+  },
+  {
+    "query_id": "W8-COMP-0372",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 긴급복지지원법 제16조에 따라 처분 고지일로부터 30일 이내에 시장·군수·구청장을 거쳐 시·도지사에게 서면으로 이의신청해야 하며, B 문의는 고시 원문 목록을 생성할 수 없으므로 해당 요청은 처리 불가합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.4672410999191925
+  },
+  {
+    "query_id": "W8-COMP-0390",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 기계 고장 시 등기소가 신청인에게 사유와 새로운 발급예정시간을 미리 통지해야 하며, B 문의는 이름 일치만으로 동일인임을 인증하거나 보증하는 것은 시스템이 수행할 수 없는 업무입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.132903599995188
+  },
+  {
+    "query_id": "W8-COMP-0373",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해 답변드리기 위해, 캐나다 비자 신청 시 요구하는 영문 병적증명서에 대해 공증(아포스티유 또는 영사확인)이 필요한지 비자 기관의 요구사항을 확인하셨는지 알려주세요. (B 문의는 '군 운전경력 및 무사고 확인서'로 안내 가능합니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 캐나다 비자 기관의 요구사항을 확인해야 공증 필요 여부를 판단할 수 있고, B 문의는 '군 운전경력 및 무사고 확인서'를 신청하면 됩니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"캐나다 비자 신청 시 요구하는 영문 병적증명서에 대한 공증(아포스티유 또는 영사확인) 필요 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"비자 기관이 공증을 요구하면 추가 절차가 필요하고, 요구하지 않으면 발급받은 영문 병적증명서로 제출 가능합니다. 현재 근거 자료에는 비자 기관의 요구사항에 따른 공증 필요 여부가 명시되어 있지 않아 확답할 수 없습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해 답변드리기 위해, 캐나다 비자 신청 시 요구하는 영문 병적증명서에 대해 공증(아포스티유 또는 영사확인)이 필요한지 비자 기관의 요구사항을 확인하셨는지 알려주세요. (B 문의는 '군 운전경력 및 무사고 확인서'로 안내 가능합니다.)\"\n}",
+    "seconds": 12.767035400029272
+  },
+  {
+    "query_id": "W8-COMP-0383",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 시스템이 수행할 수 없는 공식 유권해석 발행 요청이므로 거절 안내를 하고, B 문의는 농지대장 등본 발급 시 지정된 신청서 출력 여부에 대한 답변을 제공한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.256910299998708
+  },
+  {
+    "query_id": "W8-COMP-0369",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 시스템이 처리할 수 없는 실제 신청 취소 요청이므로 안내만 가능하며, B 문의는 중개 의뢰 사실 증명 서류를 제출해야 평면도 발급이 가능합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.183026399929076
+  },
+  {
+    "query_id": "W8-COMP-0388",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해 답변드리기 위해, B의 소득인정액(소득 및 재산 수준)과 공무원·군인·사학 등 직역연금을 받고 있는지(또는 그 배우자가 받고 있는지) 알려주시겠어요? A 문의는 법적으로 30일 이내 신고 의무가 명확하여 별도 정보 없이 안내 가능합니다.",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 기초연금 수급자가 결혼·이혼 시 30일 이내에 신고해야 하며, B 문의는 65세 이상이라는 사실만으로 기초연금 승인을 확정할 수 없고 소득인정액 등 추가 심사가 필요합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B의 소득인정액(소득 및 재산 수준)과 직역연금 수급 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"기초연금법 제3조에 따라 65세 이상이어도 소득인정액이 선정기준액을 초과하거나 직역연금 수급자(배우자 포함)인 경우 지급 대상에서 제외되므로, 승인 여부가 '예'에서 '아니오'로 달라질 수 있습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해 답변드리기 위해, B의 소득인정액(소득 및 재산 수준)과 공무원·군인·사학 등 직역연금을 받고 있는지(또는 그 배우자가 받고 있는지) 알려주시겠어요? A 문의는 법적으로 30일 이내 신고 의무가 명확하여 별도 정보 없이 안내 가능합니다.\"\n}",
+    "seconds": 12.72214960004203
+  },
+  {
+    "query_id": "W8-COMP-0386",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 법 제29조제2항제6호(정당한 이해관계인)에 따른 초본 발급 시 병역사항과 과거 주소변동사항이 생략된다는 점을 안내하고, B 문의는 시스템이 개인 기록의 열람 로그나 특정 직원 실명 조회를 제공할 수 없으므로 관련 기관에 공식적으로 문의해야 함을 안내한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.873230000026524
+  },
+  {
+    "query_id": "W8-COMP-0382",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의와 관련하여, 이의신청서를 제출하신 채널(직접 방문, 우편, 전자민원창구 등)이 무엇이며, 현재 해당 채널의 화면이나 시스템에서 접수 확인 문구(예: 접수번호, 접수 완료 알림 등)가 표시되고 있는지 알려주세요.",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 기초연금 수급권과 환수금 환수권의 시효 기간(5년)을 안내하는 것이며, B 문의는 이의신청서 파일이 저장되었으나 공식 접수 여부가 불분명한 경우 접수 사실 확인을 요청하는 것이다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 이의신청서를 제출한 채널(방문, 우편, 전자민원창구 등)과 해당 채널에서 접수 확인이 가능한 상태(접수번호 발급 여부, 시스템 상태 등)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"시스템은 실제 접수 상태나 개인 기록을 조회할 수 없으므로, 사용자가 '확인해줘요'라고 요청한 사항에 대해 '조회 불가'라고 안내해야 함. 다만, 전자민원창구 등 특정 채널의 경우 '도달 시점'이나 '접수증 발급 규정'에 따라 접수 인정 기준이 달라질 수 있어, 사용자가 어떤 채널을 사용했는지와 현재 화면에 접수 확인 문구가 있는지 여부에 따라 '접수된 것으로 간주되는지'에 대한 법적 해석이나 안내 방식이 달라질 수 있음. 그러나 본 단계에서는 시스템이 할 수 없는 조회 요청이므로, 이를 명확히 하기 위해 채널과 현재 상태를 확인해야 함.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의와 관련하여, 이의신청서를 제출하신 채널(직접 방문, 우편, 전자민원창구 등)이 무엇이며, 현재 해당 채널의 화면이나 시스템에서 접수 확인 문구(예: 접수번호, 접수 완료 알림 등)가 표시되고 있는지 알려주세요.\"\n}",
+    "seconds": 16.37774119991809
+  },
+  {
+    "query_id": "W8-COMP-0354",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "할아버지께서 2007년 12월 31일 이전에 사망하여 제적되셨는지, 아니면 그 이후에 사망하셨는지 확인 부탁드립니다. (B 문의의 한자 판독은 시스템에서 지원되지 않음을 안내드립니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 가족관계등록부 작성 시 제적부 기록이 전산으로 이관되는지 여부와 할아버지 기록의 소재를 확인하는 것이며, B 문의는 제적부 원본의 한자 이름 판독 요청으로 시스템이 수행할 수 없는 업무입니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"할아버지(2000년 사망)가 2007년 12월 31일 가족관계등록부 작성 기준일 이전에 제적되었는지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"기준일 이전 사망으로 제적된 경우 가족관계등록부가 작성되지 않아 제적등본으로 확인해야 하므로, '새로 만든 가족관계등록부에 옮겨졌다'는 전제가 틀려질 수 있습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"할아버지께서 2007년 12월 31일 이전에 사망하여 제적되셨는지, 아니면 그 이후에 사망하셨는지 확인 부탁드립니다. (B 문의의 한자 판독은 시스템에서 지원되지 않음을 안내드립니다.)\"\n}",
+    "seconds": 12.414852900081314
+  },
+  {
+    "query_id": "W8-COMP-0359",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 경계 말뚝의 GPS 좌표를 계산하기 위해 지적측량(경계복원측량 등)을 의뢰하여 측량성과를 발급받으신 적이 있으신가요?",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 지적측량 성과 결정이 불가능하여 답변이 불가하며, B 문의는 전자정부법상 전자문서 정의와 종이 출력물의 법적 효력(공문서 인정 조건)에 대한 안내가 가능합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의: 지적측량(경계복원측량 등)을 의뢰하여 측량성과를 발급받았는지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"측량성과가 없으면 경계점 GPS 좌표를 계산할 수 없으므로 '불가'로 결론이 확정됩니다. 측량성과가 있다면 그 자료에 기반한 안내가 가능하지만, 본문은 측량 절차 규정만 있어 실제 좌표 계산은 시스템이 수행할 수 없는 업무이므로 결국 불가로 귀결되나, 사용자가 이미 측량성과를 보유하고 있는지 여부에 따라 '측량 필요' 안내와 '측량성과 활용 불가' 안내의 뉘앙스가 달라질 수 있어 확인이 필요합니다. 다만, 시스템이 측량성과를 직접 계산/제공할 수 없으므로 사실상 '불가'로 안내하되, 사용자가 측량성과를 이미 가지고 있는지 여부는 안내의 정확성을 위해 필요합니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 경계 말뚝의 GPS 좌표를 계산하기 위해 지적측량(경계복원측량 등)을 의뢰하여 측량성과를 발급받으신 적이 있으신가요?\"\n}",
+    "seconds": 15.142661200021394
+  },
+  {
+    "query_id": "W8-COMP-0356",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 기본증명서를 청구하시는 분이 본인 본인인가요, 아니면 대리인이나 제3자인가요?",
+    "raw": "{\n  \"core_conclusion\": \"A는 본인 청구 시 사유 자료만 제출하면 되며, B는 가족관계등록부상 부모의 국적 기재만으로는 해당 국가 국민임을 인증할 수 없습니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A가 기본증명서를 청구하는 주체가 본인인지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"본인인 경우 신청서 작성 생략 및 사유 자료만으로 가능하지만, 대리인이나 제3자(정당한 이해관계인 등)인 경우 위임장, 신분증, 정당한 이해관계를 소명하는 자료 등 추가 서류가 필요하여 결론이 달라짐\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 기본증명서를 청구하시는 분이 본인 본인인가요, 아니면 대리인이나 제3자인가요?\"\n}",
+    "seconds": 8.1818211999489
+  },
+  {
+    "query_id": "W8-COMP-0364",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 토지e음에서 단순 열람이 가능하고, B는 고시 번호만으로는 필지 포함 여부를 확정할 수 없으므로 지형도면 확인이나 토지이용계획확인서 발급이 필요합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 2.6185491000069305
+  },
+  {
+    "query_id": "W8-COMP-0365",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 문서의 진위 확정(위조 여부 판별)을 요구하여 시스템이 답변할 수 없고, B 문의는 사업자등록증명과 소득금액증명의 정의 및 차이점을 근거 문서에 기반하여 설명할 수 있습니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 2.4414164000190794
+  },
+  {
+    "query_id": "W8-COMP-0368",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 세무업무 위임 시 민감정보를 제외한 정보를 제공받을 수 있으며, B 문의는 특정 연도·세목의 과세 없음 확인서로 과거·미래·전국·전체 세목의 무세 상태를 인증할 수 없습니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.0698376999935135
+  },
+  {
+    "query_id": "W8-COMP-0355",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 발급받을 제적등본을 제출할 구체적인 목적(예: 부동산 등기, 비자 신청, 기타 행정 절차 등)을 알려주시겠어요? 제출처의 요구사항에 따라 번역문 첨부나 아포스티유 적용 절차가 달라질 수 있어 정확한 안내를 위해 필요합니다.",
+    "raw": "{\n  \"core_conclusion\": \"A는 제적등본 발급 후 아포스티유 및 번역 인증 절차를 안내받기 위해 추가 확인이 필요하며, B는 가족 전체가 포함된 문서를 원하므로 제적등본을 발급받아야 합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A가 제적등본을 제출할 구체적인 목적(예: 부동산 등기, 비자 신청, 기타 행정 절차 등)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"제출 목적에 따라 번역문 첨부 의무나 아포스티유 적용 여부가 달라질 수 있습니다. 특히 부동산 등기 등 특정 법령이 적용되는 경우와 일반적인 외교·영사 절차는 요구 서류가 다를 수 있어, '빠짐없이' 확정된 절차를 안내하려면 제출처의 요구사항을 확인해야 합니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 발급받을 제적등본을 제출할 구체적인 목적(예: 부동산 등기, 비자 신청, 기타 행정 절차 등)을 알려주시겠어요? 제출처의 요구사항에 따라 번역문 첨부나 아포스티유 적용 절차가 달라질 수 있어 정확한 안내를 위해 필요합니다.\"\n}",
+    "seconds": 14.084731300012209
+  },
+  {
+    "query_id": "W8-COMP-0389",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해, 건축물대장에서 정정하려는 '표시사항'의 구체적인 내용(예: 층수, 면적, 용도 등)이 무엇인지 알려주세요. (참고: A 문의의 경우, 임차인으로서 평면도를 열람할 수 있는 권리와 이를 인터넷에 공개했을 때 발생하는 저작권·개인정보보호법 등 다른 법률상의 책임은 별개이므로, 열람 가능 여부가 공개의 법적 면책을 보증하지는 않습니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 임차인의 열람권과 인터넷 공개의 법적 책임(저작권, 개인정보 등)은 별개이므로 보증할 수 없으며, B 문의는 건축물대장 표시사항의 최초 기재 오류 정정은 '건축물표시 정정신청서'를 사용해야 합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 정정하려는 '표시사항'의 구체적 내용(예: 층수, 면적, 용도 등)이 무엇인지\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"정정 대상이 '표시사항'인지 '소유자' 또는 '지번/주소'인지에 따라 신청서 종류(건축물표시 정정신청서 vs 소유자 정정신청서 vs 지번/주소 정정신청서)가 완전히 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해, 건축물대장에서 정정하려는 '표시사항'의 구체적인 내용(예: 층수, 면적, 용도 등)이 무엇인지 알려주세요. (참고: A 문의의 경우, 임차인으로서 평면도를 열람할 수 있는 권리와 이를 인터넷에 공개했을 때 발생하는 저작권·개인정보보호법 등 다른 법률상의 책임은 별개이므로, 열람 가능 여부가 공개의 법적 면책을 보증하지는 않습니다.)\"\n}",
+    "seconds": 19.09045789996162
+  },
+  {
+    "query_id": "W8-COMP-0361",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 장애 정도 판정(진단)이 불가능하며, B는 장애인증명서 온라인 대리 신청이 불가합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 3.903667400008999
+  },
+  {
+    "query_id": "W8-COMP-0357",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 대출 승인 확정 및 서류 생략 여부에 대한 답변이 불가하며, B 문의는 소득금액증명의 정의와 퇴직소득의 종합소득 합산 여부에 대한 법적 해석을 제공함.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의의 경우, 은행의 대출 심사 기준이나 승인 여부는 행정기관이 확정할 수 없는 사항이므로 추가 정보가 필요하지 않음 (시스템 불가 영역)\",\n      \"blocks_core_answer\": false,\n      \"changes_answer\": \"해당 없음\"\n    }\n  ],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 8.786614799988456
+  },
+  {
+    "query_id": "W8-COMP-0380",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 건축물대장 등본의 첫 장 표기 사항(원본 일치 문구, 담당자 정보)에 대한 확인이며, B 문의는 정보공개법 제9조의 비공개 사유 전부를 나열해 달라는 요청이다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에 대해 정보공개법 제9조 원문 전체를 제공해 달라는 요청은 시스템이 할 수 없는 일(타 법령 원문 제공)이므로 답변 불가로 처리하며, 추가 질문 대상이 아닙니다.\",\n      \"blocks_core_answer\": false,\n      \"changes_answer\": \"시스템이 할 수 없는 요청이므로 사용자 정보와 관계없이 '할 수 없다'고 안내합니다.\"\n    }\n  ],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 10.901512100012042
+  },
+  {
+    "query_id": "W8-COMP-0362",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 보장기관의 전산자료 협조 요청에 대해 관계 기관이 정당한 사유 없이 거절할 수 없다는 점, B 문의는 심사 결과가 나오지 않은 상태에서는 급여액을 확정하여 알려줄 수 없다는 점을 안내하는 것입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.5681305000325665
+  },
+  {
+    "query_id": "W8-COMP-0391",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 시스템이 임의로 문서를 번역·인증하여 발급할 수 없으므로 불가하며, B 문의는 본인 청구 시 등록부 증명신청서를 작성하지 않아도 됩니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 3.8606798999244347
+  },
+  {
+    "query_id": "W8-COMP-0384",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 긴급복지 생계지원이 원칙적으로 현금 지급이지만 거동 불편 등 특정 조건에서 현물 지급이 가능하다는 점, B 문의는 재산 기준 통과 여부는 실제 재산 내역 확인 없이는 임의로 결정할 수 없다는 점을 안내하는 것입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.973029699991457
+  },
+  {
+    "query_id": "W8-COMP-0381",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 사법부의 재판을 대신하는 승소 확답 요청으로 시스템이 답변할 수 없고, B 문의는 말소된 등기사항을 포함하여 발급받을 수 있는 '등기사항전부증명서(말소사항 포함)'를 선택하면 됩니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.947973900008947
+  },
+  {
+    "query_id": "W8-COMP-0392",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 농지대장 기재가 소유권이전등기를 대체하지 못하며 매매 효력 발생 여부는 등기와 별개임을 안내하고, B 문의는 시스템이 임의로 농지대장 소유자 정보를 변경할 수 없으므로 관할 행정청에 정식 절차를 통해 신청해야 함을 안내합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.897810399997979
+  },
+  {
+    "query_id": "W8-COMP-0353",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해, 제공된 근거 자료는 현행 법령(2025년 기준)만을 포함하고 있어 1997년 3월 1일 당시의 정확한 수수료 금액과 적용 조문을 확인해 드릴 수 없습니다. 혹시 1997년 당시의 법령 원문이나 관련 자료가 추가로 있으신가요? (B 문의의 경우, 가족 전원이 기재된 서류가 필요하시다면 '제적초본'이 아닌 '제적등본'을 발급받으셔야 합니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 1997년 당시의 법령 버전 및 수수료 규정이 제공된 근거 본문(현행 법령)에 없으므로 답변이 불가능하며, B 문의는 가족 전원이 포함된 서류가 필요하므로 제적초본이 아닌 제적등본을 발급받아야 합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"1997년 3월 1일 당시 적용되던 '가족관계의 등록 등에 관한 규칙' 또는 구 '호적법' 시행령의 수수료 규정 원문\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"제공된 근거는 현행(2025년 기준) 법령이므로 1997년 당시의 정확한 수수료 금액과 조문을 확정할 수 없습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해, 제공된 근거 자료는 현행 법령(2025년 기준)만을 포함하고 있어 1997년 3월 1일 당시의 정확한 수수료 금액과 적용 조문을 확인해 드릴 수 없습니다. 혹시 1997년 당시의 법령 원문이나 관련 자료가 추가로 있으신가요? (B 문의의 경우, 가족 전원이 기재된 서류가 필요하시다면 '제적초본'이 아닌 '제적등본'을 발급받으셔야 합니다.)\"\n}",
+    "seconds": 16.416769600007683
+  },
+  {
+    "query_id": "W8-COMP-0374",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 구술 신청이 가능하나 혼자 열람은 불가하며, B는 두 문서의 수수료가 다르므로 단일 금액으로 정할 수 없습니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 3.9404274999396876
+  },
+  {
+    "query_id": "W8-COMP-0360",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 장부 보존기간 경과로 인한 민원 접수 거부가 규정상 예외 사항에 해당하여 적법하며, B 문의는 로그인 없이 이름만으로 실제 납부금액을 조회하는 것은 개인정보 보호 및 본인 확인 절차상 불가능합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.096444899914786
+  },
+  {
+    "query_id": "W8-COMP-0387",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 시스템이 파일을 직접 생성·전달할 수 없어 발급 방법을 안내하고, B는 사생활 침해 우려 시 발급 거절이 가능하나 거절 사유는 서면으로 통지해야 함을 안내한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.366533700027503
+  },
+  {
+    "query_id": "W8-COMP-0378",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에서 '부산 쪽 그 구'라고 하셨는데, 확인해 주실 수수료 감면 기준은 '성남시' 조례인가요, 아니면 '부산의 특정 구' 조례인가요? (성남시 조례만 보라고 하셨으나 부산을 언급하여 혼동이 있어 확인이 필요합니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 제도 담당부서와 접수·처리기관의 역할 차이를 설명하고, B 문의는 성남시 조례 기준 다자녀 가구의 토지이용계획확인서 수수료 감면 여부를 확인하는 것입니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 '부산 쪽 그 구'라고 언급한 지역이 성남시인지, 아니면 부산의 특정 구인지 명확히 해주세요. (성남시 조례만 보라고 하셨으나 부산을 언급하여 혼동이 있습니다.)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"성남시 조례를 적용할 경우 다자녀 감면 규정이 없어 수수료가 부과되지만, 부산의 특정 구를 적용할 경우 해당 구의 조례에 따라 감면 여부가 달라질 수 있어 결론이 완전히 달라집니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에서 '부산 쪽 그 구'라고 하셨는데, 확인해 주실 수수료 감면 기준은 '성남시' 조례인가요, 아니면 '부산의 특정 구' 조례인가요? (성남시 조례만 보라고 하셨으나 부산을 언급하여 혼동이 있어 확인이 필요합니다.)\"\n}",
+    "seconds": 12.547807700000703
+  },
+  {
+    "query_id": "W8-COMP-0379",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해, 등본을 발급받으시려는 구체적인 방법(인터넷/정부24, 무인민원발급기, 또는 방문)이 무엇인지 알려주세요. (A 문의의 특정 직원 정보 조회는 시스템에서 처리할 수 없으므로 제외하고 답변드립니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 특정 기관의 실시간 근무자 정보 조회로 시스템이 처리할 수 없으므로 안내가 불가하며, B 문의는 발급 채널(인터넷 vs 무인발급기)에 따라 수수료가 달라지므로 사용자의 이용 채널을 확인해야 정확한 답변이 가능합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 등본을 발급받으려는 구체적인 채널(인터넷/정부24, 무인민원발급기, 방문 등)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"인터넷 발급은 무료, 무인발급기는 200원(400원의 1/2), 방문은 400원이므로 채널에 따라 '무료'인지 '유료'인지 결론이 달라짐\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해, 등본을 발급받으시려는 구체적인 방법(인터넷/정부24, 무인민원발급기, 또는 방문)이 무엇인지 알려주세요. (A 문의의 특정 직원 정보 조회는 시스템에서 처리할 수 없으므로 제외하고 답변드립니다.)\"\n}",
+    "seconds": 11.811289699980989
+  },
+  {
+    "query_id": "W8-COMP-0363",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 지원 회사의 내부 제출 기한이므로 확인 불가하며, B 문의는 본인이 직접 방문 시 위임장이 불필요하고 신분증만 지참하면 됩니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.222123000072315
+  },
+  {
+    "query_id": "W8-COMP-0371",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 등기부상 소유자 표시만으로 전세사기 위험이 0임을 보증할 수 없으므로 거절하며, B 문의는 등기소 일반 발급 수수료는 20장까지 1,200원, 초과분은 장당 50원이며 100원 미만 단수는 버림(제2조)임을 안내한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.979230499942787
+  },
+  {
+    "query_id": "W8-COMP-0358",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의에 대해 안내드리기 위해, 문의하신 국립학교의 정확한 학교명을 알려주시겠어요? (우편 신청 마감 시각과 봉투 규격은 각 학교의 자체 세칙에 따라 다르기 때문입니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 초중고 졸업증명서 발급 접수 기관에 대학이 포함된 이유와 해당 서류의 증명 범위를 설명하고, B 문의는 특정 국립학교의 우편 증명 신청 마감 시각 및 봉투 규격에 대한 안내를 제공하는 것입니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 언급한 '국립학교'의 정확한 학교명\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"제공된 근거 본문(국립학교의 각종 증명 발급 등에 관한 규칙 제3조)에 따르면, 우편 신청 마감 시각과 봉투 규격 등 세부 사항은 해당 학교의 장이 정하는 시행 세칙에 따릅니다. 따라서 구체적인 학교명이 없으면 정확한 마감 시각과 규격을 알 수 없습니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의에 대해 안내드리기 위해, 문의하신 국립학교의 정확한 학교명을 알려주시겠어요? (우편 신청 마감 시각과 봉투 규격은 각 학교의 자체 세칙에 따라 다르기 때문입니다.)\"\n}",
+    "seconds": 10.904694900033064
+  },
+  {
+    "query_id": "W8-COMP-0367",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 시스템이 공식 양식의 시각적 복원(디자인/레이아웃)을 수행할 수 없어 안내가 불가하며, B 문의는 장애인증명서 발급 주체가 시장·군수·구청장이고 병원장 진단서와 구별됨을 안내할 수 있습니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.547223899979144
+  },
+  {
+    "query_id": "W8-COMP-0377",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 시스템이 법령의 실시간 공포 기록을 조회하여 변경 여부를 증명할 수 없으므로 답변이 불가하며, B 문의는 온라인(인터넷) 신청 시 대리인 신청이 불가하므로 아버지의 위임으로 자녀가 자녀 계정으로 온라인 신청하는 것은 불가능하고 방문 신청해야 합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.784571400028653
+  },
+  {
+    "query_id": "W8-COMP-0385",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 도쿄 구청 접수비(엔화)를 성남시 자료로 답변할 수 없으며, B 문의는 법 제14조 제1항 제1호에 따라 대상자마다 사유를 기재해야 하고 30통 이상은 관할 시·읍·면에 제출해야 합니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의의 '도쿄 구청 접수비'는 일본 현지 행정기관의 수수료로, 제공된 성남시 자료(원화 기준)로는 답변할 수 없는 외부 기관의 개별 판단/정보입니다.\",\n      \"blocks_core_answer\": false,\n      \"changes_answer\": \"시스템이 할 수 없는 문의(외부 기관 정보 확답)이므로 추가 질문 없이 '답변 불가'로 안내해야 합니다.\"\n    }\n  ],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 9.94201030000113
+  },
+  {
+    "query_id": "W8-COMP-0376",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의와 관련하여, 증명서를 발급받으려는 대상(사망한 채무자)이 교부제한대상자 또는 공시제한대상자인지 확인되나요? (해당될 경우 가정법원의 결정이 필요합니다.)",
+    "raw": "{\n  \"core_conclusion\": \"A는 채권자로서 상속인 확인 목적의 가족관계증명서 발급이 가능하나, B의 전자증명서 직접 전송 및 수신 확인 요청은 시스템이 수행할 수 없는 업무입니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의 대상인 사망한 채무자가 교부제한대상자 또는 공시제한대상자인지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"대상자가 교부제한대상자 또는 공시제한대상자라면, 채권자라 하더라도 가정법원의 결정이 없으면 증명서 교부가 허용되지 않아 '가능 여부'가 '불가'로 바뀜\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의와 관련하여, 증명서를 발급받으려는 대상(사망한 채무자)이 교부제한대상자 또는 공시제한대상자인지 확인되나요? (해당될 경우 가정법원의 결정이 필요합니다.)\"\n}",
+    "seconds": 12.068744299933314
+  },
+  {
+    "query_id": "W8-COMP-0366",
+    "group": "abstain_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "B 문의와 관련하여, 확인을 원하시는 주소의 거주자가 본인인지 아니면 타인인지 알려주세요.",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 일괄 신청 시 '동일 신청자, 동일 증명자료, 동일 목적'이 같아야 하며 서식 사이에 간인 또는 서명이 필요하다는 규정 안내, B 문의는 타인의 실제 거주 사실 확인은 시스템이 직접 수행할 수 없으므로 관련 민원(전입세대확인서 등) 신청 절차 안내\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"B 문의에서 확인하려는 대상이 본인인지 타인인지 여부\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"본인인 경우 사실조사 결과나 전입세대확인서 발급 자격이 다르며, 타인인 경우 전입세대확인서 발급을 위한 입증서류(임대차계약서 등)가 추가로 필요하거나 발급이 제한될 수 있어 안내 내용이 달라짐\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"B 문의와 관련하여, 확인을 원하시는 주소의 거주자가 본인인지 아니면 타인인지 알려주세요.\"\n}",
+    "seconds": 14.449220800073817
+  },
+  {
+    "query_id": "W8-COMP-0093",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 기본증명서 성명란에 '사망(실종선고)', '사망(국적상실)' 등으로 구분 표기하는 규칙을 안내하고, B 문의는 전입신고로 인한 주민등록 주소 변경과 등록기준지 변경은 별개 절차이며 등록기준지는 자동 변경되지 않음을 안내한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.991369699942879
+  },
+  {
+    "query_id": "W8-COMP-0182",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 홈택스 발급 민원증명에 대해 관할 세무서 담당자가 답변하며 상세 상담 시 주무과 담당자를 연결할 수 있고, B 문의는 대리 신청 시 위임인 신분증 사본 또는 인감증명서 사본 중 하나만 제출하면 됩니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.7395824999548495
+  },
+  {
+    "query_id": "W8-COMP-0062",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 구술 신청 가능 여부와 열람 시 공무원 참여 의무를, B 문의는 농지대장 등본 발급과 내용 수정(변경)의 처리 기간 차이를 설명하는 것입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.7588449999457225
+  },
+  {
+    "query_id": "W8-COMP-0152",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 민법 제161조에 따라 말일이 토요일이면 익일(일요일)로 만료되며, 일요일이 공휴일인 경우 다시 익일(월요일)로 만료됩니다. B 문의는 거부 시 이유를 통지해야 하며, 민원인은 60일 이내에 문서로 이의신청을 할 수 있습니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 8.048380799940787
+  },
+  {
+    "query_id": "W8-COMP-0148",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 지적소관청이 복구하며, 종이(부책/카드)와 전산(정보처리시스템) 모두 지적소관청이 관리·복구 담당이고, B 문의는 인터넷 열람·발급은 무료, 방문 발급은 500원, 방문 열람은 300원입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 7.721585900057107
+  },
+  {
+    "query_id": "W8-COMP-0232",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 1995년 졸업자의 생활기록부 발급 가능 여부(불가)와 졸업증명과의 연도 기준 차이 확인, B 문의는 인터넷 발급 시 공·사립 여부와 관계없이 무료인지 확인입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.256644100067206
+  },
+  {
+    "query_id": "W8-COMP-0145",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 휴업과 폐업은 별개의 사실로 각각의 증명서를 발급받아야 하며, B 문의는 보완 요구 공문에는 담당자의 소속, 성명, 연락처를 모두 명시해야 합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.329948899918236
+  },
+  {
+    "query_id": "W8-COMP-0238",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 타인으로 하여금 부정수급을 하게 한 자에 해당하여 비용징수 대상이 될 수 있으며, B는 조사원이 권한을 표시하는 증표를 제시해야 하므로 이를 요구할 수 있습니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 7.080702500068583
+  },
+  {
+    "query_id": "W8-COMP-0115",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 초중고 졸업증명 온라인 발급 가능 연도(1982년 2월 졸업자부터)를 안내하고, B 문의는 병적증명서와 졸업증명서의 대리인 위임장 생략 규정(형제자매 예외 적용 여부)을 비교하여 답변한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 8.196794399991632
+  },
+  {
+    "query_id": "W8-COMP-0190",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 교육급여 수급자도 수급자 증명서 발급이 가능하며, B는 우편 신청이 가능하고 수수료는 무료입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.819024099968374
+  },
+  {
+    "query_id": "W8-COMP-0101",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 부가세 과세표준증명의 수수료(무료)와 처리기간(즉시/근무시간 내 3시간)을 안내할 수 있으며, B 문의는 보완 요구가 2회 반송될 경우 민원 취하로 간주하여 종결 처리할 수 있다는 규정을 안내할 수 있다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 7.328579599969089
+  },
+  {
+    "query_id": "W8-COMP-0140",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 사업자등록증명 발급 신청서 서식(별지 제1호)과 e-민원실 전자 작성 시 종이 신청서 생략 가능 여부를, B 문의는 사업자등록증명 발급 시 추가 서류 요구 금지 규정(민원 처리에 관한 법률 제10조 등)을 안내하는 것입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 7.2565861999755725
+  },
+  {
+    "query_id": "W8-COMP-0112",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 공동사업자 구성원 변경(중대한 사안) 대리 접수 시 공동사업자 전원의 합의의사 확인 서류(인감증명서 등 첨부)와 위임인 확인서류(사본 가능)가 필요하며, B 문의는 폐업사실증명의 처리기간(즉시~3시간)과 발급비(무료)를 안내합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 9.120838799979538
+  },
+  {
+    "query_id": "W8-COMP-0245",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 학교생활기록부(출결상황 포함)를 발급받으면 되고, B는 학교생활기록 작성 및 관리지침 제9조에 따라 교내상만 기재되므로 교외상은 기재되지 않는 것이 맞으며 해당 조항을 안내할 수 있다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.727924400009215
+  },
+  {
+    "query_id": "W8-COMP-0149",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 1995년 졸업으로 생활기록부 발급 대상이 아니나(2003년 이후 기준), B는 본인 방문 시 위임장 없이 신분증만 지참하면 됩니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.362660199985839
+  },
+  {
+    "query_id": "W8-COMP-0242",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 전산·마이크로필름 확인 불가 시 지방병무청장이 각 군에 병적조회를 의뢰하는 절차이며, B 문의는 가족관계 확인을 위해 행정정보 공동이용 동의 거부 시 민원인이 직접 서류를 제출해야 하고 확인 주체는 담당공무원입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 7.019797799992375
+  },
+  {
+    "query_id": "W8-COMP-0276",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 종이 부속서류 열람 시 등기관 또는 지정 직원 입회 하에 열람이 가능하고, B 문의는 현재 공유자 및 지분만 증명하려면 '등기사항일부증명서(현재 소유현황)'를 발급받으면 됩니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.971111499937251
+  },
+  {
+    "query_id": "W8-COMP-0116",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 두 증명서의 대상(과세/면세)과 근거 법령의 차이로 구분되며, B 문의는 대리인 신청 시 위임인의 신분증 사본 대신 인감증명서 사본을 제출할 수 있습니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.882330600055866
+  },
+  {
+    "query_id": "W8-COMP-0075",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 이미 등록된 장애인이므로 증명서 발급 신청이 재등록 절차가 아니며, B는 부모가 자녀의 가족관계증명서는 온라인으로 발급 가능하나 장애인증명서는 대리인(부모)이 온라인으로 신청할 수 없다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 7.103987900074571
+  },
+  {
+    "query_id": "W8-COMP-0008",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A님께서는 면제자이거나 병적기록이 미비하여 전산 확인이 곤란한 사유에 해당하시나요? B님께서는 현역/보충역/대체복무 복무를 마쳤거나, 전시근로역, 대체역 소집면제/해제자, 또는 병역면제자 중 어디에 해당하시나요?",
+    "raw": "{\n  \"core_conclusion\": \"A는 관할이 아닌 지방병무청에서도 전산 확인이 가능하면 발급받을 수 있으나, 면제자 등 전산 확인이 곤란한 경우나 병적기록 미비자는 발급이 제한되거나 추가 조회가 필요하며, B는 현역/보충역/대체복무 복무 완료자, 전시근로역, 대체역 소집면제/해제자, 병역면제자인 경우 병역사항이 기록된 주민등록표 초본으로 병적증명서를 갈음할 수 있다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A의 병역 상태(예: 면제자 여부, 병적기록 미비 여부 등 전산 확인이 곤란한 사유에 해당하는지)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"전산 확인이 곤란한 경우(면제자 등)에는 관할이 아닌 지방병무청에서 발급이 불가능하거나 예외 처리가 필요하므로, A가 해당 사유에 해당하는지에 따라 '무조건 못 받는다'는 질문에 대한 답이 달라짐.\"\n    },\n    {\n      \"fact\": \"B의 병역 상태(현역/보충역/대체복무 복무 완료, 전시근로역, 대체역 소집면제/해제, 병역면제 중 하나에 해당하는지)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"B가 위 대상에 해당하지 않는 경우(예: 현역 복무 중, 보충역 편입 전 등)에는 주민등록초본으로 병적증명서를 갈음할 수 없으므로, '대신 되는 경우'인지 여부가 결정됨.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A님께서는 면제자이거나 병적기록이 미비하여 전산 확인이 곤란한 사유에 해당하시나요? B님께서는 현역/보충역/대체복무 복무를 마쳤거나, 전시근로역, 대체역 소집면제/해제자, 또는 병역면제자 중 어디에 해당하시나요?\"\n}",
+    "seconds": 23.31425139994826
+  },
+  {
+    "query_id": "W8-COMP-0220",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": true,
+    "question": "A 문의에 대해 확인드립니다. A가 응시한 검정고시는 초졸, 중졸, 고졸 중 어느 종류인가요?",
+    "raw": "{\n  \"core_conclusion\": \"A는 '과목합격증명서'를 신청해야 하며, B는 인터넷 발급 시 수수료가 무료입니다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의의 검정고시 종류(초졸, 중졸, 고졸)\",\n      \"blocks_core_answer\": true,\n      \"changes_answer\": \"초졸, 중졸, 고졸에 따라 발급받는 과목합격증명서의 서식(별지 제17호의2, 제18호, 제19호)이 다르므로 정확한 서류명을 안내하기 위해 필요합니다.\"\n    }\n  ],\n  \"can_answer_now\": false,\n  \"question\": \"A 문의에 대해 확인드립니다. A가 응시한 검정고시는 초졸, 중졸, 고졸 중 어느 종류인가요?\"\n}",
+    "seconds": 13.348564799991436
+  },
+  {
+    "query_id": "W8-COMP-0259",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 해외이주 여권용 납세증명서 발급 소요 기간(10일) 안내, B 문의는 국세 납부내역증명(12매)과 주민등록 등초본(40통)의 다량 신청 시 처리 기간 연장 기준 구분 안내\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 8.12689459999092
+  },
+  {
+    "query_id": "W8-COMP-0304",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 차량등록사업소가 접수와 처리를 모두 수행하며 정부24 목록에 접수/처리기관으로 표시되는지 확인하는 것이고, B 문의는 말소등록된 자동차의 등록원부 등본/초본 발급이 가능한지 및 관련 규정(자동차등록규칙 제10조)을 확인하는 것입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.388263100059703
+  },
+  {
+    "query_id": "W8-COMP-0278",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 부부 모두 기초연금 수급권자일 때 각각 20% 감액된 금액을 지급받으며, 주거급여는 가구 단위로 지급되어 개인별로 두 배를 받는 것이 아님을 안내하고, B 문의는 자기 집 소유 거주자에게 지급하는 수선 관련 급여의 명칭이 '수선유지비'임을 안내한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.971458799904212
+  },
+  {
+    "query_id": "W8-COMP-0042",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 병적증명서 발급 권한이 지방병무청장에게 있어 동장이 발급하지 않는다는 점, B 문의는 가족관계 서류 확인을 위해 행정정보 공동이용 동의가 필요하며 동의하지 않으면 민원인이 직접 서류를 제출해야 한다는 점을 안내하는 것입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.785466699977405
+  },
+  {
+    "query_id": "W8-COMP-0254",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 개별공시지가 결정·공시일부터 30일 이내에 서면으로 시장·군수·구청장에게 이의신청해야 하며, B는 감정평가사 도장 없이 시장·군수·구청장에게 개별공시지가 확인서를 신청·발급받을 수 있다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.228201200021431
+  },
+  {
+    "query_id": "W8-COMP-0010",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 등록관청이 전산정보처리조직 및 행정정보 공동이용을 통해 따로 저장된 원부를 확인하며, B 문의는 건축대장 발급 500원, 자동차등록원부 발급 300원으로 합계 800원이고 인터넷 발급 시 모두 무료입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.532757799956016
+  },
+  {
+    "query_id": "W8-COMP-0312",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 국립학교 증명 발급 시 방문 여부와 관계없이 수수료가 면제되며, B 문의는 규칙에서 정하지 않은 세부사항은 해당 학교장이 정합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.271909400005825
+  },
+  {
+    "query_id": "W8-COMP-0230",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 자동차등록원부 등본(초본) 발급/열람 민원을 통해 저당 공시사항을 확인할 수 있으며, B는 자동차 소유자 본인이 신청할 경우 신청서 없이 신분증 제시만으로 발급받을 수 있다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.711588999954984
+  },
+  {
+    "query_id": "W8-COMP-0036",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 민원 내용 변경 시 특별한 사유 없이 기존 서류 재제출을 요구할 수 없다는 법령에 따라 부당함을 안내하고, B 문의는 폐업사실증명의 처리기간(즉시~3시간)과 발급비(무료)를 안내한다.\",\n  \"missing_facts\": [\n    {\n      \"fact\": \"A 문의에서 재제출을 요구받은 '증빙'의 구체적인 종류(예: 신분증 사본, 위임장 등)와 해당 민원이 '내용 변경' 신청인지 '갱신' 신청인지 여부\",\n      \"blocks_core_answer\": false,\n      \"changes_answer\": \"결론(재제출 요구가 부당함)은 동일하며, 요구된 서류의 종류에 따라 '담당공무원 확인 가능 서류'인지 여부 등 세부 설명만 달라짐\"\n    }\n  ],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 11.869042900041677
+  },
+  {
+    "query_id": "W8-COMP-0006",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 기본증명서 특정증명서 중 '출생, 사망과 실종' 항목을 선택하여 신청하고, B는 가족관계등록법상 사망신고 의무자(동거친족)로서 신고를 완료했으므로 기초연금법상 사망신고 의무를 이행한 것으로 간주됩니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 7.405958499992266
+  },
+  {
+    "query_id": "W8-COMP-0056",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 학교생활기록부(출결상황 포함)를 발급받으면 되고, B는 학교생활기록부Ⅰ과 학교생활세부사항기록부Ⅱ로 구분되며 전산입력은 동일하나 출력 서식과 용도가 다름을 안내한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.939311899943277
+  },
+  {
+    "query_id": "W8-COMP-0028",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"한부모가족지원법 보호대상자임을 증명하는 서류는 '한부모가족증명서'이며, 가족관계증명서로는 보호대상자 지위를 증명할 수 없습니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.83080669993069
+  },
+  {
+    "query_id": "W8-COMP-0211",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 개별공시지가확인서 발급을 위한 제출 서류(신청서)를 안내하고, B 문의는 토지·건물·규제·가격 정보를 통합한 증명서인 '부동산종합증명서'의 명칭을 안내한다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.423364300047979
+  },
+  {
+    "query_id": "W8-COMP-0236",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 가정폭력 피해자 공시제한 시 제적부 기록도 보호 대상인지 확인하고, B 문의는 옛 호적(제적부)에서 호주 및 본인 관련 기록을 발급받기 위한 서류 종류를 안내하는 것입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 6.166842500097118
+  },
+  {
+    "query_id": "W8-COMP-0038",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 민법 제908조의4에 따라 친생부모가 책임 없는 사유로 동의를 못 한 경우 친양자 입양 사실을 안 날부터 6개월 내에 가정법원에 취소 청구가 가능하다는 점, B 문의는 가족관계증명서 발급 시 인터넷은 가족(배우자, 부모, 자녀)도 신청 가능하지만 무인발급기는 본인만 가능하다는 차이를 안내하는 것입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 5.909192199935205
+  },
+  {
+    "query_id": "W8-COMP-0055",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 사건 본인의 등록기준지를 관할하는 가정법원에 정정허가를 신청해야 하며, B는 인지 및 친생자관계 정정 사항을 기재한 기본증명서 특정증명서를 발급받아야 합니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.3111696999985725
+  },
+  {
+    "query_id": "W8-COMP-0200",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 '기초연금' 신청 민원 명칭을 묻는 것이고, B 문의는 미지급 기초연금 청구 시 가족관계등록부 공동이용 동의 거부 시 해당 서류를 직접 첨부해야 하는지 확인하는 것입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.387786899926141
+  },
+  {
+    "query_id": "W8-COMP-0017",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A는 자동차관리법 제12조의2에 따라 이전등록 후에도 이해관계인으로서 등록원부 초본 열람·발급 신청이 가능하며, B는 자동차등록규칙 제11조에 따라 신청 시 효력 있는 사항만 기재하도록 요청할 수 있습니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 4.761831899988465
+  },
+  {
+    "query_id": "W8-COMP-0280",
+    "group": "answer_control",
+    "gate_valid": true,
+    "asked": false,
+    "question": "",
+    "raw": "{\n  \"core_conclusion\": \"A 문의는 병적증명서 발급 권한이 지방병무청장에게 있어 동장이 발급하지 않는다는 점, B 문의는 복무 완료자는 유효기간 무기한, 입영대상자 등은 6개월로 규정 제13조에 따라 다르다는 점을 안내하는 것입니다.\",\n  \"missing_facts\": [],\n  \"can_answer_now\": true,\n  \"question\": \"\"\n}",
+    "seconds": 2.5648943999549374
+  }
+]

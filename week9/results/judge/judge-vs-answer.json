@@ -1,0 +1,13 @@
+{
+  "judged": 180,
+  "failing": 46,
+  "failing_by_action_cause": {
+    "abstain|근거 밖 주장·사실 오류": 2,
+    "abstain|기타": 2,
+    "abstain|필수 처리 미충족": 9,
+    "answer|근거 밖 주장·사실 오류": 7,
+    "answer|필수 처리 미충족": 8,
+    "clarify|필수 처리 미충족": 18
+  },
+  "flip_questions": 11
+}

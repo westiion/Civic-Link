@@ -1,0 +1,482 @@
+[
+  {
+    "query_id": "SJ-N-089",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "SJ-N-090",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "본인 및 배우자의 소득인정액이 선정기준액 이하인지, 그리고 본인 또는 배우자가 공무원·군인·사립학교교직원 연금 등 직역연금을 수급 중인지 알려주세요."
+  },
+  {
+    "query_id": "SJ-N-092",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "SJ-X-056",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "현재 민원 조회 화면이나 접수증에 표시된 처리 상태(예: 접수 완료, 처리 중, 처리 완료 등)나 안내 문구를 알려주시겠어요?"
+  },
+  {
+    "query_id": "SJ-X-058",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "대상자와의 관계(본인, 세대원, 위임자 등)와 주민등록초본을 발급받으려는 구체적인 목적(소송, 채권추심 등)을 알려주세요."
+  },
+  {
+    "query_id": "SJ-X-059",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "수수료 변경에 대해 문의하시는 구체적인 민원 종류(예: 주민등록증 재발급, 부동산 등기 신청 등)와 관련 법령명, 그리고 '내일 바뀔 법'의 구체적인 개정 내용(수수료 인상 여부 등)을 알려주시겠어요?"
+  },
+  {
+    "query_id": "SJ-A-091",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "SJ-A-092",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "농지대장의 소유자 기록이 잘못되었다고 생각하시는 구체적인 사유는 무엇인가요? (예: 등기부등본과 이름이 다른 경우, 오타가 있는 경우, 상속이나 매매 후 반영이 안 된 경우 등)"
+  },
+  {
+    "query_id": "SJ-A-093",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "SJ-A-094",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "발급받으시려는 서류가 '농지원부'인가요, 아니면 '농지대장'인가요? 두 서류는 무인발급기 발급 가능 여부와 수수료가 다르므로 확인이 필요합니다."
+  },
+  {
+    "query_id": "W7-BH024",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "죄송합니다. 제공된 자료에는 수정구청 무인민원발급기의 실시간 재고나 고장 여부를 확인할 수 있는 정보가 포함되어 있지 않습니다. 해당 기관의 대표 전화나 무인발급기 관리 부서 연락처를 알고 계신가요? 또는 다른 문의 사항이 있으시면 알려주세요."
+  },
+  {
+    "query_id": "W7-BH025",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH026",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "정부24 접속을 시도했을 때 화면에 표시되는 구체적인 오류 메시지나 안내 문구를 알려주세요."
+  },
+  {
+    "query_id": "W7-BH027",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "현재 민원 접수 후 보완 요구나 처리 지연 통지 등을 받으신 상태인가요, 아니면 접수 전 단순 문의를 위해 담당자 정보를 원하시나요?"
+  },
+  {
+    "query_id": "W7-BH028",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "죄송합니다. 제공된 자료에는 수정구청의 주말 공사 일정이나 무인기 이용 가능 여부에 대한 정보가 포함되어 있지 않습니다. 정확한 안내를 위해 해당 구청의 공식 홈페이지 공지사항이나 공사 안내문을 확인해 주시거나, 구체적인 공사 내용과 통제 범위를 알려주시면 다시 검토해 드리겠습니다."
+  },
+  {
+    "query_id": "W7-BH029",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "카드 결제를 하신 날짜가 오늘(당일)인지, 그리고 등기사항증명서가 이미 발급 완료된 상태인지 알려주세요."
+  },
+  {
+    "query_id": "W7-BH030",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "죄송합니다. 현재 제공된 법령 자료에는 정부24 시스템의 신청 취소 절차나 화면 조작에 대한 내용이 포함되어 있지 않아 답변을 드리기 어렵습니다. 정부24 고객센터(1588-2188)나 해당 사이트의 '자주 묻는 질문' 또는 '신청 내역 조회' 메뉴를 통해 취소 가능 여부를 확인해 주시거나, 더 구체적인 시스템 안내 문구를 알려주시면 도움을 드릴 수 있습니다."
+  },
+  {
+    "query_id": "W7-BH031",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH032",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "무인민원발급기 화면에 '지문 인식 실패' 외에 다른 오류 메시지나 안내 문구(예: '신분증을 제시하세요', '장비 점검 중', '데이터 불일치' 등)가 표시되나요?"
+  },
+  {
+    "query_id": "W7-BH033",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH034",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH035",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "무인민원발급기에 두고 오신 서류의 종류(예: 주민등록초본, 등기사항증명서 등)와, 그 서류가 정상적으로 발급된 상태인지 아니면 발급 오류(종이가 찢어지거나 잘리는 등)로 인해 기계에 남은 상태인지 알려주세요."
+  },
+  {
+    "query_id": "W7-BH036",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH037",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH038",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH039",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "캐나다 비자 발급 기관(또는 비자 신청 사이트)에서 요구하는 서류의 구체적 형식(예: 아포스티유, 공증, 번역 공증 등)이 무엇인지 확인하여 알려주시겠어요?"
+  },
+  {
+    "query_id": "W7-BH040",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH041",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "집주인이 등기부상 소유자와 동일인임을 확인하기 위해 현재 어떤 절차를 진행 중이신가요? (예: 인터넷등기소에서 증명서 발급 시 수수료 면제 신청, 등기 신청 시 본인 확인, 임대차 신고 등)"
+  },
+  {
+    "query_id": "W7-BH042",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "죄송하지만 제공된 자료는 '소득금액증명서 발급'에 관한 국세청 안내문일 뿐, 은행의 대출 심사 기준이나 승인 조건에 대한 정보는 포함되어 있지 않습니다. 따라서 소득금액증명서만으로 대출 승인이 확정되는지, 혹은 추가 서류가 필요한지에 대해서는 답변해 드릴 수 없습니다."
+  },
+  {
+    "query_id": "W7-BH043",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH044",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "브라질에 제출하실 제적등본의 구체적인 용도(예: 혼인신고, 상속 등)와 브라질 측에서 요구하는 번역문 공증 방식(예: 공증 번역사 지정 여부 등)에 대한 안내를 받으셨는지요?"
+  },
+  {
+    "query_id": "W7-BH045",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "확인하시려는 '오늘'의 날짜와 '어젯밤부터 오늘 아침'의 정확한 시간 범위를 알려주시겠어요? (제공된 자료는 법령 원문으로, 실시간 관보 공포 기록을 직접 조회하여 증명하는 기능은 없으므로 날짜 기준의 비교가 필요합니다.)"
+  },
+  {
+    "query_id": "W7-BH046",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "죄송하지만, 제공된 성남시 무인민원발급기 안내 자료에는 해외 발급 신용카드의 결제 가능 여부가 명시되어 있지 않습니다. 따라서 해외 카드 사용이 가능하다고 확정해 드리기 어렵습니다. 정확한 확인을 위해 해당 발급기 화면의 결제 수단 안내 문구를 확인하시거나, 성남시청 민원실(031-729-2114)로 문의하시는 것을 권장합니다."
+  },
+  {
+    "query_id": "W7-BH047",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH048",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "죄송하지만, 제공된 자료는 현행 법령 및 최근 개정 사항만을 포함하고 있어 1997년 3월 1일 당시의 호적법 관련 수수료 규정과 조문은 확인할 수 없습니다. 당시의 정확한 정보를 얻기 위해서는 국가법령정보센터 등에서 1997년 당시의 '호적법' 또는 '호적법시행규칙' 원문을 조회하셔야 합니다."
+  },
+  {
+    "query_id": "W7-BH049",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH050",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH051",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH052",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7-BH053",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH021",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "정확한 마감 시각과 봉투 규격을 안내해 드리기 위해 다니시는 국립학교의 정확한 학교명을 알려주시겠어요?"
+  },
+  {
+    "query_id": "W7V2-BH022",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "해당 농지법 개정안의 부칙 중 경과조치(기존 계약에 대한 적용 여부 규정) 내용을 알려주시거나, 해당 조항이 포함된 문서를 추가로 제공해 주시겠습니까?"
+  },
+  {
+    "query_id": "W7V2-BH023",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH024",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH025",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH026",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "해당 지구 지정 고시문에 '지형도면'이나 '지적도면'이 별첨으로 포함되어 고시되었는지, 아니면 도면 고시가 생략되었는지 확인되시나요?"
+  },
+  {
+    "query_id": "W7V2-BH027",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH028",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH029",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH030",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "실제 거주 확인을 요청하시는 목적(예: 소송, 채권추심 등)과 신청하시는 분의 신분(본인, 세대원, 제3자 등)을 알려주시겠어요?"
+  },
+  {
+    "query_id": "W7V2-BH031",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH032",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH033",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH034",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH035",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "전화로 접수하려고 하신 구체적인 민원 명칭과 접수 기관(예: 주민센터, 세무서 등)을 알려주세요."
+  },
+  {
+    "query_id": "W7V2-BH036",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH037",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "검색되지 않아 폐지 여부를 확인하려는 구체적인 증명서 명칭은 무엇인가요?"
+  },
+  {
+    "query_id": "W7V2-BH038",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": true,
+    "question": "신청서를 노트북에 저장한 후 실제로 기관에 제출(전송)하셨나요? 만약 제출했다면 어떤 방법(온라인 전자민원창구, 우편, 방문 등)으로 제출하셨는지 알려주세요."
+  },
+  {
+    "query_id": "W7V2-BH039",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  },
+  {
+    "query_id": "W7V2-BH040",
+    "group": "abstain",
+    "tuned": false,
+    "gate_valid": true,
+    "asked": false,
+    "question": ""
+  }
+]
