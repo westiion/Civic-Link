@@ -1,0 +1,64 @@
+[
+  {
+    "query_id": "SJ-N-065",
+    "saved_evidence_covers_resolved": [
+      true
+    ],
+    "asked": true,
+    "clarification": "등본을 요구한 곳이 어디인지(예: 은행, 학교, 관공서 등) 또는 그 등본에 어떤 내용이 들어가는지(예: 가족 관계, 건물 구조, 토지 위치 등)를 알려주시겠어요?",
+    "simulated_reply": "회사요. 같이 사는 가족 다 나와야 한대요.",
+    "resume_status": "responded",
+    "matches_gold": true,
+    "unsupported_claim": false
+  },
+  {
+    "query_id": "SJ-N-066",
+    "saved_evidence_covers_resolved": [
+      false
+    ],
+    "asked": true,
+    "clarification": "요청하신 기관에서 요구한 서류의 정확한 명칭(예: 주민등록표 등본, 초본 등)과 기재 범위(본인만 기재, 세대원 전체 기재 등)가 어떻게 되어 있나요?",
+    "simulated_reply": "아니요, 그건 모르겠어요. 그냥 서류 가져오라고만 했거든요.",
+    "resume_status": "responded",
+    "matches_gold": false,
+    "unsupported_claim": true
+  },
+  {
+    "query_id": "SJ-N-067",
+    "saved_evidence_covers_resolved": [
+      false
+    ],
+    "asked": true,
+    "clarification": "구체적으로 어떤 서류를 열람하시려는 건가요? (예: 부동산 등기부, 가족관계등록부, 주민등록표 등)",
+    "simulated_reply": "등기부요.",
+    "resume_status": "responded",
+    "matches_gold": true,
+    "unsupported_claim": false
+  },
+  {
+    "query_id": "SJ-N-069",
+    "saved_evidence_covers_resolved": [
+      false,
+      false
+    ],
+    "asked": true,
+    "clarification": "요청하신 기관에서 요구한 서류의 정확한 명칭이 '납부내역증명'인지 '납세증명서'인지, 혹은 그 서류를 요구한 목적(예: 세금 납부 사실 확인, 체납액 없음 확인 등)이 무엇인지 알려주시겠어요?",
+    "simulated_reply": "아뇨, 그건 모르겠어요. 그냥 지방세 세목별로 과세된 내역이 필요하다고만 했어요.",
+    "resume_status": "responded",
+    "matches_gold": true,
+    "unsupported_claim": false
+  },
+  {
+    "query_id": "SJ-N-084",
+    "saved_evidence_covers_resolved": [
+      false,
+      false
+    ],
+    "asked": true,
+    "clarification": "말씀하신 '끝나버린 기한'과 '남은 1시간'이 구체적으로 어떤 절차(예: 소멸시효, 행정기관 신청 기한, 계약 기한 등)에 해당하는지, 그리고 그 기한이 '일' 단위로 정해진 것인지 '시' 단위로 정해진 것인지 알려주시겠어요? 또한 해당 기한 만료일이 주말이나 공휴일인지도 확인 부탁드립니다.",
+    "simulated_reply": "아니, 인터넷 등기 열람이요. 시 단위로 남은 거고, 오늘이 공휴일인지는 모르겠어요.",
+    "resume_status": "responded",
+    "matches_gold": false,
+    "unsupported_claim": true
+  }
+]
