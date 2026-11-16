@@ -22,3 +22,15 @@
 - 확인 질문 점검은 지침을 세 번 바꿔 실행했고 결과는 `results/clarify-gate/v1`, `v2`, `v3`에 있다. 스크립트에는 마지막 지침만 남아 있다. 3차 이후 개인정보(주민등록번호 등) 입력을 요구하지 않는 규칙을 추가했으며(4차), 60문항 확대 결과(`results/clarify-gate/scale/`)는 이 규칙이 없는 3차 지침으로 얻은 것이다. 1·2차 지침의 차이는 1·2차 지침의 차이는 [보고서](REPORT.md)의 설명으로 확인한다.
 - 정식 반영하지 않은 프롬프트 변경은 [review/prompt-candidate-unverified.patch](review/prompt-candidate-unverified.patch)로 보존했다.
 - Qwen 판정과 정규식 점검은 초안이다. 보고서에는 직접 검수한 결과를 구분해 적었다.
+
+## LangGraph 프로토타입 (`feat/langgraph-prototype` 브랜치)
+
+코드는 `main`에 병합하지 않았다. 아래 명령은 해당 브랜치로 전환한 뒤 `scripts/`에서 실행한다. 패키지는 `pip install -r requirements-langgraph.txt`로 설치한다.
+
+| 보고서 절 | 실험 | 호출 | 명령 | 결과 |
+|---|---|---|---|---|
+| 5 | 기존 컨트롤러와의 동일성 재생(608문항 × 3조건) | CPU | `..\.venv\Scripts\python.exe replay_langgraph_parity.py --limit 0` | 터미널 출력 |
+| 5 | 재질문 흐름 5문항(점검 → 멈춤 → 재개 → 재검색) | Qwen 약 25회 | `..\.venv\Scripts\python.exe run_week9_langgraph_resume.py` | [resume/](results/resume/langgraph-resume-summary.json) |
+
+단위 테스트: `..\.venv\Scripts\python.exe -m pytest ..\tests\test_langgraph_agent.py`. 재검색은 정답 근거를 돌려주는 대체 검색이라 결과는 상한값이다.
+
