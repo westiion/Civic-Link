@@ -6,7 +6,8 @@ from copy import deepcopy
 from contextlib import closing
 
 from civic_link.common import connect
-from .protocol import ACTIONS, CHECK_STATUSES
+from .clarify import ASK_GUIDELINE
+from .protocol import ACTIONS, ASK_USER, CHECK_STATUSES
 
 
 ROLE = '당신은 Civic-Link의 공공 민원 안내를 위한 검색·근거 확인 에이전트입니다.'
@@ -50,6 +51,7 @@ OUTPUT_FORMAT = {
                       'cursor': '이어 읽을 때만 이전 next_cursor를 그대로 사용. 다른 조건은 유지'},
             'respond': {'text': '사용자에게 전달할 답변·추가 질문·보류 문장',
                         'evidence_ids': '응답에 사용한 실제 근거 ID 목록'},
+            'ask_user': {'question': '사용자에게 할 질문 하나'},
         },
         'reason': '긴 사고 과정 대신 이번 행동의 선택 목적을 짧게 설명',
     },
@@ -176,6 +178,8 @@ def describe_tools(*, candidate_k=100, result_k=10, graph_direction='outgoing',
 def messages(payload, scope, tool_descriptions):
     output = deepcopy(OUTPUT_FORMAT)
     available = [name for name in ACTIONS if name == 'respond' or name in tool_descriptions]
+    if ASK_USER in tool_descriptions:
+        available.append(ASK_USER)
     output['fields']['action']['allowed_values'] = available
     output['fields']['arguments'] = {k:v for k,v in output['fields']['arguments'].items() if k in available}
     if 'search' not in available:
@@ -185,7 +189,7 @@ def messages(payload, scope, tool_descriptions):
     system = {
         '역할·데이터 범위': {'role': ROLE, **scope},
         '도구와 관계 설명': tool_descriptions,
-        '판단 지침': GUIDELINES,
+        '판단 지침': [*GUIDELINES, ASK_GUIDELINE] if ASK_USER in available else GUIDELINES,
         '출력 양식': output,
     }
     return [{'role': 'system', 'content': json.dumps(system, ensure_ascii=False, indent=2)},

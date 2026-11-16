@@ -5,6 +5,7 @@ import json
 from .graph_access import graph_arguments
 
 ACTIONS = ('search', 'graph', 'respond')
+ASK_USER = 'ask_user'  # accepted only when the controller enables it
 CHECK_STATUSES = ('미확인', '일부 확인', '확인', '충돌')
 
 
@@ -35,7 +36,7 @@ def _unique_object(pairs):
     return result
 
 
-def parse_decision(raw, known_ids):
+def parse_decision(raw, known_ids, *, allow_ask=False):
     """Validate format and provenance, not semantic truth or answer sufficiency."""
     if not isinstance(raw, str):
         raise InvalidDecision('Qwen response must be JSON text')
@@ -47,7 +48,7 @@ def parse_decision(raw, known_ids):
     if not isinstance(decision, dict) or set(decision) != {'checks', 'action', 'arguments', 'reason'}:
         raise InvalidDecision('required fields: checks, action, arguments, reason')
     action = decision['action']
-    if action not in ACTIONS:
+    if action not in ACTIONS and not (allow_ask and action == ASK_USER):
         raise InvalidDecision('action must be search, graph or respond')
     _text(decision['reason'], 'reason')
     checks = decision['checks']
@@ -75,7 +76,7 @@ def parse_decision(raw, known_ids):
         except ValueError as exc:
             raise InvalidDecision(str(exc)) from exc
         return decision
-    fields = {'search': {'query'},
+    fields = {'search': {'query'}, 'ask_user': {'question'},
               'respond': {'text', 'evidence_ids'}}[action]
     if set(arguments) != fields:
         raise InvalidDecision(f'{action} arguments must be {sorted(fields)}')

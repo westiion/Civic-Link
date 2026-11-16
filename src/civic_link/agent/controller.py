@@ -6,9 +6,10 @@ import json
 import time
 from dataclasses import asdict, dataclass
 
+from .clarify import ASK_USER_DESCRIPTION, question_violations
 from .client import ModelError
 from .prompts import describe_tools, messages
-from .protocol import InvalidDecision, parse_decision
+from .protocol import ASK_USER, InvalidDecision, parse_decision
 
 
 @dataclass(frozen=True)
@@ -51,7 +52,8 @@ def normalize_result(raw, tool):
 
 
 class RetrievalAgent:
-    def __init__(self, client, tools, *, scope=None, tool_descriptions=None, config=None, allowed_tools=None):
+    def __init__(self, client, tools, *, scope=None, tool_descriptions=None, config=None, allowed_tools=None,
+                 allow_ask=False):
         if set(tools) != {'search', 'graph'}:
             raise ValueError('exactly search and graph tools are required')
         self.client, self.tools = client, tools
@@ -63,6 +65,10 @@ class RetrievalAgent:
             raise ValueError('unsupported allowed tool')
         self.tool_descriptions = {k:v for k,v in self.tool_descriptions.items()
                                   if k not in ('search', 'graph') or k in self.allowed_tools}
+        # Off by default so existing experiments keep byte-identical prompts.
+        self.allow_ask = allow_ask
+        if allow_ask:
+            self.tool_descriptions = {**self.tool_descriptions, ASK_USER: ASK_USER_DESCRIPTION}
 
     def initial_messages(self, question):
         state = self._state(question)
@@ -132,12 +138,15 @@ class RetrievalAgent:
                 'graph_pages': state['graph_pages'],
             },
             '실행 규칙': {
-                'allowed_actions': [*self.allowed_tools, 'respond'] if can_search else ['respond'],
+                'allowed_actions': ([*self.allowed_tools, 'respond'] if can_search else ['respond'])
+                                   + ([ASK_USER] if state.get('ask_allowed') else []),
                 'remaining_model_calls': self.config.max_model_calls - state['model_calls'],
                 'remaining_tool_calls': self.config.max_tool_calls - state['tool_calls'],
             },
         }
-        result = messages(payload, self.scope, self.tool_descriptions)
+        descriptions = (self.tool_descriptions if state.get('ask_allowed')
+                        else {k: v for k, v in self.tool_descriptions.items() if k != ASK_USER})
+        result = messages(payload, self.scope, descriptions)
         state['input_chars'] = sum(len(row['content']) for row in result)
         return result
 
@@ -193,6 +202,12 @@ class RetrievalAgent:
             if self.config.max_tool_calls < 1:
                 raise ValueError('initial search requires a tool budget')
             self._execute(state, 'search', {'query': question}, initial_result)
+        return self._loop(state)
+
+    def _pause(self, state, question):
+        raise NotImplementedError('ask_user needs an interactive agent that can store the paused state')
+
+    def _loop(self, state):
         invalid = 0
         while state['model_calls'] < self.config.max_model_calls:
             request_messages = self._messages(state)
@@ -207,8 +222,8 @@ class RetrievalAgent:
             state['events'].append({'stage': 'qwen_output', 'raw': raw, 'seconds': time.perf_counter()-started,
                                     'usage': copy.deepcopy(getattr(self.client, 'last_usage', None))})
             try:
-                decision = parse_decision(raw, state['seen_ids'])
-                if decision['action'] != 'respond' and decision['action'] not in self.allowed_tools:
+                decision = parse_decision(raw, state['seen_ids'], allow_ask=bool(state.get('ask_allowed')))
+                if decision['action'] not in ('respond', ASK_USER) and decision['action'] not in self.allowed_tools:
                     raise InvalidDecision('tool is disabled in this experiment condition')
                 if decision['action'] == 'graph':
                     arguments = decision['arguments']
@@ -225,7 +240,9 @@ class RetrievalAgent:
                     not set(decision['arguments']['evidence_ids']) <= state['supplied_ids']
                 ):
                     raise InvalidDecision('respond evidence_ids must be supplied in the current input')
-                if decision['action'] != 'respond' and (
+                if decision['action'] == ASK_USER and question_violations(decision['arguments']['question']):
+                    raise InvalidDecision('the question must not ask for personal identifiers or credentials')
+                if decision['action'] not in ('respond', ASK_USER) and (
                     state['tool_calls'] >= self.config.max_tool_calls
                     or state['model_calls'] >= self.config.max_model_calls
                 ):
@@ -244,6 +261,8 @@ class RetrievalAgent:
             action, arguments = decision['action'], decision['arguments']
             if action == 'respond':
                 return self._finish(state, 'responded', arguments['text'], decision=decision)
+            if action == ASK_USER:
+                return self._pause(state, arguments['question'])
 
             self._execute(state, action, arguments)
         return self._finish(state, 'budget_exhausted', '설정된 판단 한도에 도달해 답변을 완료하지 못했습니다.')
