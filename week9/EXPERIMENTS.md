@@ -34,3 +34,12 @@
 
 단위 테스트: `..\.venv\Scripts\python.exe -m pytest ..\tests\test_langgraph_agent.py`. 재검색은 정답 근거를 돌려주는 대체 검색이라 결과는 상한값이다.
 
+## 재질문 정책 구현 (`feat/re-question`)
+
+| 보고서 절 | 실험 | 호출 | 명령 | 결과 |
+|---|---|---|---|---|
+| 5 | 기존 동작 동일성 재생(608문항 × 3조건) | 없음 | `..\.venv\Scripts\python.exe replay_agent_parity.py --limit 0` | 터미널 출력(`total problems 0`) |
+| 5 | 재질문 정책 검증(확인 질문형 60문항) | Qwen 약 120회 | `..\.venv\Scripts\python.exe run_requestion_check.py --workers 4` | [requestion/](results/requestion/requestion-check-summary.json) |
+
+단위 테스트: `..\.venv\Scripts\python.exe -m pytest ..\tests\test_requestion.py`. 재검색은 정답 근거를 돌려주는 대체 검색이라 답변 품질은 상한값이다.
+

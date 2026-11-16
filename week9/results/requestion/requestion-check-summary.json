@@ -1,0 +1,1358 @@
+[
+  {
+    "query_id": "SJ-N-065",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "요청하신 '등본'이 정확히 어떤 문서인지 알 수 있을까요? (예: 주민등록표 등본, 건축물대장 등본, 토지대장 등본, 농지대장 등본 등)",
+    "scenarios": {
+      "human_reply": {
+        "final_status": "responded",
+        "answer": "말씀하신 '회사에 같이 사는 가족 전원의 주민등록 내역'은 **주민등록표 등본**을 의미합니다.\n\n주민등록표 등본은 세대별 주민등록표로서, 한 세대에 속한 모든 구성원의 주민등록 사항이 기재된 문서입니다. [DOC-39d8d4ed529804eda5dc-C0001]\n\n**발급 방법:**\n1. **본인 또는 세대원**이 신청할 수 있습니다. [DOC-0bce286b4d09b5ab71f3-C0045]\n2. 신분증명서를 제시하거나 지문 대조로 신분을 확인해야 합니다. [DOC-39d8d4ed529804eda5dc-C0001]\n3. 구청, 동 주민센터, 무인민원발급기, 인터넷(정부24) 등에서 발급받을 수 있습니다. [DOC-39d8d4ed529804eda5dc-C0001]\n\n참고로, 개인 한 명의 정보만 필요한 경우라면 '주민등록표 초본'을 발급받으면 되지만, 가족 전원(세대원 전체)의 내역이 필요하시다면 '등본'을 발급받으시면 됩니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "cited_covers_resolved": [
+          true
+        ]
+      },
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 요청하신 '등본'이 정확히 어떤 문서인지 알 수 있을까요? (예: 주민등록표 등본, 건축물대장 등본, 토지대장 등본, 농지대장 등본 등)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0,
+        "cited_covers_resolved": [
+          false
+        ]
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "말씀하신 '같이 사는 가족 전원의 주민등록 내역'은 **주민등록표 등본**을 의미합니다.\n\n주민등록표 등본은 세대별 주민등록표로서, 한 세대에 속한 모든 구성원의 주민등록 사항이 기재됩니다. 따라서 회사에 제출할 서류로 '등본'을 요구받았다면, 본인과 같은 세대에 속한 가족 전원의 정보가 포함된 이 문서를 발급받으시면 됩니다.\n\n**발급 방법 및 안내**\n1. **무인민원발급기 이용**: 신분증(또는 지문 인식)을 통해 본인 확인 후 발급받을 수 있습니다. 무인발급기 이용 시 수수료는 200원(정액 400원의 1/2)입니다. [근거: DOC-39d8d4ed529804eda5dc-C0001]\n2. **방문 발급**: 주민센터(동사무소)를 방문하여 신청할 수 있으며, 수수료는 400원입니다. [근거: DOC-39d8d4ed529804eda5dc-C0001]\n3. **신청 자격**: 본인 또는 세대원이 신청할 수 있습니다. [근거: DOC-0bce286b4d09b5ab71f3-C0045]\n\n참고로, 개인 한 명의 정보만 필요한 '주민등록표 초본'과는 다르므로, '등본'을 요구받으셨다면 세대원 전원이 기재된 등본을 발급받으셔야 합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "cited_covers_resolved": [
+          true
+        ],
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-N-066",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "서류를 제출해야 하는 기관(회사, 학교, 관공서 등)에서 정확히 어떤 서류를 요구했나요? (예: '주민등록표 등본', '주민등록표 초본', '주민등록등본' 등 안내받은 문구를 알려주세요.)",
+    "scenarios": {
+      "human_reply": {
+        "final_status": "responded",
+        "answer": "본인 한 명의 상세한 주민등록 사항이 기재된 서류가 필요하시다면 **'주민등록표 초본'**을 발급받으시면 됩니다. [근거: DOC-39d8d4ed529804eda5dc-C0001]\n\n**발급 방법 및 준비물:**\n1. **본인 방문 시**: 신분증(주민등록증, 운전면허증, 여권 등)을 지참하여 시·군·구청, 읍·면·동 주민센터, 무인민원발급기에서 발급받을 수 있습니다. [근거: DOC-39d8d4ed529804eda5dc-C0004, DOC-39d8d4ed529804eda5dc-C0001]\n2. **수수료**: 창구 발급 시 400원이며, 무인민원발급기를 이용하면 200원(1/2 감면)입니다. 인터넷(정부24)으로 전자문서를 발급받으면 무료입니다. [근거: DOC-39d8d4ed529804eda5dc-C0001]\n\n참고로 '주민등록표 등본'은 세대원 전원이 기재되므로, 요청하신 '개인 상세 기록'에는 초본이 적합합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "cited_covers_resolved": [
+          true
+        ]
+      },
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 서류를 제출해야 하는 기관(회사, 학교, 관공서 등)에서 정확히 어떤 서류를 요구했나요? (예: '주민등록표 등본', '주민등록표 초본', '주민등록등본' 등 안내받은 문구를 알려주세요.)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0,
+        "cited_covers_resolved": [
+          false
+        ]
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "본인 한 명의 상세한 주민등록 사항이 기재된 서류가 필요하시다면 **'주민등록표 초본'**을 발급받으시면 됩니다.\n\n주민등록표 등본은 세대원 전원이 기재되지만, 초본은 본인 한 사람의 정보만 기재됩니다. [근거: DOC-39d8d4ed529804eda5dc-C0001]\n\n**발급 방법 및 수수료:**\n1. **무인민원발급기**: 수수료 200원 (정가의 1/2)\n2. **정부24(인터넷)**: 본인 인증 후 무료 발급 가능\n3. **주민센터 방문**: 신분증 지참, 수수료 400원\n\n[근거: DOC-39d8d4ed529804eda5dc-C0001]",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "cited_covers_resolved": [
+          true
+        ],
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-N-067",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "구체적으로 어떤 서류를 열람하시려는 건가요? (예: 부동산 등기부, 가족관계등록부, 주민등록표 등)",
+    "scenarios": {
+      "human_reply": {
+        "final_status": "responded",
+        "answer": "네, 부동산 등기사항증명서(등기부)는 원칙적으로 누구든지 수수료를 내고 열람하거나 발급받을 수 있습니다. [근거 DOC-a11b600332a323f57dac-C0021]\n\n다만, 등기부 본체(등기기록)가 아닌 등기 신청에 사용된 '부속서류'의 경우 이해관계가 있는 부분만 열람할 수 있습니다. [근거 DOC-a11b600332a323f57dac-C0021]\n\n즉, 남의 집이라도 등기부등본(소유자, 저당권 등 권리관계)은 인터넷이나 무인발급기, 등기소를 통해 누구나 발급받을 수 있습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "cited_covers_resolved": [
+          true
+        ]
+      },
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 구체적으로 어떤 서류를 열람하시려는 건가요? (예: 부동산 등기부, 가족관계등록부, 주민등록표 등)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0,
+        "cited_covers_resolved": [
+          false
+        ]
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "네, 부동산 등기사항증명서(등기부)는 '누구든지' 수수료를 내고 열람하거나 발급받을 수 있습니다. 따라서 남의 집 등기부도 열람이 가능합니다. [근거: DOC-a11b600332a323f57dac-C0021]\n\n다만, 등기부에는 소유자의 이름과 주소는 기록되지만, 주민등록번호는 원칙적으로 공개되지 않습니다. 또한, 등기부 부속서류(계약서 사본 등)는 이해관계가 있는 부분만 열람할 수 있습니다. [근거: DOC-a11b600332a323f57dac-C0021]\n\n참고로, 질문자님의 주민등록번호는 등기부 열람과 무관하며, 타인의 등기부를 열람할 때 질문자님의 개인정보를 입력할 필요는 없습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "cited_covers_resolved": [
+          true
+        ],
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-N-069",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "서류를 요구한 곳에서 정확히 '납부내역증명'이라고 했는지, 아니면 '납세증명서'라고 했는지, 혹은 그 서류로 무엇을 확인하려 하는지(예: 세금을 냈다는 사실 확인, 체납이 없다는 사실 확인 등)를 알려주시겠어요?",
+    "scenarios": {
+      "human_reply": {
+        "final_status": "responded",
+        "answer": "알려주신 내용(지방세 어떤 세목이 과세됐는지 내역)에 따르면, 떼어야 하는 서류는 **'지방세 세목별 과세증명서'**입니다.\n\n'납세'와 '납부'가 헷갈리실 수 있는데, 구분은 다음과 같습니다.\n\n1. **지방세 세목별 과세증명서** (필요한 서류)\n   - 지방세(재산세, 자동차세 등)의 **과세 사실**을 증명하는 서류입니다. 즉, 어떤 세목에 대해 세금이 부과되었는지를 확인하는 용도입니다. [근거: DOC-2a946aa97bd76df4af4e-C0001]\n\n2. **지방세 납세증명서**\n   - 발급일 현재 **체납액이 없음**을 증명하는 서류입니다. 세금을 잘 냈는지(체납 여부)를 확인하는 용도이므로, 과세 내역 확인과는 다릅니다. [근거: DOC-b03c8e7d1701192d2c31-C0001]\n\n3. **국세 납부내역증명**\n   - 국세(소득세, 부가가치세 등)를 **납부한 내역**을 확인하는 서류입니다. 지방세와 관련이 없으므로 이번 요청에는 해당하지 않습니다. [근거: DOC-30c13aa7ed0641989fb2-C0001]\n\n**발급 방법:**\n'지방세 세목별 과세증명서'는 무인민원발급기에서 발급 가능합니다. 무인발급기 메뉴에서 '지방세' > '세목별과세증명서'를 선택하시면 됩니다. [근거: DOC-281de2ad41a7f804021d-C0075]",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "cited_covers_resolved": [
+          true,
+          true
+        ]
+      },
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 서류를 요구한 곳에서 정확히 '납부내역증명'이라고 했는지, 아니면 '납세증명서'라고 했는지, 혹은 그 서류로 무엇을 확인하려 하는지(예: 세금을 냈다는 사실 확인, 체납이 없다는 사실 확인 등)를 알려주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0,
+        "cited_covers_resolved": [
+          false,
+          false
+        ]
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용(지방세 세목별 과세 내역 확인)에 따르면, 떼어야 하는 서류는 **'지방세 세목별 과세증명서'**입니다.\n\n'납세증명서'는 체납액이 없음을 증명하는 서류이고, '납부내역증명'은 주로 국세를 납부한 내역을 확인하는 서류이므로, 질문하신 '어떤 세목이 과세되었는지'를 확인하려면 '지방세 세목별 과세증명서'를 발급받으셔야 합니다.\n\n수정구청 무인민원발급기에서도 '지방세 세목별 과세증명서'를 발급받을 수 있습니다. 본인 확인을 위해 신분증을 지참하시고, 무인발급기에서 '지방세' 메뉴를 선택하여 '세목별 과세증명서'를 선택하시면 됩니다.\n\n※ 참고: 주민등록번호는 개인정보이므로 답변에 사용하지 않았으며, 발급 시에는 무인발급기에 직접 입력하시거나 신분증으로 확인하시면 됩니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "cited_covers_resolved": [
+          true,
+          true
+        ],
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-N-084",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "말씀하신 '한 시간'이 어떤 절차(예: 부동산 등기 발급 예약, 시험 응시, 민원 접수 등)에 대한 시간인지 구체적으로 알려주시겠어요?",
+    "scenarios": {
+      "human_reply": {
+        "final_status": "responded",
+        "answer": "인터넷 등기 열람의 재열람은 최초 열람 후 1시간 이내에 가능합니다. 만약 서비스 시간이 종료되어 재열람이 불가능한 상태가 되었다면, 다음 업무일 서비스 개시 후 1시간 이내에 재열람을 할 수 있습니다. [근거 DOC-2a0de4d692fa78ee94b0-C0011]\n\n즉, 오늘 남은 1시간이 서비스 종료로 인해 소멸되더라도, 다음 업무일(평일)에 인터넷 등기소 서비스가 시작되면 그 시점부터 다시 1시간 동안 재열람이 가능합니다. 따라서 완전히 날리는 것은 아니며, 다음 업무일에 재열람 기회를 다시 얻으실 수 있습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "cited_covers_resolved": [
+          false,
+          true
+        ]
+      },
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 말씀하신 '한 시간'이 어떤 절차(예: 부동산 등기 발급 예약, 시험 응시, 민원 접수 등)에 대한 시간인지 구체적으로 알려주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0,
+        "cited_covers_resolved": [
+          false,
+          false
+        ]
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "인터넷 등기 열람의 재열람은 최초 열람 후 1시간 이내에만 가능합니다. 만약 서비스 시간이 종료되어 재열람이 불가능한 상태라면, 다음 업무일 서비스 개시 후 1시간 이내에 재열람을 할 수 있습니다. [근거: DOC-2a0de4d692fa78ee94b0-C0011]\n\n즉, 오늘 남은 1시간이 서비스 종료 시간과 겹쳐서 재열람을 못 했다면, 그 기회는 사라진 것이 아니라 다음 업무일(평일)에 다시 1시간 동안 재열람할 수 있는 기회가 생기는 것입니다. 다만, 재열람 대상은 '재열람 당시의 등기기록'이므로, 그 사이에 등기 내용이 변경되었다면 변경된 내용이 열람됩니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "cited_covers_resolved": [
+          false,
+          true
+        ],
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-X-050",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "부모님 서류 대신 발급받으려는 서류의 정확한 명칭이 무엇인가요? (예: 주민등록등본, 가족관계증명서, 소득금액증명 등)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 부모님 서류 대신 발급받으려는 서류의 정확한 명칭이 무엇인가요? (예: 주민등록등본, 가족관계증명서, 소득금액증명 등)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "부모님 명의의 서류를 대리 발급받으려면 본인(대리인)의 신분증만으로는 부족하며, 서류의 종류에 따라 추가 서류가 필요합니다.\n\n일반적으로 필요한 서류는 다음과 같습니다:\n1. **대리인(본인)의 신분증**: 주민등록증, 운전면허증, 여권 등 유효기간 내 신분증 [근거: DOC-39d8d4ed529804eda5dc-C0004, DOC-3d836bae6e4c1e777653-C0003]\n2. **위임장**: 부모님(위임인)이 작성한 위임장 [근거: DOC-39d8d4ed529804eda5dc-C0004, DOC-3d836bae6e4c1e777653-C0003]\n3. **위임인(부모님)의 신분증 사본**: 부모님의 신분증 사본 또는 인감증명서 등 [근거: DOC-39d8d4ed529804eda5dc-C0004, DOC-3d836bae6e4c1e777653-C0003]\n\n※ 일부 서류(예: 병적증명서)는 직계존비속이 신청할 경우 위임장 및 위임인 신분증 제출이 생략될 수 있으나, 대부분의 민원 서류는 위임장과 위임인 신분증 사본이 필요합니다. [근거: DOC-39fcd61c7c866d5bf770-C0003]\n\n정확한 안내를 위해 **발급받으려는 서류의 명칭**(예: 주민등록등본, 가족관계증명서, 소득금액증명 등)을 알려주시면 해당 서류에 맞는 정확한 구비서류를 안내해 드리겠습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-X-054",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "신청하시려는 지원금의 정확한 명칭은 무엇인가요? (예: 자산형성지원, 긴급복지지원, 생계급여 등)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 신청하시려는 지원금의 정확한 명칭은 무엇인가요? (예: 자산형성지원, 긴급복지지원, 생계급여 등)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "주민등록번호는 개인정보이므로 안내드릴 수 없으며, 지원금 신청 시에는 소득·재산·근로능력 등 여러 요건을 종합적으로 심사합니다.\n\n'일을 쉬고 있다'는 사실만으로 무조건 선정되는 것은 아닙니다. 예를 들어, 국민기초생활보장 생계급여의 경우 근로능력이 있는 18~64세 수급자는 자활사업 참여를 조건으로 지급될 수 있으며, 질병·부상 등으로 근로능력이 없다고 판정받거나 미취학 자녀 양육 등 예외 사유가 인정되어야 조건이 유예됩니다 [DOC-771ac250fd34e3dd4b86-C0016, DOC-771ac250fd34e3dd4b86-C0017]. 또한 자산형성지원 등 일부 지원금은 소득 수준과 취업 상태에 따라 대상이 결정되기도 합니다 [DOC-771ac250fd34e3dd4b86-C0032].\n\n정확한 안내를 위해 신청하시려는 지원금의 정확한 명칭(예: 생계급여, 긴급복지지원, 자산형성지원 등)을 알려주시거나, 거주지 관할 행정복지센터에 문의하여 본인의 소득·재산 현황에 따른 심사 기준을 확인하시는 것이 좋습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-A-081",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "회사에서 요구하는 서류가 학교를 졸업한 경우의 '졸업증명서'인지, 아니면 검정고시를 합격한 경우의 '검정고시 합격증명서'인지 확인이 필요합니다. 현재 최종 학력 상태가 학교 졸업인지 검정고시 합격인지 알려주시겠어요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 회사에서 요구하는 서류가 학교를 졸업한 경우의 '졸업증명서'인지, 아니면 검정고시를 합격한 경우의 '검정고시 합격증명서'인지 확인이 필요합니다. 현재 최종 학력 상태가 학교 졸업인지 검정고시 합격인지 알려주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "주민등록번호는 개인정보이므로 안내에 사용하지 않으며, 서류 발급 시 본인 확인을 위해 무인발급기에서 직접 입력하시거나 신분증을 지참하셔야 합니다.\n\n회사에서 요구하는 '최종학력 증명서'는 보통 다음 중 하나입니다. 본인의 최종 학력 상태에 따라 필요한 서류가 다릅니다.\n\n1. **학교를 졸업한 경우**: **졸업증명서**\n   - 초·중·고등학교 졸업증명서는 무인민원발급기에서 발급 가능합니다. [근거: DOC-281de2ad41a7f804021d-C0027]\n   - 대학(원) 졸업증명서는 무인발급기에서 발급되지 않으므로, 해당 학교나 인터넷 발급 사이트(정부24 등)를 이용해야 합니다.\n\n2. **검정고시를 합격한 경우**: **검정고시 합격증명서**\n   - 검정고시 합격증명서도 무인민원발급기에서 발급 가능합니다. [근거: DOC-281de2ad41a7f804021d-C0032]\n\n**확인 방법:**\n- 만약 고등학교를 졸업하셨다면 **'초·중·고 졸업증명'**을 선택하시면 됩니다.\n- 검정고시로 학력을 인정받으셨다면 **'검정고시 합격증명'**을 선택하시면 됩니다.\n\n수정구청 무인민원발급기에서는 위 서류들이 무료(관내)로 발급됩니다. [근거: DOC-281de2ad41a7f804021d-C0027, DOC-281de2ad41a7f804021d-C0032]",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-A-082",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "확인하려는 소득의 종류(예: 회사 근로소득, 프리랜서 사업소득, 일용직 등)와 소득이 발생한 연도는 어떻게 되며, 해당 소득에 대해 원천징수 신고가 되었거나 본인이 종합소득세 신고를 하셨는지 확인되나요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 확인하려는 소득의 종류(예: 회사 근로소득, 프리랜서 사업소득, 일용직 등)와 소득이 발생한 연도는 어떻게 되며, 해당 소득에 대해 원천징수 신고가 되었거나 본인이 종합소득세 신고를 하셨는지 확인되나요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "소득금액증명서에 소득이 표시되지 않는 경우, 주로 해당 소득이 '과세된 소득'으로 신고되지 않았거나 신고 정보가 반영되지 않았기 때문일 수 있습니다.\n\n소득금액증명서는 종합소득, 연말정산 소득, 또는 일용근로소득 중 '과세된 소득'에 대한 금액을 증명하는 서류입니다 [DOC-3d836bae6e4c1e777653-C0001]. 따라서 다음 사항을 확인해 보시기 바랍니다.\n\n1. **신고 여부 확인**: 근로소득의 경우 회사가 원천징수 신고를 했는지, 또는 본인이 종합소득세 신고를 했는지 확인해야 합니다 [DOC-e61b1f594618d79b7640-C0035, DOC-e61b1f594618d79b7640-C0123]. 신고가 누락되었거나 아직 처리 중일 수 있습니다.\n2. **소득 종류 확인**: 비과세 소득(예: 일정 기준 미만의 일용직 소득 등)은 소득금액증명서에 표시되지 않을 수 있습니다.\n3. **문의처**: 정확한 사유를 확인하기 위해서는 관할 세무서나 국세청(126)에 문의하여 신고 내역을 조회해 보시는 것이 가장 정확합니다 [DOC-3d836bae6e4c1e777653-C0004].\n\n제공해 주신 주민등록번호만으로는 구체적인 신고 내역을 조회할 수 없으므로, 위 내용을 바탕으로 관할 세무서에 문의하시거나 홈택스 등에서 신고 내역을 직접 확인해 보시길 권유 드립니다.",
+        "model_calls_after_reply": 2,
+        "follow_up_searches": 2,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-A-083",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "요청하신 기관에서 정확히 어떤 서류를 요구했는지, 혹은 그 서류를 제출하려는 용도(예: 매매, 상속, 농지전용, 건축 등)가 무엇인지 알려주시겠어요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 요청하신 기관에서 정확히 어떤 서류를 요구했는지, 혹은 그 서류를 제출하려는 용도(예: 매매, 상속, 농지전용, 건축 등)가 무엇인지 알려주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "죄송하지만, 현재 저장된 자료에는 '인천 수정구' 무인민원발급기의 구체적인 발급 가능 서류 목록이나 위치 정보가 포함되어 있지 않습니다. 또한, 용도를 모른 채 '아무거나' 발급받는 것은 권장되지 않으며, 제출처에서 요구하는 정확한 서류 명칭(예: 토지대장, 토지이용계획확인서, 개별공시지가확인서 등)을 확인해야 합니다.\n\n일반적으로 무인민원발급기에서 발급 가능한 토지 관련 서류는 다음과 같으나, 수정구 내 발급기별 지원 여부는 다를 수 있습니다:\n1. 토지대장 등본\n2. 임야대장 등본\n3. 토지이용계획확인서\n4. 개별공시지가확인서\n5. 건축물대장 등·초본\n\n급하시다면, 제출처에 '토지대장'인지 '토지이용계획확인서'인지 등 정확한 서류 명칭을 먼저 문의하신 후, 해당 서류를 발급받으시는 것이 가장 빠르고 정확합니다. 수정구 무인민원발급기 위치와 상세 발급 목록은 인천광역시 수정구청 홈페이지나 정부24에서 확인하실 수 있습니다.",
+        "model_calls_after_reply": 4,
+        "follow_up_searches": 4,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-A-084",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "자동차등록원부를 인터넷으로 하셨나요, 아니면 방문이나 무인발급기를 이용하셨나요? 그리고 문서를 발급받으셨나요, 아니면 단순히 열람만 하셨나요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 자동차등록원부를 인터넷으로 하셨나요, 아니면 방문이나 무인발급기를 이용하셨나요? 그리고 문서를 발급받으셨나요, 아니면 단순히 열람만 하셨나요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "자동차등록원부의 수수료는 다음과 같습니다.\n\n1. **발급(등본/초본)**: 1건당 300원\n2. **열람**: 1건당 100원\n3. **인터넷 발급/열람**: 무료\n\n[근거: DOC-548d1af6db790c226d40-C0000, DOC-281de2ad41a7f804021d-C0010, DOC-281de2ad41a7f804021d-C0011]\n\n사용자님께서 발급받으셨는지 열람만 하셨는지, 그리고 어디서(방문, 무인발급기, 인터넷 등) 이용하셨는지에 따라 실제 납부 금액이 달라집니다. 발급받으셨다면 300원, 열람만 하셨다면 100원, 인터넷으로 하셨다면 무료입니다. 정확한 금액 확인을 위해 발급/열람 여부와 이용 채널을 다시 한번 확인해 주시거나, 발급받으셨다면 발급기관에 문의하시는 것이 가장 정확합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-A-085",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "본인의 입양 형태가 일반적인 '단순 입양'인지, 아니면 가정법원 재판을 거친 '친양자 입양'인지 확인되시나요? (모르실 경우, 가족관계증명서상 부모란에 '양부/양모'로 기재되어 있는지, 아니면 친생부모 관계가 종료되고 '부/모'로 기재되어 있는지 확인해 주세요.)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 본인의 입양 형태가 일반적인 '단순 입양'인지, 아니면 가정법원 재판을 거친 '친양자 입양'인지 확인되시나요? (모르실 경우, 가족관계증명서상 부모란에 '양부/양모'로 기재되어 있는지, 아니면 친생부모 관계가 종료되고 '부/모'로 기재되어 있는지 확인해 주세요.)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "주민등록번호를 알려주셨지만, 개인정보 보호를 위해 해당 번호로 본인 확인을 하거나 발급 가능 여부를 판단할 수는 없습니다. 대신 법령에 따른 발급 조건 차이를 안내해 드립니다.\n\n'입양관계증명서'와 '친양자입양관계증명서'는 신청 조건이 다릅니다.\n\n1. **입양관계증명서**: 본인, 배우자, 직계혈족(부모, 자녀 등)이 신청할 수 있습니다. [근거: DOC-c95ed190ec5caede9cf4-C0015]\n2. **친양자입양관계증명서**: 발급이 엄격히 제한됩니다. 원칙적으로 **친양자 본인이 성년이 된 경우**에만 신청할 수 있으며, 그 외에는 혼인 당사자 간 친족관계 파악, 법원/수사기관 요청 등 특별한 경우에만 발급됩니다. [근거: DOC-c95ed190ec5caede9cf4-C0015, DOC-74fb8e3f4207ccfdb0ce-C0025]\n\n**어떤 증명서를 떼야 할지 모르는 경우:**\n- **본인이 성년**이라면, 가족관계증명서를 먼저 발급받아 부모란을 확인해 보세요. \n  - 부모란에 '양부/양모'로 기재되어 있고 친생부모도 함께 기재되어 있다면 **일반 입양**이므로 '입양관계증명서'를 신청하시면 됩니다.\n  - 부모란에 '부/모'로만 기재되어 있고 친생부모가 기재되지 않았다면 **친양자 입양**일 가능성이 높으므로 '친양자입양관계증명서'를 신청해야 합니다. (단, 친양자 입양은 본인이 성년이어야 발급 가능합니다.)\n- **본인이 미성년자**라면 친양자입양관계증명서는 발급받을 수 없으므로, 부모님(친생부모 또는 양부모)이 가족관계증명서 등을 통해 입양 형태를 확인하신 후 필요한 서류를 발급받으셔야 합니다.\n\n정확한 입양 형태(일반 입양 vs 친양자 입양)를 모르시겠다면, 가까운 주민센터나 구청 무인민원발급기에서 **가족관계증명서**를 먼저 발급받아 부모 기재 사항을 확인하시는 것이 가장 빠릅니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-A-086",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "온라인 발급을 시도했을 때 화면에 뜨는 오류 메시지나 안내 문구가 무엇인지, 그리고 졸업하신 연도가 1982년 2월 이후인지 알려주세요.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 온라인 발급을 시도했을 때 화면에 뜨는 오류 메시지나 안내 문구가 무엇인지, 그리고 졸업하신 연도가 1982년 2월 이후인지 알려주세요.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "제공해 주신 주민번호만으로는 온라인 발급이 실패하는 구체적인 기술적 원인(시스템 오류, 데이터 미등록 등)을 확인해 드리기 어렵습니다. 다만, 초·중·고 졸업증명서는 1982년 2월(81학년도) 졸업자부터 온라인 발급이 가능하며, 온라인 발급이 안 될 경우 다음과 같은 방법을 시도해 보실 수 있습니다.\n\n1. **대체 발급 경로 이용**: 온라인(정부24 등)이 안 될 경우, 가까운 **무인민원발급기**, **학교 방문**, **FAX**, 또는 **민원우편**을 통해 발급받을 수 있습니다. [근거: DOC-b64fd7f88810deae9614-C0000]\n2. **발급 가능 여부 확인**: 1982년 2월 이전 졸업자라면 온라인 발급 대상이 아닐 수 있습니다. 이 경우 해당 학교나 교육청에 문의해야 합니다. [근거: DOC-b64fd7f88810deae9614-C0001]\n3. **유치원 졸업증명**: 유치원 졸업증명은 무인민원발급기에서 발급되지 않으며, 2024학년도부터 나이스 사용 유치원에서만 발급 가능합니다. [근거: DOC-b64fd7f88810deae9614-C0001]\n\n온라인 시스템 오류가 지속된다면, 가장 빠른 방법은 신분증을 지참하고 가까운 **무인민원발급기**를 이용하시거나, 졸업하신 **학교 행정실**에 직접 연락하여 발급 방법을 문의하시는 것입니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-A-087",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "해당 농지의 농지대장이 이미 작성되어 있는지, 아니면 신규 작성이나 내용 수정이 필요한 상태인지 확인되시나요? (예: 정부24 등에서 조회했을 때 대장이 뜨는지, 또는 행정기관에서 수정이 필요하다는 안내를 받으셨는지)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 해당 농지의 농지대장이 이미 작성되어 있는지, 아니면 신규 작성이나 내용 수정이 필요한 상태인지 확인되시나요? (예: 정부24 등에서 조회했을 때 대장이 뜨는지, 또는 행정기관에서 수정이 필요하다는 안내를 받으셨는지)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "농지대장 등본을 오늘 바로 받으실 수 있는지는 해당 농지의 농지대장이 이미 작성되어 있는지에 따라 다릅니다.\n\n1. **농지대장이 이미 작성되어 있는 경우**: 등본 발급은 즉시(근무시간 내 3시간) 가능합니다. [DOC-b5161f1f3a0895f30ba6-C0002] 인터넷(정부24)이나 무인발급기, 방문을 통해 신청할 수 있으며, 인터넷 발급은 무료입니다. [DOC-b5161f1f3a0895f30ba6-C0000]\n\n2. **농지대장이 없거나 내용 수정이 필요한 경우**: 신규 작성이나 내용 수정 신청은 처리 기간이 총 10일 소요되므로 오늘 바로 발급받을 수 없습니다. [DOC-b5161f1f3a0895f30ba6-C0002] 이 경우 농지 소재지 관할 행정청(시·구·읍·면)에 '농지대장 신규작성 및 수정 신청서'를 제출해야 합니다. [DOC-b5161f1f3a0895f30ba6-C0001]\n\n현재 본인의 농지대장 작성 상태를 모르신다면, 정부24 등에서 농지대장 조회를 시도해 보시거나 관할 행정청에 문의하여 대장 존재 여부를 먼저 확인하시는 것이 좋습니다. 대장이 존재한다면 즉시 발급이 가능합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-A-088",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "납세증명서를 발급받으려는 용도가 '일반용'인가요, 아니면 '해외이주여권용'인가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 납세증명서를 발급받으려는 용도가 '일반용'인가요, 아니면 '해외이주여권용'인가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "국세 납세증명서의 발급 처리 기간은 용도에 따라 다릅니다.\n\n1. **일반용**: 즉시 발급됩니다. (근무시간 내 3시간 이내 처리)\n2. **해외이주여권용**: 총 10일이 소요됩니다.\n\n현재 용도를 확인하지 못하셨으므로, 정확한 소요 기간을 안내드리기 어렵습니다. 발급받으실 용도(일반용 또는 해외이주여권용)를 확인해 주시면 그에 맞는 처리 기간을 다시 안내해 드리겠습니다. 참고로 납세증명서의 유효기간은 발급일로부터 30일입니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-A-089",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "발급받으시려는 서류의 정확한 명칭이 무엇인가요? (예: 주민등록표 등본, 초본, 소득금액증명 등)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 발급받으시려는 서류의 정확한 명칭이 무엇인가요? (예: 주민등록표 등본, 초본, 소득금액증명 등)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "주민등록표 등본이나 초본을 발급받으시는 경우라면, 주소지와 상관없이 전국 어느 동 주민센터(또는 시·군·구청)에서나 발급받을 수 있습니다. [근거: DOC-2b7a1c10f4c40a304680-C0087]\n\n다만, '서류 이름은 아직 모른다'고 하셨는데, 서류 종류에 따라 발급 가능한 장소가 다를 수 있습니다. 예를 들어, 가족관계증명서나 제적등본은 대법원 전자가족관계등록시스템이나 무인발급기, 또는 주소지와 무관한 동 주민센터에서 발급 가능하지만, 일부 지방세 관련 서류나 특정 인허가 서류는 관할 구청이나 세무서에서만 발급 가능한 경우도 있습니다.\n\n정확한 안내를 위해 발급받으시려는 서류의 명칭(예: 주민등록표 등본, 가족관계증명서, 건축물대장 등)을 알려주시거나, 어떤 용도로 필요한지 말씀해 주시면 해당 서류의 발급 가능 장소를 확인해 드리겠습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "SJ-A-090",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "제적 서류를 제출하라고 요구한 기관(예: 병무청, 학교, 법원 등)과 제출 목적을 알려주시겠어요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 제적 서류를 제출하라고 요구한 기관(예: 병무청, 학교, 법원 등)과 제출 목적을 알려주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "제적등본과 제적초본은 내용이 다르므로 아무거나 제출하면 반려될 수 있습니다.\n\n1. **내용 차이**\n- **제적등본**: 호적사항과 호주 및 **모든 구성원**의 성명, 부모 성명, 출생, 혼인, 사망 등 신분사항이 기재됩니다. [DOC-82895ba5797cd44b7aa6-C0001]\n- **제적초본**: 호적사항과 호주 및 **본인**의 성명, 부모 성명, 출생, 혼인, 사망 등 신분사항만 기재됩니다. [DOC-82895ba5797cd44b7aa6-C0001]\n\n2. **수수료 차이**\n- 등본: 1,000원, 초본: 500원 (무인발급기 이용 시 등본 500원, 초본 300원) [DOC-82895ba5797cd44b7aa6-C0000, DOC-74fb8e3f4207ccfdb0ce-C0034]\n\n알려 주신 내용(주민번호)만으로는 정확히 안내드리기 어렵습니다. 서류를 제출하라고 한 **기관(예: 병무청, 학교, 법원 등)**과 **제출 목적**을 알려주시면, 등본과 초본 중 어떤 것을 제출해야 하는지 더 구체적으로 안내해 드릴 수 있습니다. 일반적으로 가족 전체의 관계가 필요한 경우 등본을, 본인 확인만 필요한 경우 초본을 요구하는 경우가 많습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH001",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "가게가 일시적으로 쉬는 상태(휴업)인지, 아니면 사업자등록을 완전히 취소한 상태(폐업)인지 확인되셨나요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 가게가 일시적으로 쉬는 상태(휴업)인지, 아니면 사업자등록을 완전히 취소한 상태(폐업)인지 확인되셨나요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "가게가 '잠깐 쉬는 상태(휴업)'인지 '사업자등록을 끝낸 상태(폐업)'인지에 따라 발급해야 하는 증명서가 다릅니다.\n\n1. **잠깐 쉬는 경우(휴업)**: **'휴업사실증명'**을 발급받으시면 됩니다. [근거: DOC-777d3a3655239e31dc63-C0001]\n2. **사업자등록을 끝낸 경우(폐업)**: **'폐업사실증명'**을 발급받으시면 됩니다. [근거: DOC-e86265e53821e68b3f2b-C0001]\n\n두 증명서 모두 **무인민원발급기**에서 발급 가능하며, 수수료는 **무료**입니다. [근거: DOC-281de2ad41a7f804021d-C0035, DOC-e86265e53821e68b3f2b-C0000]\n\n현재 가족분께 휴업인지 폐업인지 확인이 안 되셨다면, 두 증명서 중 어느 것을 발급해야 할지 확정할 수 없습니다. 가족분께 확인하시거나, 세무서/홈택스에서 사업자등록 상태를 조회하여 휴업/폐업 여부를 먼저 확인하신 후 해당 증명서를 발급받으시기 바랍니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH002",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "해당 사업자가 부가가치세 신고 의무가 있는 과세사업자인지, 아니면 신고 의무가 없는 면세사업자인지 확인되시나요? (회계 담당자 연락이 안 되신다면 사업자등록증상 업종이나 국세청 홈택스 조회 등으로 확인이 가능할 수 있습니다.)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 해당 사업자가 부가가치세 신고 의무가 있는 과세사업자인지, 아니면 신고 의무가 없는 면세사업자인지 확인되시나요? (회계 담당자 연락이 안 되신다면 사업자등록증상 업종이나 국세청 홈택스 조회 등으로 확인이 가능할 수 있습니다.)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 주민번호만으로는 사업자의 과세/면세 상태를 정확히 확인하거나 발급 서류를 확정해 드리기 어렵습니다. 본 시스템은 개인 정보를 통해 실시간으로 국세청 데이터를 조회하지 않기 때문입니다.\n\n일반적으로 '부가가치세과세표준증명'은 부가가치세 신고 의무가 있는 **과세사업자**가 발급하는 서류입니다. 만약 사업자가 **면세사업자**라면 '부가가치세 면세사업자 수입금액증명'을 발급해야 할 수 있습니다.\n\n회계 담당자와 연락이 되지 않아 과세/면세 여부를 모른다면, 다음 방법으로 확인하신 후 서류를 발급하시는 것을 권장합니다.\n1. **홈택스 조회**: 사업자등록증상 사업자등록번호로 홈택스(www.hometax.go.kr)에 접속하여 '사업자등록정보 조회'를 하면 과세/면세 유형을 확인할 수 있습니다.\n2. **세무서 문의**: 관할 세무서에 사업자등록번호를 알려주고 과세/면세 여부를 문의할 수 있습니다.\n\n은행에 제출할 서류가 '매출증명' 목적이라면, 과세사업자일 경우 '부가가치세과세표준증명'이 맞으나, 면세사업자일 경우 해당 서류가 발급되지 않거나 다른 서류(수입금액증명 등)가 필요할 수 있으므로 반드시 유형 확인 후 발급받으시기 바랍니다.",
+        "model_calls_after_reply": 2,
+        "follow_up_searches": 2,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH003",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "거래처에서 요구한 서류의 정확한 명칭이나, 그 서류로 무엇을 확인하려 하는지(예: 사업자등록 사실 확인, 세금 납부 실적 확인 등) 알려주시겠어요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 거래처에서 요구한 서류의 정확한 명칭이나, 그 서류로 무엇을 확인하려 하는지(예: 사업자등록 사실 확인, 세금 납부 실적 확인 등) 알려주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "메모가 잘려 정확한 의도를 알 수 없으므로, 두 서류의 차이점을 안내해 드립니다. 거래처에 다시 확인하시는 것이 가장 정확합니다.\n\n1. **사업자등록증명**: '사업자등록을 한 자가 사업내역을 증명 받고자 신청'하는 서류입니다. 즉, **사업 내역(등록 사실, 업종, 대표자 등)**을 확인하려는 경우입니다. [근거 DOC-fc954c629018cc3f99ec-C0001]\n\n2. **국세 납부내역증명**: '납세자가 직접 납부한 세금(국세) 내역을 확인'하는 서류입니다. 즉, **낸 세금(세목, 납부일, 금액 등)**을 확인하려는 경우입니다. [근거 DOC-30c13aa7ed0641989fb2-C0001]\n\n거래처가 '사업자등록증명'을 요청했다면 사업 정보를, '국세 납부내역증명'을 요청했다면 세금 납부 실적을 보는 것입니다. 메모의 앞부분(서류명)이나 뒷부분(용도)을 다시 확인해 주세요.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH004",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "증명서를 발급받으실 분(본인)이 누구이며, 그분과 형제자매의 관계를 확인하려는 것인지, 아니면 아버지 명의의 증명서에서 형제자매를 확인하려는 것인지 알려주세요.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 증명서를 발급받으실 분(본인)이 누구이며, 그분과 형제자매의 관계를 확인하려는 것인지, 아니면 아버지 명의의 증명서에서 형제자매를 확인하려는 것인지 알려주세요.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 가족관계증명서는 '기준자(본인)'를 누구로 하느냐에 따라 형제자매가 표시되는 방식이 다릅니다.\n\n1. **질문자님(자녀) 기준 증명서**: 질문자님을 기준으로 발급하면 부모(아버지)와 형제자매가 함께 표시됩니다. 즉, 질문자님 명의의 증명서만으로도 아버지와 형제들의 관계를 확인할 수 있습니다.\n2. **아버지 기준 증명서**: 아버지를 기준으로 발급하면 배우자(어머니)와 자녀들(질문자님 및 형제들)이 표시됩니다.\n\n**무인민원발급기 이용 시 주의사항**\n무인민원발급기는 **본인 명의의 증명서만 발급**이 가능합니다. 따라서 질문자님이 직접 발급받으시려면 질문자님 명의의 증명서를 발급받으시면 됩니다. 아버지 명의의 증명서를 발급받으시려면 아버지 본인이 직접 발급받으시거나, 대리 발급(위임장 등 필요)을 통해 구청 방문 등으로 발급받아야 합니다.\n\n**결론**\n아버지와 형제들의 관계를 보여달라는 요청이라면, **질문자님 명의의 가족관계증명서**를 발급받으시면 됩니다. 이 증명서에는 질문자님의 부모(아버지)와 형제자매가 모두 기록되어 있어 관계를 입증할 수 있습니다. [근거: DOC-c95ed190ec5caede9cf4-C0019, DOC-c95ed190ec5caede9cf4-C0015]",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH005",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "해당 서류를 제출해야 하는 구체적인 기관명이나 업무명(예: 비자 신청, 대출 심사, 이혼 소송 등)을 알려주세요.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 해당 서류를 제출해야 하는 구체적인 기관명이나 업무명(예: 비자 신청, 대출 심사, 이혼 소송 등)을 알려주세요.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "제출 기관에서 '일반'인지 '상세'인지, 그리고 '현재 혼인'만 필요한지 '이혼 기록'까지 포함해야 하는지 명시하지 않았다면, 무인민원발급기에서 임의로 선택하기 어렵습니다.\n\n법령상 혼인관계증명서는 '일반증명서'(현재 혼인 사항만 기재)와 '상세증명서'(혼인 및 이혼에 관한 사항 모두 기재)로 구분됩니다. [근거: DOC-c95ed190ec5caede9cf4-C0019, DOC-c95ed190ec5caede9cf4-C0020]\n\n제출처(기관)에 따라 요구하는 서류의 종류가 다르므로, **제출해야 하는 기관에 직접 전화하여 '일반'인지 '상세'인지 확인**하신 후 발급받으시는 것이 가장 정확합니다. 만약 기관에 연락이 불가능하다면, 일반적으로 가장 포괄적인 정보인 '상세증명서'를 발급받으면 이혼 기록까지 포함되므로 제출처에서 요구하는 내용을 모두 담을 가능성이 높지만, 불필요한 개인정보가 포함될 수 있어 주의가 필요합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH006",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "가족이 화면에서 '여권정보 공동이용'에 동의했는지 확인이 안 된다고 하셨는데, 신청 화면이나 결과 화면에 '여권정보 공동이용 동의' 체크박스가 체크되어 있었거나 동의했다는 안내 문구가 있었는지 기억나시나요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 가족이 화면에서 '여권정보 공동이용'에 동의했는지 확인이 안 된다고 하셨는데, 신청 화면이나 결과 화면에 '여권정보 공동이용 동의' 체크박스가 체크되어 있었거나 동의했다는 안내 문구가 있었는지 기억나시나요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 다만, 관련 규정에 따르면 다음과 같습니다.\n\n1. **행정정보공동이용 동의 시**: 영문증명 발급 시 민원인의 편의를 위해 행정정보공동이용을 통해 여권 상의 영문성명을 직접 조회할 수 있으므로, 동의가 완료되었다면 여권을 별도로 제출하지 않아도 됩니다. [근거: DOC-1bac55fd50fbfb130cff-C0044]\n2. **행정정보공동이용 미동의 시**: 담당공무원이 확인 가능한 서류(여권)를 민원인이 직접 제출해야 합니다. [근거: DOC-2a23b15ef71cfab89662-C0003]\n\n가족이 화면을 만져 동의 여부를 확인하기 어렵다면, **여권을 지참**하여 방문하시는 것이 안전합니다. 방문 시 신분증과 함께 여권을 제시하면, 동의 여부와 관계없이 영문성명 확인이 가능합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH007",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "현재 거주 중인 주택의 등기부등본상 소유자가 본인 또는 가구원인가요, 아니면 타인(임대인)인가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 현재 거주 중인 주택의 등기부등본상 소유자가 본인 또는 가구원인가요, 아니면 타인(임대인)인가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 주거급여는 '임차료(월세)'와 '수선유지비(집수리)' 중 거주 형태에 따라 결정됩니다.\n\n1. **임차료(월세) 지원**: 타인의 주택을 임차(월세, 전세 등)하여 거주하는 경우\n2. **수선유지비(집수리) 지원**: 본인 또는 가족 소유의 주택에 거주하는 경우\n\n본인이 소유자인지 임차인인지 확인하는 가장 확실한 방법은 다음과 같습니다.\n- **등기부등본 확인**: 인터넷등기소(www.iros.go.kr)에서 주소로 조회하거나, 무인민원발급기에서 '부동산 등기사항증명서'를 발급받아 소유자 이름을 확인하세요.\n- **임대차계약서 확인**: 계약서가 있다면 임차인(본인)과 임대인(타인)이 명시되어 있습니다.\n\n서류를 확인하신 후, 소유자라면 '수선유지비', 임차인이라면 '임차료' 항목으로 신청하시면 됩니다. 현재 서류를 보지 못하셨다면, 위 방법으로 소유 관계를 먼저 확인하시는 것을 권장합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH008",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "기초연금 결정 통지서를 받은 날짜와, 입원 등으로 인해 이의신청을 할 수 없었던 사유가 소멸한 날짜(예: 퇴원일)를 알려주세요.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 기초연금 결정 통지서를 받은 날짜와, 입원 등으로 인해 이의신청을 할 수 없었던 사유가 소멸한 날짜(예: 퇴원일)를 알려주세요.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "기초연금 이의신청 마감일을 계산하기 위해서는 법령상 기간은 확인되었으나, 실제 날짜 계산을 위한 필수 정보가 부족합니다.\n\n1. **법령 기준**: 기초연금 처분을 안 날부터 90일 이내에 이의신청을 해야 합니다. 다만, 입원 등 정당한 사유로 기간 내에 신청할 수 없었음을 증명한 경우, 그 사유가 소멸한 때(예: 퇴원일)부터 60일 이내에 신청할 수 있습니다. [근거: DOC-7220f05039bffecff5ab-C0027]\n\n2. **필요한 정보**: 정확한 마감일을 알려드리기 위해 다음 두 가지 날짜를 알려주세요.\n   - 기초연금 결정 통지서를 받은 날짜 (또는 처분을 안 날)\n   - 입원 등으로 인해 신청을 하지 못한 사유가 끝난 날짜 (예: 퇴원일)\n\n위 날짜를 알려주시면 법령에 따라 마지막 신청 가능일을 계산해 드리겠습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH009",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "현재 본인의 이름이 세대별 주민등록표(등본)에 기록되어 있는지 확인하셨나요? (아직 확인하지 못하셨다면, 본인이 등본에 올라 있는지 여부에 따라 신청 자격이 달라지므로 확인이 필요합니다.)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 현재 본인의 이름이 세대별 주민등록표(등본)에 기록되어 있는지 확인하셨나요? (아직 확인하지 못하셨다면, 본인이 등본에 올라 있는지 여부에 따라 신청 자격이 달라지므로 확인이 필요합니다.)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 외국인인 경우 신청 자격은 '본인이 세대별 주민등록표에 기록되어 있는지' 여부에 따라 달라지기 때문입니다.\n\n1. **본인이 등본에 기록된 경우**: 본인이 속한 세대의 주민등록표 등본을 발급받을 수 있습니다. [근거: DOC-39d8d4ed529804eda5dc-C0001, DOC-2b7a1c10f4c40a304680-C0083]\n2. **본인이 등본에 기록되지 않았으나 한국인 배우자가 있는 경우**: 배우자가 속한 세대의 세대주 및 세대원의 주민등록표 등·초본을 발급받을 수 있습니다. [근거: DOC-39d8d4ed529804eda5dc-C0001, DOC-2b7a1c10f4c40a304680-C0083]\n\n본인이 등본에 올라 있는지 확인하시려면, 가까운 주민센터나 무인민원발급기에서 본인 신분증(외국인등록증 등)으로 '주민등록표 초본'을 발급받아 보시거나, 정부24 등에서 본인 인증 후 조회해 보실 수 있습니다. 확인 후 등본에 본인이 포함되어 있다면 1번, 포함되어 있지 않다면 2번(배우자 관계)으로 신청하시면 됩니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH010",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "대리 신청하시는 분과 병적증명서를 발급받으실 분(가족)의 정확한 친족 관계는 무엇인가요? (예: 부모-자녀, 형제자매, 부부 등)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 대리 신청하시는 분과 병적증명서를 발급받으실 분(가족)의 정확한 친족 관계는 무엇인가요? (예: 부모-자녀, 형제자매, 부부 등)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "병적증명서를 대리 신청할 때 위임장을 생략할 수 있는 대상은 '직계 존·비속, 형제자매 또는 배우자'로 한정됩니다. [근거: DOC-39fcd61c7c866d5bf770-C0003, DOC-56afd5a704c32e6e372f-C0008, DOC-7b131b062187951fed06-C0005]\n\n사용자님께서 알려주신 내용(주민번호)만으로는 병적증명 대상자와의 정확한 친족 관계를 확인하기 어렵습니다. 따라서 '가족이면 무조건 위임장 생략'이라고 단정할 수 없으며, 해당 관계가 위 세 가지(직계 존·비속, 형제자매, 배우자)에 해당하는지 먼저 확인하셔야 합니다.\n\n1. 직계 존·비속(부모, 조부모, 자녀, 손자녀 등), 형제자매, 배우자인 경우: 위임장 및 위임한 사람의 신분증 제출이 생략 가능합니다. (대리인 신분증 및 가족관계 확인 서류 필요)\n2. 그 외의 친족(사촌, 고모, 이모, 삼촌 등)인 경우: 위임장 및 위임한 사람의 신분증을 반드시 지참해야 합니다.\n\n방문 전 가족관계증명서 등으로 관계가 위 범위에 포함되는지 확인하시거나, 불확실하다면 위임장을 준비해 가시는 것이 안전합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH011",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "현재 병역 상태가 '복무필(전역/소집해제 등)' 또는 '미필(현역/보충역 등)'인지, 아니면 '병역면제'인지 확인해 주시겠어요? (예: 군대 다녀옴, 아직 안 갔음, 면제받음 등)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 현재 병역 상태가 '복무필(전역/소집해제 등)' 또는 '미필(현역/보충역 등)'인지, 아니면 '병역면제'인지 확인해 주시겠어요? (예: 군대 다녀옴, 아직 안 갔음, 면제받음 등)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 병적증명서의 처리기간은 대상자의 병역 상태에 따라 다르기 때문입니다.\n\n근거 자료에 따르면:\n1. **복무필자, 미필자**: 즉시(근무시간 내 3시간) [DOC-39fcd61c7c866d5bf770-C0002]\n2. **병역면제자 등**: 총 1일 [DOC-39fcd61c7c866d5bf770-C0002]\n\n주민등록번호만으로는 병역 상태를 판단할 수 없으므로, 본인이 '군 복무를 마쳤거나 아직 안 갔음(미필)'인지, 아니면 '병역 면제'를 받았는지 확인해 주시면 그에 맞는 처리기간을 안내해 드리겠습니다. 또는 가까운 지방병무청이나 무인민원발급기에서 본인 인증 후 발급을 시도해 보시면 즉시 확인 가능합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH012",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "요청하신 건축물현황도가 건물 외곽선과 대지 내 배치를 나타내는 '배치도'인지, 아니면 층별 내부 구조나 방 배치를 나타내는 '평면도(또는 단위세대평면도)'인지 확인해 주시겠어요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 요청하신 건축물현황도가 건물 외곽선과 대지 내 배치를 나타내는 '배치도'인지, 아니면 층별 내부 구조나 방 배치를 나타내는 '평면도(또는 단위세대평면도)'인지 확인해 주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. '건축물현황도'는 대지 내 건물 위치를 나타내는 '배치도'와 층별 내부 구조를 나타내는 '평면도(또는 단위세대평면도)'를 모두 포함하는 용어이기 때문입니다.\n\n법령에 따르면 발급 조건이 다음과 같이 다릅니다:\n1. **배치도**: 건축물대장 등본/초본 발급 시 함께 신청할 수 있으며, 별도의 소유자 동의가 필요하지 않습니다. [근거 DOC-22c2ce3fe80fa6fd72aa-C0016]\n2. **평면도 및 단위세대평면도**: 건축물 소유자의 동의를 얻거나, 소유자의 배우자·직계존비속·임차인 등 법령에서 정한 특별한 경우에만 발급 가능합니다. [근거 DOC-22c2ce3fe80fa6fd72aa-C0016, DOC-22c2ce3fe80fa6fd72aa-C0017]\n\n따라서 요청하신 자료가 '층 안 방 배치(평면도)'라면 소유자 동의가 필요할 수 있고, '건물 배치(배치도)'라면 동의 없이 발급 가능합니다. 필요한 도면의 종류(배치도 또는 평면도)를 확인하여 해당 조건에 따라 발급을 진행해 주십시오.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH013",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "해당 아파트의 임차인(세입자)이신가요, 아니면 중개업자 등 중개 의뢰를 받은 자이신가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 해당 아파트의 임차인(세입자)이신가요, 아니면 중개업자 등 중개 의뢰를 받은 자이신가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "제공해 주신 주민등록번호만으로는 귀하께서 해당 아파트의 '임차인'인지, 아니면 '중개업자 등 의뢰받은 자'인지 판단할 수 없습니다. 따라서 정확한 안내를 위해 아래 내용을 확인해 주세요.\n\n1. **임차인(세입자)인 경우**: 「건축물대장의 기재 및 관리 등에 관한 규칙」 제11조 제3항 제5호에 따라, 해당 건축물의 임차인은 소유자 동의 없이도 단위세대평면도를 발급받을 수 있습니다. [근거: DOC-22c2ce3fe80fa6fd72aa-C0017]\n\n2. **중개업자 등 의뢰받은 자인 경우**: 같은 조 제3항 제4호 가목에 따라, 건축물 소유자로부터 중개 등을 의뢰받은 자는 '의뢰사실을 증명할 수 있는 서류'를 첨부하여 신청해야 합니다. [근거: DOC-22c2ce3fe80fa6fd72aa-C0017]\n\n귀하의 실제 신분(임차인 또는 의뢰받은 자)을 알려주시면 그에 맞는 준비 서류를 구체적으로 안내해 드리겠습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH014",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "고등학교를 졸업한 연도와 졸업한 학교가 위치한 시·도는 어디인가요? (졸업장이 다른 곳에 있어 모른다고 하셨는데, 발급 가능 여부는 거주지가 아닌 졸업 학교의 소재지와 연도에 따라 결정됩니다.)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 고등학교를 졸업한 연도와 졸업한 학교가 위치한 시·도는 어디인가요? (졸업장이 다른 곳에 있어 모른다고 하셨는데, 발급 가능 여부는 거주지가 아닌 졸업 학교의 소재지와 연도에 따라 결정됩니다.)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "고등학교 성적증명서는 '거주지'가 아닌 '졸업한 학교의 소재지(시·도)'와 '졸업 연도'에 따라 발급 가능 여부가 결정됩니다.\n\n정부24 안내 기준에 따르면, 중·고등학교 성적증명은 2003년 1월 이후 고등학교 졸업자부터 발급 가능합니다. 다만, 지역별로 발급 시작 연도가 다릅니다.\n- 경기도: 2006년 이후 졸업자부터 발급 가능\n- 강원도, 충청남도: 2004년 이후 졸업자부터 발급 가능\n- 그 외 지역: 2003년 1월 이후 졸업자부터 발급 가능\n\n사용자님께서 현재 경기도에 거주하시더라도, 졸업하신 학교가 다른 시·도에 있다면 해당 시·도의 기준을 적용받습니다. 또한, 졸업 연도가 위 기준보다 이전이라면 무인민원발급기나 인터넷 발급이 불가능할 수 있습니다.\n\n정확한 발급 가능 여부를 확인하시려면, 졸업하신 학교의 소재지(시·도)와 졸업 연도를 확인해 주셔야 합니다. 졸업장이 다른 곳에 있어 모른다면, 해당 학교에 직접 문의하시거나 교육지원청을 통해 확인하실 수 있습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH015",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "해당 중학교가 국립학교인지, 아니면 교육감 소속의 공립 또는 사립학교인지 확인되시나요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 해당 중학교가 국립학교인지, 아니면 교육감 소속의 공립 또는 사립학교인지 확인되시나요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용(주민등록번호)만으로는 학교 유형을 확인할 수 없어 정확히 안내드리기 어렵습니다.\n\n중학교 성적증명서 발급 수수료는 학교 유형에 따라 다릅니다.\n1. **국립학교**: 「국립학교의 각종 증명 발급 등에 관한 규칙」 제2조 제3항에 따라 수수료를 받지 않습니다(무료). [근거: DOC-1849adadfa8cb7a5fc40-C0002]\n2. **교육감 소속 공·사립학교**: 시·도 조례 등에 따르므로 무료가 아닐 수 있습니다. [근거: DOC-d43c279e80df507520a9-C0000]\n\n따라서 학교가 국립인지 확인되지 않은 상태에서는 '무료'라고 단정하여 기재할 수 없습니다. 해당 중학교가 국립인지, 교육감 소속(공립/사립)인지 학교 행정실이나 교육청을 통해 확인하신 후 기재하시기 바랍니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH016",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "대리 발급을 받으려는 위임인(사장님)이 개인(개인사업자)이신가요, 아니면 법인(회사)이신가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 대리 발급을 받으려는 위임인(사장님)이 개인(개인사업자)이신가요, 아니면 법인(회사)이신가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "위임인(사장님)이 개인인지 법인인지에 따라 준비해야 할 서류가 다릅니다. 메모에 구분되어 있지 않다면, 두 경우 모두를 고려하여 준비하시거나 사장님께 확인하시는 것이 안전합니다.\n\n1. **위임인이 개인(개인사업자 포함)인 경우**\n   - 위임장\n   - 위임인의 신분증 사본\n   - 대리인(본인)의 신분증\n\n2. **위임인이 법인(회사)인 경우**\n   - 위임장\n   - 법인 인감증명서, 사용인감계, 또는 대표자 신분증 중 1개\n   - 대리인(본인)의 신분증\n\n따라서 '위임인 신분증 사본'만 챙기는 것은 위임인이 개인인 경우에만 해당하며, 법인인 경우라면 인감증명서 등이 추가로 필요할 수 있습니다. 사장님이 개인사업자이신지 법인 대표이신지 확인이 필요합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH017",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "챙기신 신분증이 어떤 종류인지(예: 주민등록증, 운전면허증, 여권 등)와 유효기간이 아직 남아 있는지 알려주세요.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 챙기신 신분증이 어떤 종류인지(예: 주민등록증, 운전면허증, 여권 등)와 유효기간이 아직 남아 있는지 알려주세요.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "주민등록표 등본을 창구에서 직접 발급받으실 때 인정되는 신분증은 다음 중 하나이며, 반드시 유효기간 내에 있어야 합니다.\n\n[인정 신분증]\n1. 주민등록증 (모바일 주민등록증 포함)\n2. 청소년증\n3. 운전면허증\n4. 국가유공자증\n5. 장애인등록증 (주민등록번호가 포함된 경우만 가능)\n6. 외국인등록증\n7. 여권\n\n※ 유효기간이 만료된 신분증은 사용하실 수 없습니다.\n\n알려 주신 내용(주민번호)만으로는 챙기신 신분증이 위 목록에 해당하는지, 그리고 유효기간이 남아 있는지를 판단할 수 없습니다. 지갑에서 꺼내신 신분증의 종류와 유효기간을 직접 확인해 주세요. 만약 유효기간이 만료되었거나 위 목록에 없는 신분증이라면, 다른 유효한 신분증을 지참하시거나 무인민원발급기에서 지문 인식을 통해 발급받는 방법을 고려하실 수 있습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH018",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "등기소에서 받은 안내문이나 메모에 '등기사항' 또는 '등기부'라고 적혀 있나요, 아니면 '신청서'나 '부속서류(계약서 등)'라고 적혀 있나요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 등기소에서 받은 안내문이나 메모에 '등기사항' 또는 '등기부'라고 적혀 있나요, 아니면 '신청서'나 '부속서류(계약서 등)'라고 적혀 있나요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "제공해 주신 주민등록번호는 개인정보 보호를 위해 답변에 사용하지 않으며, 열람 대상에 따른 규정 차이를 안내해 드립니다.\n\n등기소에서 '열람'을 안내받았을 때, 무엇을 보느냐에 따라 준비물이 다릅니다.\n\n1. **등기사항(등기부) 열람**: \n   누구든지 수수료만 내면 열람할 수 있으므로, **이해관계 증명을 챙겨갈 필요가 없습니다.** [근거: DOC-a11b600332a323f57dac-C0021]\n\n2. **신청서나 부속서류(계약서 등) 열람**: \n   등기기록의 부속서류에 대해서는 **이해관계 있는 부분만 열람을 청구할 수 있습니다.** 따라서 이 경우라면 **이해관계를 증명하는 서류를 챙겨가야 합니다.** [근거: DOC-a11b600332a323f57dac-C0021]\n\n메모에 '등기사항' 또는 '등기부'라고만 적혀 있다면 이해관계 증명 없이 방문하셔도 되지만, '신청서', '부속서류', '계약서' 등이 포함되었다면 이해관계 증명을 준비하셔야 합니다. 만약 메모가 모호하다면, 등기소에 전화하여 '등기부 열람'인지 '부속서류 열람'인지 명확히 확인하시는 것이 안전합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH019",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "현재 주거급여를 받고 계신 수급자이신가요, 아니면 이번에 처음으로 주거급여를 신청하시는 건가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 현재 주거급여를 받고 계신 수급자이신가요, 아니면 이번에 처음으로 주거급여를 신청하시는 건가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용(주민번호)만으로는 현재 주거급여를 이미 받고 계신지, 아니면 이번에 처음 신청하시는지를 정확히 판단하여 안내드리기 어렵습니다. 개인정보는 답변에 사용하지 않습니다.\n\n일반적으로 두 경우의 절차는 다음과 같이 구분됩니다.\n\n1. **이미 주거급여를 받고 있는 수급자가 이사한 경우**\n   - 이는 '거주지 변경'에 해당합니다. [근거: DOC-47d7106e715511059973-C0003]\n   - 전입신고와 함께 새로운 거주지를 관할하는 구청(또는 동 주민센터)에 주거급여 변경 신청을 해야 합니다. [근거: DOC-47d7106e715511059973-C0003]\n   - 이때 보장기관은 조사를 위해 임대차계약서 등 자료를 요구할 수 있습니다. [근거: DOC-9b83eab3c2398a4079e3-C0014]\n   - 즉, '새로 신청'하는 것은 아니지만, 이사로 인해 급여 지급 기관이 바뀌거나 금액이 조정될 수 있으므로 변경 신고와 관련 서류 제출이 필요합니다.\n\n2. **처음으로 주거급여를 신청하는 경우**\n   - 이는 '신규 신청'에 해당합니다.\n   - 급여신청서와 함께 금융정보 제공 동의서 등을 제출해야 하며, 소득·재산 조사를 위해 임대차계약서 등 서류 확인이 이루어집니다. [근거: DOC-3f9c0b8ace31b269c5eb-C0044]\n\n**확인 방법:**\n- 만약 이전에 주거급여를 받은 적이 있다면 '이사 신고(변경 신청)' 절차입니다.\n- 이전에 받은 적이 없다면 '신규 신청' 절차입니다.\n- 정확한 확인을 위해 거주지 관할 구청 주거급여 담당 부서나 복지로(www.bokjiro.go.kr)에서 본인의 수급 이력을 확인하시거나, 담당 공무원에게 문의하시는 것이 가장 정확합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH020",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "함께 거주하시는 분들 중 본인과의 관계(배우자, 자녀, 부모 등)와 자녀의 경우 연령(30세 미만 여부)을 알려주시고, 주민등록상 세대원 중 '동거인'으로 기재된 사람이 있는지 확인해 주시겠어요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 함께 거주하시는 분들 중 본인과의 관계(배우자, 자녀, 부모 등)와 자녀의 경우 연령(30세 미만 여부)을 알려주시고, 주민등록상 세대원 중 '동거인'으로 기재된 사람이 있는지 확인해 주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "생계급여 신청 시 기재하는 '가구원 수'는 단순히 주민등록표에 등재된 사람 수나 실제 같이 사는 사람 수를 그대로 적는 것이 아니라, 「국민기초생활 보장법 시행령」 제2조에 따른 '개별가구' 기준에 따라 산정합니다.\n\n**1. 기본 원칙: 주민등록표 기준이 우선이나, 예외가 있습니다.**\n*   **포함 대상:** 주민등록표에 등재된 세대원 중 '동거인'을 제외한 사람, 그리고 그 사람의 배우자(사실혼 포함), 미혼 자녀 중 30세 미만인 사람이 포함됩니다. [근거: DOC-771ac250fd34e3dd4b86-C0002]\n*   **제외 대상:** 주민등록표상 '동거인'으로 기재된 사람은 원칙적으로 가구원에서 제외됩니다. [근거: DOC-771ac250fd34e3dd4b86-C0002, DOC-2b7a1c10f4c40a304680-C0006]\n*   **실제 동거 여부와 무관한 경우:** 주민등록상 분리되어 있더라도 배우자나 30세 미만 미혼 자녀는 가구원으로 포함될 수 있습니다. 반대로, 주민등록상 함께 있더라도 동거인이거나, 30세 이상 미혼 자녀, 또는 생계/주거를 달리하는 것으로 확인된 사람은 제외될 수 있습니다. [근거: DOC-771ac250fd34e3dd4b86-C0002]\n\n**2. 상담 예약 시 기재 방법**\n상담 예약 단계에서는 정확한 산정이 어려울 수 있으므로, **주민등록표상 세대원 수(동거인 제외)**를 기준으로 기재하시되, 실제 거주 상황과 차이가 있다면 상담 시 상세히 설명하시는 것이 좋습니다. 최종적인 급여 결정은 담당 공무원의 조사를 통해 '개별가구' 기준에 맞춰 확정됩니다.\n\n**3. 추가 확인이 필요한 사항**\n정확한 가구원 수를 판단하기 위해서는 다음 정보가 필요합니다. 상담 시 이 내용을 미리 정리해 두시면 도움이 됩니다.\n*   주민등록표상 세대원 중 '동거인'으로 기재된 사람이 있는지 여부\n*   미혼 자녀가 있다면 그 자녀의 연령 (30세 미만 여부)\n*   배우자(사실혼 포함)가 주민등록상 분리되어 있는지 여부\n\n※ 참고: 소득세법상 부양가족 판정 기준(현실적 생계 동거)과 기초생활보장법상 개별가구 판정 기준은 다를 수 있으므로, 생계급여 신청은 위 「국민기초생활 보장법 시행령」 기준을 따릅니다. [근거: DOC-e61b1f594618d79b7640-C0085, DOC-771ac250fd34e3dd4b86-C0002]",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH021",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "현재 화면이 '임시저장' 상태인지, 아니면 '접수 완료(접수증 발급)' 상태인지 확인해 주세요. 또한 해당 민원의 구체적인 종류(예: 휴업사실증명, 납세증명서 등)를 알려주시면 더 정확한 안내가 가능합니다.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 현재 화면이 '임시저장' 상태인지, 아니면 '접수 완료(접수증 발급)' 상태인지 확인해 주세요. 또한 해당 민원의 구체적인 종류(예: 휴업사실증명, 납세증명서 등)를 알려주시면 더 정확한 안내가 가능합니다.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용(주민번호)만으로는 민원 종류와 현재 화면 상태(임시저장인지 접수 완료인지)를 정확히 안내드리기 어렵습니다.\n\n다만, '즉시' 처리 민원의 안내기간 계산 기준은 법령상 다음과 같습니다.\n1. **계산 시작점**: 민원이 **'접수'**된 시각부터 계산합니다. [근거: DOC-1bac55fd50fbfb130cff-C0023, DOC-47bbf4a18be5224eb47f-C0026]\n2. **임시저장 상태**: 임시저장 단계에서는 민원이 접수된 것이 아니므로, 3시간 계산이 시작되지 않습니다. [근거: DOC-5203497c9029e9024eb1-C0009]\n3. **접수 완료 상태**: 접수증이 발급되거나 전자민원창구에 도달하여 접수 처리된 시각부터 3근무시간(공휴일·토요일 제외, 1일 8시간 기준) 이내에 처리하도록 규정되어 있습니다. [근거: DOC-1bac55fd50fbfb130cff-C0023, DOC-47bbf4a18be5224eb47f-C0026]\n\n따라서 현재 화면이 '임시저장'이라면 아직 접수 전이므로 기간이 카운트되지 않으며, '접수 완료' 화면이라면 접수된 시각부터 3근무시간이 기준이 됩니다. 정확한 안내를 위해 해당 민원의 이름(예: 휴업사실증명, 납세증명서 등)과 화면에 표시된 상태 문구를 확인해 주세요.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7-BH022",
+    "paused": false,
+    "start_status": "responded",
+    "clarification": "건축물대장 소유자 기록 어디까지 고르는 거예요. 현재 주인만 필요한지 옛날 주인까지 필요한지 요청서가 빠졌어요. 제 대신 범위 정해줘요.",
+    "scenarios": {}
+  },
+  {
+    "query_id": "W7-BH023",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "해당 토지가 '표준지'로 선정되어 있거나, '국세·지방세 부과 대상이 아닌 토지'에 해당하지는 않는지 확인 부탁드립니다.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 해당 토지가 '표준지'로 선정되어 있거나, '국세·지방세 부과 대상이 아닌 토지'에 해당하지는 않는지 확인 부탁드립니다.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "네, 개별공시지가확인서를 발급받는 것으로 진행하시면 됩니다.\n\n1. **개별공시지가의 성격**: 개별공시지지는 국세·지방세 부과 등을 위해 시장·군수·구청장이 결정·공시하는 '단위면적당 가격'으로, 실제 거래가격(실거래가)과는 다릅니다. [근거: DOC-04639a675f05bbeb9337-C0010]\n2. **발급 방법**: 해당 토지가 있는 시장·군수·구청장에게 신청하면 확인서를 발급받을 수 있습니다. [근거: DOC-88b0924bedf69040118c-C0005]\n3. **주의사항**: 표준지로 선정된 토지나 국세·지방세 부과 대상이 아닌 토지 등은 개별공시지가가 결정·공시되지 않을 수 있으므로, 해당 토지가 이에 해당하지 않는지 확인이 필요합니다. [근거: DOC-c87009578ecd84b26cc0-C0016]\n\n담당자 통화 없이 무인민원발급기나 정부24 등을 통해 발급이 가능하므로, 토지 지번을 준비하여 발급을 진행하시면 됩니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH001",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "사촌이 현재 주민등록표상 '세대원'으로 등재되어 있나요? (단순히 같은 주소에 거주하는 것만으로는 세대원이 아닐 수 있습니다.)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 사촌이 현재 주민등록표상 '세대원'으로 등재되어 있나요? (단순히 같은 주소에 거주하는 것만으로는 세대원이 아닐 수 있습니다.)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "주민등록번호는 개인정보이므로 안내드릴 수 없으며, 해당 정보만으로는 사촌이 '세대원'인지 판단할 수 없습니다.\n\n무인민원발급기에서 타인의 주민등록표 초본을 발급받으려면, 신청자가 해당 세대의 **'세대원'**이어야 합니다. [근거: DOC-0bce286b4d09b5ab71f3-C0045, DOC-2b7a1c10f4c40a304680-C0088]\n\n1. **사촌이 같은 세대에 등재된 경우**: 무인민원발급기에서 본인 확인(지문 등) 후 발급 가능합니다.\n2. **사촌이 같은 주소지만 다른 세대에 등재된 경우**: 무인민원발급기에서는 발급이 불가능합니다. 이 경우 사촌의 위임장을 지참하고 동 주민센터 등 관공서를 방문해야 합니다. [근거: DOC-0bce286b4d09b5ab71f3-C0045, DOC-39d8d4ed529804eda5dc-C0001]\n\n사촌이 현재 주민등록표상 질문자님과 같은 '세대원'으로 등록되어 있는지 확인해 주세요. 확인이 어렵다면 사촌에게 위임장을 받아 방문하시는 것이 확실합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH002",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "현재 보고 계신 화면이 '무인발급기' 화면인가요, 아니면 '인터넷(대법원 전자가족관계등록시스템)' 화면인가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 현재 보고 계신 화면이 '무인발급기' 화면인가요, 아니면 '인터넷(대법원 전자가족관계등록시스템)' 화면인가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. '무인발급기'와 '인터넷(대법원 전자가족관계등록시스템)'은 발급 가능 범위가 다르기 때문입니다.\n\n1. **무인발급기**인 경우: 본인(자녀)의 가족관계증명서만 발급 가능합니다. 부모(엄마) 기준의 증명서는 발급받을 수 없습니다. [근거 DOC-c95ed190ec5caede9cf4-C0018, DOC-74fb8e3f4207ccfdb0ce-C0027]\n2. **인터넷(전자가족관계등록시스템)**인 경우: 본인, 배우자, 부모, 자녀가 신청할 수 있으므로, 자녀인 본인이 부모(엄마) 기준의 가족관계증명서를 발급받을 수 있습니다. [근거 DOC-c95ed190ec5caede9cf4-C0017, DOC-74fb8e3f4207ccfdb0ce-C0028]\n\n현재 보고 계신 화면이 '무인발급기'인지 '인터넷 사이트'인지 확인해 주세요. 무인발급기라면 엄마 기준 증명서는 발급되지 않습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH003",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "등기사항증명서를 발급받으려는 구체적인 용도(예: 주택담보대출, 부동산 매매, 소송 증거 등)가 무엇인가요? 용도에 따라 '말소사항 포함'이 필수인 경우가 있습니다.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 등기사항증명서를 발급받으려는 구체적인 용도(예: 주택담보대출, 부동산 매매, 소송 증거 등)가 무엇인가요? 용도에 따라 '말소사항 포함'이 필수인 경우가 있습니다.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "주민등록번호는 개인정보이므로 답변에 사용하지 않으며, 등기부등본 발급 시에는 부동산 소재지(번지)가 필요합니다.\n\n질문하신 '오래된 등기'의 경우, 등기부등본의 종류 선택 기준은 다음과 같습니다.\n\n1. **일반적인 경우 (전산등기부)**: \n   - '등기사항전부증명서(현재 유효사항)'를 발급받으면 현재 효력이 있는 등기사항만 확인할 수 있어 간결합니다. [DOC-a715748fecf818f55bb2-C0000]\n   - 다만, 은행 대출, 매매 계약, 소송 등 제3자에게 제출하는 용도라면 상대방이 권리 변동의 이력(말소된 저당권 등)을 확인하기 위해 '말소사항 포함'을 요구하는 경우가 많습니다. [DOC-a715748fecf818f55bb2-C0000]\n\n2. **폐쇄등기부인 경우**: \n   - 등기부가 폐쇄된 경우(예: 토지 분할·합병, 건물 철거 등)에는 '말소사항포함 등기부등본' 또는 '등기사항전부증명서(말소사항 포함)'로만 발급이 가능합니다. [DOC-18f6f40305b24d39f78f-C0033]\n\n**결론**: 단순히 현재 소유자나 유효한 권리만 확인하려는 목적이라면 '현재 유효사항'으로 충분하지만, 거래나 법적 분쟁 등 이력 확인이 필요한 용도라면 '말소사항 포함'을 선택해야 합니다. 정확한 판단을 위해 발급 목적(예: 대출 심사, 매매 등)을 알려주시면 더 구체적으로 안내드릴 수 있습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH004",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "인터넷등기소에서 전자등기사항증명서를 발급받을 때 화면에 뜨는 구체적인 오류 메시지나 안내 문구를 알려주세요.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 인터넷등기소에서 전자등기사항증명서를 발급받을 때 화면에 뜨는 구체적인 오류 메시지나 안내 문구를 알려주세요.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 전자등기사항증명서 발급수수료는 소유권 등기명의인이 본인 명의로 발급받을 때 면제되지만, 다음 두 가지 경우 중 하나에 해당하면 면제가 제외되어 수수료가 부과됩니다.\n\n1. 부동산 등기기록에 주민등록번호(또는 부동산등기용등록번호)가 기록되어 있지 않은 경우\n2. 등기부상의 소유자 성명·주민등록번호와 발급 신청인의 성명·주민등록번호가 일치하지 않는 경우\n\n본인의 등기부에 주민등록번호가 제대로 기재되어 있는지, 그리고 입력하신 정보와 등기부 정보가 완전히 일치하는지 인터넷등기소나 등기소를 통해 확인해 보시기 바랍니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH005",
+    "paused": false,
+    "start_status": "responded",
+    "clarification": "나는 서울 사는데 땅은 성남 쪽인지 하남 쪽인지 경계라 헷갈려요. 공시지가 확인할 때 어느 지자체가 결정한 자료를 봐야 해요? 내 주소지 걸로 보면 되는 거죠?",
+    "scenarios": {}
+  },
+  {
+    "query_id": "W7V2-BH006",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "납세증명서의 정확한 발급일과, 발급일 당시 납부고지된 국세가 있다면 그 지정납부기한이 언제인지 알려주세요.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 납세증명서의 정확한 발급일과, 발급일 당시 납부고지된 국세가 있다면 그 지정납부기한이 언제인지 알려주세요.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용만으로는 오늘까지 사용 가능한지 정확히 안내드리기 어렵습니다.\n\n국세 납세증명서의 유효기간은 원칙적으로 발급일로부터 30일입니다. 다만, 발급일 현재 납부고지된 국세가 있는 경우에는 해당 국세의 지정납부기한까지로 유효기간이 정해질 수 있습니다. [근거: DOC-d35458f6c6235f826aff-C0103]\n\n사용자님은 발급일을 기억하지 못하시고, 발급일 이후에 고지된 세금이 있다고 하셨는데, 유효기간 단축 여부는 '발급일 현재' 고지된 세금이 있었는지가 기준이 됩니다. 따라서 증명서 상단의 발급일과, 발급일 당시 고지된 세금이 있었다면 그 납부기한을 확인해야 합니다.\n\n증명서 날짜 칸을 보지 않으셨다면, 증명서 원본을 확인하시거나 발급 기관(세무서 등)에 문의하여 발급일과 유효기간을 확인하시는 것이 가장 정확합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH007",
+    "paused": false,
+    "start_status": "responded",
+    "clarification": "지방세 아직 안 낸 건 맞는데 유예받았거든요. 이 금액도 납세증명에서 말하는 체납에 넣는 거야 빼는 거야? 유예라니까요.",
+    "scenarios": {}
+  },
+  {
+    "query_id": "W7V2-BH008",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "발급받으려는 수급자 증명서가 '일반 수급자(생계·의료·주거·교육급여 포함)'용인지, 아니면 '교육급여 단독 수급자'용인지 알려주세요.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 발급받으려는 수급자 증명서가 '일반 수급자(생계·의료·주거·교육급여 포함)'용인지, 아니면 '교육급여 단독 수급자'용인지 알려주세요.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "주민등록번호만으로는 현재 '일반 수급자'인지 '교육급여 단독 수급자'인지 구분이 불가능하여 발급 주체를 단정할 수 없습니다.\n\n법령상 발급 주체는 다음과 같이 나뉩니다.\n1. **일반 수급자(생계·의료·주거·교육급여 등 포함)**: 시장·군수·구청장(시청/구청)이 발급합니다. [근거: DOC-3f9c0b8ace31b269c5eb-C0052]\n2. **교육급여 단독 수급자**: 시·도교육감이 발급합니다. [근거: DOC-3f9c0b8ace31b269c5eb-C0052, DOC-2a49056deef8f554ba00-C0001]\n\n따라서 '교육청에 가라'는 말은 교육급여만 받는 경우를, '시청에 가라'는 말은 그 외 일반 수급자(또는 교육급여 포함 수급자)인 경우를 의미합니다.\n\n정확한 안내를 위해 **현재 받으시는 급여 종류(예: 생계급여, 의료급여, 교육급여 단독 등)**를 알려주시거나, 해당 정보를 확인할 수 있는 방법을 안내해 드리겠습니다. (참고: 무인민원발급기에서는 본인 확인 후 발급 가능 여부가 시스템에 따라 다를 수 있으므로, 방문 전 확인이 필요합니다.)",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH009",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "현재 양육하고 계신 자녀의 국적이 대한민국 국적인가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 현재 양육하고 계신 자녀의 국적이 대한민국 국적인가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "긴급복지지원법 시행령에 따르면, 대한민국 국민인 배우자와 이혼한 외국인으로서 '대한민국 국적을 가진 직계존비속(자녀 포함)'을 돌보고 있는 사람은 긴급지원대상자가 될 수 있습니다. [근거: DOC-218d0a6bc8da3a9e1311-C0002]\n\n따라서 질문자님의 경우, 양육 중인 자녀가 '대한민국 국적'이라면 긴급복지지원 대상에 포함될 수 있습니다. 다만, 자녀가 외국인 국적이라면 이 조항에 해당하지 않을 수 있으므로 자녀의 국적 확인이 필요합니다. 주민등록번호만으로는 자녀의 국적을 판단할 수 없으므로, 자녀의 가족관계증명서나 여권 등을 통해 국적을 확인해 주시거나, 관할 구청 복지 담당 부서에 자녀의 국적을 명시하여 문의하시는 것이 정확합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH010",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "현재 지원받으시거나 신청하신 긴급지원이 '생계지원(식료품비 등)'인지 '주거지원(임시거소 또는 주거비)'인지 확인해 주시겠어요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 현재 지원받으시거나 신청하신 긴급지원이 '생계지원(식료품비 등)'인지 '주거지원(임시거소 또는 주거비)'인지 확인해 주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용(주민번호)만으로는 정확히 안내드리기 어렵습니다. 긴급복지지원법 제10조에 따르면 긴급지원심의위원회의 심의를 거쳐 지원 기간을 연장할 경우, '생계지원'은 총 6개월, '주거지원'은 총 12개월을 초과할 수 없습니다. [DOC-6a0b34f7fc81d71c704d-C0015]\n\n따라서 현재 신청하신 지원이 식료품비 등을 지원하는 '생계지원'인지, 임시거소나 주거비를 지원하는 '주거지원'인지 확인이 필요합니다. 해당 유형에 따라 적용되는 최대 한도(6개월 또는 12개월)가 달라지므로, 관할 구청이나 행정복지센터에 문의하여 본인의 지원 유형을 먼저 확인하시길 바랍니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH011",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "아버지가 해외로 출국하신 정확한 날짜(출국일)가 언제인가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 아버지가 해외로 출국하신 정확한 날짜(출국일)가 언제인가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "기초연금법 제16조에 따르면, 기초연금 수급자의 국외 체류기간이 60일 이상 지속되는 경우 지급이 정지됩니다. 이때 '국외 체류 60일이 되는 날'을 지급 정지의 사유가 발생한 날로 보며, 그 날이 속하는 달의 '다음 달'부터 기초연금 지급이 정지됩니다. [근거: DOC-7220f05039bffecff5ab-C0021]\n\n예를 들어, 아버지가 1월 1일에 출국하셨다면 60일째 되는 날은 3월 1일(또는 2월 말~3월 초, 윤년 등 계산 방식에 따라 상이할 수 있으나 통상 출국일 포함 60일)이 되며, 이 날이 속하는 달(3월)의 다음 달인 4월부터 지급이 정지됩니다.\n\n정확한 정지 시작 월을 알기 위해서는 아버지의 '출국일'이 필요합니다. 주민등록번호만으로는 출국일을 확인할 수 없으므로, 아버지의 여권 사본이나 출입국 사실증명서 등을 통해 정확한 출국일을 확인하신 후, 출국일로부터 60일이 되는 날이 속한 달의 다음 달이 정지 시작 월임을 계산해 보시기 바랍니다. 만약 출국일이 불분명하거나 정확한 계산이 필요하시다면, 거주지 관할 주민센터나 국민연금공단(1355)에 문의하여 확인하시는 것이 가장 정확합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH012",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "미지급 기초연금을 청구하려면 사망하신 분의 배우자, 자녀(및 그 배우자), 부모, 손자녀(및 그 배우자) 중 한 분이어야 합니다. 질문자님은 돌아가신 분과 어떤 관계이신가요? (예: 자녀, 손자녀, 조카 등)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 미지급 기초연금을 청구하려면 사망하신 분의 배우자, 자녀(및 그 배우자), 부모, 손자녀(및 그 배우자) 중 한 분이어야 합니다. 질문자님은 돌아가신 분과 어떤 관계이신가요? (예: 자녀, 손자녀, 조카 등)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용(주민등록번호)만으로는 돌아가신 분과 질문자님의 구체적인 가족 관계를 파악할 수 없어, 미지급 기초연금을 청구할 수 있는지 정확히 안내드리기 어렵습니다.\n\n미지급 기초연금은 사망 당시 생계를 같이 한 '부양의무자'만 청구할 수 있으며, 법에서 정한 부양의무자는 **배우자, 직계혈족(자녀, 부모, 손자녀 등) 및 그 배우자**로 한정됩니다. [근거: DOC-7220f05039bffecff5ab-C0020, DOC-f8f8c1de46fbe5059f00-C0023]\n\n따라서 질문자님이 돌아가신 분의 자녀, 손자녀, 배우자 등이 아니라면 청구 자격이 없을 수 있습니다. 정확한 자격 확인을 위해 돌아가신 분과 질문자님의 관계(예: 자녀, 조카, 사위 등)를 알려주시거나, 관할 주민센터 또는 국민연금공단에 문의하여 가족관계등록부를 통해 확인받으시는 것을 권장합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH013",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "월세 계약 금액이 변경된 날짜(계약 변경일)가 이번 달 15일 이전인가요, 아니면 16일 이후인가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 월세 계약 금액이 변경된 날짜(계약 변경일)가 이번 달 15일 이전인가요, 아니면 16일 이후인가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "주민등록번호는 개인정보이므로 답변에 사용하지 않으며, 해당 정보만으로는 계약 변경 기준을 판단할 수 없습니다.\n\n「주거급여법 시행규칙」 제3조 제5항에 따르면, 이사를 하지 않고 임대차계약(월세 금액 등)만 변경된 경우, **계약 변경일**이 이번 달의 며칠인지에 따라 적용되는 기준이 달라집니다.\n\n1. **계약 변경일이 15일 이전인 경우**: 새로운 임대차계약(변경된 월세)에 따른 주거급여를 실시합니다.\n2. **계약 변경일이 16일 이후인 경우**: 종전의 임대차계약(기존 월세)에 따른 주거급여를 실시합니다.\n\n따라서 이번 달 주거급여가 새 계약 기준으로 적용되려면, 계약 변경일이 이번 달 15일 이전이어야 합니다. 정확한 적용 기준을 확인하시려면 계약서상 변경일(또는 합의일)이 이번 달 며칠인지 확인해 주세요.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH014",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "해당 농지 임대차계약의 최초 체결일이나 변경일이 2022년 8월 18일 이후인지 확인되나요? (계약서나 관련 서류에서 날짜를 확인해 주세요.)",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 해당 농지 임대차계약의 최초 체결일이나 변경일이 2022년 8월 18일 이후인지 확인되나요? (계약서나 관련 서류에서 날짜를 확인해 주세요.)",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용(주민등록번호)만으로는 계약의 체결일이나 변경일을 확인할 수 없어, 해당 계약이 신고 대상인지 정확히 안내드리기 어렵습니다.\n\n농지법 제49조의2 및 관련 안내에 따르면, 2022년 8월 18일 이후에 체결·변경·해제된 농지 임대차계약은 농지대장 변경 신고 대상입니다. [DOC-b5161f1f3a0895f30ba6-C0001, DOC-fa21bbedb574a1cd3b7a-C0078]\n\n따라서 계약서나 관련 서류에서 '최초 체결일'과 '마지막 변경일'을 확인해 주세요. 만약 체결일이나 변경일 중 하나라도 2022년 8월 18일 이후라면 신고 대상이 될 수 있습니다. 계약서 날짜를 확인하신 후 다시 문의해 주시면 신고 대상 여부와 절차를 안내해 드리겠습니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH015",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "결과 조회 화면이나 시·도 교육청 공보에 표시된 정확한 상태 문구(예: '합격', '과목합격' 등)나 전체 과목 평균 점수를 알려주시겠어요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 결과 조회 화면이나 시·도 교육청 공보에 표시된 정확한 상태 문구(예: '합격', '과목합격' 등)나 전체 과목 평균 점수를 알려주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 법령상 '합격'은 전 과목 평균 60점 이상을 의미하며, 이 경우 '합격증명서'를 발급받을 수 있습니다. 반면, 일부 과목만 60점 이상인 경우 '과목합격'으로 인정되어 '과목합격증명서'를 발급받게 됩니다. [DOC-d15a14f555bc020d4009-C0042] [DOC-d15a14f555bc020d4009-C0044]\n\n캡처가 잘려 전체 합격인지 과목 합격인지 확인이 불가능하므로, 다음 방법으로 정확한 상태를 확인하신 후 서류를 발급받으시길 권장합니다.\n1. 응시하신 시·도 교육청 홈페이지의 '검정고시 합격자 발표' 메뉴에서 수험번호로 조회하여 '합격' 또는 '과목합격' 문구를 확인합니다.\n2. 정부24 또는 교육청 홈페이지에서 '검정고시 성적증명서'를 발급받아 전 과목 점수와 평균을 확인합니다. (전체 합격 시 합격증명서 발급 가능, 과목 합격 시 과목합격증명서 발급)\n\n주민등록번호는 개인정보이므로 채팅창에 입력하지 마시고, 위 방법으로 직접 확인하시거나 가까운 교육청/무인민원발급기를 통해 서류를 발급받으시기 바랍니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH016",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "고졸 검정고시에 합격하신 연도가 2015년 이전인가요, 아니면 2015년 이후인가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 고졸 검정고시에 합격하신 연도가 2015년 이전인가요, 아니면 2015년 이후인가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "고졸 검정고시 성적증명서 영문본 서식이 두 가지인 이유는 합격 연도에 따라 발급 서식이 다르기 때문입니다.\n\n「초·중등교육법 시행규칙」 제39조 제3항에 따르면:\n1. **2015년 이후** 고졸 검정고시에 합격한 경우: **별지 제13호** 서식의 영문 성적증명서가 발급됩니다.\n2. **2015년 이전** 고졸 검정고시에 합격한 경우(또는 2015년 이전 시험의 선택Ⅱ 과목 성적을 합산하여 합격한 경우): **별지 제17호** 서식의 영문 성적증명서가 발급됩니다.\n\n제공해 주신 주민등록번호만으로는 합격 연도를 정확히 판단할 수 없습니다. 따라서 **합격하신 연도(또는 시험을 보신 연도)**를 알려주시면, 해당 연도에 맞는 정확한 서식 번호(13호 또는 17호)를 안내해 드리겠습니다.\n\n예를 들어, 2014년에 합격하셨다면 별지 제17호, 2016년에 합격하셨다면 별지 제13호가 적용됩니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH017",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "정정하시려는 생기부 항목이 인적사항이나 학적사항(성명, 주소, 입학/졸업일 등)인가요, 아니면 교과학습발달상황이나 비교과활동(수상, 창의적 체험활동 등)인가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 정정하시려는 생기부 항목이 인적사항이나 학적사항(성명, 주소, 입학/졸업일 등)인가요, 아니면 교과학습발달상황이나 비교과활동(수상, 창의적 체험활동 등)인가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "학년도 작성이 끝난 뒤의 정정은 원칙적으로 금지되지만, '객관적인 증빙자료'가 있는 경우에만 예외적으로 가능합니다. [DOC-af813830e2ed898e9bc4-C0025] [DOC-d15a14f555bc020d4009-C0023]\n\n학교에서 증명자료를 요구하는 것은 이 예외 조항에 따라 정정을 진행하기 위해 필수적인 절차이기 때문입니다. [DOC-af813830e2ed898e9bc4-C0025]\n\n다만, 정정 대상이 '인적사항(성명, 주민등록번호 등)'이나 '학적사항'인 경우와 '교과/비교과 활동'인 경우 절차가 다릅니다.\n1. 인적사항·학적사항 중 학생정보 정정: 학업성적관리위원회 심의를 생략할 수 있습니다. [DOC-af813830e2ed898e9bc4-C0025]\n2. 그 외 항목(교과, 비교과 등): 반드시 증빙자료를 첨부하여 학업성적관리위원회의 심의를 거쳐야 합니다. [DOC-af813830e2ed898e9bc4-C0025]\n\n정정하시려는 항목이 인적사항/학적사항인지, 아니면 교과/비교과 활동인지 알려주시면 더 정확한 안내가 가능합니다. (참고: 주민등록번호 등 개인정보는 답변에 포함하지 말아 주세요.)",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH018",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "전달받은 서류가 '채권양도' 관련 서류인지, 아니면 '법원 전부명령' 관련 서류인지 확인해 주시겠어요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 전달받은 서류가 '채권양도' 관련 서류인지, 아니면 '법원 전부명령' 관련 서류인지 확인해 주시겠어요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "전달받은 서류의 종류에 따라 제출해야 하는 납세증명서가 다릅니다. 서류를 확인하여 아래 중 해당하는 경우를 선택해 주세요.\n\n1. **채권양도**인 경우: **양도인(원래 업체)**과 **양수인(본인)** 양쪽의 납세증명서를 모두 제출해야 합니다. [DOC-d35458f6c6235f826aff-C0097, DOC-b4bfc7fa2dfef1e9cbb7-C0004]\n2. **법원의 전부명령**인 경우: **압류채권자(본인)**의 납세증명서만 제출하면 됩니다. [DOC-d35458f6c6235f826aff-C0097, DOC-b4bfc7fa2dfef1e9cbb7-C0004]\n\n※ 참고: 납세증명서는 국세와 지방세 체납이 없음을 증명하는 서류로, 본인 또는 대리인이 발급받을 수 있습니다. [DOC-5d0e1bfb8332bbf12a07-C0000]",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH019",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "이혼한 아버지와 현재 주민등록상 같은 세대를 구성하고 계신가요, 아니면 다른 세대에 속해 계신가요?",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 이혼한 아버지와 현재 주민등록상 같은 세대를 구성하고 계신가요, 아니면 다른 세대에 속해 계신가요?",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "주민등록법 제29조 제10항에 따르면, 이혼한 자와 같은 세대를 구성하지 아니한 그 직계비속(자녀)이 이혼한 자의 주민등록표 열람 또는 등·초본 교부를 신청하는 경우, 열람 또는 등·초본 교부기관의 장은 주민등록표 초본만을 열람하게 하거나 교부할 수 있습니다. [근거: DOC-0bce286b4d09b5ab71f3-C0047]\n\n즉, 아버지와 같은 세대에 속해 있지 않다면 등본(세대 전체 기록)은 발급받을 수 없고, 초본(개인 기록)만 발급받을 수 있습니다. [근거: DOC-39d8d4ed529804eda5dc-C0001]\n\n다만, 질문자님께서 현재 아버지와 주민등록상 같은 세대에 속해 있는지 여부는 확인되지 않았습니다. 만약 같은 세대에 속해 있다면 세대원으로서 등본 발급이 가능할 수 있으므로, 본인의 주민등록등본을 발급받아 세대 구성원을 확인하시거나, 가까운 주민센터에서 본인 확인 후 발급 가능 여부를 문의하시는 것이 정확합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  },
+  {
+    "query_id": "W7V2-BH020",
+    "paused": true,
+    "start_status": "waiting_for_user",
+    "clarification": "토지이용계획확인서를 발급받으신 채널(방문, 인터넷 등)과, 신청서 작성 시 '행위제한 내용 제외' 항목을 체크하셨는지 알려주세요.",
+    "scenarios": {
+      "unknown_reply": {
+        "final_status": "needs_information",
+        "answer": "알려 주신 내용만으로는 정확히 안내드리기 어렵습니다. 아래 내용을 확인하신 뒤 다시 문의해 주세요.\n\n- 토지이용계획확인서를 발급받으신 채널(방문, 인터넷 등)과, 신청서 작성 시 '행위제한 내용 제외' 항목을 체크하셨는지 알려주세요.",
+        "model_calls_after_reply": 0,
+        "follow_up_searches": 0
+      },
+      "pii_reply": {
+        "final_status": "responded",
+        "answer": "토지이용계획확인서는 신청 시 '행위제한 내용 제외'를 선택할 수 있으며, 이 경우 해당 내용이 표기되지 않습니다. [근거: DOC-9e85b56672d02884958b-C0016] 따라서 신청서 작성 시 해당 항목을 체크하셨다면 정상 발급된 것입니다. 만약 체크하지 않으셨는데도 내용이 비어 있다면, 해당 토지에 적용되는 행위제한 규제가 실제로 존재하지 않아서일 수 있습니다. [근거: DOC-c2aa8fd59454b5176581-C0014] 정확한 확인을 위해 발급받으신 기관(수정구청 등)에 문의하시거나, 토지e음(https://www.luris.go.kr)에서 해당 필지의 규제 정보를 직접 조회해 보시는 것을 권장합니다.",
+        "model_calls_after_reply": 1,
+        "follow_up_searches": 1,
+        "pii_in_model_inputs_or_events": false,
+        "pii_in_stored_session": false
+      }
+    }
+  }
+]
